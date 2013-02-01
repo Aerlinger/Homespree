@@ -1,5 +1,11 @@
 Homespree::Application.routes.draw do
 
+  get "email_list/create"
+
+  get "email_list/update"
+
+  get "email_list/destroy"
+
   match 'pages/home' => 'high_voltage/pages#show', :id => 'home'
 
   root :to => 'high_voltage/pages#show', :id => 'home'

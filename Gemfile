@@ -9,7 +9,7 @@ gem "high_voltage"
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 group :test, :development do
   gem 'sqlite3'
-  gem 'rspec-rails'
+  gem 'rspec-rails', ">= 2.12.0"
   gem 'capybara'
 end
 
