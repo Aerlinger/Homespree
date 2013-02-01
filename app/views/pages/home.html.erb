@@ -20,7 +20,7 @@
 
 
   <!-- Ajax email submission form: -->
-  <%= form_tag email_list_create_path, method: :put, remote: true, class: "mailing-list" do %>
+  <%= form_tag email_list_create_path, method: :post, remote: true, class: "mailing-list", authenticity_token: false  do %>
     <%= field_set_tag do %>
       <%= email_field_tag(:email, "Email") %>
       <%= submit_tag "Submit", :disable_with => "Thanks!" %>
