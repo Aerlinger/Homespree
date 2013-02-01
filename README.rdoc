@@ -1,0 +1,3 @@
+== Homespree Landing Page
+
+A basic page to showcase the product and allow users/contractors to sign up.
