@@ -12,16 +12,15 @@
           <h2 style="color: white;">Get stuff done. Skip the hassle.</h2>
 
           <!-- Ajax email submission form: -->
-          <%= form_tag email_list_create_path, method: :post, remote: true, authenticity_token: false,
+          <%= form_tag mailinglists_path, method: :post, remote: true, authenticity_token: false,
                        class: "custom show-search-options position-left", id: "search_form" do %>
               <%= email_field_tag(:email, "", type: "text", class: "checkout search-option ui-datepicker-target",
-                                  id:"checkout", placeholder: "Sign Up") %>
-              <%= submit_tag "Submit", :disable_with => "Thanks!",
+                                  id:"checkout", placeholder: "Email") %>
+              <%= submit_tag "Sign Up", :disable_with => "Thanks!",
                              id: "submit_location", class: "large green btn icon-and-text position-right" %>
           <% end %>
 
         </div>
-
 
       </header>
     </div>
@@ -34,36 +33,37 @@
     <div class="highlight row">
       <div id="myCarousel" class="carousel slide">
         <div class="carousel-inner">
+
           <div class="item active">
             <p>
               <%= image_tag asset_path('3_iphones.png'), alt: "screenshot" %>
             </p>
             <article class="carousel-caption">
-              <h3>Here you can showcase some testimonials or screenshots</h3>
-
-              <p class="center-align">Built with Twitter Bootstrap's Carousel component</p>
+              <h3>Submit job pictures straight from your smartphone or camera.</h3>
+              <p class="center-align">Shop for contractors and get quotes within hours.</p>
             </article>
           </div>
+
           <div class="item">
             <p>
-              <%= image_tag asset_path('code.png'), alt: "code" %>
+              <%= image_tag asset_path('3_iphones.png'), alt: "screenshot" %>
             </p>
             <article class="carousel-caption">
-              <h3><strong>App</strong> is a powerful and robust text-editor.</h3>
-
-              <p class="center-align">Hit it up! It'll be your favorite text-editor!</p>
+              <h3>Submit job pictures straight from your smartphone or camera.</h3>
+              <p class="center-align">Shop for contractors and get quotes within hours.</p>
             </article>
           </div>
+
           <div class="item">
             <p>
-              <%= image_tag asset_path('folders.png'), alt: "folders" %>
+              <%= image_tag asset_path('3_iphones.png'), alt: "screenshot" %>
             </p>
             <article class="carousel-caption">
-              <h3 class="quotes">"I designed LandingStrip to be easily editable for everyone."</h3>
-
-              <p class="center-align">- Ace Subido.</p>
+              <h3>Submit job pictures straight from your smartphone or camera.</h3>
+              <p class="center-align">Shop for contractors and get quotes within hours.</p>
             </article>
           </div>
+
 
         </div>
         <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
@@ -73,12 +73,9 @@
   </div>
 </section>
 
-<div class="container">
-  <h3 class="subhead">Tell them more details about the features with this section-box</h3>
-</div>
-
 <section class="section-box shadow">
   <div class="container">
+
     <div class="row">
       <article class="span4 center-align">
         <%= image_tag asset_path('camera.png'), alt: "responsive" %>
@@ -106,9 +103,7 @@
       <article class="span4 center-align">
         <%= image_tag asset_path('clock.png'), alt: "heartwork" %>
         <h3>Convenient</h3>
-
           <p>"No more waiting for contractors."</p>
-
         <p>
           <a href="#">Find out who we are</a>
         </p>
@@ -117,32 +112,4 @@
   </div>
 </section>
 
-<section class="container mobile-button">
-  <p>
-    <a href="#"><%= image_tag asset_path('appstore.png'), alt: "appstore" %></a>
-    <a href="#"><%= image_tag asset_path('googleplay.png'), alt: "googleplay" %></a>
-  </p>
-</section>
-
-<section class="container">
-  <div class="row">
-    <div class="offset3 span6">
-      <hr class="shadow-line"/>
-    </div>
-  </div>
-  <div class="row">
-    <div class="highlight span12">
-      <h3>With <strong>LandingStrip</strong>, you can tell visitors who your customers are.</h3>
-
-      <h3 class="subhead">Your <strong>App</strong> is used by people all over the world.</h3>
-
-      <div class="logo-list">
-        <%= image_tag asset_path('homespreelogo.png'), alt: "companyA" %>
-      </div>
-      <p><a href="#" class="big-btn">Sign Up</a></p>
-
-      <p>Last chance to invite your visitors to your <strong>App</strong>. Try it out, it's free.</p>
-    </div>
-  </div>
-</section>
 

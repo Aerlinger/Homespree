@@ -1,9 +1,9 @@
-<h1>Listing mailinglists</h1>
+<h1>Homespree Mailing List</h1>
 
 <table>
   <tr>
     <th>Email</th>
-    <th>Contractor</th>
+    <th>Contractor?</th>
     <th></th>
     <th></th>
     <th></th>
@@ -12,14 +12,13 @@
 <% @mailinglists.each do |mailinglist| %>
   <tr>
     <td><%= mailinglist.email %></td>
-    <td><%= mailinglist.contractor %></td>
-    <td><%= link_to 'Show', mailinglist %></td>
+    <td style="text-align: center;"><%= mailinglist.contractor ? "yes" : "no" %></td>
     <td><%= link_to 'Edit', edit_mailinglist_path(mailinglist) %></td>
-    <td><%= link_to 'Destroy', mailinglist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Delete', mailinglist, method: :delete, data: { confirm: 'Delete this email address?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Mailinglist', new_mailinglist_path %>
+<%= link_to 'Enter new email', new_mailinglist_path %>

@@ -13,13 +13,19 @@
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.text_field :email %>
+    <%= f.email_field :email %>
   </div>
+  <br />
   <div class="field">
-    <%= f.label :contractor %><br />
     <%= f.check_box :contractor %>
+    <%= f.label :contractor? %>
   </div>
+
+  <br />
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Create" %>
   </div>
+
 <% end %>
+<br />

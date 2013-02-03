@@ -2,15 +2,20 @@ $headerHeight: 60px;
 
 
 body {
-  background-image: url(<%= asset_path "bg.png" %>);
+
+  background-image: url(<%= asset_path "homebackground.png" %>);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 p {
   font: 14px/23px "Helvetica Neue", helvetica, sans-serif;
-  text-shadow: #ffffff 0 1px 0;
 }
 
 a {
+  color: #338bb8;
+
   &:link, &:visited {
     color: #338bb8;
     text-decoration: none;
@@ -45,16 +50,18 @@ h2 {
   font: 2.2em "helvetica neue", helvetica, sans-serif;
   margin: 18px 0;
 
+  text-shadow: 0 0 13px rgba(0, 0, 0, 1), 0 -1px 1px rgba(0, 0, 0, 0.6);
+
   strong {
     font-weight: 700;
   }
 }
 
 h3 {
-  text-align: left;
-  margin: 0 0 15px;
-  font: 2em Helvetica;
+  text-align: center;
 
+  margin: 0 0 15px;
+  font: 2em "helvetica neue", helvetica, sans-serif;
 }
 
 h4 {
@@ -75,8 +82,7 @@ h4 {
 }
 
 .header {
-  background: none repeat scroll 0 0 white;
-  box-shadow: 12px 0 15px 0 rgba(0, 0, 0, 0.5);
+
   height: $headerHeight;
   margin-bottom: -$headerHeight;
   opacity: 0.9;
@@ -87,7 +93,7 @@ h4 {
 */
 
 .navbar-inner {
-  background: transparent;
+  background: white;
   box-shadow: none;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
@@ -97,6 +103,8 @@ h4 {
 }
 
 .navbar {
+  opacity: 0.9;
+  box-shadow: 12px 0 15px 0 rgba(0, 0, 0, 0.5);
   margin: 0 0 15px;
 
   .brand {
@@ -123,8 +131,9 @@ h4 {
 .footer-box a {
   font: 600 16px/26px "Helvetica Neue", helvetica, sans-serif;
   padding: 6px 18px;
-  color: #888888;
-  text-shadow: 0 1px 0 #ffffff;
+  color: #3059b0;
+
+  //text-shadow: 0 1px 0 #ffffff;
   line-height: 16px;
   text-align: center;
 }
@@ -132,8 +141,9 @@ h4 {
 .navbar .nav .active a,
 .footer-box .active a {
   color: #3799ca;
-  text-shadow: none;
-  text-shadow: 0 1px 0 #ffffff;
+
+  //text-shadow: none;
+  //text-shadow: 0 1px 0 #ffffff;
   background-color: transparent;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -142,7 +152,8 @@ h4 {
 .navbar .nav li a:hover,
 .footer-box a:hover {
   color: #3799ca;
-  text-shadow: 0 1px 0 #ffffff;
+  //text-shadow: 0 1px 0 #ffffff;
+  text-decoration: underline;
 }
 
 .navbar .nav .active a:hover,
@@ -200,7 +211,6 @@ h4 {
   box-shadow: none;
   border: 1px solid #eeeeee;
   padding: 60px 0;
-  margin-top: 15px;
   margin-bottom: 20px;
   color: #333333;
 

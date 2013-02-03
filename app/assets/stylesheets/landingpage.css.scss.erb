@@ -1,10 +1,12 @@
 .pitch  {
-  background-image: url(<%= asset_path "homebackground.png" %>);
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding-top: -40px;
-  min-height: 671px;
+  padding-top: 60px;
 
+  min-height: 613px;
+}
+
+.showcase {
+  box-shadow: 12px 0 15px 0 rgba(0, 0, 0, 0.5);
+  background: white;
 }
 
 #checkout {
@@ -14,6 +16,7 @@
   margin-top: 2px;
   width: 375px;
 }
+
 .search-area input[type="text"], .search-area input[type="email"] {
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4) inset;
   float: left;
@@ -29,6 +32,7 @@ search-area input[type="text"], search-area input[type="email"], .search-area .d
   padding: 8px 12px;
   text-shadow: 0 1px 1px #FFFFFF;
 }
+
 input:-moz-placeholder {
   color: #999999;
 }
@@ -47,9 +51,11 @@ textarea, input[type="text"], input[type="email"], input[type="password"], input
   padding: 8px 12px;
   text-shadow: 0 1px 1px #FFFFFF;
 }
+
 input:-moz-placeholder {
   color: #999999;
 }
+
 input:-moz-placeholder, textarea:-moz-placeholder {
   color: #999999;
 }
@@ -130,7 +136,6 @@ label, input, button, select, textarea {
   text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.4);
 }
 
-
 // Search form:
 #search_form {
   margin-top: 140px;
@@ -161,11 +166,6 @@ label, input, button, select, textarea {
 
   width: 550px;
   height: 573px;
-
-  //bottom: -30px;
-
-  /*opacity: 0;*/
-  /*filter: alpha(opacity=0);*/
 
   background: url('http://fray.it/img/hand_iphone.png') right bottom no-repeat;
 }
