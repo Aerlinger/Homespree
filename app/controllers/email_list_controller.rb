@@ -2,7 +2,6 @@ class EmailListController < ApplicationController
   def create
 
     @email = params[:email]
-
     EmailList.create!(email: @email)
 
     respond_to do |format|

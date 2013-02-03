@@ -1,72 +1,74 @@
-<section class="">
+<section class="pitch">
+
   <div class="container">
-  <div class="row">
-    <header class="highlight span12">
-      <h2>One-line product intro with <strong>LandingStrip</strong></h2>
+    <div class="row">
+      <header class="highlight span12">
 
-      <%= image_tag asset_path('shot.png'), id: "feature-screenshot", alt: "screenshot" %>
+        <div class="search-area">
 
-      <p><a href="#" class="big-btn">Sign Up</a></p>
+          <div id="iphone_preview"></div>
 
-      <p>Tell them how amazing your <strong>App</strong> is. <a href="#">Log in</a> for existing users.</p>
-    </header>
-  </div>
-  <div class="row">
-    <div class="offset3 span6">
-      <hr class="shadow-line"/>
+          <img class="stressfree" src="/assets/stressfree.png">
+          <h2 style="color: white;">Get stuff done. Skip the hassle.</h2>
+
+          <!-- Ajax email submission form: -->
+          <%= form_tag email_list_create_path, method: :post, remote: true, authenticity_token: false,
+                       class: "custom show-search-options position-left", id: "search_form" do %>
+              <%= email_field_tag(:email, "", type: "text", class: "checkout search-option ui-datepicker-target",
+                                  id:"checkout", placeholder: "Sign Up") %>
+              <%= submit_tag "Submit", :disable_with => "Thanks!",
+                             id: "submit_location", class: "large green btn icon-and-text position-right" %>
+          <% end %>
+
+        </div>
+
+
+      </header>
     </div>
   </div>
-  </div>
-
-
-  <!-- Ajax email submission form: -->
-  <%= form_tag email_list_create_path, method: :post, remote: true, class: "mailing-list", authenticity_token: false  do %>
-    <%= field_set_tag do %>
-      <%= email_field_tag(:email, "Email") %>
-      <%= submit_tag "Submit", :disable_with => "Thanks!" %>
-    <% end %>
-  <% end %>
 
 </section>
 
-<section class="container">
-  <div class="highlight row">
-    <div id="myCarousel" class="carousel slide">
-      <div class="carousel-inner">
-        <div class="item active">
-          <p>
-            <%= image_tag asset_path('ipad.png'), alt: "ipad" %>
-          </p>
-          <article class="carousel-caption">
-            <h3>Here you can showcase some testimonials or screenshots</h3>
+<section class="showcase">
+  <div class="container">
+    <div class="highlight row">
+      <div id="myCarousel" class="carousel slide">
+        <div class="carousel-inner">
+          <div class="item active">
+            <p>
+              <%= image_tag asset_path('3_iphones.png'), alt: "screenshot" %>
+            </p>
+            <article class="carousel-caption">
+              <h3>Here you can showcase some testimonials or screenshots</h3>
 
-            <p class="center-align">Built with Twitter Bootstrap's Carousel component</p>
-          </article>
+              <p class="center-align">Built with Twitter Bootstrap's Carousel component</p>
+            </article>
+          </div>
+          <div class="item">
+            <p>
+              <%= image_tag asset_path('code.png'), alt: "code" %>
+            </p>
+            <article class="carousel-caption">
+              <h3><strong>App</strong> is a powerful and robust text-editor.</h3>
+
+              <p class="center-align">Hit it up! It'll be your favorite text-editor!</p>
+            </article>
+          </div>
+          <div class="item">
+            <p>
+              <%= image_tag asset_path('folders.png'), alt: "folders" %>
+            </p>
+            <article class="carousel-caption">
+              <h3 class="quotes">"I designed LandingStrip to be easily editable for everyone."</h3>
+
+              <p class="center-align">- Ace Subido.</p>
+            </article>
+          </div>
+
         </div>
-        <div class="item">
-          <p>
-            <%= image_tag asset_path('code.png'), alt: "code" %>
-          </p>
-          <article class="carousel-caption">
-            <h3><strong>App</strong> is a powerful and robust text-editor.</h3>
-
-            <p class="center-align">Hit it up! It'll be your favorite text-editor!</p>
-          </article>
-        </div>
-        <div class="item">
-          <p>
-            <%= image_tag asset_path('folders.png'), alt: "folders" %>
-          </p>
-          <article class="carousel-caption">
-            <h3 class="quotes">"I designed LandingStrip to be easily editable for everyone."</h3>
-
-            <p class="center-align">- Ace Subido.</p>
-          </article>
-        </div>
-
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
       </div>
-      <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
-      <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
     </div>
   </div>
 </section>
@@ -79,26 +81,21 @@
   <div class="container">
     <div class="row">
       <article class="span4 center-align">
-        <%= image_tag asset_path('responsive.png'), alt: "responsive" %>
-        <h3>Responsive design</h3>
+        <%= image_tag asset_path('camera.png'), alt: "responsive" %>
+        <h3>Effortless</h3>
 
-        <p>
-          Responsive in design, one template = fits many screens. A "single-page" base template with magical powers.
-        </p>
+        <p>Take pictures and enter details from your smart phone.</p>
 
         <p>
           <a href="#">Find out more</a>
         </p>
       </article>
       <article class="span4 center-align">
-        <%= image_tag asset_path('twitter.png'), alt: "twitter" %>
-        <h3>Built with Twitter Bootstrap</h3>
-
-        <p><i>"Sleek, intuitive, and powerful front-end framework for faster and easier web development."</i></p>
+        <%= image_tag asset_path('tags.png'), alt: "twitter" %>
+        <h3>Cost-Effective</h3>
 
         <p>
-          LandingStrip is built to work with <strong>Twitter Bootstrap</strong>, which makes it
-          easily modifiable, lean and clean.
+          Competitive bids ensure a fair price
         </p>
 
         <p>
@@ -107,18 +104,10 @@
 
       </article>
       <article class="span4 center-align">
-        <%= image_tag asset_path('heartwork.png'), alt: "heartwork" %>
-        <h3>Crafted with love.</h3>
+        <%= image_tag asset_path('clock.png'), alt: "heartwork" %>
+        <h3>Convenient</h3>
 
-        <p>
-          <i>"Absolutely enjoyed the process of crafting a sharp and consistent tone for LandingStrip.
-            Tried to mold a template where people can clearly get their intent across with a single-page using a
-            story-like flow."</i>
-        </p>
-
-        <p>
-          <strong>- Ace Subido</strong>
-        </p>
+          <p>"No more waiting for contractors."</p>
 
         <p>
           <a href="#">Find out who we are</a>
@@ -148,12 +137,7 @@
       <h3 class="subhead">Your <strong>App</strong> is used by people all over the world.</h3>
 
       <div class="logo-list">
-        <%= image_tag asset_path('logoplaceholder.png'), alt: "companyA" %>
-        <%= image_tag asset_path('logoplaceholder.png'), alt: "companyA" %>
-        <%= image_tag asset_path('logoplaceholder.png'), alt: "companyA" %>
-        <%= image_tag asset_path('logoplaceholder.png'), alt: "companyA" %>
-        <%= image_tag asset_path('logoplaceholder.png'), alt: "companyA" %>
-        <%= image_tag asset_path('logoplaceholder.png'), alt: "companyA" %>
+        <%= image_tag asset_path('homespreelogo.png'), alt: "companyA" %>
       </div>
       <p><a href="#" class="big-btn">Sign Up</a></p>
 

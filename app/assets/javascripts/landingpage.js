@@ -1,4 +1,5 @@
 $(document).ready(function (evt) {
+
   $('.mailing-list').submit(function () {
     var valuesToSubmit = $(this).serialize();
     $.ajax({
@@ -11,4 +12,5 @@ $(document).ready(function (evt) {
         });
     return false; // prevents normal behaviour
   });
+
 });

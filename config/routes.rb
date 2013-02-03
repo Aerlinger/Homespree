@@ -1,14 +1,13 @@
 Homespree::Application.routes.draw do
 
+  resources :mailinglists
+
+
   match "email_list/create" => "email_list#create", via: :post
-  get "email_list/destroy"
+  match "email_list/destroy" => "email_list#destroy", via: :post
 
-  resources :email_list, only: [:create, :destroy] do
-
-  end
-
+  # Home page
   match 'pages/home' => 'high_voltage/pages#show', :id => 'home'
-
   root :to => 'high_voltage/pages#show', :id => 'home'
 
 

@@ -1,13 +1,12 @@
+$headerHeight: 60px;
+
 
 body {
-  padding: 30px 0 0;
-  border-top: 3px solid #D84A38;
-  background: #efefef;
   background-image: url(<%= asset_path "bg.png" %>);
 }
 
 p {
-  font: 14px/23px 'Open Sans', sans-serif;
+  font: 14px/23px "Helvetica Neue", helvetica, sans-serif;
   text-shadow: #ffffff 0 1px 0;
 }
 
@@ -42,8 +41,8 @@ a {
 */
 
 h2 {
-  text-align: center;
-  font: 400 44px/71px 'Open Sans', sans-serif;
+  text-align: left;
+  font: 2.2em "helvetica neue", helvetica, sans-serif;
   margin: 18px 0;
 
   strong {
@@ -52,27 +51,35 @@ h2 {
 }
 
 h3 {
-  text-align: center;
-  margin: 0px 0px 15px;
-  font: 400 28px/45px 'Open Sans', sans-serif;
+  text-align: left;
+  margin: 0 0 15px;
+  font: 2em Helvetica;
 
 }
 
 h4 {
-  font: 600 16px/26px 'Open Sans', sans-serif;
+  font: 600 16px/26px "Helvetica Neue", helvetica, sans-serif;
 }
 
 .subhead {
-  font-family: 'Merriweather', serif;
+  font-family: "Helvetica Neue", helvetica, sans-serif;
   font-weight: 400;
   color: #aaaaaa;
   margin-bottom: 40px;
 }
 
 .quotes {
-  font-family: 'Merriweather', serif;
+  font-family: "Helvetica Neue", helvetica, sans-serif;
   font-size: 24px;
   color: #555555;
+}
+
+.header {
+  background: none repeat scroll 0 0 white;
+  box-shadow: 12px 0 15px 0 rgba(0, 0, 0, 0.5);
+  height: $headerHeight;
+  margin-bottom: -$headerHeight;
+  opacity: 0.9;
 }
 
 /*
@@ -93,27 +100,28 @@ h4 {
   margin: 0 0 15px;
 
   .brand {
-    font-family: 'Merriweather', serif;
+    font-family: "Helvetica Neue", helvetica, sans-serif;
     font-weight: 700;
     font-size: 24px;
     padding: 0;
     margin-left: 0;
+    margin-top: 8px;
   }
 
   .nav {
     float: right;
     display: inline-block;
+    margin: 12px 10px 0 0;
 
-      li {
+    li {
           margin-left: 15px;
       }
   }
-
 }
 
 .navbar .nav li a,
 .footer-box a {
-  font: 600 16px/26px 'Open Sans', sans-serif;
+  font: 600 16px/26px "Helvetica Neue", helvetica, sans-serif;
   padding: 6px 18px;
   color: #888888;
   text-shadow: 0 1px 0 #ffffff;
@@ -153,12 +161,9 @@ h4 {
 
 .highlight {
   margin-top: 40px;
-  margin-bottom: 40px;
-  text-align: center;
 
   img {
-    margin-bottom: 30px;
-    text-align: center;
+    margin-left: -32px;
   }
 }
 
@@ -180,7 +185,7 @@ h4 {
 
 .carousel .item > p,
 .carousel-caption p {
-  font: 14px/23px 'Open Sans', sans-serif;
+  font: 14px/23px  "Helvetica Neue", helvetica, sans-serif;
   text-shadow: #ffffff 0 1px 0;
   color: #333333;
   text-align: center;
@@ -200,7 +205,7 @@ h4 {
   color: #333333;
 
   h3 {
-    font-family: 'Open Sans', sans-serif;
+    font-family:  "Helvetica Neue", helvetica, sans-serif;
     font-weight: 600;
     font-size: 24px;
     margin-bottom: 15px;
@@ -265,7 +270,7 @@ h4 {
 .footer-box {
   padding: 30px 0;
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
+  font-family:  "Helvetica Neue", helvetica, sans-serif;
   font-size: 14px;
   line-height: 26px;
   color: #888888;
@@ -285,60 +290,9 @@ h4 {
 
 }
 
-
 .thumbnails {
   margin-top: 30px;
 }
-
-/*
-* big sign up button 
-*/
-
-.big-btn {
-  display: inline-block;
-  font: 400 24px/39px 'Open Sans', sans-serif;
-  padding: 12px 36px;
-  margin: 8px 0px;
-
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  border-radius: 8px;
-
-  color: #fff;
-  text-shadow: #3799ca 0 -1px 0;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-
-  background-color: #0072bb;
-  background-image: -moz-linear-gradient(top, #4d90fe, #0072bb);
-  background-image: -ms-linear-gradient(top, #4d90fe, #0072bb);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#4d90fe), to(#0072bb));
-  background-image: -webkit-linear-gradient(top, #4d90fe, #0072bb);
-  background-image: -o-linear-gradient(top, #4d90fe, #0072bb);
-  background-image: linear-gradient(top, #4d90fe, #0072bb);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#4d90fe', endColorstr = '#0072bb', GradientType = 0);
-
-  &:hover {
-    color: #ffffff;
-    text-decoration: none;
-
-    background-color: #4d90fe;
-    background-image: -moz-linear-gradient(top, #4d90fe, #4787ed);
-    background-image: -ms-linear-gradient(top, #4d90fe, #4787ed);
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#4d90fe), to(#4787ed));
-    background-image: -webkit-linear-gradient(top, #4d90fe, #4787ed);
-    background-image: -o-linear-gradient(top, #4d90fe, #4787ed);
-    background-image: linear-gradient(top, #4d90fe, #4787ed);
-
-    background-repeat: repeat-x;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#4d90fe', endColorstr = '#4787ed', GradientType = 0);
-
-  }
-
-  &:link, &:visited {
-    color: #ffffff;
-  }
-}
-
 
 /*
 * shadows
