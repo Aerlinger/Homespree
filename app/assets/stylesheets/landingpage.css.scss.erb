@@ -95,7 +95,7 @@ label, input, button, select, textarea {
 }
 
 .search-area .btn {
-  background: none repeat scroll 0px 0px rgb(15, 124, 0) !important;
+  background: none repeat scroll 0 0 #f21d9f !important;
 }
 
 .search-area .icon-and-text {
@@ -107,7 +107,7 @@ label, input, button, select, textarea {
 
 .btn.green {
   border-color: black;
-  background: -moz-linear-gradient(center top , rgb(93, 201, 7) 0%, rgb(87, 185, 6) 50%, rgb(80, 173, 6) 50.1%, rgb(79, 172, 4) 100%) repeat scroll 0% 0% transparent;
+  background: -moz-linear-gradient(center top, #5DC907 0%, #57B906 50%, #50AD06 50.1%, #4FAC04 100%) repeat scroll 0 0 transparent;
 }
 
 .btn {
@@ -167,5 +167,5 @@ label, input, button, select, textarea {
   width: 550px;
   height: 573px;
 
-  background: url('http://fray.it/img/hand_iphone.png') right bottom no-repeat;
+  background: url(<%= asset_path("iphone.png") %>) right bottom no-repeat;
 }
