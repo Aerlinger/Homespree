@@ -1,7 +1,9 @@
+$pitch_height: 613px;
+
 .pitch  {
   padding-top: 60px;
 
-  min-height: 613px;
+  min-height: $pitch_height;
 }
 
 .showcase {
@@ -165,7 +167,9 @@ label, input, button, select, textarea {
   z-index: 3;
 
   width: 550px;
-  height: 573px;
+  height: 572px;
+
+  background-size:80px auto;
 
   background: url(<%= asset_path("iphone.png") %>) right bottom no-repeat;
 }
