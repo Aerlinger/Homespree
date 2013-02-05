@@ -22,7 +22,6 @@ group :assets do
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer', :platforms => :ruby
-
   gem 'uglifier', '>= 1.0.3'
 
   gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
