@@ -1,4 +1,4 @@
-$headerHeight: 60px;
+$headerHeight: 50px;
 $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
 
 
@@ -99,12 +99,13 @@ h4 {
   -moz-box-shadow: none;
   filter: none;
 
-  border: none;
+  border: 3px solid #9ebdff;
 }
 
 .navbar {
-  opacity: 0.9;
+  opacity: 0.5;
   box-shadow: 12px 0 15px 0 rgba(0, 0, 0, 0.5);
+  height: 0px;
 
   .brand {
     font-family: "Helvetica Neue", helvetica, sans-serif;
@@ -298,6 +299,10 @@ h4 {
   line-height: 26px;
   color: #888888;
 
+  img {
+    margin: 0;
+  }
+
   .links {
     margin: 5px 0px 20px 0px;
 
@@ -353,9 +358,6 @@ h4 {
   margin: -7px;
 
   img {
-    height: 70px;
-    box-shadow: $shadow;
-    background: white;
-    padding-bottom: 5px;
+    width: 60%;
   }
 }

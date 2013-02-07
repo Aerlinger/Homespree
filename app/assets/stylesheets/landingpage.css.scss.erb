@@ -6,11 +6,6 @@ $pitch_height: 613px;
   min-height: $pitch_height;
 }
 
-.showcase {
-  box-shadow: 12px 0 15px 0 rgba(0, 0, 0, 0.5);
-  background: white;
-}
-
 #checkout {
   font-size: 2em;
   height: 30px;
@@ -138,6 +133,7 @@ label, input, button, select, textarea {
   text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.4);
 }
 
+
 // Search form:
 #search_form {
   margin-top: 140px;
@@ -172,4 +168,16 @@ label, input, button, select, textarea {
   background-size:80px auto;
 
   background: url(<%= asset_path("iphone.png") %>) right bottom no-repeat;
+}
+
+.showcase {
+  box-shadow: 12px 0 15px 0 rgba(0, 0, 0, 0.5);
+  background: url(<%= asset_path("bg.png") %>) repeat-xy;
+}
+
+#myCarousel {
+  img {
+    width: 80%;
+    height: auto;
+  }
 }
