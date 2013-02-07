@@ -1,8 +1,8 @@
 class MailinglistsController < ApplicationController
 
   layout "administration"
-  http_basic_authenticate_with name: "admin", password: "goober", except: :create
 
+  before_filter :authenticate
 
 
   def new
@@ -59,7 +59,7 @@ class MailinglistsController < ApplicationController
       if @mailinglist.update_attributes(params[:mailinglist])
         format.html { redirect_to @mailinglist, notice: 'Mailinglist was successfully updated.' }
         format.json { head :no_content }
-      else
+       else
         format.html { render action: "edit" }
         format.json { render json: @mailinglist.errors, status: :unprocessable_entity }
       end
@@ -75,4 +75,13 @@ class MailinglistsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  protected
+
+  def authenticate
+    authenticate_or_request_with_http_basic do |username, password|
+      username == "admin" && password == "Meetmike"
+    end
+  end
+
 end

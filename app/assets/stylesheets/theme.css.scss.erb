@@ -1,4 +1,5 @@
 $headerHeight: 60px;
+$shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
 
 
 body {
@@ -23,7 +24,6 @@ a {
 
   &:hover {
     color: #3799ca;
-    text-decoration: underline;
   }
 }
 
@@ -105,7 +105,6 @@ h4 {
 .navbar {
   opacity: 0.9;
   box-shadow: 12px 0 15px 0 rgba(0, 0, 0, 0.5);
-  margin: 0 0 15px;
 
   .brand {
     font-family: "Helvetica Neue", helvetica, sans-serif;
@@ -113,30 +112,42 @@ h4 {
     font-size: 24px;
     padding: 0;
     margin-left: 0;
-    margin-top: 8px;
   }
 
   .nav {
     float: right;
     display: inline-block;
-    margin: 12px 10px 0 0;
+    height: $headerHeight !important;
 
     li {
-          margin-left: 15px;
-      }
+      height: 100%;
+    }
   }
 }
 
-.navbar .nav li a,
+.navbar .nav li a {
+  font: 600 16px/26px "Helvetica Neue", helvetica, sans-serif;
+  padding: 0px 18px;
+  margin: 0 !important;
+
+  text-shadow: none;
+  color: #414e9a;
+
+  background-color: black;
+
+  line-height: 16px;
+  text-align: center;
+  height: 100%;
+}
+
 .footer-box a {
   font: 600 16px/26px "Helvetica Neue", helvetica, sans-serif;
   padding: 6px 18px;
-  //color: #3059b0;
+
   color: #ffffff;
 
   text-shadow: 0px 0px 13px black, 0px -1px 1px rgba(0, 0, 0, 0.6);
 
-  //text-shadow: 0 1px 0 #ffffff;
   line-height: 16px;
   text-align: center;
 }
@@ -145,8 +156,6 @@ h4 {
 .footer-box .active a {
   color: #ffffff;
 
-  //text-shadow: none;
-  //text-shadow: 0 1px 0 #ffffff;
   background-color: transparent;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -157,7 +166,7 @@ h4 {
 .footer-box a:hover {
   color: #3799ca;
   //text-shadow: 0 1px 0 #ffffff;
-  text-decoration: underline;
+  //text-decoration: underline;
 }
 
 .navbar .nav .active a:hover,
@@ -249,17 +258,17 @@ h4 {
 .mobile-button {
   text-align: center;
 
-  img {
-    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, .5);
-    -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, .5);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, .5);
+  /*img {*/
+    /*-webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, .5);*/
+    /*-moz-box-shadow: 0 2px 5px rgba(0, 0, 0, .5);*/
+    /*box-shadow: 0 2px 5px rgba(0, 0, 0, .5);*/
 
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    border-radius: 8px;
+    /*-webkit-border-radius: 8px;*/
+    /*-moz-border-radius: 8px;*/
+    /*border-radius: 8px;*/
 
-    margin: 10px 20px;
-  }
+    /*margin: 10px 20px;*/
+  /*}*/
 }
 
 
@@ -338,4 +347,15 @@ h4 {
 .shadow-line {
   border-top: 1px solid #cccccc;
   border-bottom: 1px solid #ffffff;
+}
+
+#logo {
+  margin: -7px;
+
+  img {
+    height: 70px;
+    box-shadow: $shadow;
+    background: white;
+    padding-bottom: 5px;
+  }
 }
