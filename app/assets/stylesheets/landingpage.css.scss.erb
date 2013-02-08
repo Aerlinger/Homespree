@@ -41,7 +41,7 @@ textarea, input[type="text"], input[type="email"], input[type="password"], input
   transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
 }
 
-.search-area input[type="text"],  .search-area input[type="email"], .dropdown {
+.search-area input[type="text"], .search-area input[type="email"], .dropdown {
   border: 1px solid #000000;
   border-radius: 3px 3px 3px 3px;
   font-size: 17px;
@@ -159,7 +159,7 @@ label, input, button, select, textarea {
 
 #iphone_preview {
   position: absolute;
-  right: 0;
+  right: 0px;
   z-index: 3;
 
   width: 550px;
@@ -172,7 +172,8 @@ label, input, button, select, textarea {
 
 .showcase {
   box-shadow: 12px 0 15px 0 rgba(0, 0, 0, 0.5);
-  background: url(<%= asset_path("bg.png") %>) repeat-xy;
+  background: url(<%= asset_path("bg/bg5.png") %>) repeat;
+  background-color: white;
 }
 
 #myCarousel {

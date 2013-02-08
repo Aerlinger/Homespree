@@ -1,4 +1,4 @@
-$headerHeight: 50px;
+$headerHeight: 10px;
 $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
 
 
@@ -85,7 +85,7 @@ h4 {
 
   height: $headerHeight;
   margin-bottom: -$headerHeight;
-  opacity: 0.9;
+  opacity: 1;
 }
 
 /*
@@ -93,7 +93,8 @@ h4 {
 */
 
 .navbar-inner {
-  background: white;
+  background: url(<%= asset_path("bg/bg2.png") %>) repeat;
+  background-color: white;
   box-shadow: none;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
@@ -103,9 +104,8 @@ h4 {
 }
 
 .navbar {
-  opacity: 0.5;
+  opacity: 1;
   box-shadow: 12px 0 15px 0 rgba(0, 0, 0, 0.5);
-  height: 0px;
 
   .brand {
     font-family: "Helvetica Neue", helvetica, sans-serif;
@@ -118,28 +118,44 @@ h4 {
   .nav {
     float: right;
     display: inline-block;
-    height: $headerHeight !important;
+    height: 52px !important;
+    background: rgba(255, 255, 255, 0.63);
 
     li {
       height: 100%;
+      display: table;
+      margin-left: .5em;
+
+      &:hover {
+        background: white;
+
+        box-shadow:  $shadow;
+        border-bottom: 1px solid #dae1ff;
+        border-left: 1px solid #90a6ff;
+        border-right: 1px solid #bbcfff;
+      }
+
+      a {
+
+        font: 400 19px/28px "Helvetica Neue", helvetica, sans-serif;
+        padding: 15px 20px;
+        margin: auto !important;
+
+        text-shadow: none;
+        color: rgba(18, 28, 26, 0.68);
+
+
+        text-align: center;
+        height: 100%;
+
+        &:hover {
+          color: black !important;
+        }
+      }
     }
   }
 }
 
-.navbar .nav li a {
-  font: 600 16px/26px "Helvetica Neue", helvetica, sans-serif;
-  padding: 0px 18px;
-  margin: 0 !important;
-
-  text-shadow: none;
-  color: #414e9a;
-
-  background-color: black;
-
-  line-height: 16px;
-  text-align: center;
-  height: 100%;
-}
 
 .footer-box a {
   font: 600 16px/26px "Helvetica Neue", helvetica, sans-serif;
@@ -165,7 +181,7 @@ h4 {
 
 .navbar .nav li a:hover,
 .footer-box a:hover {
-  color: #3799ca;
+  color: #bceaff;
   //text-shadow: 0 1px 0 #ffffff;
   //text-decoration: underline;
 }
@@ -355,7 +371,7 @@ h4 {
 }
 
 #logo {
-  margin: -7px;
+  margin: -7px 0px -27px 0px;
 
   img {
     width: 60%;

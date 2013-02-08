@@ -21,7 +21,17 @@ a {
   }
   &:hover {
     color: #fff;
+
+/************************************** 
+What was causing the black on hover - BEGIN**
+****************************************
+
     background-color: #000;
+
+**************************************
+What was causing the black on hover - END
+****************************************/
+
   }
 }
 
