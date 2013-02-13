@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.11'
 
 gem "high_voltage"
-gem "activeadmin"
+gem "activeadmin", "0.3.1"
 gem "turbolinks"
 
 # Bundle edge Rails instead:
@@ -12,6 +12,7 @@ group :test, :development do
   gem 'sqlite3'
   gem 'rspec-rails', ">= 2.12.0"
   gem 'capybara'
+  gem 'turn', :require => false
 end
 
 group :production do
