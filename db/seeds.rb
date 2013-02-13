@@ -9,6 +9,7 @@
 # Make sure we are always included in Email List
 
 puts "Creating email list:"
+
 EmailList.create!(email: "aerlinger@gmail.com", contractor: false)
 EmailList.create!(email: "joe@myhomespree.com", contractor: false)
 EmailList.create!(email: "kyle@myhomespree.com", contractor: false)

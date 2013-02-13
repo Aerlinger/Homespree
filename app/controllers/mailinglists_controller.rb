@@ -2,7 +2,7 @@ class MailinglistsController < ApplicationController
 
   layout "administration"
 
-  before_filter :authenticate
+  before_filter :authenticate, except: new
 
 
   def new
@@ -11,6 +11,7 @@ class MailinglistsController < ApplicationController
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @mailinglist }
+      format.js
     end
   end
 
@@ -37,7 +38,7 @@ class MailinglistsController < ApplicationController
       if request.xhr?
         @email = params[:email]
         Mailinglist.create!(email: @email)
-        format.js { render :json => params }
+        format.js
       else
         @mailinglist = Mailinglist.new(params[:mailinglist])
         if @mailinglist.save

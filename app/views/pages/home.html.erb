@@ -16,8 +16,11 @@
                        class: "custom show-search-options position-left", id: "search_form" do %>
               <%= email_field_tag(:email, "", type: "text", class: "checkout search-option ui-datepicker-target",
                                   id:"checkout", placeholder: "Email") %>
+              <!--options_for_select([["Teacher", "t"], ["Student", "s"]])-->
+              <%= select_tag "customer_type", options_for_select([["I am a...", "t"], ["Homeowner", "t"], ["Contractor", "s"]]) %>
               <%= submit_tag "Sign Up", :disable_with => "Thanks!",
                              id: "submit_location", class: "large green btn icon-and-text position-right" %>
+            <p id="submit_success">Thanks! We'll keep you posted when we launch.</p>
           <% end %>
 
         </div>

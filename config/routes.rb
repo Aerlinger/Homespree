@@ -1,13 +1,18 @@
 Homespree::Application.routes.draw do
 
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
   resources :mailinglists
 
 
-  match "email_list/create" => "email_list#create", via: :post
-  match "email_list/destroy" => "email_list#destroy", via: :post
+  # Static pages page
+  match 'pages/home'        => 'high_voltage/pages#show', :id => 'home'
+  match 'pages/contractors' => 'high_voltage/pages#show', :id => 'contractors'
+  match 'pages/homeowners'  => 'high_voltage/pages#show', :id => 'homeowners'
+  match 'pages/about'       => 'high_voltage/pages#show', :id => 'about'
 
-  # Home page
-  match 'pages/home' => 'high_voltage/pages#show', :id => 'home'
   root :to => 'high_voltage/pages#show', :id => 'home'
 
 
