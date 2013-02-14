@@ -12,12 +12,8 @@
           <h2 style="color: white;">Get stuff done. Skip the hassle.</h2>
 
           <!-- Ajax email submission form: -->
-          <%= form_tag mailinglists_path, method: :post, remote: true, authenticity_token: false,
-                       class: "custom show-search-options position-left", id: "search_form" do %>
-              <%= email_field_tag(:email, "", type: "text", class: "checkout search-option ui-datepicker-target",
-                                  id:"checkout", placeholder: "Email") %>
-              <!--options_for_select([["Teacher", "t"], ["Student", "s"]])-->
-              <%# select_tag "customer_type", options_for_select([["I am a...", "t"], ["Homeowner", "t"], ["Contractor", "s"]]) %>
+          <%= form_tag mailinglists_path, method: :post, remote: true, id: "search_form" do %>
+            <%= email_field_tag(:email, "", type: "text", id: "email_signup", placeholder: "Email") %>
 
             <div id="customer_type" class="btn-group">
               <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
@@ -25,14 +21,14 @@
                 <span class="caret pull-right"></span>
               </a>
               <ul class="dropdown-menu">
-                <!-- dropdown menu links -->
                 <li><a href="#" onClick="return false;">Homeowner</a></li>
                 <li><a href="#" onClick="return false;">Contractor</a></li>
               </ul>
             </div>
 
-              <%= submit_tag "Sign Up", :disable_with => "Thanks!",
-                             id: "submit_location", class: "large green call-to-action icon-and-text position-right" %>
+            <%= submit_tag "Sign Up", :disable_with => "Thanks!",
+                           id: "submit_location", class: "large green call-to-action icon-and-text position-right" %>
+
             <p id="submit_success">Thanks! We'll keep you posted when we launch.</p>
           <% end %>
 
@@ -56,6 +52,7 @@
             </p>
             <article class="carousel-caption">
               <h3>Submit project requests right on your smartphone</h3>
+
               <p class="center-align">A few images and details is all it takes!</p>
             </article>
           </div>
@@ -66,6 +63,7 @@
             </p>
             <article class="carousel-caption">
               <h3>Contractors in your service area provide estimates</h3>
+
               <p class="center-align">Competitive bids ensure you pay a fair price</p>
             </article>
           </div>
@@ -76,6 +74,7 @@
             </p>
             <article class="carousel-caption">
               <h3>Make a more informed decision based on price, ratings and reviews</h3>
+
               <p class="center-align">Connect with your contractor directly through the app</p>
             </article>
           </div>

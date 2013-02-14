@@ -25,6 +25,12 @@ a {
   }
 }
 
+label, input, button, select, textarea {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  line-height: 18px;
+}
+
 
 .center-align {
   text-align: center;
@@ -39,21 +45,6 @@ a {
 }
 
 
-/*
-* headers
-*/
-
-h2 {
-  text-align: left;
-  font: 2.2em "helvetica neue", helvetica, sans-serif;
-  margin: 18px 0;
-
-  text-shadow: 0 0 13px rgba(0, 0, 0, 1), 0 -1px 1px rgba(0, 0, 0, 0.6);
-
-  strong {
-    font-weight: 700;
-  }
-}
 
 h3 {
   text-align: center;
@@ -180,8 +171,6 @@ h4 {
 .navbar .nav li a:hover,
 .footer-box a:hover {
   color: #bceaff;
-  //text-shadow: 0 1px 0 #ffffff;
-  //text-decoration: underline;
 }
 
 .navbar .nav .active a:hover,
@@ -203,100 +192,6 @@ h4 {
 
   img {
     margin-left: -32px;
-  }
-}
-
-/*
-* carousel
-*/
-.carousel a {
-  color: #ffffff;
-
-  .item a {
-    color: #3799ca;
-  }
-}
-
-.carousel-caption {
-  position: static;
-  background: transparent;
-}
-
-.carousel .item > p,
-.carousel-caption p {
-  font: 14px/23px  "Helvetica Neue", helvetica, sans-serif;
-  text-shadow: #ffffff 0 1px 0;
-  color: #333333;
-  text-align: center;
-}
-
-/*
-* section-box
-*/
-
-.section-box {
-  background: #ffffff;
-  box-shadow: none;
-  border: 1px solid #eeeeee;
-  padding: 60px 0;
-  margin-bottom: 20px;
-  color: #333333;
-
-  h3 {
-    font-family:  "Helvetica Neue", helvetica, sans-serif;
-    font-weight: 600;
-    font-size: 24px;
-    margin-bottom: 15px;
-    text-align: center;
-  }
-
-  img {
-    margin-top: 30px;
-    margin-bottom: 30px;
-  }
-
-  .row + .row {
-    margin-top: 30px;
-  }
-
-  .span6 + .span4 img {
-    float: right;
-  }
-
-}
-
-
-/*
-* mobile-buttons
-*/
-
-.mobile-button {
-  text-align: center;
-
-  /*img {*/
-    /*-webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, .5);*/
-    /*-moz-box-shadow: 0 2px 5px rgba(0, 0, 0, .5);*/
-    /*box-shadow: 0 2px 5px rgba(0, 0, 0, .5);*/
-
-    /*-webkit-border-radius: 8px;*/
-    /*-moz-border-radius: 8px;*/
-    /*border-radius: 8px;*/
-
-    /*margin: 10px 20px;*/
-  /*}*/
-}
-
-
-/*
-* logo list
-*/
-
-.logo-list {
-  margin-bottom: 40px;
-
-  img {
-    padding: 6px 18px;
-    margin: 4px 0px;
   }
 }
 
@@ -332,10 +227,6 @@ h4 {
 
 }
 
-.thumbnails {
-  margin-top: 30px;
-}
-
 /*
 * shadows
 */
@@ -361,11 +252,6 @@ h4 {
     -moz-box-shadow: 0 10px 10px rgba(0, 0, 0, 1);
     box-shadow: 0 10px 10px rgba(0, 0, 0, 1);
   }
-}
-
-.shadow-line {
-  border-top: 1px solid #cccccc;
-  border-bottom: 1px solid #ffffff;
 }
 
 #logo {

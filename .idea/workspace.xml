@@ -2,22 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69305659-f161-4004-b356-b79c1d87fc7f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/landingpage.js.coffee" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/javascripts/pages.js.coffee" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/images/googleplus-icon.png" afterPath="$PROJECT_DIR$/app/assets/images/googleplus-icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/images/homebackground.png" afterPath="$PROJECT_DIR$/app/assets/images/homebackground.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pages/home.html.erb" afterPath="$PROJECT_DIR$/app/views/pages/home.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/landingpage.css.scss.erb" afterPath="$PROJECT_DIR$/app/assets/stylesheets/landingpage.css.scss.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/theme.css.scss.erb" afterPath="$PROJECT_DIR$/app/assets/stylesheets/theme.css.scss.erb" />
     </list>
     <ignored path="Homespree.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360728804655" ignored="false" />
     <file path="$PROJECT_DIR$/../rails_sandbox/ultimate_rails_site/db/schema.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360210339150" ignored="false" />
     <file path="/schema.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360437537268" ignored="false" />
-    <file path="/home.html.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360859622180" ignored="false" />
+    <file path="/home.html.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360874586901" ignored="false" />
     <file path="/theme.css.scss.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360309798098" ignored="false" />
-    <file path="/landingpage.css.scss.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360859883740" ignored="false" />
+    <file path="/landingpage.css.scss.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360874622840" ignored="false" />
     <file path="/dummy.txt" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360307495664" ignored="false" />
     <file path="$PROJECT_DIR$/../../Code/rails/BootstrapDemo/Gemfile" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360418508799" ignored="false" />
     <file path="$PROJECT_DIR$/../../Code/rails/BootstrapDemo/app/views/layouts/application.html.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360418305683" ignored="false" />
@@ -136,10 +132,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="home.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="home.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/pages/home.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="33" selection-start="1138" selection-end="1138" vertical-scroll-proportion="-6.875">
+            <state line="66" column="86" selection-start="2345" selection-end="2345" vertical-scroll-proportion="0.5254471">
               <folding>
                 <element signature="n#style#0;n#h2#0;n#div#0;n#header#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
               </folding>
@@ -147,28 +143,30 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mailinglists.css.scss" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/mailinglists.css.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="0" selection-start="262" selection-end="262" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="landingpage.css.scss.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="landingpage.css.scss.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/landingpage.css.scss.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="0" selection-start="1365" selection-end="1365" vertical-scroll-proportion="0.96638656">
+            <state line="150" column="19" selection-start="3057" selection-end="3057" vertical-scroll-proportion="-20.916666">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="applelogo1.png" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/images/applelogo1.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
+      <file leaf-file-name="theme.css.scss.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/theme.css.scss.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="271" column="1" selection-start="4312" selection-end="4312" vertical-scroll-proportion="-12.791667">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bootstrap.js.coffee" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/bootstrap.js.coffee">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="30" selection-start="98" selection-end="98" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -176,24 +174,17 @@
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/landingpage.js.coffee">
           <provider selected="true" editor-type-id="text-editor">
             <state line="4" column="0" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0">
-              <folding>
-                <marker date="1360859586000" expanded="true" signature="7:122" placeholder="..." />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_header.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
+      <file leaf-file-name="application.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="0" selection-start="535" selection-end="535" vertical-scroll-proportion="-10.625">
+            <state line="16" column="0" selection-start="671" selection-end="671" vertical-scroll-proportion="0.0">
               <folding>
-                <marker date="1360811621000" expanded="true" signature="25:533" placeholder="..." />
-                <marker date="1360811621000" expanded="true" signature="67:524" placeholder="..." />
-                <marker date="1360811621000" expanded="true" signature="100:513" placeholder="..." />
-                <marker date="1360811621000" expanded="true" signature="132:500" placeholder="..." />
-                <marker date="1360811621000" expanded="true" signature="179:255" placeholder="..." />
-                <marker date="1360811621000" expanded="true" signature="282:485" placeholder="..." />
+                <element signature="n#!!doc" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -222,7 +213,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/theme.css.scss.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/mailinglists.js" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/landingpage.js" />
         <option value="$PROJECT_DIR$/app/views/mailinglists/new.js.erb" />
@@ -236,8 +226,9 @@
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_header.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/landingpage.js.coffee" />
-        <option value="$PROJECT_DIR$/app/views/pages/home.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/landingpage.css.scss.erb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/theme.css.scss.erb" />
+        <option value="$PROJECT_DIR$/app/views/pages/home.html.erb" />
       </list>
     </option>
   </component>
@@ -483,6 +474,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Homespree" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HomespreeRails" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1128,13 +1145,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/bootstrap.js.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="31" selection-start="98" selection-end="99" vertical-scroll-proportion="0.06338028">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/pages_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="0" selection-start="135" selection-end="135" vertical-scroll-proportion="0.0">
@@ -1146,15 +1156,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="3" selection-start="330" selection-end="330" vertical-scroll-proportion="0.0">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="671" selection-end="671" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1176,30 +1177,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="0" selection-start="535" selection-end="535" vertical-scroll-proportion="-10.625">
           <folding>
-            <marker date="1360811621000" expanded="true" signature="25:533" placeholder="..." />
-            <marker date="1360811621000" expanded="true" signature="67:524" placeholder="..." />
-            <marker date="1360811621000" expanded="true" signature="100:513" placeholder="..." />
-            <marker date="1360811621000" expanded="true" signature="132:500" placeholder="..." />
-            <marker date="1360811621000" expanded="true" signature="179:255" placeholder="..." />
-            <marker date="1360811621000" expanded="true" signature="282:485" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/landingpage.js.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1360859586000" expanded="true" signature="7:122" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/pages/home.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="33" selection-start="1138" selection-end="1138" vertical-scroll-proportion="-6.875">
-          <folding>
-            <element signature="n#style#0;n#h2#0;n#div#0;n#header#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <marker date="1360811621000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1360811621000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1360811621000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1360811621000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1360811621000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1360811621000" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1211,8 +1194,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/landingpage.css.scss.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="0" selection-start="1365" selection-end="1365" vertical-scroll-proportion="0.96638656">
+        <state line="150" column="19" selection-start="3057" selection-end="3057" vertical-scroll-proportion="-20.916666">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/theme.css.scss.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="271" column="1" selection-start="4312" selection-end="4312" vertical-scroll-proportion="-12.791667">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="0" selection-start="671" selection-end="671" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/bootstrap.js.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="30" selection-start="98" selection-end="98" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/landingpage.js.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/pages/home.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="66" column="86" selection-start="2345" selection-end="2345" vertical-scroll-proportion="0.5254471">
+          <folding>
+            <element signature="n#style#0;n#h2#0;n#div#0;n#header#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
