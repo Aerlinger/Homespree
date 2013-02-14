@@ -17,8 +17,6 @@ $pitch_height: 613px;
 .search-area input[type="text"], .search-area input[type="email"] {
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4) inset;
   float: left;
-  height: 23px;
-  margin: 0;
   width: 110px;
 }
 
@@ -44,7 +42,6 @@ textarea, input[type="text"], input[type="email"], input[type="password"], input
 .search-area input[type="text"], .search-area input[type="email"], .dropdown {
   border: 1px solid #000000;
   border-radius: 3px 3px 3px 3px;
-  font-size: 17px;
   padding: 8px 12px;
   text-shadow: 0 1px 1px #FFFFFF;
 }
@@ -58,19 +55,13 @@ input:-moz-placeholder, textarea:-moz-placeholder {
 }
 
 select, textarea, input[type="text"], input[type="email"] input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
-  border-radius: 4px 4px 4px 4px;
-  color: #555555;
   display: inline-block;
-  font-size: 14px;
-  height: 20px;
-  line-height: 20px;
+  height: 45px;
   margin-bottom: 10px;
-  padding: 4px 6px;
   vertical-align: middle;
 }
 
 label, input, button, select, textarea {
-  font-size: 13px;
   font-weight: normal;
   line-height: 18px;
 }
@@ -82,17 +73,15 @@ input, button, select, textarea {
 // Button:
 
 label, input, button, select, textarea {
-  font-size: 13px;
   font-weight: normal;
   line-height: 18px;
 }
 
-.btn.large {
+.call-to-action.large {
   font-size: 18px;
 }
 
-.search-area .btn {
-  background: none repeat scroll 0 0 #f21d9f !important;
+.search-area .call-to-action {
 }
 
 .search-area .icon-and-text {
@@ -102,12 +91,12 @@ label, input, button, select, textarea {
   margin-top: 1px;
 }
 
-.btn.green {
+.call-to-action.green {
   border-color: black;
   background: -moz-linear-gradient(center top, #5DC907 0%, #57B906 50%, #50AD06 50.1%, #4FAC04 100%) repeat scroll 0 0 transparent;
 }
 
-.btn {
+.call-to-action {
   display: inline-block;
   padding: 0.4em 0.9em;
   -moz-box-sizing: border-box;
@@ -137,7 +126,7 @@ label, input, button, select, textarea {
 // Search form:
 #search_form {
   margin-top: 140px;
-  width: 715px;
+  width: 657px;
 }
 
 .search-area form {
@@ -150,7 +139,6 @@ label, input, button, select, textarea {
 }
 
 .search-area {
-  text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6), 0px -1px 1px rgba(0, 0, 0, 0.6);
 }
 
 #feature-screenshot {
@@ -166,7 +154,6 @@ label, input, button, select, textarea {
   height: 572px;
 
   background-size:80px auto;
-
   background: url(<%= asset_path("iphone.png") %>) right bottom no-repeat;
 }
 
@@ -186,7 +173,39 @@ label, input, button, select, textarea {
 #submit_success {
   display: none;
   margin-bottom: 2px;
-  color: white;
-  margin-left: 12px;
   font-weight: bold;
+  text-align: left;
+}
+
+#customer_type {
+  transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+
+  .caret {
+    margin-left: 85px;
+  }
+
+  & > a {
+    font-size: 18px;
+    height: 30px;
+    padding-top: 13px;
+    border: 1px solid #2f2f2f;
+  }
+
+  li {
+    width: 190px;
+    border: none !important;
+  }
+
+  height: 48px !important;
+  background: none;
+  left: 0;
+  right: 0;
+  top: 0;
+
+  color: #5A5A5A;
+  font-size: 13px;
+  height: 18px;
+  width: 190px;
+
+  margin-left: 7px;
 }
