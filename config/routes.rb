@@ -1,19 +1,22 @@
 Homespree::Application.routes.draw do
 
-  ActiveAdmin.routes(self)
+  get "pages/home"
 
-  devise_for :admin_users, ActiveAdmin::Devise.config
+  get "pages/contractors"
+
+  get "pages/homeowners"
+
+  get "pages/about"
 
   resources :mailinglists
 
-
   # Static pages page
-  match 'pages/home'        => 'high_voltage/pages#show', :id => 'home'
-  match 'pages/contractors' => 'high_voltage/pages#show', :id => 'contractors'
-  match 'pages/homeowners'  => 'high_voltage/pages#show', :id => 'homeowners'
-  match 'pages/about'       => 'high_voltage/pages#show', :id => 'about'
+  match 'home'        => 'pages#home', as: "home"
+  match 'contractors' => 'pages#contractors', as: "contractors"
+  match 'homeowners'  => 'pages#homeowners', as: "homeowners"
+  match 'about'       => 'pages#about', as: "about"
 
-  root :to => 'high_voltage/pages#show', :id => 'home'
+  root :to => 'pages#home', :id => 'home'
 
 
   # The priority is based upon order of creation:

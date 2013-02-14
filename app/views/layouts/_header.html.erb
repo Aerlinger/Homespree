@@ -7,9 +7,9 @@
             <%= image_tag asset_path("homespreelogo.png") %>
           </a>
           <ul class="nav">
-            <li><a href="#">Homeowners</a></li>
-            <li><a href="#">Contractors</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><%= link_to "Homeowners", homeowners_path%></li>
+            <li><%= link_to "Contractors", contractors_path%></li>
+            <li><%= link_to "About", about_path%></li>
           </ul>
         </div>
       </div>

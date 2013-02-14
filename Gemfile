@@ -2,8 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
 
-gem "high_voltage"
-gem "activeadmin", "0.3.1"
+gem "devise"
+#gem "activeadmin", "0.3.1"
 gem "turbolinks"
 
 # Bundle edge Rails instead:
@@ -39,7 +39,7 @@ gem 'jquery-rails'
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
-# gem 'jbuilder'
+# gem '`jbuilder'
 
 # Use unicorn as the app server
 # gem 'unicorn'
