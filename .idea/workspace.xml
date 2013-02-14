@@ -2,27 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69305659-f161-4004-b356-b79c1d87fc7f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/404.html" afterPath="$PROJECT_DIR$/public/404.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/422.html" afterPath="$PROJECT_DIR$/public/422.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/500.html" afterPath="$PROJECT_DIR$/public/500.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/landingpage.js.coffee" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/javascripts/pages.js.coffee" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/images/googleplus-icon.png" afterPath="$PROJECT_DIR$/app/assets/images/googleplus-icon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/images/homebackground.png" afterPath="$PROJECT_DIR$/app/assets/images/homebackground.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pages/home.html.erb" afterPath="$PROJECT_DIR$/app/views/pages/home.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/landingpage.css.scss.erb" afterPath="$PROJECT_DIR$/app/assets/stylesheets/landingpage.css.scss.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/mailinglists.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/mailinglists.css.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/theme.css.scss.erb" afterPath="$PROJECT_DIR$/app/assets/stylesheets/theme.css.scss.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Homespree.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360728804655" ignored="false" />
     <file path="$PROJECT_DIR$/../rails_sandbox/ultimate_rails_site/db/schema.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360210339150" ignored="false" />
     <file path="/schema.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360437537268" ignored="false" />
-    <file path="/home.html.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360814289964" ignored="false" />
+    <file path="/home.html.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360859622180" ignored="false" />
     <file path="/theme.css.scss.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360309798098" ignored="false" />
-    <file path="/landingpage.css.scss.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360815664110" ignored="false" />
+    <file path="/landingpage.css.scss.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360859883740" ignored="false" />
     <file path="/dummy.txt" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360307495664" ignored="false" />
     <file path="$PROJECT_DIR$/../../Code/rails/BootstrapDemo/Gemfile" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360418508799" ignored="false" />
     <file path="$PROJECT_DIR$/../../Code/rails/BootstrapDemo/app/views/layouts/application.html.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360418305683" ignored="false" />
     <file path="/application.html.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360441385600" ignored="false" />
-    <file path="/dummy.xml" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360432905977" ignored="false" />
+    <file path="/dummy.xml" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360858907852" ignored="false" />
     <file path="$PROJECT_DIR$/../../Code/rails/BootstrapDemo/config/routes.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360417191718" ignored="false" />
     <file path="/routes.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360811410529" ignored="false" />
     <file path="$PROJECT_DIR$/../../Code/rails/BootstrapDemo/app/assets/stylesheets/bootstrap_and_overrides.css.less" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360417605628" ignored="false" />
@@ -114,6 +114,7 @@
     <file path="/create.js.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360641867041" ignored="false" />
     <file path="/active_admin.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360729876102" ignored="false" />
     <file path="/_header.html.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360811605426" ignored="false" />
+    <file path="/landingpage.js.coffee" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360859418806" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,19 +136,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="routes.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/routes.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="51" selection-start="409" selection-end="409" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="home.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/pages/home.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="29" selection-start="1359" selection-end="1359" vertical-scroll-proportion="-10.625">
+            <state line="23" column="33" selection-start="1138" selection-end="1138" vertical-scroll-proportion="-6.875">
               <folding>
                 <element signature="n#style#0;n#h2#0;n#div#0;n#header#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
               </folding>
@@ -167,8 +159,26 @@
       <file leaf-file-name="landingpage.css.scss.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/landingpage.css.scss.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="140" column="14" selection-start="3890" selection-end="3890" vertical-scroll-proportion="0.6886633">
+            <state line="46" column="0" selection-start="1365" selection-end="1365" vertical-scroll-proportion="0.96638656">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="applelogo1.png" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/images/applelogo1.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="landingpage.js.coffee" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/landingpage.js.coffee">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="0" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0">
+              <folding>
+                <marker date="1360859586000" expanded="true" signature="7:122" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -177,16 +187,14 @@
         <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="17" column="0" selection-start="535" selection-end="535" vertical-scroll-proportion="-10.625">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Gemfile" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Gemfile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="3" selection-start="330" selection-end="330" vertical-scroll-proportion="0.0">
-              <folding />
+              <folding>
+                <marker date="1360811621000" expanded="true" signature="25:533" placeholder="..." />
+                <marker date="1360811621000" expanded="true" signature="67:524" placeholder="..." />
+                <marker date="1360811621000" expanded="true" signature="100:513" placeholder="..." />
+                <marker date="1360811621000" expanded="true" signature="132:500" placeholder="..." />
+                <marker date="1360811621000" expanded="true" signature="179:255" placeholder="..." />
+                <marker date="1360811621000" expanded="true" signature="282:485" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -214,7 +222,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/theme.css.scss.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/mailinglists.js" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/landingpage.js" />
@@ -228,6 +235,7 @@
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_header.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/landingpage.js.coffee" />
         <option value="$PROJECT_DIR$/app/views/pages/home.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/landingpage.css.scss.erb" />
       </list>
@@ -475,54 +483,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stylesheets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Homespree" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HomespreeRails" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javascripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Homespree" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HomespreeRails" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1050,7 +1010,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1920" height="1174" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286908" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1061,10 +1021,10 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27669454" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Regex Tester" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32961932" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="CSS-X-Fire" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39090064" sideWeight="0.49786553" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="CSS-X-Fire" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27669454" sideWeight="0.49786553" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953465" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1995731" sideWeight="0.17827298" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1995731" sideWeight="0.42432684" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16275346" sideWeight="0.21262766" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16275346" sideWeight="0.5041783" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31476322" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Routes" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32932165" sideWeight="0.68523675" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1129,7 +1089,15 @@
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/app/assets/javascripts/landingpage.js.coffee</url>
+          <line>2</line>
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="1" />
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/db/schema.rb">
@@ -1167,13 +1135,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/pages.js.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/pages_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="0" selection-start="135" selection-end="135" vertical-scroll-proportion="0.0">
@@ -1192,7 +1153,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="0" selection-start="671" selection-end="671" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1211,25 +1172,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="0" selection-start="535" selection-end="535" vertical-scroll-proportion="-10.625">
+          <folding>
+            <marker date="1360811621000" expanded="true" signature="25:533" placeholder="..." />
+            <marker date="1360811621000" expanded="true" signature="67:524" placeholder="..." />
+            <marker date="1360811621000" expanded="true" signature="100:513" placeholder="..." />
+            <marker date="1360811621000" expanded="true" signature="132:500" placeholder="..." />
+            <marker date="1360811621000" expanded="true" signature="179:255" placeholder="..." />
+            <marker date="1360811621000" expanded="true" signature="282:485" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/landingpage.js.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1360859586000" expanded="true" signature="7:122" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/pages/home.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="29" selection-start="1359" selection-end="1359" vertical-scroll-proportion="-10.625">
+        <state line="23" column="33" selection-start="1138" selection-end="1138" vertical-scroll-proportion="-6.875">
           <folding>
             <element signature="n#style#0;n#h2#0;n#div#0;n#header#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="535" selection-end="535" vertical-scroll-proportion="-10.625">
-          <folding />
-        </state>
+    <entry file="file://$PROJECT_DIR$/app/assets/images/applelogo1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/landingpage.css.scss.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="140" column="14" selection-start="3890" selection-end="3890" vertical-scroll-proportion="0.6886633">
+        <state line="46" column="0" selection-start="1365" selection-end="1365" vertical-scroll-proportion="0.96638656">
           <folding />
         </state>
       </provider>
