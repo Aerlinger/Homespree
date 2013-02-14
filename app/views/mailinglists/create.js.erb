@@ -1,3 +1,8 @@
-console.log("Submitted Email");
+var message = "Thanks! We'll let you know as soon as we launch.";
 
+<% unless @user_email.valid? %>
+  message = "Please fill out both fields";
+<% end %>
+
+$("#submit_success").text(message);
 $("#submit_success").show(400);

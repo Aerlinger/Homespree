@@ -7,7 +7,6 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
 
 .nav-stacked{
   color: black;
-
 }
 
 .secondary {
@@ -17,15 +16,20 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
     background-color: white;
   }
 
-  h3{
-    color: black;
-  }
+  h2{
 
+  }
   h3{
+    color: gray;
     text-align: left;
   }
 }
 
 .active{
+
   color: black;
+}
+
+.descriptiontext{
+  margin-top: 85px;
 }

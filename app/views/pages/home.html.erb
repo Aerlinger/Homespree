@@ -12,7 +12,7 @@
           <h2 style="color: white;">Get stuff done. Skip the hassle.</h2>
 
           <!-- Ajax email submission form: -->
-          <%= form_tag mailinglists_path, method: :post, remote: true, id: "search_form" do %>
+          <%= form_tag mailinglists_path, authenticate_with: :none, method: :post, remote: true, id: "search_form" do %>
             <%= email_field_tag(:email, "", type: "text", id: "email_signup", placeholder: "Email") %>
 
             <div id="customer_type" class="btn-group">
@@ -20,6 +20,9 @@
                 <span class="text">I am a...</span>
                 <span class="caret pull-right"></span>
               </a>
+
+              <input id="user_type" name="user_type" value="" style="display: none" />
+
               <ul class="dropdown-menu">
                 <li><a href="#" onClick="return false;">Homeowner</a></li>
                 <li><a href="#" onClick="return false;">Contractor</a></li>

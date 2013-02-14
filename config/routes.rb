@@ -1,12 +1,8 @@
 Homespree::Application.routes.draw do
 
-  get "pages/home"
+  ActiveAdmin.routes(self)
 
-  get "pages/contractors"
-
-  get "pages/homeowners"
-
-  get "pages/about"
+  devise_for :admin_users, ActiveAdmin::Devise.config
 
   resources :mailinglists
 

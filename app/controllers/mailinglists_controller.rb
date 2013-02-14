@@ -2,8 +2,6 @@ class MailinglistsController < ApplicationController
 
   layout "administration"
 
-  before_filter :authenticate, except: new
-
 
   def new
     @mailinglist = Mailinglist.new
@@ -32,23 +30,13 @@ class MailinglistsController < ApplicationController
 
 
   def create
+    email = params[:email]
+    user_type = params[:user_type]
 
-    # Todo: needs to be cleaned up: (separate route for XHR?)
+    @user_email = Mailinglist.create(email: email, user_type: user_type)
+
     respond_to do |format|
-      if request.xhr?
-        @email = params[:email]
-        Mailinglist.create!(email: @email)
         format.js
-      else
-        @mailinglist = Mailinglist.new(params[:mailinglist])
-        if @mailinglist.save
-          format.html { redirect_to mailinglists_path, notice: 'Mailinglist was successfully created.' }
-          format.json { render json: @mailinglist, status: :created, location: @mailinglist }
-        else
-          format.html { render action: "new" }
-          format.json { render json: @mailinglist.errors, status: :unprocessable_entity }
-        end
-      end
     end
   end
 

@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.11'
 
 gem "devise"
-#gem "activeadmin", "0.3.1"
+gem "activeadmin"
 gem "turbolinks"
 
 # Bundle edge Rails instead:
