@@ -7,7 +7,8 @@
     <a href="#">Terms of Use</a>
     <a href="#">Support</a>
   </nav>
-  <nav class="links">
+
+  <nav class="social-icons">
     <a href="#">
 
       <%= image_tag asset_path('twitter-icon.png'), alt: "twitter-icon" %>
@@ -15,4 +16,8 @@
     <a href="#"><%= image_tag asset_path('facebook-icon.png'), alt: "fb" %></a>
     <a href="#"><%= image_tag asset_path('googleplus-icon.png'), alt: "gplus" %></a>
   </nav>
+
+  <%= render "pages/partials/facebook_likes" %>
+  <%= render "pages/partials/tweets" %>
+
 </footer>

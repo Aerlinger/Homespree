@@ -8,12 +8,10 @@ describe "Home page" do
 
   subject { page }
 
-  it "should have top nav"
+  it { should have_selector(".navbar.navbar-fixed-top") }
 
-  it "should have footer"
+  it { should have_selector(".footer-box") }
 
-  it "should have email submission"
-
-  it { should have_selector("title") }
+  it { should have_xpath("//title", :text => "Homespree | The smart way to get home improvement estimates") }
 
 end

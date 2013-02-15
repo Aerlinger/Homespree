@@ -11,6 +11,9 @@ Homespree::Application.routes.draw do
   match 'contractors' => 'pages#contractors', as: "contractors"
   match 'homeowners'  => 'pages#homeowners', as: "homeowners"
   match 'about'       => 'pages#about', as: "about"
+  match 'contact'     => 'pages#contact', as: "contact"
+  match 'jobs'     => 'pages#jobs', as: "jobs"
+
 
   root :to => 'pages#home', :id => 'home'
 
