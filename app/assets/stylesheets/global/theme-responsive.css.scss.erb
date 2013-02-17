@@ -1,6 +1,40 @@
-@media (max-width: 980px) {
+@media (max-width: 1200px) {
+
+  #iphone_preview {
+    height: 450px !important;
+    top: 60px !important;
+    width: 400px !important;
+    background-size: 330px !important;
+  }
+
 
   .pitch {
+    padding-top: 30px !important;
+    min-height: 474px !important;
+
+    #customer_type {
+      margin-left: 1px !important;
+    }
+  }
+
+  #search_form {
+    width: 327px !important;
+    margin-top: 90px !important;
+  }
+
+}
+
+@media (max-width: 980px) {
+
+  .navbar-inner {
+    padding: 0px !important;
+  }
+
+  .pitch {
+    #customer_type {
+      margin-left: 1px !important;
+    }
+
     padding-top: 0px !important;
     min-height: 474px !important;
 
@@ -12,17 +46,11 @@
     }
   }
 
-  #search_form {
-    width: 332px !important;
-    margin-top: 90px !important;
-  }
+
 }
 
-@media (max-width: 747px) {
+@media (max-width: 767px) {
 
-  #iphone_preview {
-    display: none;
-  }
 
   body {
     padding: 0;
@@ -37,7 +65,7 @@
   }
 
   .pitch {
-    padding: 15px;
+    padding: 0 15px;
 
     .stressfree {
       display: none;
@@ -45,13 +73,6 @@
   }
 
   .navbar {
-
-    /*.brand {*/
-      /*float: none;*/
-      /*margin-bottom: 15px;*/
-      /*margin-top: 8px;*/
-      /*padding: 0;*/
-    /*}*/
 
     .nav {
       clear: both;
@@ -64,15 +85,6 @@
         float: left;
         margin: 4px 0px;
         height: 100%;
-
-        a {
-          text-align: left;
-          padding-left: 0px;
-          padding-right: 0px;
-          height: 100%;
-          padding: 0px 18px;
-          font: 400 16px/28px "Helvetica Neue", helvetica, sans-serif;
-        }
       }
 
     }
@@ -80,25 +92,42 @@
 
 }
 
-@media (max-width: 480px) {
+@media (max-width: 660px) {
+
+  body {
+    background-position-x: -320px !important;
+  }
+
+  footer {
+    padding: 10px !important;
+  }
+
+  #iphone_preview {
+    display: none;
+  }
 
   .pitch {
-    padding: 10px;
+    padding: 0 20px;
+    margin-bottom: 10px;
+    min-height: 360px !important;
+
+    #search_form {
+      margin: 0 auto;
+    }
   }
 
   .nav {
-    display: none;
+    display: none !important;
 
     ul {
       background: none !important;
     }
-
   }
 
   h2 {
     font-size: 32px;
     line-height: 52px;
-    text-align: left;
+    text-align: center !important;
     font: 2.2em "helvetica neue", helvetica, sans-serif;
     margin: 18px 0;
   }
