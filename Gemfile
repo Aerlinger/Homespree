@@ -5,6 +5,10 @@ gem 'rails', '3.2.11'
 gem "devise"
 gem "activeadmin"
 gem "turbolinks"
+gem "capistrano"
+gem 'newrelic_rpm'
+gem 'thin'
+gem 'libv8', '= 3.11.8.13'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -13,6 +17,10 @@ group :test, :development do
   gem 'rspec-rails', ">= 2.12.0"
   gem 'capybara'
   gem 'turn', :require => false
+end
+
+group :development do
+  gem "better_errors"
 end
 
 group :production do
@@ -43,9 +51,6 @@ gem 'jquery-rails'
 
 # Use unicorn as the app server
 # gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
 
 # To use debugger
 # gem 'debugger'
