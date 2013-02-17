@@ -53,4 +53,15 @@ describe Mailinglist do
     end
   end
 
+  describe "with invalid email" do
+    before do
+      subject.email = "test@test.c"
+      subject.user_type = "homeowner"
+      subject.save
+    end
+
+    it { should_not be_valid }
+  end
+
+
 end

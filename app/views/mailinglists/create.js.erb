@@ -1,7 +1,7 @@
 var message = "Thanks! We'll let you know as soon as we launch.";
 
 <% unless @user_email.valid? %>
-  message = "Please fill out both fields";
+  message = "Please enter a valid email address and specify if you are a contractor or homeowner";
 <% end %>
 
 $("#submit_success").text(message);

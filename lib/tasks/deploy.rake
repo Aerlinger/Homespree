@@ -7,7 +7,6 @@ APP = ARGV[1] || STAGING
 puts "=== APP #{APP} ==="
 
 
-
 namespace :deploy do
 
   task :migrations => [:push, :off, :migrate, :restart, :on]
@@ -24,12 +23,6 @@ namespace :deploy do
   task :precompile_assets do
     puts "Precompiling assets for #{APP}"
     puts `rake assets:precompile`
-  end
-
-  task :commit do
-    puts "Committing #{APP}"
-    puts `git add --all`
-    puts `git commit -v -a`
   end
 
   task :push do
