@@ -1,5 +1,11 @@
 Homespree::Application.routes.draw do
 
+  resources :addresses
+
+
+  resources :contractors
+
+
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config

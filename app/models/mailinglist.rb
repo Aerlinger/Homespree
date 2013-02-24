@@ -3,7 +3,7 @@ class Mailinglist < ActiveRecord::Base
   attr_accessor :user_type
 
   validates_presence_of :user_type, :email, allow_blank: false
-  validates :email, format: { with: /\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/i }
+  validates :email, format: { with: email_regex }
 
 
   before_save :check_user_type

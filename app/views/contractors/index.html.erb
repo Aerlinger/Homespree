@@ -1,0 +1,35 @@
+<h1>Listing contractors</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Number</th>
+    <th>Description</th>
+    <th>Specialties</th>
+    <th>Website</th>
+    <th>Facebook</th>
+    <th>Twitter</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @contractors.each do |contractor| %>
+  <tr>
+    <td><%= contractor.name %></td>
+    <td><%= contractor.number %></td>
+    <td><%= contractor.description %></td>
+    <td><%= contractor.specialties %></td>
+    <td><%= contractor.website %></td>
+    <td><%= contractor.facebook %></td>
+    <td><%= contractor.twitter %></td>
+    <td><%= link_to 'Show', contractor %></td>
+    <td><%= link_to 'Edit', edit_contractor_path(contractor) %></td>
+    <td><%= link_to 'Destroy', contractor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Contractor', new_contractor_path %>
