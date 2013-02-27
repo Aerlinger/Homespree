@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130224024634) do
+ActiveRecord::Schema.define(:version => 20130227011509) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(:version => 20130224024634) do
     t.string   "line2"
     t.string   "city"
     t.string   "state"
-    t.string   "zip"
+    t.string   "zipcode"
     t.integer  "addressable_id"
     t.string   "addressable_type"
     t.datetime "created_at",       :null => false
@@ -58,6 +58,17 @@ ActiveRecord::Schema.define(:version => 20130224024634) do
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
+  create_table "appointments", :force => true do |t|
+    t.date     "date"
+    t.datetime "time"
+    t.integer  "address_id"
+    t.string   "photos"
+    t.string   "reminders"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.integer  "contractor_id"
+  end
+
   create_table "contractors", :force => true do |t|
     t.string   "name"
     t.string   "number"
@@ -66,11 +77,26 @@ ActiveRecord::Schema.define(:version => 20130224024634) do
     t.string   "website"
     t.string   "facebook"
     t.string   "twitter"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
     t.text     "pictures"
-    t.string   "email"
+    t.string   "email",                  :default => "", :null => false
+    t.string   "last_name"
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.string   "password",               :default => "", :null => false
+    t.string   "password_confirmation",  :default => "", :null => false
+    t.string   "title"
   end
+
+  add_index "contractors", ["reset_password_token"], :name => "index_contractors_on_reset_password_token", :unique => true
 
   create_table "mailinglists", :force => true do |t|
     t.string   "email"

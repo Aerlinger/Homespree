@@ -22,7 +22,7 @@ describe Mailinglist do
       subject.should be_contractor
     end
 
-    describe "when setting user_type to anythin other than contractor" do
+    describe "when setting user_type to anything other than contractor" do
 
       before do
         subject.user_type = "h"
@@ -49,7 +49,6 @@ describe Mailinglist do
       end
 
       it { should_not be_persisted }
-
     end
   end
 

@@ -5,7 +5,6 @@ class Mailinglist < ActiveRecord::Base
   validates_presence_of :user_type, :email, allow_blank: false
   validates :email, format: { with: email_regex }
 
-
   before_save :check_user_type
   before_validation :downcase_email
 

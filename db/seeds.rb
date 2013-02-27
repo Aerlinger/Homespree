@@ -8,3 +8,9 @@ AdminUser.create!(:email => 'admin@myhomespree.com', :password => 'Meetmike9', :
 AdminUser.create!(:email => 'anthony@myhomespree.com', :password => 'Meetmike9', :password_confirmation => 'Meetmike9')
 AdminUser.create!(:email => 'kyle@myhomespree.com', :password => 'Meetmike9', :password_confirmation => 'Meetmike9')
 AdminUser.create!(:email => 'joe@myhomespree.com', :password => 'Meetmike9', :password_confirmation => 'Meetmike9')
+
+
+# Create a default Contractor
+
+joe = Contractor.new
+

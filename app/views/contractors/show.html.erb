@@ -1,8 +1,11 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <b>Name:</b>
   <%= @contractor.name %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @contractor.title %>
 </p>
 
 <p>
@@ -13,11 +16,6 @@
 <p>
   <b>Description:</b>
   <%= @contractor.description %>
-</p>
-
-<p>
-  <b>Specialties:</b>
-  <%= @contractor.specialties %>
 </p>
 
 <p>
@@ -41,5 +39,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_contractor_path(@contractor) %> |
-<%= link_to 'Back', contractors_path %>
+<%# link_to 'Edit', edit_contractor_path(@contractor) %> |
+<%# link_to 'Back', contractors_path %>

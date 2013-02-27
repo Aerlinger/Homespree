@@ -20,7 +20,7 @@ describe ContractorsController do
     end
 
     it "routes to #create" do
-      post("/contractors").should route_to("contractors#create")
+      post("/contractors").should route_to("controller"=>"devise/registrations", action: "create")
     end
 
     it "routes to #update" do

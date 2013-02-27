@@ -1,10 +1,10 @@
 Homespree::Application.routes.draw do
 
+  devise_for :contractors
+
+  resources :appointments
   resources :addresses
-
-
   resources :contractors
-
 
   ActiveAdmin.routes(self)
 

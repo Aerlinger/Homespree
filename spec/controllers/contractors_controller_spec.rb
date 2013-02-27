@@ -24,7 +24,11 @@ describe ContractorsController do
   # Contractor. As you add validations to Contractor, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    { "name" => "MyString" }
+    {
+        "email" => "joe@plumber.com",
+        "password" => "iamsecret",
+        "password_confirmation" => "iamsecret",
+    }
   end
 
   # This should return the minimal set of values that should be in the session
@@ -157,7 +161,7 @@ describe ContractorsController do
     it "redirects to the contractors list" do
       contractor = Contractor.create! valid_attributes
       delete :destroy, {:id => contractor.to_param}, valid_session
-      response.should redirect_to(contractors_url)
+      response.should redirect_to(root_path)
     end
   end
 

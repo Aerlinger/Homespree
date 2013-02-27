@@ -9,6 +9,7 @@ gem "capistrano"
 gem 'newrelic_rpm'
 gem 'thin'
 gem 'libv8', '= 3.11.8.13'
+gem 'devise'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -17,6 +18,13 @@ group :test, :development do
   gem 'rspec-rails', ">= 2.12.0"
   gem 'capybara'
   gem 'turn', :require => false
+
+  gem 'factory_girl_rails', '1.4.0'
+  gem 'database_cleaner', '0.7.0'
+  gem 'guard-rspec'
+  gem 'guard-spork', '0.3.2'
+  gem 'spork', '0.9.0'
+  gem 'launchy', '2.1.0'
 end
 
 group :development do
