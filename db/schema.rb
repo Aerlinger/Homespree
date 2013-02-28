@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130227011509) do
+ActiveRecord::Schema.define(:version => 20130228031157) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -71,7 +71,6 @@ ActiveRecord::Schema.define(:version => 20130227011509) do
 
   create_table "contractors", :force => true do |t|
     t.string   "name"
-    t.string   "number"
     t.text     "description"
     t.text     "specialties"
     t.string   "website"
@@ -94,6 +93,8 @@ ActiveRecord::Schema.define(:version => 20130227011509) do
     t.string   "password",               :default => "", :null => false
     t.string   "password_confirmation",  :default => "", :null => false
     t.string   "title"
+    t.string   "mobile_number",          :default => ""
+    t.string   "office_number",          :default => ""
   end
 
   add_index "contractors", ["reset_password_token"], :name => "index_contractors_on_reset_password_token", :unique => true
@@ -104,6 +105,14 @@ ActiveRecord::Schema.define(:version => 20130227011509) do
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
     t.text     "notes"
+  end
+
+  create_table "specialties", :force => true do |t|
+    t.string   "name"
+    t.integer  "endorser_id"
+    t.integer  "contractor_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
 end

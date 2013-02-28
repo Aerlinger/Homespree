@@ -9,7 +9,8 @@ describe Contractor do
   it { should respond_to :name }
   it { should respond_to :title }
   it { should respond_to :last_name }
-  it { should respond_to :number }
+  it { should respond_to :mobile_number }
+  it { should respond_to :office_number }
   it { should respond_to :description }
   it { should respond_to :website }
   it { should respond_to :facebook }
@@ -57,10 +58,27 @@ describe Contractor do
     it { should be_valid }
 
     it "should list incomplete sections" do
-      @joe.incomplete_sections.should == [:name, :title, :specialties, :addresses, :number, :website, :facebook, :twitter]
+      @joe.incomplete_sections.should == [:name, :title, :specialties, :addresses, :mobile_number, :office_number, :website, :facebook, :twitter]
 
       @joe.name = "joe"
-      @joe.incomplete_sections == [:title, :specialties, :addresses, :number, :website, :facebook, :twitter]
+      @joe.incomplete_sections == [:title, :specialties, :addresses, :mobile_number, :office_number, :website, :facebook, :twitter]
+    end
+
+    it "should capitalize first and last name" do
+      @joe.last_name = "schmoe"
+
+      @joe.save
+
+      @joe.name = "Joe"
+      @joe.last_name = "Schmoe"
+    end
+
+    it "should downcase email" do
+      @joe.email = "JoEtHEplumBEr@Lol.CoM"
+
+      @joe.save
+
+      @joe.email.should eq "joetheplumber@lol.com"
     end
 
   end
@@ -68,9 +86,34 @@ describe Contractor do
   describe "Create Invalid contractor" do
     before do
       @joe = Contractor.new
-      @joe.email = "joe@joespmbing.com"
+      @joe.email = "joe@joe.com"
       @joe.password = "iamsecret"
       @joe.password_confirmation = "iamsecret"
+    end
+
+    it "should initially be in a valid state" do
+      @joe.should be_valid
+    end
+
+    it "should error there is an invalid email" do
+      @joe.email = "joseph"
+      @joe.should_not be_valid
+    end
+
+
+    it "should error there is an absent email" do
+      @joe.email = ""
+      @joe.should_not be_valid
+
+      @joe.email = nil
+      @joe.should_not be_valid
+    end
+
+    it "should error when there are non-matching passwords" do
+      @joe.password = "iamsecret"
+      @joe.password = "secretiam"
+
+      @joe.should_not be_valid
     end
   end
 

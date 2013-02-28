@@ -11,18 +11,19 @@ class Contractor < ActiveRecord::Base
   # Accessors:
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :description,
-                  :facebook, :name, :number, :specialties, :twitter, :website
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :description, :mobile_number, :office_number,
+                  :facebook, :name, :specialties, :twitter, :website
 
   # Associations:
   has_many :addresses, as: :addressable
   has_many :appointments
 
   validates_presence_of :email, :password, :password_confirmation
+  validates_uniqueness_of :email
   validates_confirmation_of :password
 
   # Callbacks:
-  before_save :titleize_name, :downcase_email, :convert_number
+  before_save :titleize_name, :downcase_email, :convert_numbers
 
 
   # Only email is required for now:
@@ -32,11 +33,12 @@ class Contractor < ActiveRecord::Base
   def incomplete_sections
     sections = []
 
-    sections << :name if name.nil? && title.nil?
-    sections << :title if title.nil?
-    sections << :specialties if specialties.nil?
+    sections << :name if name.blank? && title.blank?
+    sections << :title if title.blank?
+    sections << :specialties if specialties.blank?
     sections << :addresses if addresses.blank?
-    sections << :number if number.nil?
+    sections << :mobile_number if mobile_number.blank?
+    sections << :office_number if office_number.blank?
     sections << :website if website.nil?
     sections << :facebook if facebook.nil?
     sections << :twitter if twitter.nil?
@@ -55,14 +57,20 @@ class Contractor < ActiveRecord::Base
     self.email.downcase! if self.email.present?
   end
 
+  def convert_numbers
+    self.office_number = convert_number(self.office_number)
+    self.mobile_number = convert_number(self.mobile_number)
+  end
+
   # Converts a number to a (xxx) yyy-zzzz format (United States)
-  def convert_number
-    if self.number.present?
+  def convert_number(number)
+    if !number.blank?
       begin
-        self.number.gsub!(/\D/, '')
-        self.number = number_to_phone(self.number, :area_code => true, throw: true)
-      rescue InvalidNumberError
+        number.gsub!(/\D/, '')
+        #number = number_to_phone(number, :area_code => true, throw: true)
+      rescue Error
         self.errors.add(:field, "Phone number is invalid")
+        return nil
       end
     end
     true
