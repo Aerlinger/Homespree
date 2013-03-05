@@ -119,7 +119,7 @@
     <orderEntry type="library" scope="PROVIDED" name="treetop (v1.4.12, RVM: ruby-1.9.3-p362) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="turbolinks (v1.0.0, RVM: ruby-1.9.3-p362) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="turn (v0.9.6, RVM: ruby-1.9.3-p362) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="twitter-bootstrap-rails (v2.1.4, RVM: ruby-1.9.3-p362) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="twitter-bootstrap-rails (v2.1.6, RVM: ruby-1.9.3-p362) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tzinfo (v0.3.36, RVM: ruby-1.9.3-p362) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="uglifier (v1.3.0, RVM: ruby-1.9.3-p362) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="warden (v1.2.1, RVM: ruby-1.9.3-p362) [gem]" level="application" />
