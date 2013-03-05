@@ -1,7 +1,5 @@
 class MailinglistsController < ApplicationController
 
-  layout "administration"
-
 
   def new
     @mailinglist = Mailinglist.new
