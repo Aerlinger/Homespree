@@ -25,12 +25,8 @@ bg/bg4.png: bg/bg4-040a96509f29feaf17fa32c4c924ed45.png
 bg/bg4/index.png: bg/bg4-040a96509f29feaf17fa32c4c924ed45.png
 bg/bg5.png: bg/bg5-b23be765c944e84a9fb607f7846c4c82.png
 bg/bg5/index.png: bg/bg5-b23be765c944e84a9fb607f7846c4c82.png
-camera.png: camera-b99aaf8317ee157db27d6e29c2c2f976.png
-camera/index.png: camera-b99aaf8317ee157db27d6e29c2c2f976.png
 cameraimagesupplementalpage.png: cameraimagesupplementalpage-754edad05266119c1aa19721a942ad2f.png
 cameraimagesupplementalpage/index.png: cameraimagesupplementalpage-754edad05266119c1aa19721a942ad2f.png
-clock.png: clock-ae8eb53ccc8642d73ac0db7d5bfe60e5.png
-clock/index.png: clock-ae8eb53ccc8642d73ac0db7d5bfe60e5.png
 code.png: code-fdb43a051a20e805e686483e1b5db23d.png
 code/index.png: code-fdb43a051a20e805e686483e1b5db23d.png
 facebook-icon.png: facebook-icon-06769a64927797e927aa7e0facb32354.png
@@ -47,8 +43,6 @@ googleplay.png: googleplay-d56ae567a1ac68ef9a03943a1d69d53e.png
 googleplay/index.png: googleplay-d56ae567a1ac68ef9a03943a1d69d53e.png
 googleplus-icon.png: googleplus-icon-96c6a8b103ddead938eae83eca9a4852.png
 googleplus-icon/index.png: googleplus-icon-96c6a8b103ddead938eae83eca9a4852.png
-heartwork.png: heartwork-db46f17a3a32169022ab5eaa4200cfb6.png
-heartwork/index.png: heartwork-db46f17a3a32169022ab5eaa4200cfb6.png
 homebackground.png: homebackground-2ea85bb4694f4b343a8d2fa3ec08fca8.png
 homebackground/index.png: homebackground-2ea85bb4694f4b343a8d2fa3ec08fca8.png
 homebackground.psd: homebackground-1b13569e9620782f423d4cd3ce931750.psd
@@ -63,8 +57,6 @@ homespreelogoshadow.psd: homespreelogoshadow-47336b455ba275b227ca0c909d7c370f.ps
 homespreelogoshadow/index.psd: homespreelogoshadow-47336b455ba275b227ca0c909d7c370f.psd
 homespreelogosmall.png: homespreelogosmall-a293494202ff913a643726476b11feb3.png
 homespreelogosmall/index.png: homespreelogosmall-a293494202ff913a643726476b11feb3.png
-ipad.png: ipad-bc8b7918a6d949f73dbb5193825cdde6.png
-ipad/index.png: ipad-bc8b7918a6d949f73dbb5193825cdde6.png
 iphone.png: iphone-c74aad1098f0a9a2308a32a556bd4b13.png
 iphone/index.png: iphone-c74aad1098f0a9a2308a32a556bd4b13.png
 iphoneabovefold.png: iphoneabovefold-cb87466e792d58dbdab76e6bb8ef7080.png
@@ -87,14 +79,10 @@ logoplaceholder.png: logoplaceholder-7f4e76875f7b4cdf8ddedfe10743667b.png
 logoplaceholder/index.png: logoplaceholder-7f4e76875f7b4cdf8ddedfe10743667b.png
 pitch.pdf: pitch-b5b0c745f4c6d85e7d1cdd2fe77d37b5.pdf
 pitch/index.pdf: pitch-b5b0c745f4c6d85e7d1cdd2fe77d37b5.pdf
-responsive.png: responsive-e8618133f363323bc5325799102f33a3.png
-responsive/index.png: responsive-e8618133f363323bc5325799102f33a3.png
 snow.png: snow-b23be765c944e84a9fb607f7846c4c82.png
 snow/index.png: snow-b23be765c944e84a9fb607f7846c4c82.png
 stressfree.png: stressfree-cfe2cc541743754b6471325893a2f493.png
 stressfree/index.png: stressfree-cfe2cc541743754b6471325893a2f493.png
-tags.png: tags-f4dc7baace5320bf152ffd82c8f6ad52.png
-tags/index.png: tags-f4dc7baace5320bf152ffd82c8f6ad52.png
 twitter-icon.png: twitter-icon-2f94590588a6b93f31bf8edca6da25bc.png
 twitter-icon/index.png: twitter-icon-2f94590588a6b93f31bf8edca6da25bc.png
 twitter-icon.psd: twitter-icon-9286dff8a57fe26b3ec605cec4393ebe.psd
@@ -107,8 +95,8 @@ application.js: application-8c1ff399e459415cd9853523a1b9303f.js
 application/index.js: application-8c1ff399e459415cd9853523a1b9303f.js
 active_admin.css: active_admin-90609299a46139379c83b41e2efa617b.css
 active_admin/index.css: active_admin-90609299a46139379c83b41e2efa617b.css
-application.css: application-9c301193a244698f3bfc7e8886b6e374.css
-application/index.css: application-9c301193a244698f3bfc7e8886b6e374.css
+application.css: application-5a116504dde3a3034009150ab985b907.css
+application/index.css: application-5a116504dde3a3034009150ab985b907.css
 fontawesome-webfont.eot: fontawesome-webfont-86a6da438b901860c3a54e21f9098bf8.eot
 fontawesome-webfont/index.eot: fontawesome-webfont-86a6da438b901860c3a54e21f9098bf8.eot
 fontawesome-webfont.svg: fontawesome-webfont-c3f3594758768fbb43eae746d18b3b50.svg
