@@ -1,210 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="69305659-f161-4004-b356-b79c1d87fc7f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/.addresses_controller.rb.swp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/pitch.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/assets/pitch.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/pages/partials/_sidenav.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/pages/pitch.html.erb" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/javascripts/addresses.js.coffee" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/javascripts/appointments.js.coffee" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/javascripts/contractors.js.coffee" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/12-Valle-Breakfast-web-762d92aeb85bfea8a0077bb5ae189acb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/12-Valle-Breakfast-web.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/3_iphones-19154da7773469efd7b1fcfcd7d0155b.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/3_iphones.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/6-Valle-Living-Room-wide-web-29e2d8875361c91883c9e9dc1c07489a.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/6-Valle-Living-Room-wide-web.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/Davis-Family-web1-f220ad452dcedbc6f30f111bd93580cc.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/Davis-Family-web1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin-15e149bd4566a2318012da476befd659.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin-15e149bd4566a2318012da476befd659.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin-90609299a46139379c83b41e2efa617b.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin-90609299a46139379c83b41e2efa617b.css.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin.css.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/admin_notes_icon-25b05cd8197f7a271d0624853a6dbdd5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/admin_notes_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/application-779f888844e34dddc8281502d7c62620.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/application-779f888844e34dddc8281502d7c62620.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/application.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/application.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/datepicker/datepicker-header-bg-6f0baad739953cb1a0413c031841e82f.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/datepicker/datepicker-header-bg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/datepicker/datepicker-input-icon-bfc0a6280a9bd52aa0048bda40a86ee2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/datepicker/datepicker-input-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/datepicker/datepicker-next-link-icon-0756e7b9d67c9ce07d8a73f05ad61fb2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/datepicker/datepicker-next-link-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/datepicker/datepicker-nipple-73672a71500080abed562eea4fee1f6a.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/datepicker/datepicker-nipple.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/datepicker/datepicker-prev-link-icon-a4db9262208d627eebe731826a9099c1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/datepicker/datepicker-prev-link-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/loading-09c1d6a0d3ba93d837f19a6f0fe13723.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/loading.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/nested_menu_arrow-c4b3e54f9fb9b11993a2801e8ae15ae3.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/nested_menu_arrow.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/nested_menu_arrow_dark-049c0831c99b0c5af34bb95d30ba8174.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/nested_menu_arrow_dark.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/orderable-10610e1e8f0057c16f178b54cc4d9631.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/orderable.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/pages/application-9962e9eb4723fd98f06bcc5dd97d3416.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/pages/application-9962e9eb4723fd98f06bcc5dd97d3416.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/pages/application.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/pages/application.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/print-80ebe25ed30c2f719a2720c7dffad181.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/print-80ebe25ed30c2f719a2720c7dffad181.css.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/print.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/print.css.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/androidlogo1-33b80719ffaa86608dd56da617ad627f.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/androidlogo1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/applelogo1-9a3426e92e1bbb6ffa8a1c244f46dfef.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/applelogo1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-6c0e9c1063d86ec355fce2c24c21dadc.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-6c0e9c1063d86ec355fce2c24c21dadc.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-905816c19e8a0121e00854d72e59d6b5.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-905816c19e8a0121e00854d72e59d6b5.css.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-b8e352af7034f6283d137739b8048815.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-b8e352af7034f6283d137739b8048815.css.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application.css.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/appstore-448eccbca6571103ab3f4af959574676.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/appstore.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/bg-a6e90ce1263694d7a8447dc3ff15971b.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/bg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/bg/bg1-afe71cfdf00d2779d5c2834bfb079c1d.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/bg/bg1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/bg/bg2-8e953ad4213914c5fe52065f3b9ed914.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/bg/bg2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/bg/bg3-0624988778bb6baf235256d0dc6a3370.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/bg/bg3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/bg/bg4-040a96509f29feaf17fa32c4c924ed45.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/bg/bg4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/bg/bg5-b23be765c944e84a9fb607f7846c4c82.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/bg/bg5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/camera-b99aaf8317ee157db27d6e29c2c2f976.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/camera.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/cameraimagesupplementalpage-754edad05266119c1aa19721a942ad2f.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/cameraimagesupplementalpage.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/clock-ae8eb53ccc8642d73ac0db7d5bfe60e5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/clock.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/code-fdb43a051a20e805e686483e1b5db23d.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/code.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/facebook-icon-06769a64927797e927aa7e0facb32354.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/facebook-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/favicon-3ba2a1d439fac53e0b97b6f1884f67c7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/favicon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/folders-c07c770c7a9a722b88da3eee72044d41.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/folders.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontawesome-webfont-635909f146e208b3509acdf3b154bf0d.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontawesome-webfont-6a4e273908b7e43d9e479d38b8ae5957.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontawesome-webfont-a0fbd98b232e7e1ef9cdaad813b26eb3.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontawesome-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontawesome-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontawesome-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/glyphicons-halflings-2851b489e8c39f8fad44fc10efb99c3e.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/glyphicons-halflings-white-6cccd17a7aed91dbc0157d343c68c0d9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/glyphicons-halflings-white.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/glyphicons-halflings.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/googleplay-d56ae567a1ac68ef9a03943a1d69d53e.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/googleplay.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/googleplus-icon-96c6a8b103ddead938eae83eca9a4852.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/googleplus-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/heartwork-db46f17a3a32169022ab5eaa4200cfb6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/heartwork.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/homebackground-2ea85bb4694f4b343a8d2fa3ec08fca8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/homebackground-c6e0db80e927bfaefaafe94ff519dc78.psd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/homebackground.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/homebackground.psd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/homespreelogo-44447e552f4264b37f632dbc0a10aa5b.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/homespreelogo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/homespreelogofooter-226549e99ac1962eb67faf977df3575a.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/homespreelogofooter.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/homespreelogoshadow-47336b455ba275b227ca0c909d7c370f.psd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/homespreelogoshadow-6f5ef696eab26ab7e443ecde9d633ff5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/homespreelogoshadow.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/homespreelogoshadow.psd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/homespreelogosmall-a293494202ff913a643726476b11feb3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/homespreelogosmall.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/ipad-bc8b7918a6d949f73dbb5193825cdde6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/ipad.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/iphone-c74aad1098f0a9a2308a32a556bd4b13.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/iphone.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/iphoneabovefold-cb87466e792d58dbdab76e6bb8ef7080.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/iphoneabovefold.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/iphoneabovefold5-cb87466e792d58dbdab76e6bb8ef7080.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/iphoneabovefold5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/iphonebids2-b8bae7a7203ce5a9a335d603ef256a91.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/iphonebids2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/iphonecontact2-4e526486cd6c76cb467a91a7d7c3f8e0.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/iphonecontact2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/iphonehold-9fa961c07f8c0d19171b9f8763a8d525.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/iphonehold.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/iphonesubmittinganestimate2-7ca3cda23d63220c635df734313ee79e.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/iphonesubmittinganestimate2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/joeprofileimage2-093db17bf4c0cc47f18ffafb8177776b.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/joeprofileimage2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery.min-6c267bfd2b3f36e6edccb2e584934c1c.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery.min.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/kyleprofile3-02fdc798bad1b18dfd613fa31f93f6f6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/kyleprofile3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/logoplaceholder-7f4e76875f7b4cdf8ddedfe10743667b.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/logoplaceholder.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/manifest.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/responsive-e8618133f363323bc5325799102f33a3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/responsive.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/snow-b23be765c944e84a9fb607f7846c4c82.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/snow.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/stressfree-cfe2cc541743754b6471325893a2f493.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/stressfree.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/tags-f4dc7baace5320bf152ffd82c8f6ad52.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/tags.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/twitter-a364d33a883491bbfce192cdcd34f87e.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/twitter-icon-2f94590588a6b93f31bf8edca6da25bc.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/twitter-icon-9286dff8a57fe26b3ec605cec4393ebe.psd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/twitter-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/twitter-icon.psd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/twitter.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/twitter/bootstrap/glyphicons-halflings-2851b489e8c39f8fad44fc10efb99c3e.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/twitter/bootstrap/glyphicons-halflings-white-6cccd17a7aed91dbc0157d343c68c0d9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/twitter/bootstrap/glyphicons-halflings-white.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/twitter/bootstrap/glyphicons-halflings.png" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/layouts/administration.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/blank.html.erb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/assets/.gitkeep" afterPath="$PROJECT_DIR$/app/assets/images/12-Valle-Breakfast-web.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/images/6-Valle-Living-Room-wide-web.jpg" afterPath="$PROJECT_DIR$/app/assets/images/6-Valle-Living-Room-wide-web.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/images/Davis-Family-web1.jpg" afterPath="$PROJECT_DIR$/app/assets/images/Davis-Family-web1.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/images/code.png" afterPath="$PROJECT_DIR$/app/assets/images/code.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/images/folders.png" afterPath="$PROJECT_DIR$/app/assets/images/folders.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/images/heartwork.png" afterPath="$PROJECT_DIR$/app/assets/images/heartwork.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/images/homebackground.psd" afterPath="$PROJECT_DIR$/app/assets/images/homebackground.psd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/images/ipad.png" afterPath="$PROJECT_DIR$/app/assets/images/ipad.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/images/logoplaceholder.png" afterPath="$PROJECT_DIR$/app/assets/images/logoplaceholder.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/images/responsive.png" afterPath="$PROJECT_DIR$/app/assets/images/responsive.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/images/twitter.png" afterPath="$PROJECT_DIR$/app/assets/images/twitter.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Homespree.iml" afterPath="$PROJECT_DIR$/.idea/Homespree.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/_footer.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/_footer.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/_header.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/_header.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pages/about.html.erb" afterPath="$PROJECT_DIR$/app/views/pages/about.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pages/contact.html.erb" afterPath="$PROJECT_DIR$/app/views/pages/contact.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/contractor.rb" afterPath="$PROJECT_DIR$/app/models/contractor.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pages/contractors.html.erb" afterPath="$PROJECT_DIR$/app/views/pages/contractors.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pages/homeowners.html.erb" afterPath="$PROJECT_DIR$/app/views/pages/homeowners.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pages/jobs.html.erb" afterPath="$PROJECT_DIR$/app/views/pages/jobs.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/pages/landingpage.css.scss.erb" afterPath="$PROJECT_DIR$/app/assets/stylesheets/pages/landingpage.css.scss.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/contractors/registrations/new.html.erb" afterPath="$PROJECT_DIR$/app/views/contractors/registrations/new.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/views/contractors/new.html.erb_spec.rb" afterPath="$PROJECT_DIR$/spec/views/contractors/new.html.erb_spec.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/pages_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/pages_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/environments/production.rb" afterPath="$PROJECT_DIR$/config/environments/production.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/global/theme.css.scss.erb" afterPath="$PROJECT_DIR$/app/assets/stylesheets/global/theme.css.scss.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="69305659-f161-4004-b356-b79c1d87fc7f" name="Default" comment="" />
     <ignored path="Homespree.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1362435943147" ignored="false" />
@@ -403,15 +200,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="_sidenav.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/pages/partials/_sidenav.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="61" selection-start="354" selection-end="375" vertical-scroll-proportion="-3.125">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="_footer.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/_footer.html.erb">
           <provider selected="true" editor-type-id="text-editor">
@@ -448,10 +236,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="landingpage.css.scss.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="landingpage.css.scss.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/pages/landingpage.css.scss.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="18" selection-start="18" selection-end="18" vertical-scroll-proportion="0.0">
+            <state line="18" column="6" selection-start="382" selection-end="382" vertical-scroll-proportion="-11.25">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.css" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -1321,13 +1118,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/pages/home.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="0" selection-start="1540" selection-end="1540" vertical-scroll-proportion="-26.875">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/rubystubs193/object.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="47" column="4" selection-start="2117" selection-end="2117" vertical-scroll-proportion="0.3323741">
@@ -1428,7 +1218,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/pages/landingpage.css.scss.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="18" selection-start="18" selection-end="18" vertical-scroll-proportion="0.0">
+        <state line="18" column="6" selection-start="382" selection-end="382" vertical-scroll-proportion="-11.25">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
