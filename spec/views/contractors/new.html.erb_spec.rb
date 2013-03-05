@@ -2,15 +2,15 @@ require 'spec_helper'
 
 describe "contractors/new" do
   before(:each) do
-    #assign(:contractor, stub_model(Contractor,
-    #  :name => "MyString",
-    #  :number => "MyString",
-    #  :description => "MyText",
-    #  :specialties => "MyText",
-    #  :website => "MyString",
-    #  :facebook => "MyString",
-    #  :twitter => "MyString"
-    #).as_new_record)
+    assign(:contractor, stub_model(Contractor,
+      :name => "MyString",
+      :number => "MyString",
+      :description => "MyText",
+      :specialties => "MyText",
+      :website => "MyString",
+      :facebook => "MyString",
+      :twitter => "MyString"
+    ).as_new_record)
   end
 
   it "renders new contractor form" do
@@ -37,6 +37,7 @@ describe "contractors/new" do
     end
   end
 
+  it "submits form successfully"
   it "has 'next' and 'previous' links"
 
 end

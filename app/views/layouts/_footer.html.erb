@@ -1,19 +1,18 @@
 <footer class="container footer-box">
-  <%= image_tag asset_path('homespreelogofooter.png'), alt: "companyA" %>
+  <%= image_tag asset_path('homespreelogofooter.png'), alt: "Homespree" %>
+
   <nav class="links">
-    <a href="#">About</a>
-    <a href="#">Tour</a>
-    <a href="#">Blog</a>
-    <a href="#">Terms of Use</a>
-    <a href="#">Support</a>
+    <%= link_to "About", about_path %>
+    <%= link_to "Blog", "http://homespree.wordpress.com/", :target => '_blank'%>
+    <%= link_to "Contact", contact_path %>
+    <%= link_to "Jobs", jobs_path %>
   </nav>
 
   <nav class="social-icons">
-    <a href="#">
-
+    <a href="https://twitter.com/homespree">
       <%= image_tag asset_path('twitter-icon.png'), alt: "twitter-icon" %>
     </a>
-    <a href="#"><%= image_tag asset_path('facebook-icon.png'), alt: "fb" %></a>
+    <a href="https://www.facebook.com/Homespree"><%= image_tag asset_path('facebook-icon.png'), alt: "fb" %></a>
     <a href="#"><%= image_tag asset_path('googleplus-icon.png'), alt: "gplus" %></a>
   </nav>
 

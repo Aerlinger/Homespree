@@ -25,9 +25,9 @@ class Contractor < ActiveRecord::Base
   # Callbacks:
   before_save :titleize_name, :downcase_email, :convert_numbers
 
-
   # Only email is required for now:
   validates_format_of :email, with: email_regex, message: "Email is invalid"
+
 
   # Generates a list of incomplete elements of a Contractor profile
   def incomplete_sections

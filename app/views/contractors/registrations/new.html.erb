@@ -6,11 +6,35 @@
   <div><%= f.label :email %><br />
   <%= f.email_field :email, :autofocus => true %></div>
 
+  <div><%= f.label :name %><br />
+    <%= f.text_field :name, :autofocus => true %></div>
+
+  <div><%= f.label :last_name %><br />
+    <%= f.text_field :last_name, :autofocus => true %></div>
+
   <div><%= f.label :password %><br />
   <%= f.password_field :password %></div>
 
   <div><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></div>
+
+  <!-- Second Page: -->
+
+  <div><%= f.label :office_number %><br />
+    <%= f.email_field :office_number, :autofocus => true %></div>
+
+  <div><%= f.label :mobile_number %><br />
+    <%= f.text_field :mobile_number, :autofocus => true %></div>
+
+  <div><%= f.label :last_name %><br />
+    <%= f.text_field :last_name, :autofocus => true %></div>
+
+  <div><%= f.label :password %><br />
+    <%= f.password_field :password %></div>
+
+  <div><%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %></div>
+
 
   <div><%= f.submit "Sign up" %></div>
 <% end %>

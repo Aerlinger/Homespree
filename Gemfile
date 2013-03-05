@@ -2,10 +2,10 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
 
-gem "devise"
-gem "activeadmin"
-gem "turbolinks"
-gem "capistrano"
+gem 'devise'
+gem 'activeadmin'
+gem 'turbolinks'
+gem 'capistrano'
 gem 'newrelic_rpm'
 gem 'thin'
 gem 'libv8', '= 3.11.8.13'
@@ -29,7 +29,7 @@ group :test, :development do
 end
 
 group :development do
-  gem "better_errors"
+  gem 'better_errors'
 end
 
 group :production do
@@ -47,7 +47,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 
   gem 'less-rails' #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
-  gem 'twitter-bootstrap-rails'
+  gem 'twitter-bootstrap-rails', '2.1.4'
 end
 
 gem 'jquery-rails'

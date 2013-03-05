@@ -6,6 +6,8 @@ Homespree::Application.routes.draw do
   resources :addresses
   resources :contractors
 
+  match 'pitch' => 'pages#pitch', as: "pitch"
+
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -14,8 +16,8 @@ Homespree::Application.routes.draw do
 
   # Static pages page
   match 'home'        => 'pages#home',        as: "home"
-  match 'contractors' => 'pages#contractors', as: "contractors"
-  match 'homeowners'  => 'pages#homeowners',  as: "homeowners"
+  match 'contractors_preview' => 'pages#contractors', as: "contractors_preview"
+  match 'homeowners_preview'  => 'pages#homeowners',  as: "homeowners_preview"
   match 'about'       => 'pages#about',       as: "about"
   match 'contact'     => 'pages#contact',     as: "contact"
   match 'jobs'        => 'pages#jobs',        as: "jobs"
