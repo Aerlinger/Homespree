@@ -95,8 +95,8 @@ application.js: application-8c1ff399e459415cd9853523a1b9303f.js
 application/index.js: application-8c1ff399e459415cd9853523a1b9303f.js
 active_admin.css: active_admin-90609299a46139379c83b41e2efa617b.css
 active_admin/index.css: active_admin-90609299a46139379c83b41e2efa617b.css
-application.css: application-652d834da365d4e2ef7ccdbabbb44fa1.css
-application/index.css: application-652d834da365d4e2ef7ccdbabbb44fa1.css
+application.css: application-ff3e2a4e53b8b45318e01072bc6b5864.css
+application/index.css: application-ff3e2a4e53b8b45318e01072bc6b5864.css
 fontawesome-webfont.eot: fontawesome-webfont-86a6da438b901860c3a54e21f9098bf8.eot
 fontawesome-webfont/index.eot: fontawesome-webfont-86a6da438b901860c3a54e21f9098bf8.eot
 fontawesome-webfont.svg: fontawesome-webfont-c3f3594758768fbb43eae746d18b3b50.svg
