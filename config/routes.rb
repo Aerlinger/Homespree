@@ -24,7 +24,7 @@ Homespree::Application.routes.draw do
 
   # Mobile
 
-  match 'm' => 'mobile_pages#home'
+  #match 'm' => 'mobile_pages#home'
 
   root :to => 'pages#home', :id => 'home'
 
