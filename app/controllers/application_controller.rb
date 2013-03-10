@@ -1,7 +1,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  include Mobylette::RespondToMobileRequests
 
-  #before_filter :redirect_mobile
+  #before_filter :prepare_for_mobile
+
 
 
   #def redirect_mobile()

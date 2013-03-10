@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
 
+# Server-specific:
 gem 'devise'
 gem 'activeadmin'
 gem 'turbolinks'
@@ -9,16 +10,25 @@ gem 'capistrano'
 gem 'newrelic_rpm'
 gem 'thin'
 gem 'libv8', '= 3.11.8.13'
-gem 'devise'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+# Mobile site optimization:
+gem 'mobylette'
+
+# Profile creation wizard:
+gem 'wicked'
+
+# Image uploads:
+gem "rmagick"
+gem "carrierwave"
+
+
 group :test, :development do
   gem 'sqlite3'
   gem 'rspec-rails', ">= 2.12.0"
   gem 'capybara'
   gem 'turn', :require => false
 
+  gem 'faker'
   gem 'factory_girl_rails', '1.4.0'
   gem 'database_cleaner', '0.7.0'
   gem 'rb-fsevent'
@@ -30,6 +40,7 @@ end
 
 group :development do
   gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :production do
@@ -52,14 +63,3 @@ end
 
 gem 'jquery-rails'
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem '`jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# To use debugger
-# gem 'debugger'

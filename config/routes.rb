@@ -1,16 +1,16 @@
 Homespree::Application.routes.draw do
 
   devise_for :contractors
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
 
   resources :appointments
-  resources :addresses
-  resources :contractors
+  resources :contractors, only: [:show, :index]
+  resources :contractor_wizard
 
   match 'pitch' => 'pages#pitch', as: "pitch"
 
   ActiveAdmin.routes(self)
-
-  devise_for :admin_users, ActiveAdmin::Devise.config
 
   resources :mailinglists
 
@@ -21,10 +21,6 @@ Homespree::Application.routes.draw do
   match 'about'       => 'pages#about'
   match 'contact'     => 'pages#contact'
   match 'jobs'        => 'pages#jobs'
-
-  # Mobile
-
-  #match 'm' => 'mobile_pages#home'
 
   root :to => 'pages#home', :id => 'home'
 

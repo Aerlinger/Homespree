@@ -8,57 +8,69 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
     box-shadow: $shadow;
     background-color: white;
     padding-bottom: 2em;
+    padding-top: 110px;
   }
 
-  a{
+  a {
     color: $homespree_blue;
     text-decoration: none;
 
     &:hover {
-      color:  $homespree_light;
+      color: $homespree_light;
       text-decoration: underline;
     }
   }
 
-  h1, h2, h3 {
-    margin-bottom: .5em;
-
-    font-weight: 300;
+  iframe {
+    margin-top: 10px;
   }
 
-  h3 {
-    font-weight: 300;
+  .bs-docs-sidebar {
+    margin-top: 30px;
+    color: black;
   }
 
-  a:visited{
+  a:visited {
     text-decoration: none;
   }
 
-  h3{
-    color: gray;
-    text-align: left;
-  }
-
-  .bs-docs-sidebar{
-    margin-top: 100px;
+  .nav-stacked {
     color: black;
   }
 
-  .nav-stacked{
-    color: black;
+  .description-block {
+    margin-bottom: 2em;
+
+    img {
+      padding: 10px;
+    }
+
+    .iphone {
+      width: 145px;
+      height: 304px;
+    }
+
+    p {
+      margin-top: 1em;
+      text-align: justify;
+    }
+
   }
 
   .intro {
     margin-bottom: 3em;
 
+    img {
+      float: right;
+      margin-right: 20px;
+      padding: 15px;
+      padding-top: 0;
+    }
+
     p {
-      font-size: 16px !important;
+      display: block;
       text-align: justify;
     }
   }
 
-}
-
-.descriptiontext{
-  margin-top: 85px;
 }

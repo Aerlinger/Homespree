@@ -1,5 +1,39 @@
-<h1>New contractor</h1>
+<div class="row">
+  <div class="span6 offset3">
+    <h1>Create your contractor profile</h1>
+    <%= form_for(@contractor) do |f| %>
 
-<%= render 'form' %>
+      <% if @contractor.errors.any? %>
+        <div id="error_explanation">
+          <h2>Please fix the following:</h2>
 
-<%= link_to 'Back', contractors_path %>
+          <ul>
+            <% @contractor.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="field">
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </div>
+
+      <div class="field">
+        <%= f.label :email %>
+        <%= f.email_field :email %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Create Profile" %>
+      </div>
+
+    <% end %>
+  </div>
+</div>

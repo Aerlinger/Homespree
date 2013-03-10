@@ -8,7 +8,7 @@ describe ContractorsController do
     end
 
     it "routes to #new" do
-      get("/contractors/new").should route_to("contractors#new")
+      get("/contractors/sign_up").should route_to("contractors#new")
     end
 
     it "routes to #show" do

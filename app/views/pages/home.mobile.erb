@@ -1,0 +1,26 @@
+<div style="min-height:100%;">
+  <div class="title"></div>
+
+  <div style="height:20px"></div>
+  <%= image_tag asset_path('homespreelogofooter.png'), alt: "Homespree" %>
+
+  <div class="mobileheader">Homespree is currently in development. Provide your email below to receive an invite to our beta:</div>
+
+  <%= form_tag mailinglists_path, authenticate_with: :none, method: :post, remote: true, id: "loginForm" do %>
+    <%= email_field_tag(:email, "", type: "text", id: "email_signup", class: "splashForm logintextemail", placeholder: "Email") %>
+    <%= select_tag :user_type, options_for_select([["I am a homeowner", "homeowner"], ["I am a contractor", "contractor"]]), class: "splashForm customer_type" %>
+
+    <%= submit_tag "Sign Up", :disable_with => "Thanks!", id: "emailloginbutton", class: "splashForm loginbutton" %>
+
+    <p id="submit_success">Thanks! We'll be in touch.</p>
+  <% end %>
+
+</div>
+
+<!-- FOOTER -->
+<div id="displayModeSplash">
+  <div style="text-align:center;">
+    <%= link_to "Visit desktop site", root_path(skip_mobile: true, force_desktop: true) %>
+</div>
+</div>
+

@@ -1,147 +1,218 @@
-body {
+@import "global/palette.css.scss";
+
+body.desktop {
   background-image: url(<%= asset_path "homebackground.png" %>);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-}
 
-.navbar-fixed-top {
-  margin: 0px !important;
-}
 
-.secondary .container {
-  margin-top: -45px;
-}
-
-p {
-  font: 14px/23px "Helvetica Neue", helvetica, sans-serif;
-}
-
-a {
-  color: #338bb8;
-
-  &:link, &:visited {
+  .navbar-fixed-top {
+    margin: 0px !important;
   }
 
-  &:hover {
-    color: #3799ca;
+  .secondary .container {
+    margin-top: -45px;
   }
-}
 
-label, input, button, select, textarea {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: normal;
-  line-height: 18px;
-}
-
-.nav-list li a:hover {
-  color: black;
-}
-
-.center-align {
-  text-align: center;
-}
-
-.right-align {
-  text-align: right;
-}
-
-.left-align {
-  text-align: left;
-}
-
-h3 {
-  text-align: center;
-
-  margin: 0 0 15px;
-  font: 2em "helvetica neue", helvetica, sans-serif;
-}
-
-h4 {
-  font: 600 16px/26px "Helvetica Neue", helvetica, sans-serif;
-}
-
-.subhead {
-  font-family: "Helvetica Neue", helvetica, sans-serif;
-  font-weight: 400;
-  color: #aaaaaa;
-  margin-bottom: 40px;
-}
-
-.quotes {
-  font-family: "Helvetica Neue", helvetica, sans-serif;
-  font-size: 24px;
-  color: #555555;
-}
-
-
-.navbar .nav .active a,
-.footer-box .active a {
-  color: #ffffff;
-
-  background-color: transparent;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  text-shadow: 0px 0px 13px black, 0px -1px 1px rgba(0, 0, 0, 0.6);
-}
-
-.navbar .nav li a:hover,
-.footer-box a:hover {
-  color: #334fa8;
-  text-shadow: none;
-}
-
-.navbar .nav .active a:hover,
-.footer-box .active a:hover {
-  color: #4fb6e9;
-  text-shadow: none;
-  background-color: transparent;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  text-shadow: 0 1px 0 #ffffff;
-}
-
-/*
-* highlight section
-*/
-
-.highlight {
-  margin-top: 40px;
-
-}
-
-
-/*
-* shadows
-*/
-
-.shadow {
-  position: relative;
-
-  &:before, &:after {
-    left: 18px;
-    z-index: -1;
-    position: absolute;
-    width: 90%;
-    height: 90%;
-    bottom: 18px;
-    content: "";
-
-    -webkit-transform: rotate(-1deg);
-    -moz-transform: rotate(-1deg);
-    -o-transform: rotate(-1deg);
-    transform: rotate(-1deg);
-
-    -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, 1);
-    -moz-box-shadow: 0 10px 10px rgba(0, 0, 0, 1);
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 1);
+  p {
+    font: 300 16px/23px "Helvetica Neue", helvetica, sans-serif;
+    font-weight: 300;
   }
-}
 
-#logo {
-  margin: -7px -180px -27px 0;
+  a {
+    color: #338bb8;
 
-  img {
-    width: 266px;
+    &:link, &:visited {
+    }
+
+    &:hover {
+      color: #3799ca;
+    }
   }
+
+  label, input, button, select, textarea {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    line-height: 18px;
+  }
+
+
+  #flash_link {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 58px;
+    top: 60px;
+    z-index: 100;
+
+    h4, small {
+      margin: 3px 0 0;
+      margin-top: 3px;
+      text-align: center;
+      display: block;
+      display: block;
+    }
+
+    small:hover {
+      text-decoration: none;
+    }
+
+    .alert {
+      padding: 0;
+      margin: 0;
+      z-index: 0;
+    }
+  }
+
+  .nav-list li a:hover {
+    color: black;
+  }
+
+  .center-align {
+    text-align: center;
+  }
+
+  .right-align {
+    text-align: right;
+  }
+
+  .left-align {
+    text-align: left;
+  }
+
+
+  h1, h2, h3 {
+    margin-bottom: .5em;
+    font-weight: 300;
+  }
+
+  h2 {
+    font-size: 1.9em;
+    color: gray;
+  }
+
+  .block-underline {
+    display: block;
+    width: 500px;
+    overflow: show !important;
+    text-align: left;
+    white-space: nowrap;
+    line-height: 1.4em;
+    border-bottom: 3px solid $homespree_accent_light;
+  }
+
+  .block-underline-small {
+    display: inline-block;
+    width: 100%;
+    overflow: show !important;
+    text-align: left;
+    line-height: 1.4em;
+    border-bottom: 1px solid $homespree_accent_light;
+    margin-bottom: 5px !important;
+  }
+
+  h3{
+    color: $homespree_light;
+    text-align: left;
+    font-size: 22px;
+    line-height: 23px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  h4 {
+    font: 400 16px/26px "Helvetica Neue", helvetica, sans-serif;
+    margin: 0;
+    margin-bottom: 1em;
+    margin-top: 0;
+    color: $homespree_accent;
+  }
+
+  .subhead {
+    font-family: "Helvetica Neue", helvetica, sans-serif;
+    font-weight: 400;
+    color: #aaaaaa;
+    margin-bottom: 40px;
+  }
+
+  .quotes {
+    font-family: "Helvetica Neue", helvetica, sans-serif;
+    font-size: 24px;
+    color: #555555;
+  }
+
+
+  .navbar .nav .active a,
+  .footer-box .active a {
+    color: #ffffff;
+
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    text-shadow: 0px 0px 13px black, 0px -1px 1px rgba(0, 0, 0, 0.6);
+  }
+
+  .navbar .nav li a:hover,
+  .footer-box a:hover {
+    color: #334fa8;
+    text-shadow: none;
+  }
+
+  .navbar .nav .active a:hover,
+  .footer-box .active a:hover {
+    color: #4fb6e9;
+    text-shadow: none;
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    text-shadow: 0 1px 0 #ffffff;
+  }
+
+  /*
+  * highlight section
+  */
+
+  .highlight {
+    margin-top: 40px;
+
+  }
+
+
+  /*
+  * shadows
+  */
+
+  .shadow {
+    position: relative;
+
+    &:before, &:after {
+      left: 18px;
+      z-index: -1;
+      position: absolute;
+      width: 90%;
+      height: 90%;
+      bottom: 18px;
+      content: "";
+
+      -webkit-transform: rotate(-1deg);
+      -moz-transform: rotate(-1deg);
+      -o-transform: rotate(-1deg);
+      transform: rotate(-1deg);
+
+      -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, 1);
+      -moz-box-shadow: 0 10px 10px rgba(0, 0, 0, 1);
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 1);
+    }
+  }
+
+  #logo {
+    margin: -7px -180px -27px 0;
+
+    img {
+      width: 266px;
+    }
+  }
+
+
 }

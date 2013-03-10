@@ -1,0 +1,113 @@
+body.mobile {
+
+  background: url(/static/mobile/assets/bg.png);
+  padding: 0px;
+  margin: 0px;
+  color: #4c566c;
+  //text-shadow: 0px 1px -1px #fff;
+  font: normal 15px Helvetica;
+  -webkit-user-select: none;
+  text-align: center;
+
+  a:link {
+    color: #09f;
+    text-decoration: none;
+  }
+  a:visited {
+    color: #09f;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #09f;
+    text-decoration: none;
+  }
+  a:active {
+    color: #09f;
+    text-decoration: none;
+  }
+
+  * {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  /* -------------------------------------------- */
+  /* --------------   SPLASH PAGE  ------------- */
+  /* ------------------------------------------ */
+
+  #loginForm {
+    color: black !important;
+    input {
+      text-align: left;
+    }
+
+    #email_signup {
+      color: black;
+      padding: 9px;
+    }
+  }
+
+  .splashBody {
+    background: url(/static/mobile/assets/fancy_deboss.png);
+  }
+
+  .mobileheader {
+    padding: 1em;
+    margin-bottom: 0;
+  }
+
+  .customer_type {
+    width: 230px;
+    height: 40px;
+  }
+
+  .splashForm {
+    -webkit-appearance: none;
+    font-size: 18px;
+    padding: 10px;
+    border: 1px solid #888;
+    text-align: left;
+    margin-bottom: 10px;
+    font-color: gray;
+    color: gray;
+  }
+
+  #submit_success {
+    display: none;
+  }
+
+  .logintextemail:focus {
+    outline: none;
+    border-color: #9DD96F;
+    border-radius: 0px;
+  }
+
+  .loginbutton {
+    background-color: #1b8a24;
+    color: white;
+    border-radius: 4px;
+    width: 235px;
+    text-align: center !important;
+  }
+
+  #displayModeSplash {
+    color: #999;
+    font-size: 12px;
+    text-shadow: 0 1px white;
+    text-align: center;
+    bottom: 10px;
+    margin-top: 2em;
+    margin: 2em;
+  }
+
+  /* SUBMITTED PAGE */
+
+  .submittedText {
+    margin: 40px;
+    margin-bottom: 15px;
+    margin-top: 50px;
+    font-size: 25px;
+  }
+
+}

@@ -18,15 +18,16 @@ class Contractor < ActiveRecord::Base
   has_many :addresses, as: :addressable
   has_many :appointments
 
-  validates_presence_of :email, :password, :password_confirmation
-  validates_uniqueness_of :email
-  validates_confirmation_of :password
+  validates_presence_of :password
+  validates :email, presence: true, uniqueness: true
 
   # Callbacks:
-  before_save :titleize_name, :downcase_email, :convert_numbers
+  before_save :titleize_name, :downcase_email
 
   # Only email is required for now:
   validates_format_of :email, with: email_regex, message: "Email is invalid"
+
+  accepts_nested_attributes_for :addresses
 
 
   # Generates a list of incomplete elements of a Contractor profile
@@ -50,7 +51,7 @@ class Contractor < ActiveRecord::Base
 
   def titleize_name
     self.name = self.name.titleize if self.name.present?
-    self.last_name = self.last_name.titleize if self.name.present?
+    self.last_name = self.last_name.titleize if self.last_name.present?
   end
 
   def downcase_email

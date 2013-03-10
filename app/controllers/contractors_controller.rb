@@ -2,18 +2,19 @@ class ContractorsController < ApplicationController
 
   def new
     @contractor = Contractor.new
+
   end
 
   def create
     @contractor = Contractor.new(params[:contractor])
 
-    respond_to do |format|
-      if @contractor.save
-        format.html { redirect_to @contractor, message: "Welcome to Homespree" }
-      else
-        format.html { render action: "new" }
-      end
+    if @contractor.save
+      session[:contractor_id] = @contractor.id
+      redirect_to contractor_wizard_index_path
+    else
+      render new
     end
+
   end
 
   def index
@@ -56,7 +57,7 @@ class ContractorsController < ApplicationController
   def destroy
     @contractor = Contractor.find(params[:id])
     @contractor.destroy
-    redirect_to root_path, :flash => { :success => "Profile deleted" }
+    redirect_to root_path, :flash => {:success => "Profile deleted"}
   end
 
 end
