@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69305659-f161-4004-b356-b79c1d87fc7f" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/vendor/assets/javascripts/modernizr-2.6.2.min.js" afterPath="$PROJECT_DIR$/vendor/assets/javascripts/modernizr.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.mobile.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.mobile.erb" />
     </list>
     <ignored path="Homespree.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -366,19 +364,19 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="application_controller.rb" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="application_controller.rb" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="19" column="0" selection-start="2324" selection-end="2324" vertical-scroll-proportion="0.39148352">
+                <state line="19" column="0" selection-start="2324" selection-end="2324" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="landingpage.css.scss.erb" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/pages/landingpage.css.scss.erb">
+          <file leaf-file-name="application.mobile.erb" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/views/layouts/application.mobile.erb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="205" column="0" selection-start="7029" selection-end="7029" vertical-scroll-proportion="-15.583333">
+                <state line="18" column="21" selection-start="446" selection-end="446" vertical-scroll-proportion="0.37656903">
                   <folding />
                 </state>
               </provider>
@@ -409,7 +407,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/contractors/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/views/contractors/new.html.erb" />
         <option value="$PROJECT_DIR$/config/initializers/devise.rb" />
         <option value="$PROJECT_DIR$/app/views/contractors/registrations/new.html.erb" />
@@ -425,6 +422,7 @@
         <option value="$PROJECT_DIR$/app/views/pages/about.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/pages/peripheral_pages.css.scss" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/layouts/application.mobile.erb" />
       </list>
     </option>
   </component>
@@ -1410,7 +1408,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1920" height="1174" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2145144" sideWeight="0.68523675" order="3" side_tool="false" content_ui="tabs" />
@@ -1422,7 +1420,7 @@
       <window_info id="CSS-X-Fire" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26598704" sideWeight="0.49786553" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953465" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20811099" sideWeight="0.17794254" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20811099" sideWeight="0.54865617" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20811099" sideWeight="0.54865617" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32683378" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Routes" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33991462" sideWeight="0.51532036" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1500,13 +1498,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/contractor.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="20" selection-start="2055" selection-end="2055" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/_flash.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="31" column="9" selection-start="832" selection-end="832" vertical-scroll-proportion="-19.375">
@@ -1631,7 +1622,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="2324" selection-end="2324" vertical-scroll-proportion="0.39148352">
+        <state line="19" column="0" selection-start="2324" selection-end="2324" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.mobile.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="21" selection-start="446" selection-end="446" vertical-scroll-proportion="0.37656903">
           <folding />
         </state>
       </provider>
