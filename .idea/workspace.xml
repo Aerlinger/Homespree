@@ -2,74 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69305659-f161-4004-b356-b79c1d87fc7f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/contractor_wizard/_form.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/layouts/_submission_error.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/contractor_wizard/contact_details.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/routing/contractor_wizard_routing.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/requests/contractor_wizard_spec.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/pages/home.mobile.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/stylesheets/mobile/mobilelanding.css.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/contractor_wizard/more_info.html.erb" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/javascripts/mobile_pages.js.coffee" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/mobile_pages.css.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/controllers/mobile_pages_controller.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/helpers/mobile_pages_helper.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/mailinglists/_form.html.erb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/mailinglists/edit.html.erb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/mailinglists/index.html.erb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/mailinglists/new.html.erb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/mobile_pages/home.html.erb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/homespree-staging" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spec/controllers/mobile_pages_controller_spec.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spec/helpers/mobile_pages_helper_spec.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spec/views/mobile_pages/home.html.erb_spec.rb" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/peripheral_pages.css.scss" afterPath="$PROJECT_DIR$/app/views/contractor_wizard/essential.html.erb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/layouts/mobile.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.mobile.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/images/3_iphones.png" afterPath="$PROJECT_DIR$/app/assets/images/3_iphones.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/images/iphone.png" afterPath="$PROJECT_DIR$/app/assets/images/iphone.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/404.html" afterPath="$PROJECT_DIR$/public/404.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/422.html" afterPath="$PROJECT_DIR$/public/422.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/500.html" afterPath="$PROJECT_DIR$/public/500.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Homespree.iml" afterPath="$PROJECT_DIR$/.idea/Homespree.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/_flash.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/_flash.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/_footer.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/_footer.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/contractors/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/contractors/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pages/about.html.erb" afterPath="$PROJECT_DIR$/app/views/pages/about.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/application-1af65e1e79b96ef83a28e3f0bcf42308.css" afterPath="$PROJECT_DIR$/public/assets/application-1af65e1e79b96ef83a28e3f0bcf42308.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/application-4ecf96595b08c54e270437e6ad460ef2.css" afterPath="$PROJECT_DIR$/public/assets/application-4ecf96595b08c54e270437e6ad460ef2.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/application-5a116504dde3a3034009150ab985b907.css" afterPath="$PROJECT_DIR$/public/assets/application-5a116504dde3a3034009150ab985b907.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/application-652d834da365d4e2ef7ccdbabbb44fa1.css" afterPath="$PROJECT_DIR$/public/assets/application-652d834da365d4e2ef7ccdbabbb44fa1.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/application-8fe1a3829ea2933a2ebc9152c8000b9f.css" afterPath="$PROJECT_DIR$/public/assets/application-8fe1a3829ea2933a2ebc9152c8000b9f.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/application-9c301193a244698f3bfc7e8886b6e374.css" afterPath="$PROJECT_DIR$/public/assets/application-9c301193a244698f3bfc7e8886b6e374.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/application-ff3e2a4e53b8b45318e01072bc6b5864.css" afterPath="$PROJECT_DIR$/public/assets/application-ff3e2a4e53b8b45318e01072bc6b5864.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/application.css" afterPath="$PROJECT_DIR$/public/assets/application.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/vendor/assets/javascripts/modernizr-2.6.2.min.js" afterPath="$PROJECT_DIR$/vendor/assets/javascripts/modernizr.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pages/contact.html.erb" afterPath="$PROJECT_DIR$/app/views/pages/contact.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/contractor.rb" afterPath="$PROJECT_DIR$/app/models/contractor.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pages/contractors.html.erb" afterPath="$PROJECT_DIR$/app/views/pages/contractors.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/contractors_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/contractors_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/routing/contractors_routing_spec.rb" afterPath="$PROJECT_DIR$/spec/routing/contractors_routing_spec.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/mailinglists/create.js.erb" afterPath="$PROJECT_DIR$/app/views/mailinglists/create.js.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/initializers/devise.rb" afterPath="$PROJECT_DIR$/config/initializers/devise.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pages/home.html.erb" afterPath="$PROJECT_DIR$/app/views/pages/home.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pages/homeowners.html.erb" afterPath="$PROJECT_DIR$/app/views/pages/homeowners.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pages/jobs.html.erb" afterPath="$PROJECT_DIR$/app/views/pages/jobs.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/pages/landingpage.css.scss.erb" afterPath="$PROJECT_DIR$/app/assets/stylesheets/pages/landingpage.css.scss.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/mobile/main.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/mobile/main.css.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/initializers/mime_types.rb" afterPath="$PROJECT_DIR$/config/initializers/mime_types.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/contractors/new.html.erb" afterPath="$PROJECT_DIR$/app/views/contractors/new.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/contractors/registrations/new.html.erb" afterPath="$PROJECT_DIR$/app/views/contractors/registrations/new.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/pages_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/pages_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/global/palette.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/global/palette.css.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/pages/peripheral_pages.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/pages/peripheral_pages.css.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/active_admin/print-80ebe25ed30c2f719a2720c7dffad181.css" afterPath="$PROJECT_DIR$/public/assets/active_admin/print-80ebe25ed30c2f719a2720c7dffad181.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/active_admin/print.css" afterPath="$PROJECT_DIR$/public/assets/active_admin/print.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/spec_helper.rb" afterPath="$PROJECT_DIR$/spec/spec_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/global/theme.css.scss.erb" afterPath="$PROJECT_DIR$/app/assets/stylesheets/global/theme.css.scss.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Homespree.iws" />
@@ -314,24 +248,6 @@
     <splitter split-orientation="horizontal" split-proportion="0.3537736">
       <split-first>
         <leaf>
-          <file leaf-file-name="application.rb" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/config/application.rb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="53" column="45" selection-start="2451" selection-end="2451" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="devise.rb" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/config/initializers/devise.rb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="163" column="3" selection-start="8256" selection-end="8256" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="devise_helper.rb" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$USER_HOME$/.rvm/gems/ruby-1.9.3-p362/gems/devise-2.2.3/app/helpers/devise_helper.rb">
               <provider selected="true" editor-type-id="text-editor">
@@ -350,11 +266,34 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="peripheral_pages.css.scss" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="peripheral_pages.css.scss" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/pages/peripheral_pages.css.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="66" column="20" selection-start="932" selection-end="932" vertical-scroll-proportion="0.81781375">
+                <state line="37" column="17" selection-start="575" selection-end="575" vertical-scroll-proportion="0.0">
                   <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="application.html.erb" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="31" column="39" selection-start="791" selection-end="791" vertical-scroll-proportion="0.6605114">
+                  <folding>
+                    <marker date="1362896057000" expanded="true" signature="772:1002" placeholder="..." />
+                    <marker date="1362896057000" expanded="true" signature="840:876" placeholder="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="application.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+                  <folding>
+                    <element signature="n#!!doc" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -412,10 +351,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="about.html.erb" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="about.html.erb" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/pages/about.html.erb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="19" column="8" selection-start="805" selection-end="805" vertical-scroll-proportion="0.40482953">
+                <state line="11" column="37" selection-start="377" selection-end="377" vertical-scroll-proportion="-6.875">
                   <folding>
                     <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -427,19 +366,19 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="landingpage.css.scss.erb" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/pages/landingpage.css.scss.erb">
+          <file leaf-file-name="application_controller.rb" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="205" column="0" selection-start="7029" selection-end="7029" vertical-scroll-proportion="-15.583333">
+                <state line="19" column="0" selection-start="2324" selection-end="2324" vertical-scroll-proportion="0.39148352">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="mobilelanding.css.scss" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/mobile/mobilelanding.css.scss">
+          <file leaf-file-name="landingpage.css.scss.erb" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/pages/landingpage.css.scss.erb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="18" column="0" selection-start="349" selection-end="349" vertical-scroll-proportion="0.0">
+                <state line="205" column="0" selection-start="7029" selection-end="7029" vertical-scroll-proportion="-15.583333">
                   <folding />
                 </state>
               </provider>
@@ -470,7 +409,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/pages/jobs.html.erb" />
         <option value="$PROJECT_DIR$/app/views/contractors/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/views/contractors/new.html.erb" />
         <option value="$PROJECT_DIR$/config/initializers/devise.rb" />
@@ -486,6 +424,7 @@
         <option value="$PROJECT_DIR$/app/views/pages/contractors.html.erb" />
         <option value="$PROJECT_DIR$/app/views/pages/about.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/pages/peripheral_pages.css.scss" />
+        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
       </list>
     </option>
   </component>
@@ -727,6 +666,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Homespree" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HomespreeRails" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1449,7 +1410,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1920" height="1174" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2145144" sideWeight="0.68523675" order="3" side_tool="false" content_ui="tabs" />
@@ -1461,7 +1422,7 @@
       <window_info id="CSS-X-Fire" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26598704" sideWeight="0.49786553" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953465" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20811099" sideWeight="0.17794254" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20811099" sideWeight="0.54865617" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20811099" sideWeight="0.54865617" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32683378" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Routes" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33991462" sideWeight="0.51532036" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1539,41 +1500,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/global/palette.css.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="24" selection-start="179" selection-end="179" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/contractor_wizard/_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="520" selection-end="520" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/application.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="2435" selection-start="462575" selection-end="462575" vertical-scroll-proportion="0.16483517">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/pages/contact.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="345" selection-end="345" vertical-scroll-proportion="-4.375">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="40" selection-start="646" selection-end="646" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/contractor.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="67" column="20" selection-start="2055" selection-end="2055" vertical-scroll-proportion="0.0">
@@ -1652,7 +1578,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/pages/about.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="8" selection-start="805" selection-end="805" vertical-scroll-proportion="0.40482953">
+        <state line="11" column="37" selection-start="377" selection-end="377" vertical-scroll-proportion="-6.875">
           <folding>
             <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -1665,7 +1591,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/pages/peripheral_pages.css.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="20" selection-start="932" selection-end="932" vertical-scroll-proportion="0.81781375">
+        <state line="37" column="17" selection-start="575" selection-end="575" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/application.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="45" selection-start="2451" selection-end="2451" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/initializers/devise.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="163" column="3" selection-start="8256" selection-end="8256" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="39" selection-start="791" selection-end="791" vertical-scroll-proportion="0.6605114">
+          <folding>
+            <marker date="1362896057000" expanded="true" signature="772:1002" placeholder="..." />
+            <marker date="1362896057000" expanded="true" signature="840:876" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="0" selection-start="2324" selection-end="2324" vertical-scroll-proportion="0.39148352">
           <folding />
         </state>
       </provider>
