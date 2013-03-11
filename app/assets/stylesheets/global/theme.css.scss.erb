@@ -1,7 +1,12 @@
 @import "global/palette.css.scss";
 
 body.desktop {
-  background-image: url(<%= asset_path "homebackground.png" %>);
+
+  background-image: url(<%= asset_path "homebackground.jpg" %>);
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -9,10 +14,6 @@ body.desktop {
 
   .navbar-fixed-top {
     margin: 0px !important;
-  }
-
-  .secondary .container {
-    margin-top: -45px;
   }
 
   p {
@@ -95,6 +96,16 @@ body.desktop {
   .block-underline {
     display: block;
     width: 500px;
+    overflow: show !important;
+    text-align: left;
+    white-space: nowrap;
+    line-height: 1.4em;
+    border-bottom: 3px solid $homespree_accent_light;
+  }
+
+  .block-underline-full {
+    display: block;
+    width: 100%;
     overflow: show !important;
     text-align: left;
     white-space: nowrap;

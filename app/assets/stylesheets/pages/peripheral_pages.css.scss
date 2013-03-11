@@ -3,12 +3,14 @@
 $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
 
 .secondary {
+
   .container {
+
     border-radius: 15px;
     box-shadow: $shadow;
     background-color: white;
     padding-bottom: 2em;
-    padding-top: 110px;
+    padding-top: 60px;
   }
 
   a {
@@ -20,6 +22,22 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
       text-decoration: underline;
     }
   }
+
+  form {
+    small {
+      margin-left: 1em;
+      a {
+        text-decoration: none;
+        border-bottom:1px dotted;
+
+        &:hover {
+          text-decoration: none;
+          border-bottom: 1px dotted $homespree_light;
+        }
+      }
+    }
+  }
+
 
   iframe {
     margin-top: 10px;
@@ -62,9 +80,7 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
 
     img {
       float: right;
-      margin-right: 20px;
-      padding: 15px;
-      padding-top: 0;
+      padding: 0 0 0 20px;
     }
 
     p {

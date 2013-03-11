@@ -308,6 +308,6 @@ DEPENDENCIES
   thin
   turbolinks
   turn
-  twitter-bootstrap-rails (= 2.1.6)
+  twitter-bootstrap-rails
   uglifier (>= 1.0.3)
   wicked

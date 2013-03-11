@@ -4,6 +4,11 @@ class ApplicationController < ActionController::Base
 
   #before_filter :prepare_for_mobile
 
+  mobylette_config do |config|
+    config[:skip_user_agents] = [:ipad, :kindle]
+    config[:mobile_user_agents] = proc { %r{iphone|mobile|blackberry|nokia|palm|opera mini|windows ce}i }
+  end
+
 
 
   #def redirect_mobile()

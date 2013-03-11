@@ -1,0 +1,192 @@
+@import "global/palette.css.scss";
+
+body.mobile {
+
+  background-image: url(<%= asset_path "mobilebackground.jpg" %>) no-repeat center center fixed;
+
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  z-index:10;
+
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  padding: 0;
+  margin: 0;
+  color: #4c566c;
+  //text-shadow: 0px 1px -1px #fff;
+
+  font: normal 15px Helvetica;
+  -webkit-user-select: none;
+  text-align: center;
+
+  a:link {
+    color: #09f;
+    text-decoration: none;
+  }
+  a:visited {
+    color: #09f;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #09f;
+    text-decoration: none;
+  }
+  a:active {
+    color: #09f;
+    text-decoration: none;
+  }
+
+  * {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  /* -------------------------------------------- */
+  /* --------------   SPLASH PAGE  ------------- */
+  /* ------------------------------------------ */
+
+  #loginForm {
+
+    color: black !important;
+    width: 100%;
+
+    input {
+      box-shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
+      width: 200px !important;
+      text-align: left;
+    }
+
+    #email_signup {
+      box-shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
+      width: 180px !important;
+      padding: 9px;
+    }
+
+    #user_type {
+      color: #171717;
+
+      border: 1px solid #ffffff;
+
+      $dark: #ececec;
+      $light: #c6c6c6;
+
+      background: #c7c5c9; /* Old browsers */
+      background: -moz-linear-gradient(top,  $dark 0%, $dark 50%, $dark 50.1%, $light 100%); /* FF3.6+ */
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$dark), color-stop(50%,$dark), color-stop(50.1%,#c7c5c9), color-stop(100%,$light)); /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(top,  $dark 0%,$dark 50%,$dark 50.1%,$light 100%); /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(top,  $dark 0%,$dark 50%,$dark 50.1%,$light 100%); /* Opera 11.10+ */
+      background: -ms-linear-gradient(top,  $dark 0%,$dark 50%,$dark 50.1%,$light 100%); /* IE10+ */
+      background: linear-gradient(to bottom,  $dark 0%,$dark 50%, $dark 50.1%,$light 100%); /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5dc907', endColorstr='$light',GradientType=0 ); /* IE6-9 */
+
+
+      box-shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
+      width: 200px !important;
+      padding: 0;
+      padding-left: 10px;
+
+      option: {
+        vertical-align: center;
+
+      }
+    }
+
+    #emailloginbutton {
+
+      color: white;
+      border: 1px solid #ffffff;
+
+      background: #5dc907; /* Old browsers */
+      background: -moz-linear-gradient(top,  #5dc907 0%, #57b906 50%, #50ad06 50.1%, #4fac04 100%); /* FF3.6+ */
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#5dc907), color-stop(50%,#57b906), color-stop(50.1%,#50ad06), color-stop(100%,#4fac04)); /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(top,  #5dc907 0%,#57b906 50%,#50ad06 50.1%,#4fac04 100%); /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(top,  #5dc907 0%,#57b906 50%,#50ad06 50.1%,#4fac04 100%); /* Opera 11.10+ */
+      background: -ms-linear-gradient(top,  #5dc907 0%,#57b906 50%,#50ad06 50.1%,#4fac04 100%); /* IE10+ */
+      background: linear-gradient(to bottom,  #5dc907 0%,#57b906 50%,#50ad06 50.1%,#4fac04 100%); /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5dc907', endColorstr='#4fac04',GradientType=0 ); /* IE6-9 */
+
+    }
+  }
+
+  .mobileheader {
+    padding: 1em 0;
+
+
+    color: white;
+    font-weight: 400;
+    font-size: 1.2em;
+
+    text-shadow: 0 0 4px black;
+
+    p {
+      margin-bottom: .5em;
+    }
+
+    small {
+      color: white;
+      font-size: .8em;
+
+      font-weight: 400;
+      text-shadow: 0 0 3px black;
+    }
+  }
+
+  .customer_type {
+    width: 230px;
+    height: 40px;
+  }
+
+  .splashForm {
+    -webkit-appearance: none;
+    font-size: 18px;
+    padding: 10px;
+    border: 1px solid #888;
+    text-align: left;
+    margin-bottom: 10px;
+    font-color: gray;
+    color: gray;
+  }
+
+  #submit_success {
+    display: none;
+  }
+
+  .logintextemail:focus {
+    outline: none;
+    border-color: #9DD96F;
+    border-radius: 0px;
+  }
+
+  .loginbutton {
+    background-color: #1b8a24;
+    color: white;
+    border-radius: 4px;
+    width: 235px;
+    text-align: center !important;
+  }
+
+  #displayModeSplash {
+    color: #999;
+    font-size: 12px;
+    //text-shadow: 0 1px white;
+    text-align: center;
+    bottom: 10px;
+    margin-top: 1em;
+    margin: 2em;
+  }
+
+  /* SUBMITTED PAGE */
+
+  .submittedText {
+    margin: 40px;
+    margin-bottom: 15px;
+    margin-top: 50px;
+    font-size: 25px;
+  }
+
+}

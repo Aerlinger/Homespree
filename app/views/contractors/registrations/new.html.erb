@@ -1,20 +1,26 @@
-<h2>Sign up</h2>
+<div class="row-fluid">
+  <div class="span5 offset4">
+    <h1 class="block-underline-full">Create your contractor profile</h1>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+    <%= form_for resource, :as => resource_name, :url => registration_path(resource_name) do |f| %>
 
-  <%= devise_error_messages! %>
+      <%= devise_error_messages! %>
 
-  <div><%= f.label :email %>
-  <%= f.email_field :email, :autofocus => true %></div>
+      <div><%= f.label :email %>
+        <%= f.email_field :email, :autofocus => true %></div>
 
-  <div><%= f.label :name %>
-    <%= f.text_field :name, :autofocus => true %></div>
+        <div><%= f.label "Company Title" %>
+        <%= f.text_field :title, :autofocus => true %><small><a href="#">Individual with no Company?</a></small></div>
 
-  <div><%= f.label :password %>
-  <%= f.password_field :password %></div>
+      <div><%= f.label :password %>
+        <%= f.password_field :password %></div>
 
 
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
+      <div><%= f.submit "Sign up" %></div>
 
-<%= render "devise/shared/links" %>
+      <hr>
+      <%= render "devise/shared/links" %>
+  <% end %>
+
+  </div>
+</div>
