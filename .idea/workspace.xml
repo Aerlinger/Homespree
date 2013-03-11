@@ -2,41 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69305659-f161-4004-b356-b79c1d87fc7f" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/6-Valle-Living-Room-wide-web.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/Davis-Family-web1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/cameraimagesupplementalpage.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/code.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/folders.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/homebackground.psd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/homespreelogoshadow.psd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/iphoneabovefold.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/iphoneabovefold5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/iphonebids2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/iphonecontact2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/iphonehold.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/iphonesubmittinganestimate2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/logoplaceholder.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/twitter-icon.psd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/images/twitter.png" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/mobile/mobilelanding.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/mobile/mobilelanding.css.scss.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/images/12-Valle-Breakfast-web.jpg" afterPath="$PROJECT_DIR$/app/assets/images/12-Valle-Breakfast-web.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/images/psd/iphone_bids" afterPath="$PROJECT_DIR$/app/assets/images/psd/iphone_bids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/images/psd/iphone_camera.psd" afterPath="$PROJECT_DIR$/app/assets/images/psd/iphone_camera.psd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/images/psd/iphone_profile" afterPath="$PROJECT_DIR$/app/assets/images/psd/iphone_profile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/_footer.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/_footer.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/application-5851128dd6e2f76cd9f4aa9675d80425.css" afterPath="$PROJECT_DIR$/public/assets/application-5851128dd6e2f76cd9f4aa9675d80425.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/application.css" afterPath="$PROJECT_DIR$/public/assets/application.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.mobile.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.mobile.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/application.rb" afterPath="$PROJECT_DIR$/config/application.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/bootstrap.js.coffee" afterPath="$PROJECT_DIR$/app/assets/javascripts/bootstrap.js.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pages/home.mobile.erb" afterPath="$PROJECT_DIR$/app/views/pages/home.mobile.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/pages/landingpage.css.scss.erb" afterPath="$PROJECT_DIR$/app/assets/stylesheets/pages/landingpage.css.scss.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/contractors/registrations/new.html.erb" afterPath="$PROJECT_DIR$/app/views/contractors/registrations/new.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/pages/peripheral_pages.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/pages/peripheral_pages.css.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/global/theme-responsive.css.scss.erb" afterPath="$PROJECT_DIR$/app/assets/stylesheets/global/theme-responsive.css.scss.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pages/contractors.html.erb" afterPath="$PROJECT_DIR$/app/views/pages/contractors.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pages/homeowners.html.erb" afterPath="$PROJECT_DIR$/app/views/pages/homeowners.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/mobile/mobilelanding.css.scss.erb" afterPath="$PROJECT_DIR$/app/assets/stylesheets/mobile/mobilelanding.css.scss.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/global/theme.css.scss.erb" afterPath="$PROJECT_DIR$/app/assets/stylesheets/global/theme.css.scss.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -46,7 +14,7 @@
     <file path="$PROJECT_DIR$/../rails_sandbox/ultimate_rails_site/db/schema.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360210339150" ignored="false" />
     <file path="/schema.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360437537268" ignored="false" />
     <file path="/home.html.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1362892670580" ignored="false" />
-    <file path="/theme.css.scss.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1362961136976" ignored="false" />
+    <file path="/theme.css.scss.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1362969974533" ignored="false" />
     <file path="/landingpage.css.scss.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1362968958549" ignored="false" />
     <file path="/dummy.txt" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360307495664" ignored="false" />
     <file path="$PROJECT_DIR$/../../Code/rails/BootstrapDemo/Gemfile" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360418508799" ignored="false" />
@@ -147,7 +115,7 @@
     <file path="/landingpage.js.coffee" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360880455470" ignored="false" />
     <file path="/bootstrap_and_overrides.css.less" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1362495539735" ignored="false" />
     <file path="/peripheral_pages.css.scss" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1362964428407" ignored="false" />
-    <file path="/homeowners.html.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1362894055684" ignored="false" />
+    <file path="/homeowners.html.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1362969882604" ignored="false" />
     <file path="/20130214213940_drop_active_admin.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360878008930" ignored="false" />
     <file path="/20130214215019_schema_version1.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360878678002" ignored="false" />
     <file path="/mailinglist.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1361130252069" ignored="false" />
@@ -197,7 +165,7 @@
     <file path="/_sidenav.html.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1362497355098" ignored="false" />
     <file path="/jobs.html.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1362445390923" ignored="false" />
     <file path="$PROJECT_DIR$/../../Code/rails/physics_academy/Gemfile" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1362493695101" ignored="false" />
-    <file path="/contractors.html.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1362894193524" ignored="false" />
+    <file path="/contractors.html.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1362969908970" ignored="false" />
     <file path="/palette.css.scss" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1362885613267" ignored="false" />
     <file path="/_flash.html.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1362887797269" ignored="false" />
     <file path="/_header_extras.html.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1362529645688" ignored="false" />
@@ -237,7 +205,7 @@
     <file path="/contact_details.html.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1362877729838" ignored="false" />
     <file path="$PROJECT_DIR$/../../Code/rails/wicked/app/controllers/application_controller.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1362879341671" ignored="false" />
     <file path="/devise.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1362882433677" ignored="false" />
-    <file path="/mobilelanding.css.scss.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1362960254703" ignored="false" />
+    <file path="/mobilelanding.css.scss.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1362969248431" ignored="false" />
     <file path="/application.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1362962462161" ignored="false" />
     <file path="/bootstrap.js.coffee" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1362962774377" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -293,18 +261,6 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="home.mobile.erb" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/pages/home.mobile.erb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="25" column="34" selection-start="1031" selection-end="1031" vertical-scroll-proportion="-15.625">
-                  <folding>
-                    <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="application.rb" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/config/application.rb">
               <provider selected="true" editor-type-id="text-editor">
@@ -317,16 +273,25 @@
           <file leaf-file-name="mobilelanding.css.scss.erb" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/mobile/mobilelanding.css.scss.erb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="11" column="9" selection-start="304" selection-end="304" vertical-scroll-proportion="0.0">
+                <state line="34" column="16" selection-start="689" selection-end="689" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="landingpage.css.scss.erb" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="theme.css.scss.erb" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/global/theme.css.scss.erb">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="110" column="6" selection-start="1779" selection-end="1779" vertical-scroll-proportion="0.3006135">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="landingpage.css.scss.erb" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/pages/landingpage.css.scss.erb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="181" column="13" selection-start="6607" selection-end="6607" vertical-scroll-proportion="0.40532082">
+                <state line="190" column="3" selection-start="6796" selection-end="6796" vertical-scroll-proportion="-16.416666">
                   <folding />
                 </state>
               </provider>
@@ -345,8 +310,17 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="landingpage.js.coffee" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/assets/javascripts/landingpage.js.coffee">
+          <file leaf-file-name="application_controller.rb" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="6" column="30" selection-start="190" selection-end="190" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="contractor.rb" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/models/contractor.rb">
               <provider selected="true" editor-type-id="text-editor">
                 <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
                   <folding />
@@ -354,28 +328,19 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="bootstrap.js.coffee" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/assets/javascripts/bootstrap.js.coffee">
+          <file leaf-file-name="contractors.html.erb" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/pages/contractors.html.erb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="7" column="21" selection-start="262" selection-end="262" vertical-scroll-proportion="0.0">
+                <state line="23" column="78" selection-start="925" selection-end="925" vertical-scroll-proportion="-14.375">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="application_controller.rb" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
+          <file leaf-file-name="homeowners.html.erb" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/views/pages/homeowners.html.erb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="24" column="0" selection-start="2517" selection-end="2517" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="theme.css.scss.erb" pinned="false" current="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/global/theme.css.scss.erb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="161" column="17" selection-start="2834" selection-end="2834" vertical-scroll-proportion="0.35889572">
+                <state line="8" column="32" selection-start="382" selection-end="382" vertical-scroll-proportion="0.18779343">
                   <folding />
                 </state>
               </provider>
@@ -424,22 +389,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/pages/about.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/pages/home.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_footer.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.mobile.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/mobile/mobilelanding.css.scss" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/mobile/mobilelanding.css.scss.erb" />
         <option value="$PROJECT_DIR$/app/views/contractors/registrations/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/pages/home.mobile.erb" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/bootstrap.js.coffee" />
         <option value="$PROJECT_DIR$/config/application.rb" />
         <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/global/theme.css.scss.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/pages/peripheral_pages.css.scss" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/global/theme-responsive.css.scss.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/pages/landingpage.css.scss.erb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/mobile/mobilelanding.css.scss.erb" />
+        <option value="$PROJECT_DIR$/app/views/pages/homeowners.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/pages/contractors.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/global/theme.css.scss.erb" />
       </list>
     </option>
   </component>
@@ -1369,37 +1334,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/controllers/contractors_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="0" selection-start="562" selection-end="562" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/contractors/registrations/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="721" selection-end="721" vertical-scroll-proportion="-14.375">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/pages/home.mobile.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="34" selection-start="1031" selection-end="1031" vertical-scroll-proportion="-15.625">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/pages/home.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="25" selection-start="956" selection-end="969" vertical-scroll-proportion="-15.625">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
         <state line="30" column="13" selection-start="474" selection-end="474" vertical-scroll-proportion="0.0">
@@ -1428,13 +1362,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="0" selection-start="2517" selection-end="2517" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/application.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="35" column="50" selection-start="1611" selection-end="1611" vertical-scroll-proportion="0.0">
@@ -1445,13 +1372,6 @@
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/pages/peripheral_pages.css.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="28" selection-start="186" selection-end="186" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/mobile/mobilelanding.css.scss.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="9" selection-start="304" selection-end="304" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1470,16 +1390,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/global/theme.css.scss.erb">
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/pages/landingpage.css.scss.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="161" column="17" selection-start="2834" selection-end="2834" vertical-scroll-proportion="0.35889572">
+        <state line="190" column="3" selection-start="6796" selection-end="6796" vertical-scroll-proportion="-16.416666">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/pages/landingpage.css.scss.erb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="181" column="13" selection-start="6607" selection-end="6607" vertical-scroll-proportion="0.40532082">
+        <state line="6" column="30" selection-start="190" selection-end="190" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/contractor.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/pages/contractors.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="78" selection-start="925" selection-end="925" vertical-scroll-proportion="-14.375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/pages/homeowners.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="32" selection-start="382" selection-end="382" vertical-scroll-proportion="0.18779343">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/mobile/mobilelanding.css.scss.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="16" selection-start="689" selection-end="689" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/pages/home.mobile.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="34" selection-start="1031" selection-end="1031" vertical-scroll-proportion="-15.625">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/global/theme.css.scss.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="110" column="6" selection-start="1779" selection-end="1779" vertical-scroll-proportion="0.3006135">
           <folding />
         </state>
       </provider>
