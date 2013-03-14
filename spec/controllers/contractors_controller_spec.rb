@@ -42,7 +42,7 @@ describe ContractorsController do
     it "assigns all contractors as @contractors" do
       contractor = Contractor.create! valid_attributes
       get :index, {}, valid_session
-      assigns(:contractors).should eq([contractor])
+      assigns(:profiles).should eq([contractor])
     end
   end
 

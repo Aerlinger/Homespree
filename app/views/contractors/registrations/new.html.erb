@@ -10,7 +10,7 @@
         <%= f.email_field :email, :autofocus => true %></div>
 
         <div><%= f.label "Company Title" %>
-        <%= f.text_field :title, :autofocus => true %><small><a href="#">Individual with no Company?</a></small></div>
+        <%= f.text_field :title%><small><a href="#">Individual with no Company?</a></small></div>
 
       <div><%= f.label :password %>
         <%= f.password_field :password %></div>
@@ -19,7 +19,7 @@
       <div><%= f.submit "Sign up" %></div>
 
       <hr>
-      <%= render "devise/shared/links" %>
+      <%= render "contractors/shared/links" %>
   <% end %>
 
   </div>

@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe "contractors/index" do
   before(:each) do
-    assign(:contractors, [
+    assign(:profiles, [
       stub_model(Contractor,
         :name => "Name",
         :number => "Number",

@@ -27,6 +27,7 @@ group :test, :development do
   gem 'rspec-rails', ">= 2.12.0"
   gem 'capybara'
   gem 'turn', :require => false
+  gem 'meta_request'
 
   gem 'faker'
   gem 'factory_girl_rails', '1.4.0'

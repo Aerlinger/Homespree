@@ -21,4 +21,11 @@ class ApplicationController < ActionController::Base
   # contractor_session
   # current_contractor
   # :authenticate_contractor!
+  # after_sign_in_path_for(resource)
+  # after_sign_out_path_for(resource)
+  # after_update_path_for(resource)
+
+  def after_sign_up_path_for(resource)
+    redirect_to contractor_wizard_path
+  end
 end

@@ -39,6 +39,11 @@
       s.parentNode.insertBefore(ga, s);
     })();
 
+    // Fixes placeholder not showing up in IE.
+    $(document).ready(function(event) {
+      Placeholders.init();
+    })
+
   </script>
 
 <% end %>

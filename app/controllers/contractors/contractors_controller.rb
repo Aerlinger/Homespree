@@ -1,21 +1,4 @@
-class ContractorsController < ApplicationController
-
-  def new
-    @contractor = Contractor.new
-
-  end
-
-  def create
-    @contractor = Contractor.new(params[:contractor])
-
-    if @contractor.save
-      session[:contractor_id] = @contractor.id
-      redirect_to contractor_wizard_index_path
-    else
-      render new
-    end
-
-  end
+class Contractors::ContractorsController < ApplicationController
 
   def index
     @contractors = Contractor.all
@@ -54,10 +37,5 @@ class ContractorsController < ApplicationController
     end
   end
 
-  def destroy
-    @contractor = Contractor.find(params[:id])
-    @contractor.destroy
-    redirect_to root_path, :flash => {:success => "Profile deleted"}
-  end
 
 end

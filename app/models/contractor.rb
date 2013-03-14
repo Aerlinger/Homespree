@@ -11,15 +11,19 @@ class Contractor < ActiveRecord::Base
   # Accessors:
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :description, :mobile_number, :office_number,
+  attr_accessible :email, :password, :password_confirmation, :remember_me,
+                  :description, :mobile_number, :office_number, :title,
                   :facebook, :name, :specialties, :twitter, :website
 
   # Associations:
   has_many :addresses, as: :addressable
   has_many :appointments
+  has_many :specialties
 
-  validates_presence_of :password
-  validates :email, presence: true, uniqueness: true
+  #validates_presence_of :password, message: "Missing password"
+  validates_presence_of :title, message: "is missing"
+  #validates_presence_of :email, message: "Please enter your email"
+  #validates_uniqueness_of :email, message: "That email is already taken"
 
   # Callbacks:
   before_save :titleize_name, :downcase_email
@@ -37,12 +41,12 @@ class Contractor < ActiveRecord::Base
     sections << :name if name.blank? && title.blank?
     sections << :title if title.blank?
     sections << :specialties if specialties.blank?
-    sections << :addresses if addresses.blank?
     sections << :mobile_number if mobile_number.blank?
     sections << :office_number if office_number.blank?
-    sections << :website if website.nil?
-    sections << :facebook if facebook.nil?
-    sections << :twitter if twitter.nil?
+    sections << :addresses if addresses.blank?
+    sections << :website if website.blank?
+    sections << :facebook if facebook.blank?
+    sections << :twitter if twitter.blank?
 
     return sections
   end

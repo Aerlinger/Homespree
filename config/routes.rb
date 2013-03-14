@@ -1,18 +1,21 @@
 Homespree::Application.routes.draw do
 
-  devise_for :contractors
+  root :to => 'pages#home', :id => 'home'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
+  devise_for :contractors, :controllers =>
+      { registrations: "contractors/registrations", sessions: "contractors/sessions" }
 
-
-  resources :appointments
-  resources :contractors, only: [:show, :index]
-  resources :contractor_wizard
+  namespace :contractors do
+    resources :wizard
+    resources :profiles, only: [:show, :index]
+  end
 
   match 'pitch' => 'pages#pitch', as: "pitch"
 
   ActiveAdmin.routes(self)
 
-  resources :mailinglists
+  resources :mailinglists, only: [:create]
 
   # Static pages page
   match 'home'        => 'pages#home',        as: "home"
@@ -21,7 +24,5 @@ Homespree::Application.routes.draw do
   match 'about'       => 'pages#about'
   match 'contact'     => 'pages#contact'
   match 'jobs'        => 'pages#jobs'
-
-  root :to => 'pages#home', :id => 'home'
 
 end
