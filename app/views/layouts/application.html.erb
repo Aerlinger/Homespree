@@ -16,7 +16,7 @@
 <head>
   <title>Homespree | The smart way to get home improvement estimates</title>
 
-  <%= render "layouts/header_extras" %>
+  <%= render "partials/header_extras" %>
 
   <meta name="description" content="Homespree landing page">
   <meta name="viewport" content="width=device-width">
@@ -36,26 +36,17 @@
 <![endif]-->
 
 
-<%= render "layouts/flash", flash: flash %>
+<%= render "partials/flash", flash: flash %>
+<%= render "partials/header" %>
 
-<%= render "layouts/header" %>
+<div id="content">
+  <%= content_for?(:content) ? yield(:content) : yield %>
+</div>
 
-<% unless current_page? root_path %>
-  <div class="secondary">
-    <div class="container">
-<% end %>
-
-    <%= yield %>
-
-<% unless current_page? root_path %>
-    </div>
-  </div>
-<% end %>
-
-<%= render "layouts/footer" %>
+<%= render "partials/footer" %>
+<%= render "partials/footer_extras" %>
 
 <%= javascript_include_tag 'application' %>
-
 
 </body>
 </html>

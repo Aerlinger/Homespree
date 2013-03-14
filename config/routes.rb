@@ -1,6 +1,7 @@
 Homespree::Application.routes.draw do
 
-  root :to => 'pages#home', :id => 'home'
+  root :to => 'static_pages#home', :id => 'home'
+  ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   devise_for :contractors, :controllers =>
@@ -11,18 +12,16 @@ Homespree::Application.routes.draw do
     resources :profiles, only: [:show, :index]
   end
 
-  match 'pitch' => 'pages#pitch', as: "pitch"
-
-  ActiveAdmin.routes(self)
-
   resources :mailinglists, only: [:create]
 
+
   # Static pages page
-  match 'home'        => 'pages#home',        as: "home"
-  match 'contractors_preview' => 'pages#contractors', as: "contractors_preview"
-  match 'homeowners_preview'  => 'pages#homeowners',  as: "homeowners_preview"
-  match 'about'       => 'pages#about'
-  match 'contact'     => 'pages#contact'
-  match 'jobs'        => 'pages#jobs'
+  match 'pitch' => 'static_pages#pitch', as: "pitch"
+  match 'home'        => 'static_pages#home',        as: "home"
+  match 'contractors_preview' => 'static_pages#contractors', as: "contractors_preview"
+  match 'homeowners_preview'  => 'static_pages#homeowners',  as: "homeowners_preview"
+  match 'about'       => 'static_pages#about'
+  match 'contact'     => 'static_pages#contact'
+  match 'jobs'        => 'static_pages#jobs'
 
 end

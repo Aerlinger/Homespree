@@ -1,4 +1,6 @@
-class PagesController < ApplicationController
+class StaticPagesController < ApplicationController
+
+  layout "static_page", except: [:home]
 
   def home
   end

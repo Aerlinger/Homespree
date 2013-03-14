@@ -1,6 +1,10 @@
-<%= render partial: "pages/partials/sidenav" %>
+<% content_for :static_page do %>
+
+<%= render partial: "static_pages/partials/sidenav" %>
 
 <div class="span8 descriptiontext">
   <iframe height="697" allowTransparency="true" frameborder="0" scrolling="no" style="width:100%;border:none" src="http://homespree.wufoo.com/embed/z7x3p3/">
     <a href="http://homespree.wufoo.com/forms/z7x3p3/">Fill out my Wufoo form!</a></iframe>
 </div>
+
+<% end %>
