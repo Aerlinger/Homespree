@@ -17,4 +17,13 @@ class ApplicationController < ActionController::Base
   # after_sign_out_path_for(resource)
   # after_update_path_for(resource)
 
+  # devise_error_messages!
+
+  private
+
+  def present(object, klass = nil)
+    klass ||= "#{object.class}Presenter".constantize
+    klass.new(object, view_context)
+  end
+
 end

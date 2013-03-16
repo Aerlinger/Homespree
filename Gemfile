@@ -17,14 +17,18 @@ gem 'mobylette'
 # Profile creation wizard:
 gem 'wicked'
 
-# Image uploads:
-gem "rmagick"
-gem "carrierwave"
+# Tools used in User Profiles:
+gem 'redcarpet'
+gem 'rmagick'
+gem 'carrierwave'
+
+gem 'jquery-rails'
+gem 'geocoder'
 
 
 group :test, :development do
   gem 'sqlite3'
-  gem 'rspec-rails', ">= 2.12.0"
+  gem 'rspec-rails', '>= 2.12.0'
   gem 'capybara'
   gem 'turn', :require => false
   gem 'meta_request'
@@ -48,8 +52,6 @@ group :production do
   gem 'pg'
 end
 
-# Gems used only for assets and not required
-# in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
@@ -62,5 +64,5 @@ group :assets do
   gem 'twitter-bootstrap-rails'
 end
 
-gem 'jquery-rails'
+
 

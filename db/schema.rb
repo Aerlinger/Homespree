@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130228031157) do
+ActiveRecord::Schema.define(:version => 20130315023102) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -76,25 +76,29 @@ ActiveRecord::Schema.define(:version => 20130228031157) do
     t.string   "website"
     t.string   "facebook"
     t.string   "twitter"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
+    t.datetime "created_at",                                                           :null => false
+    t.datetime "updated_at",                                                           :null => false
     t.text     "pictures"
-    t.string   "email",                  :default => "", :null => false
+    t.string   "email",                                                :default => "", :null => false
     t.string   "last_name"
-    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "encrypted_password",                                   :default => "", :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          :default => 0
+    t.integer  "sign_in_count",                                        :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.string   "password",               :default => "", :null => false
-    t.string   "password_confirmation",  :default => "", :null => false
+    t.string   "password",                                             :default => "", :null => false
+    t.string   "password_confirmation",                                :default => "", :null => false
     t.string   "title"
-    t.string   "mobile_number",          :default => ""
-    t.string   "office_number",          :default => ""
+    t.string   "mobile_number",                                        :default => ""
+    t.string   "office_number",                                        :default => ""
+    t.string   "license",                                              :default => ""
+    t.decimal  "insurance_limit",        :precision => 5, :scale => 2
+    t.decimal  "bonding_limit",          :precision => 5, :scale => 2
+    t.string   "filename",                                             :default => ""
   end
 
   add_index "contractors", ["reset_password_token"], :name => "index_contractors_on_reset_password_token", :unique => true
@@ -105,6 +109,14 @@ ActiveRecord::Schema.define(:version => 20130228031157) do
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
     t.text     "notes"
+  end
+
+  create_table "photos", :force => true do |t|
+    t.string   "name"
+    t.string   "filename"
+    t.string   "caption"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "specialties", :force => true do |t|

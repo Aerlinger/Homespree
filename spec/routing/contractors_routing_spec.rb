@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe ContractorsController do
+describe Contractors::ContractorsController do
   describe "routing" do
 
     it "routes to #index" do

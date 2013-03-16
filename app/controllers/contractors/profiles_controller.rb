@@ -11,12 +11,6 @@ class Contractors::ProfilesController < ApplicationController
 
   def show
     @contractor = Contractor.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @contractors }
-      format.js
-    end
   end
 
 end

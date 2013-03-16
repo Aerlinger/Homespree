@@ -1,53 +1,20 @@
-<p>
-  <b>Name:</b>
-  <%= @contractor.name %>
-</p>
+<% present @contractor do |contractor_presenter| %>
 
-<p>
-  <b>Email:</b>
-  <%= @contractor.email %>
-</p>
+  <div id="profile">
+    <h1><%= contractor_presenter.title %></h1>
+    <%= contractor_presenter.full_name %>
 
-<p>
-  <b>Title:</b>
-  <%= @contractor.title %>
-</p>
+    <dl>
+      <dt>Member Since:</dt>
+      <dd><%= contractor_presenter.member_since %></dd>
+      <dt>Website URL:</dt>
+      <dd><%= contractor_presenter.website %></dd>
+      <dt>Twitter Name:</dt>
+      <dd><%= contractor_presenter.twitter %></dd>
+      <dt>Description:</dt>
+      <dd><%= contractor_presenter.description %></dd>
+    </dl>
 
-<p>
-  <b>Number:</b>
-  <%= @contractor.mobile_number %>
-</p>
+  </div>
 
-<p>
-  <b>Number:</b>
-  <%= @contractor.office_number %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @contractor.description %>
-</p>
-
-<p>
-  <b>Specialties:</b>
-  <%= @contractor.specialties %>
-</p>
-
-<p>
-  <b>Website:</b>
-  <%= @contractor.website %>
-</p>
-
-<p>
-  <b>Facebook:</b>
-  <%= @contractor.facebook %>
-</p>
-
-<p>
-  <b>Twitter:</b>
-  <%= @contractor.twitter %>
-</p>
-
-
-<%# link_to 'Edit', edit_contractor_path(@contractor) %> |
-<%# link_to 'Back', contractors_path %>
+<% end %>

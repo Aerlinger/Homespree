@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe ContractorWizardController do
+describe Contractors::WizardController do
 
 end
