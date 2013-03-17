@@ -14,8 +14,9 @@ gem 'libv8', '= 3.11.8.13'
 # Mobile site optimization:
 gem 'mobylette'
 
-# Profile creation wizard:
+# Profile creation:
 gem 'wicked'
+# Formtastic or simple form?
 
 # Tools used in User Profiles:
 gem 'redcarpet'
@@ -24,6 +25,8 @@ gem 'carrierwave'
 gem 'geocoder'
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
+
 
 
 group :test, :development do
@@ -45,8 +48,10 @@ group :test, :development do
 end
 
 group :development do
+  gem 'bullet'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'brakeman'
 end
 
 group :production do

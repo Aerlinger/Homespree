@@ -18,12 +18,12 @@ class Contractor < ActiveRecord::Base
   has_many :addresses, as: :addressable
   accepts_nested_attributes_for :addresses
 
+
   # Validations:  -----------------------------------------------------------------------------------------------------
-  validates_format_of :first_name, :last_name, with: /\w+/, allow_blank: true, message: "should only contain letters"
+  validates_format_of :first_name, :last_name, with: /\A\w+\z/, allow_blank: true, message: "should only contain letters"
   #validates_length_of :first_name, :last_name, minimum: 2, maximum: 20, allow_blank: true, message: "must be valid"
   validates_format_of :email, with: email_regex, message: "is invalid"
   validates_uniqueness_of :email, message: "is already taken"
-  validates_presence_of :encrypted_password
   validates_format_of :mobile_number, :office_number, with: /\A\d{10}\Z/, allow_blank: true
   validate :name_or_title?
 
@@ -56,8 +56,8 @@ class Contractor < ActiveRecord::Base
   private
 
   def titleize_name
-    self.first_name = first_name.camelize if first_name.present?
-    self.last_name = last_name.camelize if last_name.present?
+    self.first_name[0] = first_name[0].upcase if first_name.present?
+    self.last_name[0] = last_name[0].upcase if last_name.present?
   end
 
   def downcase_email
