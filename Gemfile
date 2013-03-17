@@ -21,20 +21,21 @@ gem 'wicked'
 gem 'redcarpet'
 gem 'rmagick'
 gem 'carrierwave'
+gem 'geocoder'
 
 gem 'jquery-rails'
-gem 'geocoder'
 
 
 group :test, :development do
   gem 'sqlite3'
+
   gem 'rspec-rails', '>= 2.12.0'
   gem 'capybara'
   gem 'turn', :require => false
   gem 'meta_request'
 
   gem 'faker'
-  gem 'factory_girl_rails', '1.4.0'
+  gem 'factory_girl_rails', '1.4.0'  # Todo: Consider Fabrication as an alternative to FactoryGirl (Builder design pattern)
   gem 'database_cleaner', '0.7.0'
   gem 'rb-fsevent'
   gem 'guard-rspec'

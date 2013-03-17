@@ -1,4 +1,4 @@
-contractor_specialties:
+- contractor_specialties:
   Additions &amp; Remodeling
   Air Conditioning
   Architects &amp; Engineers
@@ -20,7 +20,11 @@ contractor_specialties:
   Lawn &amp; Garden Care
   Mold &amp; Asbestos Services
   New Home Builders
-  Painting
+  - Painting:
+    - Outdoor:
+      Stucco
+    - Indoor:
+      Faux
   Paving
   Plumbing
   Roofing

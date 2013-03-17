@@ -10,8 +10,14 @@ class ContractorPresenter < BasePresenter
   end
 
   def full_name
-    handle_none contractor.name do
-      "#{contractor.name} #{contractor.last_name}"
+    handle_none contractor.first_name do
+      "#{contractor.first_name} #{contractor.last_name}"
+    end
+  end
+
+  def email
+    handle_none contractor.email do
+      contractor.email
     end
   end
 

@@ -1,44 +1,45 @@
 class Contractor < ActiveRecord::Base
 
-  # Authentication:
+  # Authentication:  --------------------------------------------------------------------------------------------------
 
   # Include default devise modules. Others available are:
-  # :token_authenticatable, :confirmable,
-  # :lockable, :timeoutable and :omniauthable
+  # :token_authenticatable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  # Accessors:
-
-  # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me,
+  # Accessors:  -------------------------------------------------------------------------------------------------------
+  attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me,
                   :description, :mobile_number, :office_number, :title,
                   :facebook, :name, :specialties, :twitter, :website
 
-  # Associations:
-  has_many :addresses, as: :addressable
+  # Associations:  ----------------------------------------------------------------------------------------------------
   has_many :appointments
   has_many :specialties
+  has_many :addresses, as: :addressable
+  accepts_nested_attributes_for :addresses
 
-  #validates_presence_of :password, message: "Missing password"
-  validates_presence_of :title, message: "is missing"
-  #validates_presence_of :email, message: "Please enter your email"
-  #validates_uniqueness_of :email, message: "That email is already taken"
+  # Validations:  -----------------------------------------------------------------------------------------------------
+  validates_format_of :first_name, :last_name, with: /\w+/, allow_blank: true, message: "should only contain letters"
+  #validates_length_of :first_name, :last_name, minimum: 2, maximum: 20, allow_blank: true, message: "must be valid"
+  validates_format_of :email, with: email_regex, message: "is invalid"
+  validates_uniqueness_of :email, message: "is already taken"
+  validates_presence_of :encrypted_password
+  validates_format_of :mobile_number, :office_number, with: /\A\d{10}\Z/, allow_blank: true
+  validate :name_or_title?
 
-  # Callbacks:
+  # Callbacks:  -------------------------------------------------------------------------------------------------------
   before_save :titleize_name, :downcase_email
 
-  # Only email is required for now:
-  validates_format_of :email, with: email_regex, message: "Email is invalid"
-
-  accepts_nested_attributes_for :addresses
+  # Scopes:  ----------------------------------------------------------------------------------------------------------
+  default_scope order("created_at desc")
 
 
   # Generates a list of incomplete elements of a Contractor profile
   def incomplete_sections
     sections = []
 
-    sections << :name if name.blank? && title.blank?
+    sections << :first_name if first_name.blank?
+    sections << :last_name if last_name.blank?
     sections << :title if title.blank?
     sections << :specialties if specialties.blank?
     sections << :mobile_number if mobile_number.blank?
@@ -51,11 +52,12 @@ class Contractor < ActiveRecord::Base
     return sections
   end
 
+
   private
 
   def titleize_name
-    self.name = self.name.titleize if self.name.present?
-    self.last_name = self.last_name.titleize if self.last_name.present?
+    self.first_name = first_name.camelize if first_name.present?
+    self.last_name = last_name.camelize if last_name.present?
   end
 
   def downcase_email
@@ -63,22 +65,27 @@ class Contractor < ActiveRecord::Base
   end
 
   def convert_numbers
-    self.office_number = convert_number(self.office_number)
-    self.mobile_number = convert_number(self.mobile_number)
+    self.office_number = convert_number(office_number)
+    self.mobile_number = convert_number(mobile_number)
   end
 
   # Converts a number to a (xxx) yyy-zzzz format (United States)
   def convert_number(number)
     if !number.blank?
       begin
-        number.gsub!(/\D/, '')
-        #number = number_to_phone(number, :area_code => true, throw: true)
+        number = number_to_phone(number.gsub!(/\D/, ''), :area_code => true, throw: true)
       rescue Error
-        self.errors.add(:field, "Phone number is invalid")
-        return nil
+        errors.add(:phone_number, "phone number is invalid")
       end
     end
-    true
+    return number
+  end
+
+  # Validates the presence of first_name and last_name OR presence of a title
+  def name_or_title?
+    unless self.title.present? || (first_name.present? && last_name.present?)
+      errors.add(:title, "must include either a title or first and last name")
+    end
   end
 
 end

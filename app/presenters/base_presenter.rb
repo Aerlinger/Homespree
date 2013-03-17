@@ -12,7 +12,7 @@ class BasePresenter
       return yield if block_given?
       value
     else
-      h.content_tag :span, replacement, class: "none"
+      h.content_tag :span, replacement, class: "empty"
     end
   end
 

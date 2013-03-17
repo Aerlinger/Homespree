@@ -1,7 +1,4 @@
-# A sample Guardfile
-# More info at https://github.com/guard/guard#readme
-
-guard 'rspec' do
+guard 'rspec', cli: '--drb' do
   watch(%r{^spec/.+_spec\.rb$})
   watch(%r{^lib/(.+)\.rb$})     { |m| "spec/lib/#{m[1]}_spec.rb" }
   watch('spec/spec_helper.rb')  { "spec" }
@@ -22,3 +19,19 @@ guard 'rspec' do
   watch(%r{^spec/acceptance/steps/(.+)_steps\.rb$})   { |m| Dir[File.join("**/#{m[1]}.feature")][0] || 'spec/acceptance' }
 end
 
+
+guard 'spork', :cucumber_env => { 'RAILS_ENV' => 'test' }, :rspec_env => { 'RAILS_ENV' => 'test' } do
+  watch('config/application.rb')
+  watch('config/environment.rb')
+  watch(%r{^config/environments/.+\.rb$})
+  watch(%r{^config/initializers/.+\.rb$})
+  watch('Gemfile')
+  watch('Gemfile.lock')
+  watch('spec/spec_helper.rb')
+  watch(%r{^spec/support/.+\.rb$})
+end
+
+# TODO: Add if tests become slow:
+#guard 'rspec', :version => 2, :cli => '--drb', :all_on_start => false, :all_after_pass => false do
+## watch commands omitted.
+#end
