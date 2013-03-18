@@ -1,4 +1,3 @@
-puts "Creating email list:"
 
 anthony_email = Mailinglist.find_or_create_by_email("aerlinger@gmail.com")
 joe_email = Mailinglist.find_or_create_by_email("joe@myhomespree.com")
@@ -8,14 +7,13 @@ kyle_email = Mailinglist.find_or_create_by_email("kyle@myhomespree.com")
   mailing_list.user_type = "homeowner"
 end
 
-admin_user = AdminUser.find_or_create_by_email('admin@myhomespree.com')
-anthony_user = AdminUser.find_or_create_by_email('anthony@myhomespree.com')
-kyle_user = AdminUser.find_or_create_by_email('kyle@myhomespree.com')
-joe_user = AdminUser.find_or_create_by_email('joe@myhomespree.com')
+admin_user = AdminUser.find_or_create_by_email('admin@myhomespree.com', password: "MeetMike9")
+anthony_user = AdminUser.find_or_create_by_email!('anthony@myhomespree.com', password: "MeetMike9")
+kyle_user = AdminUser.find_or_create_by_email('kyle@myhomespree.com', password: "MeetMike9")
+joe_user = AdminUser.find_or_create_by_email('joe@myhomespree.com', password: "MeetMike9")
 
-[admin_user, anthony_user, kyle_user, joe_user].each do |admin|
-  admin.password = "MeetMike9"
-end
+puts "Creating admin users:"
+puts AdminUser.all
 
 # Create a default Contractor
 #Contractor.destroy(1)
@@ -39,6 +37,5 @@ joe_the_plumber.facebook = "www.facebook.com/joe_the_plumber"
 joe_the_plumber.twitter = "@joe_the_plumber"
 joe_the_plumber.license = "ABCDEFG12345"
 
-joe_the_plumber.filename = "default.jpg"
 
-joe_the_plumber.save(validate: false)
+joe_the_plumber.save

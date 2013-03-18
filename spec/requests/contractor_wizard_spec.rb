@@ -5,7 +5,6 @@ describe "Contractor Wizard" do
   before { visit new_contractor_path }
   subject { page }
 
-  it { should have_selector('title', text: "Create your contractor profile") }
 
   describe "Fill in first page (Essential Info) with valid information" do
     before do

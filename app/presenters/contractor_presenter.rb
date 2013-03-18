@@ -5,8 +5,8 @@ class ContractorPresenter < BasePresenter
   presents :contractor
   delegate :email, to: :contractor
 
-  def profile_picture
-    image_tag "contractors/#{profile_pic_filename}"
+  def portrait_picture
+    image_tag "contractors/#{profile_pic_filename}", class: "contractor_portrait"
   end
 
   def full_name
@@ -22,7 +22,9 @@ class ContractorPresenter < BasePresenter
   end
 
   def title
-    contractor.title
+    handle_none contractor.title do
+      content_tag :h1, contractor.title, class: :contractor_title
+    end
   end
 
   def description
@@ -33,13 +35,13 @@ class ContractorPresenter < BasePresenter
 
   def website
     handle_none contractor.website do
-      h.link_to(contractor.website, contractor.website)
+      h.link_to contractor.website, contractor.website, class: "contractor_website"
     end
   end
 
   def twitter
     handle_none contractor.twitter do
-      h.link_to contractor.twitter, "http://twitter.com/#{contractor.twitter}"
+      h.link_to contractor.twitter, "http://twitter.com/#{contractor.twitter}", class: "contractor_twitter"
     end
   end
 
@@ -50,8 +52,8 @@ class ContractorPresenter < BasePresenter
   private
 
   def profile_pic_filename
-    if contractor.filename.present?
-      contractor.filename
+    if contractor.photo_filename.present?
+      contractor.photo_filename
     else
       "contractor_default.jpg"
     end

@@ -74,7 +74,7 @@ class Contractor < ActiveRecord::Base
     if !number.blank?
       begin
         number = number_to_phone(number.gsub!(/\D/, ''), :area_code => true, throw: true)
-      rescue Error
+      rescue StandardError
         errors.add(:phone_number, "phone number is invalid")
       end
     end

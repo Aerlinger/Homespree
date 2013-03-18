@@ -1,9 +1,10 @@
 Homespree::Application.routes.draw do
 
-  root :to => 'static_pages#home', :id => 'home'
   ActiveAdmin.routes(self)
-
   devise_for :admin_users, ActiveAdmin::Devise.config
+
+  root :to => 'static_pages#home', :id => 'home'
+
   devise_for :contractors, :controllers =>
       { registrations: "contractors/registrations", sessions: "contractors/sessions" }
 
@@ -12,7 +13,7 @@ Homespree::Application.routes.draw do
     resources :profiles, only: [:show, :index]
   end
 
-  resources :mailinglists, only: [:create]
+  resources :mailinglists, only: [:create, :destroy]
 
 
   # Static pages page

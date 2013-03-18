@@ -12,6 +12,9 @@ Spork.prefork do
   require 'rspec/autorun'
   require 'mobylette/helmet'
 
+  require 'simplecov'
+  SimpleCov.start 'rails'
+
   Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
   module ::RSpec::Core
