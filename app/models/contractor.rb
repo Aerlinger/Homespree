@@ -18,10 +18,9 @@ class Contractor < ActiveRecord::Base
   has_many :addresses, as: :addressable
   accepts_nested_attributes_for :addresses
 
-
   # Validations:  -----------------------------------------------------------------------------------------------------
   validates_format_of :first_name, :last_name, with: /\A\w+\z/, allow_blank: true, message: "should only contain letters"
-  #validates_length_of :first_name, :last_name, minimum: 2, maximum: 20, allow_blank: true, message: "must be valid"
+  validates_length_of :first_name, :last_name, minimum: 2, maximum: 20, allow_blank: true, message: "must be valid"
   validates_format_of :email, with: email_regex, message: "is invalid"
   validates_uniqueness_of :email, message: "is already taken"
   validates_format_of :mobile_number, :office_number, with: /\A\d{10}\Z/, allow_blank: true
@@ -35,7 +34,7 @@ class Contractor < ActiveRecord::Base
 
 
   # Generates a list of incomplete elements of a Contractor profile
-  def incomplete_sections
+  def incomplete_sectio
     sections = []
 
     sections << :first_name if first_name.blank?

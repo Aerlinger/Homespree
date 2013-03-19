@@ -1,5 +1,7 @@
 class Contractors::ContractorsController < ApplicationController
 
+  layout :static_page
+
   def index
     @contractors = Contractor.all
 

@@ -23,13 +23,13 @@ class ContractorPresenter < BasePresenter
 
   def title
     handle_none contractor.title do
-      content_tag :h1, contractor.title, class: :contractor_title
+      content_tag :h1, contractor.title, class: [:contractor_title, "block-underline-full"]
     end
   end
 
   def description
     handle_none contractor.description do
-      markdown(contractor.description)
+      contractor.description
     end
   end
 
@@ -55,7 +55,7 @@ class ContractorPresenter < BasePresenter
     if contractor.photo_filename.present?
       contractor.photo_filename
     else
-      "contractor_default.jpg"
+      "default_portrait.jpg"
     end
   end
 

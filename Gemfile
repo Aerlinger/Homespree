@@ -18,6 +18,8 @@ gem 'mobylette'
 gem 'wicked'
 # Formtastic or simple form?
 
+gem 'mercury-rails'
+
 # Tools used in User Profiles:
 gem 'redcarpet'
 gem 'rmagick'
@@ -26,7 +28,6 @@ gem 'geocoder'
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
-
 
 
 group :test, :development do

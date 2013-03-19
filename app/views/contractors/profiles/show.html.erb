@@ -1,20 +1,37 @@
-<% present @contractor do |contractor_presenter| %>
+<% content_for :static_page do %>
 
-  <div id="profile">
-    <h1><%= contractor_presenter.title %></h1>
-    <%= contractor_presenter.full_name %>
+  <% present @contractor do |contractor_presenter| %>
 
-    <dl>
-      <dt>Member Since:</dt>
-      <dd><%= contractor_presenter.member_since %></dd>
-      <dt>Website URL:</dt>
-      <dd><%= contractor_presenter.website %></dd>
-      <dt>Twitter Name:</dt>
-      <dd><%= contractor_presenter.twitter %></dd>
-      <dt>Description:</dt>
-      <dd><%= contractor_presenter.description %></dd>
-    </dl>
+    <div id="profile">
 
-  </div>
+      <div class="row">
+        <div class="span2">
+          <%= contractor_presenter.portrait_picture %>
+        </div>
+        <div class="span10">
+          <%= contractor_presenter.title %>
+          <%= contractor_presenter.full_name %>
+          <%= contractor_presenter.description %>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="row">
+        <div class="span2">
+          <%= contractor_presenter.portrait_picture %>
+        </div>
+        <div class="span10">
+          <%= contractor_presenter.title %>
+          <%= contractor_presenter.full_name %>
+          <%= contractor_presenter.description %>
+        </div>
+      </div>
+
+
+
+    </div>
+
+  <% end %>
 
 <% end %>
