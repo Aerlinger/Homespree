@@ -10,7 +10,7 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
     box-shadow: $shadow;
     background-color: white;
     padding-bottom: 2em;
-    padding-top: 60px;
+    padding-top: 80px;
   }
 
   a {
@@ -20,21 +20,6 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
     &:hover {
       color: $homespree_light;
       text-decoration: underline;
-    }
-  }
-
-  form {
-    small {
-      margin-left: 1em;
-      a {
-        text-decoration: none;
-        border-bottom:1px dotted;
-
-        &:hover {
-          text-decoration: none;
-          border-bottom: 1px dotted $homespree_light;
-        }
-      }
     }
   }
 

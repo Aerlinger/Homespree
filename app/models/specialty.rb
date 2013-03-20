@@ -3,7 +3,7 @@ class Specialty < ActiveRecord::Base
 
   # Contractor job specialties are stored in a separate YAML config file:
   def self.types
-    @@types ||= YAML.load_file(Rails.root.join("config", "contractor_specialties.yml"))
+    @@types = YAML.load_file(Rails.root.join("config", "contractor_specialties.yml"))["contractor_specialties"]
   end
 
 end

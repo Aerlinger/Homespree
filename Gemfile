@@ -25,6 +25,9 @@ gem 'redcarpet'
 gem 'rmagick'
 gem 'carrierwave'
 gem 'geocoder'
+gem 'simple_form'
+
+gem 'markaby'
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'

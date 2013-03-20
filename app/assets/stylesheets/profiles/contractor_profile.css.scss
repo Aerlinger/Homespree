@@ -1,6 +1,10 @@
 @import "global/palette.css.scss";
 
 #profile {
+
+  padding-left: 15px;
+  padding-right: 15px;
+
   .contractor_portrait {
     border-radius: 3px;
     box-shadow: $shadow;

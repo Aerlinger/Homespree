@@ -1,5 +1,7 @@
 class BasePresenter
 
+
+
   def initialize(object, template)
     @object = object
     @template = template
@@ -36,5 +38,6 @@ class BasePresenter
   def markdown(text)
     Redcarpet.new(text, :hard_wrap, :filter_html, :autolink).to_html.html_safe
   end
+
 
 end

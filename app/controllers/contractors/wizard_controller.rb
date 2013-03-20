@@ -1,7 +1,7 @@
 class Contractors::WizardController < ApplicationController
 
   include Wicked::Wizard
-  steps :essential, :contact_info, :extra_info
+  steps :essential, :contact_info
 
   layout "registration"
 
@@ -12,7 +12,8 @@ class Contractors::WizardController < ApplicationController
 
   def update
     @contractor = current_contractor
-    @contractor.attributes = params[:contractor]
+    @contractor.update_attributes(params[:contractor])
+
     render_wizard @contractor
   end
 

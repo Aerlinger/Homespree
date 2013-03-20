@@ -6,7 +6,7 @@ describe Contractor do
   it { should respond_to :appointments }
 
   it { should respond_to :id }
-  it { should respond_to :title }
+  it { should respond_to :company_title }
   it { should respond_to :first_name }
   it { should respond_to :last_name }
   it { should respond_to :mobile_number }
@@ -41,7 +41,7 @@ describe Contractor do
     it "should show error for non existent password" do
       @contractor.errors.messages[:password].should eq ["can't be blank"]
       @contractor.errors.messages[:email].should eq ["can't be blank", "is invalid"]
-      @contractor.errors.messages[:title].should eq ["must include either a title or first and last name"]
+      @contractor.errors.messages[:company_title].should eq ["must include either a title or first and last name"]
     end
   end
 

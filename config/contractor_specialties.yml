@@ -1,37 +1,32 @@
-- contractor_specialties:
-  Additions &amp; Remodeling
-  Air Conditioning
-  Architects &amp; Engineers
-  Audio/Visual &amp; Computers
-  Brick &amp; Stone
-  Cleaning &amp; Maid Services
-  Concrete
-  Decks
-  Designers &amp; Decorators
-  Drywall&amp; Plaster
-  Electrical
-  Fences
-  Flooring &amp; Carpet
-  Furniture Repair &amp; Refinish
-  Garage &amp; Garage Doors
-  Handyman Services
-  Heating &amp; Furnace Systems
-  Landscaping
-  Lawn &amp; Garden Care
-  Mold &amp; Asbestos Services
-  New Home Builders
-  - Painting:
-    - Outdoor:
-      Stucco
-    - Indoor:
-      Faux
-  Paving
-  Plumbing
-  Roofing
-  Sheds &amp; Enclosures
-  Siding
-  Swimming Pools
-  Tile
-  Tree Service
-  Waste Material Removal
-  Windows
+contractor_specialties:
+  - Additions & Remodeling
+  - Air Conditioning
+  - Architects & Engineers
+  - Audio/Visual & Computers
+  - Brick & Stone
+  - Cleaning & Maid Services
+  - Concrete
+  - Decks
+  - Designers & Decorators
+  - Drywall & Plaster
+  - Electrical
+  - Fences
+  - Flooring & Carpet
+  - Furniture Repair &amp; Refinish
+  - Garage & Garage Doors
+  - Handyman Services
+  - Heating & Furnace Systems
+  - Landscaping
+  - Lawn & Garden Care
+  - Mold & Asbestos Services
+  - New Home Builders
+  - Paving
+  - Plumbing
+  - Roofing
+  - Sheds & Enclosures
+  - Siding
+  - Swimming Pools
+  - Tile
+  - Tree Service
+  - Waste Material Removal
+  - Windows

@@ -1,32 +1,29 @@
 <% content_for :registration_page do %>
 
-  <%= provide :title, "Tell us about yourself" %>
+  <%= provide :title, "Tell us more about yourself" %>
 
   <%= render layout: 'form' do |f| %>
 
-    <div class="field">
-      <%= f.label :email %>
-      <br/>
-      <%= f.text_field :email %>
-    </div>
+    <%= f.input :mobile_number %>
+    <%= f.input :office_number %>
 
-    <div class="field">
-      <%= f.label "Company title" %>
-      <br/>
-      <%= f.text_field :title %>
-    </div>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
 
-    <div class="field">
-      <%= f.label :specialties %>
-      <br/>
-      <%= f.text_area :specialties %>
-    </div>
+    <%= content_tag(:h2, "Enter your address", class: "block-underline-full") %>
 
-    <div class="field">
-      <%= f.label :password %>
-      <br/>
-      <%= f.text_area :password %>
-    </div>
+    <%= f.simple_fields_for :addressable do |a| %>
+      <%= a.input :line1 %>
+      <%= a.input :line2 %>
+      <%= a.input :city %>
+      <%= a.input :state %>
+      <%= a.input :zipcode %>
+    <% end %>
+
+    <%= content_tag(:h2, "What are your specialties?", class: "block-underline-full") %>
+
+    <%= f.select :specialties, Specialty.types %>
+    <%= f.input :specialties %>
 
   <% end %>
 

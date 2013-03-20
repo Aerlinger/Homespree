@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @homeowner.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @homeowner.email %>
+</p>
+
+
+<%= link_to 'Edit', edit_homeowner_path(@homeowner) %> |
+<%= link_to 'Back', homeowners_path %>

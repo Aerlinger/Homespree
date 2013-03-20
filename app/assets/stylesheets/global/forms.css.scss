@@ -1,0 +1,35 @@
+@import "global/palette.css.scss";
+
+.simple_form {
+
+  div.input {
+    margin-top: 10px;
+  }
+
+  input.radio_buttons, input.check_boxes {
+    margin-right: 5px;
+  }
+
+  textarea {
+    width: 95%;
+  }
+
+  small {
+    padding-bottom: 3px;
+    a {
+      text-decoration: none;
+      border-bottom: 1px dotted;
+
+      &:hover {
+        text-decoration: none;
+        border-bottom: 1px solid;
+      }
+
+    }
+  }
+
+  .hint {
+    color: #555;
+    font-style: italic;
+  }
+}

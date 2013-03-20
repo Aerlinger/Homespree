@@ -2,26 +2,23 @@
 
   <%= provide :title, "Create your contractor profile" %>
 
-  <%= form_for resource, :as => resource_name, :url => registration_path(resource_name) do |f| %>
+  <%= simple_form_for resource, :as => resource_name, :url => registration_path(resource_name) do |f| %>
 
-    <%= devise_error_messages! %>
+    <%= f.error_notification message: "All fields are required." %>
 
-    <div><%= f.label :email %>
-      <%= f.email_field :email, :autofocus => true %></div>
+    <%= f.input :email %>
+    <%= f.input :company_title, error: false do %>
+      <%= f.text_field :company_title %>
+      <small><%= link_to "Individual with no Company?", "javascript:void(0)" %></small>
+    <% end %>
+    <%= f.input :password %>
 
-    <div><%= f.label "Company Title" %>
-      <%= f.text_field :title %>
-      <small><a href="#">Individual with no Company?</a></small>
-    </div>
-
-    <div><%= f.label :password %>
-      <%= f.password_field :password %></div>
-
-
-    <div><%= f.submit "Sign up" %></div>
+    <%= f.button :submit, as: :button %>
 
     <hr>
     <%= render "contractors/shared/links" %>
+
   <% end %>
+
 
 <% end %>

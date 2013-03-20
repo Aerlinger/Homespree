@@ -4,31 +4,38 @@
 
     <div id="profile">
 
-      <div class="row">
+      <div class="row-fluid">
         <div class="span2">
           <%= contractor_presenter.portrait_picture %>
         </div>
         <div class="span10">
+
+          <%= contractor_presenter.incomplete_sections %>
+
           <%= contractor_presenter.title %>
           <%= contractor_presenter.full_name %>
-          <%= contractor_presenter.description %>
+          <a onclick="_gaq.push(['_trackEvent', 'Getting started', 'Download', 'Download compiled']);" href="assets/bootstrap.zip" class="btn btn-large btn-primary">Contact</a>
+
+          <%= link_to "Contact", class: "btn btn-large btn-primary" %>
         </div>
       </div>
+
 
       <hr>
 
-      <div class="row">
+      <div class="row-fluid">
         <div class="span2">
-          <%= contractor_presenter.portrait_picture %>
+          <table>
+            <tr>
+              <td>Contact</td>
+            </tr>
+          </table>
         </div>
         <div class="span10">
-          <%= contractor_presenter.title %>
           <%= contractor_presenter.full_name %>
           <%= contractor_presenter.description %>
         </div>
       </div>
-
-
 
     </div>
 

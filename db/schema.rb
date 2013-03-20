@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130316171433) do
+ActiveRecord::Schema.define(:version => 20130319161647) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -90,7 +90,7 @@ ActiveRecord::Schema.define(:version => 20130316171433) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.string   "title"
+    t.string   "company_title"
     t.string   "mobile_number",                                        :default => ""
     t.string   "office_number",                                        :default => ""
     t.string   "license",                                              :default => ""
@@ -100,6 +100,13 @@ ActiveRecord::Schema.define(:version => 20130316171433) do
   end
 
   add_index "contractors", ["reset_password_token"], :name => "index_contractors_on_reset_password_token", :unique => true
+
+  create_table "homeowners", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "mailinglists", :force => true do |t|
     t.string   "email"

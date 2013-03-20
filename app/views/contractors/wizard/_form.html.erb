@@ -1,21 +1,11 @@
-<%= form_for @contractor, url: wizard_path do |f| %>
-
-  <% if @contractor.errors.any? %>
-    <div id="error_explanation">
-      <h2>Please fix the following <%= pluralize(@contractor.errors.count, "error") %></h2>
-      <ul>
-        <% @contractor.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= simple_form_for @contractor, url: wizard_path do |f| %>
+  <%= f.error_notification %>
 
   <%= yield f %>
 
-  <div class="actions">
-    <%= f.submit "Continue" %>
-    or <%= link_to "skip this step", next_wizard_path %>
-  </div>
+  <hr>
+
+  <%= f.submit "Continue" %>
+  or <%= link_to "skip this step", next_wizard_path %>
 
 <% end %>

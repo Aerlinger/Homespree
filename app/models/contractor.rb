@@ -9,7 +9,7 @@ class Contractor < ActiveRecord::Base
 
   # Accessors:  -------------------------------------------------------------------------------------------------------
   attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me,
-                  :description, :mobile_number, :office_number, :title,
+                  :description, :mobile_number, :office_number, :company_title,
                   :facebook, :name, :specialties, :twitter, :website
 
   # Associations:  ----------------------------------------------------------------------------------------------------
@@ -23,23 +23,24 @@ class Contractor < ActiveRecord::Base
   validates_length_of :first_name, :last_name, minimum: 2, maximum: 20, allow_blank: true, message: "must be valid"
   validates_format_of :email, with: email_regex, message: "is invalid"
   validates_uniqueness_of :email, message: "is already taken"
-  validates_format_of :mobile_number, :office_number, with: /\A\d{10}\Z/, allow_blank: true
+  validates_format_of :mobile_number, :office_number, with: /\A\d{10}\Z/, allow_blank: true, message: "must be valid"
   validate :name_or_title?
 
   # Callbacks:  -------------------------------------------------------------------------------------------------------
   before_save :titleize_name, :downcase_email
+  before_update :clean_params
 
   # Scopes:  ----------------------------------------------------------------------------------------------------------
   default_scope order("created_at desc")
 
 
   # Generates a list of incomplete elements of a Contractor profile
-  def incomplete_sectio
+  def incomplete_sections
     sections = []
 
     sections << :first_name if first_name.blank?
     sections << :last_name if last_name.blank?
-    sections << :title if title.blank?
+    sections << :company_title if company_title.blank?
     sections << :specialties if specialties.blank?
     sections << :mobile_number if mobile_number.blank?
     sections << :office_number if office_number.blank?
@@ -53,6 +54,16 @@ class Contractor < ActiveRecord::Base
 
 
   private
+
+  def clean_params(params)
+    if params[:mobile_area_code]
+      self.mobile_number = params[:mobile_area_code] << params[:mobile_prefix] << params[:mobile_suffix]
+    end
+
+    if params[:office_area_code]
+      self.office_number = params[:office_area_code] << params[:office_prefix] << params[:office_suffix]
+    end
+  end
 
   def titleize_name
     self.first_name[0] = first_name[0].upcase if first_name.present?
@@ -82,8 +93,8 @@ class Contractor < ActiveRecord::Base
 
   # Validates the presence of first_name and last_name OR presence of a title
   def name_or_title?
-    unless self.title.present? || (first_name.present? && last_name.present?)
-      errors.add(:title, "must include either a title or first and last name")
+    unless self.company_title.present? || (first_name.present? && last_name.present?)
+      errors.add(:company_title, "must include either a title or first and last name")
     end
   end
 
