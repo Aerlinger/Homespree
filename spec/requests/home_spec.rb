@@ -8,15 +8,17 @@ describe "Home page" do
 
   subject { page }
 
-  it { should have_selector(".navbar") }
-  #its(:title) { should include "Homespree" }
-  #it { should have_text "Homespree | The smart way to get home improvement estimates" }
-
+  #it { should have_selector(".navbar") }
 
   describe "submitting an email from the home page" do
-    fill_in "submit_email"
-    fill_in "submit_email"
-    click_button "submit_location"
+    before do
+      fill_in "email_signup", with: "testmailinglist@rspec.com"
+      click_link "dropdown"
+      #click_link "homeowner"
+      click_button "submit_location"
+    end
+
+    its(:current_path) { should eq "/mailinglist/create" }
   end
 
 end

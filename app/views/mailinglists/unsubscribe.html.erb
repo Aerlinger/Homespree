@@ -1,0 +1,6 @@
+<% content_for :registration do %>
+  <%= form_tag do |f| %>
+    <%= f.email_field :email %>
+    <%= f.submit "Unsubscribe" %>
+  <% end %>
+<% end %>

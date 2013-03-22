@@ -3,17 +3,22 @@ Homespree::Application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config
 
-  root :to => 'static_pages#home', :id => 'home'
+  root :to => 'static_pages#home'
 
   devise_for :contractors, :controllers =>
-      { registrations: "contractors/registrations", sessions: "contractors/sessions" }
+      { registrations: "contractors/registrations",
+        sessions: "contractors/sessions" }
 
   namespace :contractors do
     resources :wizard
     resources :profiles, only: [:show, :index]
   end
 
-  resources :mailinglists, only: [:create, :destroy]
+  scope "/mailinglist", as: :mailinglist do
+    match "create" => "mailinglists#create", via: :post
+    match "unsubscribe/:email" => "mailinglists#unsubscribe", via: :get
+    match "destroy/:email" => "mailinglists#destroy", via: :delete
+  end
 
 
   # Static pages page

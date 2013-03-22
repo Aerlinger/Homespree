@@ -9,7 +9,15 @@ Spork.prefork do
   ENV["RAILS_ENV"] ||= 'test'
   require File.expand_path("../../config/environment", __FILE__)
   require 'rspec/rails'
+  require 'capybara/rspec'
+  require 'rspec/autorun'
 
+  module ::RSpec::Core
+    class ExampleGroup
+      include Capybara::DSL
+      include Capybara::RSpecMatchers
+    end
+  end
 
   require 'simplecov'
   SimpleCov.start 'rails'
@@ -48,16 +56,6 @@ Spork.prefork do
 end
 
 Spork.each_run do
-  require 'capybara/rspec'
-  require 'rspec/autorun'
-
-
-  module ::RSpec::Core
-    class ExampleGroup
-      include Capybara::DSL
-      include Capybara::RSpecMatchers
-    end
-  end
 
   FactoryGirl.reload
 end

@@ -6,17 +6,16 @@
 
         <div class="search-area">
 
-
           <img class="stressfree" src="/assets/stressfree.png">
 
           <h2 style="color: white;">Connect with quality contractors. Get free estimates.</h2>
 
           <!-- Ajax email submission form: -->
-          <%= form_tag mailinglists_path, authenticate_with: :none, method: :post, remote: true, id: "search_form" do %>
+          <%= form_tag mailinglist_create_path, authenticate_with: :none, method: :post, remote: true, id: "search_form" do %>
             <%= email_field_tag(:email, "", type: "text", id: "email_signup", placeholder: "Email") %>
 
             <div id="customer_type" class="btn-group">
-              <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+              <a id="dropdown" class="btn dropdown-toggle" data-toggle="dropdown" href="#">
                 <span class="text">I am a...</span>
                 <span class="caret pull-right"></span>
               </a>
@@ -24,13 +23,12 @@
               <input id="user_type" name="user_type" value="" style="display: none" />
 
               <ul class="dropdown-menu">
-                <li><a href="#" onClick="return false;">Homeowner</a></li>
-                <li><a href="#" onClick="return false;">Contractor</a></li>
+                <li><a id="homeowner" href="javascript:void(0)" onClick="return false;">Homeowner</a></li>
+                <li><a id="contractor" href="javascript:void(0)" onClick="return false;">Contractor</a></li>
               </ul>
             </div>
 
-            <%= submit_tag "Sign Up", :disable_with => "Thanks!",
-                           id: "submit_location", class: "large green call-to-action icon-and-text" %>
+            <%= submit_tag "Sign Up", id: "submit_location", class: "large green call-to-action icon-and-text" %>
 
             <p id="submit_success">Thanks! We'll keep you posted when we launch.</p>
           <% end %>
@@ -83,7 +81,6 @@
             </article>
           </div>
 
-
         </div>
         <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
         <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
@@ -91,6 +88,3 @@
     </div>
   </div>
 </section>
-
-
-

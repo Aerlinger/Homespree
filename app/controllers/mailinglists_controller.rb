@@ -11,10 +11,14 @@ class MailinglistsController < ApplicationController
     end
   end
 
+  def unsubscribe
+    @user_email = params[:email]
+  end
+
   # params: email
   def destroy
-    email = params[:email]
-    mailinglist = Mailinglist.find_by_email(email)
+    @user_email = params[:email]
+    mailinglist = Mailinglist.find_by_email(@user_email)
     mailinglist.destroy
   end
 
