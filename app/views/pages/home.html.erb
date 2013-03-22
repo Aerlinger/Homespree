@@ -15,7 +15,7 @@
           <%= form_tag mailinglists_path, method: :post, remote: true, authenticity_token: false,
                        class: "custom show-search-options position-left", id: "search_form" do %>
               <%= email_field_tag(:email, "", type: "text", class: "checkout search-option ui-datepicker-target",
-                                  id:"checkout", placeholder: "Email") %>
+                                  id:"submit_email", placeholder: "Email") %>
               <%= submit_tag "Sign Up", :disable_with => "Thanks!",
                              id: "submit_location", class: "large green btn icon-and-text position-right" %>
           <% end %>

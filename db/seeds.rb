@@ -16,20 +16,19 @@ puts "Creating admin users:"
 puts AdminUser.all
 
 # Create a default Contractor
-
 if Contractor.exists?(1)
   Contractor.destroy(1)
 end
 
 joe_the_plumber = Contractor.new do |c|
 
-  c.email "joetheplumber@seed.com"
-  c.password "iamsecret"
+  c.email = "joetheplumber@seed.com"
+  c.password = "iamsecret"
 
   c.id = 1
   c.first_name = "joe"
   c.last_name = "thePlumber"
-  c.title = "Joe's Plumbing"
+  c.company_title = "Joe's Plumbing"
 
   c.bonding_limit = 100.00
   c.insurance_limit = 200.00
@@ -37,14 +36,18 @@ joe_the_plumber = Contractor.new do |c|
   c.office_number = "7145559652"
   c.mobile_number = "9495556404"
 
-  c.description = Faker::Lorem.paragraphs(2)
+  c.slogan = "I am Joe the plumber"
+
+  c.description = Faker::Lorem.paragraphs(5).join
 
   c.facebook = "www.facebook.com/joe_the_plumber"
   c.twitter = "@joe_the_plumber"
   c.license = "ABCDEFG12345"
 
+  c.website = "http://www.joesplumbing.com"
+
 end
 
 joe_the_plumber.save!
 
-puts "Created contractor: #{joe_the_plumber.title}"
+puts "Created contractor: #{joe_the_plumber.company_title}"

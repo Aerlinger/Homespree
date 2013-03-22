@@ -3,7 +3,7 @@ class Address < ActiveRecord::Base
 
   validates_presence_of :city, :line1, :state, :zipcode
 
-  validates :zipcode, format: zipcode_regex
+  validates :zipcode, format: RegexDefinitions::zipcode_regex
 
   belongs_to :addressable, polymorphic: true
 end

@@ -29,6 +29,22 @@ describe Contractor do
   it { should respond_to :last_sign_in_ip }
   it { should respond_to :encrypted_password }
 
+  let(:mike) { FactoryGirl.create :contractor }
+  subject { mike }
+
+
+  describe "sanitize phone numbers" do
+    before do
+      mike.office_number = '(808)   389-1234'
+      mike.mobile_number = '[808]389-1234'
+      mike.valid?
+    end
+
+    it { should be_valid }
+    its(:office_number) { should eq "8083891234" }
+    its(:mobile_number) { should eq "8083891234" }
+  end
+
 
   describe "with nothing" do
     before do
@@ -45,96 +61,92 @@ describe Contractor do
     end
   end
 
-  describe "should be invalid" do
-
-    specify "with blank emal" do
-      subject.should_not be_valid
-    end
-
-    specify "with bad email address" do
-      subject.email = "asdf"
-      subject.should_not be_valid
-    end
-
-    specify "with bad number" do
-    end
-  end
 
   describe "valid contractor" do
-    before { @contractor = create :contractor }
 
     it "should check phone numbers" do
       [:office_number, :mobile_number].each do |number|
-        @contractor[number] = "123456789"
-        @contractor.should_not be_valid
-        expect(@contractor.errors.messages[number]).to eq ["is invalid"]
+        subject[number] = "123456789"
+        subject.should_not be_valid
+        expect(subject.errors.messages[number]).to eq ["must be valid"]
       end
     end
 
     it "should have email" do
-      @contractor.email.should_not be_empty
+      mike.email.should_not be_empty
     end
 
     it "should have name" do
-      @contractor.first_name.should_not be_empty
-      @contractor.last_name.should_not be_empty
+      mike.first_name.should_not be_empty
+      mike.last_name.should_not be_empty
+    end
+
+    it "should capitalize first and last name" do
+      mike.first_name = "joe"
+      mike.last_name = "schmoe"
+
+      mike.save
+
+      mike.first_name.should eq "Joe"
+      mike.last_name.should eq "Schmoe"
+    end
+
+    it "should downcase email" do
+      mike.email = "JoEtHEplumBEr@Lol.CoM"
+      mike.save
+      mike.email.should eq "joetheplumber@lol.com"
+    end
+
+    describe "and invalidate him" do
+      it "should error there is an invalid email" do
+        mike.email = "joseph"
+        mike.should_not be_valid
+      end
+
+      it "should error there is an absent email" do
+        mike.email = ""
+        mike.should_not be_valid
+
+        mike.email = nil
+        mike.should_not be_valid
+      end
+
+      specify "with blank email" do
+        mike.email = ""
+        mike.should_not be_valid
+      end
+
+      specify "with bad email address" do
+        subject.email = "asdf"
+        subject.should_not be_valid
+      end
+
+      specify "with phone number of the wrong length" do
+        subject.office_number = "01234567890"
+        subject.should_not be_valid
+        subject.office_number = "123456789"
+        subject.should_not be_valid
+      end
     end
 
   end
 
   describe "Joe The Contractor example" do
     before do
-      @joe = create :contractor
+      @mike = Contractor.new
     end
 
-    subject { @joe }
+    subject { @mike }
 
-    it { should be_valid }
+    it { should_not be_valid }
 
     it "should list incomplete sections" do
-      incomplete_sections = [:title, :specialties, :mobile_number, :office_number, :addresses, :website, :facebook, :twitter]
-      @joe.incomplete_sections.should == incomplete_sections
+      incomplete_sections = [:first_name, :last_name, :company_title, :specialties, :mobile_number, :office_number, :slogan, :description, :addresses]
+      @mike.incomplete_sections.should == incomplete_sections
 
-      @joe.first_name = "joe"
-      @joe.incomplete_sections == incomplete_sections - [:first_name]
-    end
-
-    it "should capitalize first and last name" do
-      @joe.first_name = "joe"
-      @joe.last_name = "schmoe"
-
-      @joe.save
-
-      @joe.first_name.should eq "Joe"
-      @joe.last_name.should eq "Schmoe"
-    end
-
-    it "should downcase email" do
-      @joe.email = "JoEtHEplumBEr@Lol.CoM"
-      @joe.save
-      @joe.email.should eq "joetheplumber@lol.com"
-    end
-
-
-    describe "and invalidate him" do
-
-      it "should error there is an invalid email" do
-        @joe.email = "joseph"
-        @joe.should_not be_valid
-      end
-
-
-      it "should error there is an absent email" do
-        @joe.email = ""
-        @joe.should_not be_valid
-
-        @joe.email = nil
-        @joe.should_not be_valid
-      end
-
+      @mike.first_name = "joe"
+      @mike.incomplete_sections == incomplete_sections - [:first_name]
     end
 
   end
-
-
 end

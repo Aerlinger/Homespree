@@ -25,7 +25,7 @@ describe UserPresenter do
   end
 
   it "shows title" do
-    @presenter.title.should eq "<h1 class=\"contractor_title\">#{@contractor.title.html_safe}</h1>"
+    @presenter.title.should eq "<h1 class=\"contractor_title block-underline-full\">#{@contractor.company_title}</h1>"
   end
 
 end

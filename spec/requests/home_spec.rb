@@ -8,8 +8,13 @@ describe "Home page" do
 
   subject { page }
 
-  #it { should have_selector(".navbar.navbar-fixed-top") }
-  #it { should have_selector("footer.footer-box") }
-  #it { should have_selector("title", :text => "Homespree | The smart way to get home improvement estimates") }
+  it { should have_selector(".navbar") }
+  #its(:title) { should include "Homespree" }
+  #it { should have_text "Homespree | The smart way to get home improvement estimates" }
+
+
+  describe "submitting an email from the home page" do
+
+  end
 
 end

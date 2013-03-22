@@ -2,13 +2,20 @@ require 'spec_helper'
 
 describe Mailinglist do
 
+  before do
+    ml = Mailinglist.find_by_email("iamatest@rspec.com")
+    ml.destroy if ml
+    @mailing_list = Mailinglist.create!(email: "iamatest@rspec.com", user_type: :contractor)
+  end
+
+  subject {@mailing_list}
+
   it { should respond_to :notes }
   it { should respond_to :email }
   it { should respond_to :user_type }
 
-  it "should create entry" do
-    expect { Mailinglist.create!(email: "iamatest@rspec.com", user_type: :contractor) }.to change{Mailinglist.count}.by 1
-  end
+  it { should be_valid }
+
 
   describe "with valid params" do
 
@@ -43,34 +50,27 @@ describe Mailinglist do
 
   end
 
-  describe "with empty params" do
+  describe "with empty user_type" do
     before do
       subject.email = "test@test.com"
       subject.user_type = ""
     end
 
     it { should_not be_valid }
+  end
 
-    describe "and save" do
-
-      before do
-        subject.save
-      end
-
-      it { should_not be_persisted }
-    end
+  it "should default to homeowner if substring does not contain contractor" do
+    subject.update_attributes(user_type: "l")
+    subject.should_not be_contractor
   end
 
   describe "with invalid email" do
     before do
       subject.email = "test@test.c"
       subject.user_type = "homeowner"
-      subject.save
     end
 
     it { should_not be_valid }
   end
-
-
 
 end

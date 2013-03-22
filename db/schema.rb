@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130319161647) do
+ActiveRecord::Schema.define(:version => 20130320214618) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -97,6 +97,7 @@ ActiveRecord::Schema.define(:version => 20130319161647) do
     t.decimal  "insurance_limit",        :precision => 5, :scale => 2
     t.decimal  "bonding_limit",          :precision => 5, :scale => 2
     t.string   "photo_filename",                                       :default => ""
+    t.string   "slogan"
   end
 
   add_index "contractors", ["reset_password_token"], :name => "index_contractors_on_reset_password_token", :unique => true

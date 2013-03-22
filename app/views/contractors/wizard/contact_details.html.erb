@@ -1,0 +1,16 @@
+<% content_for :registration_page do %>
+
+  <%= provide :title, "Your contact details" %>
+
+  <%= render layout: 'form' do |f| %>
+
+    <%= f.input :description %>
+
+    <%= f.input :website %>
+    <%= f.input :facebook %>
+    <%= f.input :twitter %>
+    <%= f.input :photo_filename %>
+
+  <% end %>
+
+<% end %>

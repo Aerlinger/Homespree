@@ -18,17 +18,18 @@ class Contractor < ActiveRecord::Base
   has_many :addresses, as: :addressable
   accepts_nested_attributes_for :addresses
 
+
   # Validations:  -----------------------------------------------------------------------------------------------------
   validates_format_of :first_name, :last_name, with: /\A\w+\z/, allow_blank: true, message: "should only contain letters"
   validates_length_of :first_name, :last_name, minimum: 2, maximum: 20, allow_blank: true, message: "must be valid"
-  validates_format_of :email, with: email_regex, message: "is invalid"
+  validates_format_of :email, with: RegexDefinitions::email_regex, message: "is invalid"
   validates_uniqueness_of :email, message: "is already taken"
   validates_format_of :mobile_number, :office_number, with: /\A\d{10}\Z/, allow_blank: true, message: "must be valid"
   validate :name_or_title?
 
   # Callbacks:  -------------------------------------------------------------------------------------------------------
   before_save :titleize_name, :downcase_email
-  before_update :clean_params
+  before_validation :sanitize_phone_numbers
 
   # Scopes:  ----------------------------------------------------------------------------------------------------------
   default_scope order("created_at desc")
@@ -44,10 +45,9 @@ class Contractor < ActiveRecord::Base
     sections << :specialties if specialties.blank?
     sections << :mobile_number if mobile_number.blank?
     sections << :office_number if office_number.blank?
+    sections << :slogan if slogan.blank?
+    sections << :description if description.blank?
     sections << :addresses if addresses.blank?
-    sections << :website if website.blank?
-    sections << :facebook if facebook.blank?
-    sections << :twitter if twitter.blank?
 
     return sections
   end
@@ -55,14 +55,19 @@ class Contractor < ActiveRecord::Base
 
   private
 
-  def clean_params(params)
-    if params[:mobile_area_code]
-      self.mobile_number = params[:mobile_area_code] << params[:mobile_prefix] << params[:mobile_suffix]
-    end
+  def clean_params
+    #if params[:mobile_area_code]
+    #  self.mobile_number = params[:mobile_area_code] << params[:mobile_prefix] << params[:mobile_suffix]
+    #end
+    #
+    #if params[:office_area_code]
+    #  self.office_number = params[:office_area_code] << params[:office_prefix] << params[:office_suffix]
+    #end
+  end
 
-    if params[:office_area_code]
-      self.office_number = params[:office_area_code] << params[:office_prefix] << params[:office_suffix]
-    end
+  def sanitize_phone_numbers
+    self.mobile_number.gsub!(/\D/, '') if self.mobile_number.present?
+    self.office_number.gsub!(/\D/, '') if self.office_number.present?
   end
 
   def titleize_name
@@ -72,23 +77,6 @@ class Contractor < ActiveRecord::Base
 
   def downcase_email
     self.email.downcase! if self.email.present?
-  end
-
-  def convert_numbers
-    self.office_number = convert_number(office_number)
-    self.mobile_number = convert_number(mobile_number)
-  end
-
-  # Converts a number to a (xxx) yyy-zzzz format (United States)
-  def convert_number(number)
-    if !number.blank?
-      begin
-        number = number_to_phone(number.gsub!(/\D/, ''), :area_code => true, throw: true)
-      rescue StandardError
-        errors.add(:phone_number, "phone number is invalid")
-      end
-    end
-    return number
   end
 
   # Validates the presence of first_name and last_name OR presence of a title

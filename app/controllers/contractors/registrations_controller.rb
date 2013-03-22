@@ -5,7 +5,7 @@ class Contractors::RegistrationsController < Devise::RegistrationsController
   def new
     super
     @contactor = Contractor.new
-    @contractor.addressable.build
+    @contractor.addresses.build
   end
 
   protected

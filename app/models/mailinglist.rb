@@ -1,18 +1,19 @@
 class Mailinglist < ActiveRecord::Base
-  attr_accessible :contractor, :email, :user_type, :notes
   attr_accessor :user_type
+  attr_accessible :contractor, :email, :user_type, :notes
 
-  validates_presence_of :user_type, :email, allow_blank: false
+  validates_presence_of :email, allow_blank: false
+  validates_presence_of :user_type, allow_blank: false
   validates_uniqueness_of :email
-  validates :email, format: { with: email_regex }
+  validates :email, format: {with: RegexDefinitions::email_regex}
 
-  before_save :check_user_type
-  before_validation :downcase_email
+  before_validation :check_user_type, :downcase_email
 
   private
 
+  # Submission type defaults to homeowner
   def check_user_type
-    self.contractor = (user_type.downcase == "contractor")
+    self.contractor = self.user_type.to_s.downcase.include? "contractor"
   end
 
   def downcase_email

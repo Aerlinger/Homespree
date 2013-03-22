@@ -24,7 +24,7 @@ class ContractorPresenter < BasePresenter
 
   def title
     handle_none contractor.company_title do
-      content_tag :h1, contractor.company_title, class: [:contractor_title, "block-underline-full"]
+      content_tag :h1, contractor.company_title.html_safe, class: [:contractor_title, "block-underline-full"]
     end
   end
 
@@ -41,7 +41,6 @@ class ContractorPresenter < BasePresenter
 
 
       html_data = content_tag :div do
-        h2 = content_tag :h2, "Hey there, we noticed a few important fields are missing from your profile:"
         ul = content_tag :ul do
 
           links = contractor.incomplete_sections.map do |section|
@@ -49,13 +48,12 @@ class ContractorPresenter < BasePresenter
               link_to section
             end
           end
+
           links.join.html_safe
         end
-        h2 + ul
+
       end
-
       html_data.html_safe
-
     end
 
   end

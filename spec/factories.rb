@@ -5,7 +5,7 @@ FactoryGirl.define do
     email { "#{first_name}#{last_name}@test.com" }
     last_name "ThePlumber"
     password "iamsecret"
-    title "Joe's Plumbing"
+    company_title "Joe's Plumbing"
     mobile_number "8485558332"
     office_number "8485558443"
 
@@ -19,11 +19,6 @@ FactoryGirl.define do
     license "ABCD1234"
     insurance_limit '400000.00'
     bonding_limit '1400.00'
-
-  end
-
-  factory :minimal_contractor do
-
   end
 
   factory :photo do

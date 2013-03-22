@@ -5,37 +5,101 @@
     <div id="profile">
 
       <div class="row-fluid">
-        <div class="span2">
-          <%= contractor_presenter.portrait_picture %>
-        </div>
-        <div class="span10">
+        <div class="incomplete_sections">
 
-          <%= contractor_presenter.incomplete_sections %>
+          <h3>Hey! It looks like there are a few incomplete sections in your profile.</h3>
 
-          <%= contractor_presenter.title %>
-          <%= contractor_presenter.full_name %>
-          <a onclick="_gaq.push(['_trackEvent', 'Getting started', 'Download', 'Download compiled']);" href="assets/bootstrap.zip" class="btn btn-large btn-primary">Contact</a>
+          <p>
+            For the best chance of success in finding leads we recommend you complete the following:
 
-          <%= link_to "Contact", class: "btn btn-large btn-primary" %>
+            <span class="incomplete_attributes"><%# @contractor.incomplete_sections.join(" ") %></span>
+          </p>
+
+          <div class="entry">
+            <%= label_tag "Mobile phone: " %>
+            <%= text_field_tag :mobile %>
+            <%= link_to "Update", "javascript:void(0)", class: "btn btn-success" %>
+
+            <small class="ignore_this"><%= link_to "Ignore this message", "javascript:void(0)", class: "pull-right" %></small>
+          </div>
+
+          <% contractor_presenter.incomplete_sections %>
+
         </div>
       </div>
 
+
+      <div class="row-fluid primary">
+        <div class="span8">
+          <%= contractor_presenter.title %>
+          <h3><%= @contractor.slogan %></h3>
+          <%= @contractor.description %>
+        </div>
+
+        <div class="span2 offset1">
+            <%= image_tag "http://placehold.it/100x100", style: "margin: auto auto;" %>
+            <h5>Homespree Certified</h5>
+            <%= link_to "Contact", "javacript:void(0)", class: "btn btn-large btn-success" %>
+        </div>
+      </div>
+
+      <div class="row-fluid">
+        <div class="span5">
+          <h3>Rating</h3>
+          <%= contractor_presenter.full_name %>
+        </div>
+        <div class="span3">
+          <h4>Location</h4>
+        </div>
+        <div class="span2">
+          <h4>Availability</h4>
+        </div>
+      </div>
 
       <hr>
 
-      <div class="row-fluid">
+      <div class="row-fluid secondary">
         <div class="span2">
           <table>
             <tr>
-              <td>Contact</td>
+              <td>Name</td>
+              <td><%= contractor_presenter.full_name %></td>
+            </tr>
+            <tr>
+              <td>Website</td>
+              <td><%= @contractor.website %></td>
+            </tr>
+            <tr>
+              <td>Bonded</td>
+              <td><%= number_to_currency @contractor.bonding_limit %></td>
             </tr>
           </table>
         </div>
-        <div class="span10">
-          <%= contractor_presenter.full_name %>
-          <%= contractor_presenter.description %>
+        <div class="span8">
+          <%= contractor_presenter.description -%>
+        </div>
+        <div class="span2">
+          <%= contractor_presenter.portrait_picture %>
         </div>
       </div>
+
+      <hr>
+
+      <div class="row-fluid comments">
+        <h3>Reviews from Homeowners</h3>
+
+        <div class="review">
+
+          <h4>Review Title</h4>
+
+          <p>
+            <%= Faker::Lorem.paragraphs(3) %>
+          </p>
+
+        </div>
+      </div>
+
+
 
     </div>
 
