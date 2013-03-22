@@ -14,7 +14,9 @@ describe "Home page" do
 
 
   describe "submitting an email from the home page" do
-
+    fill_in "submit_email"
+    fill_in "submit_email"
+    click_button "submit_location"
   end
 
 end

@@ -32,10 +32,11 @@ class Contractor < ActiveRecord::Base
   before_validation :sanitize_phone_numbers
 
   # Scopes:  ----------------------------------------------------------------------------------------------------------
+
   default_scope order("created_at desc")
 
+  # Custom Methods:  --------------------------------------------------------------------------------------------------
 
-  # Generates a list of incomplete elements of a Contractor profile
   def incomplete_sections
     sections = []
 
@@ -55,15 +56,6 @@ class Contractor < ActiveRecord::Base
 
   private
 
-  def clean_params
-    #if params[:mobile_area_code]
-    #  self.mobile_number = params[:mobile_area_code] << params[:mobile_prefix] << params[:mobile_suffix]
-    #end
-    #
-    #if params[:office_area_code]
-    #  self.office_number = params[:office_area_code] << params[:office_prefix] << params[:office_suffix]
-    #end
-  end
 
   def sanitize_phone_numbers
     self.mobile_number.gsub!(/\D/, '') if self.mobile_number.present?
