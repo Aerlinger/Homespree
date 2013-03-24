@@ -55,18 +55,26 @@ class ContractorPresenter < BasePresenter
       end
       html_data.html_safe
     end
+  end
+
+
+  def rating
 
   end
 
   def description
     handle_none contractor.description do
-      contractor.description
+      content_tag :p do
+        contractor.description
+      end
     end
   end
 
   def website
     handle_none contractor.website do
-      h.link_to contractor.website, contractor.website, class: "contractor_website"
+      content_tag :small do
+        h.link_to contractor.website.gsub("http://", ""), contractor.website, class: "contractor_website"
+      end
     end
   end
 
@@ -76,8 +84,18 @@ class ContractorPresenter < BasePresenter
     end
   end
 
+  # Todo: stubbed for now:
   def specialties
-    "Specialties will go here"
+    specialties = ["Indoor Painting", "Outdoor Painting", "Roofing", "Pool Maintenance", "Plumbing"]
+
+    output = []
+    content_tag :ul do
+      specialties.each do |specialty|
+          output << content_tag(:li, specialty).html_safe
+      end
+    end
+
+    raw(output.join)
   end
 
   private

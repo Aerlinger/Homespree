@@ -1,9 +1,13 @@
 FactoryGirl.define do
 
   factory :contractor do
+    sequence :email do |n|
+      "contractor#{n}@rspec.com"
+    end
+
     first_name "Joe"
-    email { "#{first_name}#{last_name}@test.com" }
     last_name "ThePlumber"
+
     password "iamsecret"
     company_title "Joe's Plumbing"
     mobile_number "8485558332"
@@ -19,6 +23,15 @@ FactoryGirl.define do
     license "ABCD1234"
     insurance_limit '400000.00'
     bonding_limit '1400.00'
+  end
+
+  factory :minimal_contractor, class: Contractor do
+    sequence :email do |n|
+      "min_contractor#{n}@rspec.com"
+    end
+
+    company_title "Mike's Contracting"
+    password "iamsecret"
   end
 
   factory :photo do

@@ -16,7 +16,7 @@ class Contractor < ActiveRecord::Base
   has_many :appointments
   has_many :specialties
   has_many :addresses, as: :addressable
-  accepts_nested_attributes_for :addresses
+  accepts_nested_attributes_for :addresses, reject_if: lambda { |attributes| attributes['kind'].blank? }
 
 
   # Validations:  -----------------------------------------------------------------------------------------------------
@@ -53,9 +53,15 @@ class Contractor < ActiveRecord::Base
     return sections
   end
 
+  def name_or_title
+    if company_title.present?
+      return company_title
+    else
+      return "#{first_name} #{last_name}"
+    end
+  end
 
-  private
-
+  protected
 
   def sanitize_phone_numbers
     self.mobile_number.gsub!(/\D/, '') if self.mobile_number.present?
@@ -76,6 +82,10 @@ class Contractor < ActiveRecord::Base
     unless self.company_title.present? || (first_name.present? && last_name.present?)
       errors.add(:company_title, "must include either a title or first and last name")
     end
+  end
+
+  def nil_if_blank
+    self.attributes.each { |attr| self[attr] = nil if self[attr].blank? }
   end
 
 end

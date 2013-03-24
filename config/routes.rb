@@ -10,7 +10,7 @@ Homespree::Application.routes.draw do
         sessions: "contractors/sessions" }
 
   namespace :contractors do
-    resources :wizard
+    resources :wizard, only: [:show, :update, :index]
     resources :profiles, only: [:show, :index]
   end
 

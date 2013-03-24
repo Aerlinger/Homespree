@@ -4,12 +4,15 @@
 
   <%= render layout: 'form' do |f| %>
 
-    <%= f.input :description %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+
+    <%= f.input :specialties %>
+
+    <%= f.input :mobile_number %>
+    <%= f.input :office_number %>
 
     <%= f.input :website %>
-    <%= f.input :facebook %>
-    <%= f.input :twitter %>
-    <%= f.input :photo_filename %>
 
   <% end %>
 

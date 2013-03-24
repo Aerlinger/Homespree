@@ -1,7 +1,6 @@
 require "spec_helper"
 
 describe StaticPagesController do
-
   it "should respond to root" do
     get("/").should route_to("static_pages#home")
   end
@@ -25,5 +24,4 @@ describe StaticPagesController do
   it "should respond to /contact" do
     get("/contact").should route_to("static_pages#contact")
   end
-
 end

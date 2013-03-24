@@ -1,0 +1,31 @@
+#contractor_dropdown {
+  li {
+    background-color: none;
+
+    &:hover {
+      background-color: none;
+    }
+
+    a {
+      display: block;
+      background-color: none;
+
+      &:hover {
+        background-color: none;
+      }
+    }
+  }
+}
+
+.small-border {
+  display: block;
+  border-radius: 3px;
+  border: 1px solid gray;
+
+  -moz-box-shadow: inset 0 0 10px #000000;
+  -webkit-box-shadow: inset 0 0 10px #000000;
+  box-shadow: inset 0 0 10px #000000;
+
+  margin: 0;
+  padding: 0;
+}

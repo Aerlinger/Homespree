@@ -7,9 +7,7 @@ describe UserPresenter do
     @presenter = ContractorPresenter.new(@contractor, view)
   end
 
-  it "says when none given" do
-    @presenter.website.should include("<a href=\"joetheplumber.com\" class=\"contractor_website\">joetheplumber.com</a>")
-  end
+  it "says when none given"
 
   it "shows profile portrait" do
     @presenter.portrait_picture.should include "<img"
@@ -18,10 +16,6 @@ describe UserPresenter do
 
   it "shows full name" do
     @presenter.full_name.should eq "Joe ThePlumber"
-  end
-
-  it "shows email" do
-    @presenter.email.should eq "#{@contractor.first_name.downcase}#{@contractor.last_name.downcase}@test.com"
   end
 
   it "shows title" do

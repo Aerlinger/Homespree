@@ -11,11 +11,9 @@
       margin: none !important;
     }
 
-    //border-radius: 5px;
-    border-top: 2px solid $homespree_accent_light;
-    border-bottom: 2px solid $homespree_accent_light;
-    //border: 2px solid $homespree_accent_light;
-    background-color: $homespree_lightest;
+    border: 2px solid $homespree_warn;
+    background-color: lightgoldenrodyellow;
+
 
     padding-left: 15px;
     padding-right: 10px;
@@ -25,18 +23,28 @@
     }
 
     .entry {
-      margin-left: 1em;
+      #margin-left: 4em;
+      width: 100%;
+      border: 1px solid #c6bf99;
+      background-color: #f9fae1;
 
-      .btn {
-        margin-bottom: 10px;
+      padding: 5px;
+      padding-right: 0px;
+      margin: 5px auto;
+      margin-right: 0px;
+
+      input{
+        margin-bottom: 0px;
+        margin-left: 5px;
       }
+
     }
 
     .ignore_this {
       a {
         position: absolute;
-        top: 18px;
-        right: 5px;
+        top: 5px;
+        right: 10px;
       }
     }
 

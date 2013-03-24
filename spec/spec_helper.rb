@@ -10,7 +10,9 @@ Spork.prefork do
   require File.expand_path("../../config/environment", __FILE__)
   require 'rspec/rails'
   require 'capybara/rspec'
+  require 'capybara/rails'
   require 'rspec/autorun'
+
 
   module ::RSpec::Core
     class ExampleGroup
@@ -24,14 +26,15 @@ Spork.prefork do
 
   Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
-
   RSpec.configure do |config|
     config.mock_with :rspec
     require 'mobylette/helmet'
 
-    config.include Mobylette::Helmet, :type => :controller
     config.include ActionView::TestCase::Behavior, example_group: {file_path: %r{spec/presenters}}
     config.include FactoryGirl::Syntax::Methods
+
+    config.include Mobylette::Helmet, :type => :controller
+    config.include Devise::TestHelpers, :type => :controller
 
     config.use_transactional_fixtures = false
     config.infer_base_class_for_anonymous_controllers = false
@@ -41,7 +44,8 @@ Spork.prefork do
     config.filter_run :focus => true
 
     config.before(:suite) do
-      DatabaseCleaner.strategy = :truncation
+      DatabaseCleaner.strategy = :transaction
+      DatabaseCleaner.clean_with(:truncation)
     end
 
     config.before(:each) do
@@ -56,6 +60,5 @@ Spork.prefork do
 end
 
 Spork.each_run do
-
   FactoryGirl.reload
 end

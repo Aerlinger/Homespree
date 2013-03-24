@@ -1,3 +1,5 @@
+@import "global/palette.css.scss";
+
 $headerHeight: 10px;
 $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
 
@@ -12,7 +14,6 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
 */
 
 .navbar-inner {
-  //background: url(<%= asset_path("bg/bg1.png") %>) rgba(255, 255, 255, 0.44) repeat;
   background-color: white;
   box-shadow: none;
   -webkit-box-shadow: none;
@@ -20,6 +21,33 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
   filter: none;
 
   border-bottom: 3px solid #3a4964;
+
+  #sign_in {
+    a {
+      color:  white;
+      padding-bottom: 18px;
+      &:hover {
+        border-bottom: none;
+        color: white !important;
+        padding-bottom: 20px;
+      }
+    }
+
+    &:hover {
+      box-shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.8);
+    }
+
+
+    border-left: 1px solid $homespree_lightgreen;
+    border-right: 1px solid $homespree_lightgreen;
+    border-bottom: 1px solid $homespree_lightgreen;
+
+    padding-bottom: 3px;
+    box-shadow: 0px 0 4px 0 rgba(0, 0, 0, 0.7);
+
+    background-color: $homespree_green;
+    border-radius: 0 0 5px 5px;
+  }
 }
 
 .navbar {
@@ -39,40 +67,34 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
     float: right;
     display: inline-block;
     height: 52px !important;
-    //background: rgba(255, 255, 255, 0.63);
 
-    li {
+    li.nav_button {
       height: 40px;
       display: table;
 
-      border-radius: 2px;
-
       &:hover {
-        background: white;
-
-        box-shadow: 0px 0 3px 0 rgba(0, 0, 0, 0.5);
-
-        margin: -1px;
-        border-bottom: 1px solid #dae1ff;
-        border-left: 1px solid #90a6ff;
-        border-right: 1px solid #bbcfff;
+        background: #d5e2fd;
       }
 
       a {
-
         font: 400 17px/24px "Helvetica Neue", helvetica, sans-serif;
-        padding: 16px 20px;
+        padding: 15px 18px;
+        margin: 2px;
         margin: auto !important;
 
         text-shadow: none;
         color: #3c456a;
 
         text-align: center;
-        //height: 100%;
 
         &:hover {
+          border-bottom: 1px solid $homespree_accent;
           color: #272f5d !important;
         }
+      }
+
+      &:last-child {
+        margin-left: 7px;
       }
     }
   }

@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
   # Devise Helpers:
 
-  # contractor_signed_in
+  # contractor_signed_in?
   # contractor_session
   # current_contractor
   # authenticate_contractor!

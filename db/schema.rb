@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130320214618) do
+ActiveRecord::Schema.define(:version => 20130323160032) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -79,7 +79,7 @@ ActiveRecord::Schema.define(:version => 20130320214618) do
     t.datetime "created_at",                                                           :null => false
     t.datetime "updated_at",                                                           :null => false
     t.text     "pictures"
-    t.string   "email",                                                :default => "", :null => false
+    t.string   "email",                                                                :null => false
     t.string   "last_name"
     t.string   "encrypted_password",                                   :default => "", :null => false
     t.string   "reset_password_token"
@@ -91,12 +91,12 @@ ActiveRecord::Schema.define(:version => 20130320214618) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "company_title"
-    t.string   "mobile_number",                                        :default => ""
-    t.string   "office_number",                                        :default => ""
-    t.string   "license",                                              :default => ""
+    t.string   "mobile_number"
+    t.string   "office_number"
+    t.string   "license"
     t.decimal  "insurance_limit",        :precision => 5, :scale => 2
     t.decimal  "bonding_limit",          :precision => 5, :scale => 2
-    t.string   "photo_filename",                                       :default => ""
+    t.string   "photo_filename"
     t.string   "slogan"
   end
 
