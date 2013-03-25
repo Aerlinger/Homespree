@@ -1,0 +1,1 @@
+(function(){Mercury.onload&&Mercury.onload(),jQuery(window).trigger("mercury:loaded")}).call(this);
