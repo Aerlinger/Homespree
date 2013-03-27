@@ -147,6 +147,70 @@ describe Contractor do
       @mike.first_name = "joe"
       @mike.incomplete_sections == incomplete_sections - [:first_name]
     end
+  end
+
+  describe "should build a full contractor" do
+    before do
+      @plumber = Contractor.new do |c|
+
+        c.email = "joetheplumber@seed.com"
+        c.password = "iamsecret"
+
+        c.id = 1
+        c.first_name = "joe"
+        c.last_name = "thePlumber"
+        c.company_title = "Joe's Plumbing"
+
+        c.bonding_limit = 100.00
+        c.insurance_limit = 200.00
+
+        c.office_number = "714-555-9652"
+        c.mobile_number = "949-555-6404"
+
+        c.slogan = "I am Joe the plumber"
+
+        c.description = Faker::Lorem.paragraphs(5).join
+
+        c.facebook = "www.facebook.com/joe_the_plumber"
+        c.twitter = "@joe_the_plumber"
+        c.license = "abcdefg12345"
+
+        c.website = "http://www.joesplumbing.com"
+
+        address = Address.new do |a|
+          a.line1 = "1234 Blue collar road"
+          a.line2 = "4th Main Providence"
+          a.state = "nj"
+          a.zipcode = "12345"
+          a.city = "princeton"
+        end
+
+        c.addresses << address
+      end
+
+      @plumber.save!
+    end
+
+    subject {@plumber}
+
+    it { should be_valid }
+
+    its(:first_name) { should eq "Joe" }
+    its(:last_name) { should eq "ThePlumber" }
+    its(:company_title) { should eq "Joe's Plumbing" }
+
+    its(:bonding_limit) { should eq 100.00 }
+    its(:insurance_limit) { should eq 200.00 }
+
+    its(:office_number) { should eq "7145559652" }
+    its(:mobile_number) { should eq "9495556404" }
+
+    its(:slogan) { should eq "I am Joe the plumber" }
+
+    its(:facebook) { should eq "www.facebook.com/joe_the_plumber" }
+    its(:twitter) { should eq "@joe_the_plumber" }
+    its(:license) { should eq "abcdefg12345" }
+    its(:website) { should eq "http://www.joesplumbing.com" }
 
   end
 end

@@ -46,6 +46,16 @@ joe_the_plumber = Contractor.new do |c|
 
   c.website = "http://www.joesplumbing.com"
 
+  address = Address.new do |a|
+    a.line_1 = "1234 Blue collar road"
+    a.line_2 = "4th Main Providence"
+    a.state = "NJ"
+    a.zipcode = "12345"
+    a.state = "Princeton"
+  end
+
+  c << address
+
 end
 
 joe_the_plumber.save!

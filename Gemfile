@@ -31,6 +31,7 @@ gem 'markaby'
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+gem 'figaro', ">= 0.5.3"
 
 
 group :test, :development do

@@ -5,13 +5,14 @@ Homespree::Application.routes.draw do
 
   root :to => 'static_pages#home'
 
-  devise_for :contractors, :controllers =>
-      { registrations: "contractors/registrations",
-        sessions: "contractors/sessions" }
+  devise_for :contractors, :controllers => { registrations: "contractors/registrations", sessions: "contractors/sessions" } do
+  end
 
   namespace :contractors do
     resources :wizard, only: [:show, :update, :index]
-    resources :profiles, only: [:show, :index]
+    resources :profiles, only: [:show, :index] do
+
+    end
   end
 
   scope "/mailinglist", as: :mailinglist do
@@ -19,7 +20,6 @@ Homespree::Application.routes.draw do
     match "unsubscribe/:email" => "mailinglists#unsubscribe", via: :get
     match "destroy/:email" => "mailinglists#destroy", via: :delete
   end
-
 
   # Static pages page
   match 'pitch' => 'static_pages#pitch', as: "pitch"

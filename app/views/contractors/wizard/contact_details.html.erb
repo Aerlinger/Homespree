@@ -1,19 +1,41 @@
 <% content_for :registration_page do %>
 
-  <%= provide :title, "Your contact details" %>
+  <%= provide :title, "Enter your contact details" %>
 
   <%= render layout: 'form' do |f| %>
 
-    <%= f.input :first_name %>
-    <%= f.input :last_name %>
+    <div class="alert alert-info">
+      <p><strong>Homespree Tip:</strong> <br>The more details you enter, the more success you will have in finding
+        customers</p>
+    </div>
 
-    <%= f.input :specialties %>
+    <table>
+      <tr>
+        <td colspan="2">
+          <h3 class="block-underline-full">Name & Phone</h3>
+        </td>
+      </tr>
+      <tr>
+        <td><%= f.input :first_name %></td>
+        <td><%= f.input :last_name %></td>
+      </tr>
 
-    <%= f.input :mobile_number %>
-    <%= f.input :office_number %>
-
-    <%= f.input :website %>
-
+      <tr>
+        <td><%= f.input :mobile_number %></td>
+        <td><%= f.input :office_number %></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <h3 class="block-underline-full">Specialties</h3>
+          <%= f.input :specialties, collection: ['Blog', 'Editorial', 'Announce', 'Advertisement'], as: :check_boxes %>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <%= f.input :website %>
+        </td>
+      </tr>
+    </table>
   <% end %>
 
 <% end %>

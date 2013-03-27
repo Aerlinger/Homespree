@@ -24,21 +24,14 @@ def sign_up_contractor
   fill_in "Password", with: @contractor.password
 
   click_button "Sign Up"
-
-  return Contractor.find_by_email @contractor.email
+  return @contractor
 end
 
-def sign_in_user(user_type = :contractor)
+def sign_in_user(user)
+  get "contractors/sign_in"
 
-  @user = FactoryGirl.build user_type
-
-  visit new_contractor_session_path
-
-  fill_in "Email", with: @user.email
-  fill_in "Password", with: @user.password
+  fill_in "Email", with: user.email
+  fill_in "Password", with: user.password
 
   click_button "Sign In"
-
-  return @user
-
 end

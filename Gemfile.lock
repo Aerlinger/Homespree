@@ -117,6 +117,9 @@ GEM
       i18n (~> 0.5)
     fastercsv (1.5.5)
     ffi (1.5.0)
+    figaro (0.6.3)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     formtastic (2.2.1)
       actionpack (>= 3.0)
     geocoder (1.1.6)
@@ -338,6 +341,7 @@ DEPENDENCIES
   devise
   factory_girl_rails (= 1.4.0)
   faker
+  figaro (>= 0.5.3)
   geocoder
   guard-rspec
   guard-spork (= 0.3.2)

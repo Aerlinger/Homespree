@@ -10,9 +10,9 @@
           <% if contractor_signed_in? %>
             <%= render "partials/contractor_dropdown" %>
           <% else %>
-            <li class="nav_button"><%= link_to "Homeowners", homeowners_preview_path %></li>
             <li class="nav_button"><%= link_to "Contractors", contractors_preview_path %></li>
             <li class="nav_button"><%= link_to "About", about_path %></li>
+            <li class="nav_button"><%= link_to "Homeowners", homeowners_preview_path %></li>
             <li class="nav_button" id="sign_in"><%= link_to "Sign In", new_contractor_session_path %></li>
           <% end %>
         </ul>

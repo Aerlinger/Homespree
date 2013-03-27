@@ -11,14 +11,12 @@ describe "Home page" do
   #it { should have_selector(".navbar") }
 
   describe "submitting an email from the home page" do
-    before do
+    it "should submit to create" do
       fill_in "email_signup", with: "testmailinglist@rspec.com"
       click_link "dropdown"
-      #click_link "homeowner"
       click_button "submit_location"
+      current_path.should eq "/mailinglist/create"
     end
-
-    its(:current_path) { should eq "/mailinglist/create" }
   end
 
 end

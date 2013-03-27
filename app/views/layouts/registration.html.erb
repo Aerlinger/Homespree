@@ -1,16 +1,15 @@
 <% content_for :content do %>
-  <div class="secondary">
-    <div class="container">
+  <div class="registration">
 
-      <div class="row-fluid">
-        <div class="span6 offset3">
+    <div class="row-fluid">
+      <div class="container span6 offset3">
+        <div class="span8 offset2">
 
-          <h1 class="block-underline-full"><%= yield :title %></h1>
+          <h2 class="block-underline-full"><%= yield :title %></h2>
           <%= content_for?(:registration_page) ? yield(:registration_page) : yield %>
 
         </div>
       </div>
-
     </div>
   </div>
 <% end %>

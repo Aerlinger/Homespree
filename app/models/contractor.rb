@@ -28,7 +28,7 @@ class Contractor < ActiveRecord::Base
   validate :name_or_title?
 
   # Callbacks:  -------------------------------------------------------------------------------------------------------
-  before_save :titleize_name, :downcase_email
+  before_save :titleize_name, :downcase_email, :upcase_license
   before_validation :sanitize_phone_numbers
 
   # Scopes:  ----------------------------------------------------------------------------------------------------------
@@ -75,6 +75,10 @@ class Contractor < ActiveRecord::Base
 
   def downcase_email
     self.email.downcase! if self.email.present?
+  end
+
+  def upcase_license
+    self.license.upcase! if self.license.present?
   end
 
   # Validates the presence of first_name and last_name OR presence of a title
