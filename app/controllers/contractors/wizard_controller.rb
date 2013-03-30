@@ -21,7 +21,7 @@ class Contractors::WizardController < ApplicationController
     render_wizard @contractor
   end
 
-  private
+  protected
 
   def finish_wizard_path
     contractors_profile_path current_contractor

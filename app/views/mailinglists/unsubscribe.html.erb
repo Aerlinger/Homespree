@@ -1,6 +1,6 @@
 <% content_for :registration do %>
-  <%= form_tag do |f| %>
-    <%= f.email_field :email %>
+  <%= form_tag mailinglist_path, method: :delete do |f| %>
+    <%= f.email_field :email, params[:email] %>
     <%= f.submit "Unsubscribe" %>
   <% end %>
 <% end %>

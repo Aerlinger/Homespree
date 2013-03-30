@@ -2,478 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69305659-f161-4004-b356-b79c1d87fc7f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/stylesheets/pages/registration_pages.css.scss" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/controllers/addresses_controller.rb" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/active_admin-bcae96c21b99eecb5f3f95ee76b111c5.css.gz" afterPath="$PROJECT_DIR$/public/assets/active_admin-bcae96c21b99eecb5f3f95ee76b111c5.css.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/active_admin-c21c2e192a6da09f922197251fe73cdc.js.gz" afterPath="$PROJECT_DIR$/public/assets/active_admin-c21c2e192a6da09f922197251fe73cdc.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/active_admin.css.gz" afterPath="$PROJECT_DIR$/public/assets/active_admin.css.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/active_admin.js.gz" afterPath="$PROJECT_DIR$/public/assets/active_admin.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/active_admin/application-0107a0e36e3fbbdcdaaf0eeaa3d4200d.js.gz" afterPath="$PROJECT_DIR$/public/assets/active_admin/application-0107a0e36e3fbbdcdaaf0eeaa3d4200d.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/active_admin/pages/application-9962e9eb4723fd98f06bcc5dd97d3416.js.gz" afterPath="$PROJECT_DIR$/public/assets/active_admin/pages/application-9962e9eb4723fd98f06bcc5dd97d3416.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/application-c1e3104cf6d9efd99abb52e0b7f7632e.js.gz" afterPath="$PROJECT_DIR$/public/assets/application-c1e3104cf6d9efd99abb52e0b7f7632e.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/application.css.gz" afterPath="$PROJECT_DIR$/public/assets/application.css.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/application.js.gz" afterPath="$PROJECT_DIR$/public/assets/application.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/active_admin/application.js.gz" afterPath="$PROJECT_DIR$/public/assets/active_admin/application.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/active_admin/pages/application.js.gz" afterPath="$PROJECT_DIR$/public/assets/active_admin/pages/application.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/locales/ar.locale-dce2ce0745c5895b95b26a11057eaa74.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/locales/ar.locale-dce2ce0745c5895b95b26a11057eaa74.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/locales/ar.locale.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/locales/ar.locale.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/dialogs/backcolor-b777e6fe5baaa66792cb197fcc53008c.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/dialogs/backcolor-b777e6fe5baaa66792cb197fcc53008c.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/dialogs/backcolor.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/dialogs/backcolor.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/active_admin/base-c21c2e192a6da09f922197251fe73cdc.js.gz" afterPath="$PROJECT_DIR$/public/assets/active_admin/base-c21c2e192a6da09f922197251fe73cdc.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/active_admin/base.js.gz" afterPath="$PROJECT_DIR$/public/assets/active_admin/base.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/active_admin/pages/batch_actions-8e4f417d412ba910bbaa90b02eb56850.js.gz" afterPath="$PROJECT_DIR$/public/assets/active_admin/pages/batch_actions-8e4f417d412ba910bbaa90b02eb56850.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/active_admin/pages/batch_actions.js.gz" afterPath="$PROJECT_DIR$/public/assets/active_admin/pages/batch_actions.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-affix-904b03e2679da196d585e59cabbdcef1.js.gz" afterPath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-affix-904b03e2679da196d585e59cabbdcef1.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-affix.js.gz" afterPath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-affix.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-alert-3c69de55c26d7575e71f615590d5fc11.js.gz" afterPath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-alert-3c69de55c26d7575e71f615590d5fc11.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-alert.js.gz" afterPath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-alert.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-button-606689455103af5c6af64f2052df19b4.js.gz" afterPath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-button-606689455103af5c6af64f2052df19b4.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-button.js.gz" afterPath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-button.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/bootstrap-c6a1679272e266369c9337e079900ac4.js.gz" afterPath="$PROJECT_DIR$/public/assets/bootstrap-c6a1679272e266369c9337e079900ac4.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-carousel-cc047f5844252bd194f239e9ce00b011.js.gz" afterPath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-carousel-cc047f5844252bd194f239e9ce00b011.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-carousel.js.gz" afterPath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-carousel.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-collapse-a2beafd2a420e37af427e518683f2d76.js.gz" afterPath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-collapse-a2beafd2a420e37af427e518683f2d76.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-collapse.js.gz" afterPath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-collapse.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/twitter/bootstrap-d1acc4a16a75420a1760838e713c130c.js.gz" afterPath="$PROJECT_DIR$/public/assets/twitter/bootstrap-d1acc4a16a75420a1760838e713c130c.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-dropdown-affba526724988127638cad2af0ae9f3.js.gz" afterPath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-dropdown-affba526724988127638cad2af0ae9f3.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-dropdown.js.gz" afterPath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-dropdown.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-modal-d94aecbe1f83d32e86c3a612109bc7e3.js.gz" afterPath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-modal-d94aecbe1f83d32e86c3a612109bc7e3.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-modal.js.gz" afterPath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-modal.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-popover-b844322f90e941a48d0f7a26d852cdc0.js.gz" afterPath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-popover-b844322f90e941a48d0f7a26d852cdc0.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-popover.js.gz" afterPath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-popover.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-scrollspy-8046167ed887c93a6c4ce6ff05ad2a15.js.gz" afterPath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-scrollspy-8046167ed887c93a6c4ce6ff05ad2a15.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-scrollspy.js.gz" afterPath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-scrollspy.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-tab-2eff48dfdcc3ee281d5cb5f9f19de0df.js.gz" afterPath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-tab-2eff48dfdcc3ee281d5cb5f9f19de0df.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-tab.js.gz" afterPath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-tab.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-tooltip-fb72ee5882706d266dad3cd4de3dc296.js.gz" afterPath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-tooltip-fb72ee5882706d266dad3cd4de3dc296.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-tooltip.js.gz" afterPath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-tooltip.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-transition-7a374d625949cbb719a54a06f3f28f08.js.gz" afterPath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-transition-7a374d625949cbb719a54a06f3f28f08.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-transition.js.gz" afterPath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-transition.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-typeahead-73b51fc3843a2218f9a64456efb18052.js.gz" afterPath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-typeahead-73b51fc3843a2218f9a64456efb18052.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-typeahead.js.gz" afterPath="$PROJECT_DIR$/public/assets/twitter/bootstrap/bootstrap-typeahead.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/bootstrap.js.gz" afterPath="$PROJECT_DIR$/public/assets/bootstrap.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/twitter/bootstrap.js.gz" afterPath="$PROJECT_DIR$/public/assets/twitter/bootstrap.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/twitter/bootstrap_ujs-f9da56abbf8563dac0beb30e9244e1ef.js.gz" afterPath="$PROJECT_DIR$/public/assets/twitter/bootstrap_ujs-f9da56abbf8563dac0beb30e9244e1ef.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/twitter/bootstrap_ujs.js.gz" afterPath="$PROJECT_DIR$/public/assets/twitter/bootstrap_ujs.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/coffee-script-f477d649129e00caa9dc09ddc628d2cb.js.gz" afterPath="$PROJECT_DIR$/public/assets/coffee-script-f477d649129e00caa9dc09ddc628d2cb.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/coffee-script.js.gz" afterPath="$PROJECT_DIR$/public/assets/coffee-script.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/contractor_wizard-a7fa98ba2ef09a5dcc079d3f014a4e3c.js.gz" afterPath="$PROJECT_DIR$/public/assets/contractor_wizard-a7fa98ba2ef09a5dcc079d3f014a4e3c.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/contractor_wizard.js.gz" afterPath="$PROJECT_DIR$/public/assets/contractor_wizard.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/locales/da.locale-415015782b02b0f5a0015ad77a2c43d2.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/locales/da.locale-415015782b02b0f5a0015ad77a2c43d2.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/locales/da.locale.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/locales/da.locale.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/locales/de.locale-665d0ec89dd24fc151fdfce8865ec9e8.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/locales/de.locale-665d0ec89dd24fc151fdfce8865ec9e8.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/locales/de.locale.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/locales/de.locale.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/dialog-f0386a82e53daafa371791c949cc2b54.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/dialog-f0386a82e53daafa371791c949cc2b54.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/dialog.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/dialog.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/locales/es.locale-4a674104e98d3a9fb57d91f3e8d08d08.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/locales/es.locale-4a674104e98d3a9fb57d91f3e8d08d08.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/locales/es.locale.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/locales/es.locale.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/locales/example.local-5df8308215546c8346ecb844675c15da.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/locales/example.local-5df8308215546c8346ecb844675c15da.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/locales/example.local.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/locales/example.local.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/finalize-37211722cd38d5e9fc68dbaf51b693bf.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/finalize-37211722cd38d5e9fc68dbaf51b693bf.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/finalize.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/finalize.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/dialogs/forecolor-78f9996e540560ab597e2ecf46a152ff.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/dialogs/forecolor-78f9996e540560ab597e2ecf46a152ff.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/dialogs/forecolor.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/dialogs/forecolor.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/dialogs/formatblock-e135ad9b6c39a0170af67daa09e75620.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/dialogs/formatblock-e135ad9b6c39a0170af67daa09e75620.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/dialogs/formatblock.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/dialogs/formatblock.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/locales/fr.locale-9f1c650ce076913c3dae1167bc321e91.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/locales/fr.locale-9f1c650ce076913c3dae1167bc321e91.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/locales/fr.locale.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/locales/fr.locale.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/regions/full-ffca63a89f013d6841dcbb1b5abace66.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/regions/full-ffca63a89f013d6841dcbb1b5abace66.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/regions/full.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/regions/full.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/helper-cd6af85e8f3b86c810bc581c0533cd04.js.gz" afterPath="$PROJECT_DIR$/public/assets/helper-cd6af85e8f3b86c810bc581c0533cd04.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/helper.js.gz" afterPath="$PROJECT_DIR$/public/assets/helper.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/support/history-61cead09ce43b5c93371cb71a3cc77b9.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/support/history-61cead09ce43b5c93371cb71a3cc77b9.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/support/history.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/support/history.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/history_buffer-bae53fd2e45938caf6dd48f9ab97a0a9.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/history_buffer-bae53fd2e45938caf6dd48f9ab97a0a9.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/history_buffer.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/history_buffer.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/modals/htmleditor-d6dde9565df75da9ca4feb845383e2dc.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/modals/htmleditor-d6dde9565df75da9ca4feb845383e2dc.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/modals/htmleditor.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/modals/htmleditor.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/locales/hu.locale-c1afeb7b0a233e9b14fe9911654bd00a.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/locales/hu.locale-c1afeb7b0a233e9b14fe9911654bd00a.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/locales/hu.locale.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/locales/hu.locale.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/regions/image-23b4c9fc46eae38ddee0ab672c2989b6.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/regions/image-23b4c9fc46eae38ddee0ab672c2989b6.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/regions/image.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/regions/image.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/modals/insertcharacter-62769f31e0e21efb5edc5a9f862c8fe5.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/modals/insertcharacter-62769f31e0e21efb5edc5a9f862c8fe5.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/modals/insertcharacter.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/modals/insertcharacter.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/modals/insertlink-89d57c8a99b5093c0eab0507ec9b1ce1.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/modals/insertlink-89d57c8a99b5093c0eab0507ec9b1ce1.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/modals/insertlink.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/modals/insertlink.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/modals/insertmedia-eec4d053d9ad6d045719e9726aaed883.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/modals/insertmedia-eec4d053d9ad6d045719e9726aaed883.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/modals/insertmedia.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/modals/insertmedia.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/modals/insertsnippet-f58a6f3bc177cf37403716b4f6a8d388.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/modals/insertsnippet-f58a6f3bc177cf37403716b4f6a8d388.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/modals/insertsnippet.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/modals/insertsnippet.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/modals/inserttable-5389cdbf88469f2cc3fe22f93272b8c6.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/modals/inserttable-5389cdbf88469f2cc3fe22f93272b8c6.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/modals/inserttable.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/modals/inserttable.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/locales/it.locale-a962a52171f6f0f72866585ee8b08310.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/locales/it.locale-a962a52171f6f0f72866585ee8b08310.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/locales/it.locale.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/locales/it.locale.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery-08bbde0e2625ba65b3f4d03e5cf1c05d.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery-08bbde0e2625ba65b3f4d03e5cf1c05d.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery-1.7-9f784d5a46aaf6840f0b08f346115028.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery-1.7-9f784d5a46aaf6840f0b08f346115028.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery-1.7.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery-1.7.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/dependencies/jquery-ui-1.8.13.custom-052f5cf4532a4049af6eaf0b2a5d3ff8.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/dependencies/jquery-ui-1.8.13.custom-052f5cf4532a4049af6eaf0b2a5d3ff8.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/dependencies/jquery-ui-1.8.13.custom.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/dependencies/jquery-ui-1.8.13.custom.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery-ui-4856b8d4fb395706be8d907efda018e4.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery-ui-4856b8d4fb395706be8d907efda018e4.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery-ui.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery-ui.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery-ui.min-28c6a8bb2a5472bfe2d682048318dada.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery-ui.min-28c6a8bb2a5472bfe2d682048318dada.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery-ui.min.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery-ui.min.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/active_admin/components/jquery.aa.checkbox-toggler-d1925941844a0feb37f79e07d9dcc95c.js.gz" afterPath="$PROJECT_DIR$/public/assets/active_admin/components/jquery.aa.checkbox-toggler-d1925941844a0feb37f79e07d9dcc95c.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/active_admin/components/jquery.aa.checkbox-toggler.js.gz" afterPath="$PROJECT_DIR$/public/assets/active_admin/components/jquery.aa.checkbox-toggler.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/active_admin/components/jquery.aa.dropdown-menu-a489489c86477f479aaa6a86b1547b82.js.gz" afterPath="$PROJECT_DIR$/public/assets/active_admin/components/jquery.aa.dropdown-menu-a489489c86477f479aaa6a86b1547b82.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/active_admin/components/jquery.aa.dropdown-menu.js.gz" afterPath="$PROJECT_DIR$/public/assets/active_admin/components/jquery.aa.dropdown-menu.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/active_admin/components/jquery.aa.popover-336179692f4c3515ff69cdaf4881a95a.js.gz" afterPath="$PROJECT_DIR$/public/assets/active_admin/components/jquery.aa.popover-336179692f4c3515ff69cdaf4881a95a.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/active_admin/components/jquery.aa.popover.js.gz" afterPath="$PROJECT_DIR$/public/assets/active_admin/components/jquery.aa.popover.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/active_admin/components/jquery.aa.table-checkbox-toggler-4ee0edc31224e65b75df5ce53e93321f.js.gz" afterPath="$PROJECT_DIR$/public/assets/active_admin/components/jquery.aa.table-checkbox-toggler-4ee0edc31224e65b75df5ce53e93321f.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/active_admin/components/jquery.aa.table-checkbox-toggler.js.gz" afterPath="$PROJECT_DIR$/public/assets/active_admin/components/jquery.aa.table-checkbox-toggler.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/dependencies/jquery.additions-b7c9d7711f2873c055edd89ea49d40f1.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/dependencies/jquery.additions-b7c9d7711f2873c055edd89ea49d40f1.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/dependencies/jquery.additions.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/dependencies/jquery.additions.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/dependencies/jquery.htmlClean-30bb07b6d8a4f3db29cef0efa65ad781.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/dependencies/jquery.htmlClean-30bb07b6d8a4f3db29cef0efa65ad781.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/dependencies/jquery.htmlClean.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/dependencies/jquery.htmlClean.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.min-3f7a268ed7e5fabac831ad91006b951e.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.min-3f7a268ed7e5fabac831ad91006b951e.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.min.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.min.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.accordion-d8a924b74fcc2016864f9ca28a1f1720.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.accordion-d8a924b74fcc2016864f9ca28a1f1720.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.accordion.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.accordion.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.all-e748e5646a2146ba31019ed17612bbfe.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.all-e748e5646a2146ba31019ed17612bbfe.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.all.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.all.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.autocomplete-e6f1268cf4af5cffb0c5402dfc082495.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.autocomplete-e6f1268cf4af5cffb0c5402dfc082495.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.autocomplete.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.autocomplete.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.button-6ef3993fe76f3c81e878627366016019.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.button-6ef3993fe76f3c81e878627366016019.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.button.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.button.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.core-32f16d078f41a104a66f3ff183b57e6c.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.core-32f16d078f41a104a66f3ff183b57e6c.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.core.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.core.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-20c25a773b1c937c85a6f44a68468312.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-20c25a773b1c937c85a6f44a68468312.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-af-0c3b45113a098643ad14c7f7f8539c3d.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-af-0c3b45113a098643ad14c7f7f8539c3d.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-af.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-af.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ar-49c4ae2797eba6a81725f3f4b2e7050a.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ar-49c4ae2797eba6a81725f3f4b2e7050a.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ar-DZ-64c40e5fa5303b53d8e594a6e9f39fdc.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ar-DZ-64c40e5fa5303b53d8e594a6e9f39fdc.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ar-DZ.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ar-DZ.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ar.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ar.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-az-af83de8ac8a0ab9c3edeaaedc4e6b62a.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-az-af83de8ac8a0ab9c3edeaaedc4e6b62a.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-az.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-az.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-be-ad4b4925f3825faed6586383f47683ac.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-be-ad4b4925f3825faed6586383f47683ac.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-be.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-be.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-bg-57e595a8076a8bc6ab05f8ff1105d1c5.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-bg-57e595a8076a8bc6ab05f8ff1105d1c5.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-bg.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-bg.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-bs-2d65cb42f223efd43aaebbae6503a323.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-bs-2d65cb42f223efd43aaebbae6503a323.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-bs.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-bs.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ca-803330cfed0c15114b9f7754430f3c77.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ca-803330cfed0c15114b9f7754430f3c77.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ca.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ca.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-cs-01f71034449f04bf5fa7c8171cd6364c.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-cs-01f71034449f04bf5fa7c8171cd6364c.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-cs.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-cs.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-cy-GB-dfd940c703d47536df4c218487e3842a.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-cy-GB-dfd940c703d47536df4c218487e3842a.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-cy-GB.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-cy-GB.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-da-faa54efae08adcb12b578ded565e46f2.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-da-faa54efae08adcb12b578ded565e46f2.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-da.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-da.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-de-950aed6dde23b5af526d443e34da10de.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-de-950aed6dde23b5af526d443e34da10de.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-de.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-de.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-el-a06083fad663cc15250ab4c53ab746b3.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-el-a06083fad663cc15250ab4c53ab746b3.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-el.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-el.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-en-AU-b115229e9527334709c4dfc14644ec8c.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-en-AU-b115229e9527334709c4dfc14644ec8c.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-en-AU.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-en-AU.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-en-GB-6ba2f9d4e8119da6080ca06043b15549.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-en-GB-6ba2f9d4e8119da6080ca06043b15549.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-en-GB.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-en-GB.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-en-NZ-4e2ee145caa0f3fef0f1a6b0454b2842.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-en-NZ-4e2ee145caa0f3fef0f1a6b0454b2842.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-en-NZ.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-en-NZ.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-eo-d6724cf2a480a6d7ffb23078a1cc9c6a.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-eo-d6724cf2a480a6d7ffb23078a1cc9c6a.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-eo.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-eo.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-es-550961d73347f1d56c271160a8d9cdd3.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-es-550961d73347f1d56c271160a8d9cdd3.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-es.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-es.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-et-03881d5d749d1e978cfd7305e29f79ee.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-et-03881d5d749d1e978cfd7305e29f79ee.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-et.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-et.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-eu-591710ed1112f0ec6b0be32662c1a7c4.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-eu-591710ed1112f0ec6b0be32662c1a7c4.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-eu.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-eu.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-fa-3729a6b2c98b3f17ea1051cd6a580eab.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-fa-3729a6b2c98b3f17ea1051cd6a580eab.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-fa.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-fa.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-fi-2c0575b9a2c46f8ae0a448e913c1c13d.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-fi-2c0575b9a2c46f8ae0a448e913c1c13d.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-fi.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-fi.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-fo-375e92d435c1974d81f70aa24a0dd88b.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-fo-375e92d435c1974d81f70aa24a0dd88b.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-fo.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-fo.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-fr-59aaf43860549c107b56fc614facdf00.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-fr-59aaf43860549c107b56fc614facdf00.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-fr-CA-f919ad419ef0fb933163e2c366b801f3.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-fr-CA-f919ad419ef0fb933163e2c366b801f3.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-fr-CA.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-fr-CA.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-fr-CH-606319990cc7aab7ea3ceb36a26dd1cb.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-fr-CH-606319990cc7aab7ea3ceb36a26dd1cb.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-fr-CH.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-fr-CH.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-fr.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-fr.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-gl-118186e2f709276376eb6095c02499f9.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-gl-118186e2f709276376eb6095c02499f9.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-gl.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-gl.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-he-980d0cea0c56f15d878aaa05c4733b97.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-he-980d0cea0c56f15d878aaa05c4733b97.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-he.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-he.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-hi-bdc7ced29e961ea3a8a45ccce6c4931e.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-hi-bdc7ced29e961ea3a8a45ccce6c4931e.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-hi.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-hi.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-hr-453b053acdb45a65577ba867286c18c2.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-hr-453b053acdb45a65577ba867286c18c2.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-hr.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-hr.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-hu-5a4a423c87c3b0626dad8d8b7c3fe453.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-hu-5a4a423c87c3b0626dad8d8b7c3fe453.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-hu.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-hu.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-hy-75e9d0fec81c59c1a1a2a1c67c8b73ae.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-hy-75e9d0fec81c59c1a1a2a1c67c8b73ae.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-hy.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-hy.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-id-4f31c10eff9d62a2e42b6f0b614afbaf.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-id-4f31c10eff9d62a2e42b6f0b614afbaf.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-id.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-id.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-is-58a69fc90a24d422df3c80f5a9885352.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-is-58a69fc90a24d422df3c80f5a9885352.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-is.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-is.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-it-5ed7441950da1b3bd6ce968ccf90bbd9.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-it-5ed7441950da1b3bd6ce968ccf90bbd9.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-it.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-it.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ja-dddc896290ff0a98e0b4bbf3f284f962.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ja-dddc896290ff0a98e0b4bbf3f284f962.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ja.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ja.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ka-0765b4b530e16d02f87289b57e9caa2b.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ka-0765b4b530e16d02f87289b57e9caa2b.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ka.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ka.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-kk-42b2b927d44139337cbd677542803a4b.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-kk-42b2b927d44139337cbd677542803a4b.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-kk.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-kk.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-km-4b0e436ef8d50a561dd8fae1739318ab.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-km-4b0e436ef8d50a561dd8fae1739318ab.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-km.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-km.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ko-0a485b6730e43f039424bdc1a65d4cf1.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ko-0a485b6730e43f039424bdc1a65d4cf1.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ko.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ko.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ky-0c32be46684af62ef002c7e8f94d023a.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ky-0c32be46684af62ef002c7e8f94d023a.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ky.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ky.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-lb-c7c0a5f00a7e84a5e87f74467e59fad8.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-lb-c7c0a5f00a7e84a5e87f74467e59fad8.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-lb.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-lb.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-lt-b83f40a39d586fcc8d84a4aee50c602b.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-lt-b83f40a39d586fcc8d84a4aee50c602b.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-lt.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-lt.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-lv-7f2b04e8ba32eb24d6c24f0bec872dc9.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-lv-7f2b04e8ba32eb24d6c24f0bec872dc9.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-lv.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-lv.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-mk-dc62e5c14145caefea6a9054ae803fab.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-mk-dc62e5c14145caefea6a9054ae803fab.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-mk.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-mk.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ml-b30641fa6442ff8eb131948a7f325cfe.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ml-b30641fa6442ff8eb131948a7f325cfe.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ml.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ml.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ms-6bb49de7abc99a363ec77575a46b39b1.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ms-6bb49de7abc99a363ec77575a46b39b1.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ms.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ms.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-nb-bf953ddb5bc40c3742ea2a72faa0e595.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-nb-bf953ddb5bc40c3742ea2a72faa0e595.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-nb.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-nb.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-nl-BE-1889995ba7b4841a3f1f8d3acdd662b7.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-nl-BE-1889995ba7b4841a3f1f8d3acdd662b7.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-nl-BE.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-nl-BE.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-nl-c3dfcf74d9407dafd54b9c3cdcc2ba60.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-nl-c3dfcf74d9407dafd54b9c3cdcc2ba60.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-nl.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-nl.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-nn-11c4a69c42441ea4b8ed255254b68201.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-nn-11c4a69c42441ea4b8ed255254b68201.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-nn.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-nn.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-no-63243707c71fdb9c839852ae695e0f66.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-no-63243707c71fdb9c839852ae695e0f66.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-no.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-no.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-pl-30a6433f45f76eb3875316975a2d15a3.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-pl-30a6433f45f76eb3875316975a2d15a3.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-pl.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-pl.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-pt-371acc28047937a785817e929ef4098f.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-pt-371acc28047937a785817e929ef4098f.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-pt-BR-5d1b0e9b1b19aee0ff259db37ff8bdf7.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-pt-BR-5d1b0e9b1b19aee0ff259db37ff8bdf7.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-pt-BR.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-pt-BR.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-pt.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-pt.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-rm-68937791eec74a734e2470811b729f1a.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-rm-68937791eec74a734e2470811b729f1a.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-rm.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-rm.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ro-54d68cce5311b75ea1b063570dd5942b.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ro-54d68cce5311b75ea1b063570dd5942b.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ro.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ro.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ru-a2b0bcbfa58db35e11f1ce7116351c6b.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ru-a2b0bcbfa58db35e11f1ce7116351c6b.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ru.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ru.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-sk-05a220321b2d31c86acdbd1c0c741b3c.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-sk-05a220321b2d31c86acdbd1c0c741b3c.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-sk.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-sk.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-sl-6bd4cdd8737356f53dd7c3958ddbe1a0.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-sl-6bd4cdd8737356f53dd7c3958ddbe1a0.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-sl.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-sl.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-sq-1f38ce5935af77f3707af2b40bab37c0.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-sq-1f38ce5935af77f3707af2b40bab37c0.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-sq.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-sq.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-sr-6ad24a816be10dd177feadfa7f85a0c7.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-sr-6ad24a816be10dd177feadfa7f85a0c7.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-sr-SR-db5e0b9483c07a6b48726de28b229298.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-sr-SR-db5e0b9483c07a6b48726de28b229298.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-sr-SR.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-sr-SR.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-sr.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-sr.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-sv-1e00c7a51a4cde557ce31c89df4ed571.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-sv-1e00c7a51a4cde557ce31c89df4ed571.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-sv.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-sv.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ta-185de87d1b8d15d2b9ac805806a8b271.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ta-185de87d1b8d15d2b9ac805806a8b271.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ta.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-ta.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-th-896df32f85d1b537c7946112d3b9a8a7.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-th-896df32f85d1b537c7946112d3b9a8a7.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-th.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-th.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-tj-7c0ee02fa5e2556e9413206a3747a28d.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-tj-7c0ee02fa5e2556e9413206a3747a28d.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-tj.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-tj.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-tr-40998858a609ab567080fc8d3f43072a.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-tr-40998858a609ab567080fc8d3f43072a.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-tr.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-tr.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-uk-73b72445b12d0a3b9b2cd8b19740809e.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-uk-73b72445b12d0a3b9b2cd8b19740809e.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-uk.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-uk.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-vi-d5ea5e25dcfa5236a96128095ea5a3d1.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-vi-d5ea5e25dcfa5236a96128095ea5a3d1.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-vi.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-vi.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-zh-CN-72c382d4d76151b592157a2197f3d1c2.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-zh-CN-72c382d4d76151b592157a2197f3d1c2.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-zh-CN.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-zh-CN.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-zh-HK-93da13cf574937b365a95c8430c03a13.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-zh-HK-93da13cf574937b365a95c8430c03a13.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-zh-HK.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-zh-HK.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-zh-TW-c345b2ecd4e6974629fd02eee6de040d.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-zh-TW-c345b2ecd4e6974629fd02eee6de040d.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-zh-TW.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker-zh-TW.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.datepicker.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.dialog-c78f00389079a9813a5568b2b48aa054.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.dialog-c78f00389079a9813a5568b2b48aa054.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.dialog.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.dialog.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.draggable-407693537714aadc6d82e609915784a7.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.draggable-407693537714aadc6d82e609915784a7.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.draggable.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.draggable.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.droppable-64d9172b414fd70662439d43136a5c36.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.droppable-64d9172b414fd70662439d43136a5c36.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.droppable.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.droppable.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.effect-7c1a76f3787fde222979eea9491c1f1a.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.effect-7c1a76f3787fde222979eea9491c1f1a.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.effect-blind-9b90b6e8830529d269a8f05efafdb0a5.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.effect-blind-9b90b6e8830529d269a8f05efafdb0a5.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.effect-blind.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.effect-blind.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.effect-bounce-808df29cdcc278bfbdfde6263faa4ed8.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.effect-bounce-808df29cdcc278bfbdfde6263faa4ed8.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.effect-bounce.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.effect-bounce.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.effect-clip-e72cf6a1ed73a07b536cabf1529c56a2.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.effect-clip-e72cf6a1ed73a07b536cabf1529c56a2.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.effect-clip.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.effect-clip.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.effect-drop-deb252d1149e19b42a2d316d031f6b03.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.effect-drop-deb252d1149e19b42a2d316d031f6b03.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.effect-drop.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.effect-drop.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.effect-explode-b5d755f3961f9625ff9134839c682256.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.effect-explode-b5d755f3961f9625ff9134839c682256.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.effect-explode.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.effect-explode.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.effect-fade-811f180d0e509e12f16d8fa66f97fe7e.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.effect-fade-811f180d0e509e12f16d8fa66f97fe7e.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.effect-fade.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.effect-fade.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.effect-fold-73e8f91e613ae4dbf83225710c7f8189.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.effect-fold-73e8f91e613ae4dbf83225710c7f8189.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.effect-fold.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.effect-fold.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.effect-highlight-bde51a054facfe953400497d052c126e.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.effect-highlight-bde51a054facfe953400497d052c126e.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.effect-highlight.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.effect-highlight.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.effect-pulsate-c4c522b57f2b044d4aff29fd84fb85e5.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.effect-pulsate-c4c522b57f2b044d4aff29fd84fb85e5.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.effect-pulsate.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.effect-pulsate.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.effect-scale-1a45d4716150a399075e2581726caf16.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.effect-scale-1a45d4716150a399075e2581726caf16.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.effect-scale.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.effect-scale.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.effect-shake-d31eb975e4ae71412119a06ea0a105ff.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.effect-shake-d31eb975e4ae71412119a06ea0a105ff.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.effect-shake.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.effect-shake.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.effect-slide-74d0512f78d3ac1395cfb7808ba089da.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.effect-slide-74d0512f78d3ac1395cfb7808ba089da.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.effect-slide.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.effect-slide.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.effect-transfer-26ed131426420d8d8190f5dce9a2d98d.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.effect-transfer-26ed131426420d8d8190f5dce9a2d98d.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.effect-transfer.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.effect-transfer.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.effect.all-aa35fa8beb690abfffe78883fa47a180.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.effect.all-aa35fa8beb690abfffe78883fa47a180.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.effect.all.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.effect.all.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.effect.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.effect.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.menu-c7fe028eaff3e1965fe8d60de3819cd6.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.menu-c7fe028eaff3e1965fe8d60de3819cd6.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.menu.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.menu.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.mouse-77fa01f46a0e2e7d6ed1e9841c2d9df6.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.mouse-77fa01f46a0e2e7d6ed1e9841c2d9df6.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.mouse.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.mouse.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.position-1854b59ff65eb5286b7de41dbf545e61.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.position-1854b59ff65eb5286b7de41dbf545e61.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.position.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.position.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.progressbar-d7b3f0c604f0578dd4def1209a8dbf64.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.progressbar-d7b3f0c604f0578dd4def1209a8dbf64.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.progressbar.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.progressbar.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.resizable-b002434bedf4b1b13abf247018d20f7a.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.resizable-b002434bedf4b1b13abf247018d20f7a.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.resizable.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.resizable.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.selectable-c09e80f393076f862852fd09eecbfb0b.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.selectable-c09e80f393076f862852fd09eecbfb0b.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.selectable.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.selectable.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.slider-ea94bf0490c4e6f61db02ce86d0df458.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.slider-ea94bf0490c4e6f61db02ce86d0df458.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.slider.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.slider.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.sortable-9d30404460070d473e3d8a5fd8b6ceb3.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.sortable-9d30404460070d473e3d8a5fd8b6ceb3.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.sortable.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.sortable.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.spinner-faba246492467a1081f407ecd3c030eb.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.spinner-faba246492467a1081f407ecd3c030eb.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.spinner.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.spinner.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.tabs-67d4a01317b3e0c62153b5b3e62bb881.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.tabs-67d4a01317b3e0c62153b5b3e62bb881.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.tabs.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.tabs.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.tooltip-4a444f90cf404998cc010041c3b9c635.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.tooltip-4a444f90cf404998cc010041c3b9c635.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.tooltip.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.tooltip.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.widget-487d18f305ae34eb19069a4d28f75b9a.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.widget-487d18f305ae34eb19069a4d28f75b9a.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery.ui.widget.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery.ui.widget.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery_ujs-a3266ec390218bd1ea234887ff70ab4e.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery_ujs-a3266ec390218bd1ea234887ff70ab4e.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery_ujs.js.gz" afterPath="$PROJECT_DIR$/public/assets/jquery_ujs.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/locales/ko.local-1648f236db6d8545a068ac1ce8348f15.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/locales/ko.local-1648f236db6d8545a068ac1ce8348f15.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/locales/ko.local.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/locales/ko.local.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/landingpage-ae262459890d3ce50785077e0c4a888a.js.gz" afterPath="$PROJECT_DIR$/public/assets/landingpage-ae262459890d3ce50785077e0c4a888a.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/landingpage.js.gz" afterPath="$PROJECT_DIR$/public/assets/landingpage.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/lightview-d46ed02703fd40d4d803d0ee4f0970ad.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/lightview-d46ed02703fd40d4d803d0ee4f0970ad.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/lightview.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/lightview.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/dependencies/liquidmetal-1e1d051cc01dc420fb63672b534fb03d.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/dependencies/liquidmetal-1e1d051cc01dc420fb63672b534fb03d.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/dependencies/liquidmetal.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/dependencies/liquidmetal.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/regions/markdown-720a8e5bb740f871cde7171cc78cd37a.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/regions/markdown-720a8e5bb740f871cde7171cc78cd37a.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/regions/markdown.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/regions/markdown.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury-13f27da02dea5c112f1ab283351f13bf.css.gz" afterPath="$PROJECT_DIR$/public/assets/mercury-13f27da02dea5c112f1ab283351f13bf.css.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/mercury-2505ad28746ef84afcffe7a1f142c8a0.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/mercury-2505ad28746ef84afcffe7a1f142c8a0.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury-293287da771763ebdae3ae1dc8ff14fb.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury-293287da771763ebdae3ae1dc8ff14fb.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/mercury-compiled-2cf9ac29870c2822d0c164d882eb2c1b.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/mercury-compiled-2cf9ac29870c2822d0c164d882eb2c1b.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/mercury-compiled.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/mercury-compiled.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury.css.gz" afterPath="$PROJECT_DIR$/public/assets/mercury.css.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/mercury.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/mercury.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/modal-29ef9c23c301060d875fa0d8c9a8a859.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/modal-29ef9c23c301060d875fa0d8c9a8a859.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/modal.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/modal.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/modernizr-6125f471a5b370c452de332a1bceea90.js.gz" afterPath="$PROJECT_DIR$/public/assets/modernizr-6125f471a5b370c452de332a1bceea90.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/modernizr.js.gz" afterPath="$PROJECT_DIR$/public/assets/modernizr.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/active_admin/lib/namespace-cfce649330d5e9ff7ac4d8b28e984e46.js.gz" afterPath="$PROJECT_DIR$/public/assets/active_admin/lib/namespace-cfce649330d5e9ff7ac4d8b28e984e46.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/active_admin/lib/namespace.js.gz" afterPath="$PROJECT_DIR$/public/assets/active_admin/lib/namespace.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/native_extensions-661bc8d064ad58a6b82a8a4da66ebeeb.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/native_extensions-661bc8d064ad58a6b82a8a4da66ebeeb.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/native_extensions.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/native_extensions.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/locales/nl.locale-6097bb21200057eb3966796847dcf21d.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/locales/nl.locale-6097bb21200057eb3966796847dcf21d.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/locales/nl.locale.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/locales/nl.locale.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/page_editor-689da9846e01004bc9eea5556f3f6e74.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/page_editor-689da9846e01004bc9eea5556f3f6e74.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/plugins/save_as_xml/mercury/page_editor-a64221e6cac5661c0f44e1386361c473.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/plugins/save_as_xml/mercury/page_editor-a64221e6cac5661c0f44e1386361c473.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/page_editor.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/page_editor.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/plugins/save_as_xml/mercury/page_editor.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/plugins/save_as_xml/mercury/page_editor.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/palette-ec50d307cf3d903586248781f85ca652.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/palette-ec50d307cf3d903586248781f85ca652.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/palette.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/palette.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/panel-acd91b95cf2b6f04ae45bd5cc044cfc5.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/panel-acd91b95cf2b6f04ae45bd5cc044cfc5.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/panel.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/panel.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/placeholders-8ab475ae57c69594dd5202f61303196f.js.gz" afterPath="$PROJECT_DIR$/public/assets/placeholders-8ab475ae57c69594dd5202f61303196f.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/placeholders.js.gz" afterPath="$PROJECT_DIR$/public/assets/placeholders.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/plugins/save_as_xml/plugin-6ff9a2a61818a10d4a6e228c37e3e748.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/plugins/save_as_xml/plugin-6ff9a2a61818a10d4a6e228c37e3e748.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/plugins/save_as_xml/plugin.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/plugins/save_as_xml/plugin.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/plugins-a2065a5ca112d00b2edf64f7f95c1ce9.js.gz" afterPath="$PROJECT_DIR$/public/assets/plugins-a2065a5ca112d00b2edf64f7f95c1ce9.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/plugins.js.gz" afterPath="$PROJECT_DIR$/public/assets/plugins.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/active_admin/print-a043e4b69e1dfb0d85401176dac0c956.css.gz" afterPath="$PROJECT_DIR$/public/assets/active_admin/print-a043e4b69e1dfb0d85401176dac0c956.css.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/active_admin/print.css.gz" afterPath="$PROJECT_DIR$/public/assets/active_admin/print.css.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/locales/pt.locale-5aaa8665886886351506c11a92fd4fc1.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/locales/pt.locale-5aaa8665886886351506c11a92fd4fc1.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/locales/pt.locale.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/locales/pt.locale.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/region-1be0c3cf775b472283e7f1b0a9b2e2e7.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/region-1be0c3cf775b472283e7f1b0a9b2e2e7.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/region.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/region.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/locales/ru.locale-96582f3732cd579272598a9d184d5292.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/locales/ru.locale-96582f3732cd579272598a9d184d5292.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/locales/ru.locale.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/locales/ru.locale.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/select-3a90c1ff94a93e843d140dfe53950ffc.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/select-3a90c1ff94a93e843d140dfe53950ffc.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/select.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/select.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/dependencies/showdown-051b462adfc0403f1a506b723cba85c4.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/dependencies/showdown-051b462adfc0403f1a506b723cba85c4.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/dependencies/showdown.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/dependencies/showdown.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/regions/simple-2a9408b5018f3f7eb97e3f19df88728a.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/regions/simple-2a9408b5018f3f7eb97e3f19df88728a.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/regions/simple.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/regions/simple.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/snippet-fc7ed53ae380af46dbf121931cbffaa8.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/snippet-fc7ed53ae380af46dbf121931cbffaa8.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/snippet.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/snippet.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/snippet_toolbar-4976588b5bea71862e0f1b7f2fa0cd84.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/snippet_toolbar-4976588b5bea71862e0f1b7f2fa0cd84.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/snippet_toolbar.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/snippet_toolbar.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/dialogs/snippetpanel-dee919cfc8862af4fc326664b6d8049f.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/dialogs/snippetpanel-dee919cfc8862af4fc326664b6d8049f.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/dialogs/snippetpanel.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/dialogs/snippetpanel.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/regions/snippets-4ec8a66f3adcc35c5e01ff5afd3471af.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/regions/snippets-4ec8a66f3adcc35c5e01ff5afd3471af.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/regions/snippets.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/regions/snippets.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/statusbar-15a7d72b2fb2b864e54dc7a9a13f708b.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/statusbar-15a7d72b2fb2b864e54dc7a9a13f708b.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/statusbar.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/statusbar.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/dialogs/style-c358afea77532d9f3ec96860e60a070e.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/dialogs/style-c358afea77532d9f3ec96860e60a070e.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/dialogs/style.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/dialogs/style.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/locales/sv.local-a2c0b28acf26a369b241d5ee157eca56.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/locales/sv.local-a2c0b28acf26a369b241d5ee157eca56.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/locales/sv.local.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/locales/sv.local.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/locales/swedish_chef.locale-3cd0db75ae2b3189e11d1e50f8ab4aca.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/locales/swedish_chef.locale-3cd0db75ae2b3189e11d1e50f8ab4aca.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/locales/swedish_chef.locale.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/locales/swedish_chef.locale.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/table_editor-9d5ae5b6efc15c8d447a74b215d597e0.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/table_editor-9d5ae5b6efc15c8d447a74b215d597e0.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/table_editor.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/table_editor.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/toolbar-a3997dd8571fe08c6c6ffbbc8d1ed6ee.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/toolbar-a3997dd8571fe08c6c6ffbbc8d1ed6ee.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/toolbar.button-91254140ac8f6fa118543a109ced8418.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/toolbar.button-91254140ac8f6fa118543a109ced8418.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/toolbar.button.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/toolbar.button.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/toolbar.button_group-08b414fa22efcd5797efc786c9921eb2.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/toolbar.button_group-08b414fa22efcd5797efc786c9921eb2.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/toolbar.button_group.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/toolbar.button_group.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/toolbar.expander-0c2117742d08e214d567298090f38b31.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/toolbar.expander-0c2117742d08e214d567298090f38b31.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/toolbar.expander.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/toolbar.expander.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/toolbar.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/toolbar.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/tooltip-4657aef38c9f6bd229fc32ff804b918a.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/tooltip-4657aef38c9f6bd229fc32ff804b918a.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/tooltip.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/tooltip.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/turbolinks-0ed8542aace246dcba20019efc59229d.js.gz" afterPath="$PROJECT_DIR$/public/assets/turbolinks-0ed8542aace246dcba20019efc59229d.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/turbolinks.js.gz" afterPath="$PROJECT_DIR$/public/assets/turbolinks.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/uploader-8150eef60a21bd738ec98168c2de2b79.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/uploader-8150eef60a21bd738ec98168c2de2b79.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/uploader.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/uploader.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/zepto.min-c86b8a7c74775d1c324da6dcb15d5571.js.gz" afterPath="$PROJECT_DIR$/public/assets/zepto.min-c86b8a7c74775d1c324da6dcb15d5571.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/zepto.min.js.gz" afterPath="$PROJECT_DIR$/public/assets/zepto.min.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/locales/zh.local-5d37cdce2e9ffeb9f025392bfd404193.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/locales/zh.local-5d37cdce2e9ffeb9f025392bfd404193.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/mercury/locales/zh.local.js.gz" afterPath="$PROJECT_DIR$/public/assets/mercury/locales/zh.local.js.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/support/devise.rb" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/spec/controllers/addresses_controller_spec.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/spec/controllers/appointments_controller_spec.rb" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coverage/.resultset.json" afterPath="$PROJECT_DIR$/coverage/.resultset.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/coverage/.resultset.json" afterPath="$PROJECT_DIR$/spec/coverage/.resultset.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Homespree.iml" afterPath="$PROJECT_DIR$/.idea/Homespree.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/contractors/wizard/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/contractors/wizard/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/partials/_header.html.erb" afterPath="$PROJECT_DIR$/app/views/partials/_header.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/contractors/shared/_links.erb" afterPath="$PROJECT_DIR$/app/views/contractors/shared/_links.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/address.rb" afterPath="$PROJECT_DIR$/app/models/address.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/application.css" afterPath="$PROJECT_DIR$/public/assets/application.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/support/auth_helper.rb" afterPath="$PROJECT_DIR$/spec/support/auth_helper.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/contractors/wizard/contact_details.html.erb" afterPath="$PROJECT_DIR$/app/views/contractors/wizard/contact_details.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/contractor.rb" afterPath="$PROJECT_DIR$/app/models/contractor.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/requests/contractor_profile_spec.rb" afterPath="$PROJECT_DIR$/spec/requests/contractor_profile_spec.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/routing/contractor_routes_spec.rb" afterPath="$PROJECT_DIR$/spec/routing/contractor_routes_spec.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/models/contractor_spec.rb" afterPath="$PROJECT_DIR$/spec/models/contractor_spec.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/requests/contractor_wizard_contact_details_spec.rb" afterPath="$PROJECT_DIR$/spec/requests/contractor_wizard_contact_details_spec.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/requests/contractor_wizard_location_details_spec.rb" afterPath="$PROJECT_DIR$/spec/requests/contractor_wizard_location_details_spec.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/requests/home_spec.rb" afterPath="$PROJECT_DIR$/spec/requests/home_spec.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/controllers/contractor_wizard_controller_spec.rb" afterPath="$PROJECT_DIR$/spec/controllers/contractor_wizard_controller_spec.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/static_pages/home.html.erb" afterPath="$PROJECT_DIR$/app/views/static_pages/home.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/static_pages/home.mobile.erb" afterPath="$PROJECT_DIR$/app/views/static_pages/home.mobile.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coverage/index.html" afterPath="$PROJECT_DIR$/coverage/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/coverage/index.html" afterPath="$PROJECT_DIR$/spec/coverage/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/manifest.yml" afterPath="$PROJECT_DIR$/public/assets/manifest.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/pages/landingpage.css.scss.erb" afterPath="$PROJECT_DIR$/app/assets/stylesheets/pages/landingpage.css.scss.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/mailinglists_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/mailinglists_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/contractors/passwords/new.html.erb" afterPath="$PROJECT_DIR$/app/views/contractors/passwords/new.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/contractors/registrations/new.html.erb" afterPath="$PROJECT_DIR$/app/views/contractors/registrations/new.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/contractors/unlocks/new.html.erb" afterPath="$PROJECT_DIR$/app/views/contractors/unlocks/new.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/log/newrelic_agent.log" afterPath="$PROJECT_DIR$/spec/log/newrelic_agent.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/registration.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/registration.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/seeds.rb" afterPath="$PROJECT_DIR$/db/seeds.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/global/theme.css.scss.erb" afterPath="$PROJECT_DIR$/app/assets/stylesheets/global/theme.css.scss.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/routing/wizard_routes_spec.rb" afterPath="$PROJECT_DIR$/spec/routing/wizard_routes_spec.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/mailinglists/unsubscribe.html.erb" afterPath="$PROJECT_DIR$/app/views/mailinglists/unsubscribe.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/contractors/wizard_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/contractors/wizard_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Homespree.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364348533801" ignored="false" />
+    <file path="/Dummy.txt" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364660643683" ignored="false" />
     <file path="$PROJECT_DIR$/../rails_sandbox/ultimate_rails_site/db/schema.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360210339150" ignored="false" />
     <file path="/schema.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1363567489424" ignored="false" />
-    <file path="/home.html.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1363968962733" ignored="false" />
+    <file path="/home.html.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364660969774" ignored="false" />
     <file path="/theme.css.scss.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364345433539" ignored="false" />
     <file path="/landingpage.css.scss.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1362968958549" ignored="false" />
     <file path="/dummy.txt" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360307495664" ignored="false" />
@@ -488,7 +46,7 @@
     <file path="$PROJECT_DIR$/../../Code/rails/BootstrapDemo/app/views/produces/show.html.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360417811109" ignored="false" />
     <file path="$PROJECT_DIR$/../../Code/rails/BootstrapDemo/app/models/produce.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360418364307" ignored="false" />
     <file path="/produce.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360418363947" ignored="false" />
-    <file path="/Gemfile" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364332263212" ignored="false" />
+    <file path="/Gemfile" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364609435400" ignored="false" />
     <file path="/Kernel.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360424029112" ignored="false" />
     <file path="$PROJECT_DIR$/../../Code/ruby/sandbox/DocumentationExploration/Kernel.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360424036175" ignored="false" />
     <file path="/some_ruby_code.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360422612395" ignored="false" />
@@ -567,7 +125,7 @@
     <file path="/mailinglists_spec.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360552416831" ignored="false" />
     <file path="/mailinglists_routing_spec.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360886418037" ignored="false" />
     <file path="/auth_helper.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364336255019" ignored="false" />
-    <file path="/mailinglists_controller.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1363969413065" ignored="false" />
+    <file path="/mailinglists_controller.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364661104353" ignored="false" />
     <file path="/new.js.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360639923625" ignored="false" />
     <file path="/create.js.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360885438284" ignored="false" />
     <file path="/active_admin.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360729876102" ignored="false" />
@@ -580,7 +138,7 @@
     <file path="/20130214215019_schema_version1.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360878678002" ignored="false" />
     <file path="/mailinglist.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1363915321970" ignored="false" />
     <file path="/20130214215223_devise_create_admin_users.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360885765951" ignored="false" />
-    <file path="/seeds.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364342673329" ignored="false" />
+    <file path="/seeds.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364609210119" ignored="false" />
     <file path="/mailinglist_spec.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1363916207198" ignored="false" />
     <file path="/admin_user_spec.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1361761690534" ignored="false" />
     <file path="/_facebook_like.html.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360887763268" ignored="false" />
@@ -617,9 +175,9 @@
     <file path="/specialty_spec.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1362020931501" ignored="false" />
     <file path="/20130228031157_remove_contractor_id_from_endorsements.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1362021221460" ignored="false" />
     <file path="/new.html.erb_spec.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1362111339655" ignored="false" />
-    <file path="/new.html.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364145626788" ignored="false" />
+    <file path="/new.html.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364663327957" ignored="false" />
     <file path="/about.html.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1363229109364" ignored="false" />
-    <file path="/a.dummy" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364150258315" ignored="false" />
+    <file path="/a.dummy" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364663248361" ignored="false" />
     <file path="/contact.html.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1363229162812" ignored="false" />
     <file path="/pages_controller.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1363228299231" ignored="false" />
     <file path="/_sidenav.html.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1362497355098" ignored="false" />
@@ -646,7 +204,7 @@
     <file path="$PROJECT_DIR$/../../Code/rails/h5bp/app/views/layouts/application.html.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1362689124698" ignored="false" />
     <file path="/application.mobile.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1362953059741" ignored="false" />
     <file path="/mime_types.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1362690701648" ignored="false" />
-    <file path="/home.mobile.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1362962038597" ignored="false" />
+    <file path="/home.mobile.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364660898062" ignored="false" />
     <file path="/landingpage.css.scss" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1362870192098" ignored="false" />
     <file path="$PROJECT_DIR$/../../Code/rails/wicked/config/routes.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1362879389061" ignored="false" />
     <file path="/contractor_wizard_spec.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364064597916" ignored="false" />
@@ -662,7 +220,7 @@
     <file path="/contact_details.html" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1362876797427" ignored="false" />
     <file path="/essential.html.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1363797338004" ignored="false" />
     <file path="/more_info.html.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1362877480193" ignored="false" />
-    <file path="/contact_details.html.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364349295982" ignored="false" />
+    <file path="/contact_details.html.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364416008125" ignored="false" />
     <file path="$PROJECT_DIR$/../../Code/rails/wicked/app/controllers/application_controller.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1362879341671" ignored="false" />
     <file path="/devise.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1362882433677" ignored="false" />
     <file path="/mobilelanding.css.scss.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1363920067681" ignored="false" />
@@ -701,7 +259,7 @@
     <file path="/registrations_controller.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1363907405614" ignored="false" />
     <file path="/profile_controller.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1363221093568" ignored="false" />
     <file path="/temp.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364144439449" ignored="false" />
-    <file path="/wizard_controller.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364142921444" ignored="false" />
+    <file path="/wizard_controller.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364416251602" ignored="false" />
     <file path="/static_pages.html.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1363228452886" ignored="false" />
     <file path="/registration.html.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364344883101" ignored="false" />
     <file path="/contact_info.html.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1363905503390" ignored="false" />
@@ -782,22 +340,22 @@
     <file path="/contractor_wizard_location_details_spec.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364343429913" ignored="false" />
     <file path="/contractor_wizard_contact_details_spec.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364335645104" ignored="false" />
     <file path="$PROJECT_DIR$/../../Code/rails/navDatavbase/app/models/historical_dividends.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364077456095" ignored="false" />
-    <file path="/etf.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364078213237" ignored="false" />
-    <file path="$PROJECT_DIR$/../../Code/rails/navDatavbase/app/models/etf.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364078214249" ignored="false" />
-    <file path="$PROJECT_DIR$/../../Code/rails/navDatavbase/app/models/component.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364078070727" ignored="false" />
+    <file path="/etf.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364407841242" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Code/rails/navDatavbase/app/models/etf.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364407855147" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Code/rails/navDatavbase/app/models/component.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364407743357" ignored="false" />
     <file path="/component.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364078070245" ignored="false" />
-    <file path="$PROJECT_DIR$/../../Code/rails/navDatavbase/db/schema.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364087227380" ignored="false" />
-    <file path="$PROJECT_DIR$/../../Code/rails/navDatavbase/app/models/stock.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364078023524" ignored="false" />
-    <file path="/stock.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364078019510" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Code/rails/navDatavbase/db/schema.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364608981076" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Code/rails/navDatavbase/app/models/stock.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364407764257" ignored="false" />
+    <file path="/stock.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364407763186" ignored="false" />
     <file path="$PROJECT_DIR$/../../Code/rails/navDatavbase/app/models/commodity.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364078135254" ignored="false" />
     <file path="/commodity.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364078134158" ignored="false" />
     <file path="$PROJECT_DIR$/../../Code/rails/navDatavbase/config/routes.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364078886302" ignored="false" />
     <file path="$PROJECT_DIR$/../../Code/rails/navDatavbase/db/migrate/20130323224155_schema_v1.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364087213888" ignored="false" />
-    <file path="$PROJECT_DIR$/../../Code/rails/navDatavbase/db/seeds.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364080113941" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Code/rails/navDatavbase/db/seeds.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364609257142" ignored="false" />
     <file path="$PROJECT_DIR$/../../Code/rails/navDatavbase/lib/tasks/import_csv.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364084431000" ignored="false" />
     <file path="/import_csv.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364084313026" ignored="false" />
-    <file path="$PROJECT_DIR$/../../Code/rails/navDatavbase/lib/tasks/import_csv.rake" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364089423657" ignored="false" />
-    <file path="/import_csv.rake" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364086871348" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Code/rails/navDatavbase/lib/tasks/import_csv.rake" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364609398422" ignored="false" />
+    <file path="/import_csv.rake" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364609392166" ignored="false" />
     <file path="$PROJECT_DIR$/../../Code/rails/navDatavbase/config/application.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364086801543" ignored="false" />
     <file path="$PROJECT_DIR$/../../Code/rails/navDatavbase/db/migrate/20130323225731_add_fields_to_component.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364087175332" ignored="false" />
     <file path="/contractor_profile_spec.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364339724028" ignored="false" />
@@ -814,6 +372,19 @@
     <file path="$PROJECT_DIR$/../../Code/rails/rails3-devise-rspec-cucumber/config/application.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364331653108" ignored="false" />
     <file path="/application.yml" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364332656567" ignored="false" />
     <file path="/registration_pages.css.scss" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364346775434" ignored="false" />
+    <file path="/README.md" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364609671640" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Code/rails/navDatavbase/README.md" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364609672213" ignored="false" />
+    <file path="/20130327185447_add_etf_id_to_components.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364410542925" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Code/rails/navDatavbase/db/migrate/20130327185447_add_etf_id_to_components.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364410618030" ignored="false" />
+    <file path="/contractor_wizard_controller_spec.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364416192459" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Code/rails/navDatavbase/Gemfile" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364609475886" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Code/rails/navDatavbase/spec/models/etf_spec.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364609040468" ignored="false" />
+    <file path="/etf_spec.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364609040468" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Code/rails/navDatavbase/db/migrate/20130330015750_add_exchange_to_etfs.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364608922206" ignored="false" />
+    <file path="/20130330015750_add_exchange_to_etfs.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364608873802" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Code/rails/navDatavbase/lib/NavCsv/NavCSV.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364663256161" ignored="false" />
+    <file path="/unsubscribe.html.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364661320582" ignored="false" />
+    <file path="/NavCSV.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364661815756" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -855,13 +426,13 @@
     </favorites_list>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.29107141">
+    <splitter split-orientation="horizontal" split-proportion="0.4444444">
       <split-first>
         <leaf>
-          <file leaf-file-name="registration_pages.css.scss" pinned="false" current="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/pages/registration_pages.css.scss">
+          <file leaf-file-name="new.html.erb" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/views/contractors/passwords/new.html.erb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="5" column="0" selection-start="94" selection-end="94" vertical-scroll-proportion="0.10822511">
+                <state line="16" column="9" selection-start="486" selection-end="486" vertical-scroll-proportion="0.31007752">
                   <folding />
                 </state>
               </provider>
@@ -871,10 +442,10 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="_links.erb" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/views/contractors/shared/_links.erb">
+          <file leaf-file-name="new.html.erb" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/views/contractors/sessions/new.html.erb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="1" column="72" selection-start="112" selection-end="112" vertical-scroll-proportion="0.022421524">
+                <state line="2" column="0" selection-start="41" selection-end="91" vertical-scroll-proportion="0.038119443">
                   <folding />
                 </state>
               </provider>
@@ -905,22 +476,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/partials/_contractor_dropdown.html.erb" />
-        <option value="$PROJECT_DIR$/spec/routing/contractor_routes_spec.rb" />
-        <option value="$PROJECT_DIR$/spec/routing/wizard_routes_spec.rb" />
-        <option value="$PROJECT_DIR$/db/seeds.rb" />
-        <option value="$PROJECT_DIR$/app/models/contractor.rb" />
-        <option value="$PROJECT_DIR$/spec/requests/home_spec.rb" />
-        <option value="$PROJECT_DIR$/spec/models/contractor_spec.rb" />
-        <option value="$PROJECT_DIR$/spec/requests/contractor_wizard_location_details_spec.rb" />
-        <option value="$PROJECT_DIR$/spec/requests/contractor_profile_spec.rb" />
-        <option value="$PROJECT_DIR$/app/models/address.rb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/registration.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/pages/registration_pages.css.scss" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/global/theme.css.scss.erb" />
         <option value="$PROJECT_DIR$/app/views/contractors/wizard/_form.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/contractors/wizard_controller.rb" />
+        <option value="$PROJECT_DIR$/spec/support/devise.rb" />
+        <option value="$PROJECT_DIR$/spec/controllers/contractor_wizard_controller_spec.rb" />
         <option value="$PROJECT_DIR$/app/views/contractors/wizard/contact_details.html.erb" />
         <option value="$PROJECT_DIR$/app/views/contractors/shared/_links.erb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/pages/landingpage.css.scss.erb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/global/theme.css.scss.erb" />
+        <option value="$PROJECT_DIR$/app/views/static_pages/home.mobile.erb" />
+        <option value="$PROJECT_DIR$/app/views/static_pages/home.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/mailinglists_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/mailinglists/unsubscribe.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/contractors/registrations/new.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/contractors/unlocks/new.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/contractors/passwords/new.html.erb" />
       </list>
     </option>
   </component>
@@ -981,7 +552,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="RailsProjectView">
         <subPane>
           <PATH>
@@ -1102,6 +672,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1144,20 +715,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="spec" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Homespree" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HomespreeRails" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -1177,6 +734,72 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static_pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Homespree" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HomespreeRails" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Homespree" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HomespreeRails" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mailinglists" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Homespree" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HomespreeRails" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layouts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1227,6 +850,136 @@
               <option name="myItemId" value="contractors" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="unlocks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Homespree" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HomespreeRails" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="contractors" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shared" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Homespree" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HomespreeRails" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="contractors" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sessions" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Homespree" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HomespreeRails" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="contractors" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="registrations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Homespree" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HomespreeRails" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="contractors" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Homespree" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HomespreeRails" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="contractors" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="passwords" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -1256,89 +1009,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stylesheets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Homespree" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HomespreeRails" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stylesheets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="profiles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Homespree" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HomespreeRails" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stylesheets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Homespree" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HomespreeRails" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stylesheets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="global" />
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1395,7 +1066,7 @@
       <recent name="$PROJECT_DIR$/app/views/partials" />
     </key>
   </component>
-  <component name="RunManager" selected="Rails.Development: Homespree">
+  <component name="RunManager" selected="RSpec.RSpec ALL">
     <configuration default="false" name="Rails console: Homespree" type="IrbRunConfigurationType" factoryName="IRB console" temporary="true">
       <module name="Homespree" />
       <IRB_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
@@ -1815,12 +1486,12 @@
     </configuration>
     <list size="7">
       <item index="0" class="java.lang.String" itemvalue="IRB console.Rails console: Homespree" />
-      <item index="1" class="java.lang.String" itemvalue="RSpec.RSpec ALL" />
-      <item index="2" class="java.lang.String" itemvalue="Rails.Production: Homespree" />
-      <item index="3" class="java.lang.String" itemvalue="Rails.Development: Homespree" />
-      <item index="4" class="java.lang.String" itemvalue="Rake.spec" />
-      <item index="5" class="java.lang.String" itemvalue="Rake.db:migrate" />
-      <item index="6" class="java.lang.String" itemvalue="Spork DRb.RSpec: Spork DRb server" />
+      <item index="1" class="java.lang.String" itemvalue="Rake.db:migrate" />
+      <item index="2" class="java.lang.String" itemvalue="Spork DRb.RSpec: Spork DRb server" />
+      <item index="3" class="java.lang.String" itemvalue="RSpec.RSpec ALL" />
+      <item index="4" class="java.lang.String" itemvalue="Rails.Production: Homespree" />
+      <item index="5" class="java.lang.String" itemvalue="Rails.Development: Homespree" />
+      <item index="6" class="java.lang.String" itemvalue="Rake.spec" />
     </list>
     <recent_temporary>
       <list size="3">
@@ -1882,7 +1553,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22284123" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22242817" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2145144" sideWeight="0.68523675" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3797586" sideWeight="0.93009603" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44196844" sideWeight="0.357524" order="7" side_tool="true" content_ui="tabs" />
@@ -1892,9 +1563,9 @@
       <window_info id="CSS-X-Fire" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.090824835" sideWeight="0.49786553" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286908" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.0891142" sideWeight="0.68523675" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.103521876" sideWeight="0.6694522" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3305478" sideWeight="0.63874066" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Pomodoro" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22748375" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15261473" sideWeight="0.7775718" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25162488" sideWeight="0.63874066" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Pomodoro" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22748375" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Routes" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14194237" sideWeight="0.6202414" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1969,118 +1640,118 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="43" />
+      <option name="time" value="46" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/controllers/appointments_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/mailinglists_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/address.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="3" selection-start="457" selection-end="457" vertical-scroll-proportion="0.375">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/pages/landingpage.css.scss.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="7" column="16" selection-start="140" selection-end="140" vertical-scroll-proportion="0.1417004">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/registration.html.erb">
+    <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="48" selection-start="431" selection-end="431" vertical-scroll-proportion="0.35874438">
+        <state line="54" column="14" selection-start="929" selection-end="929" vertical-scroll-proportion="0.507722">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/static_page.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/models/contractor.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="22" column="0" selection-start="1223" selection-end="1223" vertical-scroll-proportion="0.31853282">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/pages/peripheral_pages.css.scss">
+    <entry file="file://$PROJECT_DIR$/spec/models/contractor_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="0" selection-start="730" selection-end="730" vertical-scroll-proportion="0.37229437">
+        <state line="71" column="9" selection-start="2171" selection-end="2171" vertical-scroll-proportion="0.67919075">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/static_pages_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/static_pages/home.mobile.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="0" selection-start="413" selection-end="413" vertical-scroll-proportion="0.5955882">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/global/theme.css.scss.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="130" column="16" selection-start="2001" selection-end="2001" vertical-scroll-proportion="0.63976085">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/pages/registration_pages.css.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="94" selection-end="94" vertical-scroll-proportion="0.10822511">
+        <state line="17" column="0" selection-start="768" selection-end="827" vertical-scroll-proportion="0.24829601">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/schema.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="23" selection-start="2889" selection-end="2889" vertical-scroll-proportion="0.62193364">
+        <state line="117" column="38" selection-start="5041" selection-end="5041" vertical-scroll-proportion="0.6242775">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/contractors/wizard/_form.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/mailinglists_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="270" selection-end="270" vertical-scroll-proportion="0.24663678">
+        <state line="11" column="32" selection-start="224" selection-end="224" vertical-scroll-proportion="0.15699334">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/contractors/profiles/_form.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/global/theme.css.scss.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="24" selection-start="14" selection-end="24" vertical-scroll-proportion="0.0">
+        <state line="45" column="27" selection-start="2398" selection-end="2398" vertical-scroll-proportion="0.34911242">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spec/requests/contractor_wizard_contact_details_spec.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/mailinglists/unsubscribe.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="9" selection-start="197" selection-end="197" vertical-scroll-proportion="0.07302824">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/seeds.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="35" selection-start="1158" selection-end="1158" vertical-scroll-proportion="0.702836">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/static_pages/home.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="17" selection-start="327" selection-end="327" vertical-scroll-proportion="0.23255815">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/contractors/registrations/edit.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/contractors/wizard/contact_details.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/contractors/sessions/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="9" selection-start="1055" selection-end="1055" vertical-scroll-proportion="0.89686096">
+        <state line="2" column="0" selection-start="41" selection-end="91" vertical-scroll-proportion="0.038119443">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/contractors/shared/_links.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/contractors/registrations/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="72" selection-start="112" selection-end="112" vertical-scroll-proportion="0.022421524">
+        <state line="0" column="0" selection-start="0" selection-end="39" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/contractors/unlocks/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="50" selection-start="91" selection-end="91" vertical-scroll-proportion="0.03875969">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/contractors/passwords/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="9" selection-start="486" selection-end="486" vertical-scroll-proportion="0.31007752">
           <folding />
         </state>
       </provider>

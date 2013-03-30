@@ -15,6 +15,7 @@
     <%= select_tag :user_type, options_for_select([["I am a...", ""], ["Homeowner", "homeowner"], ["Contractor", "contractor"]]) %>
 
     <%= submit_tag "Sign Up", :disable_with => "Thanks!", id: "emailloginbutton" %>
+    <%= hidden_field_tag "submitted_from_mobile", "true" %>
 
     <p id="submit_success">Thanks! We'll be in touch.</p>
   <% end %>
