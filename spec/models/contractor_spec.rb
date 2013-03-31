@@ -209,7 +209,7 @@ describe Contractor do
 
     its(:facebook) { should eq "www.facebook.com/joe_the_plumber" }
     its(:twitter) { should eq "@joe_the_plumber" }
-    its(:license) { should eq "abcdefg12345" }
+    its(:license) { should eq "ABCDEFG12345" }
     its(:website) { should eq "http://www.joesplumbing.com" }
 
   end

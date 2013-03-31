@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130330162612) do
+ActiveRecord::Schema.define(:version => 20130331013122) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -76,16 +76,16 @@ ActiveRecord::Schema.define(:version => 20130330162612) do
     t.string   "website"
     t.string   "facebook"
     t.string   "twitter"
-    t.datetime "created_at",                                                           :null => false
-    t.datetime "updated_at",                                                           :null => false
+    t.datetime "created_at",                                                                          :null => false
+    t.datetime "updated_at",                                                                          :null => false
     t.text     "pictures"
-    t.string   "email",                                                                :null => false
+    t.string   "email",                                                                               :null => false
     t.string   "last_name"
-    t.string   "encrypted_password",                                   :default => "", :null => false
+    t.string   "encrypted_password",                                                  :default => "", :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                                        :default => 0
+    t.integer  "sign_in_count",                                                       :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -94,10 +94,10 @@ ActiveRecord::Schema.define(:version => 20130330162612) do
     t.string   "mobile_number"
     t.string   "office_number"
     t.string   "license"
-    t.decimal  "insurance_limit",        :precision => 5, :scale => 2
-    t.decimal  "bonding_limit",          :precision => 5, :scale => 2
+    t.decimal  "insurance_limit",                       :precision => 5, :scale => 2
+    t.decimal  "bonding_limit",                         :precision => 5, :scale => 2
     t.string   "photo_filename"
-    t.string   "slogan"
+    t.text     "slogan",                 :limit => 255
   end
 
   add_index "contractors", ["reset_password_token"], :name => "index_contractors_on_reset_password_token", :unique => true
@@ -132,6 +132,7 @@ ActiveRecord::Schema.define(:version => 20130330162612) do
     t.integer  "contractor_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.string   "description"
   end
 
 end

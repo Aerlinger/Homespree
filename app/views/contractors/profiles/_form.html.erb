@@ -1,4 +1,4 @@
-<%= form_for(@contractor) do |f| %>
+<%= simple_form_for(@contractor) do |f| %>
 
   <% if @contractor.errors.any? %>
     <div id="error_explanation">
@@ -12,11 +12,11 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
 
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :last_name %>
+  </div>
 
   <div class="actions">
     <%= f.submit %>

@@ -10,7 +10,7 @@ class Contractor < ActiveRecord::Base
   # Accessors:  -------------------------------------------------------------------------------------------------------
   attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me,
                   :description, :mobile_number, :office_number, :company_title,
-                  :facebook, :name, :specialties, :twitter, :website
+                  :facebook, :name, :specialties, :twitter, :website, :other_specialties
 
   # Associations:  ----------------------------------------------------------------------------------------------------
   has_many :appointments

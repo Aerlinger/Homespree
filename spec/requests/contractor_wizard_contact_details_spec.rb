@@ -12,17 +12,6 @@ describe "Contractor Wizard Contact Details page" do
     current_path.should eq "/contractors/wizard/contact_details"
   end
 
-  it "should have empty contact details" do
-    @contractor.first_name.should be_blank
-    @contractor.last_name.should be_blank
-
-    @contractor.mobile_number.should be_blank
-    @contractor.office_number.should be_blank
-
-    @contractor.specialties.should be_blank
-    @contractor.addresses.should be_blank
-  end
-
 
   describe "Populate with proper data" do
     before do

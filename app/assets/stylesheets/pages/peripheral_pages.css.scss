@@ -6,11 +6,17 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
 
   .container {
 
-    border-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    -moz-border-radius-bottomleft: 15px;
+    -moz-border-radius-bottomleft: 15px;
+    -webkit-border-bottom-left-radius: 15px;
+    -webkit-border-bottom-right-radius: 15px;
+
     box-shadow: $shadow;
     background-color: white;
     padding-bottom: 2em;
-    padding-top: 80px;
+    padding-top: 10px;
   }
 
   a {

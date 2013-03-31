@@ -3,7 +3,7 @@
 <% end -%>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  Don't have an account? <%= link_to "Sign up", new_contractor_registration_path %><br />
+  Don't have an account? <%= link_to "Sign up", new_contractor_registration_path %>
 <% end -%>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' %>
@@ -11,11 +11,11 @@
 <% end -%>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
-  <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />
+  <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %>
 <% end -%>
 
 <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
-  <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %><br />
+  <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %>
 <% end -%>
 
 <%- if devise_mapping.omniauthable? %>
@@ -23,5 +23,3 @@
     <%= link_to "Sign in with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider) %><br />
   <% end -%>
 <% end -%>
-
-<input class="large green call-to-action icon-and-text" id="submit_location" name="commit" type="submit" value="Sign Up">

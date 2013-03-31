@@ -1,6 +1,6 @@
 <% content_for :registration_page do %>
 
-  <%= provide :title, "Sign in with your email" %>
+  <%= provide :title, "Account unlock request" %>
 
   <%= form_for(resource, :as => resource_name, :url => unlock_path(resource_name), :html => {:method => :post}) do |f| %>
     <%= devise_error_messages! %>

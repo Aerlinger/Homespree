@@ -25,14 +25,20 @@
         <td><%= f.input :office_number %></td>
       </tr>
       <tr>
-        <td colspan="2">
+        <td colspan="2" id="specialties">
           <h4 class="block-underline-full">Specialties</h4>
-          <%# f.input :specialties, collection: ['Blog', 'Editorial', 'Announce', 'Advertisement'], as: :check_boxes %>
+          <%= f.association :specialties, collection: Specialty.types, as: :check_boxes, label: "" %>
         </td>
       </tr>
       <tr>
-        <td colspan="2">
-          <%= f.input :website %>
+        <td colspan="2" class="top-padded">
+          <%= f.simple_fields_for :custom_field do |c| %>
+            <%= c.label "Other specialties:" %>
+            <%= c.input_field :other_specialties %>
+            <%= content_tag :span, :class => "add-on active" do %>
+              <%= button_tag :add, class: "btn" %>
+            <% end %>
+          <% end %>
         </td>
       </tr>
     </table>

@@ -5,7 +5,7 @@ Homespree::Application.routes.draw do
 
   root :to => 'static_pages#home'
 
-  devise_for :contractors, :controllers => { registrations: "contractors/registrations", sessions: "contractors/sessions" } do
+  devise_for :contractors, :controllers => { registrations: "contractors/registrations", sessions: "contractors/sessions", passwords: "contractors/passwords" } do
   end
 
   namespace :contractors do

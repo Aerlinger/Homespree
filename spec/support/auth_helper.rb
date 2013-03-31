@@ -23,7 +23,7 @@ def sign_up_contractor
   fill_in "Company title", with: @contractor.company_title
   fill_in "Password", with: @contractor.password
 
-  click_button "Sign Up"
+  click_button "sign_up"
   return @contractor
 end
 

@@ -5,7 +5,7 @@
 
   <hr>
 
-  <%= f.submit "Continue", id: "continue" %>
-  <%= link_to "skip this step &raquo".html_safe, next_wizard_path, class: "pull-right" %>
+  <%= f.submit "Continue", id: "continue", class: " btn-success" %>
+  <%= link_to "Finish this step later &raquo".html_safe, next_wizard_path, class: "pull-right" %>
 
 <% end %>

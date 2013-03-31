@@ -3,7 +3,30 @@ class Specialty < ActiveRecord::Base
 
   # Contractor job specialties are stored in a separate YAML config file:
   def self.types
-    @@types = YAML.load_file(Rails.root.join("config", "contractor_specialties.yml"))["contractor_specialties"]
+    job_types = [
+      "Painting",
+     "Roofing",
+     "Electrical",
+     "Bathroom Modeling",
+     "Concrete",
+     "Architecture",
+     "Drywall",
+     "Landscaping",
+     "Swimming Pools",
+     "Plumbing",
+     "Wallpaper",
+     "Fences",
+     "Flooring",
+     "Ceiling",
+     "Lighting",
+     "General Contracting",
+     "Heating & Air Conditioning",
+     "Windows & Blinds",
+     "Demolition",
+     "Fumigation"
+    ]
+
+    return job_types.sort!
   end
 
 end
