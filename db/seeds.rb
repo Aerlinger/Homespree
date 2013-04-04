@@ -38,7 +38,12 @@ joe_the_plumber = Contractor.new do |c|
 
   c.slogan = "I am Joe the plumber"
 
-  c.description = Faker::Lorem.paragraphs(5).join
+  c.description = "Terrell Design & Development and the Golden Triangle Design Group is a full-service Design and General Contracting Consulting firm that specializes in new construction, as well as extensive remodels and additions.
+
+Over the past two decades, the Golden Triangle Design Group has become known for their ability to solve complex design issues, while implementing all of the clients needs and wants. By providing exceptional expertise and technical knowledge to every phase of the project, clients are able to rely on the GTDG to deliver a product unlike any other.
+Our attention to detail, and efficient services capitalize on the successful outcome of every project.
+
+In addition to providing the best possible design solutions, Terrell Design & Development provides general contracting consulting, and construction management services."
 
   c.facebook = "www.facebook.com/joe_the_plumber"
   c.twitter = "@joe_the_plumber"

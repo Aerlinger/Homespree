@@ -10,65 +10,69 @@
 
       -# Description
       -#========================================================================
-      .row-fluid.primary
-        .span8
-          = contractor_presenter.title
-          %h3= @contractor.slogan
-          %p= @contractor.description
-        .span2.offset1
-          = image_tag "http://placehold.it/100x100", style: "margin: auto auto;"
-          %h5 Homespree Certified
-          = link_to "Contact", "javacript:void(0)", class: "btn btn-large btn-success"
-      %hr/
+      #description
+        .row-fluid.primary
+          .span6
+            = contractor_presenter.title
+            %h5.slogan= @contractor.slogan
+            %p= @contractor.description
+          .span3
+            %h3 Rating
+            = content_tag :p, contractor_presenter.full_name
+            Average Ratings#{image_tag "http://placehold.it/70x15"}
+          .span2
+            = image_tag "http://placehold.it/100x100", style: "margin: auto auto;"
+            %h5 Homespree Certified
+            = link_to "Contact", "javacript:void(0)", class: "btn btn-large btn-success"
+        %hr/
 
 
       -# Secondary information (
       -#=========================================================================
-      .row-fluid
+      #secondary_info
+        .row-fluid
+          .span3
+            %h4 Availability
+          .span3
+            %h4 Location
+            = content_tag :p, "1234 first lane"
+            = content_tag :p, "fourth main street"
+            = content_tag :p, "Brunswick, NJ 00284"
         .span3
-          %h3 Rating
-          = content_tag :p, contractor_presenter.full_name
-          Average Ratings#{image_tag "http://placehold.it/70x15"}
-        .span3
-          %h4 Availability
-        .span3
-          %h4 Location
-          = content_tag :p, "1234 first lane"
-          = content_tag :p, "fourth main street"
-          = content_tag :p, "Brunswick, NJ 00284"
-      .span3
-        %h4 Map
-        = image_tag "http://placehold.it/250x300"
+          %h4 Map
+          = image_tag "http://placehold.it/250x300"
     %hr/
 
 
     -# Comment
     -#===========================================================================
-    .row-fluid.secondary
-      .span3
-        %table
-          %tr
-            %td Name
-            %td= contractor_presenter.full_name
-          %tr
-            %td Website
-          %tr
-            %td= contractor_presenter.website
-          %tr
-            %td Bonded
-            %td= number_to_currency @contractor.bonding_limit
-      .span6.specialties
-        = contractor_presenter.specialties
-      .span3.portrait
-        = contractor_presenter.portrait_picture
-    %hr/
+    #extra_info
+      .row-fluid.secondary
+        .span3
+          %table
+            %tr
+              %td Name
+              %td= contractor_presenter.full_name
+            %tr
+              %td Website
+            %tr
+              %td= contractor_presenter.website
+            %tr
+              %td Bonded
+              %td= number_to_currency @contractor.bonding_limit
+        .span6.specialties
+          = contractor_presenter.specialties
+        .span3.portrait
+          = contractor_presenter.portrait_picture
+      %hr/
 
 
     -# Reviews
     -#===========================================================================
-    .row-fluid.comments
-      %h3 Reviews from Homeowners
-      .review
-        %h4 Review Title
-        %p
-          = Faker::Lorem.paragraphs(3)
+    #reviews
+      .row-fluid.comments
+        %h3 Reviews from Homeowners
+        .review
+          %h4 Review Title
+          %p
+            = Faker::Lorem.paragraphs(3)
