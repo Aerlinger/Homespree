@@ -1,0 +1,12 @@
+- content_for :registration_page do
+  = provide :title, "Create your contractor profile"
+  = simple_form_for resource, :as => resource_name, :url => registration_path(resource_name) do |f|
+    = f.error_notification message: "All fields are required."
+    = f.input :email
+    = f.input :company_title, error: false do
+      = f.text_field :company_title
+      %small= link_to "Individual with no company?", "javascript:void(0)"
+    = f.input :password
+    = f.button :submit, "Sign Up", id: "sign_up"
+    %hr/
+    = render "contractors/shared/links"

@@ -1,0 +1,10 @@
+- content_for :registration_page do
+  = provide :title, "Account unlock request"
+  = form_for(resource, :as => resource_name, :url => unlock_path(resource_name), :html => {:method => :post}) do |f|
+    = devise_error_messages!
+    %div
+      = f.label :email
+      %br/
+      = f.email_field :email, :autofocus => true
+    %div= f.submit "Resend unlock instructions"
+  = render "devise/shared/links"

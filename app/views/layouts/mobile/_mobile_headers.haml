@@ -1,0 +1,42 @@
+/[if lt IE 9]
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+/ Viewport Meta Tag
+%meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
+%meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+/ Tile icon for Win8 (144x144 + tile color)
+%meta{:content => "", :name => "description"}/
+%meta{:content => "True", :name => "HandheldFriendly"}/
+%meta{:content => "320", :name => "MobileOptimized"}/
+%meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+%meta{:content => "on", "http-equiv" => "cleartype"}/
+%meta{:content => "img/touch/apple-touch-icon-144x144-precomposed.png", :name => "msapplication-TileImage"}/
+%meta{:content => "#222222", :name => "msapplication-TileColor"}/
+%meta{:content => "yes", :name => "apple-mobile-web-app-capable"}/
+%meta{:content => "black", :name => "apple-mobile-web-app-status-bar-style"}/
+%meta{:content => "", :name => "apple-mobile-web-app-title"}/
+%link{:href => "img/touch/apple-touch-icon-144x144-precomposed.png", :rel => "apple-touch-icon-precomposed", :sizes => "144x144"}/
+%link{:href => "img/touch/apple-touch-icon-114x114-precomposed.png", :rel => "apple-touch-icon-precomposed", :sizes => "114x114"}/
+%link{:href => "img/touch/apple-touch-icon-72x72-precomposed.png", :rel => "apple-touch-icon-precomposed", :sizes => "72x72"}/
+%link{:href => "img/touch/apple-touch-icon-57x57-precomposed.png", :rel => "apple-touch-icon-precomposed"}/
+%link{:href => "img/touch/apple-touch-icon.png", :rel => "shortcut icon"}/
+/ FAVICON
+%link{:href => "assets/favicon.png", :rel => "shortcut icon"}/
+/ GOOGLE ANALYTICS
+:javascript
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-37015205-1']);
+  _gaq.push(['_setDomainName', 'myhomespree.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function () {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+  })();
+/ This script prevents links from opening in Mobile Safari. https://gist.github.com/1042026
+/
+  <script>(function(a,b,c){if(c in b&amp;&amp;b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&amp;&amp;(d.href.indexOf("http")||~d.href.indexOf(e.host))&amp;&amp;(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>

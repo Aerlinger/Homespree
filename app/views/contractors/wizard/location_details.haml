@@ -1,0 +1,9 @@
+- content_for :registration_page do
+  = provide :title, "Promote yourself"
+  = render layout: 'form' do |f|
+    = f.input :slogan, label: "Slogan (leave empty if no slogan)"
+    = f.input :description, label: "Business Description", input_html: {rows: 7}
+    = f.input :photo_filename
+    = f.input :website
+    = f.input :facebook
+    = f.input :twitter

@@ -1,0 +1,12 @@
+%footer.container.footer-box
+  = image_tag asset_path('homespreelogofooter.png'), alt: "Homespree"
+  %nav.links
+    = link_to "About", about_path
+    = link_to "Blog", "http://homespree.wordpress.com/", :target => '_blank'
+    = link_to "Contact", contact_path
+    = link_to "Jobs", jobs_path
+  %nav.social-icons
+    %a{:href => "https://twitter.com/homespree"}
+      = image_tag asset_path('twitter-icon.png'), alt: "twitter-icon"
+    %a{:href => "https://www.facebook.com/Homespree"}= image_tag asset_path('facebook-icon.png'), alt: "fb"
+    %a{:href => "#"}= image_tag asset_path('googleplus-icon.png'), alt: "gplus"

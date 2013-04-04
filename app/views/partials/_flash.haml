@@ -1,0 +1,20 @@
+- flash.each do |key, value|
+  %a#flash_link{:href => "#"}
+  %div{:class => "flash alert alert-#{key.to_s}"}
+    .container
+      %button.close{"data-dismiss" => "alert", :type => "button"} ×
+      %h4
+        = value
+  / Adds fade in effect for flash messages
+  :javascript
+    $(".flash").hide();
+    $(".flash").fadeIn("slow");//.delay(2000).fadeOut('800');
+    $("#flash_link").click(function(event){
+      event.preventDefault();
+      $(this).hide();
+    });
+    $("#flash_link").hover(function(event){
+      $('.close').css("border", "1px solid #666");
+    }, function(event) {
+      $('.close').css("border", "none");
+    });
