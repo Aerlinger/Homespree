@@ -7,10 +7,10 @@ kyle_email = Mailinglist.find_or_create_by_email("kyle@myhomespree.com")
   mailing_list.user_type = "homeowner"
 end
 
-AdminUser.find_or_create_by_email!('admin@myhomespree.com', password: "MeetMike9")
-AdminUser.find_or_create_by_email!('anthony@myhomespree.com', password: "MeetMike9")
-AdminUser.find_or_create_by_email!('kyle@myhomespree.com', password: "MeetMike9")
-AdminUser.find_or_create_by_email!('joe@myhomespree.com', password: "MeetMike9")
+AdminUser.find_or_create_by_email!('admin@myhomespree.com', password: "Meetmike9")
+AdminUser.find_or_create_by_email!('anthony@myhomespree.com', password: "Meetmike9")
+AdminUser.find_or_create_by_email!('kyle@myhomespree.com', password: "Meetmike9")
+AdminUser.find_or_create_by_email!('joe@myhomespree.com', password: "Meetmike9")
 
 puts "Creating admin users:"
 puts AdminUser.all
