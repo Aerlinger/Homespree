@@ -32,6 +32,7 @@ gem 'markaby'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'figaro', ">= 0.5.3"
+gem 'haml-rails'
 
 
 group :test, :development do
@@ -63,6 +64,7 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'brakeman'
+  gem 'html2haml'
 end
 
 group :production do

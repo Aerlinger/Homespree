@@ -1,0 +1,23 @@
+<div class="row-fluid">
+  <div class="incomplete_sections">
+    <h3>Hey! It looks like there are a few incomplete sections in your profile.</h3>
+
+    <p>
+      For the best chance of success in finding leads we recommend you complete the following:
+
+      <span class="incomplete_attributes"><%# @contractor.incomplete_sections.join(" ") %></span>
+    </p>
+
+    <div class="entry">
+      <span class="offset1"><strong>What's your mobile phone?</strong></span>
+      <%= text_field_tag :mobile %>
+
+      <%= link_to "Update", "javascript:void(0)", class: "btn btn-success" %>
+      <%= link_to "Skip &raquo".html_safe, "javascript:void(0)", class: "btn btn-info" %>
+
+      <small class="ignore_this"><%= link_to "Ignore this message", "javascript:void(0)", class: "pull-right" %></small>
+    </div>
+
+    <% contractor_presenter.incomplete_sections %>
+  </div>
+</div>

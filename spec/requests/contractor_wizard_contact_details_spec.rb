@@ -30,15 +30,15 @@ describe "Contractor Wizard Contact Details page" do
   end
 
 
-  describe "click 'skip this step'" do
-    before { click_link "skip this step" }
+  describe "click 'complete this step later'" do
+    before { click_link "skip" }
 
     it "should be on correct page" do
       current_path.should eq "/contractors/wizard/location_details"
     end
 
     describe "click skip this test again" do
-      before { click_link "skip this step" }
+      before { click_link "skip" }
       its(:current_path) { should eq "/contractors/profiles/#{@contractor.id}" }
     end
   end

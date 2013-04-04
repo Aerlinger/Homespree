@@ -4,7 +4,7 @@ describe "Contractor Wizard Location Details", type: :request do
 
   before :each do
     @example_contractor = sign_up_contractor
-    click_link "skip this step"
+    click_link "skip"
   end
 
   subject { page }
@@ -21,7 +21,7 @@ describe "Contractor Wizard Location Details", type: :request do
     end
 
     describe "Click skip this step" do
-      before { click_link "skip this step" }
+      before { click_link "skip" }
 
       it "should be on correct page" do
         current_path.should eq "/contractors/profiles/#{@example_contractor.id}"

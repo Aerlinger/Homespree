@@ -10,7 +10,7 @@ class Contractor < ActiveRecord::Base
   # Accessors:  -------------------------------------------------------------------------------------------------------
   attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me,
                   :description, :mobile_number, :office_number, :company_title,
-                  :facebook, :name, :specialties, :twitter, :website, :other_specialties
+                  :facebook, :name, :specialties, :twitter, :website, :other_specialties, :specialty_ids
 
   # Associations:  ----------------------------------------------------------------------------------------------------
   has_many :appointments
@@ -28,7 +28,7 @@ class Contractor < ActiveRecord::Base
   validate :name_or_title?
 
   # Callbacks:  -------------------------------------------------------------------------------------------------------
-  before_save :titleize_name, :downcase_email, :upcase_license
+  before_save :titleize_name, :downcase_email, :upcase_license, :process_specialties
   before_validation :sanitize_phone_numbers
 
   # Scopes:  ----------------------------------------------------------------------------------------------------------
@@ -62,6 +62,14 @@ class Contractor < ActiveRecord::Base
   end
 
   protected
+
+  def process_specialties
+    if specialty_ids.present?
+      self.specialty_ids.each do |specialty|
+        self.specialties.build(name: specialty)
+      end
+    end
+  end
 
   def sanitize_phone_numbers
     self.mobile_number.gsub!(/\D/, '') if self.mobile_number.present?
