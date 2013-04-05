@@ -1,7 +1,7 @@
 class Specialty < ActiveRecord::Base
-  attr_accessible :contractor_id, :endorsements, :endorser_id, :name
+  attr_accessible :contractor_id, :endorsements, :endorser_id, :other_specialties
 
-  # Contractor job specialties are stored in a separate YAML config file:
+  # Contractor job specialties
   def self.types
     job_types = [
       "Painting",

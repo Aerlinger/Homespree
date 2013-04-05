@@ -1,3 +1,5 @@
+-# Above the fold product pitch information
+-#===========================================================================
 %section.pitch
   .container
     .row
@@ -5,7 +7,9 @@
         .search-area
           %img.stressfree{:src => "/assets/stressfree.png"}/
           %h2{:style => "color: white;"} Connect with quality contractors. Get free estimates.
-          / Ajax email submission form:
+
+          -# Mailing List Form
+          -#===========================================================================
           = form_tag mailinglist_create_path, authenticate_with: :none, method: :post, remote: true, id: "search_form" do
             = email_field_tag(:email, "", type: "text", id: "email_signup", placeholder: "Email")
             #customer_type.btn-group
@@ -21,7 +25,11 @@
             = hidden_field_tag "submitted_from_mobile", "false"
             = submit_tag "Sign Up", id: "submit_location", class: "large green call-to-action icon-and-text"
             %p#submit_success Thanks! We'll keep you posted when we launch.
+
           #iphone_preview
+
+-# Product Showcase
+-#===========================================================================
 %section.showcase.shadow
   .container
     .highlight.row

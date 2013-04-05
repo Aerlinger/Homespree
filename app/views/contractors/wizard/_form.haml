@@ -1,6 +1,10 @@
+-# WIZARD FORM WRAPPER TEMPLATE
+-#===========================================================================
 = simple_form_for current_contractor, url: wizard_path do |f|
   = f.error_notification
+
   = yield f
+
   %hr/
   = f.submit "Continue", id: "continue", class: " btn-success"
   = link_to "Finish this step later &raquo".html_safe, next_wizard_path, class: "pull-right", id: "skip"

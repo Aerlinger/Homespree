@@ -1,4 +1,6 @@
 %h1 Listing Contractors
+
+
 %table
   %tr
     %th Name
@@ -9,6 +11,7 @@
     %th Description
     %th Specialties
     %th
+
   - @contractors.each do |contractor|
     %tr
       %td= contractor.name
@@ -19,4 +22,5 @@
       %td= contractor.description
       %td= contractor.specialties
       %td= link_to 'Show', contractor
+
 %br/

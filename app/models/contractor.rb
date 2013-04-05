@@ -9,7 +9,7 @@ class Contractor < ActiveRecord::Base
 
   # Accessors:  -------------------------------------------------------------------------------------------------------
   attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me,
-                  :description, :mobile_number, :office_number, :company_title,
+                  :description, :mobile_number, :office_number, :company_title, :custom_field,
                   :facebook, :name, :specialties, :twitter, :website, :other_specialties, :specialty_ids
 
   # Associations:  ----------------------------------------------------------------------------------------------------
@@ -17,6 +17,7 @@ class Contractor < ActiveRecord::Base
   has_many :specialties
   has_many :addresses, as: :addressable
   accepts_nested_attributes_for :addresses, reject_if: lambda { |attributes| attributes['kind'].blank? }
+  accepts_nested_attributes_for :specialties, reject_if: lambda { |attributes| attributes['kind'].blank? }
 
 
   # Validations:  -----------------------------------------------------------------------------------------------------

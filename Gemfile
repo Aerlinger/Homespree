@@ -44,7 +44,8 @@ group :test, :development do
   gem 'meta_request'
 
   gem 'faker'
-  gem 'factory_girl_rails', '1.4.0'  # Todo: Consider Fabrication as an alternative to FactoryGirl (Builder design pattern)
+  # Todo: Consider Fabrication as an alternative to FactoryGirl (Builder design pattern)
+  gem 'factory_girl_rails', '1.4.0'
 
   gem 'rb-fsevent'
   gem 'guard-rspec'

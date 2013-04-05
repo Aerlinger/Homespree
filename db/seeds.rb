@@ -52,8 +52,8 @@ In addition to providing the best possible design solutions, Terrell Design & De
   c.website = "http://www.joesplumbing.com"
 
   address = Address.new do |a|
-    a.line_1 = "1234 Blue collar road"
-    a.line_2 = "4th Main Providence"
+    a.line1 = "1234 Blue collar road"
+    a.line2 = "4th Main Providence"
     a.state = "NJ"
     a.zipcode = "12345"
     a.state = "Princeton"

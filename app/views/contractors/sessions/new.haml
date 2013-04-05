@@ -1,5 +1,10 @@
+-# REGISTRATION Template
+-#===========================================================================
 - content_for :registration_page do
   = provide :title, "Sign in with your email"
+
+  -# Template Wrapper
+  -#===========================================================================
   = simple_form_for resource, :as => resource_name, :url => session_path(resource_name) do |f|
     = f.error_notification message: "All fields are required."
     = f.input :email
