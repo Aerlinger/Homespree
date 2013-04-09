@@ -56,7 +56,7 @@ In addition to providing the best possible design solutions, Terrell Design & De
     a.line2 = "4th Main Providence"
     a.state = "NJ"
     a.zipcode = "12345"
-    a.state = "Princeton"
+    a.city = "Princeton"
   end
 
   c.addresses << address
