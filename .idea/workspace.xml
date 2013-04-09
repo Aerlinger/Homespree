@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69305659-f161-4004-b356-b79c1d87fc7f" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/images/contractors/default_portrait.jpg" afterPath="$PROJECT_DIR$/app/assets/images/contractors/default_portrait.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/profiles/contractor_profile.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/profiles/contractor_profile.css.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/seeds.rb" afterPath="$PROJECT_DIR$/db/seeds.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/contractors/profiles/show.haml" afterPath="$PROJECT_DIR$/app/views/contractors/profiles/show.haml" />
     </list>
     <ignored path="Homespree.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -288,7 +291,7 @@
     <file path="$USER_HOME$/.rvm/gems/ruby-1.9.3-p362/gems/activerecord-3.2.11/lib/active_record/connection_adapters/postgresql_adapter.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1363570678009" ignored="false" />
     <file path="$USER_HOME$/.rvm/gems/ruby-1.9.3-p362/gems/railties-3.2.12/lib/rails/engine.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1363571250856" ignored="false" />
     <file path="$USER_HOME$/.rvm/gems/ruby-1.9.3-p362/gems/rspec-rails-2.13.0/lib/rspec/rails/extensions/active_record/base.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1363571303327" ignored="false" />
-    <file path="/contractor_profile.css.scss" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1365528845398" ignored="false" />
+    <file path="/contractor_profile.css.scss" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1365533597739" ignored="false" />
     <file path="$PROJECT_DIR$/../../Code/rails/JustSingIt-Web/db/migrate/20130319113014_change_song.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1363692975055" ignored="false" />
     <file path="/20130319113014_change_song.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1363692959749" ignored="false" />
     <file path="$PROJECT_DIR$/../../Code/rails/JustSingIt-Web/db/structure.sql" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1363710180698" ignored="false" />
@@ -369,7 +372,7 @@
     <file path="$PROJECT_DIR$/../../Code/rails/physics_academy/app/helpers/application_helper.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364694526467" ignored="false" />
     <file path="/password_controller.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364697016600" ignored="false" />
     <file path="$PROJECT_DIR$/../../Code/rails/physics_academy/Guardfile" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1365097691605" ignored="false" />
-    <file path="/show.haml" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1365528809951" ignored="false" />
+    <file path="/show.haml" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1365533768197" ignored="false" />
     <file path="/20130404194057_remove_limit_from_contractors.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1365104927334" ignored="false" />
     <file path="/home.haml" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1365124327981" ignored="false" />
     <file path="/_info_header.haml" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1365124454819" ignored="false" />
@@ -425,10 +428,10 @@
     <splitter split-orientation="horizontal" split-proportion="0.38859496">
       <split-first>
         <leaf>
-          <file leaf-file-name="seeds.rb" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/db/seeds.rb">
+          <file leaf-file-name="contractor_profile.css.scss" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/profiles/contractor_profile.css.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="58" column="10" selection-start="2363" selection-end="2363" vertical-scroll-proportion="0.7204969">
+                <state line="25" column="21" selection-start="308" selection-end="308" vertical-scroll-proportion="0.12836185">
                   <folding />
                 </state>
               </provider>
@@ -438,10 +441,10 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="show.haml" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="show.haml" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/views/contractors/profiles/show.haml">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="68" column="14" selection-start="2857" selection-end="2857" vertical-scroll-proportion="1.0">
+                <state line="123" column="60" selection-start="5117" selection-end="5117" vertical-scroll-proportion="0.76952624">
                   <folding />
                 </state>
               </provider>
@@ -485,9 +488,9 @@
         <option value="$PROJECT_DIR$/app/assets/stylesheets/icons.css.scss" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/reviews.css.scss" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/global/theme.css.scss.erb" />
-        <option value="$PROJECT_DIR$/app/views/contractors/profiles/show.haml" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/profiles/contractor_profile.css.scss" />
         <option value="$PROJECT_DIR$/db/seeds.rb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/profiles/contractor_profile.css.scss" />
+        <option value="$PROJECT_DIR$/app/views/contractors/profiles/show.haml" />
       </list>
     </option>
   </component>
@@ -1592,13 +1595,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/partials/_contractor_dropdown.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="538" selection-end="538" vertical-scroll-proportion="0.20780857">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/presenters/contractor_presenter.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="95" column="7" selection-start="1905" selection-end="2037" vertical-scroll-proportion="0.6149144">
@@ -1679,23 +1675,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/contractors/profiles/show.haml">
+    <entry file="file://$PROJECT_DIR$/db/seeds.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="14" selection-start="2857" selection-end="2857" vertical-scroll-proportion="1.0">
+        <state line="47" column="0" selection-start="1916" selection-end="1916" vertical-scroll-proportion="0.6086956">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/contractors/profiles_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="4" selection-start="274" selection-end="274" vertical-scroll-proportion="0.2567237">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/profiles/contractor_profile.css.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="151" column="5" selection-start="2473" selection-end="2473" vertical-scroll-proportion="0.8349633">
+        <state line="25" column="21" selection-start="308" selection-end="308" vertical-scroll-proportion="0.12836185">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/seeds.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/contractors/profiles/show.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="10" selection-start="2363" selection-end="2363" vertical-scroll-proportion="0.7204969">
+        <state line="123" column="60" selection-start="5117" selection-end="5117" vertical-scroll-proportion="0.76952624">
           <folding />
         </state>
       </provider>

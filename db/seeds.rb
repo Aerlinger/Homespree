@@ -38,12 +38,7 @@ joe_the_plumber = Contractor.new do |c|
 
   c.slogan = "Where your shit's my problem."
 
-  c.description = "Terrell Design & Development and the Golden Triangle Design Group is a full-service Design and General Contracting Consulting firm that specializes in new construction, as well as extensive remodels and additions.
-
-Over the past two decades, the Golden Triangle Design Group has become known for their ability to solve complex design issues, while implementing all of the clients needs and wants. By providing exceptional expertise and technical knowledge to every phase of the project, clients are able to rely on the GTDG to deliver a product unlike any other.
-Our attention to detail, and efficient services capitalize on the successful outcome of every project.
-
-In addition to providing the best possible design solutions, Terrell Design & Development provides general contracting consulting, and construction management services."
+  c.description = "A plumber is called to a house to repair a leaking pipe. When he arrives he is pleased to discover that the lady of the house is both beautiful and very friendly. One thing leads to another and the two end up in the bedroom. Suddenly the phone rings and the woman answers it. ‘That was my husband,’ she says when she puts down the receiver. ‘He’s on his way home, but he’s taking a flight out of town at eight. If you come back then we can take up where we left off.’ The plumber looks at the woman in disbelief. ‘What?’ he says. ‘On my own time?’"
 
   c.facebook = "www.facebook.com/joe_the_plumber"
   c.twitter = "@joe_the_plumber"

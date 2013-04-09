@@ -40,62 +40,90 @@
         .row-fluid.secondary
           .span4
             #portrait_wrapper.pull-left
-              = image_tag "http://placehold.it/98x98"
+              = image_tag "contractors/default_portrait.jpg"
               //= contractor_presenter.portrait_picture
 
             %h2#full_name= contractor_presenter.full_name
             %h3#phone_num (804) 432-1234
             %h3#website= contractor_presenter.website
             %h5#years_in_business 4 years in business
-            %p 1234 First Lane<br />Fourth main street<br />Brunswick, NJ 00284
+
+            %table.insurance
+              %tr
+                %td <span class="check">&#x2713</span> Licensed <a class="question" href="#">?</a>
+                %td State of NJ <a>details &raquo</a>
+              %tr
+                %td License # <a class="question" href="#">?</a>
+                %td 1234567890
+              %tr
+                %td &#x2713 Bonded <a class="question" href="#">?</a>
+                %td Up to $500,000 <a>details &raquo</a>
+              %tr
+                %td Bond # <a class="question" href="#">?</a>
+                %td 1234567890
+              %tr
+                %td &#x2713 BBB Rated <a class="question">?</a>
+                %td Grade of A+ <a>details &raquo</a>
+
 
           .span4.specialties
             %h2 Joe specializes in:
             //= contractor_presenter.specialties
             =content_tag :ul do
-              =content_tag :li, "Indoor & Outdoor Painting", class: "check-ico"
-              =content_tag :li, "General Contracting", class: "check-ico"
-              =content_tag :li, "Hardwood Flooring", class: "check-ico"
-              =content_tag :li, "Pool Service and Cleaning", class: "check-ico"
-              =content_tag :li, "Removing shit stains", class: "check-ico"
-              =content_tag :li, "Doors & Windows", class: "check-ico"
+              =content_tag :li, "<span class='check'>&#x2713</span> Indoor & Outdoor Painting".html_safe, class: "check-ico"
+              =content_tag :li, "<span class='check'>&#x2713</span> General Contracting".html_safe, class: "check-ico"
+              =content_tag :li, "<span class='check'>&#x2713</span> Hardwood Flooring".html_safe, class: "check-ico"
+              =content_tag :li, "<span class='check'>&#x2713</span> Pool Service and Cleaning".html_safe, class: "check-ico"
+              =content_tag :li, "<span class='check'>&#x2713</span> Removing shit stains".html_safe, class: "check-ico"
+              =content_tag :li, "<span class='check'>&#x2713</span> Doors & Windows".html_safe, class: "check-ico"
 
-          .span4.specialties
-            = image_tag "profile/staticmap.png"
+          .span4.map
+            #google_map= image_tag "profile/staticmap.png"
+            #address
+              %p 1234 First Lane<br />Brunswick, NJ 00284
+              %a View full map &raquo
 
 
       -# Reviews
       -#===========================================================================
-      #reviews
+      #reviews.section
         .row-fluid.comments
           %hr
           %h2 Reviews from Homeowners
-          %hr.section
+          %hr
           .review
             #portrait_wrapper.pull-left
-              = image_tag "http://placehold.it/98x98"
+              = image_tag "contractors/default_portrait.jpg"
+            %span.five-star
             %h3 Great Contractor!
-            %span.five-star
             %h6 Angie
-            %p
-              A plumber is called to a house to repair a leaking pipe. When he arrives he is pleased to discover that the lady of the house is both beautiful and very friendly. One thing leads to another and the two end up in the bedroom. Suddenly the phone rings and the woman answers it. ‘That was my husband,’ she says when she puts down the receiver. ‘He’s on his way home, but he’s taking a flight out of town at eight. If you come back then we can take up where we left off.’ The plumber looks at the woman in disbelief. ‘What?’ he says. ‘On my own time?’
-
-          .review
-            %h3 Review Title
-            %span.five-star
             %p
               If Elvis were still alive he would write a song about this plumber.
 
+
           .review
-            %h3 Unreliable
+            #portrait_wrapper.pull-left
+              = image_tag "contractors/default_portrait.jpg"
             %span.five-star
-            %h6 Angie
+            %h3 Great plumber but fucked my wife
+            %h6 Billy
+            %p
+              This bastard slept with my wife. Can't justify more than one star because of this. Toilet runs great though.
+
+          .review
+            #portrait_wrapper.pull-left
+              = image_tag "contractors/default_portrait.jpg"
+            %span.five-star
+            %h3 Riddle me this...
+            %h6 Steve
             %p
               If a firefighters business can go up in smoke, and a plumbers business can go down the drain, can a hooker get layed off?
 
           .review
-            %h3 Holy Shit
+            #portrait_wrapper.pull-left
+              = image_tag "contractors/default_portrait.jpg"
             %span.five-star
+            %h3 Holy Shit
             %p
               Literally the worst smelling person in the entire world. He should have paid ME for his services.
 

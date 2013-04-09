@@ -29,8 +29,8 @@ bg/bg4.png: bg/bg4-040a96509f29feaf17fa32c4c924ed45.png
 bg/bg4/index.png: bg/bg4-040a96509f29feaf17fa32c4c924ed45.png
 bg/bg5.png: bg/bg5-b23be765c944e84a9fb607f7846c4c82.png
 bg/bg5/index.png: bg/bg5-b23be765c944e84a9fb607f7846c4c82.png
-contractors/default_portrait.jpg: contractors/default_portrait-91ca1aa5749d7c131b3ae5d5b9896646.jpg
-contractors/default_portrait/index.jpg: contractors/default_portrait-91ca1aa5749d7c131b3ae5d5b9896646.jpg
+contractors/default_portrait.jpg: contractors/default_portrait-195333595d6a0cc2ca2510e1f7a644fe.jpg
+contractors/default_portrait/index.jpg: contractors/default_portrait-195333595d6a0cc2ca2510e1f7a644fe.jpg
 contractors/favicon.png: contractors/favicon-3ba2a1d439fac53e0b97b6f1884f67c7.png
 contractors/favicon/index.png: contractors/favicon-3ba2a1d439fac53e0b97b6f1884f67c7.png
 facebook-icon.png: facebook-icon-06769a64927797e927aa7e0facb32354.png
@@ -123,8 +123,8 @@ landingpage.js: landingpage-522e0491534258110508ad1a91c43ea0.js
 landingpage/index.js: landingpage-522e0491534258110508ad1a91c43ea0.js
 active_admin.css: active_admin-bcae96c21b99eecb5f3f95ee76b111c5.css
 active_admin/index.css: active_admin-bcae96c21b99eecb5f3f95ee76b111c5.css
-application.css: application-eedc93ec218a730f4986c7c2ea002fac.css
-application/index.css: application-eedc93ec218a730f4986c7c2ea002fac.css
+application.css: application-c8c077482d8bb7a9d64a28dd8c73c7f9.css
+application/index.css: application-c8c077482d8bb7a9d64a28dd8c73c7f9.css
 helper.js: helper-cd6af85e8f3b86c810bc581c0533cd04.js
 helper/index.js: helper-cd6af85e8f3b86c810bc581c0533cd04.js
 modernizr.js: modernizr-6125f471a5b370c452de332a1bceea90.js
