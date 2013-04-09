@@ -4,10 +4,9 @@
   - present @contractor do |contractor_presenter|
     #profile
 
-
       -# Top information prompt
       -#========================================================================
-      = render "info_header", contractor_presenter: contractor_presenter
+      //= render "info_header", contractor_presenter: contractor_presenter
 
 
       -# Description
@@ -18,63 +17,100 @@
             = contractor_presenter.title
             %h5.slogan= @contractor.slogan
             %p= @contractor.description
-          .span3
-            %h3 Rating
-            = content_tag :p, contractor_presenter.full_name
-            Average Ratings#{image_tag "http://placehold.it/70x15"}
-          .span2
-            = image_tag "http://placehold.it/100x100", style: "margin: auto auto;"
-            %h5 Homespree Certified
             = link_to "Contact", "javacript:void(0)", class: "btn btn-large btn-success"
+          .span6
+            #portfolio_photos.carousel.slide
+              .carousel-inner
+                .item.active
+                  = image_tag "http://placehold.it/600x400"
+                  .carousel-caption
+                    %p Photo Caption
+                .item
+                  = image_tag "http://placehold.it/600x400"
+                  .carousel-caption
+                    %p Photo Caption
+
+              = link_to raw("&lsaquo;"), "#portfolio_photos", class: "carousel-control left", data: {slide: "prev"}
+              = link_to raw("&rsaquo;"), "#portfolio_photos", class: "carousel-control right", data: {slide: "next"}
         %hr/
 
-
-      -# Secondary information (
-      -#=========================================================================
+      -# Comment
+      -#===========================================================================
       #secondary_info
-        .row-fluid
-          .span3
-            %h4 Availability
-          .span3
-            %h4 Location
-            = content_tag :p, "1234 first lane"
-            = content_tag :p, "fourth main street"
-            = content_tag :p, "Brunswick, NJ 00284"
-        .span3
-          %h4 Map
-          = image_tag "http://placehold.it/250x300"
-    %hr/
+        .row-fluid.secondary
+          .span4
+            #portrait_wrapper.pull-left
+              = image_tag "http://placehold.it/98x98"
+              //= contractor_presenter.portrait_picture
+
+            %h2#full_name= contractor_presenter.full_name
+            %h3#phone_num (804) 432-1234
+            %h3#website= contractor_presenter.website
+            %h5#years_in_business 4 years in business
+            %p 1234 First Lane<br />Fourth main street<br />Brunswick, NJ 00284
+
+          .span4.specialties
+            %h2 Joe specializes in:
+            //= contractor_presenter.specialties
+            =content_tag :ul do
+              =content_tag :li, "Indoor Painting"
+              =content_tag :li, "Indoor Painting"
+              =content_tag :li, "Indoor Painting"
+              =content_tag :li, "Indoor Painting"
+              =content_tag :li, "Indoor Painting"
 
 
-    -# Comment
-    -#===========================================================================
-    #extra_info
-      .row-fluid.secondary
-        .span3
-          %table
-            %tr
-              %td Name
-              %td= contractor_presenter.full_name
-            %tr
-              %td Website
-            %tr
-              %td= contractor_presenter.website
-            %tr
-              %td Bonded
-              %td= number_to_currency @contractor.bonding_limit
-        .span6.specialties
-          = contractor_presenter.specialties
-        .span3.portrait
-          = contractor_presenter.portrait_picture
+          .span4.specialties
+            = image_tag "profile/staticmap.png"
+        %hr/
+
+        -# Image Porfolio
+        -#========================================================================
+        #details
+          .row-fluid
+            .span3
+              %h3 Rating
+              = content_tag :p, contractor_presenter.full_name
+              Average Ratings#{image_tag "http://placehold.it/70x15"}
+            .span2
+              = image_tag "http://placehold.it/100x100", style: "margin: auto auto;"
+              %h5 Homespree Certified
+
+            .span3
+              %table
+                %tr
+                  %td Name
+                  %td= contractor_presenter.full_name
+                %tr
+                  %td Website
+                %tr
+                  %td= contractor_presenter.website
+                %tr
+                  %td Bonded
+                  %td= number_to_currency @contractor.bonding_limit
+
+
+
+        -# Secondary information (
+        -#=========================================================================
+        #secondary_info
+          .row-fluid
+            .span3
+              %h4 Availability
+            .span3
+              %h4 Location
+          .span3
+            %h4 Map
+            = image_tag "http://placehold.it/250x300"
       %hr/
 
 
-    -# Reviews
-    -#===========================================================================
-    #reviews
-      .row-fluid.comments
-        %h3 Reviews from Homeowners
-        .review
-          %h4 Review Title
-          %p
-            = Faker::Lorem.paragraphs(3)
+      -# Reviews
+      -#===========================================================================
+      #reviews
+        .row-fluid.comments
+          %h3 Reviews from Homeowners
+          .review
+            %h4 Review Title
+            %p
+              = Faker::Lorem.paragraphs(3)

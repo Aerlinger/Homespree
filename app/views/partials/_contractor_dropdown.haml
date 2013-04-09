@@ -2,8 +2,8 @@
   = content_tag :li, class: "dropdown" do
     = link_to contractors_profile_path(id: current_contractor.id), class: "dropdown-toggle", data: {toggle: "dropdown"} do
       = image_tag "http://placehold.it/50x50", id: "portrait_preview", class: "small-border pull-left"
-      = current_contractor.name_or_title
-      %span.caret
+      %h3= current_contractor.name_or_title
+      //%span.caret
     %ul.dropdown-menu
       %li= link_to "Profile Settings"
       %li= link_to "Inbox"

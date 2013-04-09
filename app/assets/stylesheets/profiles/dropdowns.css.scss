@@ -1,4 +1,8 @@
 #contractor_dropdown {
+
+  min-width: 200px;
+  display: block;
+
   li {
     background-color: none;
 
@@ -6,9 +10,22 @@
       background-color: none;
     }
 
+    img {
+      margin-top: 1px;
+      margin-right: 10px;
+    }
+
     a {
-      display: block;
       background-color: none;
+      display: block;
+
+      h2, h3, h4 {
+        width: 90%;
+        margin-top: 0;
+        padding-top: 15px;
+        padding-left: 60px;
+        display: block;
+      }
 
       &:hover {
         background-color: none;

@@ -2,31 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69305659-f161-4004-b356-b79c1d87fc7f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/contractors/wizard/_form.haml" afterPath="$PROJECT_DIR$/app/views/contractors/wizard/_form.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/contractors/profiles/_info_header.haml" afterPath="$PROJECT_DIR$/app/views/contractors/profiles/_info_header.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/contractors/shared/_links.haml" afterPath="$PROJECT_DIR$/app/views/contractors/shared/_links.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/contractors/wizard/contact_details.haml" afterPath="$PROJECT_DIR$/app/views/contractors/wizard/contact_details.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/contractor.rb" afterPath="$PROJECT_DIR$/app/models/contractor.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/contractors/passwords/edit.haml" afterPath="$PROJECT_DIR$/app/views/contractors/passwords/edit.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/contractors/registrations/edit.haml" afterPath="$PROJECT_DIR$/app/views/contractors/registrations/edit.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/static_pages/home.haml" afterPath="$PROJECT_DIR$/app/views/static_pages/home.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/contractors/profiles/index.haml" afterPath="$PROJECT_DIR$/app/views/contractors/profiles/index.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/contractors/wizard/location_details.haml" afterPath="$PROJECT_DIR$/app/views/contractors/wizard/location_details.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/contractors/confirmations/new.haml" afterPath="$PROJECT_DIR$/app/views/contractors/confirmations/new.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/contractors/passwords/new.haml" afterPath="$PROJECT_DIR$/app/views/contractors/passwords/new.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/contractors/registrations/new.haml" afterPath="$PROJECT_DIR$/app/views/contractors/registrations/new.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/contractors/sessions/new.haml" afterPath="$PROJECT_DIR$/app/views/contractors/sessions/new.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/contractors/unlocks/new.haml" afterPath="$PROJECT_DIR$/app/views/contractors/unlocks/new.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/registration.haml" afterPath="$PROJECT_DIR$/app/views/layouts/registration.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/seeds.rb" afterPath="$PROJECT_DIR$/db/seeds.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Homespree.iml" afterPath="$PROJECT_DIR$/.idea/Homespree.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/partials/_contractor_dropdown.haml" afterPath="$PROJECT_DIR$/app/views/partials/_contractor_dropdown.haml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/profiles/contractor_profile.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/profiles/contractor_profile.css.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/profiles/dropdowns.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/profiles/dropdowns.css.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/global/header.css.scss.erb" afterPath="$PROJECT_DIR$/app/assets/stylesheets/global/header.css.scss.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/contractors/profiles/show.haml" afterPath="$PROJECT_DIR$/app/views/contractors/profiles/show.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/specialty.rb" afterPath="$PROJECT_DIR$/app/models/specialty.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/global/theme.css.scss.erb" afterPath="$PROJECT_DIR$/app/assets/stylesheets/global/theme.css.scss.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Homespree.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1365097593703" ignored="false" />
+    <file path="/Dummy.txt" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1365447939329" ignored="false" />
     <file path="$PROJECT_DIR$/../rails_sandbox/ultimate_rails_site/db/schema.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360210339150" ignored="false" />
     <file path="/schema.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1363567489424" ignored="false" />
     <file path="/home.html.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364660969774" ignored="false" />
@@ -142,7 +129,7 @@
     <file path="/_facebook_like.html.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360887763268" ignored="false" />
     <file path="$PROJECT_DIR$/../../github/homespreelandingpage/app/views/layouts/application.html.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360887998255" ignored="false" />
     <file path="/_footer.html.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1363207620843" ignored="false" />
-    <file path="/header.css.scss.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364166171116" ignored="false" />
+    <file path="/header.css.scss.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1365448446841" ignored="false" />
     <file path="/footer.css.scss" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1362506782099" ignored="false" />
     <file path="/theme-responsive.css.scss.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1362968776565" ignored="false" />
     <file path="/Capfile" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1360895142579" ignored="false" />
@@ -308,7 +295,7 @@
     <file path="$USER_HOME$/.rvm/gems/ruby-1.9.3-p362/gems/activerecord-3.2.11/lib/active_record/connection_adapters/postgresql_adapter.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1363570678009" ignored="false" />
     <file path="$USER_HOME$/.rvm/gems/ruby-1.9.3-p362/gems/railties-3.2.12/lib/rails/engine.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1363571250856" ignored="false" />
     <file path="$USER_HOME$/.rvm/gems/ruby-1.9.3-p362/gems/rspec-rails-2.13.0/lib/rspec/rails/extensions/active_record/base.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1363571303327" ignored="false" />
-    <file path="/contractor_profile.css.scss" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1365105547768" ignored="false" />
+    <file path="/contractor_profile.css.scss" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1365456768136" ignored="false" />
     <file path="$PROJECT_DIR$/../../Code/rails/JustSingIt-Web/db/migrate/20130319113014_change_song.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1363692975055" ignored="false" />
     <file path="/20130319113014_change_song.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1363692959749" ignored="false" />
     <file path="$PROJECT_DIR$/../../Code/rails/JustSingIt-Web/db/structure.sql" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1363710180698" ignored="false" />
@@ -358,7 +345,7 @@
     <file path="$PROJECT_DIR$/../../Code/rails/navDatavbase/db/migrate/20130323225731_add_fields_to_component.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364087175332" ignored="false" />
     <file path="/contractor_profile_spec.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364339724028" ignored="false" />
     <file path="/_contractor_dropdown.html.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364166024873" ignored="false" />
-    <file path="/dropdowns.css.scss" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364165850572" ignored="false" />
+    <file path="/dropdowns.css.scss" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1365449351606" ignored="false" />
     <file path="/edit.html.erb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364164948020" ignored="false" />
     <file path="$USER_HOME$/.rvm/gems/ruby-1.9.3-p362/gems/devise-2.2.3/Gemfile" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364328136723" ignored="false" />
     <file path="$USER_HOME$/.rvm/gems/ruby-1.9.3-p362/gems/devise-2.2.3/test/controllers/custom_strategy_test.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364328800632" ignored="false" />
@@ -389,7 +376,7 @@
     <file path="$PROJECT_DIR$/../../Code/rails/physics_academy/app/helpers/application_helper.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364694526467" ignored="false" />
     <file path="/password_controller.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1364697016600" ignored="false" />
     <file path="$PROJECT_DIR$/../../Code/rails/physics_academy/Guardfile" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1365097691605" ignored="false" />
-    <file path="/show.haml" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1365189415208" ignored="false" />
+    <file path="/show.haml" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1365456605369" ignored="false" />
     <file path="/20130404194057_remove_limit_from_contractors.rb" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1365104927334" ignored="false" />
     <file path="/home.haml" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1365124327981" ignored="false" />
     <file path="/_info_header.haml" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1365124454819" ignored="false" />
@@ -399,6 +386,7 @@
     <file path="/_form.haml" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1365189307097" ignored="false" />
     <file path="/location_details.haml" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1365189314504" ignored="false" />
     <file path="/_links.haml" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1365189351849" ignored="false" />
+    <file path="/_contractor_dropdown.haml" changelist="69305659-f161-4004-b356-b79c1d87fc7f" time="1365449292403" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -440,13 +428,13 @@
     </favorites_list>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.38447544">
+    <splitter split-orientation="horizontal" split-proportion="0.42343387">
       <split-first>
         <leaf>
-          <file leaf-file-name="Gemfile" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/Gemfile">
+          <file leaf-file-name="contractor_profile.css.scss" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/profiles/contractor_profile.css.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="16" column="19" selection-start="260" selection-end="260" vertical-scroll-proportion="0.2988792">
+                <state line="91" column="22" selection-start="1445" selection-end="1445" vertical-scroll-proportion="0.5599022">
                   <folding />
                 </state>
               </provider>
@@ -456,10 +444,10 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="contact_details.haml" pinned="false" current="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/views/contractors/wizard/contact_details.haml">
+          <file leaf-file-name="show.haml" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/views/contractors/profiles/show.haml">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="37" column="0" selection-start="1268" selection-end="1268" vertical-scroll-proportion="0.70075756">
+                <state line="59" column="49" selection-start="2429" selection-end="2429" vertical-scroll-proportion="0.49370277">
                   <folding />
                 </state>
               </provider>
@@ -490,15 +478,9 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/contractors/profiles/index.haml" />
-        <option value="$PROJECT_DIR$/app/views/contractors/profiles/_info_header.haml" />
-        <option value="$PROJECT_DIR$/app/views/contractors/registrations/edit.haml" />
-        <option value="$PROJECT_DIR$/app/views/contractors/sessions/new.haml" />
-        <option value="$PROJECT_DIR$/app/views/contractors/unlocks/new.haml" />
         <option value="$PROJECT_DIR$/app/views/contractors/wizard/_form.haml" />
         <option value="$PROJECT_DIR$/app/views/contractors/shared/_links.haml" />
         <option value="$PROJECT_DIR$/app/views/contractors/registrations/new.haml" />
-        <option value="$PROJECT_DIR$/app/views/contractors/profiles/show.haml" />
         <option value="$PROJECT_DIR$/app/views/contractors/passwords/new.haml" />
         <option value="$PROJECT_DIR$/app/views/contractors/passwords/edit.haml" />
         <option value="$PROJECT_DIR$/app/models/contractor.rb" />
@@ -506,6 +488,12 @@
         <option value="$PROJECT_DIR$/app/views/contractors/wizard/contact_details.haml" />
         <option value="$PROJECT_DIR$/app/models/specialty.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/registration.haml" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/global/header.css.scss.erb" />
+        <option value="$PROJECT_DIR$/app/views/partials/_contractor_dropdown.haml" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/profiles/dropdowns.css.scss" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/global/theme.css.scss.erb" />
+        <option value="$PROJECT_DIR$/app/views/contractors/profiles/show.haml" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/profiles/contractor_profile.css.scss" />
       </list>
     </option>
   </component>
@@ -686,6 +674,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -868,7 +857,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1129,6 +1117,13 @@
       <IRB_RUN_CONFIG NAME="IS_RAILS_CONSOLE" VALUE="false" />
       <method />
     </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Remote" singleton="true">
+      <JSRemoteDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSRemoteDebuggerConfigurationSettings>
+      <method />
+    </configuration>
     <configuration default="true" type="CucumberRunConfigurationType" factoryName="Cucumber">
       <predefined_log_file id="RUBY_CUCUMBER" enabled="true" />
       <module name="" />
@@ -1162,13 +1157,6 @@
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_RUNNER_PATH" VALUE="" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_RUNNER" VALUE="false" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SETTINGS_VERSION" VALUE="2" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugSession" factoryName="Remote" singleton="true">
-      <JSRemoteDebuggerConfigurationSettings>
-        <option name="engineId" value="embedded" />
-        <option name="fileUrl" />
-      </JSRemoteDebuggerConfigurationSettings>
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
@@ -1347,14 +1335,14 @@
       <method />
     </configuration>
     <list size="8">
-      <item index="0" class="java.lang.String" itemvalue="RSpec.RSpec ALL" />
-      <item index="1" class="java.lang.String" itemvalue="Rails.Production: Homespree" />
-      <item index="2" class="java.lang.String" itemvalue="Rails.Development: Homespree" />
-      <item index="3" class="java.lang.String" itemvalue="Rake.spec" />
-      <item index="4" class="java.lang.String" itemvalue="Spork DRb.Unnamed" />
-      <item index="5" class="java.lang.String" itemvalue="IRB console.Rails console: Homespree" />
-      <item index="6" class="java.lang.String" itemvalue="Rake.db:migrate" />
-      <item index="7" class="java.lang.String" itemvalue="Spork DRb.RSpec: Spork DRb server" />
+      <item index="0" class="java.lang.String" itemvalue="IRB console.Rails console: Homespree" />
+      <item index="1" class="java.lang.String" itemvalue="Rake.db:migrate" />
+      <item index="2" class="java.lang.String" itemvalue="Spork DRb.RSpec: Spork DRb server" />
+      <item index="3" class="java.lang.String" itemvalue="RSpec.RSpec ALL" />
+      <item index="4" class="java.lang.String" itemvalue="Rails.Production: Homespree" />
+      <item index="5" class="java.lang.String" itemvalue="Rails.Development: Homespree" />
+      <item index="6" class="java.lang.String" itemvalue="Rake.spec" />
+      <item index="7" class="java.lang.String" itemvalue="Spork DRb.Unnamed" />
     </list>
     <recent_temporary>
       <list size="3">
@@ -1413,26 +1401,26 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1920" height="1174" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32961932" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22191273" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2145144" sideWeight="0.68523675" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21634169" sideWeight="0.93916756" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21634169" sideWeight="0.05709712" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.120064035" sideWeight="0.11977716" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21594068" sideWeight="0.93916756" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21594068" sideWeight="0.05709712" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.08004269" sideWeight="0.31788692" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Regex Tester" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32961932" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CSS-X-Fire" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.090824835" sideWeight="0.49786553" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286908" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.0891142" sideWeight="0.68523675" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.120064035" sideWeight="0.6573816" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.08004269" sideWeight="0.45968488" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35097492" sideWeight="0.48826042" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Pomodoro" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22748375" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Routes" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14194237" sideWeight="0.6202414" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22191273" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2915506" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -1512,67 +1500,9 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/contractors/registrations/edit.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="0" selection-start="951" selection-end="951" vertical-scroll-proportion="0.5198973">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/contractors/registrations/new.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="25" selection-start="115" selection-end="115" vertical-scroll-proportion="0.056818184">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/contractors/profiles/edit.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/contractors/profiles/show.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="79" selection-start="106" selection-end="106" vertical-scroll-proportion="0.018939395">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/contractors/profiles/_form.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/contractors/passwords/new.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="2" selection-start="397" selection-end="397" vertical-scroll-proportion="0.17045455">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/contractors/passwords/edit.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="2" selection-start="483" selection-end="483" vertical-scroll-proportion="0.24621212">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/contractors/partials/_info_bar.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="28" selection-start="686" selection-end="686" vertical-scroll-proportion="0.2651515">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/contractors/confirmations/new.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="356" selection-end="356" vertical-scroll-proportion="0.20833333">
-          <folding />
-        </state>
+        <state line="11" column="0" selection-start="356" selection-end="356" vertical-scroll-proportion="0.20833333" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/contractor.rb">
@@ -1584,16 +1514,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/contractors/wizard/location_details.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="27" selection-start="27" selection-end="27" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="27" selection-start="27" selection-end="27" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/specialty.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="3" selection-start="631" selection-end="631" vertical-scroll-proportion="0.56985295">
-          <folding />
-        </state>
+        <state line="31" column="3" selection-start="631" selection-end="631" vertical-scroll-proportion="0.56985295" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/contractors/wizard_controller.rb">
@@ -1605,21 +1531,75 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/registration.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="88" selection-end="88" vertical-scroll-proportion="0.07575758">
+        <state line="4" column="0" selection-start="88" selection-end="88" vertical-scroll-proportion="0.07575758" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="15" selection-start="582" selection-end="582" vertical-scroll-proportion="0.42857143">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/contractors/wizard/contact_details.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="0" selection-start="1268" selection-end="1268" vertical-scroll-proportion="0.70075756">
+        <state line="20" column="9" selection-start="625" selection-end="625" vertical-scroll-proportion="0.37783375">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
+    <entry file="file://$PROJECT_DIR$/app/views/partials/_header.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="19" selection-start="260" selection-end="260" vertical-scroll-proportion="0.2988792">
+        <state line="19" column="0" selection-start="883" selection-end="883" vertical-scroll-proportion="0.36491677">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/profiles/dropdowns.css.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="20" selection-start="274" selection-end="274" vertical-scroll-proportion="0.34841076">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/global/header.css.scss.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="24" selection-start="356" selection-end="356" vertical-scroll-proportion="0.37783375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/partials/_contractor_dropdown.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="0" selection-start="538" selection-end="538" vertical-scroll-proportion="0.20780857">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/global/theme.css.scss.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="148" column="16" selection-start="2460" selection-end="2460" vertical-scroll-proportion="0.7556675">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/presenters/contractor_presenter.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="95" column="7" selection-start="1905" selection-end="2037" vertical-scroll-proportion="0.6149144">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/contractors/profiles/show.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="49" selection-start="2429" selection-end="2429" vertical-scroll-proportion="0.49370277">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/profiles/contractor_profile.css.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="91" column="22" selection-start="1445" selection-end="1445" vertical-scroll-proportion="0.5599022">
           <folding />
         </state>
       </provider>
