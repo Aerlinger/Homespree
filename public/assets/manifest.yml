@@ -57,6 +57,8 @@ homespreelogoshadow.png: homespreelogoshadow-6f5ef696eab26ab7e443ecde9d633ff5.pn
 homespreelogoshadow/index.png: homespreelogoshadow-6f5ef696eab26ab7e443ecde9d633ff5.png
 homespreelogosmall.png: homespreelogosmall-a293494202ff913a643726476b11feb3.png
 homespreelogosmall/index.png: homespreelogosmall-a293494202ff913a643726476b11feb3.png
+icon/contractor.png: icon/contractor-6ef14262579e5b9a02a535239dd7f4ba.png
+icon/contractor/index.png: icon/contractor-6ef14262579e5b9a02a535239dd7f4ba.png
 iphone.png: iphone-1d0d2222e6615a3505f32efd217fa64c.png
 iphone/index.png: iphone-1d0d2222e6615a3505f32efd217fa64c.png
 iphone_bids.png: iphone_bids-37342b3633417f0593dd5ced1b1de17c.png
@@ -75,6 +77,8 @@ mobilebackground.jpg: mobilebackground-0e84be4caf1d193a73256858a5aa7ad6.jpg
 mobilebackground/index.jpg: mobilebackground-0e84be4caf1d193a73256858a5aa7ad6.jpg
 pitch.pdf: pitch-d06e0cdfa0041701ec877fc73fb36926.pdf
 pitch/index.pdf: pitch-d06e0cdfa0041701ec877fc73fb36926.pdf
+profile/staticmap.png: profile/staticmap-183da042bd333360cabb8d8ffa0f2da9.png
+profile/staticmap/index.png: profile/staticmap-183da042bd333360cabb8d8ffa0f2da9.png
 psd/3_iphones.psd: psd/3_iphones-05251a1b29e61f869bf3ca6798741e13.psd
 psd/3_iphones/index.psd: psd/3_iphones-05251a1b29e61f869bf3ca6798741e13.psd
 psd/anthony_portrait.psd: psd/anthony_portrait-347d8b7c93b0c4932e6f67acc77b1f39.psd
@@ -83,10 +87,14 @@ psd/homebackground.psd: psd/homebackground-1b13569e9620782f423d4cd3ce931750.psd
 psd/homebackground/index.psd: psd/homebackground-1b13569e9620782f423d4cd3ce931750.psd
 psd/homespreelogoshadow.psd: psd/homespreelogoshadow-47336b455ba275b227ca0c909d7c370f.psd
 psd/homespreelogoshadow/index.psd: psd/homespreelogoshadow-47336b455ba275b227ca0c909d7c370f.psd
+psd/icons/contractor.psd: psd/icons/contractor-04235df6faa2123803a5f5bd7c58084c.psd
+psd/icons/contractor/index.psd: psd/icons/contractor-04235df6faa2123803a5f5bd7c58084c.psd
 psd/iphone_bids: psd/iphone_bids
 psd/iphone_camera.psd: psd/iphone_camera-63515481df85251bdde7acefa7c478bd.psd
 psd/iphone_camera/index.psd: psd/iphone_camera-63515481df85251bdde7acefa7c478bd.psd
 psd/iphone_profile: psd/iphone_profile
+psd/star_groups.psd: psd/star_groups-ddb487fba32780cdbd928865427b5fae.psd
+psd/star_groups/index.psd: psd/star_groups-ddb487fba32780cdbd928865427b5fae.psd
 psd/twitter-icon.psd: psd/twitter-icon-9286dff8a57fe26b3ec605cec4393ebe.psd
 psd/twitter-icon/index.psd: psd/twitter-icon-9286dff8a57fe26b3ec605cec4393ebe.psd
 snow.png: snow-b23be765c944e84a9fb607f7846c4c82.png
@@ -95,6 +103,8 @@ stressfree.png: stressfree-cfe2cc541743754b6471325893a2f493.png
 stressfree/index.png: stressfree-cfe2cc541743754b6471325893a2f493.png
 twitter-icon.png: twitter-icon-2f94590588a6b93f31bf8edca6da25bc.png
 twitter-icon/index.png: twitter-icon-2f94590588a6b93f31bf8edca6da25bc.png
+widgets/star_groups.png: widgets/star_groups-b1bd022381cb4a702c2402cccd9c0574.png
+widgets/star_groups/index.png: widgets/star_groups-b1bd022381cb4a702c2402cccd9c0574.png
 active_admin.js: active_admin-c21c2e192a6da09f922197251fe73cdc.js
 active_admin/index.js: active_admin-c21c2e192a6da09f922197251fe73cdc.js
 application.js: application-2858d16699b150f3714da8c2d3e632f6.js
@@ -107,8 +117,8 @@ landingpage.js: landingpage-522e0491534258110508ad1a91c43ea0.js
 landingpage/index.js: landingpage-522e0491534258110508ad1a91c43ea0.js
 active_admin.css: active_admin-bcae96c21b99eecb5f3f95ee76b111c5.css
 active_admin/index.css: active_admin-bcae96c21b99eecb5f3f95ee76b111c5.css
-application.css: application-8f1e8bb684b2390322bcac8dba2a98ff.css
-application/index.css: application-8f1e8bb684b2390322bcac8dba2a98ff.css
+application.css: application-868e44eeab578b2bd964b766bcefb71b.css
+application/index.css: application-868e44eeab578b2bd964b766bcefb71b.css
 helper.js: helper-cd6af85e8f3b86c810bc581c0533cd04.js
 helper/index.js: helper-cd6af85e8f3b86c810bc581c0533cd04.js
 modernizr.js: modernizr-6125f471a5b370c452de332a1bceea90.js
