@@ -27,8 +27,8 @@ joe_the_plumber = Contractor.new do |c|
 
   c.id = 1
   c.first_name = "joe"
-  c.last_name = "thePlumber"
-  c.company_title = "Joe's Plumbing"
+  c.last_name = "Plumber"
+  c.company_title = "Joe's Most Excellent Plumbing Services"
 
   c.bonding_limit = 100.00
   c.insurance_limit = 200.00
@@ -36,7 +36,7 @@ joe_the_plumber = Contractor.new do |c|
   c.office_number = "7145559652"
   c.mobile_number = "9495556404"
 
-  c.slogan = "I am Joe the plumber"
+  c.slogan = "Where your shit's my problem."
 
   c.description = "Terrell Design & Development and the Golden Triangle Design Group is a full-service Design and General Contracting Consulting firm that specializes in new construction, as well as extensive remodels and additions.
 
@@ -59,7 +59,7 @@ In addition to providing the best possible design solutions, Terrell Design & De
     a.state = "Princeton"
   end
 
-  c << address
+  c.addresses << address
 
 end
 

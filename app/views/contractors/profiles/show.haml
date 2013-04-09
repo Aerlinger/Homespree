@@ -11,18 +11,18 @@
 
       -# Description
       -#========================================================================
-      #description
+      #description.section
         .row-fluid.primary
           .span6
             = contractor_presenter.title
             %h5.slogan= @contractor.slogan
             %p= @contractor.description
-            = link_to "Contact", "javacript:void(0)", class: "btn btn-large btn-success"
+            = link_to "Submit a Bid", "javacript:void(0)", id: "submit_bid", class: "btn btn-large btn-success"
           .span6
             #portfolio_photos.carousel.slide
               .carousel-inner
                 .item.active
-                  = image_tag "http://placehold.it/600x400"
+                  = image_tag asset_path("house.png")
                   .carousel-caption
                     %p Photo Caption
                 .item
@@ -36,7 +36,7 @@
 
       -# Comment
       -#===========================================================================
-      #secondary_info
+      #secondary_info.section
         .row-fluid.secondary
           .span4
             #portrait_wrapper.pull-left
@@ -53,65 +53,48 @@
             %h2 Joe specializes in:
             //= contractor_presenter.specialties
             =content_tag :ul do
-              =content_tag :li, "Indoor Painting"
-              =content_tag :li, "Indoor Painting"
-              =content_tag :li, "Indoor Painting"
-              =content_tag :li, "Indoor Painting"
-              =content_tag :li, "Indoor Painting"
-
+              =content_tag :li, "Indoor & Outdoor Painting", class: "check-ico"
+              =content_tag :li, "General Contracting", class: "check-ico"
+              =content_tag :li, "Hardwood Flooring", class: "check-ico"
+              =content_tag :li, "Pool Service and Cleaning", class: "check-ico"
+              =content_tag :li, "Doors & Windows", class: "check-ico"
 
           .span4.specialties
             = image_tag "profile/staticmap.png"
-        %hr/
-
-        -# Image Porfolio
-        -#========================================================================
-        #details
-          .row-fluid
-            .span3
-              %h3 Rating
-              = content_tag :p, contractor_presenter.full_name
-              Average Ratings#{image_tag "http://placehold.it/70x15"}
-            .span2
-              = image_tag "http://placehold.it/100x100", style: "margin: auto auto;"
-              %h5 Homespree Certified
-
-            .span3
-              %table
-                %tr
-                  %td Name
-                  %td= contractor_presenter.full_name
-                %tr
-                  %td Website
-                %tr
-                  %td= contractor_presenter.website
-                %tr
-                  %td Bonded
-                  %td= number_to_currency @contractor.bonding_limit
-
-
-
-        -# Secondary information (
-        -#=========================================================================
-        #secondary_info
-          .row-fluid
-            .span3
-              %h4 Availability
-            .span3
-              %h4 Location
-          .span3
-            %h4 Map
-            = image_tag "http://placehold.it/250x300"
-      %hr/
 
 
       -# Reviews
       -#===========================================================================
       #reviews
         .row-fluid.comments
-          %h3 Reviews from Homeowners
+          %hr
+          %h2 Reviews from Homeowners
+          %hr.section
           .review
-            %h4 Review Title
+            #portrait_wrapper.pull-left
+              = image_tag "http://placehold.it/98x98"
+            %h3 Review Title
+            %span.five-star
+            %h6 Angie
             %p
-              Eos neque dolorum. Laborum et et voluptates quasi totam sequi sed. A eos minus. Aspernatur vero eum quia sequi aliquid.Explicabo sed architecto repellendus. Et quibusdam omnis. Architecto dignissimos dolor.Porro architecto aperiam voluptatum
-              facere aut. Qui magnam impedit. Corporis qui maiores eos omnis. Dolores possimus eaque ex qui sit ut maxime. Quia eos odit sunt occaecati deserunt.Hic optio et. Odio quia temporibus voluptates et ullam dignissimos. Repudiandae ab est.Qui enim ut inventore. Ipsum architecto aut qui repellendus laboriosam ut. Eos quas quisquam voluptates illo.
+              A plumber is called to a house to repair a leaking pipe. When he arrives he is pleased to discover that the lady of the house is both beautiful and very friendly. One thing leads to another and the two end up in the bedroom. Suddenly the phone rings and the woman answers it. ‘That was my husband,’ she says when she puts down the receiver. ‘He’s on his way home, but he’s taking a flight out of town at eight. If you come back then we can take up where we left off.’ The plumber looks at the woman in disbelief. ‘What?’ he says. ‘On my own time?’
+
+          .review
+            %h3 Review Title
+            %span.five-star
+            %p
+              If Elvis were still alive he would write a song about this plumber.
+
+          .review
+            %h3 Review Title
+            %span.five-star
+            %h6 Angie
+            %p
+              If a firefighters business can go up in smoke, and a plumbers business can go down the drain, can a hooker get layed off?
+
+          .review
+            %h3 Review Title
+            %span.five-star
+            %p
+              Literally the worst smelling person in the entire world.
+

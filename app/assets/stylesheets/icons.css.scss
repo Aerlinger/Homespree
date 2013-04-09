@@ -1,0 +1,53 @@
+// Star rating icons:
+$star_height: 22px;
+
+.one-star {
+}
+
+.one-starhalf {
+
+}
+
+.two-star {
+
+}
+
+.two-starhalf {
+
+}
+
+.three-star {
+
+}
+
+.three-starhalf {
+
+}
+
+.four-star {
+
+}
+
+.four-starhalf {
+
+}
+
+.five-star {
+  padding-left: 5px;
+  width: 96px !important;
+  float: right;
+  display: block;
+  height: $star_height;
+  background: url("icon/star_groups_small.png") no-repeat top left;
+  background-position: 0 -2*$star_height;
+}
+
+
+// List item icons
+
+li {
+  .check-ico {
+    background: url("/icon/check_small.png") no-repeat top left;
+    padding: 2px 0 0 25px;
+  }
+}
