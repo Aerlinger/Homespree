@@ -57,8 +57,16 @@ homespreelogoshadow.png: homespreelogoshadow-6f5ef696eab26ab7e443ecde9d633ff5.pn
 homespreelogoshadow/index.png: homespreelogoshadow-6f5ef696eab26ab7e443ecde9d633ff5.png
 homespreelogosmall.png: homespreelogosmall-a293494202ff913a643726476b11feb3.png
 homespreelogosmall/index.png: homespreelogosmall-a293494202ff913a643726476b11feb3.png
+house.png: house-73a3dd102da205f90f9b8885cd53fd1d.png
+house/index.png: house-73a3dd102da205f90f9b8885cd53fd1d.png
+icon/check.png: icon/check-e71e55f339652f903a2ba250c4d2a2ad.png
+icon/check/index.png: icon/check-e71e55f339652f903a2ba250c4d2a2ad.png
+icon/check_small.png: icon/check_small-cc6425804eadd16cc99910eb77425252.png
+icon/check_small/index.png: icon/check_small-cc6425804eadd16cc99910eb77425252.png
 icon/contractor.png: icon/contractor-6ef14262579e5b9a02a535239dd7f4ba.png
 icon/contractor/index.png: icon/contractor-6ef14262579e5b9a02a535239dd7f4ba.png
+icon/star_groups_small.png: icon/star_groups_small-b1bd022381cb4a702c2402cccd9c0574.png
+icon/star_groups_small/index.png: icon/star_groups_small-b1bd022381cb4a702c2402cccd9c0574.png
 iphone.png: iphone-1d0d2222e6615a3505f32efd217fa64c.png
 iphone/index.png: iphone-1d0d2222e6615a3505f32efd217fa64c.png
 iphone_bids.png: iphone_bids-37342b3633417f0593dd5ced1b1de17c.png
@@ -103,8 +111,6 @@ stressfree.png: stressfree-cfe2cc541743754b6471325893a2f493.png
 stressfree/index.png: stressfree-cfe2cc541743754b6471325893a2f493.png
 twitter-icon.png: twitter-icon-2f94590588a6b93f31bf8edca6da25bc.png
 twitter-icon/index.png: twitter-icon-2f94590588a6b93f31bf8edca6da25bc.png
-widgets/star_groups.png: widgets/star_groups-b1bd022381cb4a702c2402cccd9c0574.png
-widgets/star_groups/index.png: widgets/star_groups-b1bd022381cb4a702c2402cccd9c0574.png
 active_admin.js: active_admin-c21c2e192a6da09f922197251fe73cdc.js
 active_admin/index.js: active_admin-c21c2e192a6da09f922197251fe73cdc.js
 application.js: application-2858d16699b150f3714da8c2d3e632f6.js
@@ -117,8 +123,8 @@ landingpage.js: landingpage-522e0491534258110508ad1a91c43ea0.js
 landingpage/index.js: landingpage-522e0491534258110508ad1a91c43ea0.js
 active_admin.css: active_admin-bcae96c21b99eecb5f3f95ee76b111c5.css
 active_admin/index.css: active_admin-bcae96c21b99eecb5f3f95ee76b111c5.css
-application.css: application-868e44eeab578b2bd964b766bcefb71b.css
-application/index.css: application-868e44eeab578b2bd964b766bcefb71b.css
+application.css: application-eedc93ec218a730f4986c7c2ea002fac.css
+application/index.css: application-eedc93ec218a730f4986c7c2ea002fac.css
 helper.js: helper-cd6af85e8f3b86c810bc581c0533cd04.js
 helper/index.js: helper-cd6af85e8f3b86c810bc581c0533cd04.js
 modernizr.js: modernizr-6125f471a5b370c452de332a1bceea90.js

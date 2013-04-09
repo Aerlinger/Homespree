@@ -6,7 +6,7 @@
 
       -# Top information prompt
       -#========================================================================
-      //= render "info_header", contractor_presenter: contractor_presenter
+      = render "info_header", contractor_presenter: contractor_presenter
 
 
       -# Description
@@ -57,6 +57,7 @@
               =content_tag :li, "General Contracting", class: "check-ico"
               =content_tag :li, "Hardwood Flooring", class: "check-ico"
               =content_tag :li, "Pool Service and Cleaning", class: "check-ico"
+              =content_tag :li, "Removing shit stains", class: "check-ico"
               =content_tag :li, "Doors & Windows", class: "check-ico"
 
           .span4.specialties
@@ -73,7 +74,7 @@
           .review
             #portrait_wrapper.pull-left
               = image_tag "http://placehold.it/98x98"
-            %h3 Review Title
+            %h3 Great Contractor!
             %span.five-star
             %h6 Angie
             %p
@@ -86,15 +87,15 @@
               If Elvis were still alive he would write a song about this plumber.
 
           .review
-            %h3 Review Title
+            %h3 Unreliable
             %span.five-star
             %h6 Angie
             %p
               If a firefighters business can go up in smoke, and a plumbers business can go down the drain, can a hooker get layed off?
 
           .review
-            %h3 Review Title
+            %h3 Holy Shit
             %span.five-star
             %p
-              Literally the worst smelling person in the entire world.
+              Literally the worst smelling person in the entire world. He should have paid ME for his services.
 

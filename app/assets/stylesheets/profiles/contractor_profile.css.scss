@@ -115,18 +115,21 @@
   }
 
   .specialties {
+    h2 {
+      margin-bottom: 2px;
+    }
     ul {
       margin-left: 0;
       padding-left: 0;
-      list-style: none;
+//      list-style:
     }
     li {
       padding-left: 16px;
-      line-height: 1.8em;
+      line-height: 1.4em;
       font-size: 1.2em;
-      background-image: url("/assets/icon/check_small.png");
-      background-repeat: no-repeat;
-      background-position: 0 .5em;
+      //background-image: url("/assets/icon/check_small.png");
+      //background-repeat: no-repeat;
+      //background-position: 0 .5em;
     }
   }
 
