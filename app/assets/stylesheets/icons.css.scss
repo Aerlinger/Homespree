@@ -1,38 +1,8 @@
 // Star rating icons:
 $star_height: 22px;
 
-.one-star {
-}
-
-.one-starhalf {
-
-}
-
-.two-star {
-
-}
-
-.two-starhalf {
-
-}
-
-.three-star {
-
-}
-
-.three-starhalf {
-
-}
-
-.four-star {
-
-}
-
-.four-starhalf {
-
-}
-
-.five-star {
+// mixin
+.stars {
   padding-left: 5px;
   width: 96px !important;
   float: right;
@@ -41,6 +11,98 @@ $star_height: 22px;
   background: url("icon/star_groups_small.png") no-repeat top left;
   background-position: 0 -2*$star_height;
 }
+
+.stars1 {
+  padding-left: 5px;
+  width: 96px !important;
+  float: right;
+  display: block;
+  height: $star_height;
+  background: url("icon/star_groups_small.png") no-repeat top left;
+  background-position: 0 -2*$star_height;
+}
+
+.stars1-5 {
+  padding-left: 5px;
+  width: 96px !important;
+  float: right;
+  display: block;
+  height: $star_height;
+  background: url("icon/star_groups_small.png") no-repeat top left;
+  background-position: 0 -3*$star_height;
+}
+
+.stars2 {
+  padding-left: 5px;
+  width: 96px !important;
+  float: right;
+  display: block;
+  height: $star_height;
+  background: url("icon/star_groups_small.png") no-repeat top left;
+  background-position: 0 -4*$star_height;
+}
+
+.stars2-5 {
+  padding-left: 5px;
+  width: 96px !important;
+  float: right;
+  display: block;
+  height: $star_height;
+  background: url("icon/star_groups_small.png") no-repeat top left;
+  background-position: 0 -5*$star_height;
+}
+
+.stars3 {
+  padding-left: 5px;
+  width: 96px !important;
+  float: right;
+  display: block;
+  height: $star_height;
+  background: url("icon/star_groups_small.png") no-repeat top left;
+  background-position: 0 -6*$star_height;
+}
+
+.stars3-5 {
+  padding-left: 5px;
+  width: 96px !important;
+  float: right;
+  display: block;
+  height: $star_height;
+  background: url("icon/star_groups_small.png") no-repeat top left;
+  background-position: 0 -7*$star_height;
+
+}
+
+.stars4 {
+  padding-left: 5px;
+  width: 96px !important;
+  float: right;
+  display: block;
+  height: $star_height;
+  background: url("icon/star_groups_small.png") no-repeat top left;
+  background-position: 0 -8*$star_height;
+}
+
+.stars4-5 {
+  padding-left: 5px;
+  width: 96px !important;
+  float: right;
+  display: block;
+  height: $star_height;
+  background: url("icon/star_groups_small.png") no-repeat top left;
+  background-position: 0 -9*$star_height;
+}
+
+.stars5 {
+  padding-left: 5px;
+  width: 96px !important;
+  float: right;
+  display: block;
+  height: $star_height;
+  background: url("icon/star_groups_small.png") no-repeat top left;
+  background-position: 0 -10*$star_height;
+}
+
 
 
 // List item icons

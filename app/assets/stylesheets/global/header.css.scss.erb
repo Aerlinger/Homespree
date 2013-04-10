@@ -9,47 +9,9 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
   opacity: 1;
 }
 
-
-/*
-* navigation lists on both footer and nav-header
-*/
-
-.navbar-inner {
-  background-color: white;
-  box-shadow: none;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  filter: none;
-
-  border-bottom: 3px solid #3a4964;
-
-  #sign_in {
-    a {
-      color:  white;
-      padding-bottom: 18px;
-      &:hover {
-        border-bottom: none;
-        color: white !important;
-        padding-bottom: 20px;
-      }
-    }
-
-    &:hover {
-      box-shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.8);
-    }
-
-
-    border-left: 1px solid $homespree_lightgreen;
-    border-right: 1px solid $homespree_lightgreen;
-    border-bottom: 1px solid $homespree_lightgreen;
-
-    padding-bottom: 3px;
-    box-shadow: 0px 0 4px 0 rgba(0, 0, 0, 0.7);
-
-    background-color: $homespree_green;
-    border-radius: 0 0 5px 5px;
-  }
-}
+// --------------------------------------------------------------------------
+//  TOP NAV header
+// --------------------------------------------------------------------------
 
 .navbar {
   opacity: 1;
@@ -98,5 +60,46 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
         margin-left: 7px;
       }
     }
+  }
+}
+
+// --------------------------------------------------------------------------
+//  navigation lists on both footer and nav-header
+// --------------------------------------------------------------------------
+
+.navbar-inner {
+  background-color: white;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  filter: none;
+
+  border-bottom: 3px solid #3a4964;
+
+  #sign_in {
+    a {
+      color:  white;
+      padding-bottom: 18px;
+      &:hover {
+        border-bottom: none;
+        color: white !important;
+        padding-bottom: 20px;
+      }
+    }
+
+    &:hover {
+      box-shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.8);
+    }
+
+
+    border-left: 1px solid $homespree_lightgreen;
+    border-right: 1px solid $homespree_lightgreen;
+    border-bottom: 1px solid $homespree_lightgreen;
+
+    padding-bottom: 3px;
+    box-shadow: 0px 0 4px 0 rgba(0, 0, 0, 0.7);
+
+    background-color: $homespree_green;
+    border-radius: 0 0 5px 5px;
   }
 }

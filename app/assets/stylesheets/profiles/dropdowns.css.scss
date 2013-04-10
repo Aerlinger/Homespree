@@ -1,3 +1,15 @@
+@import "global/palette.css.scss";
+
+ul.nav li.dropdown:hover > ul.dropdown-menu{
+  display: block;
+  margin: 0;
+}
+
+a.menu:after, .dropdown-toggle:after {
+  content: none;
+  margin: 0;
+}
+
 #contractor_dropdown {
 
   min-width: 200px;
@@ -5,9 +17,13 @@
 
   li {
     background-color: none;
+    padding-left: 3px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
 
     &:hover {
-      background-color: none;
+      background-color: $homespree_accent_light;
     }
 
     img {
@@ -23,12 +39,14 @@
         width: 90%;
         margin-top: 0;
         padding-top: 15px;
+        padding-bottom: 16px;
         padding-left: 60px;
         display: block;
       }
 
       &:hover {
         background-color: none;
+        text-decoration: none;
       }
     }
   }

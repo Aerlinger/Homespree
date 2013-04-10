@@ -1,0 +1,15 @@
+-# --------------------------------------------------------------------------------
+-# CONTRACTOR REVIEW partial
+-#    portrait_url
+-#    num_stars
+-#    review_title
+-#    reviewer_name
+-#    review_text
+-# --------------------------------------------------------------------------------
+.review
+  #portrait_wrapper.pull-left
+    = image_tag portrait_url || "contractors/default_portrait.jpg"
+  =content_tag :span, "", class: stars
+  %h3= review_title
+  %h6= review_author
+  %p= review_content

@@ -9,6 +9,14 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
 
     margin-left: 1em;
 
+    h1 {
+      color: white;
+      font-weight: 400;
+      font-size: 4em;
+      line-height: 1.1em;
+      text-shadow: 0 0 15px rgba(0, 0, 0, 1), 0 -1px 1px rgba(0, 0, 0, 0.6);
+    }
+
     h2 {
       text-align: left;
       font: 2.2em "helvetica neue", helvetica, sans-serif;
@@ -40,7 +48,6 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
         z-index: 10;
       }
 
-
       #submit_success {
         color: #50001e;
         display: none;
@@ -50,6 +57,12 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
         text-align: left;
         margin: 10px;
         margin-left: 20px;
+      }
+
+      input {
+        border-radius: 3px !important;
+        -moz-border-radius: 3px !important;
+        -webkit-border-radius: 3px !important;
       }
 
     }
@@ -100,7 +113,6 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
         }
       }
 
-
       font-weight: 500;
       color: white;
       text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.4);
@@ -116,9 +128,7 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
 
 
     #customer_type {
-
       display: inline-block;
-
 
       .caret {
         margin-left: -10px;
@@ -174,6 +184,7 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
       height: 30px;
       line-height: normal;
       margin-top: 2px;
+      margin-left: 1px;
       margin-bottom: 5px !important;
       width: 300px;
     }

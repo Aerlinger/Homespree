@@ -22,10 +22,13 @@
   #submit_bid {
     display: table;
     width: 300px;
-    margin: auto;
-    margin-top: 25px;
-    font-size: 1.9em;
+    margin: 25px auto;
+    font-size: 1.6em;
     font-weight: bolder;
+    border: 2px solid #2f682a;
+    border-radius: 0;
+    box-shadow: inset 0px 0px 3px rgba(0,0,0,0.2);
+
   }
 
   hr {
@@ -46,7 +49,6 @@
     height: 98px;
     padding: 2px;
     border: 1px solid #acacac;
-
 
     border-radius: 3px;
     background-color: rgb(172, 172, 172);
@@ -69,7 +71,6 @@
       border: 1px solid rgba(128, 128, 128, 0.64);
     }
   }
-
 
   .incomplete_sections {
     position: relative;
@@ -100,7 +101,7 @@
       margin: 5px auto;
       margin-right: 0px;
 
-      input{
+      input {
         margin-bottom: 0px;
         margin-left: 5px;
       }
@@ -125,6 +126,9 @@
 
   #address {
     margin-left: 2px;
+    p {
+      margin-bottom: 0;
+    }
   }
 
   .check {
@@ -133,22 +137,39 @@
 
   .insurance {
     margin-top: 15px;
-    width: 100%;
+    width: 90%;
 
     td {
       padding-left: 10px;
       font-weight: bold;
       a {
         padding-left: 5px;
+        text-decoration: italic;
+        font-size: .8em;
+      }
+      border: 1px solid black;
+    }
+
+    tr:nth-child(odd) {
+      td:first-child {
+        padding-left: -15px;
+        color: green;
+        border: 1px solid green;
+        background-color: #c5eec0;
+        text-align: center;
       }
     }
 
-    td:first-child {
-      padding-left: -15px;
-      color: green;
-      border: 1px solid green;
-      background-color: #c5eec0;
-      text-align: center;
+    tr:nth-child(even) {
+      margin-bottom: 8px;
+      td {
+        font-weight: 200;
+        &:first-child {
+          border: 1px solid green;
+          background-color: #dbffdd;
+          text-align: center;
+        }
+      }
     }
   }
 
@@ -180,14 +201,15 @@
     }
 
     li {
-      //padding-left: 16px;
+      font-style: italic;
       font-size: italic;
       line-height: 1.7em;
       font-size: 1.4em;
       font-weight: 200;
-      //background-image: url("/assets/icon/check_small.png");
-      //background-repeat: no-repeat;
-      //background-position: 0 .5em;
+
+      a {
+        font-size: .8em;
+      }
     }
   }
 
@@ -208,7 +230,7 @@
     }
 
     #website, h2 {
-      margin: 2px;
+      margin: 0;
     }
 
     #years_in_business {

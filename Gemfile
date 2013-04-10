@@ -21,6 +21,7 @@ gem 'wicked'
 gem 'mercury-rails'
 
 # Tools used in User Profiles:
+gem 'best_in_place'
 gem 'redcarpet'
 gem 'rmagick'
 gem 'carrierwave'
