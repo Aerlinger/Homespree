@@ -1,9 +1,11 @@
 Homespree::Application.routes.draw do
 
+  # Root route must be before ActiveAdmin.routes(self)
+  root :to => 'static_pages#home'
+
   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config
 
-  root :to => 'static_pages#home'
 
   devise_for :contractors, :controllers => { registrations: "contractors/registrations", sessions: "contractors/sessions", passwords: "contractors/passwords" } do
   end

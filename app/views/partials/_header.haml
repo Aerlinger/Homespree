@@ -9,8 +9,8 @@
             = render "partials/contractor_dropdown"
           - else
             %li.nav_button= link_to "Contractors", contractors_preview_path
-            %li.nav_button= link_to "About", about_path
             %li.nav_button= link_to "Homeowners", homeowners_preview_path
+            %li.nav_button= link_to "About", about_path
             %li#sign_in.nav_button= link_to "Sign In", new_contractor_session_path
 /[if lt IE 7]
   <p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a

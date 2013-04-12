@@ -1,73 +1,80 @@
 -# Contractor Profile Page
+-#
+-#  params: Contractor
 -#=============================================================================
-- content_for :static_page do
-  - present @contractor do |contractor_presenter|
-    #profile
+- present @contractor do |contractor_presenter|
+  #profile
 
-      -# Top information prompt
-      -#========================================================================
-      = render "info_header", contractor_presenter: contractor_presenter
+    -# Top information prompt
+    -#=============================================================================
+    //= render "info_header", contractor_presenter: contractor_presenter
 
-
-      -# Description
-      -#========================================================================
-      #description.section
-        .row-fluid.primary
-          .span6
-            = contractor_presenter.title
-            %h5.slogan= @contractor.slogan
-            %p= @contractor.description
-            = link_to "Request a Bid", "javacript:void(0)", id: "submit_bid", class: "btn btn-large btn-success"
-          .span6
-            #portfolio_photos.carousel.slide
-              .carousel-inner
-                .item.active
-                  = image_tag asset_path("house.png")
-                  .carousel-caption
-                    %p Photo Caption
-                .item
-                  = image_tag "http://placehold.it/600x400"
-                  .carousel-caption
-                    %p Photo Caption
-
-              = link_to raw("&lsaquo;"), "#portfolio_photos", class: "carousel-control left", data: {slide: "prev"}
-              = link_to raw("&rsaquo;"), "#portfolio_photos", class: "carousel-control right", data: {slide: "next"}
-
-        %hr/
-
-      -# Secondary Info
-      -#===========================================================================
-      #secondary_info.section
-        .row-fluid.secondary
+    -# First section above the fold
+    -#========================================================================
+    %section#primary
+      .container
+        .row-fluid
           .span4
-            #portrait_wrapper.pull-left
-              = image_tag "contractors/default_portrait.jpg"
-              //= contractor_presenter.portrait_picture
+            #card
+              %h3.title Joe's Plumbing
 
-            %h2#full_name= contractor_presenter.full_name
-            %h3#phone_num (804) 432-1234
-            %h3#website= contractor_presenter.website
-            %h5#years_in_business 4 years in business
+              #contractor_portrait.pull-left
+                = image_tag "contractors/default_portrait.jpg"
+                //= contractor_presenter.portrait_picture
 
-            %table.insurance
-              %tr
-                %td <span class="check">&#x2713</span> Licensed <a class="question" id="licensed" href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="A license is...">?</a>
-                %td State of NJ <a>details &raquo</a>
-              %tr
-                %td License #
-                %td 1234567890
-              %tr
-                %td &#x2713 Bonded <a class="question" href="#">?</a>
-                %td Up to $500,000 <a>details &raquo</a>
-              %tr
-                %td Bond #
-                %td 1234567890
-              %tr
-                %td &#x2713 BBB Rated <a class="question">?</a>
-                %td Grade of A+ <a>details &raquo</a>
+              %h3#phone_num (804) 432-1234
+              %h3#website= contractor_presenter.website
+              %h5#years_in_business 4 years in business
+              %h5.slogan= @contractor.slogan
+
+              %table.insurance
+                %tr
+                  %td <span class="check">&#x2713</span> Licensed <a class="question" id="licensed" href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="A license is...">?</a>
+                  %td State of NJ <a>details &raquo</a>
+                %tr
+                  %td License #
+                  %td 1234567890
+                %tr
+                  %td &#x2713 Bonded <a class="question" href="#">?</a>
+                  %td Up to $500,000 <a>details &raquo</a>
+                %tr
+                  %td Bond #
+                  %td 1234567890
+                %tr
+                  %td &#x2713 BBB Rated <a class="question">?</a>
+                  %td Grade of A+ <a>details &raquo</a>
+            = link_to "Request a Bid", "javacript:void(0)", id: "submit_bid", class: "btn btn-large btn-success"
+
+          .span8
+            .row#portfolio_images
+              .span8
+                #portfolio_photos.carousel.slide
+                  .carousel-inner
+                    .item.active
+                      = image_tag asset_path("house.png")
+                      .carousel-caption
+                        %p Photo Caption
+                    .item
+                      = image_tag "http://placehold.it/600x400"
+                      .carousel-caption
+                        %p Photo Caption
+
+                  = link_to raw("&lsaquo;"), "#portfolio_photos", class: "carousel-control left", data: {slide: "prev"}
+                  = link_to raw("&rsaquo;"), "#portfolio_photos", class: "carousel-control right", data: {slide: "next"}
+              .span4.photo-preview
+                =image_tag "http://placehold.it/200x100"
+                =image_tag "http://placehold.it/200x100"
+                =image_tag "http://placehold.it/200x100"
 
 
-          .span5.specialties
+    -# Description
+    -#========================================================================
+    %section#secondary
+      .container
+        .row-fluid
+          .span3.offset1
+            %p.description= @contractor.description
+          .span4.specialties
             %h2 Joe specializes in:
             //= contractor_presenter.specialties
             =content_tag :ul do
@@ -75,9 +82,8 @@
               =content_tag :li, "<span class='check'>&#x2713</span> General Contracting <a href='#'>Book now &raquo</a>".html_safe, class: "check-ico"
               =content_tag :li, "<span class='check'>&#x2713</span> Hardwood Flooring <a href='#'>Book now &raquo</a>".html_safe, class: "check-ico"
               =content_tag :li, "<span class='check'>&#x2713</span> Pool Service and Cleaning <a href='#'>Book now &raquo</a>".html_safe, class: "check-ico"
-              =content_tag :li, "<span class='check'>&#x2713</span> Unclogging drains beneath soil <a href='#'>Book now &raquo</a>".html_safe, class: "check-ico"
+              =content_tag :li, "<span class='check'>&#x2713</span> Sewage removal <a href='#'>Book now &raquo</a>".html_safe, class: "check-ico"
               =content_tag :li, "<span class='check'>&#x2713</span> Doors & Windows <a href='#'>Book now &raquo</a>".html_safe, class: "check-ico"
-
           .span3.map
             #google_map= image_tag "profile/staticmap.png"
             #address
@@ -85,76 +91,18 @@
               %a View full map &raquo
 
 
-      -# Reviews
-      -#===========================================================================
-      #reviews.section
+    -# Reviews
+    -#===========================================================================
+    %section#reviews_title
+      .container
+        %h2.review-title Reviews from Homeowners
+
+    %section#reviews.showcase
+      .container
         .row-fluid.comments
-
-          %hr
-          %h2 Reviews from Homeowners
-          %hr
-
           =render 'contractors/profiles/review',
                   portrait_url: "contractors/default_portrait.jpg",
                   stars: "stars5",
                   review_title: "A Great Contractor",
                   review_author: "Jim Cook",
                   review_content: "If Elvis were alive he would write a song about this plumber."
-
-          =render 'contractors/profiles/review',
-                  portrait_url: "contractors/default_portrait.jpg",
-                  stars: "stars4-5",
-                  review_title: "A Great Contractor",
-                  review_author: "Jim Cook",
-                  review_content: "If Elvis were alive he would write a song about this plumber."
-
-          =render 'contractors/profiles/review',
-                  portrait_url: "contractors/default_portrait.jpg",
-                  stars: "stars4",
-                  review_title: "A Great Contractor",
-                  review_author: "Jim Cook",
-                  review_content: "If Elvis were alive he would write a song about this plumber."
-
-          =render 'contractors/profiles/review',
-                  portrait_url: "contractors/default_portrait.jpg",
-                  stars: "stars3-5",
-                  review_title: "A Great Contractor",
-                  review_author: "Jim Cook",
-                  review_content: "If Elvis were alive he would write a song about this plumber."
-
-          =render 'contractors/profiles/review',
-                  portrait_url: "contractors/default_portrait.jpg",
-                  stars: "stars3",
-                  review_title: "A Great Contractor",
-                  review_author: "Jim Cook",
-                  review_content: "If Elvis were alive he would write a song about this plumber."
-
-          =render 'contractors/profiles/review',
-                  portrait_url: "contractors/default_portrait.jpg",
-                  stars: "stars2-5",
-                  review_title: "A Great Contractor",
-                  review_author: "Jim Cook",
-                  review_content: "If Elvis were alive he would write a song about this plumber."
-
-          =render 'contractors/profiles/review',
-                  portrait_url: "contractors/default_portrait.jpg",
-                  stars: "stars2",
-                  review_title: "A Great Contractor",
-                  review_author: "Jim Cook",
-                  review_content: "If Elvis were alive he would write a song about this plumber."
-
-          =render 'contractors/profiles/review',
-                  portrait_url: "contractors/default_portrait.jpg",
-                  stars: "stars1-5",
-                  review_title: "A Great Contractor",
-                  review_author: "Jim Cook",
-                  review_content: "If Elvis were alive he would write a song about this plumber."
-
-          =render 'contractors/profiles/review',
-                  portrait_url: "contractors/default_portrait.jpg",
-                  stars: "stars1",
-                  review_title: "A Great Contractor",
-                  review_author: "Jim Cook",
-                  review_content: "If Elvis were alive he would write a song about this plumber."
-
-

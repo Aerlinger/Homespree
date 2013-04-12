@@ -2989,3 +2989,55 @@
 [04/04/13 14:02:52 -0400 MathBook (13220)] INFO : Installing Rails 3.1/3.2 view instrumentation
 [04/04/13 14:02:52 -0400 MathBook (13220)] INFO : Installing Rails3 Error instrumentation
 [04/04/13 14:02:52 -0400 MathBook (13220)] INFO : Finished instrumentation
+[04/12/13 15:37:15 -0400 MathBook (19950)] INFO : Reading configuration from 
+[04/12/13 15:37:16 -0400 MathBook (19950)] ERROR : Unable to read configuration file : can't convert nil into String
+[04/12/13 15:37:16 -0400 MathBook (19950)] INFO : Starting the New Relic Agent.
+[04/12/13 15:37:16 -0400 MathBook (19950)] INFO : Environment: test
+[04/12/13 15:37:16 -0400 MathBook (19950)] INFO : Dispatcher: thin
+[04/12/13 15:37:16 -0400 MathBook (19950)] INFO : Application: test
+[04/12/13 15:37:16 -0400 MathBook (19950)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'test'
+[04/12/13 15:37:16 -0400 MathBook (19950)] INFO : Installing ActiveRecord instrumentation
+[04/12/13 15:37:16 -0400 MathBook (19950)] INFO : Installing Net instrumentation
+[04/12/13 15:37:16 -0400 MathBook (19950)] INFO : Installing Rails 3 Controller instrumentation
+[04/12/13 15:37:16 -0400 MathBook (19950)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[04/12/13 15:37:16 -0400 MathBook (19950)] INFO : Installing Rails3 Error instrumentation
+[04/12/13 15:37:16 -0400 MathBook (19950)] INFO : Finished instrumentation
+[04/12/13 15:37:42 -0400 MathBook (19967)] INFO : Reading configuration from 
+[04/12/13 15:37:42 -0400 MathBook (19967)] ERROR : Unable to read configuration file : can't convert nil into String
+[04/12/13 15:37:42 -0400 MathBook (19967)] INFO : Starting the New Relic Agent.
+[04/12/13 15:37:42 -0400 MathBook (19967)] INFO : Environment: test
+[04/12/13 15:37:42 -0400 MathBook (19967)] INFO : Dispatcher: thin
+[04/12/13 15:37:42 -0400 MathBook (19967)] INFO : Application: test
+[04/12/13 15:37:42 -0400 MathBook (19967)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'test'
+[04/12/13 15:37:42 -0400 MathBook (19967)] INFO : Installing ActiveRecord instrumentation
+[04/12/13 15:37:42 -0400 MathBook (19967)] INFO : Installing Net instrumentation
+[04/12/13 15:37:42 -0400 MathBook (19967)] INFO : Installing Rails 3 Controller instrumentation
+[04/12/13 15:37:42 -0400 MathBook (19967)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[04/12/13 15:37:42 -0400 MathBook (19967)] INFO : Installing Rails3 Error instrumentation
+[04/12/13 15:37:42 -0400 MathBook (19967)] INFO : Finished instrumentation
+[04/12/13 15:42:57 -0400 MathBook (20478)] INFO : Reading configuration from 
+[04/12/13 15:42:57 -0400 MathBook (20478)] ERROR : Unable to read configuration file : can't convert nil into String
+[04/12/13 15:42:57 -0400 MathBook (20478)] INFO : Starting the New Relic Agent.
+[04/12/13 15:42:57 -0400 MathBook (20478)] INFO : Environment: test
+[04/12/13 15:42:57 -0400 MathBook (20478)] INFO : Dispatcher: thin
+[04/12/13 15:42:57 -0400 MathBook (20478)] INFO : Application: test
+[04/12/13 15:42:57 -0400 MathBook (20478)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'test'
+[04/12/13 15:42:57 -0400 MathBook (20478)] INFO : Installing ActiveRecord instrumentation
+[04/12/13 15:42:57 -0400 MathBook (20478)] INFO : Installing Net instrumentation
+[04/12/13 15:42:57 -0400 MathBook (20478)] INFO : Installing Rails 3 Controller instrumentation
+[04/12/13 15:42:57 -0400 MathBook (20478)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[04/12/13 15:42:57 -0400 MathBook (20478)] INFO : Installing Rails3 Error instrumentation
+[04/12/13 15:42:57 -0400 MathBook (20478)] INFO : Finished instrumentation
+[04/12/13 15:58:00 -0400 MathBook (20788)] INFO : Reading configuration from 
+[04/12/13 15:58:00 -0400 MathBook (20788)] ERROR : Unable to read configuration file : can't convert nil into String
+[04/12/13 15:58:00 -0400 MathBook (20788)] INFO : Starting the New Relic Agent.
+[04/12/13 15:58:00 -0400 MathBook (20788)] INFO : Environment: test
+[04/12/13 15:58:00 -0400 MathBook (20788)] INFO : Dispatcher: thin
+[04/12/13 15:58:00 -0400 MathBook (20788)] INFO : Application: test
+[04/12/13 15:58:00 -0400 MathBook (20788)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'test'
+[04/12/13 15:58:00 -0400 MathBook (20788)] INFO : Installing ActiveRecord instrumentation
+[04/12/13 15:58:00 -0400 MathBook (20788)] INFO : Installing Net instrumentation
+[04/12/13 15:58:00 -0400 MathBook (20788)] INFO : Installing Rails 3 Controller instrumentation
+[04/12/13 15:58:00 -0400 MathBook (20788)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[04/12/13 15:58:00 -0400 MathBook (20788)] INFO : Installing Rails3 Error instrumentation
+[04/12/13 15:58:00 -0400 MathBook (20788)] INFO : Finished instrumentation

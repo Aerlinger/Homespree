@@ -1,10 +1,10 @@
 - flash.each do |key, value|
   %a#flash_link{:href => "#"}
-  %div{:class => "flash alert alert-#{key.to_s}"}
-    .container
-      %button.close{"data-dismiss" => "alert", :type => "button"} ×
-      %h4
-        = value
+    %div{:class => "flash alert alert-#{key.to_s}"}
+      .container
+        %button.close{"data-dismiss" => "alert", :type => "button"} ×
+        %h4
+          = value
   / Adds fade in effect for flash messages
   :javascript
     $(".flash").hide();

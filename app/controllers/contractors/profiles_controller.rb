@@ -1,6 +1,6 @@
 class Contractors::ProfilesController < ApplicationController
 
-  layout "static_page"
+  layout "static_page", except: [:show]
 
   def index
     @contractors = Contractor.all

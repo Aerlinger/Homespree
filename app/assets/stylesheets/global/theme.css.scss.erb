@@ -10,8 +10,16 @@ textarea:not(.pitch), input:not(.pitch) {
   position: relative !important;
 }
 
-ul.nav li a:hover {
+ul.nav-collapse li a:hover {
   color: white !important;
+}
+
+.sidenav li a:hover {
+  .active {
+    color: white !important;
+    text-shadow: none !important;
+  }
+  color: black !important;
 }
 
 body.desktop {
@@ -105,7 +113,6 @@ body.desktop {
         display: block;
       }
     }
-
   }
 
   .nav-list li a:hover {
@@ -130,7 +137,7 @@ body.desktop {
 
   h2 {
     font-size: 1.9em;
-    color: gray;
+    color: $homespree_blue;
     font-weight: 100;
   }
 

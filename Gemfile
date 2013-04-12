@@ -21,14 +21,13 @@ gem 'wicked'
 gem 'mercury-rails'
 
 # Tools used in User Profiles:
+gem 'draper'
 gem 'best_in_place'
-gem 'redcarpet'
 gem 'rmagick'
 gem 'carrierwave'
 gem 'geocoder'
 gem 'simple_form'
 
-gem 'markaby'
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
