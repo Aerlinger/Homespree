@@ -1,5 +1,19 @@
 Homespree::Application.routes.draw do
 
+  get "users/new"
+
+  get "users/create"
+
+  get "users/edit"
+
+  get "users/update"
+
+  get "users/show"
+
+  get "users/destroy"
+
+  get "users/index"
+
   # Root route must be before ActiveAdmin.routes(self)
   root :to => 'static_pages#home'
 
@@ -11,7 +25,6 @@ Homespree::Application.routes.draw do
   end
 
   namespace :contractors do
-    resources :wizard, only: [:show, :update, :index]
     resources :profiles, only: [:show, :index] do
 
     end

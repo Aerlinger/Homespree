@@ -22,6 +22,10 @@
     = render "partials/header"
     #content
       = content_for?(:content) ? yield(:content) : yield
-    = render "partials/footer"
+
+    = render "partials/clear_footer"
+    = render "partials/all_rights_reserved"
+
     = render "partials/footer_extras"
+
     = javascript_include_tag 'application'

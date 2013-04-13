@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe Contractor do
-
   it { should respond_to :addresses }
   it { should respond_to :appointments }
 
@@ -32,7 +31,6 @@ describe Contractor do
   let(:mike) { FactoryGirl.create :contractor }
   subject { mike }
 
-
   describe "sanitize phone numbers" do
     before do
       mike.office_number = '(808)   389-1234'
@@ -44,7 +42,6 @@ describe Contractor do
     its(:office_number) { should eq "8083891234" }
     its(:mobile_number) { should eq "8083891234" }
   end
-
 
   describe "with nothing" do
     before do
@@ -61,10 +58,15 @@ describe Contractor do
     end
   end
 
+  it "is invalid with duplicate email address" do
+    contractor = create :contractor
+    duplicate_contractor = build :contractor, email: contractor.email
+
+    expect(duplicate_contractor).to have(1).errors_on(:email)
+  end
 
   describe "valid contractor" do
-
-    it "should check phone numbers" do
+    it "checks phone numbers" do
       [:office_number, :mobile_number].each do |number|
         subject[number] = "123456789"
         subject.should_not be_valid
@@ -72,16 +74,16 @@ describe Contractor do
       end
     end
 
-    it "should have email" do
+    it "has email" do
       mike.email.should_not be_empty
     end
 
-    it "should have name" do
+    it "has name" do
       mike.first_name.should_not be_empty
       mike.last_name.should_not be_empty
     end
 
-    it "should capitalize first and last name" do
+    it "capitalizes first and last name" do
       mike.first_name = "joe"
       mike.last_name = "schmoe"
 
@@ -91,19 +93,19 @@ describe Contractor do
       mike.last_name.should eq "Schmoe"
     end
 
-    it "should downcase email" do
+    it "downcases email" do
       mike.email = "JoEtHEplumBEr@Lol.CoM"
       mike.save
       mike.email.should eq "joetheplumber@lol.com"
     end
 
     describe "and invalidate him" do
-      it "should error there is an invalid email" do
+      it "throws error when there is an invalid email" do
         mike.email = "joseph"
         mike.should_not be_valid
       end
 
-      it "should error there is an absent email" do
+      it "throws error there is an absent email" do
         mike.email = ""
         mike.should_not be_valid
 
@@ -211,6 +213,5 @@ describe Contractor do
     its(:twitter) { should eq "@joe_the_plumber" }
     its(:license) { should eq "ABCDEFG12345" }
     its(:website) { should eq "http://www.joesplumbing.com" }
-
   end
 end

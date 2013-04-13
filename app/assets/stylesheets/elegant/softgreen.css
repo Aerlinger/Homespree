@@ -1,0 +1,78 @@
+/* ---------------------------------------- SOFT GREEN---------------------------------------- */
+.primary-color,
+.primary-color a {
+    color: #8da65d
+}
+.primary-color-bg, 
+.strip.primary-color-bg, 
+.testimonial-gallery .primary-color-bg, 
+.optionheader .primary-color-bg {
+    background: #8da65d;
+}
+.secondary-menu,
+.navbar.secondary-menu > .container > .navbar-inner > .nav-collapse.collapse > .nav > .dropdown > .dropdown-menu > li > a:hover,
+.navbar.secondary-menu > .container > .navbar-inner > .nav-collapse.collapse > .nav > .dropdown > .dropdown-menu > li > a:focus
+ {
+    background-color: #8da65d;
+    color:#fff;
+}
+.navbar.secondary-menu > .container > .navbar-inner > .nav-collapse.collapse > .nav > .dropdown.open > .dropdown-toggle,
+.secondary-menu .nav .active a,
+.navbar.secondary-menu > .container > .navbar-inner > .nav-collapse.collapse > .nav > li > a:hover,
+.secondary-menu .nav .active a:hover,
+.secondary-menu.navbar .nav>li>.dropdown-menu {
+    color: #fff;
+    background-color: #5f7e21;
+}
+.nav .dropdown-toggle .caret {
+    border-top-color: #8da65d;
+    border-bottom-color: #8da65d;
+}
+.nav .dropdown-toggle:hover .caret,
+.nav .dropdown-toggle:focus .caret {
+    border-top-color: #8da65d;
+    border-bottom-color: #8da65d;
+}
+.short_headline span {
+    border-bottom-color: #8da65d
+}
+.footer h4 span {
+    border-bottom-color: #8da65d
+}
+.footer-credits {
+    background: #8da65d
+}
+.mobile_nav {
+    background: #8da65d
+}
+.nav-list>.active>a,
+.nav-list>.active>a:hover,
+.nav-list>.active>a:focus {
+    background-color: #8da65d;
+}
+.btn-group.open .btn-primary.dropdown-toggle {
+    background-color: #8da65d
+}
+.btn-primary {
+    background-color: #8da65d;
+    border-color: #8da65d;
+}
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary.active,
+.btn-primary.disabled,
+.btn-primary[disabled] {
+    background-color: #8da65d;
+    border-color: #8da65d;
+}
+.nav-list>.active>a,
+.nav-list>.active>a:hover,
+.nav-list>.active>a:focus {
+    background-color: #8da65d
+}
+.nav-pills>.active>a,
+.nav-pills>.active>a:hover,
+.nav-pills>.active>a:focus {
+    background-color: #8da65d
+}

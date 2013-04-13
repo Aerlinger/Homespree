@@ -11,7 +11,7 @@ class Contractors::RegistrationsController < Devise::RegistrationsController
   protected
 
   def after_sign_up_path_for(resource)
-    contractors_wizard_index_path
+    redirect_to contractor_profile_path, params: {id: current_contractor.id}
   end
 
 end

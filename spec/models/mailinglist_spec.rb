@@ -1,31 +1,14 @@
 require 'spec_helper'
 
 describe Mailinglist do
-
-  before do
-    ml = Mailinglist.find_by_email("iamatest@rspec.com")
-    ml.destroy if ml
-    @mailing_list = Mailinglist.create!(email: "iamatest@rspec.com", user_type: :contractor)
-  end
-
-  subject {@mailing_list}
+  subject { create :mailinglist }
 
   it { should respond_to :notes }
   it { should respond_to :email }
   it { should respond_to :user_type }
-
   it { should be_valid }
 
-
   describe "with valid params" do
-
-    before do
-      subject.email = "test@rspec.com"
-      subject.user_type = "CONTRACTOR"
-      subject.save!
-    end
-
-    it { should be_valid }
     it { should be_persisted }
 
     it "should save to contractor" do
@@ -33,21 +16,18 @@ describe Mailinglist do
     end
 
     it "should be able to destroy a contractor" do
-      mailinglist = Mailinglist.find_by_email("test@rspec.com")
+      mailinglist = create :mailinglist
       expect{ mailinglist.destroy }.to change{Mailinglist.count}.by(-1)
     end
 
     describe "when setting user_type to anything other than contractor" do
-
       before do
         subject.user_type = "h"
         subject.save
       end
 
       it { should_not be_contractor }
-
     end
-
   end
 
   describe "with empty user_type" do

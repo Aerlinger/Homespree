@@ -14,10 +14,6 @@ gem 'libv8', '= 3.11.8.13'
 # Mobile site optimization:
 gem 'mobylette'
 
-# Profile creation:
-gem 'wicked'
-# Formtastic or simple form?
-
 gem 'mercury-rails'
 
 # Tools used in User Profiles:

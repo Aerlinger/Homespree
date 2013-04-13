@@ -19,10 +19,12 @@ FactoryGirl.define do
 
     description "I am Joe The Plumber I have been in business for more than 140 years in the plumbing industry. I plumb everything from sinks to toilets. Been working in this working in the new jersey area for more than 50 years"
 
-    # I don't know what a valid contractor license is supposed to look like...
-    license "ABCD1234"
-    insurance_limit '400000.00'
-    bonding_limit '1400.00'
+    association :address
+    association :specialty
+  end
+
+  factory :invalid_contractor, parent: :contractor do
+
   end
 
   factory :minimal_contractor, class: Contractor do
@@ -45,6 +47,19 @@ FactoryGirl.define do
     endorsements "Endorsements"
     endorser_id 1
     contractor_id 1
+  end
+
+  factory :address do
+    line1 "1234 Elm Street"
+    line2 "Apartment C"
+    zipcode "12345"
+    city Faker::Address.city
+    state Faker::Address.state
+  end
+
+  factory :mailinglist do
+    email "tester@rspec.com"
+    user_type "contractor"
   end
 
 end
