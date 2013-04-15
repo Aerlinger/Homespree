@@ -17,4 +17,8 @@
 //= require twitter/bootstrap
 //= require twitter/bootstrap/bootstrap-tooltip
 //= require twitter/bootstrap/bootstrap-popover
+//= require custom
+//= require_tree ../../../vendor/assets/javascripts
+//= require helper
+//= require helper.js
 //= require_tree .

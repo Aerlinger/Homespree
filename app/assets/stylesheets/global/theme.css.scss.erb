@@ -22,8 +22,15 @@ ul.nav-collapse li a:hover {
   color: black !important;
 }
 
-body.desktop {
+.no-margin {
+    margin: 0 !important;
+}
 
+.no-padding {
+    padding: 0 !important;
+}
+
+body.desktop {
   background-image: url(<%= asset_path "homebackground.jpg" %>);
   background-size: cover;
   -webkit-background-size: cover;
@@ -72,47 +79,12 @@ body.desktop {
       color: white;
       text-decoration: none;
     }
-
   }
 
   label, input, button, select, textarea {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: normal;
     line-height: 18px;
-  }
-
-  #flash_link {
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 100%;
-
-    box-shadow: $shadow;
-
-    text-decoration: none;
-    color: black;
-
-    .alert {
-      border-radius: 0 !important;
-      -moz-border-radius: 0 !important;
-      -webkit-border-radius: 0 !important;
-      height: 50px;
-
-      padding: 0;
-      margin: 0;
-      z-index: 0;
-
-      h1, h2, h3, h4, h5 {
-        color: black;
-        margin: 0;
-        vertical-align: center;
-        line-height: 50px;
-        text-align: center;
-        text-decoration: none;
-        text-shadow: none;
-        display: block;
-      }
-    }
   }
 
   .nav-list li a:hover {
@@ -250,18 +222,11 @@ body.desktop {
     text-shadow: 0 1px 0 #ffffff;
   }
 
-  /*
-  * highlight section
-  */
-  .highlight {
+  * highlight section .highlight {
     margin-top: 40px;
-
   }
 
-  /*
-  * shadows
-  */
-  .shadow {
+  * shadows .shadow {
     position: relative;
 
     &:before, &:after {
@@ -291,5 +256,4 @@ body.desktop {
       width: 266px;
     }
   }
-
 }

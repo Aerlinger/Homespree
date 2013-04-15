@@ -1,9 +1,1 @@
-- content_for :content do
-  .registration
-    .row-fluid
-      .container.span8.offset2
-        .span8.offset2
-          %h2.block-underline-full= yield :title
-          = content_for?(:registration_page) ? yield(:registration_page) : yield
-
 = render :template => 'layouts/application'

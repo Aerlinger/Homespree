@@ -1,17 +1,40 @@
-- content_for :registration_page do
-  = provide :title, "Create your contractor profile"
+.row
+  .span6
+    .register-info-wraper
+      #register-info
+        %h1 Homespree...
+        %ul{:dir => "rtl"}
+          %li Saves you time
+          %li Saves you money
+          %li Saves you stress
+  .span6
+    #register-wraper
+      %form#register-form.form
+        %legend
+          Sign up for
+          %span.blue Homespree
+        .body
+          -#.control-group.control-inline
+          -#  %label{:for => "name"} First name
+          -#  %input.input-medium{:name => "name", :type => "text"}/
+          -#
+          -#.control-group.control-inline
+          -#  %label{:for => "surname"} Last name
+          -#  %input.input-medium{:name => "surname", :type => "text"}/
 
-  -# SIGN UP FORM CONTENT
-  -#===========================================================================
-  = simple_form_for resource, :as => resource_name, :url => registration_path(resource_name) do |f|
-    = f.error_notification message: "All fields are required."
-    = f.input :email
-    = f.input :company_title, error: false do
-      = f.text_field :company_title
-      %small= link_to "Individual with no company?", "javascript:void(0)"
-    = f.input :password
-    = f.button :submit, "Sign Up", id: "sign_up"
+          %label E-mail
+          %input.input-huge{:type => "text"}/
 
-    %hr/
+          %label Business name or title
+          %input.input-huge{:type => "text"}/
 
-    = render "contractors/shared/links"
+          %label Password
+          %input.input-huge{:type => "text"}/
+        .footer
+          %button.btn.btn-success{:type => "submit"} Register
+
+%footer.white.navbar-fixed-bottom
+  Already have an account?
+  =link_to "Sign in", new_contractor_session_path, class: "btn btn-black"
+
+= render "contractors/shared/links"

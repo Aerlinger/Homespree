@@ -1,0 +1,255 @@
+%ul#top.visuallyhidden
+  %li
+    %a{:accesskey => "n", :href => "#nav", :title => "Skip to navigation"} Skip to navigation
+  %li
+    %a{:accesskey => "c", :href => "#page", :title => "Skip to content"} Skip to content
+%header.header.clearfix
+  %h5.mobile_nav
+    %a{:href => "javascript:void(0)"}
+      \&nbsp;
+      %span
+
+  #nav
+    .navbar.secondary-menu
+      .container
+        .navbar-inner
+          .nav-collapse.collapse
+            %ul.nav.accordmobile.pull-right
+              / accordmobile comes in when the browser is at 979px and below, it fixes bugs with bootstrap's toggles of multiple level dropdowns which they are dropping support for and they had lousy support in 2x
+              %li
+                %a{:href => "register.html"}
+                  Register
+                  %i.e-icon-pencil
+              / begin .dropdown .parent
+              %li.dropdown.parent
+                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                  Sign In
+                  %i.e-icon-login
+                %ul.dropdown-menu.signin
+                  / begin .dropdown-menu .signin
+                  %li
+                    / begin list item / everything goes inside the list item
+                    %form
+                      / begin form add your stuff
+                      %input{:placeholder => "Email", :type => "text"}/
+                      %input{:placeholder => "Password", :type => "password"}/
+                      %label.checkbox
+                        %input{:type => "checkbox"}/
+                        Remember me
+                      %button.btn.custom-btn.btn-primary{:type => "submit"} Sign in
+                  / end list item
+                  %li.divider
+                  / divider
+                  %li.nav-header Or Sign In with...
+                  / nav-header
+                  %li
+                    .social.clearfix
+                      %a.fc-webicon.facebook.large.round{:href => "#", :title => "Facebook"}
+                      %a.fc-webicon.twitter.large.round{:href => "#", :title => "Twitter"}
+                      %a.fc-webicon.googleplus.large.round{:href => "#", :title => "Google"}
+                  %li.divider
+                  / divider
+                  %li
+                    %a{:href => "forgot-password.html"} Forgot Password
+                / close .dropdown-menu .signin
+              / close .dropdown .parent
+              / begin .dropdown .parent
+              %li.dropdown.parent
+                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                  Messages
+                  %i.e-icon-comment
+                %ul.dropdown-menu
+                  / begin .dropdown-menu
+                  %li.visible-phone.visible-tablet.phonenumber
+                    %a{:href => "tel:+8135553333"} 813.555.3333
+                  / show this number only on phones and tablets
+                  %li.menu-text.visible-desktop.phonenumber 813.555.3333
+                  / show this number only on desktop
+                  %li
+                    %a{:href => "mailto:contact@longdomaingoeshere.com"} email: contact@longdomaingoeshere.com
+                  %li.divider
+                  %li.nav-header Sign Up For News!
+                  %li
+                    %form{:action => "yourscript.php", :method => "post"}
+                      .input-append.custom-append
+                        %input{:name => "email", :placeholder => "Email Address", :type => "email"}/
+                        %button.btn.btn-primary Sign Up
+                      / close input-append
+                  %li.divider
+                  / divider
+                  %li.nav-header Follow Us!
+                  / nav-header
+                  %li
+                    .social.clearfix
+                      %a.fc-webicon.rss.round{:href => "#", :title => "RSS"}
+                      %a.fc-webicon.facebook.round{:href => "#", :title => "Facebook"}
+                      %a.fc-webicon.twitter.round{:href => "#", :title => "Twitter"}
+                      %a.fc-webicon.skype.round{:href => "#", :title => "Skype"}
+                      %a.fc-webicon.dribbble.round{:href => "#", :title => "dribble"}
+                      %a.fc-webicon.linkedin.round{:href => "#", :title => "Skype"}
+                      %a.fc-webicon.pinterest.round{:href => "#", :title => "pinterest"}
+                    / close div .social
+              / close .dropdown .parent
+              / begin .dropdown .parent
+              %li.dropdown.parent
+                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                  Admin
+                  %i.e-icon-cog
+                %ul.dropdown-menu
+                  %li.current-user
+                    %a{:href => "#"}
+                      %img.avatar{:alt => "Christina Arasmo", :src => "https://twimg0-a.akamaihd.net/profile_images/568222624/ILUSWEETC_normal.jpg"}/
+                    .name
+                      %b.fullname User Name Goes Here
+                      %br/
+                      %small Edit profile
+                  %li.divider
+                  %li
+                    %a{:href => "#"} Link Here
+                  %li
+                    %a{:href => "#"} Line Here
+                  %li.divider
+                  %li
+                    %a{:href => "#"} Help
+                  %li.divider
+                  %li
+                    %a{:href => "#"} Settings
+                  %li
+                    %a.js-signout-button{"data-nav" => "logout", :href => "#"} Sign out
+                    %form#signout-form.dropdown-link-form.signout-form{:action => "/logout", :method => "POST"}
+                      %input{:name => "", :type => "hidden", :value => ""}/
+                      %input{:name => "", :type => "hidden"}/
+                      %input{:name => "", :type => "hidden"}/
+                / close .dropdown-menu
+              / close .dropdown .parent
+              %li.divider-vertical
+              %li.search-wrapper
+                %form{:action => "someaction.php", :method => "post"}
+                  #search-trigger
+                    %i.e-icon-search
+                  %input{:placeholder => "search + enter", :type => "text"}/
+
+    .container
+      .navbar.primary-menu
+        .navbar-inner
+          .nav-collapse.collapse
+            %ul.nav.accordmobile
+              %li
+                %a{:href => "index.html"}
+
+              %li.dropdown.parent.active
+                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "javascript:void(0)"}
+                  Features
+                  %i.e-icon-down-open-mini
+                %ul.dropdown-menu
+                  %li.active
+                    %a{:href => "simple-header.html"} Simple Header
+                  %li
+                    %a{:href => "text-logo.html"} Text Logo
+                  %li
+                    %a{:href => "hero-unit.html"} Hero Unit
+                  %li
+                    %a{:href => "columns.html"} Inner Columns
+                  %li
+                    %a{:href => "equal-height-columns.html"} Equal Height Columns
+                  %li
+                    %a{:href => "toggles.html"} Toggles
+                  %li
+                    %a{:href => "figures-images.html"} Figures and Images
+                  %li.dropdown-submenu.parent
+                    %a{:href => "javascript:void(0)"}
+                      Icons
+                      %i.e-icon-right-open-mini
+                    %ul.dropdown-menu
+                      %li
+                        %a{:href => "font-awesome-icons.html"} Font Awesome
+                      %li
+                        %a{:href => "entypo-icons.html"} Entypo Icons
+                      %li
+                        %a{:href => "social-icons.html"} Social Icons
+                  %li
+                    %a{:href => "typography-elements.html"} Typography & Elements
+                  %li
+                    %a{:href => "misc-components.html"} Bootstrap Components
+                  %li
+                    %a{:href => "custom-bootstrap-form-elements.html"} Custom Form Elements
+
+              %li.dropdown.parent
+                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "javascript:void(0)"}
+                  Portfolio
+                  %i.e-icon-down-open-mini
+                %ul.dropdown-menu
+                  %li
+                    %a{:href => "portfolio-masonry.html"} Filtered Grid
+                  %li
+                    %a{:href => "portfolio-single.html"} Single Item (image slider)
+                  %li
+                    %a{:href => "image-gallery.html"} Simple Image Gallery
+                  %li
+                    %a{:href => "image-gallery-2.html"} Simple Image Gallery 2
+
+              %li.dropdown.parent
+                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "javascript:void(0)"}
+                  Blog
+                  %i.e-icon-down-open-mini
+                %ul.dropdown-menu
+                  %li
+                    %a{:href => "blog-traditional-summary.html"} Traditional Summary
+                  %li
+                    %a{:href => "blog.html"} Masonry Summary
+                  %li
+                    %a{:href => "blog-single.html"} Single Post
+
+              %li.dropdown.parent
+                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "javascript:void(0)"}
+                  Pages
+                  %i.e-icon-down-open-mini
+                %ul.dropdown-menu
+                  %li
+                    %a{:href => "coming-soon.html"} Coming Soon
+                  %li
+                    %a{:href => "index.html"} Animated Slider
+                  %li
+                    %a{:href => "full-width-flex.html"} Full Width FlexSlider
+                  %li
+                    %a{:href => "variable-width-image-slider.html"} Variable Width Image Slider
+                  %li
+                    %a{:href => "feature-strip-slider.html"} Feature Strip Image Slider
+                  %li
+                    %a{:href => "generic-layout-1.html"} Nested Row Fluid Example
+                  %li.dropdown-submenu.parent
+                    %a{:href => "javascript:void(0)"}
+                      Layouts
+                      %i.e-icon-right-open-mini
+                    %ul.dropdown-menu.pull-right
+                      %li
+                        %a{:href => "two-columns-right-sidebar.html"} Two Columns Right
+                      %li
+                        %a{:href => "two-columns-left-sidebar.html"} Two Columns Left
+                      %li
+                        %a{:href => "holy-grail-three-columns.html"} Holy Grail (3 Col)
+                      %li
+                        %a{:href => "contemporary-three-columns.html"} Contemporary (3 Col)
+                  %li
+                    %a{:href => "register.html"} Register
+                  %li
+                    %a{:href => "login.html"} Login
+                  %li
+                    %a{:href => "pricing-tables.html"} Pricing Tables
+                  %li
+                    %a{:href => "about.html"} About
+                  %li
+                    %a{:href => "testimonials.html"} Testimonials
+                  %li
+                    %a{:href => "faq.html"} FAQ
+
+              %li
+                %a{:href => "contact.html"} Contact
+              %li
+                %a{:href => "info.html"} Instructions
+      #logo
+        %a{:href => "index.html"}
+          =image_tag "homespreelogofooter.png"
+        -#%object.logo-svg{:data => "assets/images/logo.svg", :type => "image/svg+xml"}
+        -#%img{:alt => "Corporate-Elegance Responsive Retina Ready Portfolio Business", :src => "assets/images/logo.png"}/
+      .print Phone, name of company etc., for printing

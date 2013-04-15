@@ -12,7 +12,6 @@
   %head
     %title Homespree | The smart way to get home improvement estimates
     = render "partials/header_extras"
-    %link{:href => "/assets/favicon.png", :rel => "shortcut icon"}/
     %meta{:content => "Homespree is the smart way to get home improvement estimates.", :name => "description"}/
     %meta{:content => "width=device-width", :name => "viewport"}/
     = stylesheet_link_tag "application"
@@ -23,9 +22,8 @@
     #content
       = content_for?(:content) ? yield(:content) : yield
 
-    = render "partials/clear_footer"
-    = render "partials/all_rights_reserved"
-
-    = render "partials/footer_extras"
+    -#= render "partials/clear_footer"
+    -#= render "partials/all_rights_reserved"
 
     = javascript_include_tag 'application'
+    -#= render "partials/footer_extras"

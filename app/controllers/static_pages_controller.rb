@@ -1,6 +1,7 @@
 class StaticPagesController < ApplicationController
 
   layout "static_page", except: [:home]
+  layout "blank", only: [:test_theme]
 
   def home
   end
@@ -18,6 +19,9 @@ class StaticPagesController < ApplicationController
   end
 
   def jobs
+  end
+
+  def test_theme
   end
 
   def pitch

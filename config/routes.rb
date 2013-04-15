@@ -44,5 +44,6 @@ Homespree::Application.routes.draw do
   match 'about'       => 'static_pages#about'
   match 'contact'     => 'static_pages#contact'
   match 'jobs'        => 'static_pages#jobs'
+  match 'test_theme'        => 'static_pages#test_theme'
 
 end

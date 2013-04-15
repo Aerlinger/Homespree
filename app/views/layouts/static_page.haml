@@ -1,5 +1,568 @@
-- content_for :content do
-  .secondary
-    .container
-      = content_for?(:static_page) ? yield(:static_page) : yield
-= render :template => 'layouts/application'
+<!doctype html>
+/[if lt IE 7] <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en" dir="ltr">
+/[if IE 7] <html class="no-js lt-ie9 lt-ie8" lang="en" dir="ltr">
+/[if IE 8] <html class="no-js lt-ie9" lang="en" dir="ltr">
+/ [if gt IE 8]><!
+%html.no-js{:dir => "ltr", :lang => "en"}
+  / <![endif]
+  %head
+    %title Simple Header | Corporate-Elegance Responsive Retina Ready Portfolio Business
+    / Meta Data ================
+    %meta{:charset => "UTF-8"}/
+    %meta{:content => "Fill this in with your information", :name => "description"}/
+    /
+      \- highly suggested that you un-comment this on a live site
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    %meta{:content => "width=device-width", :name => "viewport"}/
+    %meta{:content => "yes", :name => "apple-mobile-web-app-capable"}/
+    / CSS ================
+    %link{:href => "assets/css/bootstrap.min.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "assets/css/theme.reset.min.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "assets/css/style.css", :rel => "stylesheet", :type => "text/css"}/
+    / Style Switcher DEMO only ================
+    %link{:href => "assets/css/switcher.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "assets/css/print.css", :media => "print", :rel => "stylesheet", :type => "text/css"}/
+    / Icons ================ put your icons and favicons below
+    / http://mathiasbynens.be/notes/touch-icons
+    /
+      Open Graph for facebook http://graph.facebook.com/[UserName] replace [UserName] with yours and get your fb:admis content information where the XXXX goes.
+      \==================================================
+    %meta{:content => "", :property => "og:title"}/
+    %meta{:content => "", :property => "og:type"}/
+    %meta{:content => "", :property => "og:url"}/
+    %meta{:content => "", :property => "og:image"}/
+    %meta{:content => "", :property => "og:site_name"}/
+    %meta{:content => "XXXXX", :property => "fb:admins"}/
+    %meta{:content => "en_us", :property => "og:locale"}/
+    %meta{:content => " ", :property => "og:description"}/
+    / JS JQuery in the head you can use ajax if you want ================
+    %script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"}
+    :javascript
+      window.jQuery || document.write('<script src="assets/js/jquery-1.9.1.min.js"><\/script>')
+    / Add to HEAD after style sheet http://modernizr.com/docs/#installing  ================
+    %script{:src => "assets/js/modernizr.custom.js?v=2.6.2"}
+    / Style Switcher  ================
+    %script{:src => "assets/js/switcheroo.js"}
+  %body
+    /[if lt IE 7]
+      <p class="chromeframe">Your browser is over 12 years old. You are using an <strong>outdated</strong> browser. Please <a href="http://www.google.com/chrome/intl/en/landing_chrome.html">upgrade your browser</a>.</p>
+    / begin accesibility skip to nav skip content
+    %ul#top.visuallyhidden
+      %li
+        %a{:accesskey => "n", :href => "#nav", :title => "Skip to navigation"} Skip to navigation
+      %li
+        %a{:accesskey => "c", :href => "#page", :title => "Skip to content"} Skip to content
+    / end /.visuallyhidden accesibility
+    / begin .header
+    %header.header.clearfix
+      / mobile navigation trigger
+      %h5.mobile_nav
+        %a{:href => "javascript:void(0)"}
+          \&nbsp;
+          %span
+      /
+        ******this uses the bootstrap navbar menus but with added support for submenus (they are dropping these in 3.0 and their support in 2X was crap).
+        I modified the JS, added some script, and adjusted the css.
+        I commented and separeated the html so you can apply it to your site/menu system easier. Note the additional classes for this theme.
+        *******
+      #nav
+        / accesibility
+        .navbar.secondary-menu
+          .container
+            .navbar-inner
+              .nav-collapse.collapse
+                %ul.nav.accordmobile.pull-right
+                  / accordmobile comes in when the browser is at 979px and below, it fixes bugs with bootstrap's toggles of multiple level dropdowns which they are dropping support for and they had lousy support in 2x
+                  %li.simple-social
+                    %a{:href => "#"}
+                      %i.e-icon-facebook
+                  %li.simple-social
+                    %a{:href => "#"}
+                      %i.e-icon-gplus
+                  %li.simple-social
+                    %a{:href => "#"}
+                      %i.e-icon-skype
+                  %li.simple-social.last
+                    %a{:href => "#"}
+                      %i.e-icon-twitter
+                  %li.divider-vertical
+                  %li.search-wrapper
+                    %form{:action => "someaction.php", :method => "post"}
+                      #search-trigger
+                        %i.e-icon-search
+                      %input{:placeholder => "search + enter", :type => "text"}/
+                / close nav accordmobile
+              / /.nav-collapse
+            / /.navbar-inner
+          / /.container
+        / /.navbar
+        .container
+          .navbar.primary-menu
+            .navbar-inner
+              .nav-collapse.collapse
+                %ul.nav.accordmobile
+                  %li
+                    %a{:href => "index.html"} Home
+                  %li.dropdown.parent.active
+                    %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "javascript:void(0)"}
+                      Features
+                      %i.e-icon-down-open-mini
+                    %ul.dropdown-menu
+                      %li.active
+                        %a{:href => "simple-header.html"} Simple Header
+                      %li
+                        %a{:href => "text-logo.html"} Text Logo
+                      %li
+                        %a{:href => "hero-unit.html"} Hero Unit
+                      %li
+                        %a{:href => "columns.html"} Inner Columns
+                      %li
+                        %a{:href => "equal-height-columns.html"} Equal Height Columns
+                      %li
+                        %a{:href => "toggles.html"} Toggles
+                      %li
+                        %a{:href => "figures-images.html"} Figures and Images
+                      %li.dropdown-submenu.parent
+                        %a{:href => "javascript:void(0)"}
+                          Icons
+                          %i.e-icon-right-open-mini
+                        %ul.dropdown-menu
+                          %li
+                            %a{:href => "font-awesome-icons.html"} Font Awesome
+                          %li
+                            %a{:href => "entypo-icons.html"} Entypo Icons
+                          %li
+                            %a{:href => "social-icons.html"} Social Icons
+                      %li
+                        %a{:href => "typography-elements.html"} Typography & Elements
+                      %li
+                        %a{:href => "misc-components.html"} Bootstrap Components
+                      %li
+                        %a{:href => "custom-bootstrap-form-elements.html"} Custom Form Elements
+                  %li.dropdown.parent
+                    %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "javascript:void(0)"}
+                      Portfolio
+                      %i.e-icon-down-open-mini
+                    %ul.dropdown-menu
+                      %li
+                        %a{:href => "portfolio-masonry.html"} Filtered Grid
+                      %li
+                        %a{:href => "portfolio-single.html"} Single Item (image slider)
+                      %li
+                        %a{:href => "image-gallery.html"} Simple Image Gallery
+                      %li
+                        %a{:href => "image-gallery-2.html"} Simple Image Gallery 2
+                  %li.dropdown.parent
+                    %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "javascript:void(0)"}
+                      Blog
+                      %i.e-icon-down-open-mini
+                    %ul.dropdown-menu
+                      %li
+                        %a{:href => "blog-traditional-summary.html"} Traditional Summary
+                      %li
+                        %a{:href => "blog.html"} Masonry Summary
+                      %li
+                        %a{:href => "blog-single.html"} Single Post
+                  %li.dropdown.parent
+                    %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "javascript:void(0)"}
+                      Pages
+                      %i.e-icon-down-open-mini
+                    %ul.dropdown-menu
+                      %li
+                        %a{:href => "coming-soon.html"} Coming Soon
+                      %li
+                        %a{:href => "index.html"} Animated Slider
+                      %li
+                        %a{:href => "full-width-flex.html"} Full Width FlexSlider
+                      %li
+                        %a{:href => "variable-width-image-slider.html"} Variable Width Image Slider
+                      %li
+                        %a{:href => "feature-strip-slider.html"} Feature Strip Image Slider
+                      %li
+                        %a{:href => "generic-layout-1.html"} Nested Row Fluid Example
+                      %li.dropdown-submenu.parent
+                        %a{:href => "javascript:void(0)"}
+                          Layouts
+                          %i.e-icon-right-open-mini
+                        %ul.dropdown-menu.pull-right
+                          %li
+                            %a{:href => "two-columns-right-sidebar.html"} Two Columns Right
+                          %li
+                            %a{:href => "two-columns-left-sidebar.html"} Two Columns Left
+                          %li
+                            %a{:href => "holy-grail-three-columns.html"} Holy Grail (3 Col)
+                          %li
+                            %a{:href => "contemporary-three-columns.html"} Contemporary (3 Col)
+                      %li
+                        %a{:href => "register.html"} Register
+                      %li
+                        %a{:href => "login.html"} Login
+                      %li
+                        %a{:href => "pricing-tables.html"} Pricing Tables
+                      %li
+                        %a{:href => "about.html"} About
+                      %li
+                        %a{:href => "testimonials.html"} Testimonials
+                      %li
+                        %a{:href => "faq.html"} FAQ
+                  %li
+                    %a{:href => "contact.html"} Contact
+                  %li
+                    %a{:href => "info.html"} Instructions
+              / /.nav-collapse
+            / /.navbar-inner
+          / /.navbar
+          #logo
+            %a{:href => "index.html"}
+            %object.logo-svg{:data => "assets/images/logo.svg", :type => "image/svg+xml"}
+            %img{:alt => "Corporate-Elegance Responsive Retina Ready Portfolio Business", :src => "assets/images/logo.png"}/
+            / .no-svg fallback
+          / end #logo
+          / ******* print stuff
+          .print Phone, name of company etc., for printing
+        / /.container
+      / close #nav
+    / close /.header
+    / begin #page - the container for everything but header
+    #page.clearfix
+      .container
+        %p The top menu bar has been simplified
+      .main-content
+        .container
+          %h3.short_headline
+            %span Portfolio
+          .row-fluid
+            .span4
+              %p Images in public domain. We will increase our aptitude to evolve without decrementing our capacity to leverage. It may seem marvelous, but it's true!
+              %p We apply the proverb "Look before you leap" not only to our structuring but our power to mesh. We practically invented the term "e-businesses". We invariably revolutionize robust obfuscation. That is a remarkable achievement considering the current and previous fiscal year's financial state of things! Is it more important for something to be virally-distributed or to be user-defined? The R&amp;D factor is real-time. The CAD factor is 24/7, best-of-breed. Your budget for empowering should be at least one-tenth of your budget for reintermediating.
+            / close span6
+            / thumbnail layout
+            .span8
+              .thumb-gallery.three-columns
+                %ul.icon-hover
+                  %li
+                    %img{:alt => "", :src => "../demo/fresh-work/1.jpg"}/
+                    %div
+                      %span
+                        %a{:href => "portfolio-single.html"}
+                          %i.e-icon-link
+                        %a.fancyme{"data-fancybox-group" => "gallery", :href => "../demo/portfolio/larger-image-fpo.png"}
+                          %i.e-icon-popup
+                  %li
+                    %img{:alt => "", :src => "../demo/fresh-work/2.jpg"}/
+                    %div
+                      %span
+                        %a{:href => "portfolio-single.html"}
+                          %i.e-icon-link
+                        %a.fancyme{"data-fancybox-group" => "gallery", :href => "../demo/portfolio/larger-image-fpo.png"}
+                          %i.e-icon-popup
+                  %li
+                    %img{:alt => "", :src => "../demo/fresh-work/9.jpg"}/
+                    %div
+                      %span
+                        %a{:href => "portfolio-single.html"}
+                          %i.e-icon-link
+                        %a.fancyme{"data-fancybox-group" => "gallery", :href => "../demo/portfolio/larger-image-fpo.png"}
+                          %i.e-icon-popup
+                  %li
+                    %img{:alt => "", :src => "../demo/fresh-work/4.jpg"}/
+                    %div
+                      %span
+                        %a{:href => "portfolio-single.html"}
+                          %i.e-icon-link
+                        %a.fancyme{"data-fancybox-group" => "gallery", :href => "../demo/portfolio/larger-image-fpo.png"}
+                          %i.e-icon-popup
+                  %li
+                    %img{:alt => "", :src => "../demo/fresh-work/5.jpg"}/
+                    %div
+                      %span
+                        %a{:href => "portfolio-single.html"}
+                          %i.e-icon-link
+                        %a.fancyme{"data-fancybox-group" => "gallery", :href => "../demo/portfolio/larger-image-fpo.png"}
+                          %i.e-icon-popup
+                  %li
+                    %img{:alt => "", :src => "../demo/fresh-work/7.jpg"}/
+                    %div
+                      %span
+                        %a{:href => "portfolio-single.html"}
+                          %i.e-icon-link
+                        %a.fancyme{"data-fancybox-group" => "gallery", :href => "../demo/portfolio/larger-image-fpo.png"}
+                          %i.e-icon-popup
+              / close .thumb-gallery
+            / close span6
+          / close row-fluid
+        / close .container
+        / this is not inside a .container div because it's not very long. You'll need to adjust the html and the css if you use this differently
+        %section.call-to-action
+          %h2 So what are you waiting for? This is it.
+          %a.btn.custom-btn.btn-large.btn-primary{:href => "pricing-tables.html"}
+            Click Me
+            %i.e-icon-forward
+        / close .call-to-action
+        %section.strip
+          .container
+            %h3.short_headline
+              %span Services we offer
+            .row-fluid
+              .span4
+                .span3
+                  %a.biggieicon.primary-color{:href => "#"}
+                    %i.e-icon-tag
+                .span9
+                  %h4 It’s Wonderful
+                  %p We here at Classic have proven we know that it is better to e-enable extensibly than to architect seamlessly. If all of this may seem wonderful to you, that's because it is! Our functionality is unparalleled in the industry.
+                  %p
+                    %a.btn.custom-btn.btn-small.btn-very-subtle{:href => "#"} More &rarr;
+              .span4
+                .span3
+                  %a.biggieicon.primary-color{:href => "#"}
+                    %i.e-icon-shareable
+                .span9
+                  %h4 Sum it up!
+                  %p We have proven we know that it is better to disintermediate intuitively than to expedite virally. The dot-com, mission-critical structuring factor can be summed up in one word: compelling.
+                  %p
+                    %a.btn.custom-btn.btn-small.btn-very-subtle{:href => "#"} More &rarr;
+              .span4
+                .span3
+                  %a.biggieicon.primary-color{:href => "#"}
+                    %i.e-icon-link
+                .span9
+                  %h4 Factor the Short Term
+                  %p The accounting factor is short-term. Our functionality is unmatched, but our transparent models and user-proof configuration is constantly considered a remarkable achievement.
+                  %p
+                    %a.btn.custom-btn.btn-small.btn-very-subtle{:href => "#"} More &rarr;
+            / close row-fluid
+          / close .container
+        / close .strip
+        .container
+          .row-fluid
+            .span4
+              .well
+                %h4.primary-color Amplify our power to benchmark
+                %p
+                  %img.alignleft{:alt => "", :src => "../demo/well-fpo.png"}/
+                  Without reporting, you will lack eyeballs. We will amplify our power to benchmark without decreasing our capacity to mesh. We will reinvent the buzzword "frictionless".
+                %p.text-right
+                  %a.btn.custom-btn.btn-primary{:href => "#"} Linktoit
+              / close .well
+            / close span4
+            .rotating-testimonials.span8
+              / "rotating-testimonials" is a required class
+              %h3.short_headline
+                %span Testimonials
+              .panels
+                #t1
+                  %blockquote
+                    %p One isn’t necessarily born with courage, but one is born with potential. Without courage, we cannot practice any other virtue with consistency. We can’t be kind, true, merciful, generous, or honest.
+                    %footer Maya Angelou
+                / close #t1
+                #t2
+                  %blockquote
+                    %p When the highest type of people hear Tao (Truth), they diligently practice it. When the average type of people hear Tao, they half believe in it. When the lowest type of people hear Tao, they laugh at it. If they did not laugh, it would not be Tao.
+                    %footer Lao-Tzu
+                / close #t2
+                #t3
+                  %blockquote
+                    %p The human being is part of the whole, called by us the ‘universe’, a part limited in time and space. He experiences himself, his thoughts and feelings, as something separate from the rest — a kind of optical delusion of consciousness. This delusion is a kind of prison for us, restricting us to our personal desires. Our task must be to free ourselves from this prison by widening our circle of compassion to embrace all living creatures and the whole of nature in its beauty.
+                    %footer Albert Einstein
+                / close #t3
+                #t4
+                  %blockquote
+                    %p Whatever course you decide upon, there is always someone to tell you that you are wrong. There are always difficulties arising which tempt you to believe that your critics are right. To map out a course of action and follow it to an end requires courage.
+                    %footer Ralph Waldo Emerson
+                / close #t4
+              / close panels
+              %ul.tabs
+                %li.tab
+                  %a{:href => "#t1"} maya-angelou
+                %li.tab
+                  %a{:href => "#t2"} lao-tzu
+                %li.tab
+                  %a{:href => "#t3"} albert-einstein
+                %li.tab
+                  %a{:href => "#t4"} ralph-waldo-emerson
+              %p.text-right
+                %a.btn.custom-btn.btn-small.btn-very-subtle{:href => "testimonials.html"} All Testimonials
+            / end rotating-testimonials span8
+          / end row-fluid
+        / close .container
+      / close .main-content
+      / begin footer
+      %footer.footer.clearfix
+        .container
+          / footer container
+          .row-fluid
+            .span3
+              %section
+                %h4 Contact Us
+                %p
+                  Corporate-Elegance Creative
+                  %br/
+                  1255 Nowhere Street
+                  %br/
+                  Tampa, FL 33655
+                  %br/
+                  %strong phone:
+                  %a.tele{:href => "tel:8135551234"} 813.555.1234
+                  %br/
+                  %strong fax:
+                  813.555.1235
+                  %br/
+                  %span.overflow
+                    %strong email:
+                    %a{:href => "mailto:email@domain.com"} email@companydomain.com
+              / close section
+              %section
+                %h4 Follow Us
+                %ul.social
+                  %li
+                    %a.fc-webicon.rss.round{:href => "#", :title => "RSS"}
+                  %li
+                    %a.fc-webicon.facebook.round{:href => "#", :title => "Facebook"}
+                  %li
+                    %a.fc-webicon.twitter.round{:href => "#", :title => "Twitter"}
+                  %li
+                    %a.fc-webicon.skype.round{:href => "#", :title => "Skype"}
+                  %li
+                    %a.fc-webicon.dribbble.round{:href => "#", :title => "dribble"}
+                  %li
+                    %a.fc-webicon.linkedin.round{:href => "#", :title => "Skype"}
+              / close section
+            / close .span3
+            / section containing newsletter signup and recent images
+            .span5
+              %section
+                %h4 Stay Updated
+                %p Sign up for our newsletter. We won't share your email address.
+                %form{:action => "yourscript.php", :method => "post"}
+                  .input-append.append-fix.custom-append.row-fluid
+                    %input.span8{:name => "email", :placeholder => "Email Address", :type => "email"}/
+                    %button.btn.btn-primary Sign Up
+                / close input-append
+              / close section
+              %section
+                %h4 Recent Images
+                %ul.image-widget.clearfix
+                  %li
+                    %a{:href => "#"}
+                      %img{:alt => "", :src => "../demo/image-widget/1.png"}/
+                  %li
+                    %a{:href => "#"}
+                      %img{:alt => "", :src => "../demo/image-widget/2.png"}/
+                  %li
+                    %a{:href => "#"}
+                      %img{:alt => "", :src => "../demo/image-widget/3.png"}/
+                  %li
+                    %a{:href => "#"}
+                      %img{:alt => "", :src => "../demo/image-widget/4.png"}/
+                  %li
+                    %a{:href => "#"}
+                      %img{:alt => "", :src => "../demo/image-widget/5.png"}/
+                  %li
+                    %a{:href => "#"}
+                      %img{:alt => "", :src => "../demo/image-widget/6.png"}/
+                  %li
+                    %a{:href => "#"}
+                      %img{:alt => "", :src => "../demo/image-widget/7.png"}/
+                  %li
+                    %a{:href => "#"}
+                      %img{:alt => "", :src => "../demo/image-widget/8.png"}/
+                  %li
+                    %a{:href => "#"}
+                      %img{:alt => "", :src => "../demo/image-widget/9.png"}/
+                  %li
+                    %a{:href => "#"}
+                      %img{:alt => "", :src => "../demo/image-widget/10.png"}/
+                  %li
+                    %a{:href => "#"}
+                      %img{:alt => "", :src => "../demo/image-widget/11.png"}/
+                  %li
+                    %a{:href => "#"}
+                      %img{:alt => "", :src => "../demo/image-widget/12.png"}/
+              / close section
+            / close .span5
+            / section containing blog posts
+            .span4
+              %section
+                %h4 About Us
+                %p
+                  Immortal robot bodies are the new rage. Religion can’t provide immortal robot bodies. Flying heads in bubbles are also popular. The cost of preserving a head is much less than the entire body and at least you can keep your face. But with the immortal robot, after you die, your soul or spirit is digitized and your flesh body rots, but you don’t care, ‘cause having an immortal robot body is ultra cool and sexy. While you’re still on earth, your immortal robot body sits in storage ready for the fateful day. You betcha, it does provide peace of mind or piece of mind.
+                  %span.small © Christina Arasmo Beymer (me).
+            / close .span4
+          / close .row-fluid
+        / close footer .container
+      / /close footer
+      / change this to your stuff
+      %section.footer-credits
+        .container
+          %ul.clearfix
+            %li © 2013 Your Company Name. All rights reserved.
+            %li
+              %a{:href => "#"} Link
+            %li
+              %a{:href => "#"} Link
+        / close footer-credits container
+      / close section .footer-credits
+      %span.backToTop
+        %a{:href => "#top"}
+          %i.e-icon-up-open-big
+    / close #page
+    / *****************Theme switcher html - requires switcher.css *********************
+    #switcher-wrapper
+      .toggle
+        %i.e-icon-plus
+      #switcher
+        %h3 Choose A Color
+        %p.small There is a flash of the blue color while a page loads, this ONLY happens in the demo due to the script that switches the colors or fonts
+        %section.clearfix
+          %a.color.corblue{:href => "javascript: void(0)", :title => "Corporate Blue"} Corporate Blue
+          %a.color.gray{:href => "javascript: void(0)", :title => "Gray"} Gray
+          %a.color.softgreen{:href => "javascript: void(0)", :title => "Soft Green"} Soft Green
+          %a.color.srbrown{:href => "javascript: void(0)", :title => "Soft Rust Brown"} Soft Rust Brown
+          %a.color.mteal{:href => "javascript: void(0)", :title => "Muted Teal"} Muted Teal
+        %h6
+          %a.reset.btn.btn-inverse{:href => "javascript: void(0)", :title => "Reset"} Color Reset
+        %h3 Font Ideas
+        %p.small
+          %i.e-icon-info
+          Font choices affect the masonry layouts ONLY in this demo. In a real environment, the masonry stacks fine.
+        %p
+        %ul
+          %li
+            %a.font0{:href => "javascript: void(0)"} Source Sans Pro
+          %li
+            %a.font1{:href => "javascript: void(0)"} Play Fair & Garamondish fontstack
+          %li
+            %a.font2{:href => "javascript: void(0)"} Roboto & Helvetica, Arial, etc.
+          %li
+            %a.font3{:href => "javascript: void(0)"} Arvo & Source Sans Pro
+          %li
+            %a.font4{:href => "javascript: void(0)"} Oxygen & Helvetica, Arial, etc.
+        %h6
+          %a.resetfont.btn.btn-primary{:href => "javascript: void(0)", :title => "Reset"} Font Reset
+    / *****************Theme switcher html *********************
+    / JS General Site COMBINE AND COMPRESS WHEN YOU FIGURE OUT WHAT YOU WANT TO USE comes with unpacked versions ================
+    %script{:src => "assets/js/theme-menu.js"}
+    / menu
+    %script{:src => "assets/js/jquery.easing-1.3.min.js"}
+    / easing
+    %script{:src => "assets/js/bootstrap.min.js"}
+    / bootstrap / custom.js loads
+    %script{:src => "assets/js/jquery.easytabs.min.js"}
+    / tabs/testimonials custom.js / loads
+    %script{:src => "assets/js/slide-to-top-accordion.min.js"}
+    / slide to top accordion toggle / custom.js loads
+    %script{:src => "assets/js/bootstrap-progressbar.min.js"}
+    / progress bar loading in page
+    / Fancy Box and Isotope ================
+    %script{:src => "assets/js/jquery.isotope.min.js"}
+    / filter masonry script AND loading
+    %script{:defer => "", :src => "assets/js/fancybox/source/custom-fancybox-combined.js"}
+    / all fancy box buttons, media, helpers, thumbs AND loading
+    / Sliders ================
+    %script{:src => "assets/js/jquery.flexslider.min.js"}
+    / flexslider (twitter, blog, portfolio, full width) AND loading
+    %script{:src => "assets/js/lemmon-slider.min.js"}
+    / variable width image slider AND loading
+    / initialize scripts / custom scripts
+    %script{:src => "assets/js/custom.js"}
