@@ -10,12 +10,14 @@
     = stylesheet_link_tag "application_ext"
     = csrf_meta_tags
 
-  %body
+  %body.desktop
 
     =render "partials/clean_header"
+
     #page.clearfix
       .feature-strip
         .container
+
           .row-fluid.pricingTable
             .option3.span5
               .wrapper.white-bg
@@ -54,126 +56,27 @@
                       Submit a Bid
                       %i.icon-check.icon-white
 
-            .span7{style: "background-color: black"}
-              #portfolio-slider.flexslider
-                %ul.slides
-                  %li
-                    %a.zoom-image.fancyme{"data-fancybox-group" => "portfolio", :href => "../demo/portfolio/1-lrg.jpg"}
-                      %i.e-icon-search
-                    %img{:alt => "", :src => "assets/demo/portfolio/1.jpg"}/
-                  %li
-                    %a.zoom-image.fancyme{"data-fancybox-group" => "portfolio", :href => "../demo/portfolio/2-lrg.jpg"}
-                      %i.e-icon-search
-                    %img{:alt => "", :src => "assets/demo/portfolio/2.jpg"}/
-                  %li
-                    %a.zoom-image.fancyme{"data-fancybox-group" => "portfolio", :href => "../demo/portfolio/3-lrg.jpg"}
-                      %i.e-icon-search
-                    %img{:alt => "", :src => "assets/demo/portfolio/3.jpg"}/
-                  %li
-                    %a.zoom-image.fancyme{"data-fancybox-group" => "portfolio", :href => "../demo/portfolio/4-lrg.jpg"}
-                      %i.e-icon-search
-                    %img{:alt => "", :src => "assets/demo/portfolio/4.jpg"}/
-                  %li
-                    %a.zoom-image.fancyme{"data-fancybox-group" => "portfolio", :href => "../demo/portfolio/5-lrg.jpg"}
-                      %i.e-icon-search
-                    %img{:alt => "", :src => "assets/demo/portfolio/5.jpg"}/
-                  %li
-                    %a.zoom-image.fancyme{"data-fancybox-group" => "portfolio", :href => "../demo/portfolio/6-lrg.jpg"}
-                      %i.e-icon-search
-                    %img{:alt => "", :src => "assets/demo/portfolio/6.jpg"}/
-                  %li
-                    %a.zoom-image.fancyme{"data-fancybox-group" => "portfolio", :href => "../demo/portfolio/7-lrg.jpg"}
-                      %i.e-icon-search
-                    %img{:alt => "", :src => "assets/demo/portfolio/7.jpg"}/
-              / End Slider
-              / Begin Carousel
-              #portfolio-carousel.flexslider
-                %ul.slides
-                  / notice that these are background images because youtube and vimeo images fetched dynamically are not the same size
-                  %li
-                    %img{:alt => "", :src => "assets/demo/portfolio/1.jpg"}/
-                  %li
-                    %img{:alt => "", :src => "assets/demo/portfolio/2.jpg"}/
-                  %li
-                    %img{:alt => "", :src => "assets/demo/portfolio/3.jpg"}/
-                  %li
-                    %img{:alt => "", :src => "assets/demo/portfolio/4.jpg"}/
-                  %li
-                    %img{:alt => "", :src => "assets/demo/portfolio/5.jpg"}/
-                  %li
-                    %img{:alt => "", :src => "assets/demo/portfolio/6.jpg"}/
-                  %li
-                    %img{:alt => "", :src => "assets/demo/portfolio/7.jpg"}/
+            .span6.offset1
+              .carousel.slide
+                .carousel-inner
+                  .item.active
+                    = image_tag "http://127.0.0.1:3000/assets/interior_house1.jpg"
+                    .carousel-caption
+                      %p Photo Caption
 
-                  -#= link_to raw("&lsaquo;"), "#portfolio_photos", class: "carousel-control left", data: {slide: "prev"}
-                  -#= link_to raw("&rsaquo;"), "#portfolio_photos", class: "carousel-control right", data: {slide: "next"}
+                -#= link_to raw("&lsaquo;"), "#portfolio_photos", class: "carousel-control left", data: {slide: "prev"}
+                -#= link_to raw("&rsaquo;"), "#portfolio_photos", class: "carousel-control right", data: {slide: "next"}
+
               .row#helper_tabs
-                .span3.offset1
-                  Ask a question
-                .span3
-                  Service area
-                .span3
-                  Reviews
-
-            -#.span7
-            -#  .lemmon-wrap.clearfix
-            -#    #lemmon-slider.lemmon-slider
-            -#      %ul
-            -#        %li
-            -#          %a{:href => "portfolio-single.html"}
-            -#            %img{:alt => "", :src => "../demo/lemmon-slider/1.jpg"}/
-            -#          .summary
-            -#            %a{:href => "portfolio-single.html"}
-            -#            %h3 Title Goes Here
-            -#            %p Categories
-            -#        %li
-            -#          %a{:href => "portfolio-single.html"}
-            -#            %img{:alt => "", :src => "../demo/lemmon-slider/3.jpg"}/
-            -#          .summary
-            -#            %a{:href => "portfolio-single.html"}
-            -#            %h3 Title Goes Here
-            -#            %p Categories
-            -#        %li
-            -#          %a{:href => "portfolio-single.html"}
-            -#            %img{:alt => "", :src => "../demo/lemmon-slider/4.jpg"}/
-            -#          .summary
-            -#            %a{:href => "portfolio-single.html"}
-            -#            %h3 Title Goes Here
-            -#            %p Art
-            -#        %li
-            -#          %a{:href => "portfolio-single.html"}
-            -#            %img{:alt => "", :src => "../demo/lemmon-slider/5.jpg"}/
-            -#          .summary
-            -#            %a{:href => "portfolio-single.html"}
-            -#            %h3 Title Goes Here
-            -#            %p Photography
-            -#        %li
-            -#          %a{:href => "portfolio-single.html"}
-            -#            %img{:alt => "", :src => "../demo/lemmon-slider/6.jpg"}/
-            -#          .summary
-            -#            %a{:href => "portfolio-single.html"}
-            -#            %h3 Title Goes Here
-            -#            %p Photography
-            -#        %li
-            -#          %a{:href => "portfolio-single.html"}
-            -#            %img{:alt => "", :src => "../demo/lemmon-slider/7.jpg"}/
-            -#          .summary
-            -#            %a{:href => "portfolio-single.html"}
-            -#            %h3 Title Goes Here
-            -#            %p Categories
-            -#        %li
-            -#          %a{:href => "portfolio-single.html"}
-            -#            %img{:alt => "", :src => "../demo/lemmon-slider/2.jpg"}/
-            -#          .summary
-            -#            %a{:href => "portfolio-single.html"}
-            -#            %h3 Title Goes Here
-            -#            %p Categories
-
-              .controls
-                %a.prev-page{:href => "javascript:void(0)"}
-                  %i.e-icon-left-open-big
-                %a.next-page{:href => "javascript:void(0)"}
-                  %i.e-icon-right-open-big
+                .span4.no-bg
+                  %a.link-tab
+                    %i.icon-comment.icon-white &nbsp Ask a question
+                .span4.no-bg
+                  %a.link-tab
+                    %i.icon-map-marker.icon-white &nbsp Service area
+                .span4.no-bg
+                  %a.link-tab
+                    %i.icon-star.icon-white &nbsp Reviews
 
 
       .main-content
@@ -211,11 +114,11 @@
                     Four
 
               .span3
-                =image_tag "http://placehold.it/200x150"
+                =image_tag "/assets/profile/staticmap.png"
 
 
             %section.call-to-action
-              %h2 Submit project details straight from your smartphone.
+              %h2 Submit project details straight from the convenience smartphone.
               %a.btn.custom-btn.btn-large.btn-primary{:href => "pricing-tables.html"}
                 Download App
                 %i.e-icon-forward
@@ -249,8 +152,8 @@
                     %footer Al Gore
                 #t4
                   %blockquote
-                    %p Now listen, you queer, you stop calling me a crypto-Nazi or I’ll sock you in the goddamn face and you’ll stay plastered.
-                    %footer William F. Buckley to Gore Vidal
+                    %p Homespree is the single reason I created the internet.
+                    %footer Al Gore
 
               %ul.tabs
                 %li.tab
@@ -264,244 +167,4 @@
               %p.text-right
                 %a.btn.custom-btn.btn-small.btn-very-subtle{:href => "testimonials.html"} All Testimonials
 
-      %footer.footer.clearfix
-        .container
-          .row-fluid
-            .span3
-              %section
-                %h4 Contact Us
-                %p
-                  Homespree
-                  %br/
-                  New York
-                  %br/
-                  New York, NY 10027
-                  %br/
-                  %strong phone:
-                  %a.tele{:href => "tel:8135551234"} 661.555.1234
-                  %br/
-                  %span.overflow
-                    %strong email:
-                    %a{:href => "mailto:support@myhomespree.com"} support@myhomespree.com
-
-              %section
-                %h4 Follow Us
-                %ul.nav.accordmobile
-                  %li.simple-social
-                    %a{:href => "#"}
-                      %i.e-icon-facebook
-                  %li.simple-social
-                    %a{:href => "#"}
-                      %i.e-icon-gplus
-                  %li.simple-social.last
-                    %a{:href => "#"}
-                      %i.e-icon-twitter
-                -#%ul.social
-                -#  %li
-                -#    %a.fc-webicon.rss.round{:href => "#", :title => "RSS"}
-                -#  %li
-                -#    %a.fc-webicon.facebook.round{:href => "#", :title => "Facebook"}
-                -#  %li
-                -#    %a.fc-webicon.twitter.round{:href => "#", :title => "Twitter"}
-                -#  %li
-                -#    %a.fc-webicon.skype.round{:href => "#", :title => "Skype"}
-                -#  %li
-                -#    %a.fc-webicon.dribbble.round{:href => "#", :title => "dribble"}
-                -#  %li
-                -#    %a.fc-webicon.linkedin.round{:href => "#", :title => "Skype"}
-
-            .span5
-              %section
-                %h4 Stay Updated
-                %p Sign up for the Homespree newsletter. We won't share your email address.
-                %form{:action => "yourscript.php", :method => "post"}
-                  .input-append.append-fix.custom-append.row-fluid
-                    %input.span8{:name => "email", :placeholder => "Email Address", :type => "email"}/
-                    %button.btn.btn-primary Sign Up
-
-              %section
-                %h4 Recent Jobs
-                %ul.image-widget.clearfix
-                  %li
-                    %a{:href => "#"}
-                      %img{:alt => "", :src => "http://placehold.it/50x50"}/
-                  %li
-                    %a{:href => "#"}
-                      %img{:alt => "", :src => "http://placehold.it/50x50"}/
-                  %li
-                    %a{:href => "#"}
-                      %img{:alt => "", :src => "http://placehold.it/50x50"}/
-                  %li
-                    %a{:href => "#"}
-                      %img{:alt => "", :src => "http://placehold.it/50x50"}/
-                  %li
-                    %a{:href => "#"}
-                      %img{:alt => "", :src => "http://placehold.it/50x50"}/
-                  %li
-                    %a{:href => "#"}
-                      %img{:alt => "", :src => "http://placehold.it/50x50"}/
-                  %li
-                    %a{:href => "#"}
-                      %img{:alt => "", :src => "http://placehold.it/50x50"}/
-                  %li
-                    %a{:href => "#"}
-                      %img{:alt => "", :src => "http://placehold.it/50x50"}/
-                  %li
-                    %a{:href => "#"}
-                      %img{:alt => "", :src => "http://placehold.it/50x50"}/
-                  %li
-                    %a{:href => "#"}
-                      %img{:alt => "", :src => "http://placehold.it/50x50"}/
-                  %li
-                    %a{:href => "#"}
-                      %img{:alt => "", :src => "http://placehold.it/50x50"}/
-                  %li
-                    %a{:href => "#"}
-                      %img{:alt => "", :src => "http://placehold.it/50x50"}/
-
-            .span4
-              %section
-                %h4 About Homespree
-                %p
-                  Homespree makes your life easier
-                  %span.small © Homespree
-
-      %section.footer-credits
-        .container
-          %ul.clearfix
-            %li © 2013 Homespree. All rights reserved.
-            %li
-              %a{:href => "#"} Link
-            %li
-              %a{:href => "#"} Link
-
-      %span.backToTop
-        %a{:href => "#top"}
-          %i.e-icon-up-open-big
-
-    #switcher-wrapper
-      .toggle
-        %i.e-icon-plus
-      #switcher
-        %h3 Choose A Color
-        %p.small There is a flash of the blue color while a page loads, this ONLY happens in the demo due to the script that switches the colors or fonts
-        %section.clearfix
-          %a.color.corblue{:href => "javascript: void(0)", :title => "Corporate Blue"} Corporate Blue
-          %a.color.gray{:href => "javascript: void(0)", :title => "Gray"} Gray
-          %a.color.softgreen{:href => "javascript: void(0)", :title => "Soft Green"} Soft Green
-          %a.color.srbrown{:href => "javascript: void(0)", :title => "Soft Rust Brown"} Soft Rust Brown
-          %a.color.mteal{:href => "javascript: void(0)", :title => "Muted Teal"} Muted Teal
-        %h6
-          %a.reset.btn.btn-inverse{:href => "javascript: void(0)", :title => "Reset"} Color Reset
-        %h3 Font Ideas
-        %p.small
-          %i.e-icon-info
-          Font choices affect the masonry layouts ONLY in this demo. In a real environment, the masonry stacks fine.
-        %p
-        %ul
-          %li
-            %a.font0{:href => "javascript: void(0)"} Source Sans Pro
-          %li
-            %a.font1{:href => "javascript: void(0)"} Play Fair & Garamondish fontstack
-          %li
-            %a.font2{:href => "javascript: void(0)"} Roboto & Helvetica, Arial, etc.
-          %li
-            %a.font3{:href => "javascript: void(0)"} Arvo & Source Sans Pro
-          %li
-            %a.font4{:href => "javascript: void(0)"} Oxygen & Helvetica, Arial, etc.
-        %h6
-          %a.resetfont.btn.btn-primary{:href => "javascript: void(0)", :title => "Reset"} Font Reset
-
-
-    :javascript
-      $(window).load(function (){
-
-          $('.flexslider').flexslider();
-          $('.full-width-slider.flexslider').flexslider({
-              animation: "slide",
-              touch: true,
-              prevText: "<i class='e-icon-left-open-big'></i>",
-              nextText: "<i class=' e-icon-right-open-big'></i>",
-              start: function(){
-                  $(".bg").remove();
-              },
-              smoothHeight: true
-          });
-      });
-
-
-       // featured slider images and captions
-      $(window).load(function () {
-          $('.feature-strip-image-slider.flexslider').flexslider({
-              animation: "slide",
-              touch: true,
-              animationLoop: true,
-              smoothHeight: true,
-              controlNav: true,
-              useCSS: false //thins type if true and screws up video
-          });
-      });
-
-       // image slider (default fallback image slider with captions and directional left and right links see blog slider example page)
-       $(window).load(function () {
-          $('.image-slider').flexslider({
-              animation: "slide",
-              touch: true,
-              animationLoop: false,
-              smoothHeight: true,
-              controlNav: false,
-              prevText: "<i class='e-icon-left-open-big'></i>",
-              nextText: "<i class=' e-icon-right-open-big'></i>",
-              useCSS: false //thins type if true and screws up video
-          });
-       });
-
-      //** window load works best with carousel *//
-       $(window).load(function () {
-          // The slider being synced must be initialized first
-          $('#portfolio-carousel').flexslider({
-              animation: "slide",
-              controlNav: false,
-              animationLoop: false,
-              slideshow: false,
-              itemWidth: 100,
-              itemMargin: 5,
-              useCSS: false, //thins type if true
-              asNavFor: '#portfolio-slider'
-          });
-
-          $('#portfolio-slider').flexslider({
-              animation: "slide",
-              controlNav: false,
-              animationLoop: false,
-              prevText: "<i class='e-icon-left-open-big'></i>",
-              nextText: "<i class=' e-icon-right-open-big'></i>",
-              slideshow: false,
-              touch: true,
-              sync: "#portfolio-carousel",
-              smoothHeight: true,
-              useCSS: false //thins type if true
-          });
-       });
-    -#%script{:src => "assets/js/theme-menu.js"}
-    -#/ menu
-    -#%script{:src => "assets/js/jquery.easing-1.3.min.js"}
-    -#/ easing
-    -#%script{:src => "assets/js/jquery.easytabs.min.js"}
-    -#/ tabs/testimonials custom.js / loads
-    -#%script{:src => "assets/js/slide-to-top-accordion.min.js"}
-    -#/ slide to top accordion toggle / custom.js loads
-    -#%script{:src => "assets/js/bootstrap-progressbar.min.js"}
-    -#/ progress bar loading in page
-    -#/ Fancy Box and Isotope ================
-    -#%script{:src => "assets/js/jquery.isotope.min.js"}
-    -#/ filter masonry script AND loading
-    -#%script{:defer => "", :src => "assets/js/fancybox/source/custom-fancybox-combined.js"}
-    -#/ all fancy box buttons, media, helpers, thumbs AND loading
-    -#/ Sliders ================
-    -#%script{:src => "assets/js/jquery.flexslider.min.js"}
-    -#/ flexslider (twitter, blog, portfolio, full width) AND loading
-    -#%script{:src => "assets/js/lemmon-slider.min.js"}
-    -#/ variable width image slider AND loading
-    -#/ initialize scripts / custom scripts
-    -#%script{:src => "assets/js/custom.js"}
+      =render "partials/clean_footer"

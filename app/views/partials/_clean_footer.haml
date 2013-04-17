@@ -1,0 +1,121 @@
+%footer.footer.clearfix
+  .container
+    .row-fluid
+      .span3
+        %section
+          =image_tag "/assets/homespreelogofooter.png"
+
+        %section
+          %h4 Contact Us
+          %p
+            New York
+            %br/
+            New York, NY 10027
+            %br/
+            %strong phone:
+            %a.tele{:href => "tel:8135551234"} 661.555.1234
+            %br/
+            %span.overflow
+              %strong email:
+              %a{:href => "mailto:support@myhomespree.com"} support@myhomespree.com
+
+        %section
+          %h4 Follow Us
+          %ul.nav.accordmobile
+            %li.simple-social
+              %a{:href => "#"}
+                %i.e-icon-facebook
+            %li.simple-social
+              %a{:href => "#"}
+                %i.e-icon-gplus
+            %li.simple-social.last
+              %a{:href => "#"}
+                %i.e-icon-twitter
+          -#%ul.social
+          -#  %li
+          -#    %a.fc-webicon.rss.round{:href => "#", :title => "RSS"}
+          -#  %li
+          -#    %a.fc-webicon.facebook.round{:href => "#", :title => "Facebook"}
+          -#  %li
+          -#    %a.fc-webicon.twitter.round{:href => "#", :title => "Twitter"}
+          -#  %li
+          -#    %a.fc-webicon.skype.round{:href => "#", :title => "Skype"}
+          -#  %li
+          -#    %a.fc-webicon.dribbble.round{:href => "#", :title => "dribble"}
+          -#  %li
+          -#    %a.fc-webicon.linkedin.round{:href => "#", :title => "Skype"}
+
+      .span5
+        %section
+          %h4 Stay Updated
+          %p Sign up for the Homespree newsletter. We won't share your email address.
+          %form{:action => "yourscript.php", :method => "post"}
+            .input-append.append-fix.custom-append.row-fluid
+              %input.span8{:name => "email", :placeholder => "Email Address", :type => "email"}/
+              %button.btn.btn-primary Sign Up
+
+        %section
+          %h4 Get Inspired
+          %ul.image-widget.clearfix
+            %li
+              %a{:href => "#"}
+                %img{:alt => "", :src => "http://placehold.it/50x50"}/
+            %li
+              %a{:href => "#"}
+                %img{:alt => "", :src => "http://placehold.it/50x50"}/
+            %li
+              %a{:href => "#"}
+                %img{:alt => "", :src => "http://placehold.it/50x50"}/
+            %li
+              %a{:href => "#"}
+                %img{:alt => "", :src => "http://placehold.it/50x50"}/
+            %li
+              %a{:href => "#"}
+                %img{:alt => "", :src => "http://placehold.it/50x50"}/
+            %li
+              %a{:href => "#"}
+                %img{:alt => "", :src => "http://placehold.it/50x50"}/
+            %li
+              %a{:href => "#"}
+                %img{:alt => "", :src => "http://placehold.it/50x50"}/
+            %li
+              %a{:href => "#"}
+                %img{:alt => "", :src => "http://placehold.it/50x50"}/
+            %li
+              %a{:href => "#"}
+                %img{:alt => "", :src => "http://placehold.it/50x50"}/
+            %li
+              %a{:href => "#"}
+                %img{:alt => "", :src => "http://placehold.it/50x50"}/
+            %li
+              %a{:href => "#"}
+                %img{:alt => "", :src => "http://placehold.it/50x50"}/
+            %li
+              %a{:href => "#"}
+                %img{:alt => "", :src => "http://placehold.it/50x50"}/
+
+      .span4
+        %section
+          %h4 About Homespree
+          %p
+            Homespree makes your life easier
+            %span.small © Homespree
+
+%section.footer-credits
+  .container
+    %ul.clearfix
+      %li © 2013 Homespree. All rights reserved.
+      %li
+        %a{:href => "#"} Link
+      %li
+        %a{:href => "#"} Link
+
+%span.backToTop
+  %a{:href => "#top"}
+    %i.e-icon-up-open-big
+
+:javascript
+  $(document).ready(function(evt) {
+    console.log("loading carousel");
+    $('.carousel').carousel();
+  });

@@ -66,6 +66,10 @@ div.feature-strip {
   display: block !important;
 }
 
+div.feature-strip {
+  background: #5173a4 url(/assets/homebackground.jpg) center center !important;
+}
+
 #portfolio_images {
   background: black !important;
 }
@@ -76,4 +80,15 @@ div.feature-strip {
   .span3 {
     background: white;
   }
+}
+
+div#page {
+  //background: none !important;
+  //background-color: transparent;
+}
+
+span.bg {
+  //display: none !important;
+  background-image: url("/assets/homebackground.jpg") !important;
+  background-size: cover !important;
 }

@@ -835,7 +835,8 @@ h6 + .short_headline,
   padding: 2% 0 !important;
   position: relative !important;
   z-index: 3 !important;
-  background: #5173a4 url(/app/assets/images/images/muted-blue-feature-strip-bg.jpg) center center !important;
+  background: rgba(81, 115, 164, 0.68);
+  background: #5173a4 url(/assets/images/muted-blue-feature-strip-bg.jpg) center center !important;
   -moz-background-size: cover !important;
   -ie-background-size: cover !important;
   -o-background-size: cover !important;
@@ -1162,7 +1163,7 @@ h6 + .short_headline,
 }
 
 .sidebar-left {
-  background-image: url(/app/assets/images/images/rule.png) !important;
+  background-image: url(/assets/images/rule.png) !important;
   background-position: 23.5% 0 !important;
   background-repeat: repeat-y !important;
   position: relative !important;
@@ -1175,7 +1176,7 @@ h6 + .short_headline,
 
 /* --------------------->>> right sidebar <<<---------------------*/
 .sidebar-right {
-  background-image: url(/app/assets/images/images/rule.png) !important;
+  background-image: url(/assets/images/rule.png) !important;
   background-position: 76.5% 0 !important;
   background-repeat: repeat-y !important;
   position: relative !important;
@@ -1188,7 +1189,7 @@ h6 + .short_headline,
 
 /* --------------------->>> three columns fat skinny skinny <<<---------------------*/
 .contemporary-three-columns {
-  background-image: url(/app/assets/images/images/rule.png) !important;
+  background-image: url(/assets/images/rule.png) !important;
   background-position: 50.75% 0 76% 0 !important;
   background-repeat: repeat-y !important;
 }
@@ -1821,7 +1822,7 @@ html[xmlns] .slides, .no-js .slides > li:first-child {
 }
 
 .masonry img {
-  background: #fff url(/app/assets/images/images/loader.gif) no-repeat 50% 50% !important;
+  background: #fff url(/assets/images/loader.gif) no-repeat 50% 50% !important;
   -webkit-border-radius: 3px 3px 0 0 !important;
   -moz-border-radius: 3px 3px 0 0 !important;
   border-radius: 3px 3px 0 0 !important;
@@ -2457,7 +2458,7 @@ only screen and (min-device-pixel-ratio: 2),
 only screen and (min-resolution: 192dpi),
 only screen and (min-resolution: 2dppx) {
   .testimonial-gallery li.primary-color-bg blockquote {
-    background-image: url(/app/assets/images/images/retina/open-quote-white_@2x.png) !important;
+    background-image: url(/assets/images/retina/open-quote-white_@2x.png) !important;
     -moz-background-size: 38px 38px !important;
     -ie-background-size: 38px 38px !important;
     -o-background-size: 38px 38px !important;
@@ -2465,7 +2466,7 @@ only screen and (min-resolution: 2dppx) {
     background-size: 38px 38px !important;
   }
   .masonry img {
-    background-image: url(/app/assets/images/images/retina/loader_@2x.gif) !important;
+    background-image: url(/assets/images/retina/loader_@2x.gif) !important;
     -moz-background-size: 80px 10px !important;
     -ie-background-size: 80px 10px !important;
     -o-background-size: 80px 10px !important;
@@ -2483,7 +2484,7 @@ only screen and (min-device-pixel-ratio: 2) and (max-width: 979px),
 only screen and (min-resolution: 192dpi) and (max-width: 979px),
 only screen and (min-resolution: 2dppx) and (max-width: 979px) {
   .mobile_nav a span {
-    background-image: url(/app/assets/images/images/retina/navtriggerbg_@2x.png) !important;
+    background-image: url(/assets/images/retina/navtriggerbg_@2x.png) !important;
     -moz-background-size: 80px 40px !important;
     -ie-background-size: 80px 40px !important;
     -o-background-size: 80px 40px !important;

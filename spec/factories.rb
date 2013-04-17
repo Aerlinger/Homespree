@@ -1,5 +1,4 @@
 FactoryGirl.define do
-
   factory :contractor do
     sequence :email do |n|
       "contractor#{n}@rspec.com"
@@ -24,7 +23,7 @@ FactoryGirl.define do
   end
 
   factory :invalid_contractor, parent: :contractor do
-
+    email "invalidemail"
   end
 
   factory :minimal_contractor, class: Contractor do
@@ -34,6 +33,18 @@ FactoryGirl.define do
 
     company_title "Mike's Contracting"
     password "iamsecret"
+  end
+
+  factory :mailinglist do
+    sequence :email do |n|
+      "mailinglist#{n}@rspec.com"
+    end
+    user_type "contractor"
+    submitted_from_mobile "true"
+  end
+
+  factory :invalid_mailinglist, parent: :mailinglist do
+    email "testmailer"
   end
 
   factory :photo do
@@ -56,10 +67,4 @@ FactoryGirl.define do
     city Faker::Address.city
     state Faker::Address.state
   end
-
-  factory :mailinglist do
-    email "tester@rspec.com"
-    user_type "contractor"
-  end
-
 end

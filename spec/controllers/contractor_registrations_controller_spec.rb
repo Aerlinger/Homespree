@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Contractors::RegistrationsController, "With valid input", focus: true do
+describe Contractors::RegistrationsController, "With valid input" do
   before :each do
     @request.env["devise.mapping"] = Devise.mappings[:contractor]
   end
@@ -37,7 +37,7 @@ describe Contractors::RegistrationsController, "With valid input", focus: true d
         }.to_not change(Contractor, :count)
       end
       it "rerenders the :new template" do
-        post :create, message: attributes_for(:invalid_message)
+        post :create, contrator: attributes_for(:invalid_contractor)
         expect(response).to render_template :new
       end
     end

@@ -8,7 +8,7 @@ class Contractor < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Accessors:  -------------------------------------------------------------------------------------------------------
-  attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me,
+  attr_accessible :addresses, :specialties, :first_name, :last_name, :email, :password, :remember_me,
                   :description, :mobile_number, :office_number, :company_title, :custom_field,
                   :facebook, :name, :specialties, :twitter, :website, :other_specialties, :specialty_ids
 
