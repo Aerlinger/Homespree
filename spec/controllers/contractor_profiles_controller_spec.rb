@@ -1,45 +1,41 @@
-describe Contractor::ProfilesController, focus: true do
+require 'spec_helper'
 
-  describe "GET #new" do
-    it "assigns a new contractor to @contractor"
-    it "renders the :new template"
-  end
+describe Contractors::ProfilesController do
 
-  describe "POST #create" do
-    context "with valid attributes" do
-      it "saves the new contractor in the database"
-      it "redirects to new profile" do
-        post :create, contractor: attributes_for(:contractor)
-        expect(response).to redirect_to contractor_profile_path
-      end
-    end
-
-    context "with invalid attributes" do
-      it "does not save a new contractor in the database" do
-        expect {
-          post :create, contractor: attributes_for(:invalid_contractor)
-        }.to_not change(Contractor, :count)
-      end
-
-      it "re-renders the :new template" do
-        post :create, contractor: attributes_for(:invalid_contractor)
-        expect(response).to render_template :new
-      end
-    end
+  before :each do
+    @this_contractor = create :contractor
+    @other_contractor = create :contractor
   end
 
   describe "GET #show" do
+    before(:each) { get :show, id: @this_contractor.id }
+
     context "contractor is viewing their own profile" do
-      it "should render controls to edit the page"
+      it "should render controls to edit the page" do
+        expect(response).to render_template :show
+      end
     end
 
-    it "should assign contractor to @contractor"
-    it "should render contractor page"
+    it "should assign contractor to @contractor" do
+      expect(assigns(:contractor)).to eq @this_contractor
+    end
+
+    it "should render contractor page" do
+      expect(response).to render_template(:show)
+    end
   end
 
   describe "GET #edit" do
-    it "assigns the requested contractor @contractor"
-    it "renders the :edit template"
+    before(:each) { xhr :get, :edit, id: @this_contractor.id }
+
+    it "assigns the requested contractor @contractor" do
+      expect(assigns(:contractor)).to eq(@this_contractor)
+    end
+
+    it "renders the :edit template" do
+      #expect(response.body).to have_content message.to_json
+      response.content_type.should eq Mime::JS
+    end
   end
 
   describe "PUT #update" do
@@ -48,7 +44,7 @@ describe Contractor::ProfilesController, focus: true do
     end
 
     it "locates the requested @contractor" do
-      put :update, id: @contractor, contractor: attributes_for(:contractor)
+      put :update, id: @contractor.id, contractor: attributes_for(:contractor, email: "updatedcontractor@rspec.com")
       expect(assigns(:contractor)).to eq(@contractor)
     end
 
@@ -61,23 +57,6 @@ describe Contractor::ProfilesController, focus: true do
     context "with invalid params" do
       it "does not change @contractors attributes"
       it "rerenders edit template"
-    end
-  end
-
-  describe "DELETE #destroy" do
-    before :each do
-      @message = create :@message
-    end
-
-    it "deletes the message" do
-      expect {
-        delete :destroy, id: @contractor
-      }.to change(Contractor, :count).by(-1)
-    end
-
-    it "redirects to messages#index" do
-      delete :destroy, id @contractor
-      expect(response).to redirect_to(root_path)
     end
   end
 

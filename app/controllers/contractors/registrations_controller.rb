@@ -8,10 +8,15 @@ class Contractors::RegistrationsController < Devise::RegistrationsController
     @contractor.addresses.build
   end
 
+  def destroy
+    super
+    redirect_to root_path
+  end
+
   protected
 
   def after_sign_up_path_for(resource)
-    redirect_to contractor_profile_path, params: {id: current_contractor.id}
+    contractors_profiles_url
   end
 
 end
