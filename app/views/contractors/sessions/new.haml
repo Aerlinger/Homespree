@@ -1,18 +1,28 @@
 #login-wraper
-  %form.form.login-form
-    %legend
-      Sign in to
-      %span.blue Homespree
+  = simple_form_for resource, :as => resource_name, :url => session_path(resource_name), class: "form login-form" do |f|
     .body
-      %label Username
-      %input{:type => "text"}/
-      %label Password
-      %input{:type => "password"}/
+      = f.input :email, placeholder: 'user@domain.com'
+      = f.input :password
     .footer
-      %label.checkbox.inline
-        %input#inlineCheckbox1{:type => "checkbox", :value => "option1"}/
-        Remember me
-      %button.btn.btn-success{:type => "submit"} Login
+      -#= f.label class: "checkbox inline"
+        -#= f.input value: "option1", id: "inlineCheckbox1", as: :check_box
+        -#Remember Me
+      = f.button :submit, text: "Login", class: "btn btn-success"
+
+  -#%form.form.login-form
+  -#  %legend
+  -#    Sign in to
+  -#    %span.blue Homespree
+  -#  .body
+  -#    %label Email
+  -#    %input{:type => "text"}/
+  -#    %label Password
+  -#    %input{:type => "password"}/
+  -#  .footer
+  -#    %label.checkbox.inline
+  -#      %input#inlineCheckbox1{:type => "checkbox", :value => "option1"}/
+  -#      Remember me
+  -#    %button.btn.btn-success{:type => "submit"} Login
 
 -#= render "contractors/shared/links"
 

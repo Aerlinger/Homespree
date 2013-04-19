@@ -33,7 +33,6 @@ describe Contractors::ProfilesController do
     end
 
     it "renders the :edit template" do
-      #expect(response.body).to have_content message.to_json
       response.content_type.should eq Mime::JS
     end
   end
@@ -49,19 +48,35 @@ describe Contractors::ProfilesController do
     end
 
     context "with valid params" do
-      it "save the new contractor in the database"
+      it "save the new contractor in the database" do
+        put :update, id: @contractor, contractor: attributes_for(:contractor, first_name: "George")
+        @contractor.reload
+        expect(@contractor.first_name).to eq("George")
+      end
 
-      it "redirects to the updated contractor profile"
+      it "redirects to the updated contractor profile" do
+        put :update, id: @contractor, contractor: attributes_for(:contractor, first_name: "George")
+        expect(response).to redirect_to "/contractors/profiles/#{@contractor.id}"
+      end
     end
 
     context "with invalid params" do
-      it "does not change @contractors attributes"
-      it "rerenders edit template"
+      it "does not change @contractors attributes" do
+        put :update, id: @contractor, contractor: attributes_for(:contractor, email: "lol")
+        expect(response).to render_template(:edit)
+      end
+
+      it "rerenders edit template" do
+        put :update, id: @contractor, contractor: attributes_for(:contractor, email: "lol")
+      end
     end
   end
 
   describe "GET #index" do
-    it "should only render view for an admin"
+    it "should only render view for an admin" do
+      get :index
+      expect(response.status).to eq 401
+    end
   end
 
 end

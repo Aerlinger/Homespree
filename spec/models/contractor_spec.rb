@@ -62,7 +62,7 @@ describe Contractor do
     contractor = create :contractor
     duplicate_contractor = build :contractor, email: contractor.email
 
-    expect(duplicate_contractor).to have(1).errors_on(:email)
+    expect(duplicate_contractor).to have(2).errors_on(:email)
   end
 
   describe "valid contractor" do

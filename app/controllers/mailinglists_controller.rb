@@ -1,11 +1,7 @@
 class MailinglistsController < ApplicationController
 
   def create
-    @user_email = Mailinglist.create! do |submission|
-      submission.email = params[:email]
-      submission.submitted_from_mobile = params[:submitted_from_mobile]
-      submission.user_type = params[:user_type]
-    end
+    @user_email = Mailinglist.create!(params[:mailinglist])
 
     respond_to do |format|
       format.js

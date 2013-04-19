@@ -9,11 +9,12 @@ describe "Home page" do
   subject { page }
 
   describe "submitting an email from the home page" do
-    it "should submit to create" do
-      fill_in "email_signup", with: "testmailinglist@rspec.com"
-      click_link "Homeowner"
-      click_button "submit_location"
-      current_path.should eq "/mailinglist/create"
+    it "should raise invalid record when submitted with incomplete info" do
+      expect {
+        fill_in "email_signup", with: "testmailinglist@rspec.com"
+        #click_button "Homeowner"
+        click_button "submit_location"
+      }.to raise_exception(ActiveRecord::RecordInvalid)
     end
   end
 

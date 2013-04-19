@@ -4,11 +4,12 @@ describe 'Contractor Profile' do
 
   before :each do
     visit new_contractor_session_path
+
     @contractor = FactoryGirl.create :contractor
 
-    fill_in "Email", with: @contractor.email
-    fill_in "Password", with: @contractor.password
-    click_button "Sign In"
+    fill_in "contractor_email", with: @contractor.email
+    fill_in "contractor_password", with: @contractor.password
+    click_button "Create Contractor"
   end
 
   subject { page }
@@ -37,8 +38,6 @@ describe 'Contractor Profile' do
       end
 
       its(:current_path) { should eq root_path }
-
-      it "should show flash message on sign out"
     end
   end
 

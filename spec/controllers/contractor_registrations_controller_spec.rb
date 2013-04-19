@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Contractors::RegistrationsController, "With valid input", focus: true do
+describe Contractors::RegistrationsController, "With valid input" do
 
   before :each do
     @request.env["devise.mapping"] = Devise.mappings[:contractor]
@@ -20,7 +20,11 @@ describe Contractors::RegistrationsController, "With valid input", focus: true d
 
   describe "POST #create" do
     context "with valid attributes" do
-      it "saves the new contractor in the database"
+      it "saves the new contractor in the database" do
+        expect {
+          post :create, contractor: attributes_for(:contractor)
+        }.to change(Contractor, :count).by(1)
+      end
       it "redirects to new profile" do
         post :create, contractor: attributes_for(:contractor)
         expect(response).to redirect_to contractors_profiles_path

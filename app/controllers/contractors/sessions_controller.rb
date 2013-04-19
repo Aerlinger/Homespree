@@ -1,5 +1,4 @@
 class Contractors::SessionsController < Devise::SessionsController
-
   layout "registration"
 
   def new
@@ -7,18 +6,21 @@ class Contractors::SessionsController < Devise::SessionsController
     @contactor = Contractor.new
   end
 
-  def show
+  def create
     super
-    @contractor = current_contractor
   end
 
-  def update
-    @contractor = current_contractor
-    @contractor.attributes = params[:contractor]
+  def destroy
+    super
   end
+
+  protected
 
   def after_sign_in_path_for(resource)
     contractors_profile_path id: resource.id
   end
 
+  def after_sign_out_path_for(resource)
+    root_path
+  end
 end

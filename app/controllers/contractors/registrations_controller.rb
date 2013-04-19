@@ -8,9 +8,25 @@ class Contractors::RegistrationsController < Devise::RegistrationsController
     @contractor.addresses.build
   end
 
+  def create
+    super
+  end
+
+  def edit
+    super
+  end
+
+  def update
+    super
+  end
+
   def destroy
     super
     redirect_to root_path
+  end
+
+  def cancel
+    super
   end
 
   protected

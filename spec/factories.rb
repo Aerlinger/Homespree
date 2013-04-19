@@ -40,7 +40,6 @@ FactoryGirl.define do
       "mailinglist#{n}@rspec.com"
     end
     user_type "contractor"
-    submitted_from_mobile "true"
   end
 
   factory :invalid_mailinglist, parent: :mailinglist do

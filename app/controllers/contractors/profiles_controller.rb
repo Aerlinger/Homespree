@@ -2,6 +2,8 @@ class Contractors::ProfilesController < ApplicationController
 
   layout "static_page", except: [:show]
 
+  http_basic_authenticate_with name: "admin", password: "Meetmike9", only: :index
+
   def index
     @contractors = Contractor.all
 
