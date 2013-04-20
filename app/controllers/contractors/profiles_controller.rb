@@ -1,6 +1,6 @@
 class Contractors::ProfilesController < ApplicationController
 
-  layout "static_page", except: [:show]
+  layout "static_page", except: [:show, :edit]
 
   http_basic_authenticate_with name: "admin", password: "Meetmike9", only: :index
 
@@ -19,9 +19,6 @@ class Contractors::ProfilesController < ApplicationController
 
   def edit
     @contractor = Contractor.find(params[:id])
-    respond_to do |format|
-      format.js
-    end
   end
 
   def update

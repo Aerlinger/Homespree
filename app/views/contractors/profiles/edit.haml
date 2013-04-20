@@ -1,4 +1,22 @@
 %h1 Editing contractor
-= render 'form'
+
+= simple_form_for(@contractor) do |f|
+  - if @contractor.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@contractor.errors.count, "error")
+        prohibited this contractor from being saved:
+      %ul
+        - @contractor.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.input :first_name
+    = f.input :last_name
+    = f.input :company_title
+    = f.input :email, type: :phone_field
+    = f.input :description
+    = f.input :pictures
+  .actions
+    = f.submit
+
 = link_to 'Show', @contractor
-| #{link_to 'Back', contractors_path}

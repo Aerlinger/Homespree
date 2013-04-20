@@ -13,9 +13,7 @@ Homespree::Application.routes.draw do
     passwords: "contractors/passwords"
   }
 
-  namespace :contractors do
-    resources :profiles, except: [:destroy]
-  end
+  resources :profiles, except: [:destroy], path: "contractors/profiles", module: "Contractors", as: "contractor"
 
   scope "/mailinglist", as: :mailinglist do
     match "create" => "mailinglists#create", via: :post
