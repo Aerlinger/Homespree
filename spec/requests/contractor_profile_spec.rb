@@ -28,13 +28,13 @@ describe 'Contractor Profile' do
       click_link "Profile Settings"
     end
 
-    specify "Inbox" do
-      click_link "Inbox"
+    specify "Messages" do
+      click_link "Messages"
     end
 
     describe "Sign Out" do
       before do
-        click_link "Sign Out"
+        click_link "Sign out"
       end
 
       its(:current_path) { should eq root_path }

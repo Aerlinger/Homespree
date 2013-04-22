@@ -15,58 +15,41 @@
         .navbar-inner
           .nav-collapse.collapse
             %ul.nav.accordmobile.pull-right
-              / accordmobile comes in when the browser is at 979px and below, it fixes bugs with bootstrap's toggles of multiple level dropdowns which they are dropping support for and they had lousy support in 2x
               %li
-                %a{:href => "register.html"}
-                  Register
-                  %i.e-icon-pencil
-              / begin .dropdown .parent
+                =link_to "Sign Up ", new_contractor_registration_path
               %li.dropdown.parent
                 %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
                   Sign In
                   %i.e-icon-login
                 %ul.dropdown-menu.signin
-                  / begin .dropdown-menu .signin
                   %li
-                    / begin list item / everything goes inside the list item
                     %form
-                      / begin form add your stuff
                       %input{:placeholder => "Email", :type => "text"}/
                       %input{:placeholder => "Password", :type => "password"}/
                       %label.checkbox
                         %input{:type => "checkbox"}/
                         Remember me
                       %button.btn.custom-btn.btn-primary{:type => "submit"} Sign in
-                  / end list item
                   %li.divider
-                  / divider
                   %li.nav-header Or Sign In with...
-                  / nav-header
                   %li
                     .social.clearfix
                       %a.fc-webicon.facebook.large.round{:href => "#", :title => "Facebook"}
                       %a.fc-webicon.twitter.large.round{:href => "#", :title => "Twitter"}
                       %a.fc-webicon.googleplus.large.round{:href => "#", :title => "Google"}
                   %li.divider
-                  / divider
                   %li
                     %a{:href => "forgot-password.html"} Forgot Password
-                / close .dropdown-menu .signin
-              / close .dropdown .parent
-              / begin .dropdown .parent
               %li.dropdown.parent
                 %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
                   Messages
                   %i.e-icon-comment
                 %ul.dropdown-menu
-                  / begin .dropdown-menu
                   %li.visible-phone.visible-tablet.phonenumber
                     %a{:href => "tel:+8135553333"} 813.555.3333
-                  / show this number only on phones and tablets
                   %li.menu-text.visible-desktop.phonenumber 813.555.3333
-                  / show this number only on desktop
                   %li
-                    %a{:href => "mailto:contact@longdomaingoeshere.com"} email: contact@longdomaingoeshere.com
+                    %a{:href => "mailto:contact@longdomaingoeshere.com"} email: admin@myhomespree.com
                   %li.divider
                   %li.nav-header Sign Up For News!
                   %li
@@ -74,23 +57,15 @@
                       .input-append.custom-append
                         %input{:name => "email", :placeholder => "Email Address", :type => "email"}/
                         %button.btn.btn-primary Sign Up
-                      / close input-append
                   %li.divider
-                  / divider
                   %li.nav-header Follow Us!
-                  / nav-header
                   %li
                     .social.clearfix
-                      %a.fc-webicon.rss.round{:href => "#", :title => "RSS"}
                       %a.fc-webicon.facebook.round{:href => "#", :title => "Facebook"}
                       %a.fc-webicon.twitter.round{:href => "#", :title => "Twitter"}
-                      %a.fc-webicon.skype.round{:href => "#", :title => "Skype"}
-                      %a.fc-webicon.dribbble.round{:href => "#", :title => "dribble"}
-                      %a.fc-webicon.linkedin.round{:href => "#", :title => "Skype"}
+                      %a.fc-webicon.linkedin.round{:href => "#", :title => "Linked In"}
                       %a.fc-webicon.pinterest.round{:href => "#", :title => "pinterest"}
-                    / close div .social
-              / close .dropdown .parent
-              / begin .dropdown .parent
+
               %li.dropdown.parent
                 %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
                   Admin
@@ -100,28 +75,19 @@
                     %a{:href => "#"}
                       %img.avatar{:alt => "Christina Arasmo", :src => "https://twimg0-a.akamaihd.net/profile_images/568222624/ILUSWEETC_normal.jpg"}/
                     .name
-                      %b.fullname User Name Goes Here
+                      %b.fullname Contractor Name Goes Here
                       %br/
                       %small Edit profile
                   %li.divider
                   %li
-                    %a{:href => "#"} Link Here
+                    =link_to "Profile Settings"
                   %li
-                    %a{:href => "#"} Line Here
-                  %li.divider
-                  %li
-                    %a{:href => "#"} Help
-                  %li.divider
-                  %li
-                    %a{:href => "#"} Settings
-                  %li
-                    %a.js-signout-button{"data-nav" => "logout", :href => "#"} Sign out
+                    =link_to "Sign out", root_path, class: 'js-signout-button', data: {nav: "logout"}
                     %form#signout-form.dropdown-link-form.signout-form{:action => "/logout", :method => "POST"}
                       %input{:name => "", :type => "hidden", :value => ""}/
                       %input{:name => "", :type => "hidden"}/
                       %input{:name => "", :type => "hidden"}/
-                / close .dropdown-menu
-              / close .dropdown .parent
+
               %li.divider-vertical
               %li.search-wrapper
                 %form{:action => "someaction.php", :method => "post"}
@@ -136,77 +102,46 @@
             %ul.nav.accordmobile
               %li
                 %a{:href => "index.html"}
-
               %li.dropdown.parent.active
                 %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "javascript:void(0)"}
                   Contractors
                   %i.e-icon-down-open-mini
                 %ul.dropdown-menu
                   %li.active
-                    %a{:href => "simple-header.html"} Simple Header
+                    %a{:href => "simple-header.html"} Details
                   %li
-                    %a{:href => "text-logo.html"} Text Logo
-                  %li
-                    %a{:href => "hero-unit.html"} Hero Unit
-                  %li
-                    %a{:href => "columns.html"} Inner Columns
-                  %li
-                    %a{:href => "equal-height-columns.html"} Equal Height Columns
-                  %li
-                    %a{:href => "toggles.html"} Toggles
-                  %li
-                    %a{:href => "figures-images.html"} Figures and Images
+                    %a{:href => "text-logo.html"} Getting Homespree
                   %li.dropdown-submenu.parent
                     %a{:href => "javascript:void(0)"}
                       Icons
                       %i.e-icon-right-open-mini
                     %ul.dropdown-menu
                       %li
-                        %a{:href => "font-awesome-icons.html"} Font Awesome
+                        %a{:href => "font-awesome-icons.html"} Homespree
                       %li
-                        %a{:href => "entypo-icons.html"} Entypo Icons
+                        %a{:href => "entypo-icons.html"} Homespree
                       %li
-                        %a{:href => "social-icons.html"} Social Icons
-                  %li
-                    %a{:href => "typography-elements.html"} Typography & Elements
-                  %li
-                    %a{:href => "misc-components.html"} Bootstrap Components
-                  %li
-                    %a{:href => "custom-bootstrap-form-elements.html"} Custom Form Elements
-
+                        %a{:href => "social-icons.html"} Homespree
               %li.dropdown.parent
                 %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "javascript:void(0)"}
                   Homeowners
                   %i.e-icon-down-open-mini
                 %ul.dropdown-menu
                   %li
-                    %a{:href => "portfolio-masonry.html"} Filtered Grid
+                    %a{:href => "portfolio-masonry.html"} Get the app
                   %li
-                    %a{:href => "portfolio-single.html"} Single Item (image slider)
+                    %a{:href => "portfolio-single.html"} Submit a Bid
                   %li
-                    %a{:href => "image-gallery.html"} Simple Image Gallery
-                  %li
-                    %a{:href => "image-gallery-2.html"} Simple Image Gallery 2
-
+                    %a{:href => "image-gallery.html"} Research Contractors
               %li.dropdown.parent
-                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "javascript:void(0)"}
-                  Blog
-                  %i.e-icon-down-open-mini
-                %ul.dropdown-menu
-                  %li
-                    %a{:href => "blog-traditional-summary.html"} Traditional Summary
-                  %li
-                    %a{:href => "blog.html"} Masonry Summary
-                  %li
-                    %a{:href => "blog-single.html"} Single Post
-
+                %a{:href => "contact.html"} Blog
               %li
                 %a{:href => "contact.html"} Contact
               %li
                 %a{:href => "info.html"} Instructions
       #logo
-        %a{:href => "index.html"}
-          =image_tag "homespreelogofooter.png"
+        = link_to root_path do
+          = image_tag "homespreelogofooter.png"
         -#%object.logo-svg{:data => "assets/images/logo.svg", :type => "image/svg+xml"}
         -#%img{:alt => "Corporate-Elegance Responsive Retina Ready Portfolio Business", :src => "assets/images/logo.png"}/
       .print Phone, name of company etc., for printing

@@ -1,171 +1,150 @@
-<!doctype html>
-/[if lt IE 7] <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en" dir="ltr">
-/[if IE 7] <html class="no-js lt-ie9 lt-ie8" lang="en" dir="ltr">
-/[if IE 8] <html class="no-js lt-ie9" lang="en" dir="ltr">
-/ [if gt IE 8]><!
-%html.no-js{:dir => "ltr", :lang => "en"}
-  / <![endif]
-  %head
-    = javascript_include_tag 'application'
-    = stylesheet_link_tag "application_ext"
-    = csrf_meta_tags
+#page.clearfix
+  .feature-strip
+    .container
 
-  %body.desktop
+      .row-fluid.pricingTable
+        .option3.span5
+          .wrapper.white-bg
+            %ul.optionheader
+              %li.title.primary-color-bg APF Construction Company
+              %li.price.primary-color-bg
+                =image_tag "/assets/profile/logo.jpg"
+                %span Hartford, CT
+                %span.stars5
 
-    =render "partials/clean_header"
+            %ul.features
+              %li.detailsPop{"data-content" => "Optional: Say something about this", "data-rel" => "popover", :title => "100GB"}
+                %strong Owned by
+                Joe Plumber
+                %i.icon-question-sign
 
-    #page.clearfix
-      .feature-strip
-        .container
+              %li.detailsPop{"data-content" => "Optional: Say something about this", "data-rel" => "popover", :title => "100GB"}
+                %strong Licensed
+                up to $100,000
+                %i.icon-question-sign
 
-          .row-fluid.pricingTable
-            .option3.span5
-              .wrapper.white-bg
-                %ul.optionheader
-                  %li.title.primary-color-bg APF Construction Company
-                  %li.price.primary-color-bg
-                    =image_tag "/assets/profile/logo.jpg"
-                    -#= succeed "<img src='/assets/profile/logo.jpg' />".html_safe do
-                    -#  %i :)
-                    %span Hartford, CT
-                    %span.stars5
+              %li.detailsPop{"data-content" => "Optional: Say something about this", "data-rel" => "popover", :title => "100GB"}
+                %strong Bonded
+                up to $100,000
+                %i.icon-question-sign
 
-                %ul.features
-                  %li.detailsPop{"data-content" => "Optional: Say something about this", "data-rel" => "popover", :title => "100GB"}
-                    %strong Owned by
-                    Joe Plumber
-                    %i.icon-question-sign
+              %li.detailsPop{"data-content" => "Optional: Say something about this", "data-rel" => "popover", :title => "100GB"}
+                %strong BBB Verified Contractor
+                View Details
+                %i.icon-question-sign
 
-                  %li.detailsPop{"data-content" => "Optional: Say something about this", "data-rel" => "popover", :title => "100GB"}
-                    %strong Licensed
-                    up to $100,000
-                    %i.icon-question-sign
+              %li.select{:title => "Sign Up"}
+                %a.btn.btn-large.btn-primary{:href => "#"}
+                  Submit a Bid
+                  %i.icon-check.icon-white
 
-                  %li.detailsPop{"data-content" => "Optional: Say something about this", "data-rel" => "popover", :title => "100GB"}
-                    %strong Bonded
-                    up to $100,000
-                    %i.icon-question-sign
+        .span6.offset1
+          .carousel.slide
+            .carousel-inner
+              .item.active
+                = image_tag "http://127.0.0.1:3000/assets/interior_house1.jpg"
+                .carousel-caption
+                  %p Photo Caption
 
-                  %li.detailsPop{"data-content" => "Optional: Say something about this", "data-rel" => "popover", :title => "100GB"}
-                    %strong BBB Verified Contractor
-                    View Details
-                    %i.icon-question-sign
+            -#= link_to raw("&lsaquo;"), "#portfolio_photos", class: "carousel-control left", data: {slide: "prev"}
+            -#= link_to raw("&rsaquo;"), "#portfolio_photos", class: "carousel-control right", data: {slide: "next"}
 
-                  %li.select{:title => "Sign Up"}
-                    %a.btn.btn-large.btn-primary{:href => "#"}
-                      Submit a Bid
-                      %i.icon-check.icon-white
-
-            .span6.offset1
-              .carousel.slide
-                .carousel-inner
-                  .item.active
-                    = image_tag "http://127.0.0.1:3000/assets/interior_house1.jpg"
-                    .carousel-caption
-                      %p Photo Caption
-
-                -#= link_to raw("&lsaquo;"), "#portfolio_photos", class: "carousel-control left", data: {slide: "prev"}
-                -#= link_to raw("&rsaquo;"), "#portfolio_photos", class: "carousel-control right", data: {slide: "next"}
-
-              .row#helper_tabs
-                .span4.no-bg
-                  %a.link-tab
-                    %i.icon-comment.icon-white &nbsp Ask a question
-                .span4.no-bg
-                  %a.link-tab
-                    %i.icon-map-marker.icon-white &nbsp Service area
-                .span4.no-bg
-                  %a.link-tab
-                    %i.icon-star.icon-white &nbsp Reviews
+          .row#helper_tabs
+            .span4.no-bg
+              %a.link-tab
+                %i.icon-comment.icon-white &nbsp Ask a question
+            .span4.no-bg
+              %a.link-tab
+                %i.icon-map-marker.icon-white &nbsp Service area
+            .span4.no-bg
+              %a.link-tab
+                %i.icon-star.icon-white &nbsp Reviews
 
 
-      .main-content
-        %section.strip{style: "margin: 0;"}
-          .container
-            .row-fluid
-              .span5
-                %h3.short_headline
-                  %span Business Description
-              .span4
-                %h3.short_headline
-                  %span Services Offered
-              .span3
-                %h3.short_headline
-                  %span Service Area
-            .row-fluid
-              .span5
-                %p Terrell Design & Development and the Golden Triangle Design Group is a full-service Design and General Contracting Consulting firm that specializes in new construction, as well as extensive remodels and additions.
-                Over the past two decades, the Golden Triangle Design Group has become known for their ability to solve complex design issues, while implementing all of the clients needs and wants. By providing exceptional expertise and technical knowledge to every phase of the project, clients are able to rely on the GTDG to deliver a product unlike any other.
-                Our attention to detail, and efficient services capitalize on the successful outcome of every project.
+  .main-content
+    %section.strip{style: "margin: 0;"}
+      .container
+        .row-fluid
+          .span5
+            %h3.short_headline
+              %span Business Description
+          .span4
+            %h3.short_headline
+              %span Services Offered
+          .span3
+            %h3.short_headline
+              %span Service Area
+        .row-fluid
+          .span5
+            %p Terrell Design & Development and the Golden Triangle Design Group is a full-service Design and General Contracting Consulting firm that specializes in new construction, as well as extensive remodels and additions.
+            Over the past two decades, the Golden Triangle Design Group has become known for their ability to solve complex design issues, while implementing all of the clients needs and wants. By providing exceptional expertise and technical knowledge to every phase of the project, clients are able to rely on the GTDG to deliver a product unlike any other.
+            Our attention to detail, and efficient services capitalize on the successful outcome of every project.
 
-                %p In addition to providing the best possible design solutions, Terrell Design & Development provides general contracting consulting, and construction management services.
-
-              .span4
-                %ul.specialties
-                  %li
-                    Gardening
-                  %li
-                    Pool Maintenance
-                  %li
-                    Draing and pipe clearing
-                  %li
-                    Four
-                  %li
-                    Four
-
-              .span3
-                =image_tag "/assets/profile/staticmap.png"
+            %p In addition to providing the best possible design solutions, Terrell Design & Development provides general contracting consulting, and construction management services.
+          .span4
+            %ul.specialties
+              %li
+                Gardening
+              %li
+                Pool Maintenance
+              %li
+                Draing and pipe clearing
+              %li
+                Four
+              %li
+                Four
+          .span3
+            =image_tag "/assets/profile/staticmap.png"
 
 
-            %section.call-to-action
-              %h2 Submit project details straight from the convenience smartphone.
-              %a.btn.custom-btn.btn-large.btn-primary{:href => "pricing-tables.html"}
-                Download App
-                %i.e-icon-forward
+        %section.call-to-action
+          %h2 Submit project details straight from the convenience smartphone.
+          %a.btn.custom-btn.btn-large.btn-primary{:href => "pricing-tables.html"}
+            Download App
+            %i.e-icon-forward
 
-        .container
-          .row-fluid
-            .span4
-              .well
-                %h4.primary-color About Homespree
-                %p
-                  %img.alignleft{:alt => "", :src => "http://placehold.it/80x80"}/
-                  Stress-free home improvement
-                %p.text-right
-                  %a.btn.custom-btn.btn-primary{:href => "#"} Download App
+    .container
+      .row-fluid
+        .span4
+          .well
+            %h4.primary-color About Homespree
+            %p
+              %img.alignleft{:alt => "", :src => "http://placehold.it/80x80"}/
+              Stress-free home improvement
+            %p.text-right
+              %a.btn.custom-btn.btn-primary{:href => "#"} Download App
 
-            .rotating-testimonials.span8
-              %h3.short_headline
-                %span Testimonials
-              .panels
-                #t1
-                  %blockquote
-                    %p Homespree is the tits!
-                    %footer Abraham Lincoln
-                #t2
-                  %blockquote
-                    %p In the beginning the Universe was created. This has made a lot of people very angry and is widely regarded as a bad move.
-                    %footer Douglas Adams
-                #t3
-                  %blockquote
-                    %p Homespree is the single reason I created the internet.
-                    %footer Al Gore
-                #t4
-                  %blockquote
-                    %p Homespree is the single reason I created the internet.
-                    %footer Al Gore
+        .rotating-testimonials.span8
+          %h3.short_headline
+            %span Testimonials
+          .panels
+            #t1
+              %blockquote
+                %p Homespree is the tits!
+                %footer Abraham Lincoln
+            #t2
+              %blockquote
+                %p In the beginning the Universe was created. This has made a lot of people very angry and is widely regarded as a bad move.
+                %footer Douglas Adams
+            #t3
+              %blockquote
+                %p Homespree is the single reason I created the internet.
+                %footer Al Gore
+            #t4
+              %blockquote
+                %p Homespree is the single reason I created the internet.
+                %footer Al Gore
 
-              %ul.tabs
-                %li.tab
-                  %a{:href => "#t1"} mark-twain
-                %li.tab
-                  %a{:href => "#t2"} lao-tzu
-                %li.tab
-                  %a{:href => "#t3"} albert-einstein
-                %li.tab
-                  %a{:href => "#t4"} ralph-waldo-emerson
-              %p.text-right
-                %a.btn.custom-btn.btn-small.btn-very-subtle{:href => "testimonials.html"} All Testimonials
+          %ul.tabs
+            %li.tab
+              %a{:href => "#t1"} mark-twain
+            %li.tab
+              %a{:href => "#t2"} lao-tzu
+            %li.tab
+              %a{:href => "#t3"} albert-einstein
+            %li.tab
+              %a{:href => "#t4"} ralph-waldo-emerson
+          %p.text-right
+            %a.btn.custom-btn.btn-small.btn-very-subtle{:href => "testimonials.html"} All Testimonials
 
-      =render "partials/clean_footer"
-      =render "partials/footer_sub"
+  =render "partials/clean_footer"

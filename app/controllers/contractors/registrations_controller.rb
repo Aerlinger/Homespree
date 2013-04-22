@@ -1,7 +1,5 @@
 class Contractors::RegistrationsController < Devise::RegistrationsController
 
-  layout "registration"
-
   def new
     super
     @contactor = Contractor.new
@@ -32,7 +30,6 @@ class Contractors::RegistrationsController < Devise::RegistrationsController
   protected
 
   def after_sign_up_path_for(resource)
-    contractors_profiles_url
+    contractor_path id: resource.id
   end
-
 end

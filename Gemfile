@@ -27,7 +27,7 @@ gem 'simple_form'
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
-gem 'figaro', ">= 0.5.3"
+gem 'figaro', '>= 0.5.3'
 gem 'haml-rails'
 
 

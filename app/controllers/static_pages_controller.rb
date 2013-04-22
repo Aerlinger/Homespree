@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
 
   layout "static_page", except: [:home]
-  layout "blank", only: [:test_theme]
+  layout "application", only: [:test_theme]
 
   def home
   end

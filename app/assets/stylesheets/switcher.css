@@ -1,0 +1,519 @@
+@import url('http://fonts.googleapis.com/css?family=Playfair+Display');
+@import url('http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,700,700italic');
+@import url('http://fonts.googleapis.com/css?family=Arvo:400,700');
+@import url('http://fonts.googleapis.com/css?family=Oxygen:300,400');
+
+/* switcher widget
+================================================== */
+@media only screen and (max-width: 979px) { 
+	#switcher-wrapper {
+	    display: none
+	}
+}
+.lt-ie9 #switcher-wrapper {
+    display: none
+}
+@media only screen and (min-width: 980px) { 
+
+	#switcher h3 {margin-bottom:1%;}
+
+	#switcher {
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    width: 220px;
+	    z-index: 100;
+	    background: #f7f7f7;
+	    padding: 10px;
+	    font-size:90%;
+	}
+	#switcher a.color {
+	    text-indent: -9999px;
+	    float: left;
+	    width: 30px;
+	    height: 30px;
+	    margin: 2px;
+	    border-radius: 50%;
+	}
+	#switcher a {
+	    text-decoration: none
+	}
+	#switcher-wrapper {
+	    position: fixed;
+	    left: -242px;
+	    top: 0;
+	    z-index: 1000;
+	}
+	#switcher section {
+	    clear: both;
+	    margin-bottom: 20px;
+	}
+	.lt-ie7 #switcher-wrapper,
+	.no-js #switcher-wrapper {
+	    display: none
+	}
+	#switcher-wrapper .toggle {
+	    cursor: pointer;
+	    width: 40px;
+	    height: 40px;
+	    position: absolute;
+	    z-index: 501;
+	    top: 0;
+	    right: -280px;
+	    margin: 0;
+	    text-align: center;
+	    border: none;
+	    text-indent: 0;
+	    background: #000;
+	}
+	#switcher-wrapper .toggle i,
+	.toggle i:before {
+	    font-size: 22px;
+	    display: block;
+	    width: 40px;
+	    height: 40px;
+	    line-height: 40px;
+	    padding: 0;
+	    margin: 0;
+	    top: -10px;
+	    color: #fff;
+	    background-color: transparent;
+	}
+	#switcher-wrapper .toggle.selected i:before {
+	    content: '\2d'
+	}
+}
+/* ----------------------- SWITCHER COLOR CONTENTS ------------------------- */
+/* switcher color swatches */
+#switcher a.corblue {
+    background: #5676a5
+}
+#switcher a.gray {
+    background: #7c838d
+}
+#switcher a.softgreen {
+    background: #8da65d
+}
+#switcher a.srbrown {
+    background: #a3704a
+}
+#switcher a.mteal {
+    background: #3c8c9d
+}
+
+/* ---------------------------------------- GRAY ---------------------------------------- */
+.gray .primary-color,
+.gray .primary-color a {
+    color: #7c838d
+}
+.gray .primary-color-bg {
+    background: #7c838d
+}
+.gray .secondary-menu,
+.gray .navbar.secondary-menu > .container > .navbar-inner > .nav-collapse.collapse > .nav > .dropdown > .dropdown-menu > li > a:hover,
+.gray .navbar.secondary-menu > .container > .navbar-inner > .nav-collapse.collapse > .nav > .dropdown > .dropdown-menu > li > a:focus
+ {
+    background-color: #7c838d;
+    color:#fff;
+}
+.gray .navbar.secondary-menu > .container > .navbar-inner > .nav-collapse.collapse > .nav > .dropdown.open > .dropdown-toggle,
+.gray .secondary-menu .nav .active a,
+.gray .navbar.secondary-menu > .container > .navbar-inner > .nav-collapse.collapse > .nav > li > a:hover,
+.gray .secondary-menu .nav .active a:hover,
+.gray .secondary-menu.navbar .nav>li>.dropdown-menu {
+    color: #fff;
+    background-color: #929aa5;
+}
+.gray .nav .dropdown-toggle .caret {
+    border-top-color: #7c838d;
+    border-bottom-color: #7c838d;
+}
+.gray .nav .dropdown-toggle:hover .caret,
+.gray .nav .dropdown-toggle:focus .caret {
+    border-top-color: #7c838d;
+    border-bottom-color: #7c838d;
+}
+.gray .short_headline span {
+    border-bottom-color: #7c838d
+}
+.gray .footer h4 span {
+    border-bottom-color: #7c838d
+}
+.gray .footer-credits {
+    background: #7c838d
+}
+.gray .mobile_nav {
+    background: #7c838d
+}
+.gray .nav-list>.active>a,
+.gray .nav-list>.active>a:hover,
+.gray .nav-list>.active>a:focus {
+    background-color: #7c838d;
+}
+.gray .btn-group.open .btn-primary.dropdown-toggle {
+    background-color: #7c838d
+}
+.gray .btn-primary {
+    background-color: #7c838d;
+    border-color: #7c838d;
+    color:#fff;
+}
+.gray .btn-primary:hover,
+.gray .btn-primary:active,
+.gray .btn-primary:focus,
+.gray .btn-primary.active,
+.gray .btn-primary.disabled,
+.gray .btn-primary[disabled] {
+    background-color: #7c838d;
+    border-color: #7c838d;
+}
+.gray .nav-list>.active>a,
+.gray .nav-list>.active>a:hover,
+.gray .nav-list>.active>a:focus {
+    background-color: #7c838d
+}
+.gray .nav-pills>.active>a,
+.gray .nav-pills>.active>a:hover,
+.gray .nav-pills>.active>a:focus {
+    background-color: #7c838d
+}
+
+
+/* ---------------------------------------- SOFT GREEN---------------------------------------- */
+.softgreen .primary-color,
+.softgreen .primary-color a {
+    color: #8da65d
+}
+.softgreen .primary-color-bg {
+    background: #8da65d
+}
+.softgreen .secondary-menu,
+.softgreen .navbar.secondary-menu > .container > .navbar-inner > .nav-collapse.collapse > .nav > .dropdown > .dropdown-menu > li > a:hover,
+.softgreen .navbar.secondary-menu > .container > .navbar-inner > .nav-collapse.collapse > .nav > .dropdown > .dropdown-menu > li > a:focus
+ {
+    background-color: #8da65d;
+    color:#fff;
+}
+.softgreen .navbar.secondary-menu > .container > .navbar-inner > .nav-collapse.collapse > .nav > .dropdown.open > .dropdown-toggle,
+.softgreen .secondary-menu .nav .active a,
+.softgreen .navbar.secondary-menu > .container > .navbar-inner > .nav-collapse.collapse > .nav > li > a:hover,
+.softgreen .secondary-menu .nav .active a:hover,
+.softgreen .secondary-menu.navbar .nav>li>.dropdown-menu {
+    color: #fff;
+    background-color: #5f7e21;
+}
+.softgreen .nav .dropdown-toggle .caret {
+    border-top-color: #8da65d;
+    border-bottom-color: #8da65d;
+}
+.softgreen .nav .dropdown-toggle:hover .caret,
+.softgreen .nav .dropdown-toggle:focus .caret {
+    border-top-color: #8da65d;
+    border-bottom-color: #8da65d;
+}
+.softgreen .short_headline span {
+    border-bottom-color: #8da65d
+}
+.softgreen .footer h4 span {
+    border-bottom-color: #8da65d
+}
+.softgreen .footer-credits {
+    background: #8da65d
+}
+.softgreen .mobile_nav {
+    background: #8da65d
+}
+.softgreen .nav-list>.active>a,
+.softgreen .nav-list>.active>a:hover,
+.softgreen .nav-list>.active>a:focus {
+    background-color: #8da65d;
+}
+.softgreen .btn-group.open .btn-primary.dropdown-toggle {
+    background-color: #8da65d
+}
+.softgreen .btn-primary {
+    background-color: #8da65d;
+    border-color: #8da65d;
+}
+.softgreen .btn-primary:hover,
+.softgreen .btn-primary:active,
+.softgreen .btn-primary:focus,
+.softgreen .btn-primary.active,
+.softgreen .btn-primary.disabled,
+.softgreen .btn-primary[disabled] {
+    background-color: #8da65d;
+    border-color: #8da65d;
+}
+.softgreen .nav-list>.active>a,
+.softgreen .nav-list>.active>a:hover,
+.softgreen .nav-list>.active>a:focus {
+    background-color: #8da65d
+}
+.softgreen .nav-pills>.active>a,
+.softgreen .nav-pills>.active>a:hover,
+.softgreen .nav-pills>.active>a:focus {
+    background-color: #8da65d
+}
+
+
+/* ---------------------------------------- SOFT RUST BROWN---------------------------------------- */
+.srbrown .primary-color,
+.srbrown .primary-color a {
+    color: #a3704a
+}
+.srbrown .primary-color-bg {
+    background: #a3704a
+}
+.srbrown .nav .dropdown-toggle .caret {
+    border-top-color: #a3704a;
+    border-bottom-color: #a3704a;
+}
+.srbrown .secondary-menu,
+.srbrown .navbar.secondary-menu > .container > .navbar-inner > .nav-collapse.collapse > .nav > .dropdown > .dropdown-menu > li > a:hover,
+.srbrown .navbar.secondary-menu > .container > .navbar-inner > .nav-collapse.collapse > .nav > .dropdown > .dropdown-menu > li > a:focus
+ {
+    background-color: #a3704a;
+    color:#fff;
+}
+.srbrown .navbar.secondary-menu > .container > .navbar-inner > .nav-collapse.collapse > .nav > .dropdown.open > .dropdown-toggle,
+.srbrown .secondary-menu .nav .active a,
+.srbrown .navbar.secondary-menu > .container > .navbar-inner > .nav-collapse.collapse > .nav > li > a:hover,
+.srbrown .secondary-menu .nav .active a:hover,
+.srbrown .secondary-menu.navbar .nav>li>.dropdown-menu {
+    color: #fff;
+    background-color: #c28f6a;
+}
+.srbrown .nav .dropdown-toggle:hover .caret,
+.srbrown .nav .dropdown-toggle:focus .caret {
+    border-top-color: #a3704a;
+    border-bottom-color: #a3704a;
+}
+.srbrown .short_headline span {
+    border-bottom-color: #a3704a
+}
+.srbrown .footer h4 span {
+    border-bottom-color: #a3704a
+}
+.srbrown .footer-credits {
+    background: #a3704a
+}
+.srbrown .mobile_nav {
+    background: #a3704a
+}
+.srbrown .nav-list>.active>a,
+.srbrown .nav-list>.active>a:hover,
+.srbrown .nav-list>.active>a:focus {
+    background-color: #a3704a;
+}
+.srbrown .btn-group.open .btn-primary.dropdown-toggle {
+    background-color: #a3704a
+}
+.srbrown .btn-primary {
+    background-color: #a3704a;
+    border-color: #a3704a;
+}
+.srbrown .btn-primary:hover,
+.srbrown .btn-primary:active,
+.srbrown .btn-primary.active,
+.srbrown .btn-primary:focus,
+.srbrown .btn-primary.disabled,
+.srbrown .btn-primary[disabled] {
+    background-color: #a3704a;
+    border-color: #a3704a;
+}
+.srbrown .nav-list>.active>a,
+.srbrown .nav-list>.active>a:hover,
+.srbrown .nav-list>.active>a:focus {
+    background-color: #a3704a
+}
+.srbrown .nav-pills>.active>a,
+.srbrown .nav-pills>.active>a:hover,
+.srbrown .nav-pills>.active>a:focus {
+    background-color: #a3704a
+}
+
+/* ---------------------------------------- MUTED TEAL---------------------------------------- */
+.mteal .primary-color,
+.mteal .primary-color a {
+    color: #3c8c9d
+}
+.mteal .primary-color-bg {
+    background: #3c8c9d
+}
+.mteal .secondary-menu,
+.mteal .navbar.secondary-menu > .container > .navbar-inner > .nav-collapse.collapse > .nav > .dropdown > .dropdown-menu > li > a:hover,
+.mteal .navbar.secondary-menu > .container > .navbar-inner > .nav-collapse.collapse > .nav > .dropdown > .dropdown-menu > li > a:focus
+ {
+    background-color: #3c8c9d;
+    color:#fff;
+}
+.mteal .navbar.secondary-menu > .container > .navbar-inner > .nav-collapse.collapse > .nav > .dropdown.open > .dropdown-toggle,
+.mteal .secondary-menu .nav .active a,
+.mteal .navbar.secondary-menu > .container > .navbar-inner > .nav-collapse.collapse > .nav > li > a:hover,
+.mteal .secondary-menu .nav .active a:hover,
+.mteal .secondary-menu.navbar .nav>li>.dropdown-menu {
+    color: #fff;
+    background-color: #5ea6b6;
+}
+.mteal .nav .dropdown-toggle .caret {
+    border-top-color: #3c8c9d;
+    border-bottom-color: #3c8c9d;
+}
+.mteal .nav .dropdown-toggle:hover .caret,
+.mteal .nav .dropdown-toggle:focus .caret {
+    border-top-color: #3c8c9d;
+    border-bottom-color: #3c8c9d;
+}
+.mteal .short_headline span {
+    border-bottom-color: #3c8c9d
+}
+.mteal .footer h4 span {
+    border-bottom-color: #3c8c9d
+}
+.mteal .footer-credits {
+    background: #3c8c9d
+}
+.mteal .mobile_nav {
+    background: #3c8c9d
+}
+.mteal .nav-list>.active>a,
+.mteal .nav-list>.active>a:hover,
+.mteal .nav-list>.active>a:focus {
+    background-color: #3c8c9d;
+}
+.mteal .btn-group.open .btn-primary.dropdown-toggle {
+    background-color: #3c8c9d
+}
+.mteal .btn-primary {
+    background-color: #3c8c9d;
+    border-color: #3c8c9d;
+}
+.mteal .btn-primary:hover,
+.mteal .btn-primary:active,
+.mteal .btn-primary.active,
+.mteal .btn-primary:focus,
+.mteal .btn-primary.disabled,
+.mteal .btn-primary[disabled] {
+    background-color: #3c8c9d;
+    border-color: #3c8c9d;
+}
+.mteal .nav-list>.active>a,
+.mteal .nav-list>.active>a:hover,
+.mteal .nav-list>.active>a:focus {
+    background-color: #3c8c9d
+}
+.mteal .nav-pills>.active>a,
+.mteal .nav-pills>.active>a:hover,
+.mteal .nav-pills>.active>a:focus {
+    background-color: #3c8c9d
+}
+
+
+/* ---------------------------------------- FONT 1 ---------------------------------------- */
+body.font1  h1,
+body.font1  h2,
+body.font1  h3,
+body.font1  h4,
+body.font1  h5,
+body.font1  h6,
+body.font1 #countdown {
+    font-family: "Playfair Display";
+    font-weight: normal!important;
+}
+body.font1, body.font1 input, body.font1 textarea, body.font1 form, body.font1 .btn   {
+    font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+}
+
+
+
+/* ---------------------------------------- FONT 2 ---------------------------------------- */
+body.font2  h1,
+body.font2  h2,
+body.font2  h3,
+body.font2  h4,
+body.font2  h5,
+body.font2  h6,
+body.font2 .btn,
+body.font2 #countdown {
+    font-family: "Roboto";
+    font-weight: 300;
+}
+body.font2, body.font2 input, body.font2 textarea, body.font2 form   {
+    font-family: Arial, sans-serif;
+}
+
+@media only screen and (max-width: 767px) { 
+
+	body.font2  h1,
+	body.font2  h2,
+	body.font2  h3,
+	body.font2  h4,
+	body.font2  h5,
+	body.font2  h6,
+	body.font2 .btn {
+ 	   font-weight: 400;
+	}
+
+}
+
+
+
+/* ---------------------------------------- FONT 3 ---------------------------------------- */
+body.font3  h1,
+body.font3  h2,
+body.font3  h3,
+body.font3  h4,
+body.font3  h5,
+body.font3  h6,
+body.font3 #countdown {
+    font-family: "Arvo";
+    font-weight: normal!important;
+}
+
+
+
+/* ---------------------------------------- FONT 4 ---------------------------------------- */
+body.font4  h1,
+body.font4  h2,
+body.font4  h3,
+body.font4  h4,
+body.font4  h5,
+body.font4  h6,
+body.font4 .btn,
+body.font4 #countdown {
+    font-family: "Oxygen";
+    font-weight: 300;
+}
+body.font4, body.font4 input, body.font4 textarea, body.font4 form   {
+    font-family: Arial, sans-serif;
+}
+
+@media only screen and (max-width: 767px) { 
+
+	body.font4  h1,
+	body.font4  h2,
+	body.font4  h3,
+	body.font4  h4,
+	body.font4  h5,
+	body.font4  h6,
+	body.font4 .btn {
+ 	   font-weight: 400;
+	}
+
+}
+
+
+/* ---------------------------------------- MEDIA QUERIES ---------------------------------------- */
+
+
+@media only screen and (max-width: 979px) { 
+	.softgreen .mobile_nav {
+	    background: #8da65d
+	}
+	.gray .mobile_nav {
+	    background: #7c838d
+	}
+	#switcher-wrapper {
+	    display: none
+	}
+}

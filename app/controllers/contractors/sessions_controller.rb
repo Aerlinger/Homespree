@@ -1,5 +1,4 @@
 class Contractors::SessionsController < Devise::SessionsController
-  layout "registration"
 
   def new
     super
@@ -17,7 +16,7 @@ class Contractors::SessionsController < Devise::SessionsController
   protected
 
   def after_sign_in_path_for(resource)
-    contractors_profile_path id: resource.id
+    contractor_path id: resource.id
   end
 
   def after_sign_out_path_for(resource)

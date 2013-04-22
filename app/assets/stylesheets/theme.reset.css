@@ -140,7 +140,7 @@ figcaption {
     clear: both;
     font-size: 90%;
     font-style: italic;
-    background: url(/assets/images/dot.png) 0 100% repeat-x;
+    background: url(../images/dot.png) 0 100% repeat-x;
 }
 figcaption p:last-child {
     margin-bottom: 0%
@@ -370,7 +370,7 @@ p.three-columns {
 hr {
     border: 0px;
     clear: both;
-    background: url(/assets/images/dot.png) repeat-x;
+    background: url(/app/assets/images/images/dot.png) repeat-x;
     height: 2px;
 }
 hr.empty {
@@ -567,7 +567,7 @@ blockquote {
     padding: 10px 20px 0 50px;
     position: relative;
     quotes: none;
-    background: url(/assets/images/open-quote.png) 0 0 no-repeat;
+    background: url(/app/assets/images/images/open-quote.png) 0 0 no-repeat;
     border: 0px;
     font-size: 110%;
     line-height: 175%;
@@ -686,7 +686,7 @@ ul.pagination li.unavailable a:focus {
 ul.pagination li.current a {
     color: black;
     cursor: default;
-    background: url(/assets/images/7p.png);
+    background: url(/app/assets/images/images/7p.png);
 }
 ul.pagination li.current a:hover,
 ul.pagination li.current a:focus {
@@ -788,7 +788,7 @@ span.instructions {
 table {
     border-spacing: 0px;
     border: 1px solid #ddd;
-    border-collapse: collapse;
+    border-collapse: colapse;
     width: 100%;
     margin-bottom: 3%;
 }
@@ -823,7 +823,7 @@ table tbody tr td {
     background: transparent
 }
 table tbody tr:nth-child(even) td {
-    background: url(/assets/images/5p.png)
+    background: url(/app/assets/images/images/5p.png)
 }
 html.ie7 table {
     border-collapse: collapse
@@ -1247,7 +1247,7 @@ label.radio.inline {
 }
 .btn.btn-very-subtle {
     background-color: transparent;
-    background: url(/assets/images/7p.png)!important;
+    background: url(/app/assets/images/images/7p.png)!important;
     background-repeat: repeat;
     border-color: transparent;
     color: #000!important;
@@ -1613,7 +1613,7 @@ only screen and (min-device-pixel-ratio: 2),
 only screen and (min-resolution: 192dpi), 
 only screen and (min-resolution: 2dppx) { 
 	blockquote {
-	    background-image: url(/assets/images/retina/open-quote_@2x.png);
+	    background-image: url(/app/assets/images/images/retina/open-quote_@2x.png);
 	    -moz-background-size: 38px 38px;
 	    -ie-background-size: 38px 38px;
 	    -o-background-size: 38px 38px;
