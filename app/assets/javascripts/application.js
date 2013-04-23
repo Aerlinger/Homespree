@@ -29,6 +29,7 @@
 //= require twitter/bootstrap/bootstrap-typeahead
 //= require twitter/bootstrap/bootstrap-affix
 //= require custom
+//= require introjs
 //= require_tree ../../../vendor/assets/javascripts
 //= require helper
 //= require helper.js

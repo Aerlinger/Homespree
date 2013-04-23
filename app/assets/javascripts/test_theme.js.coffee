@@ -1,3 +1,3 @@
-jQuery ->
-  console.log "Loaded test_theme"
-  $('.flexslider').flexslider();
+#jQuery ->
+#  console.log "Loaded test_theme"
+#  $('.flexslider').flexslider();

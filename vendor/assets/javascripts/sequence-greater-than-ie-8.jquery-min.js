@@ -42,16 +42,18 @@ $(document).ready(function(){
 
     var sequence = $("#sequence").sequence(options).data("sequence");
 
-    
+    if(sequence) {
         sequence.afterLoaded = function() {
-        $("#sequence-theme .nav").fadeIn(100);
-        $(".prev, .next").fadeIn(500);
-        $("#sequence-theme .nav li:nth-child("+(sequence.settings.startingFrameID)+") a").addClass("active");
-    }
+            $("#sequence-theme .nav").fadeIn(100);
+            $(".prev, .next").fadeIn(500);
+            $("#sequence-theme .nav li:nth-child("+(sequence.settings.startingFrameID)+") a").addClass("active")
+        }
 
-    sequence.beforeNextFrameAnimatesIn = function() {
-        $("#sequence-theme .nav li:not(:nth-child("+(sequence.nextFrameID)+")) a").removeClass("active");
-        $("#sequence-theme .nav li:nth-child("+(sequence.nextFrameID)+") a").addClass("active");
+
+        sequence.beforeNextFrameAnimatesIn = function() {
+            $("#sequence-theme .nav li:not(:nth-child("+(sequence.nextFrameID)+")) a").removeClass("active");
+            $("#sequence-theme .nav li:nth-child("+(sequence.nextFrameID)+") a").addClass("active");
+        }
     }
     
     $("#sequence-theme").on("click", ".nav li", function() {
@@ -59,6 +61,4 @@ $(document).ready(function(){
         sequence.nextFrameID = $(this).index()+1;
         sequence.goTo(sequence.nextFrameID);
     });
-    
-    
 });

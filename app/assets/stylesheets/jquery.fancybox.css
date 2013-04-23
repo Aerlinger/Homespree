@@ -91,7 +91,7 @@
     height: 100%;
     cursor: pointer;
     text-decoration: none;
-    background: transparent url('blank.gif');
+    background: transparent url('/assets/images/blank.gif');
     /* helps IE */ -webkit-tap-highlight-color: rgba(0,0,0,0); z-index: 8040; ;
 }
 .fancybox-prev { left: -30px }
@@ -130,7 +130,7 @@
     overflow: hidden;
     display: none;
     z-index: 8010;
-    background: url('fancybox_overlay.png');
+    background: url('/assets/images/fancybox_overlay.png');
 }
 .fancybox-overlay-fixed {
     position: fixed;

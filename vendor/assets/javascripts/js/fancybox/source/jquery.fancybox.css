@@ -57,7 +57,7 @@
 #fancybox-loading,
 .fancybox-close,
 .fancybox-prev span,
-.fancybox-next span { background-image: url('fancy-new-sprite.png') }
+.fancybox-next span { background-image: url('../../../fancybox/source/fancy-new-sprite.png') }
 #fancybox-loading {
     position: fixed;
     top: 50%;
@@ -72,7 +72,7 @@
 #fancybox-loading div {
     width: 44px;
     height: 44px;
-    background: url('fancybox_loading.gif') center center no-repeat;
+    background: url('../../../fancybox/source/fancybox_loading.gif') center center no-repeat;
 }
 .fancybox-close {
     position: absolute;
@@ -91,7 +91,7 @@
     height: 100%;
     cursor: pointer;
     text-decoration: none;
-    background: transparent url('blank.gif');
+    background: transparent url('../../../fancybox/source/blank.gif');
     /* helps IE */ -webkit-tap-highlight-color: rgba(0,0,0,0); z-index: 8040; ;
 }
 .fancybox-prev { left: -30px }
@@ -130,7 +130,7 @@
     overflow: hidden;
     display: none;
     z-index: 8010;
-    background: url('fancybox_overlay.png');
+    background: url('../../../fancybox/source/fancybox_overlay.png');
 }
 .fancybox-overlay-fixed {
     position: fixed;
@@ -260,7 +260,7 @@
     width: 30px;
     height: 30px;
     text-indent: -9999px;
-    background-image: url('helpers/fancybox_buttons.png');
+    background-image: url('../../../fancybox/source/helpers/fancybox_buttons.png');
     background-repeat: no-repeat;
     outline: none;
     opacity: 0.8;
@@ -308,7 +308,7 @@
     .fancybox-close,
     .fancybox-prev span,
     .fancybox-next span {
-        background-image: url(fancy-new-sprite_@2x.png);
+        background-image: url(../../../fancybox/source/fancy-new-sprite_@2x.png);
         -moz-background-size: 44px 152px;
         -ie-background-size: 44px 152px;
         -o-background-size: 44px 152px;
@@ -316,7 +316,7 @@
         background-size: 44px 152px;
     }
     #fancybox-buttons a {
-        background-image: url(helpers/fancybox_buttons_@2x.png);
+        background-image: url(../../../fancybox/source/helpers/fancybox_buttons_@2x.png);
         -moz-background-size: 90px 90px;
         -ie-background-size: 90px 90px;
         -o-background-size: 90px 90px;

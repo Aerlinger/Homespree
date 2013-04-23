@@ -1,53 +1,54 @@
 #page.clearfix
+
+  =render "contractors/profiles/info_header"
+
   .feature-strip
     .container
-
       .row-fluid.pricingTable
         .option3.span5
           .wrapper.white-bg
             %ul.optionheader
-              %li.title.primary-color-bg APF Construction Company
+              %li#title.title.primary-color-bg{data: {intro: "Whats your Company's name?", step: "1"}}
+                APF Construction Company
               %li.price.primary-color-bg
                 =image_tag "/assets/profile/logo.jpg"
                 %span Hartford, CT
                 %span.stars5
 
             %ul.features
-              %li.detailsPop{"data-content" => "Optional: Say something about this", "data-rel" => "popover", :title => "100GB"}
+              %li{data: {intro: "Primary Owner?", step: "8"}}
                 %strong Owned by
                 Joe Plumber
-                %i.icon-question-sign
 
-              %li.detailsPop{"data-content" => "Optional: Say something about this", "data-rel" => "popover", :title => "100GB"}
+              %li{data: {intro: "License info", step: "9"}}
                 %strong Licensed
-                up to $100,000
-                %i.icon-question-sign
+                up to %span.license_amount
+                %i.icon-question-sign.detailsPop{"data-content" => "Optional: Say something about this", "data-rel" => "popover", :title => "100GB"}
 
-              %li.detailsPop{"data-content" => "Optional: Say something about this", "data-rel" => "popover", :title => "100GB"}
+              %li{data: {intro: "Bond info", step: "10"}}
                 %strong Bonded
                 up to $100,000
-                %i.icon-question-sign
+                %i.icon-question-sign.detailsPop{"data-content" => "Optional: Say something about this", "data-rel" => "popover", :title => "100GB"}
 
-              %li.detailsPop{"data-content" => "Optional: Say something about this", "data-rel" => "popover", :title => "100GB"}
+              %li{data: {intro: "BBB Information", step: "11"}}
                 %strong BBB Verified Contractor
                 View Details
-                %i.icon-question-sign
+                %i.icon-question-sign.detailsPop{"data-content" => "Optional: Say something about this", "data-rel" => "popover", :title => "100GB"}
 
               %li.select{:title => "Sign Up"}
-                %a.btn.btn-large.btn-primary{:href => "#"}
+                %a.btn.btn-large.btn-primary{:href => ""}
                   Submit a Bid
                   %i.icon-check.icon-white
 
         .span6.offset1
-          .carousel.slide
+          .carousel.slide{data: {intro: "Upload Images", step: "4"}}
             .carousel-inner
               .item.active
                 = image_tag "http://127.0.0.1:3000/assets/interior_house1.jpg"
                 .carousel-caption
-                  %p Photo Caption
-
-            -#= link_to raw("&lsaquo;"), "#portfolio_photos", class: "carousel-control left", data: {slide: "prev"}
-            -#= link_to raw("&rsaquo;"), "#portfolio_photos", class: "carousel-control right", data: {slide: "next"}
+                  %p A beautiful living room!
+            = link_to raw("&lsaquo;"), "#portfolio_photos", class: "carousel-control left", data: {slide: "prev"}
+            = link_to raw("&rsaquo;"), "#portfolio_photos", class: "carousel-control right", data: {slide: "next"}
 
           .row#helper_tabs
             .span4.no-bg
@@ -59,7 +60,6 @@
             .span4.no-bg
               %a.link-tab
                 %i.icon-star.icon-white &nbsp Reviews
-
 
   .main-content
     %section.strip{style: "margin: 0;"}
@@ -76,12 +76,15 @@
               %span Service Area
         .row-fluid
           .span5
-            %p Terrell Design & Development and the Golden Triangle Design Group is a full-service Design and General Contracting Consulting firm that specializes in new construction, as well as extensive remodels and additions.
-            Over the past two decades, the Golden Triangle Design Group has become known for their ability to solve complex design issues, while implementing all of the clients needs and wants. By providing exceptional expertise and technical knowledge to every phase of the project, clients are able to rely on the GTDG to deliver a product unlike any other.
-            Our attention to detail, and efficient services capitalize on the successful outcome of every project.
+            %h6{data: {intro: "Your company's slogan", step: "6"}}
+              Slogan
+            %p{data: {intro: "Your company's description", step: "7"}}
+              Terrell Design & Development and the Golden Triangle Design Group is a full-service Design and General Contracting Consulting firm that specializes in new construction, as well as extensive remodels and additions.
+              Over the past two decades, the Golden Triangle Design Group has become known for their ability to solve complex design issues, while implementing all of the clients needs and wants. By providing exceptional expertise and technical knowledge to every phase of the project, clients are able to rely on the GTDG to deliver a product unlike any other.
+              Our attention to detail, and efficient services capitalize on the successful outcome of every project.
 
             %p In addition to providing the best possible design solutions, Terrell Design & Development provides general contracting consulting, and construction management services.
-          .span4
+          .span4{data: {intro: "Services offered by your company", step: "2"}}
             %ul.specialties
               %li
                 Gardening
@@ -93,7 +96,7 @@
                 Four
               %li
                 Four
-          .span3
+          .span3{data: {intro: "Enter your address", step: "3"}}
             =image_tag "/assets/profile/staticmap.png"
 
 
