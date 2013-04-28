@@ -67,7 +67,8 @@ div.feature-strip {
 }
 
 div.feature-strip {
-  background: #5173a4 url(/assets/homebackground.jpg) center center !important;
+  background: none;
+  //background: #5173a4 url(/assets/homebackground.jpg) center center !important;
 }
 
 #portfolio_images {
@@ -92,4 +93,9 @@ span.bg {
   //display: none !important;
   background-image: url("/assets/homebackground.jpg") !important;
   background-size: cover !important;
+}
+
+.features li {
+  line-height: 34px !important;
+  height: 34px !important;
 }

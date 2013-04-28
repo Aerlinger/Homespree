@@ -15,7 +15,7 @@ class Contractor < ActiveRecord::Base
   # Associations:  ----------------------------------------------------------------------------------------------------
   has_many :appointments
   has_many :specialties
-  has_many :addresses, as: :addressable
+  has_one :addresses, as: :addressable
   accepts_nested_attributes_for :addresses, reject_if: lambda { |attributes| attributes['kind'].blank? }
   accepts_nested_attributes_for :specialties, reject_if: lambda { |attributes| attributes['kind'].blank? }
 

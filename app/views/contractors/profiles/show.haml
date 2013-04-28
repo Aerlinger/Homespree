@@ -1,108 +1,155 @@
 -# Contractor Profile Page
 -#
--#  params: Contractor
--#=============================================================================
-- present @contractor do |contractor_presenter|
-  #profile
+-#  params: @contractor   # Instance of contractor for this contractor
+-#==================================================================================================
 
-    -# Top information prompt
-    -#=============================================================================
-    //= render "info_header", contractor_presenter: contractor_presenter
+#page.clearfix
 
-    -# First section above the fold
-    -#========================================================================
-    %section#primary
+  -# Top information prompt
+  -#================================================================================================
+  =render "contractors/profiles/info_header"
+
+  -# Top Section (Info Card and Image Carousel)
+  -#================================================================================================
+  .feature-strip
+    .container
+      .row-fluid.pricingTable
+        .option3.span5
+          .wrapper.white-bg
+            %ul.optionheader
+              %li#title.title.primary-color-bg{data: {intro: "Whats your Company's name?", step: "1"}}
+                = best_in_place @contractor, :company_title
+              %li.price.primary-color-bg
+                =image_tag "/assets/profile/logo.jpg"
+                %span= "City, state"
+                %span.stars5
+
+            %ul.features
+              %li{data: {intro: "Primary Owner?", step: "8"}}
+                %strong Owned by
+                =best_in_place @contractor, :first_name
+                =best_in_place @contractor, :last_name
+
+              %li{data: {intro: "License info", step: "9"}}
+                %strong Licensed
+                = "up to #{@contractor.license}"
+                %i.icon-question-sign.detailsPop{"data-content" => "Optional: Say something about this", "data-rel" => "popover", :title => "100GB"}
+
+              %li{data: {intro: "Bond info", step: "10"}}
+                %strong Bonded
+                = "up to #{@contractor.bonding_limit}"
+                %i.icon-question-sign.detailsPop{"data-content" => "Optional: Say something about this", "data-rel" => "popover", :title => "100GB"}
+
+              %li{data: {intro: "BBB Information", step: "11"}}
+                %strong BBB Verified Contractor
+                View Details
+                %i.icon-question-sign.detailsPop{"data-content" => "Optional: Say something about this", "data-rel" => "popover", :title => "100GB"}
+
+              %li.select{:title => "Sign Up"}
+                =link_to "Submit a Bid", "#", class: "btn btn-large btn-primary"
+
+
+        .span6.offset1
+          .carousel.slide{data: {intro: "Upload Images", step: "4"}}
+            .carousel-inner
+              .item.active
+                = image_tag "http://127.0.0.1:3000/assets/interior_house1.jpg"
+                .carousel-caption
+                  %p A beautiful living room!
+            = link_to raw("&lsaquo;"), "#portfolio_photos", class: "carousel-control left", data: {slide: "prev"}
+            = link_to raw("&rsaquo;"), "#portfolio_photos", class: "carousel-control right", data: {slide: "next"}
+
+          .row#helper_tabs
+            .span4.no-bg
+              %a.link-tab
+                %i.icon-comment.icon-white &nbsp Ask a question
+            .span4.no-bg
+              %a.link-tab
+                %i.icon-map-marker.icon-white &nbsp Service area
+            .span4.no-bg
+              %a.link-tab
+                %i.icon-star.icon-white &nbsp Reviews
+
+  -# Section Two (Description, Services Offered, and Maps
+  -#================================================================================================
+  .main-content
+    %section.strip{style: "margin: 0;"}
       .container
-        .row-fluid
+        .row-fluid.title-columns
+          .span5
+            %h3.short_headline
+              %div Business Description
           .span4
-            #card
-              %h3.title Joe's Plumbing
-
-              #contractor_portrait.pull-left
-                = image_tag "contractors/default_portrait.jpg"
-                //= contractor_presenter.portrait_picture
-
-              %h3#phone_num (804) 432-1234
-              %h3#website= contractor_presenter.website
-              %h5#years_in_business 4 years in business
-              %h5.slogan= @contractor.slogan
-
-              %table.insurance
-                %tr
-                  %td <span class="check">&#x2713</span> Licensed <a class="question" id="licensed" href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="A license is...">?</a>
-                  %td State of NJ <a>details &raquo</a>
-                %tr
-                  %td License #
-                  %td 1234567890
-                %tr
-                  %td &#x2713 Bonded <a class="question" href="#">?</a>
-                  %td Up to $500,000 <a>details &raquo</a>
-                %tr
-                  %td Bond #
-                  %td 1234567890
-                %tr
-                  %td &#x2713 BBB Rated <a class="question">?</a>
-                  %td Grade of A+ <a>details &raquo</a>
-            = link_to "Request a Bid", "javacript:void(0)", id: "submit_bid", class: "btn btn-large btn-success"
-
-          .span8
-            .row#portfolio_images
-              .span8
-                #portfolio_photos.carousel.slide
-                  .carousel-inner
-                    .item.active
-                      = image_tag asset_path("house.png")
-                      .carousel-caption
-                        %p Photo Caption
-                    .item
-                      = image_tag "http://placehold.it/600x400"
-                      .carousel-caption
-                        %p Photo Caption
-
-                  = link_to raw("&lsaquo;"), "#portfolio_photos", class: "carousel-control left", data: {slide: "prev"}
-                  = link_to raw("&rsaquo;"), "#portfolio_photos", class: "carousel-control right", data: {slide: "next"}
-              .span4.photo-preview
-                =image_tag "http://placehold.it/200x100"
-                =image_tag "http://placehold.it/200x100"
-                =image_tag "http://placehold.it/200x100"
-
-
-    -# Description
-    -#========================================================================
-    %section#secondary
-      .container
+            %h3.short_headline
+              %div Services Offered
+          .span3
+            %h3.short_headline
+              %div Service Area
         .row-fluid
-          .span3.offset1
-            %p.description= @contractor.description
-          .span4.specialties
-            %h2 Joe specializes in:
-            //= contractor_presenter.specialties
-            =content_tag :ul do
-              =content_tag :li, "<span class='check'>&#x2713</span> Indoor & Outdoor Painting <a href='#'>Book now &raquo</a>".html_safe, class: "check-ico"
-              =content_tag :li, "<span class='check'>&#x2713</span> General Contracting <a href='#'>Book now &raquo</a>".html_safe, class: "check-ico"
-              =content_tag :li, "<span class='check'>&#x2713</span> Hardwood Flooring <a href='#'>Book now &raquo</a>".html_safe, class: "check-ico"
-              =content_tag :li, "<span class='check'>&#x2713</span> Pool Service and Cleaning <a href='#'>Book now &raquo</a>".html_safe, class: "check-ico"
-              =content_tag :li, "<span class='check'>&#x2713</span> Sewage removal <a href='#'>Book now &raquo</a>".html_safe, class: "check-ico"
-              =content_tag :li, "<span class='check'>&#x2713</span> Doors & Windows <a href='#'>Book now &raquo</a>".html_safe, class: "check-ico"
-          .span3.map
-            #google_map= image_tag "profile/staticmap.png"
-            #address
-              %p 1234 First Lane<br />Brunswick, NJ 00284
-              %a View full map &raquo
+          .span5
+            %h6{data: {intro: "Your company's slogan", step: "6"}}
+              = best_in_place @contractor, :slogan
+            %p{data: {intro: "Your company's description", step: "7"}}
+              = best_in_place @contractor, :description, type: :textarea
+
+          .span4{data: {intro: "Services offered by your company", step: "2"}}
+            %ul.specialties
+              %li
+                =@contractor.specialties
+
+          .span3{data: {intro: "Enter your address", step: "3"}}
+            =image_tag "/assets/profile/staticmap.png"
+            %p One Cherry Tree Road. <br /> Brunswick, NJ. 89932
 
 
-    -# Reviews
-    -#===========================================================================
-    %section#reviews_title
-      .container
-        %h2.review-title Reviews from Homeowners
+        %section.call-to-action
+          %h2 Submit project details straight from the convenience of your smartphone.
+          %a.btn.custom-btn.btn-large.btn-primary{:href => "pricing-tables.html"}
+            Download App
+            %i.e-icon-forward
 
-    %section#reviews.showcase
-      .container
-        .row-fluid.comments
-          =render 'contractors/profiles/review',
-                  portrait_url: "contractors/default_portrait.jpg",
-                  stars: "stars5",
-                  review_title: "A Great Contractor",
-                  review_author: "Jim Cook",
-                  review_content: "If Elvis were alive he would write a song about this plumber."
+    .container
+      .row-fluid
+        .span4
+          .well
+            %h4.primary-color About Homespree
+            %p
+              %img.alignleft{:alt => "", :src => "http://placehold.it/80x80"}/
+              Stress-free home improvement
+            %p.text-right
+              %a.btn.custom-btn.btn-primary{:href => "#"} Download App
+
+        .rotating-testimonials.span8
+          %h3.short_headline
+            %span Testimonials
+          .panels
+            #t1
+              %blockquote
+                %p Homespree is the tits!
+                %footer Abraham Lincoln
+            #t2
+              %blockquote
+                %p In the beginning the Universe was created. This has made a lot of people very angry and is widely regarded as a bad move.
+                %footer Douglas Adams
+            #t3
+              %blockquote
+                %p Homespree is the single reason I created the internet.
+                %footer Al Gore
+            #t4
+              %blockquote
+                %p Homespree is the single reason I created the internet.
+                %footer Al Gore
+
+          %ul.tabs
+            %li.tab
+              %a{:href => "#t1"} mark-twain
+            %li.tab
+              %a{:href => "#t2"} lao-tzu
+            %li.tab
+              %a{:href => "#t3"} albert-einstein
+            %li.tab
+              %a{:href => "#t4"} ralph-waldo-emerson
+          %p.text-right
+            %a.btn.custom-btn.btn-small.btn-very-subtle{:href => "testimonials.html"} All Testimonials
+
+  =render "partials/clean_footer"

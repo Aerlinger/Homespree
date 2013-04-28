@@ -1,5 +1,4 @@
 # Assets directory
-
     * Directory Structure
         The images directory
         icons: Just as the name describes. Button/widges icons go here

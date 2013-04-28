@@ -4,9 +4,13 @@
 
 @import "global/palette.css.scss";
 
+div.feature-strip {
+  padding-top: 25px;
+}
+
 .incomplete_sections {
-  padding-left: 15px;
-  padding-right: 10px;
+  padding: 15px;
+  //padding-right: 10px;
 
   position: relative;
 
@@ -387,4 +391,27 @@
   font-size: 1.2em;
   background: #5676a5;
   margin: 0 !important;
+}
+
+.short_headline div {
+  border-bottom: 3px solid #5676a5;
+  padding-bottom:5px;
+  margin-bottom: 15px;
+}
+
+//.title-columns {
+//  h3 {
+//    display: block;
+//  }
+//}
+
+.purr {
+  position: fixed;
+  top: 30px;
+  right: 100px;
+  width: 250px;
+  padding: 20px;
+  background-color: #FCC;
+  border: solid 2px #666;
+  &:first-letter { text-transform: uppercase };
 }
