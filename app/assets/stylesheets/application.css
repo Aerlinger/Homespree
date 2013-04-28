@@ -11,4 +11,5 @@
  *= require_self
  *= require introjs
  *= require_tree .
+ *= require_tree ../../../vendor/assets/stylesheets
  */

@@ -10,12 +10,12 @@ div.feature-strip {
 
 .incomplete_sections {
   padding: 15px;
-  //padding-right: 10px;
+  margin: 0;
+  margin-top: -15px;
 
   position: relative;
 
-  border: 2px solid $homespree_warn;
-  background-color: lightgoldenrodyellow;
+  background-color: rgba(250, 249, 248, 0.85);
 
   margin-bottom: 15px;
 

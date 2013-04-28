@@ -35,7 +35,7 @@ ul.nav-collapse li a:hover {
 }
 
 body.desktop {
-  background-image: url(<%= asset_path "homebackground.jpg" %>);
+  background-image: url(/assets/homebackground.jpg);
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;

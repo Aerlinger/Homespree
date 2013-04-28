@@ -6,6 +6,16 @@
         %a{:href => "#"} About
       %li
         %a{:href => "#"} Terms of Service
+
+- if Rails.env.development?
+  %a#show_debug
+    Show/Hide Debug Info
+
 %span.backToTop
   %a{:href => "#top"}
     %i.e-icon-up-open-big
+
+- if Rails.env.development?
+  .debug
+    = debug(params)
+    = debug(cookies)

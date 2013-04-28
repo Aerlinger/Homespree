@@ -33,21 +33,20 @@
               %li{data: {intro: "License info", step: "9"}}
                 %strong Licensed
                 = "up to #{@contractor.license}"
-                %i.icon-question-sign.detailsPop{"data-content" => "Optional: Say something about this", "data-rel" => "popover", :title => "100GB"}
+                %i.icon-question-sign.detailsPop{"data-content" => "License Info", "data-rel" => "popover", :title => "100GB"}
 
               %li{data: {intro: "Bond info", step: "10"}}
                 %strong Bonded
                 = "up to #{@contractor.bonding_limit}"
-                %i.icon-question-sign.detailsPop{"data-content" => "Optional: Say something about this", "data-rel" => "popover", :title => "100GB"}
+                %i.icon-question-sign.detailsPop{"data-content" => "Bond info", "data-rel" => "popover", :title => "100GB"}
 
               %li{data: {intro: "BBB Information", step: "11"}}
                 %strong BBB Verified Contractor
                 View Details
-                %i.icon-question-sign.detailsPop{"data-content" => "Optional: Say something about this", "data-rel" => "popover", :title => "100GB"}
+                %i.icon-question-sign.detailsPop{"data-content" => "BBB Info", "data-rel" => "popover", :title => "100GB"}
 
               %li.select{:title => "Sign Up"}
                 =link_to "Submit a Bid", "#", class: "btn btn-large btn-primary"
-
 
         .span6.offset1
           .carousel.slide{data: {intro: "Upload Images", step: "4"}}
