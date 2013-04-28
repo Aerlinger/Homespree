@@ -1,58 +1,56 @@
--# Above the fold product pitch information
--#===========================================================================
-%section.pitch
-  .container
-    .row
-      %header.highlight.span12
-        .search-area
-          -#%img.stressfree{:src => "/assets/stressfree.png"}/
-          %h1 Stress-free home improvement.
-          %h2{:style => "color: white;"} Connect with quality contractors. Get free estimates.
+#prefix.clearfix
+  -# Above the fold product pitch information
+  -#===========================================================================
+  %section.pitch
+    .container
+      .row
+        %header.span12
+          .search-area
+            -#%img.stressfree{:src => "/assets/stressfree.png"}/
+            %h1 Stress-free home improvement.
+            %h2{:style => "color: white;"} Connect with quality contractors. Get free estimates.
 
-          -# Mailing List Form
-          -#===========================================================================
-          = form_tag mailinglist_create_path, authenticate_with: :none, method: :post, remote: true, id: "search_form" do
-            = email_field_tag(:email, "", type: "text", id: "email_signup", placeholder: "Email")
-            #customer_type.btn-group
-              %a#dropdown.btn.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-                %span.text I am a...
-                %span.caret.pull-right
-              %input#user_type{:name => "user_type", :style => "display: none", :value => ""}/
-              %ul.dropdown-menu
-                %li
-                  %a#homeowner{:href => "javascript:void(0)", :onclick => "return false;"} Homeowner
-                %li
-                  %a#contractor{:href => "javascript:void(0)", :onclick => "return false;"} Contractor
-            = hidden_field_tag "submitted_from_mobile", "false"
-            = submit_tag "Sign Up", id: "submit_location", class: "large green submit icon-and-text"
-            %p#submit_success Thanks! We'll keep you posted when we launch.
+            -# Mailing List Form
+            -#===========================================================================
+            = form_tag mailinglist_create_path, authenticate_with: :none, method: :post, remote: true, id: "search_form" do
+              = email_field_tag(:email, "", type: "text", id: "email_signup", placeholder: "Email")
+              #customer_type.btn-group
+                %a#dropdown.btn.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                  %span.text I am a...
+                  %span.caret.pull-right
+                %input#user_type{:name => "user_type", :style => "display: none", :value => ""}/
+                %ul.dropdown-menu
+                  %li
+                    %a#homeowner{:href => "javascript:void(0)", :onclick => "return false;"} Homeowner
+                  %li
+                    %a#contractor{:href => "javascript:void(0)", :onclick => "return false;"} Contractor
+              = hidden_field_tag "submitted_from_mobile", "false"
+              = submit_tag "Sign Up", id: "submit_location", class: "large green submit icon-and-text"
+              %p#submit_success Thanks! We'll keep you posted when we launch.
 
-          #iphone_preview
+            #iphone_preview
 
--# Product Showcase
--#===========================================================================
-%section.showcase.shadow
-  .container
-    .highlight.row
-      #myCarousel.carousel.slide
-        .carousel-inner
-          .item.active
-            %p
+  -# Product Showcase
+  -#===========================================================================
+  %section.showcase.shadow
+    .container
+      .highlight.row
+        #iPhoneCarousel.carousel.slide
+          .carousel-inner
+            .item.active
               = image_tag asset_path('carousel_1.1.png'), alt: "screenshot"
-            %article.carousel-caption
-              %h3 Submit project requests right on your smartphone
-              %p.center-align A few images and details is all it takes!
-          .item
-            %p
+              %article.carousel-caption
+                %h3 Submit project requests right on your smartphone
+                %p.center-align A few images and details is all it takes!
+            .item
               = image_tag asset_path('carousel_2.1.png'), alt: "screenshot"
-            %article.carousel-caption
-              %h3 Contractors in your service area provide estimates
-              %p.center-align Competitive bids ensure you pay a fair price
-          .item
-            %p
+              %article.carousel-caption
+                %h3 Contractors in your service area provide estimates
+                %p.center-align Competitive bids ensure you pay a fair price
+            .item
               = image_tag asset_path('carousel_3.1.png'), alt: "screenshot"
-            %article.carousel-caption
-              %h3{:style => "text-align: center"} Make a more informed decision based on price, ratings and reviews
-              %p.center-align Connect with your contractor directly through the app
-        %a.left.carousel-control{"data-slide" => "prev", :href => "#myCarousel"} ‹
-        %a.right.carousel-control{"data-slide" => "next", :href => "#myCarousel"} ›
+              %article.carousel-caption
+                %h3{:style => "text-align: center"} Make a more informed decision based on price, ratings and reviews
+                %p.center-align Connect with your contractor directly through the app
+          %a.left.carousel-control{"data-slide" => "prev", :href => "#iPhoneCarousel"} ‹
+          %a.right.carousel-control{"data-slide" => "next", :href => "#iPhoneCarousel"} ›

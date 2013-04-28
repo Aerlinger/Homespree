@@ -34,6 +34,12 @@ ul.nav-collapse li a:hover {
     padding: 0 !important;
 }
 
+/* --------------------->>> main containers <<<---------------------*/
+#prefix {
+  margin: 120px 0 0 0; /* 40px (secondary-menu) + 80px (primary-menu and logo) + 40px (standard margin)*/
+  clear: both;
+}
+
 body.desktop {
   background-image: url(/assets/homebackground.jpg);
   background-size: cover;
@@ -240,7 +246,17 @@ body.desktop {
   }
 
   #logo {
+    position: relative;
+    top: 33px;
     margin: -7px -180px -27px 0;
 
+    img {
+      width: 65%;
+    }
   }
+}
+
+footer {
+  opacity: 1;
+  background: white;
 }

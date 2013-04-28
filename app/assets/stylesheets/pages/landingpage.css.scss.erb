@@ -1,6 +1,7 @@
 $pitch_height: 563px;
 $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
 
+
 .pitch {
     padding-top: 60px;
     min-height: $pitch_height;
@@ -107,7 +108,6 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
                     background: -ms-linear-gradient(top, #68de08 0%, #61cf07 50%, #5cc507 50%, #5ac305 100%);
                     background: linear-gradient(to bottom, #68de08 0%, #61cf07 50%, #5cc507 50%, #5ac305 100%);
                     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#68de08', endColorstr='#5ac305', GradientType=0);
-
                 }
             }
 
@@ -129,6 +129,18 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
         }
 
         #customer_type {
+
+            .btn .caret, .btn-primary .caret {
+                border-top-color: black;
+                border-bottom-color: black;
+            }
+
+            .btn {
+                &:hover {
+                    opacity: 1;
+                }
+            }
+
             display: inline-block;
             height: 48px !important;
             width: 190px;
@@ -188,7 +200,6 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
         }
 
     }
-
     #iphone_preview {
         position: absolute;
         right: -35px;
@@ -198,52 +209,65 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
         height: 572px;
 
         background-size: auto auto;
-        background: url(<%= asset_path("iphone.png") %>) right bottom no-repeat;
-        top: 101px;
+        background: url("/assets/iphone.png") right bottom no-repeat;
+        top: 0px;
     }
 
-    .showcase {
-        box-shadow: 12px 0 15px 0 rgba(0, 0, 0, 0.5);
-        background: url(<%= asset_path("bg/bg5.png") %>) repeat;
-        background-color: white;
-
-        .carousel a {
-            color: #ffffff;
-
-            .item a {
-                color: #3799ca;
-            }
-        }
-
-        .carousel-control {
-            border: 3px solid black;
-        }
-
-        .carousel-caption {
-            position: static;
-            background: transparent;
-            text-align: center;
-            h3 {
-                text-align: center;
-            }
-        }
-
-        .carousel .item > p,
-        .carousel-caption p {
-            font: 16px/23px  "Helvetica Neue", helvetica, sans-serif;
-            text-shadow: #ffffff 0 1px 0;
-            color: #333333;
-            text-align: center;
-        }
-
-        #screenshot_carousel {
-            img {
-                width: 65%;
-                height: auto;
-
-                box-shadow: $shadow;
-            }
-        }
-    }
 }
 
+.showcase {
+
+    position: relative;
+    z-index: 2;
+    box-shadow: 12px 0 15px 0 rgba(0, 0, 0, 0.5);
+    background: url("/assets/bg/bg5.png") repeat;
+    background-color: white;
+
+    .carousel a {
+        color: #ffffff;
+
+        .item a {
+            color: #3799ca;
+        }
+    }
+
+    a.carousel-control {
+        text-decoration: none !important;
+    }
+
+    .carousel-caption {
+        position: static;
+        background: transparent;
+        text-align: center;
+        h3 {
+            text-align: center;
+        }
+    }
+
+    .carousel .item > p,
+    .carousel-caption p {
+        font: 16px/23px  "Helvetica Neue", helvetica, sans-serif;
+        text-shadow: #ffffff 0 1px 0;
+        color: #333333;
+        text-align: center;
+    }
+
+    #screenshot_carousel {
+        img {
+            width: 65%;
+            height: auto;
+
+            box-shadow: $shadow;
+        }
+    }
+
+    #iPhoneCarousel {
+        margin-top: 40px;
+        background: none;
+
+        img {
+            margin: 0 auto;
+        }
+    }
+
+}

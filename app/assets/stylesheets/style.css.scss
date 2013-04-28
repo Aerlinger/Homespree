@@ -219,7 +219,7 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover {
 }
 /*don't show logo fall back .png image if there is support for svg */
 .svg #logo img {
-  display: none
+  //display: none
 }
 /* don't show svg OBJECT if there is NO support for svg */
 .no-svg #logo .logo-svg {
