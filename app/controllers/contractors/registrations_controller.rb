@@ -3,7 +3,6 @@ class Contractors::RegistrationsController < Devise::RegistrationsController
   def new
     super
     @contactor = Contractor.new
-    @contractor.addresses.build
   end
 
   def create

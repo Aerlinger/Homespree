@@ -13,7 +13,6 @@ Spork.prefork do
   require 'capybara/rails'
   require 'rspec/autorun'
 
-
   module ::RSpec::Core
     class ExampleGroup
       include Capybara::DSL

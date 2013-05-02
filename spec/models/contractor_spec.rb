@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Contractor do
-  it { should respond_to :addresses }
+  it { should respond_to :address }
   it { should respond_to :appointments }
 
   it { should respond_to :id }
@@ -143,7 +143,7 @@ describe Contractor do
     it { should_not be_valid }
 
     it "should list incomplete sections" do
-      incomplete_sections = [:first_name, :last_name, :company_title, :specialties, :mobile_number, :office_number, :slogan, :description, :addresses]
+      incomplete_sections = [:first_name, :last_name, :company_title, :specialties, :mobile_number, :office_number, :slogan, :description, :address]
       @mike.incomplete_sections.should == incomplete_sections
 
       @mike.first_name = "joe"
@@ -154,7 +154,6 @@ describe Contractor do
   describe "should build a full contractor" do
     before do
       @plumber = Contractor.new do |c|
-
         c.email = "joetheplumber@seed.com"
         c.password = "iamsecret"
 
@@ -178,16 +177,6 @@ describe Contractor do
         c.license = "abcdefg12345"
 
         c.website = "http://www.joesplumbing.com"
-
-        address = Address.new do |a|
-          a.line1 = "1234 Blue collar road"
-          a.line2 = "4th Main Providence"
-          a.state = "nj"
-          a.zipcode = "12345"
-          a.city = "princeton"
-        end
-
-        c.addresses << address
       end
 
       @plumber.save!

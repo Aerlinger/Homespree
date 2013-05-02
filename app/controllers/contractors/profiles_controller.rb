@@ -15,6 +15,7 @@ class Contractors::ProfilesController < ApplicationController
 
   def show
     @contractor = Contractor.find(params[:id])
+    @contractor.decorate
   end
 
   def edit

@@ -7,16 +7,18 @@ class Contractor < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+
   # Accessors:  -------------------------------------------------------------------------------------------------------
-  attr_accessible :addresses, :specialties, :first_name, :last_name, :email, :password, :remember_me,
+  attr_accessible :address, :specialties, :first_name, :last_name, :email, :password, :remember_me,
                   :description, :mobile_number, :office_number, :company_title, :custom_field,
                   :facebook, :name, :specialties, :twitter, :website, :other_specialties, :specialty_ids
+
 
   # Associations:  ----------------------------------------------------------------------------------------------------
   has_many :appointments
   has_many :specialties
-  has_one :addresses, as: :addressable
-  accepts_nested_attributes_for :addresses, reject_if: lambda { |attributes| attributes['kind'].blank? }
+  has_one :address, as: :addressable
+  accepts_nested_attributes_for :address, reject_if: lambda { |attributes| attributes['kind'].blank? }
   accepts_nested_attributes_for :specialties, reject_if: lambda { |attributes| attributes['kind'].blank? }
 
 
@@ -28,16 +30,17 @@ class Contractor < ActiveRecord::Base
   validates_format_of :mobile_number, :office_number, with: /\A\d{10}\Z/, allow_blank: true, message: "must be valid"
   validate :name_or_title?
 
+
   # Callbacks:  -------------------------------------------------------------------------------------------------------
-  before_save :titleize_name, :downcase_email, :upcase_license, :process_specialties
+  before_save :titleize_name, :downcase_email, :upcase_license, :process_associations
   before_validation :sanitize_phone_numbers
 
-  # Scopes:  ----------------------------------------------------------------------------------------------------------
 
+  # Scopes:  ----------------------------------------------------------------------------------------------------------
   default_scope order("created_at desc")
 
-  # Custom Methods:  --------------------------------------------------------------------------------------------------
 
+  # Custom Methods:  --------------------------------------------------------------------------------------------------
   def incomplete_sections
     sections = []
 
@@ -49,7 +52,7 @@ class Contractor < ActiveRecord::Base
     sections << :office_number if office_number.blank?
     sections << :slogan if slogan.blank?
     sections << :description if description.blank?
-    sections << :addresses if addresses.blank?
+    sections << :address if address.blank?
 
     return sections
   end
@@ -64,11 +67,9 @@ class Contractor < ActiveRecord::Base
 
   protected
 
-  def process_specialties
-    if specialty_ids.present?
-      self.specialty_ids.each do |specialty|
-        self.specialties.build(name: specialty)
-      end
+  def process_associations
+    if address.blank?
+      build_address
     end
   end
 
@@ -97,6 +98,7 @@ class Contractor < ActiveRecord::Base
     end
   end
 
+  # This is used to prevent problems when params are missing in the controller before the contractor is created.
   def nil_if_blank
     self.attributes.each { |attr| self[attr] = nil if self[attr].blank? }
   end

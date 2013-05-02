@@ -1,10 +1,8 @@
 class Address < ActiveRecord::Base
   attr_accessible :addressable_id, :addressable_type, :city, :line1, :line2, :state, :zipcode
 
-  validates_presence_of :city, :line1, :state, :zipcode
-
-  validates :zipcode, format: RegexDefinitions::zipcode_regex
-  validates_format_of :state, with: /[A-Za-z][A-Za-z]/i
+  validates :zipcode, format: RegexDefinitions::zipcode_regex, allow_blank: true
+  validates_format_of :state, with: /[A-Za-z][A-Za-z]/i, allow_blank: true
 
   belongs_to :addressable, polymorphic: true
 
@@ -13,6 +11,8 @@ class Address < ActiveRecord::Base
   private
 
   def titleize_city
-    self.city = self.city.titleize
+    if city.present?
+      self.city = city.titleize
+    end
   end
 end

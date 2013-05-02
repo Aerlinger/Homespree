@@ -1,37 +1,25 @@
-.row
-  .span6
-    .register-info-wraper
-      #register-info
-        %h1 Homespree...
-        %ul{:dir => "rtl"}
-          %li Saves you time
-          %li Saves you money
-          %li Saves you stress
-  .span6
-    #register-wraper
-      %form#register-form.form
-        %legend
-          Sign up for
-          %span.blue Homespree
-        .body
-          -#.control-group.control-inline
-          -#  %label{:for => "name"} First name
-          -#  %input.input-medium{:name => "name", :type => "text"}/
-          -#
-          -#.control-group.control-inline
-          -#  %label{:for => "surname"} Last name
-          -#  %input.input-medium{:name => "surname", :type => "text"}/
+-#.row
+  -#.span6
+  -#  .register-info-wraper
+  -#    #register-info
+  -#      %h1 Homespree...
+  -#      %ul{:dir => "rtl"}
+  -#        %li Saves you time
+  -#        %li Saves you money
+  -#        %li Saves you stress
 
-          %label E-mail
-          %input.input-huge{:type => "text"}/
+#login-wraper
+  = simple_form_for resource, :as => resource_name, :url => registration_path(resource_name), class: "form login-form" do |f|
+    %legend
+      Sign up for
+      %span.blue Homespree
 
-          %label Business name or title
-          %input.input-huge{:type => "text"}/
+    .body
+      = f.input :email
+      = f.input :company_title, text: "Business name or title"
+      = f.input :password
 
-          %label Password
-          %input.input-huge{:type => "text"}/
-        .footer
-          %button.btn.btn-success{:type => "submit"} Register
+      = f.button :submit, text: "Register", class: "btn btn-success"
 
 %footer.white.navbar-fixed-bottom
   Already have an account?

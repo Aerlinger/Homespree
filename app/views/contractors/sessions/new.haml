@@ -1,13 +1,23 @@
 #login-wraper
+  -#%h1 Create contractor profile
+
   = simple_form_for resource, :as => resource_name, :url => session_path(resource_name), class: "form login-form" do |f|
+    %legend
+      Sign up for
+      %span.blue Homespree
     .body
-      = f.input :email, placeholder: 'user@domain.com'
+      = f.input :email
       = f.input :password
-    .footer
-      -#= f.label class: "checkbox inline"
-        -#= f.input value: "option1", id: "inlineCheckbox1", as: :check_box
-        -#Remember Me
       = f.button :submit, text: "Login", class: "btn btn-success"
+
+%footer.white.navbar-fixed-bottom
+  Don't have an account yet?
+  =link_to "Sign up", new_contractor_registration_path, class: "btn btn-black"
+
+
+  -# TODO:  --------------------------------------------------------------------------------------------------
+  -# Previous style -- disabled for now
+  -# TODO:  --------------------------------------------------------------------------------------------------
 
   -#%form.form.login-form
   -#  %legend
@@ -23,24 +33,3 @@
   -#      %input#inlineCheckbox1{:type => "checkbox", :value => "option1"}/
   -#      Remember me
   -#    %button.btn.btn-success{:type => "submit"} Login
-
--#= render "contractors/shared/links"
-
-%footer.white.navbar-fixed-bottom
-  Don't have an account yet?
-  =link_to "Sign in", new_contractor_registration_path, class: "btn btn-black"
-
--#-# REGISTRATION Template
--#-#===========================================================================
--#- content_for :registration_page do
--#  = provide :title, "Sign in with your email"
--#
--#  -# Template Wrapper
--#  -#===========================================================================
--#  = simple_form_for resource, :as => resource_name, :url => session_path(resource_name) do |f|
--#    = f.error_notification message: "All fields are required."
--#    = f.input :email
--#    = f.input :password
--#    = f.button :submit, "Sign In"
--#    %hr/
--#    = render "contractors/shared/links"

@@ -46,6 +46,11 @@ joe_the_plumber = Contractor.new do |c|
 
   c.website = "http://www.joesplumbing.com"
 
+  specialties = ["Plumbing", "Roofing", "A/C", "Pool Maintenance & Cleaning", "Drain Clearing"]
+  specialties.collect.each do |specialty|
+    c.specialties << Specialty.new(name: specialty)
+  end
+
   address = Address.new do |a|
     a.line1 = "1234 Blue collar road"
     a.line2 = "4th Main Providence"
@@ -54,7 +59,7 @@ joe_the_plumber = Contractor.new do |c|
     a.city = "Princeton"
   end
 
-  c.addresses << address
+  c.address = address
 
 end
 

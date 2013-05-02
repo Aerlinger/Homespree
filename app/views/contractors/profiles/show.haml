@@ -93,13 +93,11 @@
 
           .span4{data: {intro: "Services offered by your company", step: "2"}}
             %ul.specialties
-              %li
-                =@contractor.specialties
+              = best_in_place @contractor, :specialties, type: :text_area
 
           .span3{data: {intro: "Enter your address", step: "3"}}
-            =image_tag "/assets/profile/staticmap.png"
-            %p One Cherry Tree Road. <br /> Brunswick, NJ. 89932
-
+            = image_tag "/assets/profile/staticmap.png"
+            -#= @contractor.address
 
         %section.call-to-action
           %h2 Submit project details straight from the convenience of your smartphone.

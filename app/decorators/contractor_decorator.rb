@@ -11,12 +11,6 @@ class ContractorDecorator < Draper::Decorator
     end
   end
 
-  def email
-    handle_none contractor.email do
-      contractor.email
-    end
-  end
-
   def title
     handle_none contractor.company_title do
       content_tag :h1, contractor.company_title.html_safe, class: [:contractor_title, "block-underline-full"]
@@ -28,6 +22,18 @@ class ContractorDecorator < Draper::Decorator
       contractor.title
     else
       full_name
+    end
+  end
+
+  def address
+    if current_contractor == object
+      h.content_tag :p, object.address.line1
+      h.content_tag :p, object.address.line2
+      h.content_tag :p do
+        h.content_tag :span, object.address.city
+        h.content_tag :span, object.address.state
+        h.content_tag :span, object.address.zip
+      end
     end
   end
 
@@ -86,11 +92,11 @@ class ContractorDecorator < Draper::Decorator
     output = []
     content_tag :ul do
       specialties.each do |specialty|
-        output << content_tag(:li, specialty).html_safe
+        output << content_tag(:li, specialty)
       end
     end
 
-    raw(output.join)
+    output.join.html_safe
   end
 
   def profile_pic_filename
