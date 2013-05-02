@@ -26,6 +26,10 @@
 
             %ul.features
               %li{data: {intro: "Primary Owner?", step: "8"}}
+                %strong Phone:
+                =best_in_place @contractor, :mobile_number
+
+              %li{data: {intro: "Primary Owner?", step: "8"}}
                 %strong Owned by
                 =best_in_place @contractor, :first_name
                 =best_in_place @contractor, :last_name
@@ -54,7 +58,7 @@
               .item.active
                 = image_tag "http://127.0.0.1:3000/assets/interior_house1.jpg"
                 .carousel-caption
-                  %p A beautiful living room!
+                  %p Latest remodeling
             = link_to raw("&lsaquo;"), "#portfolio_photos", class: "carousel-control left", data: {slide: "prev"}
             = link_to raw("&rsaquo;"), "#portfolio_photos", class: "carousel-control right", data: {slide: "next"}
 
@@ -92,12 +96,14 @@
               = best_in_place @contractor, :description, type: :textarea
 
           .span4{data: {intro: "Services offered by your company", step: "2"}}
-            %ul.specialties
-              = best_in_place @contractor, :specialties, type: :text_area
+            = @contractor.specialties
+
+            = link_to "#", style: "list-style: none; font-size: 1.5em;" do
+              = (content_tag :icon, "", class: "icon-plus-sign", style: "color: green;").html_safe
+              %span#add_specialty Add Specialty
 
           .span3{data: {intro: "Enter your address", step: "3"}}
-            = image_tag "/assets/profile/staticmap.png"
-            -#= @contractor.address
+            = @address.show
 
         %section.call-to-action
           %h2 Submit project details straight from the convenience of your smartphone.
@@ -146,6 +152,7 @@
               %a{:href => "#t3"} albert-einstein
             %li.tab
               %a{:href => "#t4"} ralph-waldo-emerson
+
           %p.text-right
             %a.btn.custom-btn.btn-small.btn-very-subtle{:href => "testimonials.html"} All Testimonials
 

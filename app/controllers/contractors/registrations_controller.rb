@@ -1,5 +1,7 @@
 class Contractors::RegistrationsController < Devise::RegistrationsController
 
+  respond_to :html, :json
+
   def new
     super
     @contactor = Contractor.new

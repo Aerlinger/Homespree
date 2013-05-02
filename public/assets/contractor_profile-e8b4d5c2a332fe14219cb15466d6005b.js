@@ -1,0 +1,1 @@
+(function(){$(function(){return $("#update").click(function(){return introJs().start()}),$(".best_in_place").best_in_place()})}).call(this);

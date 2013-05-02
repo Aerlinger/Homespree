@@ -10,90 +10,7 @@
       %span
 
   #nav
-    .navbar.secondary-menu
-      .container
-        .navbar-inner
-          .nav-collapse.collapse
-            %ul.nav.accordmobile.pull-right
-              %li
-                =link_to "Sign Up ", new_contractor_registration_path
-              %li.dropdown.parent
-                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-                  Sign In
-                  %i.e-icon-login
-                %ul.dropdown-menu.signin
-                  %li
-                    %form
-                      %input{:placeholder => "Email", :type => "text"}/
-                      %input{:placeholder => "Password", :type => "password"}/
-                      %label.checkbox
-                        %input{:type => "checkbox"}/
-                        Remember me
-                      %button.btn.custom-btn.btn-primary{:type => "submit"} Sign in
-                  %li.divider
-                  %li.nav-header Or Sign In with...
-                  %li
-                    .social.clearfix
-                      %a.fc-webicon.facebook.large.round{:href => "#", :title => "Facebook"}
-                      %a.fc-webicon.twitter.large.round{:href => "#", :title => "Twitter"}
-                      %a.fc-webicon.googleplus.large.round{:href => "#", :title => "Google"}
-                  %li.divider
-                  %li
-                    %a{:href => "forgot-password.html"} Forgot Password
-              %li.dropdown.parent
-                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-                  Messages
-                  %i.e-icon-comment
-                %ul.dropdown-menu
-                  %li.visible-phone.visible-tablet.phonenumber
-                    %a{:href => "tel:+8135553333"} 813.555.3333
-                  %li.menu-text.visible-desktop.phonenumber 813.555.3333
-                  %li
-                    %a{:href => "mailto:contact@longdomaingoeshere.com"} email: admin@myhomespree.com
-                  %li.divider
-                  %li.nav-header Sign Up For News!
-                  %li
-                    %form{:action => "yourscript.php", :method => "post"}
-                      .input-append.custom-append
-                        %input{:name => "email", :placeholder => "Email Address", :type => "email"}/
-                        %button.btn.btn-primary Sign Up
-                  %li.divider
-                  %li.nav-header Follow Us!
-                  %li
-                    .social.clearfix
-                      %a.fc-webicon.facebook.round{:href => "#", :title => "Facebook"}
-                      %a.fc-webicon.twitter.round{:href => "#", :title => "Twitter"}
-                      %a.fc-webicon.linkedin.round{:href => "#", :title => "Linked In"}
-                      %a.fc-webicon.pinterest.round{:href => "#", :title => "pinterest"}
-
-              %li.dropdown.parent
-                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-                  Admin
-                  %i.e-icon-cog
-                %ul.dropdown-menu
-                  %li.current-user
-                    %a{:href => "#"}
-                      %img.avatar{:alt => "Christina Arasmo", :src => "https://twimg0-a.akamaihd.net/profile_images/568222624/ILUSWEETC_normal.jpg"}/
-                    .name
-                      %b.fullname Contractor Name Goes Here
-                      %br/
-                      %small Edit profile
-                  %li.divider
-                  %li
-                    =link_to "Profile Settings"
-                  %li
-                    =link_to "Sign out", root_path, class: 'js-signout-button', data: {nav: "logout"}
-                    %form#signout-form.dropdown-link-form.signout-form{:action => "/logout", :method => "POST"}
-                      %input{:name => "", :type => "hidden", :value => ""}/
-                      %input{:name => "", :type => "hidden"}/
-                      %input{:name => "", :type => "hidden"}/
-
-              %li.divider-vertical
-              %li.search-wrapper
-                %form{:action => "someaction.php", :method => "post"}
-                  #search-trigger
-                    %i.e-icon-search
-                  %input{:placeholder => "search + enter", :type => "text"}/
+    =render "partials/upper_header"
 
     .container
       .navbar.primary-menu
@@ -102,6 +19,7 @@
             %ul.nav.accordmobile
               %li
                 %a{:href => "index.html"}
+
               %li.dropdown.parent.active
                 %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "javascript:void(0)"}
                   Contractors
@@ -122,6 +40,7 @@
                         %a{:href => "entypo-icons.html"} Homespree
                       %li
                         %a{:href => "social-icons.html"} Homespree
+
               %li.dropdown.parent
                 %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "javascript:void(0)"}
                   Homeowners

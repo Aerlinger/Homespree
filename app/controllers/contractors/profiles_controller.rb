@@ -14,8 +14,14 @@ class Contractors::ProfilesController < ApplicationController
   end
 
   def show
-    @contractor = Contractor.find(params[:id])
-    @contractor.decorate
+    @contractor = Contractor.find(params[:id]).decorate
+    @address = @contractor.address.decorate
+    @specialties = @contractor.specialties
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @contractor }
+    end
   end
 
   def edit

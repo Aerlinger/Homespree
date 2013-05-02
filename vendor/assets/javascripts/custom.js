@@ -124,12 +124,13 @@ if(/(iPhone|iPod|iPad)/i.test(navigator.userAgent)) {
 
 $(document).ready(function () {
 
+/*  // TODO: Disabled by AE.
 $('#page').prepend('<span class="bg"></span>');
 
 	var images = [
 	'1.jpg',
-	'2.jpg', 
-	'3.jpg', 
+	'2.jpg',
+	'3.jpg',
 	'4.jpg',
 	'5.jpg',
 	'6.jpg',
@@ -140,7 +141,7 @@ $('#page').prepend('<span class="bg"></span>');
 		'background-image': 'url(assets/images/background/' + images[Math.floor(Math.random() * images.length)] + ')'
 	});
 });
-
+// */
 
 /*================================================================*/
 /* BACK TO TOP with fixes for mobile
