@@ -3,11 +3,11 @@
 -#  params: @contractor   # Instance of contractor for this contractor
 -#==================================================================================================
 
-#page.clearfix
+#page.profile.clearfix
 
   -# Top information prompt
   -#================================================================================================
-  =render "contractors/profiles/info_header"
+  -#=render "contractors/profiles/info_header"
 
   -# Top Section (Info Card and Image Carousel)
   -#================================================================================================
@@ -21,11 +21,11 @@
                 = best_in_place @contractor, :company_title
               %li.price.primary-color-bg
                 =image_tag "/assets/profile/logo.jpg"
-                %span= "City, state"
+                %span= best_in_place @address, :state
                 %span.stars5
 
             %ul.features
-              %li{data: {intro: "Primary Owner?", step: "8"}}
+              %li{data: {intro: "Contact Number", step: "8"}}
                 %strong Phone:
                 =best_in_place @contractor, :mobile_number
 
@@ -52,13 +52,14 @@
               %li.select{:title => "Sign Up"}
                 =link_to "Submit a Bid", "#", class: "btn btn-large btn-primary"
 
-        .span6.offset1
-          .carousel.slide{data: {intro: "Upload Images", step: "4"}}
+        .span7
+          #portfolio.carousel.slide{data: {intro: "Upload Images", step: "4"}}
             .carousel-inner
               .item.active
                 = image_tag "http://127.0.0.1:3000/assets/interior_house1.jpg"
                 .carousel-caption
                   %p Latest remodeling
+            = link_to "Add Photos", new_photo_path, class: "btn btn-success", id: "add_photos"
             = link_to raw("&lsaquo;"), "#portfolio_photos", class: "carousel-control left", data: {slide: "prev"}
             = link_to raw("&rsaquo;"), "#portfolio_photos", class: "carousel-control right", data: {slide: "next"}
 
@@ -98,29 +99,26 @@
           .span4{data: {intro: "Services offered by your company", step: "2"}}
             = @contractor.specialties
 
-            = link_to "#", style: "list-style: none; font-size: 1.5em;" do
-              = (content_tag :icon, "", class: "icon-plus-sign", style: "color: green;").html_safe
-              %span#add_specialty Add Specialty
-
           .span3{data: {intro: "Enter your address", step: "3"}}
             = @address.show
 
-        %section.call-to-action
-          %h2 Submit project details straight from the convenience of your smartphone.
-          %a.btn.custom-btn.btn-large.btn-primary{:href => "pricing-tables.html"}
-            Download App
-            %i.e-icon-forward
+    %section.strip{style: "margin: 0;"}
+      .call-to-action
+        %h2 Submit project details straight from the convenience of your smartphone.
+        %a.btn.custom-btn.btn-large.btn-primary{:href => "pricing-tables.html"}
+          Download App
+          %i.e-icon-forward
 
     .container
       .row-fluid
         .span4
           .well
-            %h4.primary-color About Homespree
+            %h4.primary-color Why use Homespree?
             %p
               %img.alignleft{:alt => "", :src => "http://placehold.it/80x80"}/
-              Stress-free home improvement
+              Finding a trustworthy contractor at a reasonable price is usually quite a challenge. However, Homespree lets you quickly upload project requests online or from your mobile device and receive competitive estimates from quality local pros.
             %p.text-right
-              %a.btn.custom-btn.btn-primary{:href => "#"} Download App
+              %a.btn.custom-btn.btn-primary{:href => "#"} About Us
 
         .rotating-testimonials.span8
           %h3.short_headline
@@ -135,10 +133,6 @@
                 %p In the beginning the Universe was created. This has made a lot of people very angry and is widely regarded as a bad move.
                 %footer Douglas Adams
             #t3
-              %blockquote
-                %p Homespree is the single reason I created the internet.
-                %footer Al Gore
-            #t4
               %blockquote
                 %p Homespree is the single reason I created the internet.
                 %footer Al Gore

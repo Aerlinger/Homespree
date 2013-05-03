@@ -86,6 +86,10 @@ GEM
     carrierwave (0.8.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.1)
+      climate_control (>= 0.0.3, < 1.0)
     coderay (1.0.9)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -213,6 +217,12 @@ GEM
     newrelic_rpm (3.6.0.83)
     nokogiri (1.5.9)
     orm_adapter (0.4.0)
+    paperclip (3.4.1)
+      activemodel (>= 3.0.0)
+      activerecord (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.5.0)
+      mime-types
     pg (0.15.1)
     polyamorous (0.5.0)
       activerecord (~> 3.0)
@@ -365,6 +375,7 @@ DEPENDENCIES
   meta_request
   mobylette
   newrelic_rpm
+  paperclip
   pg
   rails (= 3.2.12)
   rb-fsevent

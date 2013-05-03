@@ -1,6 +1,9 @@
 class AddressDecorator < Draper::Decorator
   delegate_all
 
+  include Draper::LazyHelpers
+  include BestInPlace::BestInPlaceHelpers
+
   def show
     html = h.image_tag "/assets/profile/staticmap.png"
 

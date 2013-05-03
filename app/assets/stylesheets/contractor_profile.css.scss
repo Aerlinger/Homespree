@@ -9,7 +9,9 @@
   border: 3px solid orange;
 }
 
-
+.profile {
+  padding-top: 30px;
+}
 
 .edit-link {
   display: inline;
@@ -18,6 +20,19 @@
 
 div.feature-strip {
   padding-top: 25px;
+}
+
+div.feature-strip {
+  background: url(http://www.ivettearango.com/wp-content/uploads/2011/10/6-Valle-Living-Room-wide-web.jpg) !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
 }
 
 .incomplete_sections {
@@ -38,6 +53,14 @@ div.feature-strip {
 
   p {
     font-size: 1em;
+  }
+
+  #helper_tabs {
+    margin-top: 60px !important;
+
+    .span3 {
+      background: white;
+    }
   }
 
   .entry {
@@ -66,16 +89,30 @@ div.feature-strip {
   }
 }
 
-#profile {
-  background-color: rgb(221, 225, 255);
+.call-to-action {
+  display: block;
+  width: 100%;
+  display: table;
+  margin: 0 auto;
+}
 
-  .container {
-    padding: 30px 20px;
-  }
+.profile {
+  background-color: rgb(221, 225, 255);
 
   .full-width {
     margin-left: -13px;
     margin-right: -13px;
+  }
+
+  #portfolio {
+    margin-bottom: 100px !important;
+
+    #add_photos {
+      position: absolute;
+      opacity: .5;
+      top: 10px;
+      right: 10px;
+    }
   }
 
   section {
@@ -103,6 +140,7 @@ div.feature-strip {
     z-index: 999;
 
     .container {
+      padding: 30px 20px;
       box-shadow: 0px 0 12px 0 rgba(0, 0, 0, 0.8);
       background-color: white;
     }

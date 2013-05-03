@@ -1,12 +1,14 @@
 class ContractorDecorator < Draper::Decorator
   delegate_all
 
+  include BestInPlace::BestInPlaceHelpers
+
   def portrait_picture
-    image_tag "contractors/#{profile_pic_filename}", class: "contractor_portrait"
+    image_tag "contractors/#{@source.profile_pic_filename}", class: "contractor_portrait"
   end
 
   def full_name
-    "#{contractor.first_name} #{contractor.last_name}"
+    "#{@source.first_name} #{@source.last_name}"
   end
 
   def title
@@ -14,40 +16,19 @@ class ContractorDecorator < Draper::Decorator
   end
 
   def title_or_full_name
-    if @source.title?
-      @source.title
+    if @source.company_title?
+      @source.company_title
     else
       full_name
     end
   end
 
   def incomplete_sections
-    if @source.incomplete_sections.any?
-      html_data = h.content_tag :div do
-        ul = h.content_tag :ul do
 
-          links = @source.incomplete_sections.map do |section|
-            content_tag :li do
-              link_to section
-            end
-          end
-
-          links.join.html_safe
-        end
-      end
-      html_data.html_safe
-    end
   end
-
 
   def rating
 
-  end
-
-  def description
-    h.content_tag :p do
-      @source.description
-    end
   end
 
   def website
@@ -57,22 +38,20 @@ class ContractorDecorator < Draper::Decorator
   end
 
   def twitter
-    h.link_to @source.twitter, "http://twitter.com/#{contractor.twitter}", class: "contractor_twitter"
+    h.link_to @source.twitter, "http://twitter.com/#{@source.twitter}", class: "contractor_twitter"
   end
 
   # Todo: stubbed for now:
   def specialties
-    h.content_tag_for :li, @source.specialties do |specialty|
+    html = h.content_tag_for :li, @source.specialties do |specialty|
       specialty.name
     end
 
     # TODO: Render Add specialty link inline
-    #h.link_to "#", style: "list-style: none; font-size: 1.5em;" do
-    #  h.content_tag :icon, "", class: "icon-plus-sign", style: "color: green;" do
-    #  h.content_tag :span, "Add Specialty", id: "add_specialty"
-    #  end
-    #end
-
+    html << h.link_to("#", style: "list-style: none; font-size: 1.5em;") do
+      res = h.content_tag :icon, "", class: "icon-plus-sign", style: "color: green;"
+      res << h.content_tag(:span, "  Add Specialty", id: "add_specialty")
+    end
   end
 
   def profile_pic_filename
@@ -82,14 +61,5 @@ class ContractorDecorator < Draper::Decorator
       "default_portrait.jpg"
     end
   end
-
-  # Define presentation-specific methods hsere. Helpers are accessed through
-  # `helpers` (aka `h`). You can override attributes, for example:
-  #
-  #   def created_at
-  #     helpers.content_tag :span, class: 'time' do
-  #       source.created_at.strftime("%a %m/%d/%y")
-  #     end
-  #   end
 
 end

@@ -1,7 +1,9 @@
 class Photo < ActiveRecord::Base
-  attr_accessible :caption, :filename, :name
+  attr_accessible :contractor_id, :caption, :filename, :name, :photo
 
   validates_uniqueness_of :filename
 
   belongs_to :photographable, polymorphic: true
+
+  mount_uploader :photo, PhotoUploader
 end

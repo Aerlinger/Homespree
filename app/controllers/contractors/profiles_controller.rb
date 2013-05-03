@@ -8,7 +8,7 @@ class Contractors::ProfilesController < ApplicationController
     @contractors = Contractor.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html
       format.json { render json: @contractors }
     end
   end

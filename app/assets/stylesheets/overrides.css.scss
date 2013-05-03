@@ -2,10 +2,6 @@ section.strip.odd {
   margin: 0 !important;
 }
 
-div.feature-strip {
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
-}
 
 .pricingTable {
   margin-bottom: 0 !important;
@@ -13,7 +9,7 @@ div.feature-strip {
 
 .carousel-inner {
   img {
-    max-height: 345px;
+    max-height: 400px;
   }
 }
 
@@ -37,6 +33,7 @@ div.feature-strip {
     }
   }
 }
+
 
 .simple-social {
   float: left;
@@ -67,20 +64,12 @@ div.feature-strip {
 }
 
 div.feature-strip {
-  background: none;
+  //background: none;
   //background: #5173a4 url(/assets/homebackground.jpg) center center !important;
 }
 
 #portfolio_images {
   background: black !important;
-}
-
-#helper_tabs {
-  margin-top: 40px !important;
-
-  .span3 {
-    background: white;
-  }
 }
 
 div#page {

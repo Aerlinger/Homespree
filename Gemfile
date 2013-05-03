@@ -30,6 +30,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'figaro', '>= 0.5.3'
 gem 'haml-rails'
+gem 'paperclip'
 
 
 group :test, :development do
