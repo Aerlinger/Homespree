@@ -59,8 +59,15 @@ joe_the_plumber = Contractor.new do |c|
     a.city = "Princeton"
   end
 
-  c.address = address
+  (1..6).each do |photo_id|
+    photo = Photo.create do |p|
+      p.image_url = "#{photo_id}.jpg"
+    end
 
+    c.photos << photo
+  end
+
+  c.address = address
 end
 
 joe_the_plumber.save!

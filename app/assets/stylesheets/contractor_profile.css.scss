@@ -89,6 +89,12 @@ div.feature-strip {
   }
 }
 
+#specialty_list {
+  list-style: none;
+  font-size: 1.5em;
+}
+
+
 .call-to-action {
   display: block;
   width: 100%;
@@ -105,7 +111,18 @@ div.feature-strip {
   }
 
   #portfolio {
-    margin-bottom: 100px !important;
+    margin-bottom: 20px !important;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    background: rgba(0, 0, 0, 0.69);
+    height: 440px !important;
+
+    img {
+      height: 440px !important;
+      display: table;
+      margin: auto auto;
+    }
 
     #add_photos {
       position: absolute;
@@ -447,6 +464,44 @@ div.feature-strip {
   border-bottom: 3px solid #5676a5;
   padding-bottom: 5px;
   margin-bottom: 15px;
+}
+
+.photo-preview {
+  list-style: none;
+  display: block;
+
+  border: 1px solid #d3d3d3;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+
+  margin-bottom: 8px;
+  padding: 5px;
+
+  h5 {
+    margin-bottom: 5px;
+  }
+
+  img {
+    float: left;
+    max-width: 200px;
+    max-height: 100px;
+  }
+
+  .links {
+    display: table;
+
+    a.delete {
+      color: darkred;
+      display: table;
+      margin: auto auto;
+    }
+  }
+
+  .add {
+    align: right;
+    float: right;
+  }
 }
 
 //.title-columns {

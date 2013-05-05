@@ -1,9 +1,11 @@
 class PhotosController < ApplicationController
-  respond_to :html, :json
 
   def new
     @photo = Photo.new
-    respond_with(@photo)
+
+    respond_to do |format|
+      format.js
+    end
   end
 
   def create

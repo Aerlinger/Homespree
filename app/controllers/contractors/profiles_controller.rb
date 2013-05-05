@@ -17,10 +17,23 @@ class Contractors::ProfilesController < ApplicationController
     @contractor = Contractor.find(params[:id]).decorate
     @address = @contractor.address.decorate
     @specialties = @contractor.specialties
+    @photos = @contractor.photos
 
     respond_to do |format|
       format.html
       format.json { render json: @contractor }
+    end
+  end
+
+  def add_specialty
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def add_photo
+    respond_to do |format|
+      format.js
     end
   end
 

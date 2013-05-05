@@ -1,6 +1,7 @@
 $ ->
   # TODO: tooltips aren't working yet...
-  # $('#licensed').tooltip()
+  $('#licensed').tooltip()
+  $('.item.photo').first().addClass("active");
 
   $("#update").click ->
     introJs().start();
@@ -12,6 +13,7 @@ $ ->
   ###  # Disable temporarily
   $('.best_in_place').after("  <a href='javascript:void(0)' class='edit-link'><i class='e-icon-pencil'>edit</i></a>")
   ###
+
 
   $('.edit-link').click (evt) ->
     $(this).prev().click()

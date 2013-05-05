@@ -14,7 +14,10 @@ Homespree::Application.routes.draw do
     passwords: "contractors/passwords"
   }
 
-  resources :profiles, except: [:destroy], path: "contractors/profiles", module: "contractors", as: "contractor"
+  resources :profiles, except: [:destroy], path: "contractors/profiles", module: "contractors", as: "contractor" do
+    match "add_specialty" => "profiles#add_specialty"
+    match "add_photo" => "profiles#add_photo"
+  end
   resources :addresses, only: [:show]
   resources :specialties, only: [:show]
   resources :photos, except: [:edit, :delete]

@@ -21,6 +21,7 @@
                 = best_in_place @contractor, :company_title
               %li.price.primary-color-bg
                 =image_tag "/assets/profile/logo.jpg"
+                %span= best_in_place @address, :city
                 %span= best_in_place @address, :state
                 %span.stars5
 
@@ -34,34 +35,35 @@
                 =best_in_place @contractor, :first_name
                 =best_in_place @contractor, :last_name
 
-              %li{data: {intro: "License info", step: "9"}}
-                %strong Licensed
-                = "up to #{@contractor.license}"
-                %i.icon-question-sign.detailsPop{"data-content" => "License Info", "data-rel" => "popover", :title => "100GB"}
+              -#%li{data: {intro: "License info", step: "9"}}
+              -#  %strong Licensed
+              -#  = "up to #{@contractor.license}"
+              -#  %i.icon-question-sign.detailsPop{"data-content" => "License Info", "data-rel" => "popover", :title => "100GB"}
+              -#
+              -#%li{data: {intro: "Bond info", step: "10"}}
+              -#  %strong Bonded
+              -#  = "up to #{@contractor.bonding_limit}"
+              -#  %i.icon-question-sign.detailsPop{"data-content" => "Bond info", "data-rel" => "popover", :title => "100GB"}
+              -#
+              -#%li{data: {intro: "BBB Information", step: "11"}}
+              -#  %strong BBB Verified
+              -#  View Details
+              -#  %i.icon-question-sign.detailsPop{"data-content" => "BBB Info", "data-rel" => "popover", :title => "100GB"}
 
-              %li{data: {intro: "Bond info", step: "10"}}
-                %strong Bonded
-                = "up to #{@contractor.bonding_limit}"
-                %i.icon-question-sign.detailsPop{"data-content" => "Bond info", "data-rel" => "popover", :title => "100GB"}
-
-              %li{data: {intro: "BBB Information", step: "11"}}
-                %strong BBB Verified Contractor
-                View Details
-                %i.icon-question-sign.detailsPop{"data-content" => "BBB Info", "data-rel" => "popover", :title => "100GB"}
-
-              %li.select{:title => "Sign Up"}
+              %li.select
                 =link_to "Submit a Bid", "#", class: "btn btn-large btn-primary"
 
         .span7
           #portfolio.carousel.slide{data: {intro: "Upload Images", step: "4"}}
             .carousel-inner
-              .item.active
-                = image_tag "http://127.0.0.1:3000/assets/interior_house1.jpg"
+              = content_tag_for :div, @photos, class: "item" do |photo|
+                = image_tag(asset_path("portfolio_images/" + photo.image_url))
                 .carousel-caption
-                  %p Latest remodeling
-            = link_to "Add Photos", new_photo_path, class: "btn btn-success", id: "add_photos"
-            = link_to raw("&lsaquo;"), "#portfolio_photos", class: "carousel-control left", data: {slide: "prev"}
-            = link_to raw("&rsaquo;"), "#portfolio_photos", class: "carousel-control right", data: {slide: "next"}
+
+            = link_to "#edit_photos", class: "btn btn-success", id: "add_photos", data: {toggle: "modal"} do
+              = content_tag :icon, "  Add/Edit Photos", class: "icon-plus-sign", style: "color: white;"
+            = link_to raw("&lsaquo;"), "#portfolio", class: "carousel-control left", data: {slide: "prev"}
+            = link_to raw("&rsaquo;"), "#portfolio", class: "carousel-control right", data: {slide: "next"}
 
           .row#helper_tabs
             .span4.no-bg
@@ -149,5 +151,7 @@
 
           %p.text-right
             %a.btn.custom-btn.btn-small.btn-very-subtle{:href => "testimonials.html"} All Testimonials
+
+  =render "contractors/partials/photos_modal", photos: @photos
 
   =render "partials/clean_footer"

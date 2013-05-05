@@ -1,0 +1,28 @@
+#edit_photos.modal.hide.fade{role: "dialog", tabindex: "-1", aria: {labelledby: "photo_modal", hidden: "true"}}
+  .modal-header
+    %button.close{type: "button", data: {dismiss: "modal"}, aria: {hidden: "true"}}
+      &times;
+    %h3 Add or Edit Photos
+
+  .modal-body.photo-preview
+    =content_tag_for :li, photos, class: "photo-preview" do |photo|
+      .row-fluid
+        .span3
+          =image_tag asset_path("portfolio_images/" + photo.image_url)
+        .span5.offset1.photo-description
+          %h5#photo_modal Image title
+          %p Create a caption for this image
+        .span3
+          = link_to "Delete", class: "delete"
+
+    %li.photo-preview
+      .row-fluid
+        .span5.offset4
+          = link_to "#", class: "btn btn-success" do
+            %i.icon-plus-sign  &nbsp Upload a new photo
+
+  .modal-footer
+    %a.btn{href: "#", data: {dismiss: "modal"}, aria: {hidden: "true"}}
+      Close
+    %button.btn.btn-primary
+      Save changes

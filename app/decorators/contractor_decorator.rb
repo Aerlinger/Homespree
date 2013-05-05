@@ -47,8 +47,7 @@ class ContractorDecorator < Draper::Decorator
       specialty.name
     end
 
-    # TODO: Render Add specialty link inline
-    html << h.link_to("#", style: "list-style: none; font-size: 1.5em;") do
+    html << h.link_to("/contractors/profiles/#{@source.id}/add_specialty", remote: true, id: "specialty_list") do
       res = h.content_tag :icon, "", class: "icon-plus-sign", style: "color: green;"
       res << h.content_tag(:span, "  Add Specialty", id: "add_specialty")
     end
