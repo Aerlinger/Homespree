@@ -3,8 +3,7 @@
 
   = simple_form_for resource, :as => resource_name, :url => session_path(resource_name), class: "form login-form" do |f|
     %legend
-      Sign up for
-      %span.blue Homespree
+      Account sign in
     .body
       = f.input :email
       = f.input :password
@@ -12,7 +11,7 @@
 
 %footer.white.navbar-fixed-bottom
   Don't have an account yet?
-  =link_to "Sign up", new_contractor_registration_path, class: "btn btn-black"
+  =link_to "Submit", new_contractor_registration_path, class: "btn btn-black"
 
 
   -# TODO:  --------------------------------------------------------------------------------------------------

@@ -4,7 +4,7 @@
   .incomplete_sections
     .container
       .span6
-        %h3 Hey! There are a few incomplete sections in your profile.
+        %h3= "Welcome back, #{@contractor.first_name || @contractor.email}!"
         %p
           For the best chance of success in finding leads we recommend you complete the following:
           %span.incomplete_attributes

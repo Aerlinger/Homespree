@@ -1,5 +1,4 @@
 $ ->
-  # TODO: tooltips aren't working yet...
   $('#licensed').tooltip()
   $('.item.photo').first().addClass("active");
 

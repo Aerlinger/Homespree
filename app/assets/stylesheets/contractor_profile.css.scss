@@ -14,8 +14,23 @@
 }
 
 .edit-link {
-  display: inline;
+  //width: 50px;
+  //display: block;
+  //border: 1px solid $homespree_accent;
+  //background: $homespree_lightest;
   font-size: 12px;
+  //position: relative;
+  //top: 0;
+  //right: 8px;
+  margin-right: 5px;
+  font-weight: normal;
+  padding-left: 3px;
+  padding-right: 3px;
+
+  i {
+    display: block;
+  }
+
 }
 
 div.feature-strip {
@@ -178,6 +193,9 @@ div.feature-strip {
         margin-bottom: 5px;
 
         padding: 10px 3px;
+
+        font-weight: 400;
+        font-size: 20px;
 
         background-color: $homespree_accent_light;
       }

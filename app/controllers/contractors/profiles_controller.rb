@@ -14,10 +14,13 @@ class Contractors::ProfilesController < ApplicationController
   end
 
   def show
-    @contractor = Contractor.find(params[:id]).decorate
+    @contractor = Contractor.find(params[:id])
     @address = @contractor.address.decorate
+    @specialty = Specialty.new
     @specialties = @contractor.specialties
     @photos = @contractor.photos
+
+    @contractor = @contractor.decorate
 
     respond_to do |format|
       format.html

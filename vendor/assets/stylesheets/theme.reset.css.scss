@@ -647,8 +647,8 @@ embed,
 }
 
 /* Don't collapse these into one ruleset. When a browser doesn't
-recognise a selector it discards the whole ruleset. 
-By using vendor selectors in one ruleset you guarentee 
+recognise a selector it discards the whole ruleset.
+By using vendor selectors in one ruleset you guarentee
 nothing will be applied */
 ::-webkit-selection {
     background-color: #777777;

@@ -1,390 +1,390 @@
-@import "global/palette.css.scss";
-
-
-
-.incomplete_sections {
-
-  padding-left: 15px;
-  padding-right: 10px;
-
-  position: relative;
-
-  border: 2px solid $homespree_warn;
-  background-color: lightgoldenrodyellow;
-
-  margin-bottom: 15px;
-
-  h6, h5, h4, h3 {
-    padding: none !important;
-    margin: none !important;
-  }
-
-  p {
-    font-size: 1em;
-  }
-
-
-  .entry {
-    #margin-left: 4em;
-    width: 100%;
-    border: 1px solid #c6bf99;
-    background-color: #f9fae1;
-
-    padding: 5px;
-    padding-right: 0px;
-    margin: 5px auto;
-    margin-right: 0px;
-
-    input {
-      margin-bottom: 0px;
-      margin-left: 5px;
-    }
-  }
-
-  .ignore_this {
-    a {
-      position: absolute;
-      top: 5px;
-      right: 10px;
-    }
-  }
-}
-
-#profile {
-  background-color: rgb(221, 225, 255);
-
-  .container {
-    padding: 30px 20px;
-  }
-
-  .full-width {
-    margin-left: -13px;
-    margin-right: -13px;
-  }
-
-  section {
-  }
-
-  section.showcase {
-    min-height: 400px;
-  }
-
-  h1 {
-    margin-top: 0;
-  }
-
-  h2 {
-    color: darkblue;
-    font-weight: 300;
-  }
-
-  h3 {
-    margin-bottom: 5px;
-  }
-
-  #primary {
-    position: relative;
-    z-index: 999;
-
-    .container {
-      box-shadow: 0px 0 12px 0 rgba(0, 0, 0, 0.8);
-      background-color: white;
-    }
-
-    #card {
-      display: block;
-      box-shadow: $shadow;
-
-      background-color: $homespree_lightest;
-      border: 4px solid white;
-
-      .title {
-        display: block;
-        border-top: 1px solid $homespree_blue;
-        border-bottom: 1px solid $homespree_blue;
-
-        margin: 0;
-        margin-bottom: 5px;
-
-        padding: 5px 3px;
-
-        background-color: $homespree_accent_light;
-      }
-    }
-
-    #portfolio_images {
-      margin-left: 0px !important;
-    }
-
-    .photo-preview {
-      margin: 5px;
-      margin-left: 0 !important;
-      padding-left: 0 !important;
-
-      img {
-        display: table;
-        margin: 0 auto;
-        border: 3px solid #f5f5f5;
-
-        &:hover {
-          border: 3px solid #c7c7c7;
-        }
-      }
-
-      .quad-photos {
-        img {
-          margin: 5px !important;
-          display: block;
-          float: left;
-        }
-      }
-    }
-
-    #submit_bid {
-      display: table;
-      width: 300px;
-      margin: 15px auto;
-      font-size: 1.6em;
-      font-weight: bolder;
-      border: 2px solid #2f682a;
-      border-radius: 0;
-      box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.2);
-    }
-
-    #contractor_portrait {
-      img {
-        margin-right: 10px;
-        border-radius: 2px;
-
-        border: 1px solid rgba(128, 128, 128, 0.64);
-
-        border-radius: 2px;
-        max-width: 75px;
-        max-height: 75px;
-      }
-    }
-
-    .insurance {
-      margin-top: 15px;
-      width: 100%;
-
-      td {
-        padding-left: 10px;
-        font-weight: bold;
-        a {
-          padding-left: 5px;
-          text-decoration: italic;
-          font-size: .8em;
-        }
-        border: 1px solid black;
-      }
-
-      tr:nth-child(odd) {
-        td:first-child {
-          padding-left: -15px;
-          color: green;
-          border: 1px solid green;
-          background-color: #c5eec0;
-          text-align: center;
-        }
-      }
-
-      tr:nth-child(even) {
-        margin-bottom: 8px;
-        td {
-          font-weight: 200;
-          &:first-child {
-            border: 1px solid green;
-            background-color: #dbffdd;
-            text-align: center;
-          }
-        }
-      }
-    }
-  }
-
-  #secondary {
-    background-color: white;
-    position: relative;
-    z-index: 998;
-    //box-shadow: 0px 0 10px 0 rgba(0, 0, 0, 0.8);
-
-    #address {
-      margin-left: 2px;
-
-      p {
-        margin-bottom: 0;
-        text-align: justify;
-      }
-
-      a{
-        float: right;
-      }
-    }
-
-    .specialties {
-      * {
-        text-align: center !important;
-      }
-      h2 {
-        line-height: 30px !important;
-      }
-
-      ul {
-        list-style: none;
-        margin-left: 0;
-      }
-
-      li {
-        text-align: center;
-        font-style: italic;
-        font-size: italic;
-        line-height: 1.5em;
-        font-size: 1.3em;
-        font-weight: 200;
-
-        a {
-          font-size: .8em;
-        }
-      }
-    }
-
-    p.description {
-        text-align: justify;
-    }
-  }
-
-  .check {
-    color: green;
-  }
-
-  .question {
-    padding-left: 0 !important;
-    float: right;
-    font-size: 8px;
-    display: block;
-    width: 10px;
-    height: 14px;
-    background-color: #ecffed;
-    border-radius: 10px;
-    line-height: 14px;
-    margin-right: 3px;
-    margin-top: 3px;
-
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-  }
-
-  .review-title {
-    line-height: 50px;
-  }
-
-  .map {
-    #google_map img {
-      border: 2px solid grey;
-      max-height: 200px;
-      width: 100%;
-    }
-
-    p {
-      font-size: 12px;
-      line-height: 13px;
-      font-weight: bold;
-    }
-
-    a {
-      font-size: .8em;
-    }
-  }
-
-  #full_name {
-    margin: 0;
-    padding-top: 5px;
-  }
-
-  #phone_num {
-    margin: 0;
-    margin-top: 6px;
-    font-size: 1.3em;
-  }
-
-  #website, h2 {
-    margin: 0;
-    line-height: 14px;
-  }
-
-  .contractor_website {
-    height: 14px;
-  }
-
-  #years_in_business {
-    margin: 12px 2px !important;
-    font-style: italic;
-    font-weight: normal;
-  }
-
-  .slogan {
-    padding-left: 8px;
-  }
-}
-
-#reviews_title {
-  .container {
-    padding-top: 0;
-    padding-bottom: 0;
-
-    * {
-      text-align: center;
-    }
-  }
-
-  background-color: $homespree_accent_light;
-  border-bottom: 1px solid black;
-}
-
-#reviews {
-  padding-top: 0 !important;
-  background-color: rgb(223, 229, 255);
-
-  .container {
-    background-color: white;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
-  }
-
-  h2 {
-    margin-top: 2px;
-    margin-bottom: 2px;
-    padding: none;
-    background-color: $homespree_lightest;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    margin: 0;
-  }
-}
-
-.review {
-  border-bottom: 1px solid #cccccc;
-
-  min-height: 110px;
-  padding: 10px;
-  margin-bottom: 5px;
-}
-
-.link-tab {
-  display: block;
-  border-top-left-radius: 7px;
-  border-top-right-radius: 7px;
-  width: 100%;
-  height: 40px;
-  line-height: 40px;
-  text-align: center;
-  color: white !important;
-  font-weight: bold;
-  text-decoration: none;
-  vertical-align: middle;
-  font-size: 1.2em;
-  background: #5676a5;
-  margin: 0 !important;
-}
+//@import "global/palette.css.scss";
+//
+//
+//
+//.incomplete_sections {
+//
+//  padding-left: 15px;
+//  padding-right: 10px;
+//
+//  position: relative;
+//
+//  border: 2px solid $homespree_warn;
+//  background-color: lightgoldenrodyellow;
+//
+//  margin-bottom: 15px;
+//
+//  h6, h5, h4, h3 {
+//    padding: none !important;
+//    margin: none !important;
+//  }
+//
+//  p {
+//    font-size: 1em;
+//  }
+//
+//
+//  .entry {
+//    #margin-left: 4em;
+//    width: 100%;
+//    border: 1px solid #c6bf99;
+//    background-color: #f9fae1;
+//
+//    padding: 5px;
+//    padding-right: 0px;
+//    margin: 5px auto;
+//    margin-right: 0px;
+//
+//    input {
+//      margin-bottom: 0px;
+//      margin-left: 5px;
+//    }
+//  }
+//
+//  .ignore_this {
+//    a {
+//      position: absolute;
+//      top: 5px;
+//      right: 10px;
+//    }
+//  }
+//}
+//
+//#profile {
+//  background-color: rgb(221, 225, 255);
+//
+//  .container {
+//    padding: 30px 20px;
+//  }
+//
+//  .full-width {
+//    margin-left: -13px;
+//    margin-right: -13px;
+//  }
+//
+//  section {
+//  }
+//
+//  section.showcase {
+//    min-height: 400px;
+//  }
+//
+//  h1 {
+//    margin-top: 0;
+//  }
+//
+//  h2 {
+//    color: darkblue;
+//    font-weight: 300;
+//  }
+//
+//  h3 {
+//    margin-bottom: 5px;
+//  }
+//
+//  #primary {
+//    position: relative;
+//    z-index: 999;
+//
+//    .container {
+//      box-shadow: 0px 0 12px 0 rgba(0, 0, 0, 0.8);
+//      background-color: white;
+//    }
+//
+//    #card {
+//      display: block;
+//      box-shadow: $shadow;
+//
+//      background-color: $homespree_lightest;
+//      border: 4px solid white;
+//
+//      .title {
+//        display: block;
+//        border-top: 1px solid $homespree_blue;
+//        border-bottom: 1px solid $homespree_blue;
+//
+//        margin: 0;
+//        margin-bottom: 5px;
+//
+//        padding: 5px 3px;
+//
+//        background-color: $homespree_accent_light;
+//      }
+//    }
+//
+//    #portfolio_images {
+//      margin-left: 0px !important;
+//    }
+//
+//    .photo-preview {
+//      margin: 5px;
+//      margin-left: 0 !important;
+//      padding-left: 0 !important;
+//
+//      img {
+//        display: table;
+//        margin: 0 auto;
+//        border: 3px solid #f5f5f5;
+//
+//        &:hover {
+//          border: 3px solid #c7c7c7;
+//        }
+//      }
+//
+//      .quad-photos {
+//        img {
+//          margin: 5px !important;
+//          display: block;
+//          float: left;
+//        }
+//      }
+//    }
+//
+//    #submit_bid {
+//      display: table;
+//      width: 300px;
+//      margin: 15px auto;
+//      font-size: 1.6em;
+//      font-weight: bolder;
+//      border: 2px solid #2f682a;
+//      border-radius: 0;
+//      box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.2);
+//    }
+//
+//    #contractor_portrait {
+//      img {
+//        margin-right: 10px;
+//        border-radius: 2px;
+//
+//        border: 1px solid rgba(128, 128, 128, 0.64);
+//
+//        border-radius: 2px;
+//        max-width: 75px;
+//        max-height: 75px;
+//      }
+//    }
+//
+//    .insurance {
+//      margin-top: 15px;
+//      width: 100%;
+//
+//      td {
+//        padding-left: 10px;
+//        font-weight: bold;
+//        a {
+//          padding-left: 5px;
+//          text-decoration: italic;
+//          font-size: .8em;
+//        }
+//        border: 1px solid black;
+//      }
+//
+//      tr:nth-child(odd) {
+//        td:first-child {
+//          padding-left: -15px;
+//          color: green;
+//          border: 1px solid green;
+//          background-color: #c5eec0;
+//          text-align: center;
+//        }
+//      }
+//
+//      tr:nth-child(even) {
+//        margin-bottom: 8px;
+//        td {
+//          font-weight: 200;
+//          &:first-child {
+//            border: 1px solid green;
+//            background-color: #dbffdd;
+//            text-align: center;
+//          }
+//        }
+//      }
+//    }
+//  }
+//
+//  #secondary {
+//    background-color: white;
+//    position: relative;
+//    z-index: 998;
+//    //box-shadow: 0px 0 10px 0 rgba(0, 0, 0, 0.8);
+//
+//    #address {
+//      margin-left: 2px;
+//
+//      p {
+//        margin-bottom: 0;
+//        text-align: justify;
+//      }
+//
+//      a{
+//        float: right;
+//      }
+//    }
+//
+//    .specialties {
+//      * {
+//        text-align: center !important;
+//      }
+//      h2 {
+//        line-height: 30px !important;
+//      }
+//
+//      ul {
+//        list-style: none;
+//        margin-left: 0;
+//      }
+//
+//      li {
+//        text-align: center;
+//        font-style: italic;
+//        font-size: italic;
+//        line-height: 1.5em;
+//        font-size: 1.3em;
+//        font-weight: 200;
+//
+//        a {
+//          font-size: .8em;
+//        }
+//      }
+//    }
+//
+//    p.description {
+//        text-align: justify;
+//    }
+//  }
+//
+//  .check {
+//    color: green;
+//  }
+//
+//  .question {
+//    padding-left: 0 !important;
+//    float: right;
+//    font-size: 8px;
+//    display: block;
+//    width: 10px;
+//    height: 14px;
+//    background-color: #ecffed;
+//    border-radius: 10px;
+//    line-height: 14px;
+//    margin-right: 3px;
+//    margin-top: 3px;
+//
+//    -moz-border-radius: 5px;
+//    -webkit-border-radius: 5px;
+//  }
+//
+//  .review-title {
+//    line-height: 50px;
+//  }
+//
+//  .map {
+//    #google_map img {
+//      border: 2px solid grey;
+//      max-height: 200px;
+//      width: 100%;
+//    }
+//
+//    p {
+//      font-size: 12px;
+//      line-height: 13px;
+//      font-weight: bold;
+//    }
+//
+//    a {
+//      font-size: .8em;
+//    }
+//  }
+//
+//  #full_name {
+//    margin: 0;
+//    padding-top: 5px;
+//  }
+//
+//  #phone_num {
+//    margin: 0;
+//    margin-top: 6px;
+//    font-size: 1.3em;
+//  }
+//
+//  #website, h2 {
+//    margin: 0;
+//    line-height: 14px;
+//  }
+//
+//  .contractor_website {
+//    height: 14px;
+//  }
+//
+//  #years_in_business {
+//    margin: 12px 2px !important;
+//    font-style: italic;
+//    font-weight: normal;
+//  }
+//
+//  .slogan {
+//    padding-left: 8px;
+//  }
+//}
+//
+//#reviews_title {
+//  .container {
+//    padding-top: 0;
+//    padding-bottom: 0;
+//
+//    * {
+//      text-align: center;
+//    }
+//  }
+//
+//  background-color: $homespree_accent_light;
+//  border-bottom: 1px solid black;
+//}
+//
+//#reviews {
+//  padding-top: 0 !important;
+//  background-color: rgb(223, 229, 255);
+//
+//  .container {
+//    background-color: white;
+//    border-left: 1px solid black;
+//    border-right: 1px solid black;
+//  }
+//
+//  h2 {
+//    margin-top: 2px;
+//    margin-bottom: 2px;
+//    padding: none;
+//    background-color: $homespree_lightest;
+//  }
+//
+//  h1, h2, h3, h4, h5, h6 {
+//    margin: 0;
+//  }
+//}
+//
+//.review {
+//  border-bottom: 1px solid #cccccc;
+//
+//  min-height: 110px;
+//  padding: 10px;
+//  margin-bottom: 5px;
+//}
+//
+//.link-tab {
+//  display: block;
+//  border-top-left-radius: 7px;
+//  border-top-right-radius: 7px;
+//  width: 100%;
+//  height: 40px;
+//  line-height: 40px;
+//  text-align: center;
+//  color: white !important;
+//  font-weight: bold;
+//  text-decoration: none;
+//  vertical-align: middle;
+//  font-size: 1.2em;
+//  background: #5676a5;
+//  margin: 0 !important;
+//}

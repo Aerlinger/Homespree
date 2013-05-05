@@ -59,29 +59,31 @@
               =link_to "Sign Up ", new_contractor_registration_path
 
             %li.dropdown.parent
-              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+              =link_to new_contractor_session_path do
                 Sign In
                 %i.e-icon-login
-              %ul.dropdown-menu.signin
-                %li
-                  %form
-                    %input{:placeholder => "Email", :type => "text"}/
-                    %input{:placeholder => "Password", :type => "password"}/
-                    %label.checkbox
-                      %input{:type => "checkbox"}/
-                      Remember me
-                    %button.btn.custom-btn.btn-primary{:type => "submit"} Sign in
-                %li.divider
-                %li.nav-header Or Sign In with...
-                %li
-                  .social.clearfix
-                    %a.fc-webicon.facebook.large.round{:href => "#", :title => "Facebook"}
-                    %a.fc-webicon.twitter.large.round{:href => "#", :title => "Twitter"}
-                    %a.fc-webicon.googleplus.large.round{:href => "#", :title => "Google"}
-                %li.divider
-                %li
-                  %a{:href => "forgot-password.html"} Forgot Password
+              -#%a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
 
+          -#    %ul.dropdown-menu.signin
+          -#      %li
+          -#        %form
+          -#          %input{:placeholder => "Email", :type => "text"}/
+          -#          %input{:placeholder => "Password", :type => "password"}/
+          -#          %label.checkbox
+          -#            %input{:type => "checkbox"}/
+          -#            Remember me
+          -#          %button.btn.custom-btn.btn-primary{:type => "submit"} Sign in
+          -#      %li.divider
+          -#      %li.nav-header Or Sign In with...
+          -#      %li
+          -#        .social.clearfix
+          -#          %a.fc-webicon.facebook.large.round{:href => "#", :title => "Facebook"}
+          -#          %a.fc-webicon.twitter.large.round{:href => "#", :title => "Twitter"}
+          -#          %a.fc-webicon.googleplus.large.round{:href => "#", :title => "Google"}
+          -#      %li.divider
+          -#      %li
+          -#        %a{:href => "forgot-password.html"} Forgot Password
+          -#
           %li.divider-vertical
             %li.search-wrapper
               %form{:action => "someaction.php", :method => "post"}

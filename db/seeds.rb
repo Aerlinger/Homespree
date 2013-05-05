@@ -28,7 +28,7 @@ joe_the_plumber = Contractor.new do |c|
   c.id = 1
   c.first_name = "joe"
   c.last_name = "Plumber"
-  c.company_title = "Joe's Most Excellent Plumbing Services"
+  c.company_title = "Joe's Most Excellent Plumbing"
 
   c.bonding_limit = 100.00
   c.insurance_limit = 200.00

@@ -7,10 +7,12 @@
 
   -# Top information prompt
   -#================================================================================================
-  -#=render "contractors/profiles/info_header"
+  =render "contractors/profiles/info_header"
 
   -# Top Section (Info Card and Image Carousel)
   -#================================================================================================
+  %meta={new_profile: @contractor.new_profile}
+
   .feature-strip
     .container
       .row-fluid.pricingTable
@@ -19,6 +21,7 @@
             %ul.optionheader
               %li#title.title.primary-color-bg{data: {intro: "Whats your Company's name?", step: "1"}}
                 = best_in_place @contractor, :company_title
+                = render "edit_link"
               %li.price.primary-color-bg
                 =image_tag "/assets/profile/logo.jpg"
                 %span= best_in_place @address, :city
@@ -26,29 +29,35 @@
                 %span.stars5
 
             %ul.features
-              %li{data: {intro: "Contact Number", step: "8"}}
-                %strong Phone:
-                =best_in_place @contractor, :mobile_number
+              - if @contractor.mobile_number.present?
+                %li{data: {intro: "Contact Number", step: "8"}}
+                  %strong Phone:
+                  =best_in_place @contractor, :mobile_number
+                  =render "edit_link"
 
-              %li{data: {intro: "Primary Owner?", step: "8"}}
-                %strong Owned by
-                =best_in_place @contractor, :first_name
-                =best_in_place @contractor, :last_name
+              - if @contractor.first_name.present?
+                %li{data: {intro: "Primary Owner?", step: "8"}}
+                  %strong Owned by
+                  =best_in_place @contractor, :first_name
+                  =best_in_place @contractor, :last_name if @contractor.last_name.present?
+                  =render "edit_link"
 
-              -#%li{data: {intro: "License info", step: "9"}}
-              -#  %strong Licensed
-              -#  = "up to #{@contractor.license}"
-              -#  %i.icon-question-sign.detailsPop{"data-content" => "License Info", "data-rel" => "popover", :title => "100GB"}
-              -#
-              -#%li{data: {intro: "Bond info", step: "10"}}
-              -#  %strong Bonded
-              -#  = "up to #{@contractor.bonding_limit}"
-              -#  %i.icon-question-sign.detailsPop{"data-content" => "Bond info", "data-rel" => "popover", :title => "100GB"}
-              -#
-              -#%li{data: {intro: "BBB Information", step: "11"}}
-              -#  %strong BBB Verified
-              -#  View Details
-              -#  %i.icon-question-sign.detailsPop{"data-content" => "BBB Info", "data-rel" => "popover", :title => "100GB"}
+              - if @contractor.website.present?
+                %li{data: {intro: "Website", step: "9"}}
+                  =best_in_place @contractor, :website
+                  =render "edit_link"
+
+              - if @contractor.license.present?
+                %li{data: {intro: "License info", step: "9"}}
+                  %strong Licensed
+                  = "up to #{@contractor.license}"
+                  %i.icon-question-sign.detailsPop{"data-content" => "License Info", "data-rel" => "popover", :title => "100GB"}
+
+              - if @contractor.bonding_limit.present?
+                %li{data: {intro: "Bond info", step: "10"}}
+                  %strong Bonded
+                  = "up to #{@contractor.bonding_limit}"
+                  %i.icon-question-sign.detailsPop{"data-content" => "Bond info", "data-rel" => "popover", :title => "100GB"}
 
               %li.select
                 =link_to "Submit a Bid", "#", class: "btn btn-large btn-primary"
@@ -58,7 +67,7 @@
             .carousel-inner
               = content_tag_for :div, @photos, class: "item" do |photo|
                 = image_tag(asset_path("portfolio_images/" + photo.image_url))
-                .carousel-caption
+                -#.carousel-caption
 
             = link_to "#edit_photos", class: "btn btn-success", id: "add_photos", data: {toggle: "modal"} do
               = content_tag :icon, "  Add/Edit Photos", class: "icon-plus-sign", style: "color: white;"
@@ -85,24 +94,37 @@
           .span5
             %h3.short_headline
               %div Business Description
-          .span4
-            %h3.short_headline
-              %div Services Offered
-          .span3
-            %h3.short_headline
-              %div Service Area
-        .row-fluid
-          .span5
             %h6{data: {intro: "Your company's slogan", step: "6"}}
               = best_in_place @contractor, :slogan
+              =render "edit_link"
             %p{data: {intro: "Your company's description", step: "7"}}
               = best_in_place @contractor, :description, type: :textarea
+              =render "edit_link"
 
           .span4{data: {intro: "Services offered by your company", step: "2"}}
-            = @contractor.specialties
+            %h3.short_headline
+              %div Services Offered
+            %ul.specialties
+              = content_tag_for :li, @specialties do |specialty|
+                = best_in_place specialty, :name
+                = render "delete_link", contractor: @contractor, specialty: specialty
+                = render "edit_link"
+            %hr
+            = simple_form_for [@contractor, @specialty] do |f|
+              = f.input :name, placeholder: "e.g. Painting", label: "Name of service"
+              = f.submit "Add Service", class: "btn btn-success"
 
           .span3{data: {intro: "Enter your address", step: "3"}}
-            = @address.show
+            %h3.short_headline
+              %div Service Area
+            =image_tag asset_path("profile/staticmap.png")
+            .address.line1= best_in_place @address, :line1
+            =render "edit_link"
+            .address.line2= best_in_place @address, :line2
+            =render "edit_link"
+            %span.address= best_in_place @address, :city
+            %span.address= best_in_place @address, :state
+
 
     %section.strip{style: "margin: 0;"}
       .call-to-action
@@ -152,6 +174,6 @@
           %p.text-right
             %a.btn.custom-btn.btn-small.btn-very-subtle{:href => "testimonials.html"} All Testimonials
 
-  =render "contractors/partials/photos_modal", photos: @photos
+  =render "photos_modal", photos: @photos
 
   =render "partials/clean_footer"

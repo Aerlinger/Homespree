@@ -1,6 +1,5 @@
 Homespree::Application.routes.draw do
 
-
   # Root route must be before ActiveAdmin.routes(self)
   root :to => 'static_pages#home'
 
@@ -14,14 +13,16 @@ Homespree::Application.routes.draw do
     passwords: "contractors/passwords"
   }
 
+  resources :contractors, only: [] do
+    resources :specialties
+  end
+
   resources :profiles, except: [:destroy], path: "contractors/profiles", module: "contractors", as: "contractor" do
     match "add_specialty" => "profiles#add_specialty"
     match "add_photo" => "profiles#add_photo"
   end
-  resources :addresses, only: [:show]
-  resources :specialties, only: [:show]
+  resources :addresses, only: [:show, :update]
   resources :photos, except: [:edit, :delete]
-
 
   scope "/mailinglist", as: :mailinglist do
     match "create" => "mailinglists#create", via: :post
