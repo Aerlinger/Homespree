@@ -1,4 +1,0 @@
-# Logfile created on 2013-03-21 19:48:16 -0400 by logger.rb/31641
-REQUESTING PAGE: GET /contractors/sign_up with {} and HTTP headers {}
-REQUESTING PAGE: POST /contractors with {"utf8"=>"✓", "contractor"=>{"email"=>"joetheplumber@test.com", "company_title"=>"Joe's Plumbing", "password"=>"iamsecret"}, "commit"=>"Sign Up"} and HTTP headers {"HTTP_REFERER"=>"/contractors/sign_up"}
-REQUESTING PAGE: GET /contractors/sign_up with {} and HTTP headers {}

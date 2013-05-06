@@ -57,7 +57,7 @@
 ================================================== */
 .lemmon-slider li div.summary {
     position: absolute;
-    background: url(/app/assets/images/images/80p.png);
+    background: url(/assets/images/80p.png);
     color: #fff;
     opacity: 0;
     z-index: 100;

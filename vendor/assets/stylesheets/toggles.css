@@ -30,7 +30,7 @@
 	background: #eee;
 }
 .no-js .accordion > div.accordion-group > .accordion-body.collapse {
-    overflow: visible!!important;
+    overflow: visible !important;
     display: block!important visibility:visible!important;
     height: auto!important;
 }
@@ -41,14 +41,14 @@
     right: 10px;
 }
 .no-js li.st-content-wrapper {
-    overflow: visible!!important;
+    overflow: visible !important;
     height: auto!important;
 }
 .no-js li.st-content-wrapper .st-content {
     display: block!important;
     clear: both!important;
-    visibility: visible!important;
-    overflow: visible!!important;
+    visibility: visible !important;
+    overflow: visible !important;
 }
 .slide-to-top .st-open .trigger i:before { content: "\e764" }
 .slide-to-top {
@@ -127,17 +127,17 @@ li.st-content-wrapper .st-content { padding: 2% 3% 3% }
 
 @media print { 
 	li.st-content-wrapper {
-	    overflow: visible!!important;
+	    overflow: visible !important;
 	    height: auto!important;
 	}
 	li.st-content-wrapper .st-content {
 	    display: block!important;
 	    clear: both!important;
 	    visibility: visible!important;
-	    overflow: visible!!important;
+	    overflow: visible !important;
 	}
 	.accordion > div.accordion-group > .accordion-body.collapse {
-  	  overflow: visible!!important;
+  	  overflow: visible !important;
  	   display: block!important visibility:visible!important;
  	   height: auto!important;
 	}

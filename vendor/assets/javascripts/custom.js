@@ -1,5 +1,3 @@
-console.log("Loaded custom.js");
-
 /*================================================================*/
 /* Remove Mobile Address Bar on iPhone and Android Devices
  /*================================================================*/
@@ -196,50 +194,50 @@ $(document).ready(function () {
      /*  works with: slide-to-top-accordion-min.js
      /*  http://tympanus.net/Tutorials/FlexibleSlideToTopAccordion/ modified
      /*================================================================*/
-    if (document.documentElement.clientWidth > 767) {
-//all closed
-        $(document).ready(function () {
-            $('.slide-to-top.all-closed').slideaccordion({
-                oneOpenedItem: true,
-                scrollOffset: 120,
-                open: -1 // 0 = first pane is open / -1 all are closed
-            });
-        });
-
-//initialize FIRST OPEN
-        $(document).ready(function () {
-            $('.slide-to-top.first-pane-open').slideaccordion({
-                oneOpenedItem: true,
-                scrollOffset: 120,
-                open: 0 // 0 = first pane is open / -1 all are closed
-            });
-        });
-
-    } //greater than 767px;
-
-    /*================================================================*/
-    /*  LESS THAN 767px;
-     /*================================================================*/
-    if (document.documentElement.clientWidth < 767) {
-//all closed
-        $(document).ready(function () {
-            $('.slide-to-top.all-closed').slideaccordion({
-                oneOpenedItem: true,
-                scrollOffset: 0,
-                open: -1 // 0 = first pane is open / -1 all are closed
-            });
-        });
-
-//initialize FIRST OPEN
-        $(document).ready(function () {
-            $('.slide-to-top.first-pane-open').slideaccordion({
-                oneOpenedItem: true,
-                scrollOffset: 0,
-                open: 0 // 0 = first pane is open / -1 all are closed
-            });
-        });
-
-    } //less than 767px;
+//    if (document.documentElement.clientWidth > 767) {
+////all closed
+//        $(document).ready(function () {
+//            $('.slide-to-top.all-closed').slideaccordion({
+//                oneOpenedItem: true,
+//                scrollOffset: 120,
+//                open: -1 // 0 = first pane is open / -1 all are closed
+//            });
+//        });
+//
+////initialize FIRST OPEN
+//        $(document).ready(function () {
+//            $('.slide-to-top.first-pane-open').slideaccordion({
+//                oneOpenedItem: true,
+//                scrollOffset: 120,
+//                open: 0 // 0 = first pane is open / -1 all are closed
+//            });
+//        });
+//
+//    } //greater than 767px;
+//
+//    /*================================================================*/
+//    /*  LESS THAN 767px;
+//     /*================================================================*/
+//    if (document.documentElement.clientWidth < 767) {
+////all closed
+//        $(document).ready(function () {
+//            $('.slide-to-top.all-closed').slideaccordion({
+//                oneOpenedItem: true,
+//                scrollOffset: 0,
+//                open: -1 // 0 = first pane is open / -1 all are closed
+//            });
+//        });
+//
+////initialize FIRST OPEN
+//        $(document).ready(function () {
+//            $('.slide-to-top.first-pane-open').slideaccordion({
+//                oneOpenedItem: true,
+//                scrollOffset: 0,
+//                open: 0 // 0 = first pane is open / -1 all are closed
+//            });
+//        });
+//
+//    } //less than 767px;
 
 
     /*================================================================*/

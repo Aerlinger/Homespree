@@ -4,8 +4,6 @@
 
 (function(document) {
 
-    console.log("LOADED helper.js");
-
     window.MBP = window.MBP || {};
 
     /**

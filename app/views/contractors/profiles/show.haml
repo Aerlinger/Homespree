@@ -104,11 +104,11 @@
           .span4{data: {intro: "Services offered by your company", step: "2"}}
             %h3.short_headline
               %div Services Offered
-            %ul.specialties
-              = content_tag_for :li, @specialties do |specialty|
-                = best_in_place specialty, :name
-                = render "delete_link", contractor: @contractor, specialty: specialty
-                = render "edit_link"
+            -#%ul.specialties
+            -#  = content_tag_for :li, @specialties do |specialty|
+            -#    = best_in_place specialty, :name, path: contractor_specialty_path
+            -#    = render "delete_link", contractor: @contractor, specialty: specialty
+            -#    = render "edit_link"
             %hr
             = simple_form_for [@contractor, @specialty] do |f|
               = f.input :name, placeholder: "e.g. Painting", label: "Name of service"
