@@ -15,11 +15,11 @@
 
   .feature-strip
     .container
-      .row-fluid.pricingTable
+      .row-fluid.pricingTable{data: {intro: "Welcome to your Homespree profile! Taking a few seconds to fill out your profile will help customers find your business.", step: "1", position: "top"}}
         .option3.span5
           .wrapper.white-bg
             %ul.optionheader
-              %li#title.title.primary-color-bg{data: {intro: "Whats your Company's name?", step: "1"}}
+              %li#title.title.primary-color-bg{data: {intro: "Whats the name of your business?", step: "1"}}
                 = best_in_place @contractor, :company_title
                 = render "edit_link"
               %li.price.primary-color-bg
@@ -67,7 +67,6 @@
             .carousel-inner
               = content_tag_for :div, @photos, class: "item" do |photo|
                 = image_tag(asset_path("portfolio_images/" + photo.image_url))
-                -#.carousel-caption
 
             = link_to "#edit_photos", class: "btn btn-success", id: "add_photos", data: {toggle: "modal"} do
               = content_tag :icon, "  Add/Edit Photos", class: "icon-plus-sign", style: "color: white;"
