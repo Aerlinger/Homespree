@@ -8,11 +8,9 @@ class ContractorDecorator < Draper::Decorator
   end
 
   def website
-    h.link_to @source.website.gsub("http://", ""), @source.website, class: "contractor_website"
-  end
-
-  def specialties
-
+    if @source.website.present?
+      h.link_to @source.website.gsub("http://", ""), @source.website, class: "contractor_website"
+    end
   end
 
 end
