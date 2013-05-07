@@ -2,7 +2,7 @@
   <div class="title"></div>
 
   <div style="height:15px"></div>
-  <%= image_tag asset_path('homespree_transparent.png'), alt: "Homespree" %>
+  <%= image_tag asset_path('homespree_transparent.png'), alt: "Homespree", id: "logo" %>
 
   <div class="mobileheader">
     <p>Submit home improvement requests straight from your smartphone.</p>
@@ -10,11 +10,13 @@
   </div>
 
 
-  <%= form_tag mailinglists_path, authenticate_with: :none, method: :post, remote: true, id: "loginForm" do %>
+  <%= form_tag mailinglist_create_path, authenticate_with: :none, method: :post, remote: true, id: "loginForm" do %>
     <%= email_field_tag(:email, "", type: "text", id: "email_signup", placeholder: "Email") %>
-    <%= select_tag :user_type, options_for_select([["I am a...", ""], ["Homeowner", "homeowner"], ["Contractor", "contractor"]]) %>
+    <%= select_tag :user_type,
+                   options_for_select([["I am a...", ""], ["Homeowner", "homeowner"], ["Contractor", "contractor"]],
+                   id: "user_type", class: "splash_form customer_type") %>
 
-    <%= submit_tag "Sign Up", :disable_with => "Thanks!", id: "emailloginbutton" %>
+    <%= submit_tag "Sign Up", id: "email_signup", class: "loginbutton green" %>
     <%= hidden_field_tag "submitted_from_mobile", "true" %>
 
     <p id="submit_success">Thanks! We'll be in touch.</p>

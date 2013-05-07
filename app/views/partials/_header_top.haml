@@ -16,7 +16,7 @@
                 %li
                   %a{:href => "mailto:contact@longdomaingoeshere.com"} email: admin@myhomespree.com
                 %li.divider
-                %li.nav-header Sign Up For News!
+                %li.nav-header Sign up for our mailing list!
                 %li
                   %form{:action => "yourscript.php", :method => "post"}
                     .input-append.custom-append
@@ -46,11 +46,7 @@
                 %li
                   =link_to "Profile Settings"
                 %li
-                  =link_to "Sign out", destroy_contractor_session_path, method: :delete, class: 'js-signout-button', data: {nav: "logout"}
-                  %form#signout-form.dropdown-link-form.signout-form{:action => "/logout", :method => "POST"}
-                    %input{:name => "", :type => "hidden", :value => ""}/
-                    %input{:name => "", :type => "hidden"}/
-                    %input{:name => "", :type => "hidden"}/
+                  =link_to "Sign Out", destroy_contractor_session_path, method: :delete
 
           - else
             %li
