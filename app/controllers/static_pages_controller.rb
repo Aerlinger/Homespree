@@ -1,7 +1,6 @@
 class StaticPagesController < ApplicationController
 
   layout "static_page", except: [:home]
-  layout "application", only: [:test_theme]
 
   def home
   end
@@ -28,4 +27,5 @@ class StaticPagesController < ApplicationController
     pdf_filename = File.join(Rails.root, "lib/assets/pitch.pdf")
     send_file pdf_filename, :filename => "pitch.pdf", :disposition => 'inline', :type => "application/pdf"
   end
+
 end

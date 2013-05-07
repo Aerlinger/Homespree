@@ -38,23 +38,21 @@
               %ul.dropdown-menu
                 %li.current-user
                   %a{:href => "#"}
-                    %img.avatar{:alt => "Christina Arasmo", :src => "https://twimg0-a.akamaihd.net/profile_images/568222624/ILUSWEETC_normal.jpg"}/
-                  .name
-                    %b.fullname Contractor Name Goes Here
+                    %img.avatar.name{:src => "http://placehold.it/50x50"}
+                    %b.fullname= current_contractor.first_name
                     %br/
                     %small Edit profile
                 %li.divider
                 %li
                   =link_to "Profile Settings"
                 %li
-                  =link_to "Sign out", root_path, class: 'js-signout-button', data: {nav: "logout"}
+                  =link_to "Sign out", destroy_contractor_session_path, method: :delete, class: 'js-signout-button', data: {nav: "logout"}
                   %form#signout-form.dropdown-link-form.signout-form{:action => "/logout", :method => "POST"}
                     %input{:name => "", :type => "hidden", :value => ""}/
                     %input{:name => "", :type => "hidden"}/
                     %input{:name => "", :type => "hidden"}/
 
           - else
-
             %li
               =link_to "Sign Up ", new_contractor_registration_path
 
@@ -62,28 +60,7 @@
               =link_to new_contractor_session_path do
                 Sign In
                 %i.e-icon-login
-              -#%a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
 
-          -#    %ul.dropdown-menu.signin
-          -#      %li
-          -#        %form
-          -#          %input{:placeholder => "Email", :type => "text"}/
-          -#          %input{:placeholder => "Password", :type => "password"}/
-          -#          %label.checkbox
-          -#            %input{:type => "checkbox"}/
-          -#            Remember me
-          -#          %button.btn.custom-btn.btn-primary{:type => "submit"} Sign in
-          -#      %li.divider
-          -#      %li.nav-header Or Sign In with...
-          -#      %li
-          -#        .social.clearfix
-          -#          %a.fc-webicon.facebook.large.round{:href => "#", :title => "Facebook"}
-          -#          %a.fc-webicon.twitter.large.round{:href => "#", :title => "Twitter"}
-          -#          %a.fc-webicon.googleplus.large.round{:href => "#", :title => "Google"}
-          -#      %li.divider
-          -#      %li
-          -#        %a{:href => "forgot-password.html"} Forgot Password
-          -#
           %li.divider-vertical
             %li.search-wrapper
               %form{:action => "someaction.php", :method => "post"}

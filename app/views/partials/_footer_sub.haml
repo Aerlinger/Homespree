@@ -1,11 +1,20 @@
 %section.footer-credits
   .container
     %ul.clearfix
-      %li © 2013 Homespree. All rights reserved.
+
       %li
-        %a{:href => "#"} About
+        =link_to "Blog", "http://homespree.wordpress.com/"
       %li
-        %a{:href => "#"} Terms of Service
+        =link_to "Jobs", jobs_path
+
+      %li.logo-center
+        =link_to root_path do
+          =image_tag asset_path("favicon.png")
+
+      %li
+        =link_to "Contact", contact_path
+      %li
+        =link_to "About", about_path
 
 - if Rails.env.development?
   %a#show_debug

@@ -1,0 +1,35 @@
+%ul#top.visuallyhidden
+  %li
+    %a{:accesskey => "n", :href => "#nav", :title => "Skip to navigation"} Skip to navigation
+  %li
+    %a{:accesskey => "c", :href => "#page", :title => "Skip to content"} Skip to content
+%header.header.clearfix
+  %h5.mobile_nav
+    %a{:href => "javascript:void(0)"}
+      \&nbsp;
+      %span
+
+  #nav
+    =render "partials/header_top"
+
+    .container
+      .navbar.primary-menu
+        .navbar-inner
+          .nav-collapse.collapse
+            %ul.nav.accordmobile
+              %li
+                =link_to "Homeowners", homeowners_preview_path
+              %li
+                =link_to "Contractors", contractors_preview_path
+              %li
+                =link_to "Jobs", jobs_path
+              %li
+                =link_to "Contact", contact_path
+              %li
+                =link_to "About", about_path
+
+      #logo
+        = link_to root_path do
+          = image_tag "homespree_transparent.png"
+
+      .print Phone, name of company etc., for printing

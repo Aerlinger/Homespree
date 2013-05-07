@@ -1,3 +1,25 @@
+.footer-credits {
+  ul li a {
+    color: white;
+
+    &:hover {
+      color: inherit;
+      text-decoration: underline;
+    }
+  }
+
+  .logo-center {
+    a:hover {
+      text-decoration: none;
+    }
+    img {
+      display: inline;
+      max-width: 50px !important;
+      max-height: 50px !important;
+    }
+  }
+}
+
 .footer-box {
   padding: 30px 0;
   text-align: center;
