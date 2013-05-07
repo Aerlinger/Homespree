@@ -1,16 +1,14 @@
-$ ->
+$(document).ready ->
   $('#licensed').tooltip()
   $('.item.photo').first().addClass("active");
 
-  $("#update").click ->
-    introJs().onchange (targetElement) ->
-      console.log "new step"
+  introJs = introJs().onchange (targetElement) ->
+    console.log "new step"
 
+  $("#update").click ->
     introJs().start();
 
   console.log("Loaded contractor profile");
-
-
 
   $('.edit-link').click (evt) ->
     $(this).prev().click()
