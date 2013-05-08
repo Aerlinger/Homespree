@@ -1,4 +1,5 @@
 class SpecialtiesController < ApplicationController
+  respond_to :json
 
   def create
     @contractor = Contractor.find(params[:contractor_id])
@@ -17,7 +18,6 @@ class SpecialtiesController < ApplicationController
       format.html
       format.json { render json: @specialty }
     end
-
   end
 
   def edit

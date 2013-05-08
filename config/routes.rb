@@ -18,6 +18,7 @@ Homespree::Application.routes.draw do
   end
 
   resources :profiles, except: [:destroy], path: "contractors/profiles", module: "contractors", as: "contractor" do
+    put "ignore_message"
     match "add_specialty" => "profiles#add_specialty"
     match "add_photo" => "profiles#add_photo"
   end

@@ -1,7 +1,16 @@
 =image_tag asset_path("profile/staticmap.png")
-.address.line1= best_in_place @address, :line1
-=render "edit_link"
-.address.line2= best_in_place @address, :line2
-=render "edit_link"
-%span.address= best_in_place @address, :city
-%span.address= best_in_place @address, :state
+
+.address.line1
+  = best_in_place @address, :line1
+  =render "edit_link"
+
+.address.line2
+  = best_in_place @address, :line2
+  =render "edit_link"
+
+%span.address
+  = best_in_place @address, :city
+  =render "edit_link"
+%span.address
+  = best_in_place @address, :state
+  =render "edit_link"
