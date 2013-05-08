@@ -21,7 +21,8 @@
             %ul.optionheader
               %li#title.title.primary-color-bg{data: {intro: "Whats the name of your business?", step: "1"}}
                 = best_in_place @contractor, :company_title
-                = render "edit_link"
+                =link_to "javascript:void(0)", class: "edit-link", style: "position: relative; font-style: italic;" do
+                  %i.e-icon-pencil{style: "height: 20px; line-height: 16px; width: 33px; display; color: white; margin-bottom: 12px; padding-bottom: 5px;"} Edit
               %li.price.primary-color-bg
                 =image_tag "/assets/profile/logo.jpg"
                 %span= best_in_place @address, :city
@@ -32,7 +33,7 @@
               - if @contractor.mobile_number.present?
                 %li{data: {intro: "Contact Number", step: "8"}}
                   %strong Phone:
-                  =best_in_place @contractor, :mobile_number
+                  =best_in_place @contractor, :mobile_number, display_with: :number_to_phone
                   =render "edit_link"
 
               - if @contractor.first_name.present?

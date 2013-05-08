@@ -22,3 +22,9 @@ $(document).ready ->
 
   $('#portfolio').mouseout ->
     $('#add_photos').css({"opacity": ".5"})
+
+  $('.edit_link').click ->
+    $(this).hide()
+
+  $('.edit-link').click ->
+    $(this).hide()
