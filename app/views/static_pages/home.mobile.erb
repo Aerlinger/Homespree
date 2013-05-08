@@ -9,8 +9,7 @@
     <small>Provide your email to receive an invite.</small>
   </div>
 
-
-  <%= form_tag mailinglist_create_path, authenticate_with: :none, method: :post, remote: true, id: "loginForm" do %>
+  <%= form_tag mailinglists_path, authenticate_with: :none, method: :post, remote: true, id: "loginForm" do %>
     <%= email_field_tag(:email, "", type: "text", id: "email_signup", placeholder: "Email") %>
     <%= select_tag :user_type,
                    options_for_select([["I am a...", ""], ["Homeowner", "homeowner"], ["Contractor", "contractor"]],
@@ -21,7 +20,6 @@
 
     <p id="submit_success">Thanks! We'll be in touch.</p>
   <% end %>
-
 </div>
 
 <!-- FOOTER -->

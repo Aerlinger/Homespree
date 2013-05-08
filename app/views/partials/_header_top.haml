@@ -46,7 +46,7 @@
                 %li
                   =link_to "Profile Settings"
                 %li
-                  =link_to "Sign Out", destroy_contractor_session_path, method: :delete
+                  =link_to "Sign out", destroy_contractor_session_path, method: :delete
 
           - else
             %li
@@ -58,8 +58,8 @@
                 %i.e-icon-login
 
           %li.divider-vertical
-            %li.search-wrapper
-              %form{:action => "someaction.php", :method => "post"}
-                #search-trigger
-                  %i.e-icon-search
-                %input{:placeholder => "search + enter", :type => "text"}/
+            -#%li.search-wrapper
+            -#  %form{:action => "someaction.php", :method => "post"}
+            -#    #search-trigger
+            -#      %i.e-icon-search
+            -#    %input{:placeholder => "search + enter", :type => "text"}/

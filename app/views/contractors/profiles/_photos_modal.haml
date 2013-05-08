@@ -5,7 +5,7 @@
     %h3 Add or Edit Photos
 
   .modal-body.photo-preview
-    =content_tag_for :li, photos, class: "photo-preview" do |photo|
+    =content_tag_for :li, @photos, class: "photo-preview" do |photo|
       .row-fluid
         .span3
           =image_tag asset_path("portfolio_images/" + photo.image_url)

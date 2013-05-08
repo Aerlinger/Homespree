@@ -12,7 +12,8 @@
 
             -# Mailing List Form
             -#===========================================================================
-            = form_tag mailinglist_create_path, authenticate_with: :none, method: :post, remote: true, id: "search_form" do
+            -# removed: authenticate_with: :none,
+            = form_tag mailinglists_path, method: :post, remote: true, id: "search_form" do
               = email_field_tag(:email, "", type: "text", id: "email_signup", placeholder: "Email")
               #customer_type.btn-group
                 %a#dropdown.btn.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}

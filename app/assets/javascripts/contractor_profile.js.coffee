@@ -7,10 +7,13 @@ $(document).ready ->
     $(targetElement).find('.best_in_place').first().click()
   ).start()
 
+  $('.best_in_place').each (idx, item) ->
+    if $(item).text() == ""
+      $(item).text('click to add content')
+
   $('.edit-link').click (evt) ->
     $(this).prev().click()
 
-  $('#best_in_place_user_1_email').click()
   $('.best_in_place').best_in_place()
 
   $('#portfolio').mouseover ->

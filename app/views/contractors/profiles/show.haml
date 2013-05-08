@@ -51,16 +51,16 @@
                 %li{data: {intro: "License info", step: "9"}}
                   %strong Licensed
                   = "up to #{@contractor.license}"
-                  %i.icon-question-sign.detailsPop{"data-content" => "License Info", "data-rel" => "popover", :title => "100GB"}
+                  %i.icon-question-sign.detailsPop{"data-content" => "License Info", "data-rel" => "popover", :title => "License Info"}
 
               - if @contractor.bonding_limit.present?
                 %li{data: {intro: "Bond info", step: "10"}}
                   %strong Bonded
-                  = "up to #{@contractor.bonding_limit}"
-                  %i.icon-question-sign.detailsPop{"data-content" => "Bond info", "data-rel" => "popover", :title => "100GB"}
+                  = "up to $#{@contractor.bonding_limit}"
+                  %i.icon-question-sign.detailsPop{"data-content" => "Bond info", "data-rel" => "popover", :title => "Bond Info"}
 
               %li.select
-                =link_to "Submit a Bid", "#", class: "btn btn-large btn-primary"
+                =link_to "Request a Bid", "#", class: "btn btn-large btn-primary"
 
         .span7
           #portfolio.carousel.slide{data: {intro: "Upload Images", step: "4"}}
@@ -122,12 +122,12 @@
       .row-fluid
         .span4
           .well
-            %h4.primary-color Why use Homespree?
+            %h4.primary-color Homespree on your smartphone
             %p
-              %img.alignleft{:alt => "", :src => "http://placehold.it/80x80"}/
+              %img.alignleft{:alt => "", :src => "http://placehold.it/100x150"}/
               Finding a trustworthy contractor at a reasonable price is usually quite a challenge. However, Homespree lets you quickly upload project requests online or from your mobile device and receive competitive estimates from quality local pros.
             %p.text-right
-              %a.btn.custom-btn.btn-primary{:href => "#"} About Us
+              %a.btn.custom-btn.btn-primary{:href => "#"} Download the App
 
         .rotating-testimonials.span8
           %h3.short_headline
@@ -135,30 +135,16 @@
           .panels
             #t1
               %blockquote
-                %p Homespree is the tits!
-                %footer Abraham Lincoln
-            #t2
-              %blockquote
-                %p In the beginning the Universe was created. This has made a lot of people very angry and is widely regarded as a bad move.
-                %footer Douglas Adams
-            #t3
-              %blockquote
-                %p Homespree is the single reason I created the internet.
-                %footer Al Gore
+                %p No testimonials yet for this contractor
+                %footer Homespree
 
           %ul.tabs
             %li.tab
-              %a{:href => "#t1"} mark-twain
-            %li.tab
-              %a{:href => "#t2"} lao-tzu
-            %li.tab
-              %a{:href => "#t3"} albert-einstein
-            %li.tab
-              %a{:href => "#t4"} ralph-waldo-emerson
+              %a{:href => "#t1"} Homespree
 
           %p.text-right
             %a.btn.custom-btn.btn-small.btn-very-subtle{:href => "testimonials.html"} All Testimonials
 
-  =render "photos_modal", photos: @photos
+  =render "photos_modal"
 
   =render "partials/clean_footer"

@@ -23,6 +23,12 @@ class StaticPagesController < ApplicationController
   def test_theme
   end
 
+  def test_ajax
+    respond_to do |format|
+      format.js { render :layout=>false }
+    end
+  end
+
   def pitch
     pdf_filename = File.join(Rails.root, "lib/assets/pitch.pdf")
     send_file pdf_filename, :filename => "pitch.pdf", :disposition => 'inline', :type => "application/pdf"

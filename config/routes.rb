@@ -24,11 +24,7 @@ Homespree::Application.routes.draw do
   resources :addresses, only: [:show, :update]
   resources :photos, except: [:edit, :delete]
 
-  scope "/mailinglist", as: :mailinglist do
-    match "create" => "mailinglists#create", via: :post
-    match "unsubscribe/:email" => "mailinglists#unsubscribe", via: :get
-    match "destroy/:email" => "mailinglists#destroy", via: :delete
-  end
+  resources :mailinglists
 
   # Static pages page
   match 'pitch' => 'static_pages#pitch', as: "pitch"
@@ -38,6 +34,7 @@ Homespree::Application.routes.draw do
   match 'about' => 'static_pages#about'
   match 'contact' => 'static_pages#contact'
   match 'jobs' => 'static_pages#jobs'
+  match 'test_ajax' => 'static_pages#test_ajax'
   match 'test_theme' => 'static_pages#test_theme'
 
 end

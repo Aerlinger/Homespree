@@ -30,13 +30,13 @@ class Contractors::ProfilesController < ApplicationController
 
   def add_specialty
     respond_to do |format|
-      format.js
+      format.js { render :layout=>false }
     end
   end
 
   def add_photo
     respond_to do |format|
-      format.js
+      format.js { render :layout=>false }
     end
   end
 

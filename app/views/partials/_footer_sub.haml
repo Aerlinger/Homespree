@@ -25,6 +25,9 @@
     %i.e-icon-up-open-big
 
 - if Rails.env.development?
+
+  = link_to "ajax", test_ajax_path, remote: true
+
   .debug
     = debug(params)
     = debug(cookies)

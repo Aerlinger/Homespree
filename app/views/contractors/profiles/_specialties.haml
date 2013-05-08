@@ -1,10 +1,10 @@
--#%ul.specialties
--#  = content_tag_for :li, @specialties do |specialty|
--#    = best_in_place specialty, :name, path: contractor_specialty_path
--#    = render "delete_link", contractor: @contractor, specialty: specialty
--#    = render "edit_link"
-%hr
+%ul.specialties
+  = content_tag_for :li, @specialties do |specialty|
+    = best_in_place specialty, :name, path: contractor_specialty_path
+    = render "delete_link", contractor: @contractor, specialty: specialty
+    = render "edit_link"
 
+%hr
 = simple_form_for [@contractor, @specialty] do |f|
-  = f.input :name, placeholder: "e.g. Painting", label: "Name of service"
+  = f.input :name, collection: Specialty.types, label: false, prompt: "Select a service"
   = f.submit "Add Service", class: "btn btn-success"
