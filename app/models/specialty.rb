@@ -3,33 +3,42 @@ class Specialty < ActiveRecord::Base
 
   belongs_to :contractor
 
-  validates_presence_of :name
-
-  #before_update :delete_if_empty
+  validates_presence_of :name, allow_blank: false
 
   # Contractor job specialties
   def self.types
     job_types = [
-        "Painting",
-        "Roofing",
-        "Electrical",
-        "Bathroom Modeling",
+        "Additions & Remodeling",
+        "Air Conditioning",
+        "Architects & Engineers",
+        "Audio/Visual & Computers",
+        "Brick & Stone",
+        "Cleaning & Maid Services",
         "Concrete",
-        "Architecture",
-        "Drywall",
-        "Landscaping",
-        "Swimming Pools",
-        "Plumbing",
-        "Wallpaper",
+        "Decks",
+        "Designers & Decorators",
+        "Drywall & Plaster",
+        "Electrical",
         "Fences",
-        "Flooring",
-        "Ceiling",
-        "Lighting",
-        "General Contracting",
-        "Heating & Air Conditioning",
-        "Windows & Blinds",
-        "Demolition",
-        "Fumigation"
+        "Flooring & Carpet",
+        "Furniture Repair &amp; Refinish",
+        "Garage & Garage Doors",
+        "Handyman Services",
+        "Heating & Furnace Systems",
+        "Landscaping",
+        "Lawn & Garden Care",
+        "Mold & Asbestos Services",
+        "New Home Builders",
+        "Paving",
+        "Plumbing",
+        "Roofing",
+        "Sheds & Enclosures",
+        "Siding",
+        "Swimming Pools",
+        "Tile",
+        "Tree Service",
+        "Waste Material Removal",
+        "Windows"
     ]
 
     return job_types.sort!
@@ -42,5 +51,4 @@ class Specialty < ActiveRecord::Base
       self.destroy
     end
   end
-
 end

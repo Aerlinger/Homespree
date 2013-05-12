@@ -70,9 +70,9 @@ group :production do
   gem 'pg'
 end
 
-gem 'coffee-rails', '~> 3.2.1'
 
 group :assets do
+  gem 'coffee-rails', '~> 3.2.1'
   gem 'sass-rails',   '~> 3.2.3'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
