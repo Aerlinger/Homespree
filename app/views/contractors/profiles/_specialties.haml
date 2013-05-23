@@ -1,6 +1,6 @@
 %ul.specialties
   = content_tag_for :li, @specialties do |specialty|
-    = best_in_place specialty, :name, path: contractor_specialty_path(@contractor, specialty)
+    = specialty
     = render "edit_link"
     = render "delete_link", contractor: @contractor, specialty: specialty
 

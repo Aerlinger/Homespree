@@ -19,7 +19,6 @@ gem 'mercury-rails'
 # Tools used in User Profiles:
 gem 'draper'
 gem 'best_in_place'
-gem 'introjs-rails'
 gem 'rmagick'
 gem 'carrierwave'
 gem 'geocoder'

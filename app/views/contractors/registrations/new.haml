@@ -14,15 +14,17 @@
       Create a new
       %span.blue Contractor
       profile
+
     .body
-      = f.input :email
+      = f.input :email, input_html: { value: @contractor.email }
       = f.input :company_title, text: "Business name or title"
       = f.input :password
 
-      = f.button :submit, text: "Register", class: "btn btn-success"
+      = f.button :submit, text: "Create profile", class: "btn btn-success"
 
 %footer.white.navbar-fixed-bottom
   Already have an account?
   =link_to "Sign in", new_contractor_session_path, class: "btn btn-black"
+  -#=link_to "Submit", create_mailing_list_path, class: "btn btn-black"
 
 = render "contractors/shared/links"

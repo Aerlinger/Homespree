@@ -4,7 +4,7 @@ class Contractors::RegistrationsController < Devise::RegistrationsController
 
   def new
     super
-    @contactor = Contractor.new
+    @contractor = Contractor.new({email: params[:email]})
   end
 
   def create

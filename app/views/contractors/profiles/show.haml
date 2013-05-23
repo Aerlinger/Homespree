@@ -18,6 +18,9 @@
       .row-fluid.pricingTable{data: {intro: "Welcome to your Homespree profile! Taking a few seconds to fill out your profile will help customers find your business.", step: "1", position: "top"}}
         .option3.span5
           .wrapper.white-bg
+
+            -# Contractor Card Top: Title and logo
+            -#===============================================================================================
             %ul.optionheader
               %li#title.title.primary-color-bg{data: {intro: "Whats the name of your business?", step: "1"}}
                 = best_in_place @contractor, :company_title
@@ -25,44 +28,49 @@
                   %i.e-icon-pencil{style: "height: 20px; line-height: 16px; width: 33px; display; color: white; margin-bottom: 12px; padding-bottom: 5px;"} Edit
               %li.price.primary-color-bg
                 =image_tag "/assets/profile/logo.jpg"
-                %span= best_in_place @address, :city
-                %span= best_in_place @address, :state
+                %span= @address.city
+                %span= @address.state
                 %span.stars5
 
+            -# Contractor Card: list of Fields -- name, license info, etc...
+            -#===============================================================================================
             %ul.features
+              - if @contractor.specialties.present?
+                %li#primary_service{data: {intro: "Contact Number", step: "1"}}
+                  %strong Primary Service:
+                  = @contractor.specialties.first
+                  =render "edit_link"
+
               - if @contractor.mobile_number.present?
-                %li{data: {intro: "Contact Number", step: "8"}}
+                %li#mobile_number{data: {intro: "Contact Number", step: "2"}}
                   %strong Phone:
                   =best_in_place @contractor, :mobile_number, display_with: :number_to_phone
                   =render "edit_link"
 
               - if @contractor.first_name.present?
-                %li{data: {intro: "Primary Owner?", step: "8"}}
+                %li#full_name{data: {intro: "Primary Owner?", step: "3"}}
                   %strong Owned by
                   =best_in_place @contractor, :first_name
                   =best_in_place @contractor, :last_name if @contractor.last_name.present?
                   =render "edit_link"
 
-              - if @contractor.website.present?
-                %li{data: {intro: "Website", step: "9"}}
-                  =best_in_place @contractor, :website
-                  =render "edit_link"
-
               - if @contractor.license.present?
-                %li{data: {intro: "License info", step: "9"}}
-                  %strong Licensed
-                  = "up to #{@contractor.license}"
+                %li#license{data: {intro: "License info", step: ""}}
+                  %strong License
+                  = "Number #{@contractor.license}"
                   %i.icon-question-sign.detailsPop{"data-content" => "License Info", "data-rel" => "popover", :title => "License Info"}
 
               - if @contractor.bonding_limit.present?
-                %li{data: {intro: "Bond info", step: "10"}}
+                %li#bonding_limit{data: {intro: "Bond info", step: ""}}
                   %strong Bonded
                   = "up to $#{@contractor.bonding_limit}"
                   %i.icon-question-sign.detailsPop{"data-content" => "Bond info", "data-rel" => "popover", :title => "Bond Info"}
 
               %li.select
-                =link_to "Request a Bid", "#", class: "btn btn-large btn-primary"
+                =link_to "Book this contractor", "#", class: "btn btn-large btn-primary"
 
+        -# Portfolio image carousel
+        -#===============================================================================================
         .span7
           #portfolio.carousel.slide{data: {intro: "Upload Images", step: "4"}}
             .carousel-inner
@@ -84,6 +92,7 @@
             .span4.no-bg
               %a.link-tab
                 %i.icon-star.icon-white &nbsp Reviews
+
 
   -# Section Two (Description, Services Offered, and Maps
   -#================================================================================================

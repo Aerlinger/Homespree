@@ -3,11 +3,11 @@
 
   = simple_form_for resource, :as => resource_name, :url => session_path(resource_name), class: "form login-form" do |f|
     %legend
-      Account sign in
+      Contractor sign in
     .body
       = f.input :email
       = f.input :password
-      = f.button :submit, text: "Login", class: "btn btn-success"
+      = f.button :submit, text: "Sign In", class: "btn btn-success"
 
 %footer.white.navbar-fixed-bottom
   Don't have an account yet?
