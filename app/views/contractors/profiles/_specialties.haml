@@ -7,10 +7,10 @@
   .on-edit
     =form_tag contractor_path, method: :put, class: "intro" do |f|
       - Specialty.types.each do |specialty, description|
-        = check_box_tag specialty
+        = check_box_tag specialty, 'yes', false, style: "float: left; margin-right: 5px;"
         = label_tag specialty, description
 
-%hr
+      = submit_tag "Update Services"
 -#= simple_form_for [@contractor, @specialty] do |f|
 -#  = f.input :name, collection: Specialty.types, label: false, prompt: "Select a service"
 -#  = f.submit "Add Service", class: "btn btn-success"

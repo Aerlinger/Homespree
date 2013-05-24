@@ -11,13 +11,13 @@
 
   -# Top Section (Info Card and Image Carousel)
   -#================================================================================================
-  %meta={new_profile: @contractor.new_profile}
+
 
   .feature-strip
-    .container#top
+    .container
       .row-fluid.pricingTable
         .option3.span5
-          .wrapper.white-bg
+          #top.wrapper.white-bg
 
             -# Contractor Card Top: Title and logo
             -#===============================================================================================
@@ -117,8 +117,8 @@
               = best_in_place @contractor, :slogan, activator: "#slogan_edit"
               = render "edit_link",  activator: "slogan_edit"
             %p#description
-              = best_in_place @contractor, :description, type: :textarea, activator: "#slogan_edit"
-              = render "edit_link", activator: "slogan_edit"
+              = best_in_place @contractor, :description, type: :textarea, activator: "#description_edit"
+              = render "edit_link", activator: "description_edit"
 
           .span4#services
             %h3.short_headline

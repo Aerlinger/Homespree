@@ -1,14 +1,5 @@
--#.row
-  -#.span6
-  -#  .register-info-wraper
-  -#    #register-info
-  -#      %h1 Homespree...
-  -#      %ul{:dir => "rtl"}
-  -#        %li Saves you time
-  -#        %li Saves you money
-  -#        %li Saves you stress
-
 #login-wraper
+
   = simple_form_for resource, :as => resource_name, :url => registration_path(resource_name), class: "form login-form" do |f|
     %legend
       Create a new
@@ -21,6 +12,7 @@
       = f.input :password
 
       = f.button :submit, text: "Create profile", class: "btn btn-success"
+
 
 %footer.white.navbar-fixed-bottom
   Already have an account?

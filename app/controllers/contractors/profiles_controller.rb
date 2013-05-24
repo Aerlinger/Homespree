@@ -4,6 +4,8 @@ class Contractors::ProfilesController < ApplicationController
 
   http_basic_authenticate_with name: "admin", password: "Meetmike9", only: :index
 
+  after_filter :contractor_is_old, only: [:show]
+
   def index
     @contractors = Contractor.all
 
@@ -21,6 +23,8 @@ class Contractors::ProfilesController < ApplicationController
     @photos = @contractor.photos
 
     @contractor = @contractor.decorate
+
+    @is_new = @contractor.new_profile
 
     respond_to do |format|
       format.html
@@ -51,6 +55,12 @@ class Contractors::ProfilesController < ApplicationController
     else
       render :edit
     end
+  end
+
+  private
+
+  def contractor_is_old
+    @contractor.update_attribute(:new_profile, false)
   end
 
 end
