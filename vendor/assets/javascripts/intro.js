@@ -30,9 +30,10 @@
         this._targetElement = obj;
 
         this._options = {
-            nextLabel: 'Next &rarr;',
+            nextLabel: 'Continue &rarr;',
+            skipLabel: 'Skip',
             doneLabel: 'Finish',
-            tooltipPosition: 'bottom',
+            tooltipPosition: 'top',
             exitOnEsc: false,
             exitOnOverlayClick: false,
             showStepNumbers: false
@@ -97,8 +98,8 @@
             //then, start the show
             _nextStep.call(self);
 
-//            var skipButton = targetElm.querySelector('.introjs-skipbutton'),
-            var nextStepButton = targetElm.querySelector('.introjs-nextbutton');
+            var skipButton = targetElm.querySelector('.introjs-skipbutton'),
+                nextStepButton = targetElm.querySelector('.introjs-nextbutton');
 
             self._onKeyDown = function(e) {
                 if (e.keyCode === 27 && self._options.exitOnEsc == true) {
@@ -331,6 +332,7 @@
                 oldtooltipLayer      = oldHelperLayer.querySelector('.introjs-tooltiptext'),
                 oldArrowLayer        = oldHelperLayer.querySelector('.introjs-arrow'),
                 oldtooltipContainer  = oldHelperLayer.querySelector('.introjs-tooltip'),
+                skipTooltipButton    = oldHelperLayer.querySelector('.introjs-skipbutton'),
                 nextTooltipButton    = oldHelperLayer.querySelector('.introjs-nextbutton');
 
             //hide the tooltip
@@ -410,7 +412,41 @@
             nextTooltipButton.href = 'javascript:void(0);';
             nextTooltipButton.innerHTML = this._options.nextLabel;
 
+            //previous button
+            var prevTooltipButton = document.createElement('a');
+
+            prevTooltipButton.onclick = function() {
+                if(self._currentStep != 0) {
+                    _previousStep.call(self);
+                }
+            };
+
+            prevTooltipButton.href = 'javascript:void(0);';
+            prevTooltipButton.innerHTML = this._options.prevLabel;
+
+            //skip button
+            var skipTooltipButton = document.createElement('a');
+            skipTooltipButton.className = 'introjs-button introjs-skipbutton';
+            skipTooltipButton.href = 'javascript:void(0);';
+            skipTooltipButton.innerHTML = this._options.skipLabel;
+
+            skipTooltipButton.onclick = function() {
+                if (self._introItems.length - 1 == self._currentStep && typeof (self._introCompleteCallback) === 'function') {
+                    self._introCompleteCallback.call(self);
+                }
+
+                if (self._introItems.length - 1 != self._currentStep && typeof (self._introExitCallback) === 'function') {
+                    self._introExitCallback.call(self);
+                }
+
+                _exitIntro.call(self, self._targetElement);
+            };
+
             var tooltipButtonsLayer = tooltipLayer.querySelector('.introjs-tooltipbuttons');
+            // if skippable, then skip
+            if (true) {
+	            tooltipButtonsLayer.appendChild(skipTooltipButton);
+            }
             tooltipButtonsLayer.appendChild(nextTooltipButton);
 
             //set proper position
@@ -419,10 +455,13 @@
 
         if (this._currentStep == 0) {
             nextTooltipButton.className = 'introjs-button introjs-nextbutton';
+            skipTooltipButton.innerHTML = this._options.skipLabel;
         } else if (this._introItems.length - 1 == this._currentStep) {
+            skipTooltipButton.innerHTML = this._options.doneLabel;
             nextTooltipButton.className = 'introjs-button introjs-nextbutton introjs-disabled';
         } else {
             nextTooltipButton.className = 'introjs-button introjs-nextbutton';
+            skipTooltipButton.innerHTML = this._options.skipLabel;
         }
 
         //Set focus on "next" button, so that hitting Enter always moves you onto the next step
@@ -456,11 +495,11 @@
 
             // Scroll up
             if (top < 0) {
-                window.scrollBy(0, top - 30); // 30px padding from edge to look nice
+                window.scrollBy(0, top - 120); // 120px padding from edge to look nice
 
                 // Scroll down
             } else {
-                window.scrollBy(0, bottom + 100); // 70px + 30px padding from edge to look nice
+                window.scrollBy(0, bottom + 190); // 120px + 70px padding from edge to look nice
             }
         }
     }

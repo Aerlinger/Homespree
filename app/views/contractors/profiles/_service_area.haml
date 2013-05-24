@@ -1,16 +1,32 @@
 =image_tag asset_path("profile/staticmap.png")
 
-.address.line1
-  = best_in_place @address, :line1
-  =render "edit_link"
+.no-edit
+  .address.line1
+    = best_in_place @address, :line1
+    = render "edit_link"
 
-.address.line2
-  = best_in_place @address, :line2
-  =render "edit_link"
+  .address.line2
+    = best_in_place @address, :line2
 
-%span.address
-  = best_in_place @address, :city
-  =render "edit_link"
-%span.address
-  = best_in_place @address, :state
-  =render "edit_link"
+  %span.address
+    = best_in_place @address, :city
+
+  %span.address
+    = best_in_place @address, :state
+
+.on-edit
+  = form_tag @contractor, method: :put, class: "intro" do
+    .address.line1
+      = text_field_tag :line1, nil, placeholder: "Address Line 1"
+
+    .address.line2
+      = text_field_tag :line2, nil, placeholder: "Address Line 2"
+
+    %span.address
+      = text_field_tag :city, nil, placeholder: "City"
+
+    %span.address
+      = text_field_tag :zipcode, nil, maxlength: 5, placeholder: "Zipcode"
+
+    .address
+      = select_tag :state, options_for_select(us_states)

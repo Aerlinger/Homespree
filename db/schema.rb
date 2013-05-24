@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130507001355) do
+ActiveRecord::Schema.define(:version => 20130523213252) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -99,6 +99,7 @@ ActiveRecord::Schema.define(:version => 20130507001355) do
     t.string   "photo_filename"
     t.text     "slogan"
     t.boolean  "new_profile"
+    t.decimal  "years_experience"
   end
 
   add_index "contractors", ["reset_password_token"], :name => "index_contractors_on_reset_password_token", :unique => true

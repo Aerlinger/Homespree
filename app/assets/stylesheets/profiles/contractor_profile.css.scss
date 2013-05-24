@@ -11,14 +11,7 @@
 
 
 .edit-link {
-  //width: 50px;
-  //display: block;
-  //border: 1px solid $homespree_accent;
-  //background: $homespree_lightest;
   font-size: 12px;
-  //position: relative;
-  //top: 0;
-  //right: 8px;
   margin-right: 5px;
   font-weight: normal;
   padding-left: 3px;
@@ -27,15 +20,21 @@
   i {
     display: block;
   }
-
 }
 
-div.feature-strip {
-  padding-top: 25px;
+.on-edit {
+
+ }
+
+.no-edit {
+  display: none;
 }
 
 div.feature-strip {
   background: url(http://www.ivettearango.com/wp-content/uploads/2011/10/6-Valle-Living-Room-wide-web.jpg) !important;
+
+  padding-top: 25px;
+
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -97,6 +96,16 @@ div.feature-strip {
       position: absolute;
       top: 5px;
       right: 10px;
+    }
+  }
+}
+
+.pricingTable {
+  #contractor_logo {
+    position: relative;
+
+    a {
+      position: absolute;
     }
   }
 }

@@ -1,48 +1,32 @@
 class Specialty < ActiveRecord::Base
   attr_accessible :name, :contractor_id, :endorsements, :endorser_id, :other_specialties
 
+  # Contractor job specialties
+  def self.types
+    {
+      interior_painting: "Interior Painting",
+      exterior_painting: "Exterior Painting",
+      power_washing: "Power Washing",
+      deck_painting: "Deck Painting/Staining",
+      fence_painting: "Fence Painting",
+      drywall: "Drywall Hanging and Finishing",
+      drywall_repair: "Drywall Repair",
+      wallpaper_hanging: "Wallpaper Hanging",
+      wallpaper_removal: "Wallpaper Removal",
+      hardwood_refinishing: "Hardwood Refinishing",
+      concrete_staining: "Concrete Staining / Epoxy",
+      cabinetry_painting: "Cabinetry Painting",
+      furniture_painting: "Furniture Painting",
+      faux_finishing: "Faux Finishing"
+    }
+  end
+
+
   belongs_to :contractor
 
   validates_presence_of :name, allow_blank: false
 
-  # Contractor job specialties
-  def self.types
-    job_types = [
-        "Additions & Remodeling",
-        "Air Conditioning",
-        "Architects & Engineers",
-        "Audio/Visual & Computers",
-        "Brick & Stone",
-        "Cleaning & Maid Services",
-        "Concrete",
-        "Decks",
-        "Designers & Decorators",
-        "Drywall & Plaster",
-        "Electrical",
-        "Fences",
-        "Flooring & Carpet",
-        "Furniture Repair &amp; Refinish",
-        "Garage & Garage Doors",
-        "Handyman Services",
-        "Heating & Furnace Systems",
-        "Landscaping",
-        "Lawn & Garden Care",
-        "Mold & Asbestos Services",
-        "New Home Builders",
-        "Paving",
-        "Plumbing",
-        "Roofing",
-        "Sheds & Enclosures",
-        "Siding",
-        "Swimming Pools",
-        "Tile",
-        "Tree Service",
-        "Waste Material Removal",
-        "Windows"
-    ]
-
-    return job_types.sort!
-  end
+  validates :name, inclusion: {in: self.types}
 
   protected
 

@@ -1,11 +1,16 @@
 %ul.specialties
-  = content_tag_for :li, @specialties do |specialty|
-    = specialty
-    = render "edit_link"
-    = render "delete_link", contractor: @contractor, specialty: specialty
 
+  .no-edit
+    - Specialty.types.each do |specialty, description|
+      = content_tag :li, description, class: specialty
+
+  .on-edit
+    =form_tag contractor_path, method: :put, class: "intro" do |f|
+      - Specialty.types.each do |specialty, description|
+        = check_box_tag specialty
+        = label_tag specialty, description
 
 %hr
-= simple_form_for [@contractor, @specialty] do |f|
-  = f.input :name, collection: Specialty.types, label: false, prompt: "Select a service"
-  = f.submit "Add Service", class: "btn btn-success"
+-#= simple_form_for [@contractor, @specialty] do |f|
+-#  = f.input :name, collection: Specialty.types, label: false, prompt: "Select a service"
+-#  = f.submit "Add Service", class: "btn btn-success"
