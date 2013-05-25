@@ -38,7 +38,7 @@ class Contractor < ActiveRecord::Base
   # Callbacks:  -------------------------------------------------------------------------------------------------------
   before_save :titleize_name, :downcase_email, :upcase_license, :process_associations
   before_validation :sanitize_phone_numbers
-  after_validation :geocode, if: :address_changed?
+  after_validation :geocode
 
 
   # Scopes:  ----------------------------------------------------------------------------------------------------------

@@ -1,5 +1,5 @@
 
-=image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@contractor.latitude}%2C#{@contractor.longitude}", id: "map"
+=image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@location.latitude}%2C#{@location.longitude}", id: "map"
 
 .no-edit
   .address.line1
@@ -20,11 +20,8 @@
     .address.line1
       =f.text_field :line1, placeholder: "Address Line 1"
 
-    .address.line2
-      =f.text_field :line2, placeholder: "Address Line 2"
-
     %span.address
-      =f.text_field :city, placeholder: "City"
+      =f.text_field :city, placeholder: @location.city || @address.city
 
     .address
       =f.select :state, options_for_select(us_states)

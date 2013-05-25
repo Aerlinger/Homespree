@@ -16,6 +16,8 @@ class Contractors::ProfilesController < ApplicationController
   end
 
   def show
+    @location = request.location
+
     @contractor = Contractor.find(params[:id])
     @address = @contractor.address.decorate
     @specialty = Specialty.new
