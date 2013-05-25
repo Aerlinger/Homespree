@@ -16,7 +16,7 @@
   .feature-strip
     .container
       .row-fluid.pricingTable
-        .option3.span5
+        .option3.span4
           #top.wrapper.white-bg
 
             -# Contractor Card Top: Title and logo
@@ -34,7 +34,7 @@
               - if @contractor.specialties.present?
                 %li#primary_service
                   %strong Primary Service:
-                  = @contractor.specialties.first
+                  = @contractor.specialties.first.name if @contractor.specialties.first
 
               - if @contractor.first_name.present?
                 %li#full_name
@@ -56,7 +56,6 @@
                   %strong Years in business:
                   =best_in_place @contractor, :years_experience, activator: "#years_experience_edit"
                   =render "edit_link", activator: "years_experience_edit"
-
 
               - if @contractor.license.present?
                 %li#license_number
@@ -81,16 +80,84 @@
 
         -# Portfolio image carousel
         -#===============================================================================================
-        .span7
-          #portfolio.carousel.slide
-            .carousel-inner
-              = content_tag_for :div, @photos, class: "item" do |photo|
-                = image_tag(asset_path("portfolio_images/" + photo.image_url))
+        .span8
+          .row-fluid
 
-            = link_to "#edit_photos", class: "btn btn-success", id: "add_photos", data: {toggle: "modal"} do
-              = content_tag :icon, "  Add/Edit Photos", class: "icon-plus-sign", style: "color: white;"
-            = link_to raw("&lsaquo;"), "#portfolio", class: "carousel-control left", data: {slide: "prev"}
-            = link_to raw("&rsaquo;"), "#portfolio", class: "carousel-control right", data: {slide: "next"}
+            #portfolio-slider.flexslider
+              %ul.slides
+                = content_tag_for :li, @photos, class: "item flex-active-slide", style: "width: 687px; float: left; display: block;" do |photo|
+                  = image_tag asset_path("portfolio_images/" + photo.image_url)
+                  = link_to asset_path("portfolio_images/" + photo.image_url), class: "zoom-image fancyme", data: {"fancybox-group" => "portfolio", :href => "../demo/portfolio/1-lrg.jpg"}
+
+                -#%li
+                -#  %a.zoom-image.fancyme{"data-fancybox-group" => "portfolio", :href => "../demo/portfolio/1-lrg.jpg"}
+                -#    %i.e-icon-search
+                -#  -#%img{:alt => "", :src => "../demo/portfolio/1.jpg"}/
+                -#  = image_tag(asset_path("portfolio_images/" + photo.image_url))
+                -#%li
+                -#  %a.zoom-image.fancyme{"data-fancybox-group" => "portfolio", :href => "../demo/portfolio/2-lrg.jpg"}
+                -#    %i.e-icon-search
+                -#  -#%img{:alt => "", :src => "../demo/portfolio/2.jpg"}/
+                -#  = image_tag(asset_path("portfolio_images/" + photo.image_url))
+                -#%li
+                -#  %a.zoom-image.fancyme{"data-fancybox-group" => "portfolio", :href => "../demo/portfolio/3-lrg.jpg"}
+                -#    %i.e-icon-search
+                -#  -#%img{:alt => "", :src => "../demo/portfolio/3.jpg"}/
+                -#  = image_tag(asset_path("portfolio_images/" + photo.image_url))
+                -#%li
+                -#  %a.zoom-image.fancyme{"data-fancybox-group" => "portfolio", :href => "../demo/portfolio/4-lrg.jpg"}
+                -#    %i.e-icon-search
+                -#  -#%img{:alt => "", :src => "../demo/portfolio/4.jpg"}/
+                -#  = image_tag(asset_path("portfolio_images/" + photo.image_url))
+                -#%li
+                -#  %a.zoom-image.fancyme{"data-fancybox-group" => "portfolio", :href => "../demo/portfolio/5-lrg.jpg"}
+                -#    %i.e-icon-search
+                -#  -#%img{:alt => "", :src => "../demo/portfolio/5.jpg"}/
+                -#  = image_tag(asset_path("portfolio_images/" + photo.image_url))
+                -#%li
+                -#  %a.zoom-image.fancyme{"data-fancybox-group" => "portfolio", :href => "../demo/portfolio/6-lrg.jpg"}
+                -#    %i.e-icon-search
+                -#  -#%img{:alt => "", :src => "../demo/portfolio/6.jpg"}/
+                -#  = image_tag(asset_path("portfolio_images/" + photo.image_url))
+                -#%li
+                -#  %a.zoom-image.fancyme{"data-fancybox-group" => "portfolio", :href => "../demo/portfolio/7-lrg.jpg"}
+                -#    %i.e-icon-search
+                -#  -#%img{:alt => "", :src => "../demo/portfolio/7.jpg"}/
+                -#  = image_tag(asset_path("portfolio_images/" + photo.image_url))
+
+
+            #portfolio-carousel.flexslider
+              %ul.slides
+                / notice that these are background images because youtube and vimeo images fetched dynamically are not the same size
+                %li
+                  %img{:alt => "", :src => "../demo/portfolio/1.jpg"}/
+                %li
+                  %img{:alt => "", :src => "../demo/portfolio/2.jpg"}/
+                %li
+                  %img{:alt => "", :src => "../demo/portfolio/3.jpg"}/
+                %li
+                  %img{:alt => "", :src => "../demo/portfolio/4.jpg"}/
+                %li
+                  %img{:alt => "", :src => "../demo/portfolio/5.jpg"}/
+                %li
+                  %img{:alt => "", :src => "../demo/portfolio/6.jpg"}/
+                %li
+                  %img{:alt => "", :src => "../demo/portfolio/7.jpg"}/
+
+            -#  #portfolio.carousel.slide
+            -#    .carousel-inner
+            -#      = content_tag_for :div, @photos, class: "item" do |photo|
+            -#        = image_tag(asset_path("portfolio_images/" + photo.image_url))
+            -#
+            -#    = link_to "#edit_photos", class: "btn btn-success", id: "add_photos", data: {toggle: "modal"} do
+            -#      = content_tag :icon, "  Add/Edit Photos", class: "icon-plus-sign", style: "color: white;"
+            -#    = link_to raw("&lsaquo;"), "#portfolio", class: "carousel-control left", data: {slide: "prev"}
+            -#    = link_to raw("&rsaquo;"), "#portfolio", class: "carousel-control right", data: {slide: "next"}
+            -#
+            -#.span4
+            -#  = image_tag "http://placehold.it/200x100"
+            -#  = image_tag "http://placehold.it/200x100"
+            -#  = image_tag "http://placehold.it/200x100"
 
           .row#helper_tabs
             .span4.no-bg
@@ -102,6 +169,8 @@
             .span4.no-bg
               %a.link-tab
                 %i.icon-star.icon-white &nbsp Reviews
+
+
 
 
   -# Section Two (Description, Services Offered, and Maps

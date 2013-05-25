@@ -1,15 +1,16 @@
 %ul.specialties
+  = content_tag_for :li, @specialties do |specialty|
+    = best_in_place specialty, :name, path: contractor_specialty_path(@contractor, specialty)
+    =link_to "javascript:void(0)", class: "make-primary", style: "position: relative; font-style: italic;" do
+      -#%i.e-icon-pencil{style: "height: 15px; font-size: 10px; line-height: 15px; width: 80px; display; color: white; background-color: green;"} Make Primary
+      = link_to "Make primary", "#", method: :put, class: "label label-success", style: "padding: 3px; margin-left: 6px;"
+      = render "delete_link", contractor: @contractor, specialty: specialty
 
-  .no-edit
-    - Specialty.types.each do |specialty, description|
-      = content_tag :li, description, class: specialty
+%h3{style: "font-size: 16px;"} Add more services to your profile
+%hr{style: "margin-top: 5px; margin-bottom: 5px"}
 
-  .on-edit
-    = form_for @contractor, method: :put, class: "intro" do |f|
-
-      = f.fields_for :specialties do |builder|
-        -#- Specialty.types.each do |specialty, description|
-        = builder.check_box :name, value: "specialty"
-        -#= label_tag "specialty"
-
-      = submit_tag "Update Location"
+%ul.specialties
+  - Specialty.types.each do |specialty, description|
+    %li
+      = description
+      = link_to "Add", "#", method: :put, class: "pull-right btn btn-mini btn-success"

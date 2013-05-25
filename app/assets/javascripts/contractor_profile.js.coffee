@@ -36,13 +36,9 @@ $(document).ready ->
         position: "top"
       }
 
+    # Company title
       title: {
         intro: "What is the name of your company?"
-      }
-
-      # This will be filled in when the contractor defines their specialties
-      primary_service: {
-        intro: "What is the primary service offered by your company?"
       }
 
       # Probably not essential
@@ -76,18 +72,16 @@ $(document).ready ->
         skippable: "I am not bonded"
       }
 
+      # Optional Fields
+      ##################################################################
+      services: {
+        intro: "What services does your company offer?"
+      }
 
       # Location Info:
       ##################################################################
       service_area: {
         intro: "Where is your business located?"
-      }
-
-
-      # Optional Fields
-      ##################################################################
-      services: {
-        intro: "What services does your company offer?"
       }
 
       slogan: {
