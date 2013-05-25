@@ -24,9 +24,7 @@ class Specialty < ActiveRecord::Base
 
   belongs_to :contractor
 
-  validates_presence_of :name, allow_blank: false
-
-  validates :name, inclusion: {in: self.types}
+  validates_inclusion_of :name, in: self.types.values, message: "is not a valid service type"
 
   protected
 

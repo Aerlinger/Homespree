@@ -46,7 +46,7 @@ joe_the_plumber = Contractor.new do |c|
 
   c.website = "http://www.joesplumbing.com"
 
-  specialties = ["Plumbing", "Roofing", "A/C", "Pool Maintenance & Cleaning", "Drain Clearing"]
+  specialties = ["Interior Painting", "Exterior Painting", "Power Washing", "Concrete Staining / Epoxy", "Faux Finishing"]
   specialties.collect.each do |specialty|
     c.specialties << Specialty.new(name: specialty)
   end
@@ -60,7 +60,7 @@ joe_the_plumber = Contractor.new do |c|
   end
 
   (1..6).each do |photo_id|
-    photo = Photo.create do |p|
+    photo = Photo.create! do |p|
       p.image_url = "#{photo_id}.jpg"
     end
 

@@ -15,6 +15,7 @@ Homespree::Application.routes.draw do
 
   resources :contractors, only: [] do
     resources :specialties
+    resource :address
   end
 
   resources :profiles, except: [:destroy], path: "contractors/profiles", module: "contractors", as: "contractor" do
@@ -22,7 +23,9 @@ Homespree::Application.routes.draw do
     match "add_specialty" => "profiles#add_specialty"
     match "add_photo" => "profiles#add_photo"
   end
-  resources :addresses, only: [:show, :update]
+
+  resource :address
+
   resources :photos, except: [:edit, :delete]
 
   resources :mailinglists

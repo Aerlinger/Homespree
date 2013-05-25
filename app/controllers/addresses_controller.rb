@@ -7,12 +7,12 @@ class AddressesController < ApplicationController
   end
 
   def update
-    @address = Address.find(params[:id])
-    @address.update_attributes(params[:address])
-
-    if @address["addressable_type"] == "Contractor"
-      redirect_to "/contractors/profiles/#{@address.addressable_id}", method: :get
+    if params[:contractor_id]
+      @contractor = Contractor.find(params[:contractor_id])
+      @address = @contractor.address
     end
+
+    @address.update_attributes(params[:address])
   end
 
 end

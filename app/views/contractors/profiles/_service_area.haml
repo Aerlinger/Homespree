@@ -15,21 +15,20 @@
     = best_in_place @address, :state
 
 .on-edit
-  = form_tag @contractor, method: :put, class: "intro" do
+  = form_for [@contractor, @address], method: :put, class: "intro", remote: true do |f|
     .address.line1
-      = text_field_tag :line1, nil, placeholder: "Address Line 1"
+      =f.text_field :line1, placeholder: "Address Line 1"
 
     .address.line2
-      = text_field_tag :line2, nil, placeholder: "Address Line 2"
+      =f.text_field :line2, placeholder: "Address Line 2"
 
     %span.address
-      = text_field_tag :city, nil, placeholder: "City"
+      =f.text_field :city, placeholder: "City"
 
     %span.address
-      = text_field_tag :zipcode, nil, maxlength: 5, placeholder: "Zipcode"
+      =f.text_field :zipcode, maxlength: 5, placeholder: "Zipcode"
 
     .address
-      = select_tag :state, options_for_select(us_states)
+      -#= select_tag :state, options_for_select(us_states)
 
-  %hr
     = submit_tag "Update Location"

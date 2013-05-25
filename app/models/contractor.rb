@@ -19,8 +19,8 @@ class Contractor < ActiveRecord::Base
   has_many :specialties, dependent: :destroy
   has_one :address, as: :addressable, dependent: :destroy
   has_many :photos, as: :photographable, dependent: :destroy
-  accepts_nested_attributes_for :address, reject_if: lambda { |attributes| attributes['kind'].blank? }
-  accepts_nested_attributes_for :specialties, reject_if: lambda { |attributes| attributes['kind'].blank? }
+  accepts_nested_attributes_for :address
+  accepts_nested_attributes_for :specialties, allow_destroy: true
 
 
   # Validations:  -----------------------------------------------------------------------------------------------------
