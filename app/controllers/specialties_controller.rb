@@ -37,4 +37,11 @@ class SpecialtiesController < ApplicationController
 
     redirect_to "/contractors/profiles/#{@contractor.id}"
   end
+
+  def sort
+    params[:specialty].each_with_index do |id, index|
+      Specialty.update_all({position: index+1}, {id: id})
+    end
+    render nothing: true
+  end
 end

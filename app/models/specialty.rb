@@ -26,11 +26,8 @@ class Specialty < ActiveRecord::Base
 
   validates_inclusion_of :name, in: self.types.values, message: "is not a valid service type"
 
-  protected
+  acts_as_list
 
-  def delete_if_empty
-    if name.blank?
-      self.destroy
-    end
-  end
+  default_scope order("position")
+
 end

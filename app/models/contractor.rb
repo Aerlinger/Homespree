@@ -1,5 +1,8 @@
 class Contractor < ActiveRecord::Base
 
+  # Class Methods:  ---------------------------------------------------------------------------------------------------
+  geocoded_by :address
+
   # Authentication:  --------------------------------------------------------------------------------------------------
 
   # Include default devise modules. Others available are:
@@ -10,7 +13,7 @@ class Contractor < ActiveRecord::Base
 
   # Accessors:  -------------------------------------------------------------------------------------------------------
   attr_accessible :address, :specialties, :first_name, :last_name, :email, :password, :remember_me, :slogan,
-                  :description, :mobile_number, :office_number, :company_title, :custom_field,
+                  :description, :mobile_number, :office_number, :company_title, :custom_field, :latitude, :longitude,
                   :facebook, :name, :specialties, :twitter, :website, :other_specialties, :specialty_ids
 
 
@@ -35,6 +38,7 @@ class Contractor < ActiveRecord::Base
   # Callbacks:  -------------------------------------------------------------------------------------------------------
   before_save :titleize_name, :downcase_email, :upcase_license, :process_associations
   before_validation :sanitize_phone_numbers
+  after_validation :geocode, if: :address_changed?
 
 
   # Scopes:  ----------------------------------------------------------------------------------------------------------

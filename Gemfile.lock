@@ -40,6 +40,8 @@ GEM
     activesupport (3.2.12)
       i18n (~> 0.6)
       multi_json (~> 1.0)
+    acts_as_list (0.2.0)
+      activerecord (>= 3.0)
     addressable (2.2.8)
     ansi (1.4.3)
     arbre (1.0.1)
@@ -342,6 +344,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin
+  acts_as_list
   best_in_place
   better_errors
   binding_of_caller

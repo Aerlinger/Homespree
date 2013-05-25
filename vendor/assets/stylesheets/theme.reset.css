@@ -1357,9 +1357,9 @@ label.radio.inline {
     cursor: default;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
     filter: alpha(opacity=40);
-    -moz-opacity: 0.4;
-    -khtml-opacity: 0.4;
-    opacity: 0.4;
+    /*-moz-opacity: 0.4;*/
+    /*-khtml-opacity: 0.4;*/
+    /*opacity: 0.4;*/
 }
 
 .btn-primary.active, .btn-warning.active, .btn-danger.active, .btn-success.active, .btn-info.active, .btn-inverse.active {

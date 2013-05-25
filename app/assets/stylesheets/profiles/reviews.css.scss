@@ -58,7 +58,7 @@ $star_height: 22px;
   float: right;
   display: block;
   height: $star_height;
-  background: url("icon/star_groups_small.png") no-repeat top left;
+  background: url("/assets/icon/star_groups_small.png") no-repeat top left;
   background-position: 0 -6*$star_height;
 }
 
@@ -99,7 +99,7 @@ $star_height: 22px;
   display: table;
   margin: 0 auto;
   height: $star_height;
-  background: url("icon/star_groups_small.png") no-repeat top left;
+  background: url("/assets/icon/star_groups_small.png") no-repeat top left;
   background-position: 0 -10*$star_height;
 }
 

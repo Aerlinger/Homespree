@@ -14,10 +14,10 @@
 
 
   .feature-strip
-    .container
-      .row-fluid.pricingTable
+    #top.container
+      .row-fluid.pricingTable{data: {intro: "Welcome to your Homespree profile! Taking a few seconds to fill out your profile will help customers find your business.", step: 1}}
         .option3.span4
-          #top.wrapper.white-bg
+          .wrapper.white-bg
 
             -# Contractor Card Top: Title and logo
             -#===============================================================================================
@@ -76,7 +76,7 @@
                   %i.icon-question-sign.detailsPop{"data-content" => "Bond info", "data-rel" => "popover", :title => "Bond Info"}
 
               %li.select
-                =link_to "Book this contractor", "#", class: "btn btn-large btn-primary"
+                =link_to "Book this painter", "#", class: "btn btn-large btn-primary"
 
         -# Portfolio image carousel
         -#===============================================================================================
@@ -85,79 +85,15 @@
 
             #portfolio-slider.flexslider
               %ul.slides
-                = content_tag_for :li, @photos, class: "item flex-active-slide", style: "width: 687px; float: left; display: block;" do |photo|
+                = content_tag_for :li, @photos, class: "item flex-active-slide" do |photo|
                   = image_tag asset_path("portfolio_images/" + photo.image_url)
-                  = link_to asset_path("portfolio_images/" + photo.image_url), class: "zoom-image fancyme", data: {"fancybox-group" => "portfolio", :href => "../demo/portfolio/1-lrg.jpg"}
-
-                -#%li
-                -#  %a.zoom-image.fancyme{"data-fancybox-group" => "portfolio", :href => "../demo/portfolio/1-lrg.jpg"}
-                -#    %i.e-icon-search
-                -#  -#%img{:alt => "", :src => "../demo/portfolio/1.jpg"}/
-                -#  = image_tag(asset_path("portfolio_images/" + photo.image_url))
-                -#%li
-                -#  %a.zoom-image.fancyme{"data-fancybox-group" => "portfolio", :href => "../demo/portfolio/2-lrg.jpg"}
-                -#    %i.e-icon-search
-                -#  -#%img{:alt => "", :src => "../demo/portfolio/2.jpg"}/
-                -#  = image_tag(asset_path("portfolio_images/" + photo.image_url))
-                -#%li
-                -#  %a.zoom-image.fancyme{"data-fancybox-group" => "portfolio", :href => "../demo/portfolio/3-lrg.jpg"}
-                -#    %i.e-icon-search
-                -#  -#%img{:alt => "", :src => "../demo/portfolio/3.jpg"}/
-                -#  = image_tag(asset_path("portfolio_images/" + photo.image_url))
-                -#%li
-                -#  %a.zoom-image.fancyme{"data-fancybox-group" => "portfolio", :href => "../demo/portfolio/4-lrg.jpg"}
-                -#    %i.e-icon-search
-                -#  -#%img{:alt => "", :src => "../demo/portfolio/4.jpg"}/
-                -#  = image_tag(asset_path("portfolio_images/" + photo.image_url))
-                -#%li
-                -#  %a.zoom-image.fancyme{"data-fancybox-group" => "portfolio", :href => "../demo/portfolio/5-lrg.jpg"}
-                -#    %i.e-icon-search
-                -#  -#%img{:alt => "", :src => "../demo/portfolio/5.jpg"}/
-                -#  = image_tag(asset_path("portfolio_images/" + photo.image_url))
-                -#%li
-                -#  %a.zoom-image.fancyme{"data-fancybox-group" => "portfolio", :href => "../demo/portfolio/6-lrg.jpg"}
-                -#    %i.e-icon-search
-                -#  -#%img{:alt => "", :src => "../demo/portfolio/6.jpg"}/
-                -#  = image_tag(asset_path("portfolio_images/" + photo.image_url))
-                -#%li
-                -#  %a.zoom-image.fancyme{"data-fancybox-group" => "portfolio", :href => "../demo/portfolio/7-lrg.jpg"}
-                -#    %i.e-icon-search
-                -#  -#%img{:alt => "", :src => "../demo/portfolio/7.jpg"}/
-                -#  = image_tag(asset_path("portfolio_images/" + photo.image_url))
-
+                  = link_to asset_path("portfolio_images/" + photo.image_url), class: "zoom-image fancyme", data: {"fancybox-group" => "portfolio"} do
+                    %i.e-icon-search
 
             #portfolio-carousel.flexslider
               %ul.slides
-                / notice that these are background images because youtube and vimeo images fetched dynamically are not the same size
-                %li
-                  %img{:alt => "", :src => "../demo/portfolio/1.jpg"}/
-                %li
-                  %img{:alt => "", :src => "../demo/portfolio/2.jpg"}/
-                %li
-                  %img{:alt => "", :src => "../demo/portfolio/3.jpg"}/
-                %li
-                  %img{:alt => "", :src => "../demo/portfolio/4.jpg"}/
-                %li
-                  %img{:alt => "", :src => "../demo/portfolio/5.jpg"}/
-                %li
-                  %img{:alt => "", :src => "../demo/portfolio/6.jpg"}/
-                %li
-                  %img{:alt => "", :src => "../demo/portfolio/7.jpg"}/
-
-            -#  #portfolio.carousel.slide
-            -#    .carousel-inner
-            -#      = content_tag_for :div, @photos, class: "item" do |photo|
-            -#        = image_tag(asset_path("portfolio_images/" + photo.image_url))
-            -#
-            -#    = link_to "#edit_photos", class: "btn btn-success", id: "add_photos", data: {toggle: "modal"} do
-            -#      = content_tag :icon, "  Add/Edit Photos", class: "icon-plus-sign", style: "color: white;"
-            -#    = link_to raw("&lsaquo;"), "#portfolio", class: "carousel-control left", data: {slide: "prev"}
-            -#    = link_to raw("&rsaquo;"), "#portfolio", class: "carousel-control right", data: {slide: "next"}
-            -#
-            -#.span4
-            -#  = image_tag "http://placehold.it/200x100"
-            -#  = image_tag "http://placehold.it/200x100"
-            -#  = image_tag "http://placehold.it/200x100"
+                = content_tag_for :li, @photos do |photo|
+                  = image_tag asset_path("portfolio_images/" + photo.image_url), alt: ""
 
           .row#helper_tabs
             .span4.no-bg

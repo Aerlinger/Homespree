@@ -13,8 +13,10 @@ Homespree::Application.routes.draw do
     passwords: "contractors/passwords"
   }
 
-  resources :contractors, only: [] do
-    resources :specialties
+  resources :contractors do
+    resources :specialties do
+      post :sort, on: :collection
+    end
     resource :address
   end
 
@@ -25,9 +27,7 @@ Homespree::Application.routes.draw do
   end
 
   resource :address
-
   resources :photos, except: [:edit, :delete]
-
   resources :mailinglists
 
   # Static pages page

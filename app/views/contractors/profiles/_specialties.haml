@@ -1,9 +1,14 @@
-%ul.specialties
+%p
+  %strong Protip:
+  %em Drag services below based on their relevance.
+
+= content_tag :ol, id: "contractor_specialties", class: "specialties", data: { "update-url" => "/contractors/1/specialties/sort" } do
   = content_tag_for :li, @specialties do |specialty|
-    = best_in_place specialty, :name, path: contractor_specialty_path(@contractor, specialty)
-    =link_to "javascript:void(0)", class: "make-primary", style: "position: relative; font-style: italic;" do
-      -#%i.e-icon-pencil{style: "height: 15px; font-size: 10px; line-height: 15px; width: 80px; display; color: white; background-color: green;"} Make Primary
-      = link_to "Make primary", "#", method: :put, class: "label label-success", style: "padding: 3px; margin-left: 6px;"
+    %span.badge.badge-info.drag{style: "padding: 0 !important"}
+      %i.icon-circle-arrow-up
+      DRAG&nbsp&nbsp
+    = specialty.name
+    = link_to "javascript:void(0)", class: "make-primary", style: "position: relative; font-style: italic;" do
       = render "delete_link", contractor: @contractor, specialty: specialty
 
 %h3{style: "font-size: 16px;"} Add more services to your profile

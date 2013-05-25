@@ -1,9 +1,9 @@
 %li.price.primary-color-bg
   #contractor_logo{style:"position: relative;"}
-    =image_tag "http://placehold.it/350x200"
+    =image_tag "http://placehold.it/300x200", id: "contractor_logo"
     .on-edit
-      =link_to "Upload", "#", class: "btn btn-mini btn-success", style: "position: absolute; top: 5px, left: 5px"
+      = form_for @contractor do |f|
+        = f.file_field :logo, class: "btn btn-mini btn-success", style: "display: table; margin: 0 auto;", id: "upload_image"
 
-  %span= @address.city
-  %span= @address.state
+  %span{style: "font-weight: bold"}= "#{@address.city}, #{@address.state}"
   %span.stars5

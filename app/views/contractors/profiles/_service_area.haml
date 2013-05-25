@@ -1,4 +1,5 @@
-=image_tag asset_path("profile/staticmap.png")
+
+=image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@contractor.latitude}%2C#{@contractor.longitude}", id: "map"
 
 .no-edit
   .address.line1
@@ -25,10 +26,10 @@
     %span.address
       =f.text_field :city, placeholder: "City"
 
+    .address
+      =f.select :state, options_for_select(us_states)
+
     %span.address
       =f.text_field :zipcode, maxlength: 5, placeholder: "Zipcode"
-
-    .address
-      -#= select_tag :state, options_for_select(us_states)
 
     = submit_tag "Update Location"

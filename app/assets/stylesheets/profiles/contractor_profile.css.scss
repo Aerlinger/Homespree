@@ -24,10 +24,19 @@
 
 .on-edit {
 
- }
+}
+
+#upload_image {
+  border-radius: 5px;
+}
+
 
 .no-edit {
   display: none;
+}
+
+#map {
+  margin-bottom: 8px;
 }
 
 div.feature-strip {
@@ -104,6 +113,24 @@ div.feature-strip {
   #contractor_logo {
     position: relative;
 
+    img {
+      display: table;
+      margin: 0 auto;
+      max-width: 200px;
+      max-height: 150px;
+    }
+
+    #upload_image {
+      display: block;
+
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      -moz-border-radius-bottomleft: 5px;
+      -moz-border-radius-bottomright: 5px;
+      -webkit-border-bottom-left-radius: 5px;
+      -webkit-border-bottom-right-radius: 5px;
+    }
+
     a {
       position: absolute;
     }
@@ -114,6 +141,8 @@ div.feature-strip {
   list-style: none;
   font-size: 1.5em;
 }
+
+#contractor_specialties .badge { cursor: move; }
 
 .call-to-action {
   display: block;

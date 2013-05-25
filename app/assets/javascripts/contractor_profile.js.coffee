@@ -21,8 +21,8 @@ setupIntro = (fields) ->
     console.log(obj.data());
     i++
 
-$(document).ready ->
 
+$(document).ready ->
   if $("#page.profile").length > 0
 
     # Order of fields to be displayed during the intro sequence
@@ -30,11 +30,11 @@ $(document).ready ->
 
       # On the "Card"
       ##################################################################
-      top: {
-        intro: "Welcome to your Homespree profile! Taking a few seconds to fill out
-                your profile will help customers find your business."
-        position: "top"
-      }
+#      top: {
+#        intro: "Welcome to your Homespree profile! Taking a few seconds to fill out
+#                your profile will help customers find your business."
+#        position: "top"
+#      }
 
     # Company title
       title: {
@@ -76,12 +76,14 @@ $(document).ready ->
       ##################################################################
       services: {
         intro: "What services does your company offer?"
+        position: "left"
       }
 
       # Location Info:
       ##################################################################
       service_area: {
         intro: "Where is your business located?"
+        position: "left"
       }
 
       slogan: {
@@ -107,6 +109,12 @@ $(document).ready ->
 
       $(targetElement).find('a.edit-link').click()
     ).start()
+
+    $('#contractor_specialties').sortable
+      axis: 'y'
+      update: ->
+        $.post($(this).data('update-url'), $(this).sortable('serialize'))
+
 
     $('.best_in_place').each (idx, item) ->
       if $(item).text() == ""

@@ -27,6 +27,7 @@ gem 'simple_form'
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+gem 'acts_as_list'
 gem 'figaro', '>= 0.5.3'
 gem 'haml-rails'
 gem 'paperclip'

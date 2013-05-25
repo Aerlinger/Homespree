@@ -13,6 +13,8 @@ class AddressesController < ApplicationController
     end
 
     @address.update_attributes(params[:address])
+
+    render nothing: true
   end
 
 end
