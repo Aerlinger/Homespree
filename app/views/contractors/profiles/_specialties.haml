@@ -5,11 +5,11 @@
 = content_tag :ol, id: "contractor_specialties", class: "specialties", data: { "update-url" => "/contractors/1/specialties/sort" } do
   = content_tag_for :li, @specialties do |specialty|
     %span.badge.badge-info.drag{style: "padding: 0 !important"}
-      %i.icon-circle-arrow-up
+      %i.e-icon-arrow-combo
       DRAG&nbsp&nbsp
-    = specialty.name
-    = link_to "javascript:void(0)", class: "make-primary", style: "position: relative; font-style: italic;" do
-      = render "delete_link", contractor: @contractor, specialty: specialty
+    %span.specialty-name= specialty.name
+    =link_to "#", method: :delete, remote: true, class: "pull-right", style: "position: relative; color: darkred;" do
+      %i.e-icon-cancel
 
 %h3{style: "font-size: 16px;"} Add more services to your profile
 %hr{style: "margin-top: 5px; margin-bottom: 5px"}
@@ -18,4 +18,6 @@
   - Specialty.types.each do |specialty, description|
     %li
       = description
-      = link_to "Add", "#", method: :put, class: "pull-right btn btn-mini btn-success"
+      = link_to contractor_specialties_path(contractor_id: @contractor.id, specialty_name: description), method: :post, class: "pull-right btn btn-mini btn-success", remote: true do
+        %i.e-icon-plus
+        Add

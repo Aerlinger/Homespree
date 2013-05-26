@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130525192012) do
+ActiveRecord::Schema.define(:version => 20130526175910) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(:version => 20130525192012) do
     t.string   "addressable_type"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   create_table "admin_users", :force => true do |t|
@@ -102,6 +104,7 @@ ActiveRecord::Schema.define(:version => 20130525192012) do
     t.decimal  "years_experience"
     t.float    "latitude"
     t.float    "longitude"
+    t.decimal  "availability_radius"
   end
 
   add_index "contractors", ["reset_password_token"], :name => "index_contractors_on_reset_password_token", :unique => true

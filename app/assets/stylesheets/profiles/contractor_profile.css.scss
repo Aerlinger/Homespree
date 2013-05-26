@@ -9,6 +9,9 @@
   border: 3px solid orange;
 }
 
+#page {
+  //background: url(http://www.ivettearango.com/wp-content/uploads/2011/10/6-Valle-Living-Room-wide-web.jpg) !important;
+}
 
 .edit-link {
   font-size: 12px;
@@ -30,13 +33,46 @@
   border-radius: 5px;
 }
 
-
 .no-edit {
   display: none;
 }
 
 #map {
   margin-bottom: 8px;
+}
+
+#service_area {
+  label {
+    display: block !important;
+    float: left;
+    width: 60px !important;
+    text-align: left;
+
+    font-weight: bold;
+    height: 30px !important;
+    line-height: 30px;
+
+  }
+
+  input:not(.btn) {
+    height: 20px !important;
+  }
+
+  input:not(.btn), select {
+    width: 180px !important;
+    margin-bottom: 10px !important;
+    display: block !important;
+  }
+
+  .simple_form div.boolean, .simple_form input[type='submit'] {
+    margin-left: 0px;
+  }
+
+  .simple_form div.boolean label {
+    float: none;
+    margin: 0;
+  }
+
 }
 
 div.feature-strip {
@@ -56,11 +92,10 @@ div.feature-strip {
 }
 
 .incomplete_sections {
-  padding: 15px;
-  margin: 0;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
   position: relative;
   background-color: rgba(250, 249, 248, 0.85);
-  margin-bottom: 15px;
 
   h6, h5, h4, h3 {
     padding: none !important;
@@ -142,13 +177,19 @@ div.feature-strip {
   font-size: 1.5em;
 }
 
-#contractor_specialties .badge { cursor: move; }
+#contractor_specialties .badge {
+  cursor: move;
+}
 
 .call-to-action {
   display: block;
   width: 100%;
   display: table;
   margin: 0 auto;
+}
+
+#book_contractor {
+  background-color: green;
 }
 
 .profile {

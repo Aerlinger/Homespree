@@ -1,10 +1,10 @@
 
-=image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@location.latitude}%2C#{@location.longitude}", id: "map"
+=image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@address.latitude}%2C#{@address.longitude}", id: "map"
 
 .no-edit
   .address.line1
     = best_in_place @address, :line1
-    = render "edit_link"
+    = render "contractors/profiles/edit_link"
 
   .address.line2
     = best_in_place @address, :line2
@@ -16,17 +16,17 @@
     = best_in_place @address, :state
 
 .on-edit
-  = form_for [@contractor, @address], method: :put, class: "intro", remote: true do |f|
+  = simple_form_for [@contractor, @address], method: :put, class: "intro", remote: true do |f|
     .address.line1
-      =f.text_field :line1, placeholder: "Address Line 1"
+      =f.input :line1, placeholder: "Address Line 1", label: "Street"
 
     %span.address
-      =f.text_field :city, placeholder: @location.city || @address.city
+      =f.input :city, placeholder: @location.city || @address.city, label: "City"
 
     .address
-      =f.select :state, options_for_select(us_states)
+      =f.input :state, collection: us_states, label: "State"
 
     %span.address
-      =f.text_field :zipcode, maxlength: 5, placeholder: "Zipcode"
+      =f.input :zipcode, maxlength: 5, placeholder: "Zipcode", label: "Zipcode"
 
-    = submit_tag "Update Location"
+    = f.submit "Update Location", class: "btn custom-btn btn-small btn-info"

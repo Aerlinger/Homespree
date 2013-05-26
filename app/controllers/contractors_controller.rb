@@ -1,4 +1,4 @@
-class Contractors::ProfilesController < ApplicationController
+class ContractorsController < ApplicationController
 
   layout "static_page", except: [:show, :edit]
 

@@ -1,7 +1,5 @@
 class Contractor < ActiveRecord::Base
 
-  # Class Methods:  ---------------------------------------------------------------------------------------------------
-  geocoded_by :address
 
   # Authentication:  --------------------------------------------------------------------------------------------------
 
@@ -38,7 +36,6 @@ class Contractor < ActiveRecord::Base
   # Callbacks:  -------------------------------------------------------------------------------------------------------
   before_save :titleize_name, :downcase_email, :upcase_license, :process_associations
   before_validation :sanitize_phone_numbers
-  after_validation :geocode
 
 
   # Scopes:  ----------------------------------------------------------------------------------------------------------
@@ -106,6 +103,12 @@ class Contractor < ActiveRecord::Base
   # This is used to prevent problems when params are missing in the controller before the contractor is created.
   def nil_if_blank
     self.attributes.each { |attr| self[attr] = nil if self[attr].blank? }
+  end
+
+  def single_address
+    if address
+      [address.line1, address.city, address.state].compact.join(', ')
+    end
   end
 
 end

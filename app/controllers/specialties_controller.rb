@@ -3,12 +3,16 @@ class SpecialtiesController < ApplicationController
 
   def create
     @contractor = Contractor.find(params[:contractor_id])
-    @specialty = params[:specialty]
+    @specialty = Specialty.create!(name: params[:specialty_name])
 
-    @contractor.specialties << Specialty.create(name: @specialty['name'])
+    @contractor.specialties << @specialty
     @contractor.save!
 
-    redirect_to "/contractors/profiles/#{@contractor.id}"
+    respond_to do |format|
+      format.js { render layout: false }
+      format.html { redirect_to "/contractors/profiles/#{@contractor.id}" }
+    end
+
   end
 
   def show

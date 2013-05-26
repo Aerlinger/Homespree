@@ -98,6 +98,8 @@ $(document).ready ->
     setupIntro(fields)
 
     introJs().onchange((targetElement) ->
+      $('.introjs-overlay').click()
+
       console.log "Updated: ", targetElement
       ### The following should happen at each step of the introduction:
 
@@ -107,13 +109,21 @@ $(document).ready ->
         After:
       ###
 
-      $(targetElement).find('a.edit-link').click()
+
+
+      setTimeout () ->
+        console.log($(targetElement).find('a.edit-link')[0])
+        $(targetElement).find('a.edit-link').click()
+      , 500
+
     ).start()
 
     $('#contractor_specialties').sortable
       axis: 'y'
       update: ->
         $.post($(this).data('update-url'), $(this).sortable('serialize'))
+
+        $("#primary_service_text").text($(this).find('.specialty-name').first().text())
 
 
     $('.best_in_place').each (idx, item) ->

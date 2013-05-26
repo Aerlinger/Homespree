@@ -12,7 +12,6 @@
   -# Top Section (Info Card and Image Carousel)
   -#================================================================================================
 
-
   .feature-strip
     #top.container
       .row-fluid.pricingTable{data: {intro: "Welcome to your Homespree profile! Taking a few seconds to fill out your profile will help customers find your business.", step: 1}}
@@ -24,9 +23,9 @@
             %ul.optionheader
               %li#title.title.primary-color-bg
                 = best_in_place @contractor, :company_title, activator: "#title_edit"
-                = render "edit_link", activator: "title_edit"
+                = render "contractors/profiles/edit_link", activator: "title_edit"
 
-              =render "logo"
+              =render "contractors/profiles/logo"
 
             -# Contractor Card: list of Fields -- name, license info, etc...
             -#===============================================================================================
@@ -34,7 +33,8 @@
               - if @contractor.specialties.present?
                 %li#primary_service
                   %strong Primary Service:
-                  = @contractor.specialties.first.name if @contractor.specialties.first
+                  %span#primary_service_text
+                    =@contractor.specialties.first.name if @contractor.specialties.first
 
               - if @contractor.first_name.present?
                 %li#full_name
@@ -43,19 +43,19 @@
                   - if @contractor.last_name.present?
                     = best_in_place @contractor, :last_name
 
-                  =render "edit_link", activator: "name_edit"
+                  =render "contractors/profiles/edit_link", activator: "name_edit"
 
               - if @contractor.mobile_number.present?
                 %li#mobile_number
                   %strong Phone:
                   =best_in_place @contractor, :mobile_number, display_with: :number_to_phone, activator: "#phone_edit"
-                  =render "edit_link", activator: "phone_edit"
+                  =render "contractors/profiles/edit_link", activator: "phone_edit"
 
               - if @contractor.years_experience.present?
                 %li#years_experience
                   %strong Years in business:
                   =best_in_place @contractor, :years_experience, activator: "#years_experience_edit"
-                  =render "edit_link", activator: "years_experience_edit"
+                  =render "contractors/profiles/edit_link", activator: "years_experience_edit"
 
               - if @contractor.license.present?
                 %li#license_number
@@ -76,7 +76,7 @@
                   %i.icon-question-sign.detailsPop{"data-content" => "Bond info", "data-rel" => "popover", :title => "Bond Info"}
 
               %li.select
-                =link_to "Book this painter", "#", class: "btn btn-large btn-primary"
+                =link_to "Book this painter", "#", class: "btn btn-large btn-primary", id: "book_contractor"
 
         -# Portfolio image carousel
         -#===============================================================================================
@@ -100,7 +100,7 @@
               %a.link-tab
                 %i.icon-comment.icon-white &nbsp Ask a question
             .span4.no-bg
-              %a.link-tab
+              %a.link-tab{href: "#helper_tabs"}
                 %i.icon-map-marker.icon-white &nbsp Service area
             .span4.no-bg
               %a.link-tab
@@ -111,7 +111,7 @@
 
   -# Section Two (Description, Services Offered, and Maps
   -#================================================================================================
-  .main-content
+  #second_strip.main-content
     %section.strip{style: "margin: 0;"}
       .container
         .row-fluid.title-columns
@@ -120,20 +120,20 @@
               %div Business Description
             %h6#slogan
               = best_in_place @contractor, :slogan, activator: "#slogan_edit"
-              = render "edit_link",  activator: "slogan_edit"
+              = render "contractors/profiles/edit_link",  activator: "slogan_edit"
             %p#description
               = best_in_place @contractor, :description, type: :textarea, activator: "#description_edit"
-              = render "edit_link", activator: "description_edit"
+              = render "contractors/profiles/edit_link", activator: "description_edit"
 
           .span4#services
             %h3.short_headline
               %div Services Offered
-            =render "specialties"
+            =render "contractors/profiles/specialties"
 
           .span3#service_area
             %h3.short_headline
               %div Service Area
-            =render "service_area"
+            =render "contractors/profiles/service_area"
 
 
     %section.strip{style: "margin: 0;"}
@@ -170,6 +170,6 @@
           %p.text-right
             %a.btn.custom-btn.btn-small.btn-very-subtle{:href => "testimonials.html"} All Testimonials
 
-  =render "photos_modal"
+  =render "contractors/profiles/photos_modal"
 
   =render "partials/clean_footer"

@@ -18,13 +18,15 @@ Homespree::Application.routes.draw do
       post :sort, on: :collection
     end
     resource :address
+
+    put "ignore_message"
+    post "add_specialty" => "profiles#add_specialty"
+    post "add_photo" => "profiles#add_photo"
   end
 
-  resources :profiles, except: [:destroy], path: "contractors/profiles", module: "contractors", as: "contractor" do
-    put "ignore_message"
-    match "add_specialty" => "profiles#add_specialty"
-    match "add_photo" => "profiles#add_photo"
-  end
+  #resources :profiles, except: [:destroy], path: "contractors/profiles", module: "contractors", as: "contractor" do
+  #
+  #end
 
   resource :address
   resources :photos, except: [:edit, :delete]
