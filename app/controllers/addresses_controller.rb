@@ -1,6 +1,6 @@
 class AddressesController < ApplicationController
 
-  respond_to :json
+  respond_to :js
 
   def show
     redirect_to "/contractors/profiles/#{@contractor.id}"
@@ -14,7 +14,10 @@ class AddressesController < ApplicationController
 
     @address.update_attributes(params[:address])
 
-    render nothing: true
+    #respond_with @address, layout: :none
+    respond_to do |format|
+      format.js { render layout: :none }
+    end
   end
 
 end

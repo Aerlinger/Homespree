@@ -20,8 +20,9 @@ Homespree::Application.routes.draw do
     resource :address
 
     put "ignore_message"
-    post "add_specialty" => "profiles#add_specialty"
-    post "add_photo" => "profiles#add_photo"
+    post "add_specialty" => "contractors#add_specialty"
+    post "remove_specialty" => "contractors#remove_specialty"
+    post "add_photo" => "contractors#add_photo"
   end
 
   #resources :profiles, except: [:destroy], path: "contractors/profiles", module: "contractors", as: "contractor" do

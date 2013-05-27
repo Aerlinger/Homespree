@@ -1,0 +1,13 @@
+console.log("hello");
+
+$('li#specialty_' + params[:id]).hide(500);
+
+$(function(event) {
+	console.log("Specialty");
+	console.log("Finished: ", $("li#specialty_<%= params[:specialty_id] %>"));
+	$('li#specialty_' + params[:id]).hide(500);
+});
+
+$(document).ready(function(evt) {
+	console.log("hello");
+});

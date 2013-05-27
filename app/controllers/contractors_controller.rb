@@ -36,13 +36,21 @@ class ContractorsController < ApplicationController
 
   def add_specialty
     respond_to do |format|
-      format.js { render :layout=>false }
+      format.js { render layout: false }
+    end
+  end
+
+  def remove_specialty
+    Specialty.delete(params[:specialty_id])
+
+    respond_to do |format|
+      format.js { render layout: false }
     end
   end
 
   def add_photo
     respond_to do |format|
-      format.js { render :layout=>false }
+      format.js { render layout: false }
     end
   end
 

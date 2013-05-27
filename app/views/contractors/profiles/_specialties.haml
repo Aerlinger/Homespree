@@ -2,22 +2,25 @@
   %strong Protip:
   %em Drag services below based on their relevance.
 
+-# List of specialties which have been claimed by this contractor ----------------------------------------------------
 = content_tag :ol, id: "contractor_specialties", class: "specialties", data: { "update-url" => "/contractors/1/specialties/sort" } do
   = content_tag_for :li, @specialties do |specialty|
     %span.badge.badge-info.drag{style: "padding: 0 !important"}
+      &nbsp
       %i.e-icon-arrow-combo
-      DRAG&nbsp&nbsp
+      DRAG&nbsp
     %span.specialty-name= specialty.name
-    =link_to "#", method: :delete, remote: true, class: "pull-right", style: "position: relative; color: darkred;" do
+    =link_to contractor_remove_specialty_path(contractor_id: @contractor.id, specialty_id: specialty.id), method: :post, remote: true, class: "delete-specialty pull-right", style: "position: relative; color: darkred;" do
       %i.e-icon-cancel
 
 %h3{style: "font-size: 16px;"} Add more services to your profile
 %hr{style: "margin-top: 5px; margin-bottom: 5px"}
 
-%ul.specialties
-  - Specialty.types.each do |specialty, description|
+-# List of "available" pecialties which have not yet been selected:  --------------------------------------------------
+%ul.specialties#available_specialties
+  - available_specialties = Specialty.types.values - @specialties.map(&:name)
+  - available_specialties.each do |specialty_name|
     %li
-      = description
-      = link_to contractor_specialties_path(contractor_id: @contractor.id, specialty_name: description), method: :post, class: "pull-right btn btn-mini btn-success", remote: true do
-        %i.e-icon-plus
+      = specialty_name
+      = link_to contractor_specialties_path(contractor_id: @contractor.id, specialty_name: specialty_name), method: :post, class: "add-specialty pull-right btn btn-mini btn-success", remote: true do
         Add
