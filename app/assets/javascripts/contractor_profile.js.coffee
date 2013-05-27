@@ -1,7 +1,9 @@
 ###
-|
-|  Client-side (Non-AJAX) code for the Contractor profile pages
-|
+  ---------------------------------------------------------------------------------------------------------------------
+
+  Client-side (Non-AJAX) code for the Contractor profile pages
+
+  ---------------------------------------------------------------------------------------------------------------------
 ###
 
 
@@ -15,7 +17,7 @@ fields = {
     intro: "What is the name of your company?"
   }
 
-# Probably not essential
+  # TODO: Enable editing first and last name in a single step
   full_name: {
     intro: "Name of the owner?"
   }
