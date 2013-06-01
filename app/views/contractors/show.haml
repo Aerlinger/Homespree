@@ -9,6 +9,7 @@
   -#================================================================================================
   =render "contractors/profiles/info_header"
 
+
   -# Top Section (Info Card and Image Carousel)
   -#================================================================================================
 
@@ -25,21 +26,20 @@
                 = best_in_place @contractor, :company_title, activator: "#title_edit"
                 = render "contractors/profiles/edit_link", activator: "title_edit"
 
-              =render "contractors/profiles/logo"
+              = render "contractors/profiles/logo"
 
             -# Contractor Card: list of Fields -- name, license info, etc...
             -#===============================================================================================
             %ul.features
-              - if @contractor.specialties.present?
-                %li#primary_service
-                  %strong Primary Service:
-                  %span#primary_service_text
-                    =@contractor.specialties.first.name if @contractor.specialties.first
+              = @contractor.card_item :first_name, { display_with: :number_to_phone, nil: "<em>No info</em>" }
+              = @contractor.card_item :first_name, { display_with: :number_to_phone, nil: "<em>No info</em>" }
+              = @contractor.card_item :first_name, { display_with: :number_to_phone, nil: "<em>No info</em>" }
+
 
               - if @contractor.first_name.present?
                 %li#full_name
-                  %strong Owned by
-                  = best_in_place @contractor, :first_name, activator: "#name_edit"
+                  %strong Owner:
+                  = best_in_place @contractor, :first_name, activator: "#name_edit", nil: "No info"
                   - if @contractor.last_name.present?
                     = best_in_place @contractor, :last_name
 
@@ -48,13 +48,13 @@
               - if @contractor.mobile_number.present?
                 %li#mobile_number
                   %strong Phone:
-                  =best_in_place @contractor, :mobile_number, display_with: :number_to_phone, activator: "#phone_edit"
+                  =best_in_place @contractor, :mobile_number, display_with: :number_to_phone, activator: "#phone_edit", nil: "<em>No info<em>"
                   =render "contractors/profiles/edit_link", activator: "phone_edit"
 
               - if @contractor.years_experience.present?
                 %li#years_experience
                   %strong Years in business:
-                  =best_in_place @contractor, :years_experience, activator: "#years_experience_edit"
+                  =best_in_place @contractor, :years_experience, activator: "#years_experience_edit", nil: "<em>No info<em>"
                   =render "contractors/profiles/edit_link", activator: "years_experience_edit"
 
               - if @contractor.license.present?
@@ -82,7 +82,6 @@
         -#===============================================================================================
         .span8
           .row-fluid
-
             #portfolio-slider.flexslider
               %ul.slides
                 = content_tag_for :li, @photos, class: "item flex-active-slide" do |photo|
@@ -94,6 +93,8 @@
               %ul.slides
                 = content_tag_for :li, @photos do |photo|
                   = image_tag asset_path("portfolio_images/" + photo.image_url), alt: ""
+                %li
+                  = image_tag "http://placehold.it/200x150", alt: "Upload a photo"
 
           .row#helper_tabs
             .span4.no-bg
@@ -108,10 +109,9 @@
 
 
 
-
   -# Section Two (Description, Services Offered, and Maps
   -#================================================================================================
-  #second_strip.main-content
+  #section_two.main-content
     %section.strip{style: "margin: 0;"}
       .container
         .row-fluid.title-columns
@@ -169,6 +169,8 @@
 
           %p.text-right
             %a.btn.custom-btn.btn-small.btn-very-subtle{:href => "testimonials.html"} All Testimonials
+
+
 
   =render "contractors/profiles/photos_modal"
 

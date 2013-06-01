@@ -1,0 +1,18 @@
+%li.letter-press.featured
+  .hover
+    %span
+      %a{:href => "portfolio-single.html"}
+        %i.e-icon-link
+      %a.fancyme{"data-fancybox-group" => "gallery", :href => "../demo/portfolio/larger-image-fpo.png"}
+        %i.e-icon-popup
+    = image_tag image, alt: ""
+  .entry-summary
+    %h4
+      %a{:href => "portfolio-single.html"}= title
+    %p= description
+    .categories
+      %a{:href => "#"}> Letter Press
+      ,
+      %a{:href => "#"} Featured
+    %span.credit
+      %a{:href => "http://www.flickr.com/photos/adactio/5817823805/", :target => "_blank"} CC BY 2.0  Jeremy Keith

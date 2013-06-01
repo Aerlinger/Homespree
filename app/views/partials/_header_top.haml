@@ -46,9 +46,16 @@
                 %li
                   =link_to "Profile Settings"
                 %li
-                  =link_to "Sign out", destroy_contractor_session_path, method: :delete
+                  =link_to "Sign out", destroy_contractor_session_path, method: :get
 
           - else
+
+            %li
+              =link_to "About", new_contractor_registration_path
+
+            %li
+              =link_to "Meet our Contractors", new_contractor_registration_path
+
             %li
               =link_to "Sign Up ", new_contractor_registration_path
 
@@ -63,3 +70,7 @@
             -#    #search-trigger
             -#      %i.e-icon-search
             -#    %input{:placeholder => "search + enter", :type => "text"}/
+
+      #logo
+        = link_to root_path do
+          = image_tag "homespree_transparent.png"

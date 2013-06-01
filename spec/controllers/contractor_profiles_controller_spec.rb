@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Contractors::ProfilesController do
+describe ContractorsController do
 
   before :each do
     @this_contractor = create :contractor
@@ -56,7 +56,7 @@ describe Contractors::ProfilesController do
 
       it "redirects to the updated contractor profile" do
         put :update, id: @contractor, contractor: attributes_for(:contractor, first_name: "George")
-        expect(response).to redirect_to "/contractors/profiles/#{@contractor.id}"
+        expect(response).to redirect_to "/contractors/#{@contractor.id}"
       end
     end
 

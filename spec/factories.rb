@@ -47,7 +47,7 @@ FactoryGirl.define do
   end
 
   factory :photo do
-    filename "contractor_default.jpg"
+    image_url "contractor_default.jpg"
     name "contractor"
     contractor
   end

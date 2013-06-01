@@ -87,16 +87,18 @@ strtrim = (str) ->
 $(document).ready ->
   if $("#page.profile").length > 0
 
+    $("#logo_uploader").S3Uploader()
+
     # Load the definition of out introduction fields
     setupIntro(fields)
 
     introJs().onchange((targetElement) ->
-      $('.introjs-overlay').click()
-
-      # Timeout is used to account for the delay when switching fields
-      setTimeout () ->
-        $(targetElement).find('a.edit-link').click()
-      , 500
+#      $('.introjs-overlay').click()
+#
+#      # Timeout is used to account for the delay when switching fields
+#      setTimeout () ->
+#        $(targetElement).find('a.edit-link').click()
+#      , 500
     ).start()
 
     # Services section responsive design:  ----------------------------------------------------------------------------
@@ -150,9 +152,9 @@ $(document).ready ->
 
 
     # Best In Place Customization:  -----------------------------------------------------------------------------------
-    $('.best_in_place').each (idx, item) ->
-      if $(item).text() == ""
-        $(item).text('click to add content')
+#    $('.best_in_place').each (idx, item) ->
+#      if $(item).text() == ""
+#        $(item).html('<em>No information</em>')
 
     $('.best_in_place').best_in_place()
 

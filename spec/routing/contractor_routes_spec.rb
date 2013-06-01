@@ -36,17 +36,17 @@ describe Contractors::SessionsController do
   end
 
   it "handles sign out route" do
-    delete("/contractors/sign_out").should route_to("contractors/sessions#destroy")
+    get("/contractors/sign_out").should route_to("contractors/sessions#destroy")
   end
 
 end
 
-describe Contractors::ProfilesController do
+describe ContractorsController do
   it "should show profile" do
-    get("/contractors/profiles/1").should route_to("contractors/profiles#show", id: "1")
+    get("/contractors/1").should route_to("contractors#show", id: "1")
   end
 
   it "should index" do
-    get("/contractors/profiles").should route_to("contractors/profiles#index")
+    get("/contractors").should route_to("contractors#index")
   end
 end

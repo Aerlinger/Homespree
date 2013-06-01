@@ -27,7 +27,7 @@ describe Contractors::SessionsController do
       end
 
       it "redirects to the contractor's homepage" do
-        expect(response).to redirect_to("/contractors/profiles/#{c.id}")
+        expect(response).to redirect_to("/contractors/#{c.id}")
       end
 
       it "displays flash message" do

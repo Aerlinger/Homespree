@@ -8,11 +8,13 @@ class Contractor < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  #mount_uploader :logo, LogoUploader
+
 
   # Accessors:  -------------------------------------------------------------------------------------------------------
   attr_accessible :address, :specialties, :first_name, :last_name, :email, :password, :remember_me, :slogan,
                   :description, :mobile_number, :office_number, :company_title, :custom_field, :latitude, :longitude,
-                  :facebook, :name, :specialties, :twitter, :website, :other_specialties, :specialty_ids
+                  :facebook, :name, :specialties, :twitter, :website, :other_specialties, :specialty_ids, :logo
 
 
   # Associations:  ----------------------------------------------------------------------------------------------------
@@ -40,7 +42,6 @@ class Contractor < ActiveRecord::Base
 
   # Scopes:  ----------------------------------------------------------------------------------------------------------
   default_scope order("created_at desc")
-
 
   # Custom Methods:  --------------------------------------------------------------------------------------------------
   def incomplete_sections
@@ -110,5 +111,7 @@ class Contractor < ActiveRecord::Base
       [address.line1, address.city, address.state].compact.join(', ')
     end
   end
+
+
 
 end

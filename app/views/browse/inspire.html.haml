@@ -1,0 +1,280 @@
+#page
+  .page-header
+    %h1 Portfolio
+  / close page-header
+  .container.main-content
+    .pagination-right.clearfix
+      %ul.pagination
+        %li.arrow.unavailable
+          %a{:href => ""} &laquo;
+        %li.current
+          %a{:href => ""} 1
+        %li
+          %a{:href => ""} 2
+        %li
+          %a{:href => ""} 3
+        %li
+          %a{:href => ""} 4
+        %li.unavailable
+          %a{:href => ""} &hellip;
+        %li
+          %a{:href => ""} 12
+        %li
+          %a{:href => ""} 13
+        %li.arrow
+          %a{:href => ""} &raquo;
+    .filter-box.clearfix
+      %span#filter
+        Filter
+        %i.e-icon-down-open-big
+      %ul#option.sort
+        %li
+          %a.active{"data-filter" => "*", :href => "#"} All
+        %li
+          %a{"data-filter" => ".letter-press", :href => "#"} Featured
+        %li
+          %a{"data-filter" => ".letter-press", :href => "#"} Top Contractors
+        %li
+          %a{"data-filter" => ".identity", :href => "#"} Recent Jobs
+        %li
+          %a{"data-filter" => ".art", :href => "#"} In your area
+
+    %ul.masonry.portfolio-summary.four_col.clearfix
+      / three_col four_col two_col
+      =render "masonry_thumbnail", image: "http://placehold.it/300x300", url: "#", title: "Title goes here", description: "This is my description"
+      =render "masonry_thumbnail", image: "http://placehold.it/300x300", url: "#", title: "Title goes here", description: "This is my description"
+      =render "masonry_thumbnail", image: "http://placehold.it/300x300", url: "#", title: "Title goes here", description: "This is my description"
+      =render "masonry_thumbnail", image: "http://placehold.it/300x300", url: "#", title: "Title goes here", description: "This is my description"
+      %li.letter-press.identity
+        .hover
+          %span
+            %a{:href => "portfolio-single.html"}
+              %i.e-icon-link
+            %a.fancyme{"data-fancybox-group" => "gallery", :href => "../demo/portfolio/larger-image-fpo.png"}
+              %i.e-icon-popup
+          %img{:alt => "", :src => "../demo/portfolio/5415648902.png"}/
+        .entry-summary
+          %h4
+            %a{:href => "portfolio-single.html"} Retro Love
+          .categories
+            %a{:href => "#"}> Letter Press
+            ,
+            %a{:href => "#"} Identity
+          %span.credit
+            %a{:href => "http://www.flickr.com/photos/fontfont/5415648902/in/photostream/", :target => "_blank"} CC BY 2.0 FontFont
+        / close entry-summary
+      %li.web-design
+        .hover
+          %span
+            %a{:href => "portfolio-single.html"}
+              %i.e-icon-link
+            %a.fancyme{"data-fancybox-group" => "gallery", :href => "../demo/portfolio/larger-image-fpo.png"}
+              %i.e-icon-popup
+          %img{:alt => "", :src => "../demo/portfolio/4525755090.png"}/
+        .entry-summary
+          %h4
+            %a{:href => "portfolio-single.html"} Black and White and Classic
+          %p Just a filler image to make 16 images
+          .categories
+            %a{:href => "#"} Web Design
+          %span.credit
+            %a{:href => "http://www.flickr.com/photos/fontfont/4525755090/in/photostream/", :target => "_blank"} CC BY 2.0 FontFont
+        / close entry-summary
+      %li.art
+        .hover
+          %span
+            %a{:href => "portfolio-single.html"}
+              %i.e-icon-link
+            %a.fancyme{"data-fancybox-group" => "gallery", :href => "../demo/portfolio/larger-image-fpo.png"}
+              %i.e-icon-popup
+          %img{:alt => "", :src => "../demo/portfolio/4867174108.png"}/
+        .entry-summary
+          %h4
+            %a{:href => "portfolio-single.html"} Pretty Nifty Bees Knees
+          .categories
+            %a{:href => "#"} Art
+          %span.credit
+            %a{:href => "http://www.flickr.com/photos/fontfont/4867174108/", :target => "_blank"} CC BY 2.0 FontFont
+        / close entry-summary
+      %li.letter-press
+        .hover
+          %span
+            %a{:href => "portfolio-single.html"}
+              %i.e-icon-link
+            %a.fancyme{"data-fancybox-group" => "gallery", :href => "../demo/portfolio/larger-image-fpo.png"}
+              %i.e-icon-popup
+          %img{:alt => "", :src => "../demo/portfolio/4525123431.png"}/
+        .entry-summary
+          %h4
+            %a{:href => "portfolio-single.html"} Love the Look
+          .categories
+            %a{:href => "#"} Letter Press
+          %span.credit
+            %a{:href => "http://www.flickr.com/photos/fontfont/4525123431/", :target => "_blank"} CC BY 2.0  FontFont
+        / close entry-summary
+      %li.web-design
+        .hover
+          %span
+            %a{:href => "portfolio-single.html"}
+              %i.e-icon-link
+            %a.fancyme{"data-fancybox-group" => "gallery", :href => "../demo/portfolio/larger-image-fpo.png"}
+              %i.e-icon-popup
+          %img{:alt => "", :src => "../demo/portfolio/4703289770.png"}/
+        .entry-summary
+          %h4
+            %a{:href => "portfolio-single.html"} Bumble Bee
+          .categories
+            %a{:href => "#"} Web Design
+          %span.credit
+            %a{:href => "http://www.flickr.com/photos/fontfont/4703289770/", :target => "_blank"} CC BY 2.0  FontFont
+        / close entry-summary
+      %li.web-design
+        .hover
+          %span
+            %a{:href => "portfolio-single.html"}
+              %i.e-icon-link
+            %a.fancyme{"data-fancybox-group" => "gallery", :href => "../demo/portfolio/larger-image-fpo.png"}
+              %i.e-icon-popup
+          %img{:alt => "", :src => "../demo/portfolio/4525754738.png"}/
+        .entry-summary
+          %h4
+            %a{:href => "portfolio-single.html"} Interesting
+          .categories
+            %a{:href => "#"} Web Design
+          %span.credit
+            %a{:href => "http://www.flickr.com/photos/fontfont/4525754738/", :target => "_blank"} CC BY 2.0  FontFont
+        / close entry-summary
+      %li.letter-press.featured
+        .hover
+          %span
+            %a{:href => "portfolio-single.html"}
+              %i.e-icon-link
+            %a.fancyme{"data-fancybox-group" => "gallery", :href => "../demo/portfolio/larger-image-fpo.png"}
+              %i.e-icon-popup
+          %img{:alt => "", :src => "../demo/portfolio/t-wishrain.jpg"}/
+        .entry-summary
+          %h4
+            %a{:href => "portfolio-single.html"} I wish it would rain
+          .categories
+            %a{:href => "#"} Letter Press
+          %span.credit
+            %a{:href => "http://www.flickr.com/photos/fontfont/4830134044/in/photostream/"} CC BY 2.0  FontFont
+        / close entry-summary
+      %li.identity
+        .hover
+          %span
+            %a{:href => "portfolio-single.html"}
+              %i.e-icon-link
+            %a.fancyme{"data-fancybox-group" => "gallery", :href => "../demo/portfolio/larger-image-fpo.png"}
+              %i.e-icon-popup
+          %img{:alt => "", :src => "../demo/portfolio/t-tgs.png"}/
+        .entry-summary
+          %h4
+            %a{:href => "portfolio-single.html"} Tampa Guitar School
+          %p I logo I did for my brother years ago.
+          .categories
+            %a{:href => "#"} Identity
+        / close entry-summary
+      %li.art
+        .hover
+          %span
+            %a{:href => "portfolio-single.html"}
+              %i.e-icon-link
+            %a.fancyme{"data-fancybox-group" => "gallery", :href => "../demo/portfolio/larger-image-fpo.png"}
+              %i.e-icon-popup
+          %img{:alt => "", :src => "../demo/portfolio/7172980112.png"}/
+        .entry-summary
+          %h4
+            %a{:href => "portfolio-single.html"} Typography Nice
+          .categories
+            %a{:href => "#"} Art
+          %span.credit
+            %a{:href => "http://www.flickr.com/photos/fontfont/7172980112/", :target => "_blank"} CC BY 2.0 FontFont
+        / close entry-summary
+      %li.letter-press.identity
+        .hover
+          %span
+            %a{:href => "portfolio-single.html"}
+              %i.e-icon-link
+            %a.fancyme{"data-fancybox-group" => "gallery", :href => "../demo/portfolio/larger-image-fpo.png"}
+              %i.e-icon-popup
+          %img{:alt => "", :src => "../demo/portfolio/5573293577.png"}/
+        .entry-summary
+          %h4
+            %a{:href => "portfolio-single.html"} Tasty
+          .categories
+            %a{:href => "#"}> Letter Press
+            ,
+            %a{:href => "#"} Identity
+          %span.credit
+            %a{:href => "http://www.flickr.com/photos/fontfont/5573293577/", :target => "_blank"} CC BY 2.0 FontFont
+        / close entry-summary
+      %li.identity
+        .hover
+          %span
+            %a{:href => "portfolio-single.html"}
+              %i.e-icon-link
+            %a.fancyme{"data-fancybox-group" => "gallery", :href => "../demo/portfolio/larger-image-fpo.png"}
+              %i.e-icon-popup
+          %img{:alt => "", :src => "../demo/portfolio/5573291515.png"}/
+        .entry-summary
+          %h4
+            %a{:href => "portfolio-single.html"} More Stuff
+          %p Little bit of text goes here about this...
+          .categories
+            %a{:href => "#"} Identity
+          %span.credit
+            %a{:href => "http://www.flickr.com/photos/fontfont/5573291515/", :target => "_blank"} CC BY 2.0 FontFont
+        / close entry-summary
+      %li.art
+        .hover
+          %span
+            %a{:href => "portfolio-single.html"}
+              %i.e-icon-link
+            %a.fancyme{"data-fancybox-group" => "gallery", :href => "../demo/portfolio/larger-image-fpo.png"}
+              %i.e-icon-popup
+          %img{:alt => "", :src => "../demo/portfolio/4937625727.png"}/
+        .entry-summary
+          %h4
+            %a{:href => "portfolio-single.html"} Reading Good. TV Bad.
+          .categories
+            %a{:href => "#"} Art
+          %span.credit
+            %a{:href => "http://www.flickr.com/photos/fontfont/4937625727/", :target => "_blank"} CC BY 2.0 FontFont
+        / close entry-summary
+      %li.identity
+        .hover
+          %span
+            %a{:href => "portfolio-single.html"}
+              %i.e-icon-link
+            %a.fancyme{"data-fancybox-group" => "gallery", :href => "../demo/portfolio/larger-image-fpo.png"}
+              %i.e-icon-popup
+          %img{:alt => "", :src => "../demo/portfolio/5573291305.png"}/
+        .entry-summary
+          %h4
+            %a{:href => "portfolio-single.html"} Title Goes Here
+          .categories
+            %a{:href => "#"} Identity
+          %span.credit
+            %a{:href => "http://www.flickr.com/photos/fontfont/5573291305/", :target => "_blank"} CC BY 2.0 FontFont
+        / close entry-summary
+    .pagination-centered
+      %ul.pagination
+        %li.arrow.unavailable
+          %a{:href => ""} &laquo;
+        %li.current
+          %a{:href => ""} 1
+        %li
+          %a{:href => ""} 2
+        %li
+          %a{:href => ""} 3
+        %li
+          %a{:href => ""} 4
+        %li.unavailable
+          %a{:href => ""} &hellip;
+        %li
+          %a{:href => ""} 12
+        %li
+          %a{:href => ""} 13
+        %li.arrow
+          %a{:href => ""} &raquo;

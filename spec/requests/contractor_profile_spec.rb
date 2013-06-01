@@ -15,7 +15,7 @@ describe 'Contractor Profile' do
   subject { page }
 
   it { page.status_code.should be 200 }
-  its(:current_path) { should eq "/contractors/profiles/#{@contractor.id}" }
+  its(:current_path) { should eq "/contractors/#{@contractor.id}" }
 
   describe "should render correct view" do
     it "should display Contractor Dropdown" do

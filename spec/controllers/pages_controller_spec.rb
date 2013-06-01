@@ -7,9 +7,9 @@ describe StaticPagesController do
     expect(response).to render_template :home
   end
 
-  it "should respond to '/homeowners'" do
-    get 'homeowners'
-    expect(response).to render_template :homeowners
+  it "should respond to '/faqs'" do
+    get 'faqs'
+    expect(response).to render_template :faqs
   end
 
   it "should respond to '/contractors'" do
@@ -21,11 +21,11 @@ describe StaticPagesController do
     get 'about'
     expect(response).to render_template :about
   end
-  it "should respond to 'contact'" do
+  it "should respond to '/contact'" do
     get 'contact'
     expect(response).to render_template :contact
   end
-  it "should respond to 'jobs'" do
+  it "should respond to '/jobs'" do
     get 'jobs'
     expect(response).to render_template :jobs
   end

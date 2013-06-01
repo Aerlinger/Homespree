@@ -26,7 +26,8 @@ class ContractorsController < ApplicationController
 
     @contractor = @contractor.decorate
 
-    @is_new = @contractor.new_profile
+    #@is_new = @contractor.new_profile
+
 
     respond_to do |format|
       format.html

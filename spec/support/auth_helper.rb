@@ -35,3 +35,7 @@ def sign_in_user(user)
 
   click_button "Sign In"
 end
+
+def sign_out_contractor
+  get "contractors/sessions/destroy"
+end

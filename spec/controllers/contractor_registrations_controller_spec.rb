@@ -27,7 +27,7 @@ describe Contractors::RegistrationsController, "With valid input" do
       end
       it "redirects to new profile" do
         post :create, contractor: attributes_for(:contractor)
-        expect(response).to redirect_to "/contractors/profiles/1"
+        expect(response).to redirect_to "/contractors/1"
       end
     end
 

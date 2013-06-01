@@ -8,7 +8,7 @@ class StaticPagesController < ApplicationController
   def contractors
   end
 
-  def homeowners
+  def faqs
   end
 
   def about

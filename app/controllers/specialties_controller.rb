@@ -10,7 +10,7 @@ class SpecialtiesController < ApplicationController
 
     respond_to do |format|
       format.js { render layout: false }
-      format.html { redirect_to "/contractors/profiles/#{@contractor.id}" }
+      format.html { redirect_to "/contractors/#{@contractor.id}" }
     end
 
   end
@@ -39,7 +39,7 @@ class SpecialtiesController < ApplicationController
     @contractor = Contractor.find(params[:contractor_id])
     @specialty.destroy
 
-    redirect_to "/contractors/profiles/#{@contractor.id}"
+    redirect_to "/contractors#{@contractor.id}"
   end
 
   def sort

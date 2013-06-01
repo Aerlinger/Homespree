@@ -18,7 +18,7 @@
 
 -# List of "available" pecialties which have not yet been selected:  --------------------------------------------------
 %ul.specialties#available_specialties
-  - available_specialties = Specialty.types.values - @specialties.map(&:name)
+  - available_specialties = Specialty.painting_types.values - @specialties.map(&:name)
   - available_specialties.each do |specialty_name|
     %li
       = specialty_name

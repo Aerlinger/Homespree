@@ -19,10 +19,16 @@ gem 'mercury-rails'
 # Tools used in User Profiles:
 gem 'draper'
 gem 'best_in_place'
-gem 'rmagick'
-gem 'carrierwave'
 gem 'geocoder'
 gem 'simple_form'
+
+# Photo uploads:
+gem 'rmagick'
+gem 'carrierwave'
+gem 'carrierwave_direct'
+gem 'sidekiq'
+gem 'fog'
+gem 's3_direct_upload'
 
 
 gem 'jquery-rails'
@@ -53,6 +59,7 @@ group :test, :development do
 end
 
 group :test do
+  gem 'selenium-webdriver'
   gem 'simplecov', '>=0.3.8', :require => false
   gem 'database_cleaner', '0.7.0'
   gem 'capybara'
@@ -64,6 +71,7 @@ group :development do
   gem 'binding_of_caller'
   gem 'brakeman'
   gem 'html2haml'
+  gem 'quiet_assets'
 end
 
 group :production do

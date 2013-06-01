@@ -4,31 +4,47 @@ require 'spec_helper'
 describe "Contractor Sign Up" do
   subject { page }
 
-  before do
-    visit "/contractors/sign_up"
-  end
 
   let(:contractor) { FactoryGirl.create :contractor }
 
   #it { should have_content("Create your contractor profile") }
 
-  describe "with valid params", js: true do
+  describe "with valid params" do
 
     before do
+      visit "/contractors/sign_up"
+
       fill_in "Email", with: contractor.email
       fill_in "Company title", with: contractor.company_title
       fill_in "Password", with: contractor.password
+      click_button "Create Contractor"
     end
 
+    it "Should redirect to a valid page" do
+      page.status_code.should be 200
+    end
 
-    #it "should redirect to wizard contractor creation" do
-    #  click_button "Sign Up"
-    #  page.current_page? "/contractors/wizard/contact_details"
-    #  Capybara::Session.current_path == "/contractors/wizard/contact_details"
-    #  page.request.current_page? "/contractors/wizard/contact_details"
-    #  page.request.fullpath.should eq "/contractors/wizard/contact_details"
-    #end
+    it "display contractors title" do
+      page.has_content?(contractor.company_title)
+    end
 
+    it "displays edit links" do
+      page.has_content?("Edit")
+    end
+
+  end
+
+  describe "with incomplete parameters" do
+    before do
+      visit "/contractors/sign_up"
+
+      fill_in "Email", with: "nonsense"
+      fill_in "Company title", with: contractor.company_title
+      fill_in "Password", with: contractor.password
+      click_button "Create Contractor"
+    end
+
+    it "should display unprocessable entity (422)"
   end
 
 end

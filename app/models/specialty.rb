@@ -2,7 +2,8 @@ class Specialty < ActiveRecord::Base
   attr_accessible :name, :contractor_id, :endorsements, :endorser_id, :other_specialties
 
   # Contractor job specialties
-  def self.types
+  # Contractor job specialties
+  def self.painting_types
     {
       interior_painting: "Interior Painting",
       exterior_painting: "Exterior Painting",
@@ -24,7 +25,7 @@ class Specialty < ActiveRecord::Base
 
   belongs_to :contractor
 
-  validates_inclusion_of :name, in: self.types.values, message: "is not a valid service type"
+  validates_inclusion_of :name, in: self.painting_types.values, message: "is not a valid service type"
 
   acts_as_list
 

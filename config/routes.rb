@@ -18,6 +18,7 @@ Homespree::Application.routes.draw do
       post :sort, on: :collection
     end
     resource :address
+    resources :photos
 
     put "ignore_message"
     post "add_specialty" => "contractors#add_specialty"
@@ -25,23 +26,19 @@ Homespree::Application.routes.draw do
     post "add_photo" => "contractors#add_photo"
   end
 
-  #resources :profiles, except: [:destroy], path: "contractors/profiles", module: "contractors", as: "contractor" do
-  #
-  #end
-
   resource :address
-  resources :photos, except: [:edit, :delete]
   resources :mailinglists
+
+  get "browse/contractors"
+  get "browse/inspire"
 
   # Static pages page
   match 'pitch' => 'static_pages#pitch', as: "pitch"
   match 'home' => 'static_pages#home', as: "home"
   match 'contractors_preview' => 'static_pages#contractors', as: "contractors_preview"
-  match 'homeowners_preview' => 'static_pages#homeowners', as: "homeowners_preview"
+  match 'faqs' => 'static_pages#faqs'
   match 'about' => 'static_pages#about'
   match 'contact' => 'static_pages#contact'
   match 'jobs' => 'static_pages#jobs'
-  match 'test_ajax' => 'static_pages#test_ajax'
-  match 'test_theme' => 'static_pages#test_theme'
 
 end

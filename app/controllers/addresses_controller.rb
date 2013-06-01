@@ -3,7 +3,7 @@ class AddressesController < ApplicationController
   respond_to :js
 
   def show
-    redirect_to "/contractors/profiles/#{@contractor.id}"
+    redirect_to "/contractors/#{@contractor.id}"
   end
 
   def update
