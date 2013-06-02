@@ -2,11 +2,9 @@
 
 FactoryGirl.define do
   factory :homeowner do
-    email "MyString"
+    email "nonsense@email.com"
+    password "iamsecret"
     first_name "MyString"
     last_name "MyString"
-    address ""
-    photos ""
-    appointments ""
   end
 end

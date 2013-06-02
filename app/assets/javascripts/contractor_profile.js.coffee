@@ -66,6 +66,7 @@ fields = {
 # Load intro definition from a hash object:  --------------------------------------------------------------------------
 setupIntro = (intro_fields) ->
   i = 1
+  # Add data attributes for each field to the DOM
   for key, value of intro_fields
     obj = $('#' + key)
     obj.attr({
@@ -89,6 +90,7 @@ $(document).ready ->
     # Load the definition of out introduction fields
     setupIntro(fields)
 
+    # Timeout is used to account for the delay when switching fields:
     introJs().onchange((targetElement) ->
       $('.introjs-overlay').click()
 
@@ -98,9 +100,7 @@ $(document).ready ->
       , 500
     ).start()
 
-    # Services section responsive design:  ----------------------------------------------------------------------------
-
-    # When deleting a contractor's specialty, hide the X button and add a list item to #available specialties
+    # Make contractor specialties sortable
     $('#contractor_specialties').sortable
       axis: 'y'
       update: ->
@@ -108,11 +108,6 @@ $(document).ready ->
 
         # Update the info in the contractor's card
         $("#primary_service_text").text($(this).find('.specialty-name').first().text())
-
-    $(".delete-specialty").click (evt) ->
-
-
-
 
     # When clicking an "Add specialty" button, hide the button and add a list item to #contractor_specialties
     $(".add-specialty").click (evt) ->

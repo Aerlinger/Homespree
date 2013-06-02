@@ -20,12 +20,6 @@ require 'spec_helper'
 
 describe HomeownersController do
 
-  # This should return the minimal set of attributes required to create a valid
-  # Homeowner. As you add validations to Homeowner, be sure to
-  # update the return value of this method accordingly.
-  def valid_attributes
-    { "email" => "MyString" }
-  end
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -34,9 +28,14 @@ describe HomeownersController do
     {}
   end
 
+  # This should return the minimal set of attributes required to create a valid
+  # Homeowner. As you add validations to Homeowner, be sure to
+  # update the return value of this method accordingly.
+  let(:valid_homeowner_attributes) { FactoryGirl.attributes_for :homeowner }
+  let(:homeowner) { FactoryGirl.create :homeowner }
+
   describe "GET index" do
     it "assigns all homeowners as @homeowners" do
-      homeowner = Homeowner.create! valid_attributes
       get :index, {}, valid_session
       assigns(:homeowners).should eq([homeowner])
     end
@@ -44,7 +43,6 @@ describe HomeownersController do
 
   describe "GET show" do
     it "assigns the requested homeowner as @homeowner" do
-      homeowner = Homeowner.create! valid_attributes
       get :show, {:id => homeowner.to_param}, valid_session
       assigns(:homeowner).should eq(homeowner)
     end
@@ -59,7 +57,6 @@ describe HomeownersController do
 
   describe "GET edit" do
     it "assigns the requested homeowner as @homeowner" do
-      homeowner = Homeowner.create! valid_attributes
       get :edit, {:id => homeowner.to_param}, valid_session
       assigns(:homeowner).should eq(homeowner)
     end
@@ -69,18 +66,18 @@ describe HomeownersController do
     describe "with valid params" do
       it "creates a new Homeowner" do
         expect {
-          post :create, {:homeowner => valid_attributes}, valid_session
+          post :create, {:homeowner => valid_homeowner_attributes}, valid_session
         }.to change(Homeowner, :count).by(1)
       end
 
       it "assigns a newly created homeowner as @homeowner" do
-        post :create, {:homeowner => valid_attributes}, valid_session
+        post :create, {:homeowner => valid_homeowner_attributes}, valid_session
         assigns(:homeowner).should be_a(Homeowner)
         assigns(:homeowner).should be_persisted
       end
 
       it "redirects to the created homeowner" do
-        post :create, {:homeowner => valid_attributes}, valid_session
+        post :create, {:homeowner => valid_homeowner_attributes}, valid_session
         response.should redirect_to(Homeowner.last)
       end
     end
@@ -105,7 +102,7 @@ describe HomeownersController do
   describe "PUT update" do
     describe "with valid params" do
       it "updates the requested homeowner" do
-        homeowner = Homeowner.create! valid_attributes
+        homeowner = Homeowner.create! valid_homeowner_attributes
         # Assuming there are no other homeowners in the database, this
         # specifies that the Homeowner created on the previous line
         # receives the :update_attributes message with whatever params are
@@ -115,21 +112,21 @@ describe HomeownersController do
       end
 
       it "assigns the requested homeowner as @homeowner" do
-        homeowner = Homeowner.create! valid_attributes
-        put :update, {:id => homeowner.to_param, :homeowner => valid_attributes}, valid_session
+        homeowner = Homeowner.create! valid_homeowner_attributes
+        put :update, {:id => homeowner.to_param, :homeowner => valid_homeowner_attributes}, valid_session
         assigns(:homeowner).should eq(homeowner)
       end
 
       it "redirects to the homeowner" do
-        homeowner = Homeowner.create! valid_attributes
-        put :update, {:id => homeowner.to_param, :homeowner => valid_attributes}, valid_session
+        homeowner = Homeowner.create! valid_homeowner_attributes
+        put :update, {:id => homeowner.to_param, :homeowner => valid_homeowner_attributes}, valid_session
         response.should redirect_to(homeowner)
       end
     end
 
     describe "with invalid params" do
       it "assigns the homeowner as @homeowner" do
-        homeowner = Homeowner.create! valid_attributes
+        homeowner = Homeowner.create! valid_homeowner_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Homeowner.any_instance.stub(:save).and_return(false)
         put :update, {:id => homeowner.to_param, :homeowner => { "email" => "invalid value" }}, valid_session
@@ -137,7 +134,7 @@ describe HomeownersController do
       end
 
       it "re-renders the 'edit' template" do
-        homeowner = Homeowner.create! valid_attributes
+        homeowner = Homeowner.create! valid_homeowner_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Homeowner.any_instance.stub(:save).and_return(false)
         put :update, {:id => homeowner.to_param, :homeowner => { "email" => "invalid value" }}, valid_session
@@ -148,14 +145,14 @@ describe HomeownersController do
 
   describe "DELETE destroy" do
     it "destroys the requested homeowner" do
-      homeowner = Homeowner.create! valid_attributes
+      homeowner = Homeowner.create! valid_homeowner_attributes
       expect {
         delete :destroy, {:id => homeowner.to_param}, valid_session
       }.to change(Homeowner, :count).by(-1)
     end
 
     it "redirects to the homeowners list" do
-      homeowner = Homeowner.create! valid_attributes
+      homeowner = Homeowner.create! valid_homeowner_attributes
       delete :destroy, {:id => homeowner.to_param}, valid_session
       response.should redirect_to(homeowners_url)
     end

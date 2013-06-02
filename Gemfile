@@ -30,7 +30,6 @@ gem 'sidekiq'
 gem 'fog'
 gem 's3_direct_upload'
 
-
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'acts_as_list'

@@ -5,7 +5,7 @@ class StaticPagesController < ApplicationController
   def home
   end
 
-  def contractors
+  def contractors_preview
   end
 
   def faqs

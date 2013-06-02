@@ -1,14 +1,11 @@
 class CreateHomeowners < ActiveRecord::Migration
   def change
-    create_table :homeowners do |t|
-      t.string :email
+    change_table :homeowners do |t|
       t.string :first_name
       t.string :last_name
-      t.reference :address
-      t.reference :photos
-      t.reference :appointments
-
-      t.timestamps
+      t.integer :address_id
+      t.integer :photos_id
+      t.integer :appointments_id
     end
   end
 end

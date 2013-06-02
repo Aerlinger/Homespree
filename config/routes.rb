@@ -1,5 +1,7 @@
 Homespree::Application.routes.draw do
 
+  resources :jobs
+
   # Root route must be before ActiveAdmin.routes(self)
   root :to => 'static_pages#home'
 
@@ -8,10 +10,18 @@ Homespree::Application.routes.draw do
 
   resources :mailinglists, only: [:create, :update, :destroy]
 
-  # homeowners: -----------------------------------------------------------------------------------------------------
+  # Homeowners: -----------------------------------------------------------------------------------------------------
+  devise_for :homeowners, :controllers => {
+    registrations: "homeowners/registrations",
+    sessions: "homeowners/sessions",
+    passwords: "homeowners/passwords"
+  }
+
   resources :homeowners do
     resource :address, only: [:update]
     resources :photos, only: [:create, :update, :destroy]
+    resources :appointments
+    resources :jobs
   end
 
   # Contractors: -----------------------------------------------------------------------------------------------------
@@ -27,6 +37,8 @@ Homespree::Application.routes.draw do
     end
     resource :address, only: [:update]
     resources :photos, only: [:create, :update, :destroy]
+    resources :appointments
+    resources :jobs
   end
 
   # Gallery Browsing: ------------------------------------------------------------------------------------------------
@@ -34,7 +46,7 @@ Homespree::Application.routes.draw do
   get "browse/inspire"
 
   # Static Pages: ----------------------------------------------------------------------------------------------------
-  %w[pitch home contractors_preview faqs about contact jobs].each do |page|
+  %w(pitch home contractors_preview faqs about contact jobs).each do |page|
     get page, controller: :static_pages, action: page
   end
 

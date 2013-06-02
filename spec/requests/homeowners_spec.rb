@@ -1,11 +1,13 @@
 require 'spec_helper'
 
-describe "Homeowners" do
-  describe "GET /homeowners" do
-    it "works! (now write some real specs)" do
-      # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
-      get homeowners_path
-      response.status.should be(200)
+describe "Homeowner profile" do
+
+  describe "When not signed in" do
+    it "should render contratcor profile" do
+      visit "/contractors/1"
+
+      page.should_not have_text("Edit")
     end
   end
+
 end

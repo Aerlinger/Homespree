@@ -4,8 +4,8 @@ class Contractor < ActiveRecord::Base
   # Authentication:  --------------------------------------------------------------------------------------------------
 
   # Include default devise modules. Others available are:
-  # :token_authenticatable, :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
+  # :token_authenticatable, :confirmable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable, :lockable,
          :recoverable, :rememberable, :trackable, :validatable
 
   #mount_uploader :logo, LogoUploader
@@ -18,7 +18,7 @@ class Contractor < ActiveRecord::Base
 
 
   # Associations:  ----------------------------------------------------------------------------------------------------
-  has_many :appointments, dependent: :destroy
+  has_many :appointments, through: :homeowners
   has_many :specialties, dependent: :destroy
   has_one :address, as: :addressable, dependent: :destroy
   has_many :photos, as: :photographable, dependent: :destroy
@@ -111,7 +111,5 @@ class Contractor < ActiveRecord::Base
       [address.line1, address.city, address.state].compact.join(', ')
     end
   end
-
-
 
 end

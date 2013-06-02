@@ -12,8 +12,8 @@ describe StaticPagesController do
     expect(response).to render_template :faqs
   end
 
-  it "should respond to '/contractors'" do
-    get 'contractors'
+  it "should respond to '/contractors_preview'" do
+    get 'contractors_preview'
     expect(response).to render_template :contractors
   end
 

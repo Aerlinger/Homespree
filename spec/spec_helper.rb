@@ -12,6 +12,7 @@ Spork.prefork do
   require 'capybara/rspec'
   require 'capybara/rails'
   require 'rspec/autorun'
+  require 'draper/test/rspec_integration'
 
   module ::RSpec::Core
     class ExampleGroup
