@@ -12,7 +12,7 @@ class Contractor < ActiveRecord::Base
 
 
   # Accessors:  -------------------------------------------------------------------------------------------------------
-  attr_accessible :address, :specialties, :first_name, :last_name, :email, :password, :remember_me, :slogan,
+  attr_accessible :address, :specialties, :first_name, :last_name, :email, :password, :remember_me, :slogan, :bonding_limit,
                   :description, :mobile_number, :office_number, :company_title, :custom_field, :latitude, :longitude,
                   :facebook, :name, :specialties, :twitter, :website, :other_specialties, :specialty_ids, :logo
 

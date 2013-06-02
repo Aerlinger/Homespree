@@ -14,9 +14,8 @@ class AddressesController < ApplicationController
 
     @address.update_attributes(params[:address])
 
-    #respond_with @address, layout: :none
     respond_to do |format|
-      format.js { render layout: :none }
+      format.js { render layout: false }
     end
   end
 

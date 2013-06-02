@@ -1,19 +1,19 @@
 
 =image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@address.latitude}%2C#{@address.longitude}", id: "map"
 
--#.no-edit
--#  .address.line1
--#    = best_in_place @address, :line1
--#    = render "contractors/profiles/edit_link"
--#
--#  .address.line2
--#    = best_in_place @address, :line2
--#
--#  %span.address
--#    = best_in_place @address, :city
--#
--#  %span.address
--#    = best_in_place @address, :state
+.no-edit
+  .address.line1
+    = @address.line1
+    = render "contractors/profiles/edit_link"
+
+  .address.line2
+    = @address.line2
+
+  %span.address
+    = @address.city
+
+  %span.address
+    = @address.state
 
 .on-edit
   = simple_form_for [@contractor, @address], method: :put, class: "intro", remote: true do |f|

@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Email:
+  = @homeowner.email
+%p
+  %b First name:
+  = @homeowner.first_name
+%p
+  %b Last name:
+  = @homeowner.last_name
+%p
+  %b Address:
+  = @homeowner.address
+%p
+  %b Photos:
+  = @homeowner.photos
+%p
+  %b Appointments:
+  = @homeowner.appointments
+
+= link_to 'Edit', edit_homeowner_path(@homeowner)
+\|
+= link_to 'Back', homeowners_path
