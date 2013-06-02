@@ -1,0 +1,16 @@
+$(function(event) {
+	// When deleting a contractor's specialty, hide the X button and add a list item to #available specialties
+	$(this).parent().hide(500);
+	specialty_text = strtrim($(this).parent().first().find('.specialty-name').text())
+
+	$("#available_specialties").prepend(
+			'<li>' +
+					specialty_text +
+					'<a href="/contractors/1/specialties?specialty_name=Power+Washing"
+	class="add-specialty pull-right btn btn-mini btn-success"
+	data-method="post" data-remote="true" rel="nofollow">Add
+			</a>
+	</li>'
+	).fadeIn(500);
+});
+

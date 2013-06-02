@@ -50,101 +50,56 @@ end
 class ContractorDecorator < Draper::Decorator
 
   include BestInPlace::BestInPlaceHelpers
-  #include Draper::LazyHelpers
+  include Draper::LazyHelpers
   include ActionView::Helpers::UrlHelper
   include ActionView::Helpers::TagHelper
 
   delegate_all
+  decorates :contractor
 
-  #decorates :contractor
-
-
-  #def specialties
-  #  decorate_card_attribute(:specialties, "Primary Service", @contractor.specialties.first.name)
-  #end
 
   def card_item(attr_name, attrs = {})
-    response = ""
-    h.content_tag(:li, id: attr_name) do
-      response << h.content_tag(:strong, "Owner")
-      response << @source.send(attr_name)
-      response << best_in_place(@source, attr_name)
+    # Don't render blank attributes when a customer is visiting the page
+    if visitor? && @source.send(attr_name).blank?
+      return
+    end
+
+    h.haml_tag(:li, class: 'card-attribute', id: "card_#{attr_name}") do
+      h.haml_tag(:strong, attrs[:title] || attr_name.to_s.titleize + ":")
+      h.haml_concat(h.best_in_place(@source, attr_name, activator: "##{attr_name}", display_with: attrs[:display_with], :nil => attrs[:nil] || "<em>No info</em>"))
+      if block_given?
+        yield
+      end
     end
   end
 
-  def primary_service
+  # Renders the "Edit" link to the right of fields on the contractor page.
+  # There are three possibilities:
+  #   1. Contractor's own page and attribute is set: "Edit"
+  #   2. Contractor's own page and attribute isnt set: "Add"
+  #   3. Visitor: Do nothing and return nil
+  def edit_link(attr_name)
+    unless visitor?
+      link_text = if @source.send(attr_name).blank?
+        "Add Info"
+      else
+        "Edit"
+      end
 
-  end
-
-  def owner_name
-
-  end
-
-  def phone
-
-  end
-
-  def license
-
-  end
-
-  def insurance
-
-  end
-
-  def bonded
-
-  end
-
-
-  # Contractor Card: list of Fields -- name, license info, etc...
-  #===============================================================================================
-  def primary_service
-    if contractor_signed i
+      h.link_to "javascript:void(0)", id: attr_name, class: "edit-link #{link_text.underscore}" do
+        #content_tag(:i, class: "e-icon-pencil", style: "height: 20px; line-height: 16px;")
+        link_text
+      end
     end
   end
 
-  private
-
-
-  #- if @contractor.mobile_number.present?
-  #  %li#mobile_number
-  #    %strong Phone:
-  #    =best_in_place @contractor, :mobile_number, display_with: :number_to_phone, activator: "#phone_edit"
-  #    =render "contractors/profiles/edit_link", activator: "phone_edit"
-  def decorate_card_attribute(field, description, value)
-
-    if @contractor.send(:field).present?
-      #  content_tag(:li, id: field) do
-      #    content_tag(:strong) description
-      #    if own_profile?
-      #      best_in_place @contractor, field, display_with: attrs[:display_with], activator: "##{field}_edit"
-      #      render "contractors/profiles/edit_link", activator: "#{field}_edit" if own_profile?
-      #    else
-      #      content_tag(:span, id: "#{field}_text") value
-      #    end
-      #  end
-      #
-      #elsif own_profile
-      #  # Draw the field with label "Click to enter data"
-      #  content_tag(:li, id: field) do
-      #    content_tag(:em, field: "#{id}_text") "Click to add info"
-      #    render "contractors/profiles/edit_link", activator: "#{field}_edit" if own_profile?
-      #  end
+  def visitor?
+    return false
+    if contractor_signed_in? && current_contractor.id == params[:id]
+      return false
     end
-
+    return true
   end
 
-# Returns true if the current profile page is the same as the logged in contractor:
-  def own_profile?
-
-  end
-
-# Returns default html if now
-  def handle_none
-    #if own_profile?
-    #  content_tag(:strong) "Click to enter information"
-    #end
-  end
 
 end

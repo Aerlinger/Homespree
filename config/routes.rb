@@ -17,17 +17,11 @@ Homespree::Application.routes.draw do
     resources :specialties do
       post :sort, on: :collection
     end
-    resource :address
-    resources :photos
-
-    put "ignore_message"
-    post "add_specialty" => "contractors#add_specialty"
-    post "remove_specialty" => "contractors#remove_specialty"
-    post "add_photo" => "contractors#add_photo"
+    resource :address, only: [:update]
+    resources :photos, only: [:create, :update, :destroy]
   end
 
-  resource :address
-  resources :mailinglists
+  resources :mailinglists, only: [:create, :update, :destroy]
 
   get "browse/contractors"
   get "browse/inspire"

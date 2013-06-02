@@ -23,5 +23,9 @@ class PhotosController < ApplicationController
   def destroy
     @photo = Photo.find(params[:id])
     @photo.delete
+
+    respond_to do |format|
+      format.js { render layout: false }
+    end
   end
 end

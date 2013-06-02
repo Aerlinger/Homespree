@@ -36,7 +36,7 @@ joe_the_plumber = Contractor.new do |c|
   c.office_number = "7145559652"
   c.mobile_number = "9495556404"
 
-  c.slogan = "Where your shit's my problem."
+  c.slogan = "Asdfjkl;"
 
   c.description = "Terrell Design & Development and the Golden Triangle Design Group is a full-service Design and General Contracting Consulting firm that specializes in new construction, as well as extensive remodels and additions. Over the past two decades, the Golden Triangle Design Group has become known for their ability to solve complex design issues, while implementing all of the clients needs and wants. By providing exceptional expertise and technical knowledge to every phase of the project, clients are able to rely on the GTDG to deliver a product unlike any other."
 

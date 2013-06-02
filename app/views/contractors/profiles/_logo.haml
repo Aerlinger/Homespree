@@ -2,8 +2,8 @@
   #contractor_logo{style:"position: relative;"}
     =image_tag "http://placehold.it/300x200", id: "contractor_logo"
     .on-edit
-      = s3_uploader_form callback_url: contractors_url, callback_method: :PUT, callback_param: "", id: "logo_uploader" do
-        = file_field_tag :file, multiple: false
+      -#= s3_uploader_form callback_url: contractors_url, callback_method: :PUT, callback_param: "", id: "logo_uploader" do
+      -#  = file_field_tag :file, multiple: false
 
   %span{style: "font-weight: bold"}= "#{@address.city}, #{@address.state}"
   %span.stars5

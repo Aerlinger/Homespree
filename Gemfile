@@ -36,7 +36,6 @@ gem 'jquery-ui-rails'
 gem 'acts_as_list'
 gem 'figaro', '>= 0.5.3'
 gem 'haml-rails'
-gem 'paperclip'
 
 
 group :test, :development do
@@ -46,6 +45,9 @@ group :test, :development do
 
   gem 'turn', :require => false
   gem 'meta_request'
+
+  gem "parallel_tests"
+  gem "zeus-parallel_tests"
 
   gem 'faker'
   # Todo: Consider Fabrication as an alternative to FactoryGirl (Builder design pattern)
@@ -59,10 +61,13 @@ group :test, :development do
 end
 
 group :test do
+  gem 'zeus'
   gem 'selenium-webdriver'
   gem 'simplecov', '>=0.3.8', :require => false
   gem 'database_cleaner', '0.7.0'
   gem 'capybara'
+  #gem 'vcr'
+  #gem 'fakeweb'
 end
 
 group :development do

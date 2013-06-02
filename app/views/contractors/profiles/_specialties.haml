@@ -10,7 +10,7 @@
       %i.e-icon-arrow-combo
       DRAG&nbsp
     %span.specialty-name= specialty.name
-    =link_to contractor_remove_specialty_path(contractor_id: @contractor.id, specialty_id: specialty.id), method: :post, remote: true, class: "delete-specialty pull-right", style: "position: relative; color: darkred;" do
+    =link_to contractor_specialty_path(contractor_id: @contractor.id, specialty_id: specialty.id), method: :delete, remote: true, class: "delete-specialty pull-right", style: "position: relative; color: darkred;" do
       %i.e-icon-cancel
 
 %h3{style: "font-size: 16px;"} Add more services to your profile

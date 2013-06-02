@@ -26,32 +26,9 @@ class ContractorsController < ApplicationController
 
     @contractor = @contractor.decorate
 
-    #@is_new = @contractor.new_profile
-
-
     respond_to do |format|
       format.html
       format.json { render json: @contractor }
-    end
-  end
-
-  def add_specialty
-    respond_to do |format|
-      format.js { render layout: false }
-    end
-  end
-
-  def remove_specialty
-    Specialty.delete(params[:specialty_id])
-
-    respond_to do |format|
-      format.js { render layout: false }
-    end
-  end
-
-  def add_photo
-    respond_to do |format|
-      format.js { render layout: false }
     end
   end
 

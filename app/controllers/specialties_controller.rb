@@ -1,5 +1,5 @@
 class SpecialtiesController < ApplicationController
-  respond_to :json
+  respond_to :json, :js
 
   def create
     @contractor = Contractor.find(params[:contractor_id])
@@ -46,6 +46,9 @@ class SpecialtiesController < ApplicationController
     params[:specialty].each_with_index do |id, index|
       Specialty.update_all({position: index+1}, {id: id})
     end
-    render nothing: true
+
+    respond_to do |format|
+      format.js { render layout: false }
+    end
   end
 end

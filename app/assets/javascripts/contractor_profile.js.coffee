@@ -6,8 +6,6 @@
   ---------------------------------------------------------------------------------------------------------------------
 ###
 
-
-
 # Order of fields to be displayed during the intro sequence -----------------------------------------------------------
 fields = {
 
@@ -22,21 +20,21 @@ fields = {
     intro: "Name of the owner?"
   }
 
-  mobile_number: {
+  card_mobile_number: {
     intro: "What is your phone number?"
   }
 
 # Should this be a dropdown?
-  years_experience: {
+  card_years_experience: {
     intro: "How many years have you been in business?"
   }
 
-  insured_up_to: {
+  card_insured_up_to: {
     intro: "Insured Amount?"
     skippable: "I do not have insurance"
   }
 
-  bonded_up_to: {
+  card_bonded_up_to: {
     intro: "Bonded Amount?"
     skippable: "I am not bonded"
   }
@@ -75,7 +73,6 @@ setupIntro = (intro_fields) ->
       "data-intro": value["intro"]
       "data-skip": value["skippable"]
     })
-
     i++
 
     
@@ -85,20 +82,20 @@ strtrim = (str) ->
 
 
 $(document).ready ->
-  if $("#page.profile").length > 0
 
-    $("#logo_uploader").S3Uploader()
+  # Only run this script if we're on the contractor's profile page.
+  if $("#page.profile").length > 0
 
     # Load the definition of out introduction fields
     setupIntro(fields)
 
     introJs().onchange((targetElement) ->
-#      $('.introjs-overlay').click()
-#
-#      # Timeout is used to account for the delay when switching fields
-#      setTimeout () ->
-#        $(targetElement).find('a.edit-link').click()
-#      , 500
+      $('.introjs-overlay').click()
+
+      # Timeout is used to account for the delay when switching fields
+      setTimeout () ->
+        $(targetElement).find('a.edit-link').click()
+      , 500
     ).start()
 
     # Services section responsive design:  ----------------------------------------------------------------------------
@@ -112,50 +109,18 @@ $(document).ready ->
         # Update the info in the contractor's card
         $("#primary_service_text").text($(this).find('.specialty-name').first().text())
 
-    # When deleting a contractor's specialty, hide the X button and add a list item to #available specialties
     $(".delete-specialty").click (evt) ->
 
-      $(this).parent().hide(500);
-      specialty_text = strtrim($(this).parent().first().find('.specialty-name').text())
 
-      $("#available_specialties").prepend(
-        '<li>' +
-        specialty_text +
-        '<a href="/contractors/1/specialties?specialty_name=Power+Washing"
-            class="add-specialty pull-right btn btn-mini btn-success"
-            data-method="post" data-remote="true" rel="nofollow">Add
-        </a>
-        </li>'
-      ).fadeIn(500);
 
 
     # When clicking an "Add specialty" button, hide the button and add a list item to #contractor_specialties
     $(".add-specialty").click (evt) ->
-
       $(this).parent().hide(500);
       specialty_text = strtrim($(this).parent().first()[0].firstChild.data)
 
-      $("#contractor_specialties").append(
-        '<li class="specialty" id="specialty_5"><span class="badge badge-info drag" style="padding: 0 !important">
-        &nbsp;
-        <i class="e-icon-arrow-combo"></i>
-        DRAG&nbsp;
-        </span>
-        <span class="specialty-name">' + specialty_text + '</span>
-        <a href="/contractors/1/remove_specialty?specialty_id=5"
-            class="delete-specialty pull-right"
-            data-method="post" data-remote="true" rel="nofollow"
-            style="position: relative; color: darkred;"><i class="e-icon-cancel"></i>
-        </a>
-        </li>'
-      ).fadeIn(500)
 
-
-    # Best In Place Customization:  -----------------------------------------------------------------------------------
-#    $('.best_in_place').each (idx, item) ->
-#      if $(item).text() == ""
-#        $(item).html('<em>No information</em>')
-
+    $("#logo_uploader").S3Uploader()
     $('.best_in_place').best_in_place()
 
     # TODO: Tooltips aren't working for some reason.

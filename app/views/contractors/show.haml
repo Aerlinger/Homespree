@@ -31,49 +31,24 @@
             -# Contractor Card: list of Fields -- name, license info, etc...
             -#===============================================================================================
             %ul.features
-              = @contractor.card_item :first_name, { display_with: :number_to_phone, nil: "<em>No info</em>" }
-              = @contractor.card_item :first_name, { display_with: :number_to_phone, nil: "<em>No info</em>" }
-              = @contractor.card_item :first_name, { display_with: :number_to_phone, nil: "<em>No info</em>" }
+              - @contractor.card_item :first_name, { title: "Owned by:", nil: "<em>No info</em>" } do
+                = @contractor.last_name if @contractor.respond_to?(:last_name)
+                = @contractor.edit_link :first_name
 
+              - @contractor.card_item :mobile_number, { display_with: :number_to_phone, title: "Phone #:", nil: " " } do
+                = @contractor.edit_link :mobile_number
 
-              - if @contractor.first_name.present?
-                %li#full_name
-                  %strong Owner:
-                  = best_in_place @contractor, :first_name, activator: "#name_edit", nil: "No info"
-                  - if @contractor.last_name.present?
-                    = best_in_place @contractor, :last_name
+              - @contractor.card_item :license, {title: "License #:", nil: " " } do
+                = @contractor.edit_link :license
 
-                  =render "contractors/profiles/edit_link", activator: "name_edit"
+              - @contractor.card_item :license, {title: "License #:", nil: " " } do
+                = @contractor.edit_link :license
 
-              - if @contractor.mobile_number.present?
-                %li#mobile_number
-                  %strong Phone:
-                  =best_in_place @contractor, :mobile_number, display_with: :number_to_phone, activator: "#phone_edit", nil: "<em>No info<em>"
-                  =render "contractors/profiles/edit_link", activator: "phone_edit"
+              - @contractor.card_item :insurance_limit, { display_with: :number_to_currency, title: "Insured up to:", nil: "<em>No info</em>" } do
+                = @contractor.edit_link :insurance_limit
 
-              - if @contractor.years_experience.present?
-                %li#years_experience
-                  %strong Years in business:
-                  =best_in_place @contractor, :years_experience, activator: "#years_experience_edit", nil: "<em>No info<em>"
-                  =render "contractors/profiles/edit_link", activator: "years_experience_edit"
-
-              - if @contractor.license.present?
-                %li#license_number
-                  %strong License
-                  = "# #{@contractor.license}"
-                  %i.icon-question-sign.detailsPop{"data-content" => "License Info", "data-rel" => "popover", :title => "License Info"}
-
-              - if @contractor.insurance_limit.present?
-                %li#insured_up_to
-                  %strong Insured
-                  = "up to #{@contractor.insurance_limit}"
-                  %i.icon-question-sign.detailsPop{"data-content" => "License Info", "data-rel" => "popover", :title => "License Info"}
-
-              - if @contractor.bonding_limit.present?
-                %li#bonded_up_to
-                  %strong Bonded
-                  = "up to $#{@contractor.bonding_limit}"
-                  %i.icon-question-sign.detailsPop{"data-content" => "Bond info", "data-rel" => "popover", :title => "Bond Info"}
+              - @contractor.card_item :bonding_limit, { display_with: :number_to_currency, title: "Bonded for:", nil: "<em>No info</em>" } do
+                = @contractor.edit_link :bonding_limit
 
               %li.select
                 =link_to "Book this painter", "#", class: "btn btn-large btn-primary", id: "book_contractor"
@@ -82,19 +57,7 @@
         -#===============================================================================================
         .span8
           .row-fluid
-            #portfolio-slider.flexslider
-              %ul.slides
-                = content_tag_for :li, @photos, class: "item flex-active-slide" do |photo|
-                  = image_tag asset_path("portfolio_images/" + photo.image_url)
-                  = link_to asset_path("portfolio_images/" + photo.image_url), class: "zoom-image fancyme", data: {"fancybox-group" => "portfolio"} do
-                    %i.e-icon-search
-
-            #portfolio-carousel.flexslider
-              %ul.slides
-                = content_tag_for :li, @photos do |photo|
-                  = image_tag asset_path("portfolio_images/" + photo.image_url), alt: ""
-                %li
-                  = image_tag "http://placehold.it/200x150", alt: "Upload a photo"
+            = render "contractors/profiles/portfolio"
 
           .row#helper_tabs
             .span4.no-bg
@@ -106,7 +69,6 @@
             .span4.no-bg
               %a.link-tab
                 %i.icon-star.icon-white &nbsp Reviews
-
 
 
   -# Section Two (Description, Services Offered, and Maps
@@ -171,7 +133,5 @@
             %a.btn.custom-btn.btn-small.btn-very-subtle{:href => "testimonials.html"} All Testimonials
 
 
-
   =render "contractors/profiles/photos_modal"
-
   =render "partials/clean_footer"
