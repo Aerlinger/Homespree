@@ -9,5 +9,8 @@ class Homeowner < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :address, :appointments, :email, :first_name, :last_name, :photos
 
+  has_one :address, as: :addressable
+
+  has_many :appointments
   has_many :contractors, through: :appointments
 end

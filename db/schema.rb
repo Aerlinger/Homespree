@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130602212134) do
+ActiveRecord::Schema.define(:version => 20130603033656) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -69,6 +69,8 @@ ActiveRecord::Schema.define(:version => 20130602212134) do
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
     t.integer  "contractor_id"
+    t.string   "title"
+    t.string   "description"
   end
 
   create_table "contractors", :force => true do |t|
@@ -106,8 +108,14 @@ ActiveRecord::Schema.define(:version => 20130602212134) do
     t.float    "longitude"
     t.decimal  "availability_radius"
     t.string   "logo"
+    t.integer  "failed_attempts",                                      :default => 0
+    t.string   "unlock_token"
+    t.datetime "locked_at"
+    t.string   "authentication_token"
   end
 
+  add_index "contractors", ["authentication_token"], :name => "index_contractors_on_authentication_token", :unique => true
+  add_index "contractors", ["email"], :name => "index_contractors_on_email", :unique => true
   add_index "contractors", ["reset_password_token"], :name => "index_contractors_on_reset_password_token", :unique => true
 
   create_table "homeowners", :force => true do |t|
@@ -130,11 +138,19 @@ ActiveRecord::Schema.define(:version => 20130602212134) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "authentication_token"
+    t.integer  "failed_attempts",        :default => 0
+    t.string   "unlock_token"
+    t.datetime "locked_at"
   end
 
   add_index "homeowners", ["authentication_token"], :name => "index_homeowners_on_authentication_token", :unique => true
   add_index "homeowners", ["email"], :name => "index_homeowners_on_email", :unique => true
   add_index "homeowners", ["reset_password_token"], :name => "index_homeowners_on_reset_password_token", :unique => true
+
+  create_table "jobs", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "mailinglists", :force => true do |t|
     t.string   "email"

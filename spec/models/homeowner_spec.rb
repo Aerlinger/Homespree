@@ -1,5 +1,16 @@
 require 'spec_helper'
 
 describe Homeowner do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should respond_to :email }
+
+  let(:homeowner) { FactoryGirl.create(:homeowner) }
+
+  it "is valid" do
+    homeowner.should be_valid
+    homeowner.should be_persisted
+  end
+
+  it "can have many appointments" do
+    homeowner.appointments << FactoryGirl.attributes_for(:appointment)
+  end
 end

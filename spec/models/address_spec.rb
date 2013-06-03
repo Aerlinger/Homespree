@@ -10,6 +10,8 @@ describe Address do
   it { should respond_to :addressable_id }
   it { should respond_to :addressable_type }
 
+  let(:address) { FactoryGirl.create(:address) }
+
   it "catches valid zip code" do
     subject.zipcode = "12345"
     subject.save

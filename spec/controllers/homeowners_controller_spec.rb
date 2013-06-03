@@ -43,7 +43,7 @@ describe HomeownersController do
 
   describe "GET show" do
     it "assigns the requested homeowner as @homeowner" do
-      get :show, {:id => homeowner.to_param}, valid_session
+      get :show, {:id => homeowner.id}, valid_session
       assigns(:homeowner).should eq(homeowner)
     end
   end
@@ -57,7 +57,7 @@ describe HomeownersController do
 
   describe "GET edit" do
     it "assigns the requested homeowner as @homeowner" do
-      get :edit, {:id => homeowner.to_param}, valid_session
+      get :edit, {:id => homeowner.id}, valid_session
       assigns(:homeowner).should eq(homeowner)
     end
   end
@@ -108,18 +108,18 @@ describe HomeownersController do
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
         Homeowner.any_instance.should_receive(:update_attributes).with({ "email" => "MyString" })
-        put :update, {:id => homeowner.to_param, :homeowner => { "email" => "MyString" }}, valid_session
+        put :update, {:id => homeowner.id, :homeowner => { "email" => "MyString" }}, valid_session
       end
 
       it "assigns the requested homeowner as @homeowner" do
         homeowner = Homeowner.create! valid_homeowner_attributes
-        put :update, {:id => homeowner.to_param, :homeowner => valid_homeowner_attributes}, valid_session
+        put :update, {:id => homeowner.id, :homeowner => valid_homeowner_attributes}, valid_session
         assigns(:homeowner).should eq(homeowner)
       end
 
       it "redirects to the homeowner" do
         homeowner = Homeowner.create! valid_homeowner_attributes
-        put :update, {:id => homeowner.to_param, :homeowner => valid_homeowner_attributes}, valid_session
+        put :update, {:id => homeowner.id, :homeowner => valid_homeowner_attributes}, valid_session
         response.should redirect_to(homeowner)
       end
     end
@@ -129,7 +129,7 @@ describe HomeownersController do
         homeowner = Homeowner.create! valid_homeowner_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Homeowner.any_instance.stub(:save).and_return(false)
-        put :update, {:id => homeowner.to_param, :homeowner => { "email" => "invalid value" }}, valid_session
+        put :update, {:id => homeowner.id, :homeowner => { "email" => "invalid value" }}, valid_session
         assigns(:homeowner).should eq(homeowner)
       end
 
@@ -137,7 +137,7 @@ describe HomeownersController do
         homeowner = Homeowner.create! valid_homeowner_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Homeowner.any_instance.stub(:save).and_return(false)
-        put :update, {:id => homeowner.to_param, :homeowner => { "email" => "invalid value" }}, valid_session
+        put :update, {:id => homeowner.id, :homeowner => { "email" => "invalid value" }}, valid_session
         response.should render_template("edit")
       end
     end
@@ -147,13 +147,13 @@ describe HomeownersController do
     it "destroys the requested homeowner" do
       homeowner = Homeowner.create! valid_homeowner_attributes
       expect {
-        delete :destroy, {:id => homeowner.to_param}, valid_session
+        delete :destroy, {:id => homeowner.id}, valid_session
       }.to change(Homeowner, :count).by(-1)
     end
 
     it "redirects to the homeowners list" do
       homeowner = Homeowner.create! valid_homeowner_attributes
-      delete :destroy, {:id => homeowner.to_param}, valid_session
+      delete :destroy, {:id => homeowner.id}, valid_session
       response.should redirect_to(homeowners_url)
     end
   end
