@@ -3,15 +3,6 @@
   clear: both;
 }
 
-#logo {
-  position: relative;
-  top: 33px;
-  margin: -7px -180px -27px 0;
-
-  img {
-    width: 65%;
-  }
-}
 
 section.strip.odd {
   margin: 0 !important;
@@ -34,7 +25,7 @@ section.strip.odd {
 .optionheader {
   li {
     &:first-child {
-      margin-top: -1px;
+      margin-top: 10px;
       background-color: #91a2f5;
       color: black;
 
@@ -74,12 +65,6 @@ section.strip.odd {
 
 #portfolio_images {
   background: black !important;
-}
-
-div#page {
-  margin-top: 120px;
-  //background: none !important;
-  //background-color: transparent;
 }
 
 span.bg {

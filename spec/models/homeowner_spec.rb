@@ -11,6 +11,6 @@ describe Homeowner do
   end
 
   it "can have many appointments" do
-    homeowner.appointments << FactoryGirl.attributes_for(:appointment)
+    homeowner.appointments << FactoryGirl.create(:appointment)
   end
 end

@@ -41,12 +41,11 @@ ul.nav-collapse li a:hover {
 }
 
 body.desktop {
-  background-image: url(/assets/homebackground.jpg);
-  background-size: cover;
-  -webkit-background-size: cover;
+  background-image: url(/assets/main_livingroom.png);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background-size:100% 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
 
@@ -68,7 +67,6 @@ body.desktop {
 
   a {
     color: #338bb8;
-
     &:link, &:visited {
     }
 
@@ -244,18 +242,7 @@ body.desktop {
       box-shadow: 0 10px 10px rgba(0, 0, 0, 1);
     }
   }
-
-  #logo {
-    position: relative;
-    top: 33px;
-    margin: -7px -180px -27px 0;
-
-    img {
-      width: 65%;
-    }
-  }
 }
-
 footer {
   opacity: 1;
   background: white;

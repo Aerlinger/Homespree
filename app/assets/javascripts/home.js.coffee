@@ -5,3 +5,4 @@ $ ->
 
   $('#flash_link').click (evt) ->
     $(this).slideUp(500)
+

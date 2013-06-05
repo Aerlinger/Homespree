@@ -6,5 +6,9 @@ FactoryGirl.define do
     password "iamsecret"
     first_name "MyString"
     last_name "MyString"
+
+    appointments
+    contractor
+    homeowner
   end
 end

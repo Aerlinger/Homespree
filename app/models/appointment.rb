@@ -6,6 +6,6 @@ class Appointment < ActiveRecord::Base
   has_one :address, as: :addressable
   has_one :job
 
-  validates_presence_of :address_id, :date, :time, :contractor, :homeowner
+  validates_presence_of :date, :time, :address, :contractor, :homeowner
 
 end

@@ -1,46 +1,45 @@
 @import "../global/palette.css.scss";
 
-$pitch_height: 563px;
+$pitch_height: 800px;
 $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
 
 #home {
-
+  margin: 0 0 0 0; /* 40px (secondary-menu) + 80px (primary-menu and logo) + 40px (standard margin)*/
 	.pitch {
-		padding-top: 60px;
-		min-height: $pitch_height;
+      width: 80%;
+      min-height: $pitch_height;
 
 		.search-area {
-			margin-left: 1em;
+          margin-top: 10%;
 
 			h1 {
 				color: white;
 				font-weight: 400;
 				font-size: 4em;
 				line-height: 1.1em;
-				text-shadow: 0 0 15px rgba(0, 0, 0, 1), 0 -1px 1px rgba(0, 0, 0, 0.6);
+				text-shadow: 0 0 15px rgba(0, 0, 0, 1), 0 -1px 1px rgba(0, 0, 0, 1);
 			}
 
 			h2 {
+                color: white;
 				text-align: left;
 				font: 2.2em "helvetica neue", helvetica, sans-serif;
 				margin: 18px 0;
 
-				text-shadow: 0 0 13px rgba(0, 0, 0, 1), 0 -1px 1px rgba(0, 0, 0, 0.6);
+				text-shadow: 0 0 13px rgba(0, 0, 0, 1), 0 -1px 1px rgba(0, 0, 0, 1);
 
 				strong {
 					font-weight: 700;
 				}
 			}
 
-			.stressfree {
-				margin-left: -34px !important;
-			}
 
 			#search_form {
-				margin-top: 140px;
+
+				margin: 50px auto;
 				width: 657px;
 
-				background: none repeat scroll 0px 0px rgba(255, 255, 255, 0.3);
+				background: none repeat scroll 0px 0px rgba(255, 255, 255, 0.6);
 				box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
 				border-radius: 3px 3px 3px 3px;
 				border: 1px solid rgb(0, 0, 0);
@@ -63,6 +62,7 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
 				}
 
 				input {
+                    margin-top: 5px;
 					border-radius: 3px !important;
 					-moz-border-radius: 3px !important;
 					-webkit-border-radius: 3px !important;
@@ -89,6 +89,8 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
 			.submit {
 				&.large {
 					font-size: 18px;
+                    margin: 0;
+                    padding:pliy 0;
 				}
 
 				&.green {
@@ -200,7 +202,6 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
 				margin-top: 2px;
 				margin-left: 1px;
 				margin-bottom: 5px !important;
-
 				width: 190px;
 			}
 
@@ -290,4 +291,241 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
 
 		background-color: rgba(0,0,0,0.7);
 	}
+}
+
+/*****************
+MEDIA QUERIES
+******************/
+
+@media (max-width: 1200px) {
+  .pitch {
+    padding-top: 0;
+    height: auto;
+
+  }
+}
+
+@media (max-width: 980px) {
+  .submit {
+    &.large {
+      width: 300px !important;
+    }
+  }
+  #search_form {
+    width: 300px !important;
+    margin-top: 90px !important;
+  }
+
+  .navbar-inner {
+    padding: 0px !important;
+  }
+
+  .pitch {
+    #customer_type {
+      margin-left: 1px !important;
+    }
+
+    padding-top: 0px !important;
+    min-height: 474px !important;
+
+    #iphone_preview {
+      height: 400px !important;
+      top: 160px !important;
+      width: 300px !important;
+      background-size: 300px !important;
+    }
+  }
+
+  .desktop {
+    position: relative;
+    z-index: -2;
+  }
+
+  .secondary {
+    position: relative;
+    z-index: -2;
+
+    .container {
+      position: relative !important;
+      margin-top: -60px;
+      z-index: -1;
+    }
+  }
+  #email_signup {
+    width: 270px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    padding: 0;
+    background-attachment: fixed;
+    background-image: url("/assets/homebackground.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .secondary {
+    .container {
+      padding: 0 10px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .pitch {
+    padding: 0 15px;
+
+    h2 {
+      margin: 5px 0 !important;
+      max-width: 480px;
+    }
+
+    .stressfree {
+      padding-left: 8px !important;
+    }
+  }
+
+}
+
+@media (max-width: 610px) {
+  footer {
+    padding: 10px !important;
+  }
+
+  #iphone_preview {
+    display: none;
+  }
+
+  form {
+    margin-top: 20px !important;
+  }
+
+  .search-area {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  .pitch {
+    padding: 0 20px;
+    margin-bottom: 10px;
+    min-height: 360px !important;
+
+    .stressfree {
+      display: none;
+    }
+
+    #search_form {
+      margin: 0 auto;
+    }
+  }
+
+
+  .secondary {
+    .nav li a {
+      margin: 3px;
+      padding: 10px;
+      border: 1px solid gray;
+      border-radius: 3px;
+    }
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 3em;
+  }
+
+  h2 {
+    width: 100% !important;
+    max-width: 100% !important;
+    font-size: 32px;
+    line-height: 52px;
+    text-align: center !important;
+    font: 2.2em "helvetica neue", helvetica, sans-serif;
+  }
+
+  h3 {
+    font-size: 20px;
+    line-height: 32px;
+    text-align: center;
+    font: 2em Helvetica;
+    margin: 0 0 15px;
+  }
+}
+
+@media (max-width: 500px) {
+  body {
+    //background-position-x: -320px !important;
+  }
+
+  footer {
+    padding: 10px !important;
+  }
+
+  #iphone_preview {
+    display: none;
+  }
+
+  .pitch {
+    padding: 0;
+    margin-bottom: 10px;
+    min-height: 360px !important;
+
+    #search_form {
+      margin: 0 auto;
+      padding: 5px !important;
+
+      .search-area .call-to-action {
+        width: 100% !important;
+      }
+
+      #customer_type > a {
+        width: 298px;
+      }
+
+    }
+
+    .search-area .call-to-action.large {
+      float: none !important;
+      margin-left: 0px;
+      margin-top: 10px !important;
+      margin-right: 5px !important;
+      width: 100% !important;
+    }
+  }
+
+  #search_form {
+    max-width: 300px !important;
+
+    #email_signup, #customer_type {
+      max-width: 272px !important;
+      margin-right: 5px !important;
+      a {
+        width: 272px !important;
+      }
+      * {
+        max-width: 320px !important;
+
+      }
+    }
+  }
+
+  h1 {
+    font-size: 2.5em !important;
+  }
+
+  h2 {
+    font-size: 32px;
+    line-height: 52px;
+    text-align: center !important;
+    font: 2.2em "helvetica neue", helvetica, sans-serif;
+    margin: 18px 0;
+  }
+
+  h3 {
+    font-size: 20px;
+    line-height: 32px;
+    text-align: center;
+    font: 2em Helvetica;
+    margin: 0 0 15px;
+  }
 }
