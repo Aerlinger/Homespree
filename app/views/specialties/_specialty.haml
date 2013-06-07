@@ -1,0 +1,8 @@
+%span.badge.badge-info.drag{style: "padding: 0 !important"}
+  &nbsp
+  %i.e-icon-arrow-combo
+  DRAG&nbsp
+%span.specialty-name= specialty.name
+
+=link_to contractor_specialty_path(contractor_id: @contractor.id, id: specialty.id), method: :delete, remote: true, class: "delete-specialty pull-right", style: "position: relative; color: darkred;" do
+  %i.e-icon-cancel

@@ -1,7 +1,11 @@
 /* --------------------->>> Header-Logo <<<---------------------*/
 
+#logo{
+  margin-top: 07px;
+}
 header#logo{
   margin: 0 !important;
+  margin-top: 07px;
   padding: 0;
   height: auto;
   width: 200px !important;
@@ -12,7 +16,8 @@ header#logo{
       float: left;
       height: auto;
       width: 10px;
-      margin: 0;
+      margin: 0 !important;
+      display: inline !important;
     }
   }
 }
@@ -198,6 +203,7 @@ header#logo{
     border-left: 0px;
     padding: 0;
     margin: 0;
+    height: 50px;
   }
 }
 

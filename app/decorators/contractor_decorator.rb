@@ -60,13 +60,13 @@ class ContractorDecorator < Draper::Decorator
 
   def card_item(attr_name, attrs = {})
     # Don't render blank attributes when a customer is visiting the page
-    if visitor? && @source.send(attr_name).blank?
+    if visitor? && @object.send(attr_name).blank?
       return
     end
 
     h.haml_tag(:li, class: 'card-attribute', id: "card_#{attr_name}") do
       h.haml_tag(:strong, attrs[:title] || attr_name.to_s.titleize + ":")
-      h.haml_concat(h.best_in_place(@source, attr_name, activator: "##{attr_name}", display_with: attrs[:display_with], :nil => attrs[:nil] || "<em>No info</em>"))
+      h.haml_concat(h.best_in_place(@object, attr_name, activator: "##{attr_name}", display_with: attrs[:display_with], :nil => attrs[:nil] || "<em>No info</em>"))
       if block_given?
         yield
       end
@@ -80,7 +80,7 @@ class ContractorDecorator < Draper::Decorator
   #   3. Visitor: Do nothing and return nil
   def edit_link(attr_name)
     unless visitor?
-      link_text = if @source.send(attr_name).blank?
+      link_text = if @object.send(attr_name).blank?
         "Add Info"
       else
         "Edit"

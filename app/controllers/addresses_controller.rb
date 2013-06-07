@@ -7,11 +7,7 @@ class AddressesController < ApplicationController
   end
 
   def update
-    if params[:contractor_id]
-      @contractor = Contractor.find(params[:contractor_id])
-      @address = @contractor.address
-    end
-
+    @address = Contractor.find(params[:contractor_id]).address
     @address.update_attributes(params[:address])
 
     respond_to do |format|

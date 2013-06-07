@@ -1,7 +1,5 @@
 Homespree::Application.routes.draw do
 
-  resources :jobs
-
   # Root route must be before ActiveAdmin.routes(self)
   root :to => 'static_pages#home'
 
@@ -46,7 +44,7 @@ Homespree::Application.routes.draw do
   get "browse/inspire"
 
   # Static Pages: ----------------------------------------------------------------------------------------------------
-  %w(pitch home contractors_preview faqs about contact jobs test_style).each do |page|
+  %w(pitch home faqs about contact jobs test_style how_it_works).each do |page|
     get page, controller: :static_pages, action: page
   end
 

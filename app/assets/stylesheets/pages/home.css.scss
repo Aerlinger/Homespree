@@ -1,12 +1,65 @@
 @import "../global/palette.css.scss";
 
-$pitch_height: 800px;
+$pitch_height: 0px;
 $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
 
+.secondary{
+  .container{
+    opacity: .96;
+  }
+}
 #home {
+  .dropdown-menu {
+    a{
+      width: 252px !important;
+    }
+  }
+  #space{
+    height: 400px;
+  }
+  #mainpicture_mobile{
+    img{
+      display: none;
+    }
+  }
+
+  #homepage_overlay{
+    position: absolute;
+    top: 20%;
+    margin: 0 auto;
+  }
+
+  #maintext{
+    min-height: 850px;
+    h1{
+      color: white;
+      margin-left: 10%;
+      margin-top: 2%;
+    }
+    top: 15%;
+    left: 10%;
+    right: 10%;
+    h1 {
+      color: white;
+      font-weight: 400;
+      font-size: 4em;
+      line-height: 1.1em;
+      text-shadow: 0 0 15px rgba(0, 0, 0, 1), 0 -1px 1px rgba(0, 0, 0, 1);
+    }
+
+    h2 {
+      margin-left: 10%;
+      color: white;
+      text-align: left;
+      font: 2.2em "helvetica neue", helvetica, sans-serif;
+
+      text-shadow: 0 0 13px rgba(0, 0, 0, 1), 0 -1px 1px rgba(0, 0, 0, 1);
+  }
+}
   margin: 0 0 0 0; /* 40px (secondary-menu) + 80px (primary-menu and logo) + 40px (standard margin)*/
 	.pitch {
-      width: 80%;
+      top: 30%;
+      width: 100%;
       min-height: $pitch_height;
 
 		.search-area {
@@ -43,11 +96,14 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
 				box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
 				border-radius: 3px 3px 3px 3px;
 				border: 1px solid rgb(0, 0, 0);
-				padding: 4px;
+				padding-bottom: 7px;
+                padding-top: 6px;
+                padding-right: 3px;
 				line-height: 1.4;
 
 				.dropdown-menu {
 					z-index: 10;
+                    width: 293px;
 				}
 
 				#submit_success {
@@ -62,7 +118,6 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
 				}
 
 				input {
-                    margin-top: 5px;
 					border-radius: 3px !important;
 					-moz-border-radius: 3px !important;
 					-webkit-border-radius: 3px !important;
@@ -71,7 +126,7 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
 			}
 
 			.icon-and-text {
-				height: 49px;
+				height: 47px;
 				width: 125px;
 				margin-left: 3px;
 				margin-top: 1px;
@@ -182,6 +237,9 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
 
 					font-size: 18px;
 					width: 270px;
+                    @media (max-width: 321px){
+                      width: 222px !important;
+                    }
 					height: 30px;
 					padding-top: 13px;
 					border: 1px solid #2f2f2f;
@@ -201,8 +259,9 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
 				line-height: normal;
 				margin-top: 2px;
 				margin-left: 1px;
-				margin-bottom: 5px !important;
 				width: 190px;
+                margin: 0px;
+
 			}
 
 		}
@@ -283,6 +342,10 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
 		padding: 20px 0;
 		color: white;
 		text-align: center;
+        position: absolute;
+        bottom: 70px;
+        width: 100%;
+
 
 		h2 {
 			margin-bottom: 10px;
@@ -296,7 +359,17 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
 /*****************
 MEDIA QUERIES
 ******************/
-
+@media (max-width: 966px) {
+  #maintext{
+  position: relative !important;
+  width: 100%;
+  left: 0% !important;
+  right: 0% !important;
+  }
+  .pitch{
+  position: relative !important;
+  }
+}
 @media (max-width: 1200px) {
   .pitch {
     padding-top: 0;
@@ -305,7 +378,7 @@ MEDIA QUERIES
   }
 }
 
-@media (max-width: 980px) {
+@media (max-width: 750px) {
   .submit {
     &.large {
       width: 300px !important;
@@ -313,7 +386,6 @@ MEDIA QUERIES
   }
   #search_form {
     width: 300px !important;
-    margin-top: 90px !important;
   }
 
   .navbar-inner {
@@ -326,7 +398,6 @@ MEDIA QUERIES
     }
 
     padding-top: 0px !important;
-    min-height: 474px !important;
 
     #iphone_preview {
       height: 400px !important;
@@ -338,17 +409,16 @@ MEDIA QUERIES
 
   .desktop {
     position: relative;
-    z-index: -2;
   }
 
   .secondary {
     position: relative;
-    z-index: -2;
 
     .container {
       position: relative !important;
       margin-top: -60px;
-      z-index: -1;
+      padding-top: 70px !important;
+
     }
   }
   #email_signup {
@@ -367,8 +437,25 @@ MEDIA QUERIES
 
   .secondary {
     .container {
-      padding: 0 10px;
-      margin-bottom: 20px;
+      padding-top: 0px !important;
+      margin-top: 0px !important;
+    }
+    sidenav{
+      margin-top: 0px !important;
+      padding-top: 0px !important;
+      z-index: 999;
+    }
+    .nav li a {
+      margin: 3px;
+      padding: 10px;
+      border: 1px solid gray;
+      border-radius: 3px;
+    }
+    .descriptiontext{
+      padding: 3% 3%;
+      img{
+        display: none;
+      }
     }
   }
 
@@ -388,6 +475,16 @@ MEDIA QUERIES
 }
 
 @media (max-width: 610px) {
+  .submit {
+    &.large {
+      width: 296px !important;
+    }
+  }
+  #mainpicture{
+    img{
+      display: none;
+    }
+  }
   footer {
     padding: 10px !important;
   }
@@ -408,7 +505,6 @@ MEDIA QUERIES
   .pitch {
     padding: 0 20px;
     margin-bottom: 10px;
-    min-height: 360px !important;
 
     .stressfree {
       display: none;
@@ -434,14 +530,7 @@ MEDIA QUERIES
     font-size: 3em;
   }
 
-  h2 {
-    width: 100% !important;
-    max-width: 100% !important;
-    font-size: 32px;
-    line-height: 52px;
-    text-align: center !important;
-    font: 2.2em "helvetica neue", helvetica, sans-serif;
-  }
+
 
   h3 {
     font-size: 20px;
@@ -468,8 +557,6 @@ MEDIA QUERIES
   .pitch {
     padding: 0;
     margin-bottom: 10px;
-    min-height: 360px !important;
-
     #search_form {
       margin: 0 auto;
       padding: 5px !important;
@@ -529,3 +616,25 @@ MEDIA QUERIES
     margin: 0 0 15px;
   }
 }
+@media (max-width: 321px) {
+  #search_form {
+    max-width: 250px !important;
+  }
+  #email_signup{
+    width: 222px !important;
+  }
+  .submit {
+    &.large {
+      width: 250px !important;
+    }
+  }
+  .dropdown-menu {
+    width: 245px !important;
+  }
+  .dropdown-menu {
+    a{
+      width: 10px !important;
+    }
+  }
+}
+

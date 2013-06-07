@@ -16,7 +16,7 @@
     = @address.state
 
 .on-edit
-  = simple_form_for [@contractor, @address], method: :put, class: "intro", remote: true do |f|
+  = simple_form_for @address, :url => { :controller => "addresses", :action => 'update', contractor_id: @contractor.id }, method: :put, class: "intro", remote: true do |f|
     .address.line1
       =f.input :line1, placeholder: "Address Line 1", label: "Street"
 

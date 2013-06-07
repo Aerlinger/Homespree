@@ -1,0 +1,4 @@
+= content_tag(:li, id: string_to_id(specialty_name)) do
+  = specialty_name
+  = link_to contractor_specialties_path(contractor_id: @contractor.id, specialty_name: specialty_name), method: :post, class: "add-specialty pull-right btn btn-mini btn-success", remote: true do
+    Add

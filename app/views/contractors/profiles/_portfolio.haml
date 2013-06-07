@@ -1,20 +1,25 @@
 .row-fluid
   #portfolio-slider.flexslider
     %ul.slides
+      -# Show a default image if the contractor hasn't uploaded any images yet:
+      - if @photos.empty?
+        = content_tag :li do
+          = image_tag asset_path("portfolio_images/default.png")
       = content_tag_for :li, @photos, class: "item flex-active-slide" do |photo|
-        = image_tag asset_path("portfolio_images/" + photo.image_url)
-        = link_to asset_path("portfolio_images/" + photo.image_url), class: "zoom-image fancyme", data: {"fancybox-group" => "portfolio"} do
-          %i.icon-fullscreen
-        = link_to asset_path("portfolio_images/" + photo.image_url), class: "upload-image fancyme btn btn-info", data: {"fancybox-group" => "portfolio"}, style: "right: 5px;" do
-          %i.e-icon-plus-circled
-          Edit image
-
+        = render photo, photo: photo
 
   #portfolio-carousel.flexslider
     %ul.slides
       = content_tag_for :li, @photos do |photo|
-        = image_tag asset_path("portfolio_images/" + photo.image_url), alt: "", style: "position: relative;"
-        = link_to contractor_photo_path(@contractor, photo), class: "photo-delete", remote: true, method: :delete, confirm: "Are you sure you wish to delete this photo?" do
-          %i.icon-remove
-      %li
-        = image_tag "http://placehold.it/200x150", alt: "Upload a photo"
+        = render photo, photo: photo
+        -#= image_tag photo.image_url.to_s, alt: "", style: "position: relative;"
+        -#= link_to contractor_photo_path(@contractor, photo), class: "photo-delete", remote: true, method: :delete, confirm: "Are you sure you wish to delete this photo?" do
+        -#  %i.icon-remove
+
+    = s3_uploader_form post: contractor_photos_url(@contractor), as: "photo[image_url]" do
+      = file_field_tag :file, multiple: true
+
+    %script#template-upload(type= "text/x-tmpl")
+      .upload
+        .progress
+          .bar(style= "width: 0%;")

@@ -11,12 +11,9 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require jquery.ui.all
+//= require jquery-ui
 //= require jquery_ujs
 //= require jquery.purr
-//= require best_in_place
-//= require best_in_place.purr
-//= require s3_direct_upload
 // require twitter/bootstrap
 //= require twitter/bootstrap/bootstrap-transition
 //= require twitter/bootstrap/bootstrap-alert
@@ -32,7 +29,14 @@
 //= require twitter/bootstrap/bootstrap-typeahead
 //= require twitter/bootstrap/bootstrap-affix
 //= require custom
-//= require_tree ../../../vendor/assets/javascripts
 //= require helper
 //= require helper.js
 //= require_tree .
+//= require best_in_place
+//= require best_in_place.purr
+//= require_tree ../../../vendor/assets/javascripts
+//= require jquery-fileupload/basic
+//= require jquery-fileupload/vendor/tmpl
+// require ../../../vendor/assets/javascripts/jquery.ui.widget.js
+// require ../../../vendor/assets/javascripts/jquery.iframe-transport.js
+// require ../../../vendor/assets/javascripts/jquery.fileupload.js

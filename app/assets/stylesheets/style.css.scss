@@ -37,6 +37,7 @@ html {
   font-size: 62.5%;
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 
 body {
@@ -49,6 +50,10 @@ body {
   overflow-x: hidden;
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
+}
+
+#content{
+  padding-bottom: 70px;
 }
 
 .btn, .footer, .footer-credits {
@@ -989,13 +994,17 @@ ul.navigation {
 /*--------------------------- .footer-credits ---------------------- */
 
 .footer-credits {
-  padding: 10px;
   font-size: 70%;
   clear: both;
   text-align: center;
   position: relative;
   text-transform: uppercase;
   background: #5676a5;
+  height: 70px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
   ul {
     list-style: none;
     padding: 10px 0;
@@ -2036,3 +2045,7 @@ html[xmlns] .slides, .no-js .slides > li:first-child {
     background-size: 80px 40px;
   }
 }
+
+
+/*TEST*/
+

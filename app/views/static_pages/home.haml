@@ -1,39 +1,55 @@
 #home.clearfix
   -# Above the fold product pitch information
   -#===========================================================================
-  %section.pitch
-    .container
-      .row
-        %header.span12
-          .search-area
-            -#%img.stressfree{:src => "/assets/stressfree.png"}/
-            %h1 Stress-free home improvement.
-            %h2{:style => "color: white;"} Planning your next home improvement project has never been so easy.
-            %br
-            -# Mailing List Form
-            -#===========================================================================
-            -# removed: authenticate_with: :none,
-            = form_tag mailinglists_path, method: :post, id: "search_form" do
 
-              #customer_type.btn-group
-                %a#dropdown.btn.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-                  %span.text Select a project type
-                  %span.caret.pull-right
+  /*This is the code for the main text and picture on the front page. All css is on home.css.scss*/
+  #maintext
+    %h1 Stress-free home improvement.
+    %h2 Planning your next project has never been so easy.
 
-                %input#user_type{:name => "user_type", :style => "display: none", :value => ""}/
-                %ul.dropdown-menu
-                  %li
-                    %a#contractor{:href => "javascript:void(0)", :onclick => "return false;"} Contractor
-                  %li
-                    %a#homeowner{:href => "javascript:void(0)", :onclick => "return false;"} Homeowner
-                  %li
-                    %a#homeowner{:href => "javascript:void(0)", :onclick => "return false;"} Homeowner
-                  %li
-                    %a#homeowner{:href => "javascript:void(0)", :onclick => "return false;"} Homeowner
-              = email_field_tag(:email, "", type: "text", id: "email_signup", placeholder: "Zipcode")
-              = hidden_field_tag "submitted_from_mobile", "false"
-              = submit_tag "Get started", id: "submit_location", class: "large green submit icon-and-text"
-              %p#submit_success Thanks! We'll keep you posted when we launch.
+
+    %section.pitch
+      .container
+        .row
+          %header.span12
+            .search-area
+              -#-#%img.stressfree{:src => "/assets/stressfree.png"}/
+              -#%h1 Stress-free home improvement.
+              -#%h2{:style => "color: white;"} Planning your next home improvement project has never been so easy.
+              -#%br
+              -# Mailing List Form
+              -#===========================================================================
+              -# removed: authenticate_with: :none,
+              = form_tag mailinglists_path, method: :post, id: "search_form" do
+
+                #customer_type.btn-group
+                  %a#dropdown.btn.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                    %span.text Select a project type
+                    %span.caret.pull-right
+
+                  %input#user_type{:name => "user_type", :style => "display: none", :value => ""}/
+                  %ul.dropdown-menu
+                    %li
+                      %a#contractor{:href => "javascript:void(0)", :onclick => "return false;"} Interior
+                    %li
+                      %a#homeowner{:href => "javascript:void(0)", :onclick => "return false;"} Exterior
+                    %li
+                      %a#homeowner{:href => "javascript:void(0)", :onclick => "return false;"} Power Washing
+                    %li
+                      %a#homeowner{:href => "javascript:void(0)", :onclick => "return false;"} Deck Staining/Painting
+                    %li
+                      %a#homeowner{:href => "javascript:void(0)", :onclick => "return false;"} Fence Staining/Painting
+                    %li
+                      %a#homeowner{:href => "javascript:void(0)", :onclick => "return false;"} Cabinetry Staining/Painting
+                = email_field_tag(:email, "", type: "text", id: "email_signup", placeholder: "Zip code")
+                = hidden_field_tag "submitted_from_mobile", "false"
+                = submit_tag "Get started", id: "submit_location", class: "large green submit icon-and-text"
+                %p#submit_success Thanks! We'll keep you posted when we launch.
+
+
+
+
+
 
 
   %section#section_three.shadow
@@ -43,12 +59,12 @@
           %h2 Convenient
           = render :partial => 'dots'
           %p
-            We hate waiting as much as you do; that's why we enable you to obtain 3 instant estimates for your next project with our online tool.
+            No one likes waiting, that's why we provide 3 instant estimates for your next project.
         .span3.offset1
           %h2 Transparent
           = render :partial => 'dots'
-          %p Compare prices, reviews and past work amongs pre-screened contrators in our network to make a better informed decision.
+          %p Compare prices, reviews and past work among our pre-screened contrators.
         .span3.offset1
           %h2 Guaranteed
           = render :partial => 'dots'
-          %p You pay only when you are 100% satisfied. We manage the payment so you can be sure you'll be pleased with the services provided.
+          %p We manage the payment and will make sure the contractor gets the job done right.

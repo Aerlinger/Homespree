@@ -22,15 +22,7 @@ gem 'best_in_place'
 gem 'geocoder'
 gem 'simple_form'
 
-# Photo uploads:
-gem 'rmagick'
-gem 'carrierwave'
-gem 'carrierwave_direct'
-gem 'sidekiq'
-gem 'fog'
-gem 's3_direct_upload'
-
-gem 'jquery-rails', '2.3.0'
+gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'acts_as_list'
 gem 'figaro', '>= 0.5.3'
@@ -45,8 +37,8 @@ group :test, :development do
   gem 'turn', :require => false
   gem 'meta_request'
 
-  gem "parallel_tests"
-  gem "zeus-parallel_tests"
+  gem 'parallel_tests'
+  gem 'zeus-parallel_tests'
 
   gem 'faker'
   # Todo: Consider Fabrication as an alternative to FactoryGirl (Builder design pattern)
@@ -82,10 +74,11 @@ group :production do
   gem 'pg'
 end
 
-
 group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'sass-rails',   '~> 3.2.3'
+
+  gem 'jquery-fileupload-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer', :platforms => :ruby

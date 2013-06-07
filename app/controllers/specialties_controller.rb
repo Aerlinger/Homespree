@@ -32,6 +32,10 @@ class SpecialtiesController < ApplicationController
     @specialty = Specialty.find(params[:id])
     @specialty.update_attributes(params[:specialty])
     respond_with @specialty
+
+    #respond_to do |format|
+    #  format.js { render layout: false }
+    #end
   end
 
   def destroy
@@ -39,7 +43,9 @@ class SpecialtiesController < ApplicationController
     @contractor = Contractor.find(params[:contractor_id])
     @specialty.destroy
 
-    redirect_to "/contractors#{@contractor.id}"
+    respond_to do |format|
+      format.js { render layout: false }
+    end
   end
 
   def sort

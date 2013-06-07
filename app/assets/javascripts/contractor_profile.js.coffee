@@ -115,7 +115,7 @@ $(document).ready ->
       specialty_text = strtrim($(this).parent().first()[0].firstChild.data)
 
 
-    $("#logo_uploader").S3Uploader()
+#    $("#logo_uploader").S3Uploader()
     $('.best_in_place').best_in_place()
 
     # TODO: Tooltips aren't working for some reason.

@@ -7,12 +7,13 @@ kyle_email = Mailinglist.find_or_create_by_email("kyle@myhomespree.com")
   mailing_list.user_type = "homeowner"
 end
 
+puts "Creating admin users:"
 AdminUser.find_or_create_by_email!('admin@myhomespree.com', password: "Meetmike9")
 AdminUser.find_or_create_by_email!('anthony@myhomespree.com', password: "Meetmike9")
 AdminUser.find_or_create_by_email!('kyle@myhomespree.com', password: "Meetmike9")
 AdminUser.find_or_create_by_email!('joe@myhomespree.com', password: "Meetmike9")
 
-puts "Creating admin users:"
+puts "Success!"
 puts AdminUser.all
 
 # Create a default Contractor
@@ -59,13 +60,13 @@ joe_the_plumber = Contractor.new do |c|
     a.city = "Princeton"
   end
 
-  (1..6).each do |photo_id|
-    photo = Photo.create! do |p|
-      p.image_url = "#{photo_id}.jpg"
-    end
-
-    c.photos << photo
-  end
+  #(1..6).each do |photo_id|
+  #  photo = Photo.create! do |p|
+  #    p.image_url = "#{photo_id}.jpg"
+  #  end
+  #
+  #  c.photos << photo
+  #end
 
   c.address = address
 end

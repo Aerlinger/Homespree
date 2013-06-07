@@ -11,6 +11,5 @@
  *= require_self
  *= require jquery.ui.all
  *= require_tree .
- *= require s3_direct_upload_progress_bars
  *= require_tree ../../../vendor/assets/stylesheets
  */

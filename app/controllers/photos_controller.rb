@@ -9,7 +9,13 @@ class PhotosController < ApplicationController
   end
 
   def create
-    @photo.create(params[:photo])
+    # Find the contractor (photographable type)
+    @photo = Photo.new(params[:photo])
+    id = params[:contractor_id]
+    Contractor.find(id).photos << @photo
+    respond_to do |format|
+      format.js { render layout: false }
+    end
   end
 
   def index

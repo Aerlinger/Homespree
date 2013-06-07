@@ -1,18 +1,11 @@
-$(function(evt) {
-    console.log("Adding specialty: ", "<%= @specialty.name %>");
-
-	$("#contractor_specialties").append(
-			'<li class="specialty" id="specialty_5"><span class="badge badge-info drag" style="padding: 0 !important">
-					&nbsp;
-	<i class="e-icon-arrow-combo"></i>
-	DRAG&nbsp;
-	</span>
-		<span class="specialty-name">' + specialty_text + '</span>
-		<a href="/contractors/1/remove_specialty?specialty_id=5"
-		class="delete-specialty pull-right"
-		data-method="post" data-remote="true" rel="nofollow"
-		style="position: relative; color: darkred;"><i class="e-icon-cancel"></i>
-		</a>
-	</li>'
-	).fadeIn(500)
+$("li#<%= string_to_id(@specialty.name) %>").hide(500, function () {
+	$(this).remove();
 });
+
+$("#contractor_specialties").prepend(
+	'<%= j(
+		content_tag_for(:li, @specialty) {
+			render partial: "specialty", locals: {specialty: @specialty}
+		})
+	%>'
+).fadeIn(500);

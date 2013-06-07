@@ -5,9 +5,6 @@ class StaticPagesController < ApplicationController
   def home
   end
 
-  def contractors_preview
-  end
-
   def faqs
   end
 
@@ -34,7 +31,8 @@ class StaticPagesController < ApplicationController
     send_file pdf_filename, :filename => "pitch.pdf", :disposition => 'inline', :type => "application/pdf"
   end
 
-  def test_style
+  def how_it_works
+    
   end
 
 end

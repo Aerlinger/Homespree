@@ -21,6 +21,27 @@
   ---------------------------------------------------------------------------------------------------------------------
 */
 
+#page {
+  background: url("http://www.ivettearango.com/wp-content/uploads/2011/10/6-Valle-Living-Room-wide-web.jpg") no-repeat center center fixed;
+
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#portfolio-slider ul.slides .photo {
+  width: 782px;
+  float: left;
+  display: block;
+}
+
+#portfolio-carousel ul.slides .photo {
+  width: 100px;
+  float: left;
+  display: block;
+}
+
 .profile {
 
   // Element definitions:
@@ -49,10 +70,18 @@
     }
   }
 
+  .tabs .row {
+    background: none;
+  }
+
+  #helper_tabs.row-fluid {
+    margin-bottom: 0px;
+    margin-top: 5 p;
+  }
 
   // Style definitions for background at top of contractor profile pages
   div.feature-strip {
-    background: url(http://www.ivettearango.com/wp-content/uploads/2011/10/6-Valle-Living-Room-wide-web.jpg) !important;
+    background: none;
 
     padding-top: 25px;
 
@@ -60,13 +89,9 @@
     -moz-background-size: cover;
     -o-background-size: cover;
 
-    background-size: cover;
-    background-repeat: no-repeat;
-
     margin-bottom: 0 !important;
     padding-bottom: 0 !important;
   }
-
 
   // Incomplete sections dropdown below header. Useful for displaying relevant information to the contractor.
   .incomplete_sections {
@@ -86,14 +111,6 @@
 
     p {
       font-size: 1em;
-    }
-
-    #helper_tabs {
-      margin-top: 60px !important;
-
-      .span3 {
-        background: white;
-      }
     }
 
     .entry {

@@ -1,1 +1,0 @@
-console.log("TODO: update contractor profile");

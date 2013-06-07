@@ -1,5 +1,3 @@
-console.log("Addresses update (not) in document(ready)")
-
-$(document).ready(function(event) {
-	console.log("Ready!");
-});
+$("#map").attr({
+	"src": "<%= j raw "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@address.latitude}%2C#{@address.longitude}" %>"
+})s

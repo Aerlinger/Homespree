@@ -6,6 +6,7 @@ textarea:not(.pitch), input:not(.pitch) {
     -webkit-border-radius: 0 !important;
 }
 
+
 .no-bg {
     background: none !important;
 }
@@ -40,14 +41,14 @@ ul.nav-collapse li a:hover {
   clear: both;
 }
 
-body.desktop {
-  background-image: url(/assets/main_livingroom.png);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+body.DESKTOP {
+  background: url(/assets/background_5.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
   -moz-background-size: cover;
-  background-size:100% 100%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 100%;
+  position: relative;
 
   .navbar {
     margin: 0px !important;
@@ -136,10 +137,9 @@ body.desktop {
 
   .block-underline {
     display: block;
-    width: 500px;
+    width: 100%;
     overflow: show !important;
     text-align: left;
-    white-space: nowrap;
     line-height: 1.4em;
     border-bottom: 1px solid $homespree_accent_light;
   }
@@ -246,4 +246,11 @@ body.desktop {
 footer {
   opacity: 1;
   background: white;
+}
+
+#show_debug{
+  z-index: 1000 !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  font-size: em;
 }
