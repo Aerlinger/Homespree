@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: photos
+#
+#  id                  :integer          not null, primary key
+#  name                :string(255)
+#  caption             :string(255)
+#  image_url           :string(255)
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#  photographable_id   :integer
+#  photographable_type :string(255)
+#
+
 require 'spec_helper'
 
 describe Photo do

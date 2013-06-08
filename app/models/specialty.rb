@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: specialties
+#
+#  id            :integer          not null, primary key
+#  name          :string(255)
+#  endorser_id   :integer
+#  contractor_id :integer
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  description   :string(255)
+#  position      :integer
+#
+
 class Specialty < ActiveRecord::Base
   attr_accessible :name, :contractor_id, :endorsements, :endorser_id, :other_specialties
 

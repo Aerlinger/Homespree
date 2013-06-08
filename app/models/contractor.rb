@@ -1,3 +1,48 @@
+# == Schema Information
+#
+# Table name: contractors
+#
+#  id                     :integer          not null, primary key
+#  first_name             :string(255)
+#  description            :text
+#  specialties            :text
+#  website                :string(255)
+#  facebook               :string(255)
+#  twitter                :string(255)
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#  pictures               :text
+#  email                  :string(255)      not null
+#  last_name              :string(255)
+#  encrypted_password     :string(255)      default(""), not null
+#  reset_password_token   :string(255)
+#  reset_password_sent_at :datetime
+#  remember_created_at    :datetime
+#  sign_in_count          :integer          default(0)
+#  current_sign_in_at     :datetime
+#  last_sign_in_at        :datetime
+#  current_sign_in_ip     :string(255)
+#  last_sign_in_ip        :string(255)
+#  company_title          :string(255)
+#  mobile_number          :string(255)
+#  office_number          :string(255)
+#  license                :string(255)
+#  insurance_limit        :decimal(5, 2)
+#  bonding_limit          :decimal(5, 2)
+#  photo_filename         :string(255)
+#  slogan                 :text
+#  new_profile            :boolean          default(FALSE)
+#  years_experience       :decimal(, )
+#  latitude               :float
+#  longitude              :float
+#  availability_radius    :decimal(, )
+#  logo                   :string(255)
+#  failed_attempts        :integer          default(0)
+#  unlock_token           :string(255)
+#  locked_at              :datetime
+#  authentication_token   :string(255)
+#
+
 class Contractor < ActiveRecord::Base
 
   # Authentication:  --------------------------------------------------------------------------------------------------

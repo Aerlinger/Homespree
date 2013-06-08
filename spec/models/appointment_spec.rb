@@ -1,6 +1,23 @@
+# == Schema Information
+#
+# Table name: appointments
+#
+#  id            :integer          not null, primary key
+#  date          :date
+#  time          :datetime
+#  address_id    :integer
+#  photos        :string(255)
+#  reminders     :string(255)
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  contractor_id :integer
+#  title         :string(255)
+#  description   :string(255)
+#
+
 require 'spec_helper'
 
-describe Appointment do
+describe Appointment, focus: true do
 
   it { should respond_to :address_id }
   it { should respond_to :date }
@@ -16,9 +33,14 @@ describe Appointment do
   let(:appointment) { FactoryGirl.create :appointment }
 
   it "should create a valid appointment" do
-    a = FactoryGirl.create(:appointment)
-    a.should be_valid
-    a.should be_persisted
+    appointment.should be_valid
+    appointment.should be_persisted
   end
+
+  it "has one job" do
+    appointment.job.should_not be_nil
+  end
+
+
 
 end
