@@ -1,3 +1,4 @@
+# A hack to optimize garbage collection in Ruby during testing:
 class DeferredGarbageCollection
 
   DEFERRED_GC_THRESHOLD = (ENV['DEFER_GC'] || 15.0).to_f

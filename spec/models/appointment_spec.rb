@@ -16,7 +16,7 @@ describe Appointment do
   let(:appointment) { FactoryGirl.create :appointment }
 
   it "should create a valid appointment" do
-    a = Appointment.create(FactoryGirl.attributes_for(:appointment))
+    a = FactoryGirl.create(:appointment)
     a.should be_valid
     a.should be_persisted
   end

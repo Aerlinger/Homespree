@@ -12,20 +12,30 @@ describe Address do
 
   let(:address) { FactoryGirl.create(:address) }
 
+  it "should be valid" do
+    address.should be_valid
+    address.should be_persisted
+  end
+
   it "catches valid zip code" do
-    subject.zipcode = "12345"
-    subject.save
-    subject.errors[:zipcode].should be_empty
+    address.zipcode = "12345"
+    address.save
+    address.errors[:zipcode].should be_empty
+  end
+
+  it "is invalid without address line" do
+    address.city = ""
+    address.should_not be_valid
   end
 
   it "catches invalid zip code" do
-    subject.zipcode = "1234a"
-    subject.save
+    address.zipcode = "1234a"
+    address.save
 
-    subject.errors[:zipcode].should include("is invalid")
+    address.errors[:zipcode].should include("is invalid")
 
-    subject.zipcode = "1234"
-    subject.should_not be_valid
+    address.zipcode = "1234"
+    address.should_not be_valid
   end
 
 end

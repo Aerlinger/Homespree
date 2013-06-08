@@ -14,19 +14,6 @@ describe MailinglistsController do
       end
     end
 
-    context "with invalid attributes" do
-      it "does not save the mailing list entry" do
-        expect {
-          xhr :post, :create, mailinglist: attributes_for(:invalid_mailinglist, user_type: "homeowner")
-        }.to raise_exception(ActiveRecord::RecordInvalid)
-      end
 
-      it "rerenders mailinglist.js page" do
-        expect {
-          xhr :post, :create, mailinglist: attributes_for(:invalid_mailinglist, user_type: "homeowner")
-        }.to raise_exception(ActiveRecord::RecordInvalid)
-      end
-
-    end
   end
 end

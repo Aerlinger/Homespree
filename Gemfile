@@ -27,6 +27,7 @@ gem 'jquery-ui-rails'
 gem 'acts_as_list'
 gem 'figaro', '>= 0.5.3'
 gem 'haml-rails'
+gem 'annotate'
 
 
 group :test, :development do

@@ -1,14 +1,11 @@
 class Contractor < ActiveRecord::Base
 
-
   # Authentication:  --------------------------------------------------------------------------------------------------
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :lockable,
          :recoverable, :rememberable, :trackable, :validatable
-
-  #mount_uploader :logo, LogoUploader
 
 
   # Accessors:  -------------------------------------------------------------------------------------------------------
@@ -21,7 +18,9 @@ class Contractor < ActiveRecord::Base
   has_many :appointments, through: :homeowners
   has_many :specialties, dependent: :destroy
   has_one :address, as: :addressable, dependent: :destroy
-  has_many :photos, as: :photographable, dependent: :destroy
+  has_many :photos, as: :photographable
+
+  # Nested Attributes:  -----------------------------------------------------------------------------------------------
   accepts_nested_attributes_for :address
   accepts_nested_attributes_for :specialties, allow_destroy: true
 

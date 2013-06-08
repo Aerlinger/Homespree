@@ -31,14 +31,24 @@
   left: 50%;
   display: block;
   padding: 25px;
-  width: 420px;
+  width: 275px;
   height: 320px;
   background: white;
-  text-align: center;
+  text-align: left;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 6%;
   margin-top: 6%;
+}
+#login-wraper label{
+    text-align: left;
+
+}
+#login-wraper input{
+    width: 95%;
+}
+#login-wraper .btn{
+    width: 100%;
 }
 
 .login-form legend {
@@ -108,6 +118,7 @@
 #register-form legend {
   margin-bottom: 15px;
   border-bottom: none;
+  text-align: center;
 }
 
 #register-form input.input-huge {
@@ -176,6 +187,8 @@ footer.white {
   font-weight: 300;
   color: #333333;
   -webkit-font-smoothing: subpixel-antialiased;
+
+
 }
 
 .login-form label {
@@ -220,10 +233,15 @@ footer.white {
 
 /* footer */
 footer.navbar-fixed-bottom {
+  position: absolute;
+  bottom: 70px;
+  margin-top: 0px !important;
+  padding-top: 20px !important;
   font-size: 16px;
   font-family: "PT Sans", Arial, Helvetica, sans-serif;
   line-height: 18px;
   font-weight: 400;
+  width: 100%;
 }
 
 /* ######## */
@@ -251,11 +269,9 @@ footer.navbar-fixed-bottom {
 @media (max-width: 495px) {
 
   #login-wraper {
-    width: auto;
-    height: auto;
-    margin-left: 0;
-    margin-right: 0;
-    left: 0;
+    padding-top: 0px;
+    padding-bottom: 20px;
+    margin-top: 120px;
   }
 
   #register-form {

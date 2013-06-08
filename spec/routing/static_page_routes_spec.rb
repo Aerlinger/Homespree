@@ -13,8 +13,8 @@ describe StaticPagesController do
     get("faqs").should route_to("static_pages#faqs")
   end
 
-  it "should respond to /contractors_preview" do
-    get("contractors_preview").should route_to("static_pages#contractors_preview")
+  it "should respond to /how_it_works" do
+    get("how_it_works").should route_to("static_pages#how_it_works")
   end
 
   it "should respond to /jobs" do

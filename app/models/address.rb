@@ -7,6 +7,8 @@ class Address < ActiveRecord::Base
 
   # Validations:  -----------------------------------------------------------------------------------------------------
   validates :zipcode, format: RegexDefinitions::zipcode_regex, allow_blank: true
+  validates_presence_of :line1, allow_blank: false
+  validates_presence_of :city, allow_blank: false
   validates_format_of :state, with: /[A-Za-z][A-Za-z]/i, allow_blank: true
 
   belongs_to :addressable, polymorphic: true

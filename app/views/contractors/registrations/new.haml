@@ -3,26 +3,26 @@
 -#   Zipcode
 -#
 
-
-#login-wraper
-
-  = simple_form_for resource, :as => resource_name, :url => registration_path(resource_name), class: "form login-form" do |f|
-    %legend
-      Create a new
-      %span.blue Contractor
-      profile
-
-    .body
-      = f.input :email, input_html: { value: @contractor.email }
-      = f.input :company_title, text: "Business name or title"
-      = f.input :password
-
-      = f.button :submit, "Create profile", class: "btn btn-success"
-
-
 %footer.white.navbar-fixed-bottom
   Already have an account?
   =link_to "Sign in", new_contractor_session_path, class: "btn btn-black"
   -#=link_to "Submit", create_mailing_list_path, class: "btn btn-black"
 
-= render "contractors/shared/links"
+#login-wraper
+
+
+  = simple_form_for resource, :as => resource_name, :url => registration_path(resource_name), class: "form login-form" do |f|
+    %legend
+      %span.blue Create Contractor Profile
+
+    .body
+      = f.input :company_title, text: "Business name or title"
+      = f.input :email, label: 'Your Email', input_html: { value: @contractor.email }, placeholder: 'example@example.com'
+      = f.input :password
+
+      = f.button :submit, "Create profile", class: "btn btn-success"
+
+
+
+
+

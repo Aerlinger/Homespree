@@ -25,17 +25,7 @@ describe ContractorsController do
     end
   end
 
-  describe "GET #edit" do
-    before(:each) { xhr :get, :edit, id: @this_contractor.id }
 
-    it "assigns the requested contractor @contractor" do
-      expect(assigns(:contractor)).to eq(@this_contractor)
-    end
-
-    it "renders the :edit template" do
-      response.content_type.should eq Mime::JS
-    end
-  end
 
   describe "PUT #update" do
     before :each do
@@ -56,27 +46,10 @@ describe ContractorsController do
 
       it "redirects to the updated contractor profile" do
         put :update, id: @contractor, contractor: attributes_for(:contractor, first_name: "George")
-        expect(response).to redirect_to "/contractors/#{@contractor.id}"
+        response.status.should eq 200
       end
     end
 
-    context "with invalid params" do
-      it "does not change @contractors attributes" do
-        put :update, id: @contractor, contractor: attributes_for(:contractor, email: "lol")
-        expect(response).to render_template(:edit)
-      end
-
-      it "rerenders edit template" do
-        put :update, id: @contractor, contractor: attributes_for(:contractor, email: "lol")
-      end
-    end
-  end
-
-  describe "GET #index" do
-    it "should only render view for an admin" do
-      get :index
-      expect(response.status).to eq 401
-    end
   end
 
 end

@@ -12,23 +12,24 @@ describe StaticPagesController do
     expect(response).to render_template :faqs
   end
 
-  it "should respond to '/contractors_preview'" do
-    get 'contractors_preview'
-    expect(response).to render_template :contractors
-  end
-
   it "should respond to '/about'" do
     get 'about'
     expect(response).to render_template :about
   end
+
+  it "should respond to '/how_it_works'" do
+    get 'how_it_works'
+    expect(response).to render_template "static_pages/how_it_works"
+  end
+
   it "should respond to '/contact'" do
     get 'contact'
     expect(response).to render_template :contact
   end
+
   it "should respond to '/jobs'" do
     get 'jobs'
     expect(response).to render_template :jobs
   end
-
 
 end

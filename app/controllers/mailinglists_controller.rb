@@ -4,7 +4,7 @@ class MailinglistsController < ApplicationController
     @mailinglist = Mailinglist.new(params[:mailinglist])
 
     if params && params[:user_type] =~ /contractor/i
-      @mailinglist.save(false)
+      @mailinglist.save
       redirect_to controller: 'contractors/registrations', action: :new, email: @mailinglist.email
     else
       @user_email = @mailinglist.save

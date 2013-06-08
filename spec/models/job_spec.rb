@@ -1,5 +1,8 @@
 require 'spec_helper'
 
 describe Job do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  it { should respond_to :appointment_id }
+  it { should respond_to :category }
+
 end

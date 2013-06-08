@@ -43,6 +43,8 @@ GEM
     acts_as_list (0.2.0)
       activerecord (>= 3.0)
     addressable (2.2.8)
+    annotate (2.5.0)
+      rake
     ansi (1.4.3)
     arbre (1.0.1)
       activesupport (>= 3.0.0)
@@ -364,6 +366,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin
   acts_as_list
+  annotate
   best_in_place
   better_errors
   binding_of_caller

@@ -3,6 +3,9 @@
 $pitch_height: 0px;
 $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
 
+#content{
+  min-height: 500px;
+}
 .secondary{
   .container{
     opacity: .96;
@@ -35,6 +38,7 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
       color: white;
       margin-left: 10%;
       margin-top: 2%;
+      width: 80% !important;
     }
     top: 15%;
     left: 10%;
@@ -54,6 +58,7 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
       font: 2.2em "helvetica neue", helvetica, sans-serif;
 
       text-shadow: 0 0 13px rgba(0, 0, 0, 1), 0 -1px 1px rgba(0, 0, 0, 1);
+      width: 80% !important;
   }
 }
   margin: 0 0 0 0; /* 40px (secondary-menu) + 80px (primary-menu and logo) + 40px (standard margin)*/
@@ -61,6 +66,7 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
       top: 30%;
       width: 100%;
       min-height: $pitch_height;
+      padding: 0px !important;
 
 		.search-area {
           margin-top: 10%;
@@ -90,7 +96,7 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
 			#search_form {
 
 				margin: 50px auto;
-				width: 657px;
+				width: 659px;
 
 				background: none repeat scroll 0px 0px rgba(255, 255, 255, 0.6);
 				box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
@@ -142,6 +148,11 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
 			}
 
 			.submit {
+                margin-left: 03px !important;
+                @media (max-width: 767px) {
+                  margin-left: 0px !important;
+                }
+
 				&.large {
 					font-size: 18px;
                     margin: 0;
@@ -350,6 +361,7 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
 		h2 {
 			margin-bottom: 10px;
 			color: $homespree_accent;
+            font-weight: 300;
 		}
 
 		background-color: rgba(0,0,0,0.7);
@@ -381,11 +393,12 @@ MEDIA QUERIES
 @media (max-width: 750px) {
   .submit {
     &.large {
-      width: 300px !important;
+      width: 297px !important;
     }
   }
   #search_form {
     width: 300px !important;
+    padding-left: 06px !important;
   }
 
   .navbar-inner {
@@ -423,10 +436,17 @@ MEDIA QUERIES
   }
   #email_signup {
     width: 270px !important;
+    margin-top: 06px !important;
+  }
+  #submit_location{
+    margin-top: 06px !important;
   }
 }
 
 @media (max-width: 767px) {
+  .qualitypro{
+    display: none;
+  }
   body {
     padding: 0;
     background-attachment: fixed;
@@ -480,11 +500,6 @@ MEDIA QUERIES
       width: 296px !important;
     }
   }
-  #mainpicture{
-    img{
-      display: none;
-    }
-  }
   footer {
     padding: 10px !important;
   }
@@ -526,8 +541,7 @@ MEDIA QUERIES
   }
 
   h1 {
-    text-align: center;
-    font-size: 3em;
+    font-size: em;
   }
 
 
@@ -597,13 +611,12 @@ MEDIA QUERIES
   }
 
   h1 {
-    font-size: 2.5em !important;
+    font-size: 5rem !important;
   }
 
   h2 {
     font-size: 32px;
     line-height: 52px;
-    text-align: center !important;
     font: 2.2em "helvetica neue", helvetica, sans-serif;
     margin: 18px 0;
   }
@@ -615,6 +628,11 @@ MEDIA QUERIES
     font: 2em Helvetica;
     margin: 0 0 15px;
   }
+  #maintext{
+    h2{
+      display: none !important;
+    }
+  }
 }
 @media (max-width: 321px) {
   #search_form {
@@ -625,7 +643,7 @@ MEDIA QUERIES
   }
   .submit {
     &.large {
-      width: 250px !important;
+      width: 248px !important;
     }
   }
   .dropdown-menu {
@@ -635,6 +653,12 @@ MEDIA QUERIES
     a{
       width: 10px !important;
     }
+  }
+  #maintext{
+    h1{
+      font-size: 4rem !important;
+    }
+    min-height: 800px !important;
   }
 }
 

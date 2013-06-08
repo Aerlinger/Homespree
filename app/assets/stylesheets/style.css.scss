@@ -1010,18 +1010,17 @@ ul.navigation {
     padding: 10px 0;
     margin: 0;
     position: relative;
-    left: -10px;
   }
   li {
     display: inline;
     padding: 0 12px 0 8px;
-    border-right: 1px solid #fff;
-    border-right: 1px solid rgba(255, 255, 255, 0.5);
-    &:last-child {
+    border-left: 1px solid #fff;
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    &:first-child {
       border: none;
     }
   }
-  .last {
+  .first {
     border: none;
   }
   li:first-child {
@@ -1464,7 +1463,18 @@ html[xmlns] .slides, .no-js .slides > li:first-child {
     line-height: 1.5;
   }
   #logo{
-    visibility: hidden;
+
+    margin-top: 0px !important;
+    position: absolute !important;
+    top: 0px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    z-index: 3000;
+  }
+  .navbar.secondary-menu{
+    #logo{
+      display: none !important;
+    }
   }
 
   .container {
@@ -1562,7 +1572,7 @@ html[xmlns] .slides, .no-js .slides > li:first-child {
         height: 40px;
         padding: 0;
         position: absolute;
-        left: 10px;
+        right: 30px;
         top: 0px;
         background: url(/assets/images/navtriggerbg.png) -20px 50% no-repeat;
       }

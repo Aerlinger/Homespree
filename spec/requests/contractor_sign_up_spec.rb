@@ -17,7 +17,7 @@ describe "Contractor Sign Up" do
       fill_in "Email", with: contractor.email
       fill_in "Company title", with: contractor.company_title
       fill_in "Password", with: contractor.password
-      click_button "Create Contractor"
+      click_button "Create profile"
     end
 
     it "Should redirect to a valid page" do
@@ -41,7 +41,7 @@ describe "Contractor Sign Up" do
       fill_in "Email", with: "nonsense"
       fill_in "Company title", with: contractor.company_title
       fill_in "Password", with: contractor.password
-      click_button "Create Contractor"
+      click_button "Create profile"
     end
 
     it "should display unprocessable entity (422)"

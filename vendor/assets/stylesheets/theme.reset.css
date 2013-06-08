@@ -42,6 +42,7 @@ fieldset {
 legend {
     border: 0;
     padding: 0;
+    text-align: center;
 }
 
 button,
@@ -1324,6 +1325,7 @@ label.radio.inline {
 }
 
 /* --------------------->>> CUSTOM BUTTONS <<<---------------------*/
+
 .btn {
     *border: 0;
     -webkit-box-shadow: none;
@@ -1340,6 +1342,7 @@ label.radio.inline {
     text-shadow: none;
     text-shadow: none;
 }
+
 
 .btn:hover, .btn:active, .btn.active, .btn.disabled, .btn[disabled] {
     color: #fff;

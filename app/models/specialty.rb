@@ -2,7 +2,6 @@ class Specialty < ActiveRecord::Base
   attr_accessible :name, :contractor_id, :endorsements, :endorser_id, :other_specialties
 
   # Contractor job specialties
-  # Contractor job specialties
   def self.painting_types
     {
       interior_painting: "Interior Painting",
@@ -21,7 +20,6 @@ class Specialty < ActiveRecord::Base
       faux_finishing: "Faux Finishing"
     }
   end
-
 
   belongs_to :contractor
 
