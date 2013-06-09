@@ -12,7 +12,7 @@
 
 require 'spec_helper'
 
-describe Category, focus: true do
+describe Category do
 
   let(:category) { FactoryGirl.create(:category) }
   subject { category }

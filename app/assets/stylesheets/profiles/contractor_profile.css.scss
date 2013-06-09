@@ -40,7 +40,8 @@
   width: 100px;
   float: left;
   display: block;
-}
+
+
 
 .profile {
 
@@ -61,8 +62,23 @@
   .features {
     height: auto;
 
+    #card_years_experience {
+      input {
+        width: 40px !important;
+      }
+    }
+
+    #card_first_name {
+      input {
+        width: 160px !important;
+      }
+    }
+
     li.card-attribute {
       text-align: left;
+      input {
+        width: 90px !important;
+      }
 
       a {
         float: right;

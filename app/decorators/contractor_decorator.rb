@@ -13,33 +13,14 @@
 #
 #    =render "contractors/profiles/edit_link", activator: "name_edit"
 #
-
+#
 #
 #- if @contractor.years_experience.present?
 #  %li#years_experience
 #    %strong Years in business:
 #    =best_in_place @contractor, :years_experience, activator: "#years_experience_edit"
 #    =render "contractors/profiles/edit_link", activator: "years_experience_edit"
-#
-#- if @contractor.license.present?
-#  %li#license_number
-#    %strong License
-#    = "# #{@contractor.license}"
-#    %i.icon-question-sign.detailsPop{"data-content" => "License Info", "data-rel" => "popover", :title => "License Info"}
-#
-#- if @contractor.insurance_limit.present?
-#  %li#insured_up_to
-#    %strong Insured
-#    = "up to #{@contractor.insurance_limit}"
-#    %i.icon-question-sign.detailsPop{"data-content" => "License Info", "data-rel" => "popover", :title => "License Info"}
-#
-#- if @contractor.bonding_limit.present?
-#  %li#bonded_up_to
-#    %strong Bonded
-#    = "up to $#{@contractor.bonding_limit}"
-#    %i.icon-question-sign.detailsPop{"data-content" => "Bond info", "data-rel" => "popover", :title => "Bond Info"}
 
-# ========================================================================================
 class UrlHelpers
   class << self
     include Rails.application.routes.url_helpers
@@ -66,27 +47,41 @@ class ContractorDecorator < Draper::Decorator
 
     h.haml_tag(:li, class: 'card-attribute', id: "card_#{attr_name}") do
       h.haml_tag(:strong, attrs[:title] || attr_name.to_s.titleize + ":")
-      h.haml_concat(h.best_in_place(@object, attr_name, activator: "##{attr_name}", display_with: attrs[:display_with], :nil => attrs[:nil] || "<em>No info</em>"))
+      h.haml_concat(h.best_in_place(@object, attr_name, activator: "##{attr_name}", display_with: attrs[:display_with], :nil => attrs[:nil] || "No info"))
       if block_given?
         yield
       end
     end
   end
 
+  def city_and_state
+    address = @object.address
+    if @object.address.valid?
+      "#{address.city}, #{address.state}"
+    end
+  end
+
+  def stars_rating
+    raw "<span class='stars5'></span>"
+  end
+
   # Renders the "Edit" link to the right of fields on the contractor page.
   # There are three possibilities:
   #   1. Contractor's own page and attribute is set: "Edit"
-  #   2. Contractor's own page and attribute isnt set: "Add"
+  #   2. Contractor's own page and attribute isnt set: "Add Info"
   #   3. Visitor: Do nothing and return nil
   def edit_link(attr_name)
-    unless visitor?
-      link_text = if @object.send(attr_name).blank?
-        "Add Info"
-      else
-        "Edit"
-      end
+    # Check if this attribute is set and saved on the contractor's profile.
+    attr_exists = @object.send(attr_name).blank?
 
-      h.link_to "javascript:void(0)", id: attr_name, class: "edit-link #{link_text.underscore}" do
+    unless visitor?
+      link_text = if attr_exists
+                    "Add Info"
+                  else
+                    "Edit"
+                  end
+
+      h.link_to "javascript:void(0)", id: attr_name, class: "edit-link #{link_text}" do
         #content_tag(:i, class: "e-icon-pencil", style: "height: 20px; line-height: 16px;")
         link_text
       end

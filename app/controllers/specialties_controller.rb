@@ -10,7 +10,6 @@ class SpecialtiesController < ApplicationController
 
     respond_to do |format|
       format.js { render layout: false }
-      format.html { redirect_to "/contractors/#{@contractor.id}" }
     end
 
   end
@@ -19,7 +18,6 @@ class SpecialtiesController < ApplicationController
     @specialty = Specialty.find(params[:id])
 
     respond_to do |format|
-      format.html
       format.json { render json: @specialty }
     end
   end
@@ -32,10 +30,6 @@ class SpecialtiesController < ApplicationController
     @specialty = Specialty.find(params[:id])
     @specialty.update_attributes(params[:specialty])
     respond_with @specialty
-
-    #respond_to do |format|
-    #  format.js { render layout: false }
-    #end
   end
 
   def destroy

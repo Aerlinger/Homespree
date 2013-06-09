@@ -41,8 +41,6 @@ class Homeowner < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me,
                    :address, :appointments, :email, :first_name, :last_name, :photos
 
-
-
   has_one :address, as: :addressable, dependent: :destroy
 
   has_many :appointments, through: :contractors

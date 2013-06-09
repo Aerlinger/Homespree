@@ -3,9 +3,8 @@
   %em Drag services below based on their relevance.
 
 -# List of specialties which have been claimed by this contractor ----------------------------------------------------
-= content_tag :ol, id: "contractor_specialties", class: "specialties", data: { "update-url" => "/contractors/1/specialties/sort" } do
-  = content_tag_for :li, @specialties do |specialty|
-    = render "specialties/specialty", specialty: specialty
+= content_tag :ol, id: "contractor_specialties", class: "specialties", data: { "update-url" => "/contractors/#{@contractor.id}/specialties/sort" } do
+  =render @specialties
 
 %h3{style: "font-size: 16px;"} Add more services to your profile
 %hr{style: "margin-top: 5px; margin-bottom: 5px"}

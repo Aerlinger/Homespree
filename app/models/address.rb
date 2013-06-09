@@ -33,7 +33,7 @@ class Address < ActiveRecord::Base
 
   # Callbacks:  -------------------------------------------------------------------------------------------------------
   before_save :titleize_city
-  after_validation :geocode
+  after_validation :geocode unless Rails.env.test?    # Running Geocoder in tests causes the API to throttle us.
 
   # Callback method definitions:  -------------------------------------------------------------------------------------
   protected

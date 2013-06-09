@@ -17,7 +17,7 @@
 
 require 'spec_helper'
 
-describe Appointment, focus: true do
+describe Appointment do
 
   it { should respond_to :address_id }
   it { should respond_to :date }
@@ -40,7 +40,5 @@ describe Appointment, focus: true do
   it "has one job" do
     appointment.job.should_not be_nil
   end
-
-
 
 end

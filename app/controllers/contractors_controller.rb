@@ -14,7 +14,7 @@ class ContractorsController < ApplicationController
     @contractor = @contractor.decorate
 
     respond_to do |format|
-      format.html
+      format.html { render "profile" }
       format.json { render json: @contractor }
     end
   end

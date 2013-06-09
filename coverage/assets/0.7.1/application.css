@@ -931,8 +931,7 @@ table {
   -moz-border-radius-topright: 5px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  border-top-right-radius: 5px;
-}
+  border-top-right-radius: 5px; }
 
 .dataTables_filter, .dataTables_info {
   padding: 2px 6px; }

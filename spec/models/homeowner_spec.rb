@@ -29,20 +29,37 @@
 
 require 'spec_helper'
 
-describe Homeowner do
+describe Homeowner, focus: true do
   it { should respond_to :email }
 
-  let(:home_owner) { FactoryGirl.create(:homeowner) }
+  let(:homeowner) { FactoryGirl.create(:homeowner) }
 
   it "is valid" do
-    home_owner.should be_valid
-    home_owner.should be_persisted
+    homeowner.should be_valid
+    homeowner.should be_persisted
   end
 
-  it "can have many appointments" do
-    home_owner.appointments << FactoryGirl.create(:appointment)
-    home_owner.should be_valid
-    home_owner.should be_persisted
+
+  it "should not be valid without email" do
+    homeowner.email = "adf"
+    homeowner.should_not be_valid
+  end
+
+  it "should not be valid without password" do
+    homeowner.password = ''
+    homeowner.should_not be_valid
+  end
+
+  it "not valid with too short of a password" do
+    homeowner.password = 'secre'
+    homeowner.should_not be_valid
+    puts homeowner.errors
+  end
+
+  it "invalid with different password and confirmation" do
+    homeowner.password = "secret"
+    homeowner.password_confirmation = "different"
+    homeowner.should_not be_valid
   end
 
 end

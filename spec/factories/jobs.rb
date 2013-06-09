@@ -3,6 +3,8 @@ FactoryGirl.define do
     name "Job Title"
     description "description of the job to be done"
 
-    category
+    after_create do |job|
+      3.times { create(:category) }
+    end
   end
 end

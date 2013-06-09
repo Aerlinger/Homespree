@@ -15,8 +15,8 @@
 
   .feature-strip
     #top.container
-      .row-fluid.pricingTable{data: {intro: "Welcome to your Homespree profile! Taking a few seconds to fill out your profile will help customers find your business.", step: 1}}
-        .option3.span4
+      .row-fluid.pricingTable
+        .option3.span4#intro_js_start
           .wrapper.white-bg
 
             -# Contractor Card Top: Title and logo
@@ -27,26 +27,30 @@
                 = render "contractors/profiles/edit_link", activator: "title_edit"
 
               = render "contractors/profiles/logo"
+              %span{style: "font-weight: bold"}
+                = @contractor.city_and_state
+              = @contractor.stars_rating
+
 
             -# Contractor Card: list of Fields -- name, license info, etc...
             -#===============================================================================================
             %ul.features
-              - @contractor.card_item :first_name, { title: "Owned by:", nil: "<em>No info</em>" } do
+              - @contractor.card_item :first_name, { title: "Owner:" } do
                 = @contractor.edit_link :first_name
 
-              - @contractor.card_item :mobile_number, { display_with: :number_to_phone, title: "Phone #:", nil: " " } do
+              - @contractor.card_item :mobile_number, { display_with: :number_to_phone, title: "Phone #:" } do
                 = @contractor.edit_link :mobile_number
 
-              - @contractor.card_item :years_experience, {title: "Years Experience:", nil: " " } do
+              - @contractor.card_item :years_experience, {title: "Years Experience:" } do
                 = @contractor.edit_link :years_experience
 
               - @contractor.card_item :license, {title: "License #:", nil: " " } do
                 = @contractor.edit_link :license
 
-              - @contractor.card_item :insurance_limit, { display_with: :number_to_currency, title: "Insured up to:", nil: "<em>No info</em>" } do
+              - @contractor.card_item :insurance_limit, { display_with: :number_to_currency, title: "Insured up to:" } do
                 = @contractor.edit_link :insurance_limit
 
-              - @contractor.card_item :bonding_limit, { display_with: :number_to_currency, title: "Bonded for:", nil: "<em>No info</em>" } do
+              - @contractor.card_item :bonding_limit, { display_with: :number_to_currency, title: "Bonded for:" } do
                 = @contractor.edit_link :bonding_limit
 
               %li.select
@@ -85,10 +89,10 @@
             %h3.short_headline
               %div Business Description
             %h6#slogan
-              = best_in_place @contractor, :slogan, activator: "#slogan_edit"
+              = best_in_place @contractor, :slogan, activator: "#slogan_edit", nil: "No slogan entered"
               = render "contractors/profiles/edit_link",  activator: "slogan_edit"
             %p#description
-              = best_in_place @contractor, :description, type: :textarea, activator: "#description_edit"
+              = best_in_place @contractor, :description, type: :textarea, activator: "#description_edit", nil: "No description entered"
               = render "contractors/profiles/edit_link", activator: "description_edit"
 
           .span4#services
@@ -100,41 +104,6 @@
             %h3.short_headline
               %div Service Area
             =render "contractors/profiles/service_area"
-
-
-    -#%section.strip{style: "margin: 0;"}
-    -#  .call-to-action
-    -#    %h2 Submit project details straight from the convenience of your smartphone.
-    -#    %a.btn.custom-btn.btn-large.btn-primary{:href => "pricing-tables.html"}
-    -#      Download App
-    -#      %i.e-icon-forward
-    -#
-    -#.container
-    -#  .row-fluid
-    -#    .span4
-    -#      .well
-    -#        %h4.primary-color Homespree on your smartphone
-    -#        %p
-    -#          %img.alignleft{:alt => "", :src => "http://placehold.it/100x150"}/
-    -#          Finding a trustworthy contractor at a reasonable price is usually quite a challenge. However, Homespree lets you quickly upload project requests online or from your mobile device and receive competitive estimates from quality local pros.
-    -#        %p.text-right
-    -#          %a.btn.custom-btn.btn-primary{:href => "#"} Download the App
-    -#
-    -#    .rotating-testimonials.span8
-    -#      %h3.short_headline
-    -#        %span Testimonials
-    -#      .panels
-    -#        #t1
-    -#          %blockquote
-    -#            %p No testimonials yet for this contractor
-    -#            %footer Homespree
-    -#
-    -#      %ul.tabs
-    -#        %li.tab
-    -#          %a{:href => "#t1"} Homespree
-    -#
-    -#      %p.text-right
-    -#        %a.btn.custom-btn.btn-small.btn-very-subtle{:href => "testimonials.html"} All Testimonials
 
 
   =render "contractors/profiles/photos_modal"

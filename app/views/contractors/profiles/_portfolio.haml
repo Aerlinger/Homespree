@@ -10,6 +10,9 @@
 
   #portfolio-carousel.flexslider
     %ul.slides
+      - if @photos.empty?
+        = content_tag :li do
+          = image_tag asset_path("portfolio_images/default.png")
       = content_tag_for :li, @photos do |photo|
         = render photo, photo: photo
         -#= image_tag photo.image_url.to_s, alt: "", style: "position: relative;"

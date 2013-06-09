@@ -13,11 +13,12 @@ fields = {
   ##################################################################
   title: {  # The company title
     intro: "What is the name of your company?"
+    position: "bottom"
   }
 
   # TODO: Enable editing first and last name in a single step
-  full_name: {
-    intro: "Name of the owner?"
+  card_first_name: {
+    intro: "Name of the owner? (First and Last)"
   }
 
   card_mobile_number: {
@@ -65,21 +66,52 @@ fields = {
 
 # Load intro definition from a hash object:  --------------------------------------------------------------------------
 setupIntro = (intro_fields) ->
+  console.log "Loading Intro..."
   i = 1
   # Add data attributes for each field to the DOM
   for key, value of intro_fields
+    i++
     obj = $('#' + key)
     obj.attr({
       "data-step": i
       "data-intro": value["intro"]
       "data-skip": value["skippable"]
     })
-    i++
 
-    
+
 # Trims leading and trailing whitespace from a string:  ---------------------------------------------------------------
 strtrim = (str) ->
   str?.replace(/^\s\s*/, '')?.replace(/\s\s*$/, '')
+
+onImagesLoaded = ->
+  console.log("images loaded")
+
+  # Load the definition of out introduction fields
+  setupIntro(fields)
+
+  $("#intro_js_start").attr({
+    "data-step": 1
+    "data-intro": "Welcome to your Homespree profile! Taking a few seconds to fill out your profile will help customers find your business."
+    "data-position": "right"
+  })
+
+#  {data: {intro: "Welcome to your Homespree profile! Taking a few seconds to fill out your profile will help customers find your business.", step: 1, position: "bottom"}}
+
+  # Timeout is used to account for the delay when switching fields:
+  introJs().onchange((targetElement) ->
+    if $(targetElement).attr("data-step") > 1
+      $('.introjs-overlay').click()
+
+      # Timeout is used to account for the delay when switching fields
+      setTimeout () ->
+        $(targetElement).find('a.edit-link').click()
+      , 500
+  ).start()
+
+  $('.best_in_place').best_in_place()
+  setTimeout () ->
+    $('.introjs-overlay').click()
+  , 500
 
 
 $(document).ready ->
@@ -87,36 +119,27 @@ $(document).ready ->
   # Only run this script if we're on the contractor's profile page.
   if $("#page.profile").length > 0
 
-    # Load the definition of out introduction fields
-    setupIntro(fields)
+#    portfolio_images = $("ul.slides img").map ->
+#       return $(this).attr('src')
 
-    # Timeout is used to account for the delay when switching fields:
-    introJs().onchange((targetElement) ->
-      $('.introjs-overlay').click()
+#    $('.flexslider').flexslider {
+##      start: onImagesLoaded
+#    }
 
-      # Timeout is used to account for the delay when switching fields
-      setTimeout () ->
-        $(targetElement).find('a.edit-link').click()
-      , 500
-    ).start()
+    $.preload $("ul.slides img").last().attr('src'), {
+      onFinish: onImagesLoaded
+    }
+
 
     # Make contractor specialties sortable
     $('#contractor_specialties').sortable
+      cursorAt: { top: 0, left: 0 }
       axis: 'y'
       update: ->
         $.post($(this).data('update-url'), $(this).sortable('serialize'))
 
         # Update the info in the contractor's card
         $("#primary_service_text").text($(this).find('.specialty-name').first().text())
-
-    # When clicking an "Add specialty" button, hide the button and add a list item to #contractor_specialties
-    $(".add-specialty").click (evt) ->
-      $(this).parent().hide(500);
-      specialty_text = strtrim($(this).parent().first()[0].firstChild.data)
-
-
-#    $("#logo_uploader").S3Uploader()
-    $('.best_in_place').best_in_place()
 
     # TODO: Tooltips aren't working for some reason.
     $('#licensed').tooltip()

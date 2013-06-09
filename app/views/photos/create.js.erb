@@ -3,5 +3,5 @@ $("#portfolio-carousel ul.slides").append(
 );
 
 $("#portfolio-slider ul.slides").append(
-		"<%= j(content_tag_for(:li, @photo, class: "item") { render @photo, photo: @photo }) %>"
+		"<% j(content_tag_for(:li, @photo, class: "item") { render @photo, photo: @photo }) %>"
 );

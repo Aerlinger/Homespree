@@ -4,8 +4,6 @@ $("li#<%= string_to_id(@specialty.name) %>").hide(500, function () {
 
 $("#contractor_specialties").prepend(
 	'<%= j(
-		content_tag_for(:li, @specialty) {
-			render partial: "specialty", locals: {specialty: @specialty}
-		})
-	%>'
+		render partial: "specialty", locals: {specialty: @specialty}
+	)%>'
 ).fadeIn(500);
