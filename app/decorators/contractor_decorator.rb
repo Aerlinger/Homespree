@@ -45,7 +45,9 @@ class ContractorDecorator < Draper::Decorator
       return
     end
 
-    h.haml_tag(:li, class: 'card-attribute', id: "card_#{attr_name}") do
+    field_missing = contractor_has_attr?(attr_name) ? "missing-field" : ""
+
+    h.haml_tag(:li, class: "card-attribute #{field_missing}", id: "card_#{attr_name}") do
       h.haml_tag(:strong, attrs[:title] || attr_name.to_s.titleize + ":")
       h.haml_concat(h.best_in_place(@object, attr_name, activator: "##{attr_name}", display_with: attrs[:display_with], :nil => attrs[:nil] || "No info"))
       if block_given?
@@ -53,6 +55,15 @@ class ContractorDecorator < Draper::Decorator
       end
     end
   end
+
+  def default_description
+    %Q[
+      Finding a trustworthy contractor at a reasonable price is usually quite a challenge. However,
+      Homespree lets you quickly upload project requests online or from your mobile device and receive
+      competitive estimates from quality local pros.
+    ]
+  end
+
 
   def city_and_state
     address = @object.address
@@ -71,11 +82,8 @@ class ContractorDecorator < Draper::Decorator
   #   2. Contractor's own page and attribute isnt set: "Add Info"
   #   3. Visitor: Do nothing and return nil
   def edit_link(attr_name)
-    # Check if this attribute is set and saved on the contractor's profile.
-    attr_exists = @object.send(attr_name).blank?
-
     unless visitor?
-      link_text = if attr_exists
+      link_text = if contractor_has_attr?(attr_name)
                     "Add Info"
                   else
                     "Edit"
@@ -86,6 +94,11 @@ class ContractorDecorator < Draper::Decorator
         link_text
       end
     end
+  end
+
+  # Check if this attribute is set and saved on the contractor's profile.
+  def contractor_has_attr?(attr_name)
+    @object.send(attr_name).blank?
   end
 
   def visitor?

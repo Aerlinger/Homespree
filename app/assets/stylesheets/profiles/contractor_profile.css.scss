@@ -1,4 +1,5 @@
 @import "../global/palette.css.scss";
+@import "../global/mixins.css.scss";
 
 /*
   ---------------------------------------------------------------------------------------------------------------------
@@ -21,6 +22,26 @@
   ---------------------------------------------------------------------------------------------------------------------
 */
 
+.introjs-showElement {
+  color: black;
+}
+
+.introjs-helperLayer {
+  background-color: rgba(255, 255, 255, 0);
+  border: 3px solid orange;
+}
+
+.edit-link {
+  display: inline;
+  font-size: 12px;
+  margin-right: 5px;
+  font-weight: normal;
+  padding-left: 3px;
+  padding-right: 3px;
+  position: relative !important;
+  font-style: italic !important;
+}
+
 #page {
   background: url("http://www.ivettearango.com/wp-content/uploads/2011/10/6-Valle-Living-Room-wide-web.jpg") no-repeat center center fixed;
 
@@ -30,19 +51,58 @@
   background-size: cover;
 }
 
-#portfolio-slider ul.slides .photo {
-  width: 782px;
-  float: left;
-  display: block;
+// -------------------------------------------------------------------------------------------------------------------
+// Incomplete sections dropdown below header. Useful for displaying relevant information to the contractor.
+// -------------------------------------------------------------------------------------------------------------------
+.incomplete_sections {
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+  position: relative;
+  background-color: rgba(250, 249, 248, 0.85);
+
+  h6, h5, h4, h3 {
+    padding: none !important;
+    margin: none !important;
+  }
+
+  .container {
+    padding-top: 10px;
+  }
+
+  p {
+    font-size: 1em;
+  }
+
+  .entry {
+    #margin-left: 4em;
+    width: 100%;
+    border: 1px solid #c6bf99;
+    background-color: #f9fae1;
+
+    padding: 5px;
+    padding-right: 0px;
+    margin: 5px auto;
+    margin-right: 0px;
+
+    input {
+      margin-bottom: 0px;
+      margin-left: 5px;
+    }
+  }
+
+  .ignore_this {
+    a {
+      position: absolute;
+      top: 5px;
+      right: 10px;
+    }
+  }
 }
 
-#portfolio-carousel ul.slides .photo {
-  width: 100px;
-  float: left;
-  display: block;
 
-
-
+// -------------------------------------------------------------------------------------------------------------------
+// Body of the profile page. Is split into sections
+// -------------------------------------------------------------------------------------------------------------------
 .profile {
 
   // Element definitions:
@@ -59,44 +119,24 @@
     margin-bottom: 5px;
   }
 
-  .features {
-    height: auto;
-
-    #card_years_experience {
-      input {
-        width: 40px !important;
-      }
-    }
-
-    #card_first_name {
-      input {
-        width: 160px !important;
-      }
-    }
-
-    li.card-attribute {
-      text-align: left;
-      input {
-        width: 90px !important;
-      }
-
-      a {
-        float: right;
-      }
+  .purr {
+    position: fixed;
+    top: 30px;
+    right: 100px;
+    width: 250px;
+    padding: 20px;
+    background-color: #FCC;
+    border: solid 2px #666;
+    &:first-letter {
+      text-transform: uppercase
     }
   }
 
-  .tabs .row {
-    background: none;
-  }
+  // ---------------------------------------------------------------------------------------------------------------
+  // Section 1: Top-most section (Contractor card and Portfolio image carousel)
+  // ---------------------------------------------------------------------------------------------------------------
+  .feature-strip {
 
-  #helper_tabs.row-fluid {
-    margin-bottom: 0px;
-    margin-top: 5 p;
-  }
-
-  // Style definitions for background at top of contractor profile pages
-  div.feature-strip {
     background: none;
 
     padding-top: 25px;
@@ -107,59 +147,85 @@
 
     margin-bottom: 0 !important;
     padding-bottom: 0 !important;
-  }
-
-  // Incomplete sections dropdown below header. Useful for displaying relevant information to the contractor.
-  .incomplete_sections {
-    padding-bottom: 15px;
-    margin-bottom: 20px;
-    position: relative;
-    background-color: rgba(250, 249, 248, 0.85);
-
-    h6, h5, h4, h3 {
-      padding: none !important;
-      margin: none !important;
-    }
-
-    .container {
-      padding-top: 10px;
-    }
-
-    p {
-      font-size: 1em;
-    }
-
-    .entry {
-      #margin-left: 4em;
-      width: 100%;
-      border: 1px solid #c6bf99;
-      background-color: #f9fae1;
-
-      padding: 5px;
-      padding-right: 0px;
-      margin: 5px auto;
-      margin-right: 0px;
-
-      input {
-        margin-bottom: 0px;
-        margin-left: 5px;
-      }
-    }
-
-    .ignore_this {
-      a {
-        position: absolute;
-        top: 5px;
-        right: 10px;
-      }
-    }
-  }
-
-  // Topmost section (Above the fold)
-  #top {
 
     // Contractor card
+    // -------------------------------------------------------------------------------------------------------------
     .pricingTable {
+
+      .wrapper {
+        padding: 0 0 10px 0;
+
+        .optionheader {
+          #title {
+            font-size: 1.4em;
+            line-height: 1.4em;
+            padding: 5px 25px;
+          }
+
+          background-color: $homespree_lightest;
+          padding-bottom: 5px;
+          border-bottom: 1px solid lightgray;
+        }
+
+        .features {
+
+          .missing-field {
+            .best_in_place {
+              font-style: italic;
+              color: $homespree_error;
+            }
+
+            .edit-link {
+              color: $homespree_darkgreen;
+            }
+          }
+
+          .edit-link {
+            font-weight: bold;
+          }
+
+          li {
+            padding: 0 15px;
+          }
+
+          li:nth-child(2n+1) {
+            background-color: $homespree_lightest;
+          }
+
+          strong {
+            font-size: 13px;
+            font-weight: bold;
+          }
+        }
+      }
+
+      .features {
+        height: auto;
+
+        #card_years_experience {
+          input {
+            width: 40px !important;
+          }
+        }
+
+        #card_first_name {
+          input {
+            width: 160px !important;
+          }
+        }
+
+        li.card-attribute {
+          text-align: left;
+          input {
+            width: 90px !important;
+          }
+
+          a {
+            float: right;
+          }
+        }
+      }
+
       #contractor_logo {
         position: relative;
 
@@ -172,12 +238,7 @@
         #upload_image {
           display: block;
 
-          border-bottom-left-radius: 5px;
-          border-bottom-right-radius: 5px;
-          -moz-border-radius-bottomleft: 5px;
-          -moz-border-radius-bottomright: 5px;
-          -webkit-border-bottom-left-radius: 5px;
-          -webkit-border-bottom-right-radius: 5px;
+          @include five-pixel-rounded;
         }
 
         a {
@@ -207,37 +268,88 @@
       }
     }
 
-    #portfolio-slider {
+    // Portfolio Carousel
+    // -------------------------------------------------------------------------------------------------------------
+    #portfolio {
 
-      .upload-image {
-        display: block;
-        position: absolute;
-        top: 5px;
-        right: 5px;
-      }
-    }
+      #portfolio-carousel {
+        ul.slides .photo {
+          width: 782px;
+          float: left;
+          display: block;
+        }
 
-    #portfolio-carousel {
-      .photo-delete {
-        z-index: 1000;
-        color: white;
-        background-color: red;
-        width: 16px;
-        height: 20px;
-        position: absolute;
-        left: 0px;
-        top: -2px;
-
-        &:hover {
-          background-color: "#CF4422";
+        .upload-image {
+          display: block;
+          position: absolute;
+          top: 5px;
+          right: 5px;
         }
       }
+
+      #portfolio-slider {
+        ul.slides .photo {
+          width: 100px;
+          float: left;
+          display: block;
+        }
+        .photo-delete {
+          z-index: 1000;
+          color: white;
+          background-color: red;
+          width: 16px;
+          height: 20px;
+          position: absolute;
+          left: 0px;
+          top: -2px;
+
+          &:hover {
+            background-color: "#CF4422";
+          }
+        }
+      }
+
+    }
+
+  }
+
+  // -------------------------------------------------------------------------------------------------------------------
+  // Mini-section for tabs
+  // -------------------------------------------------------------------------------------------------------------------
+  #helper_tabs {
+    box-shadow: none;
+    background: none;
+
+    .row-fluid {
+      margin-bottom: 0px;
+      margin-top: 5px;
     }
   }
 
+  // ---------------------------------------------------------------------------------------------------------------
+  // Section 2: Business description, Services Offered, and Service Area Map
+  // ---------------------------------------------------------------------------------------------------------------
+
   #section_two {
-    .slogan {
-      padding-left: 8px;
+    #business_description {
+      .slogan {
+        padding-left: 8px;
+      }
+
+      #description {
+        text-align: justify;
+      }
+    }
+
+    #services {
+      #specialty_list {
+        list-style: none;
+        font-size: 1.5em;
+      }
+
+      #contractor_specialties .badge {
+        cursor: move;
+      }
     }
 
     #service_area {
@@ -266,37 +378,48 @@
         display: block !important;
       }
 
-      .simple_form div.boolean, .simple_form input[type='submit'] {
-        margin-left: 0px;
-      }
+      .simple_form div.boolean {
+        input[type='submit'] {
+          margin-left: 0px;
+        }
 
-      .simple_form div.boolean label {
-        float: none;
-        margin: 0;
+        label {
+          float: none;
+          margin: 0;
+        }
       }
     }
 
-    #specialty_list {
-      list-style: none;
-      font-size: 1.5em;
+  }
+
+  // ---------------------------------------------------------------------------------------------------------------
+  // Section 3: Reviews
+  // ---------------------------------------------------------------------------------------------------------------
+
+  #reviews {
+    padding-top: 0 !important;
+    background-color: rgb(223, 229, 255);
+
+    .container {
+      background-color: white;
+      border-left: 1px solid black;
+      border-right: 1px solid black;
     }
 
-    #contractor_specialties .badge {
-      cursor: move;
+    h2 {
+      margin-top: 2px;
+      margin-bottom: 2px;
+      padding: none;
+      background-color: $homespree_lightest;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      margin: 0;
     }
   }
 
   .review-title {
     line-height: 50px;
-  }
-
-  #website, h2 {
-    margin: 0;
-    line-height: 14px;
-  }
-
-  .contractor_website {
-    height: 14px;
   }
 
   #upload_image {
@@ -326,28 +449,6 @@
 
     background-color: $homespree_accent_light;
     border-bottom: 1px solid black;
-  }
-
-  #reviews {
-    padding-top: 0 !important;
-    background-color: rgb(223, 229, 255);
-
-    .container {
-      background-color: white;
-      border-left: 1px solid black;
-      border-right: 1px solid black;
-    }
-
-    h2 {
-      margin-top: 2px;
-      margin-bottom: 2px;
-      padding: none;
-      background-color: $homespree_lightest;
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-      margin: 0;
-    }
   }
 
   .review {
@@ -419,36 +520,5 @@
     }
   }
 
-  .purr {
-    position: fixed;
-    top: 30px;
-    right: 100px;
-    width: 250px;
-    padding: 20px;
-    background-color: #FCC;
-    border: solid 2px #666;
-    &:first-letter {
-      text-transform: uppercase
-    }
-  }
-}
 
-.introjs-showElement {
-  color: black;
-}
-
-.introjs-helperLayer {
-  background-color: rgba(255, 255, 255, 0);
-  border: 3px solid orange;
-}
-
-.edit-link {
-  display: inline;
-  font-size: 12px;
-  margin-right: 5px;
-  font-weight: normal;
-  padding-left: 3px;
-  padding-right: 3px;
-  position: relative !important;
-  font-style: italic !important;
 }

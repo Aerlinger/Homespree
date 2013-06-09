@@ -5,7 +5,7 @@
 
 #page.profile.clearfix
 
-  -# Top information prompt
+  -# Top information prompt (This is temporarily removed pending completion)
   -#================================================================================================
   -#=render "contractors/profiles/info_header"
   %br
@@ -44,7 +44,7 @@
               - @contractor.card_item :years_experience, {title: "Years Experience:" } do
                 = @contractor.edit_link :years_experience
 
-              - @contractor.card_item :license, {title: "License #:", nil: " " } do
+              - @contractor.card_item :license, {title: "License #:"} do
                 = @contractor.edit_link :license
 
               - @contractor.card_item :insurance_limit, { display_with: :number_to_currency, title: "Insured up to:" } do
@@ -59,24 +59,21 @@
         -# Portfolio image carousel
         -#===============================================================================================
         .span8
-          .row-fluid
-            = render "contractors/profiles/portfolio"
+          = render "contractors/profiles/portfolio"
 
-  .tabs
-    .row
-      .container
-        .span4
-        .span8
-          #helper_tabs.row-fluid
-            .span4.no-bg
-              %a.link-tab
-                %i.icon-comment.icon-white &nbsp Ask a question
-            .span4.no-bg
-              %a.link-tab{href: "#helper_tabs"}
-                %i.icon-map-marker.icon-white &nbsp Service area
-            .span4.no-bg
-              %a.link-tab
-                %i.icon-star.icon-white &nbsp Reviews
+  #helper_tabs.row
+    .container
+      .span8.offset4
+        .row-fluid
+          .span4.no-bg
+            %a.link-tab
+              %i.icon-comment.icon-white &nbsp Ask a question
+          .span4.no-bg
+            %a.link-tab{href: "#helper_tabs"}
+              %i.icon-map-marker.icon-white &nbsp Service area
+          .span4.no-bg
+            %a.link-tab
+              %i.icon-star.icon-white &nbsp Reviews
 
 
   -# Section Two (Description, Services Offered, and Maps
@@ -85,14 +82,14 @@
     %section.strip{style: "margin: 0;"}
       .container
         .row-fluid.title-columns
-          .span5
+          .span5#business_description
             %h3.short_headline
               %div Business Description
             %h6#slogan
               = best_in_place @contractor, :slogan, activator: "#slogan_edit", nil: "No slogan entered"
               = render "contractors/profiles/edit_link",  activator: "slogan_edit"
             %p#description
-              = best_in_place @contractor, :description, type: :textarea, activator: "#description_edit", nil: "No description entered"
+              = best_in_place @contractor, :description, type: :textarea, activator: "#description_edit", nil: @contractor.default_description
               = render "contractors/profiles/edit_link", activator: "description_edit"
 
           .span4#services
