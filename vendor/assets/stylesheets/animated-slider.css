@@ -10,7 +10,7 @@ Copyright (c) 2012 Ian Lunn Design
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-/*------------ BACKGROUND IMAGES USE MOBILE FIRST AND THEN A FALL BACK FOR OLDER IE - smaller image for the small device. 
+/*------------ BACKGROUND IMAGES USE MOBILE FIRST AND THEN A FALL BACK FOR OLDER IE - smaller image for the small device.
 
 >>>>> This is organized this way for the theme, move these to the appropriate location after you add your own images and when you go live. Minify it too!!!
 
@@ -28,7 +28,7 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 
 
 /*------------ media query for devices from 981px and up (Large screens) ------------ */
-@media only screen and (min-width:981px) { 
+@media only screen and (min-width:981px) {
 	.slide1 .bgimg {background-image: url(/assets/demo/sequence/1.jpg);}
 	.slide2 .bgimg {background-image: url(/assets/demo/sequence/5.jpg);}
 	.slide3 .bgimg {background-image: url(/assets/demo/sequence/2.jpg);}
@@ -38,7 +38,7 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 }
 
 /*------------ media query Medium devices from 501px to 980px ------------ */
-@media only screen and (min-width:481px) and (max-width:980px) { 
+@media only screen and (min-width:481px) and (max-width:980px) {
 	.slide1 .bgimg {background-image: url(/assets/demo/sequence/1-md.jpg);}
 	.slide2 .bgimg {background-image: url(/assets/demo/sequence/5-md.jpg);}
 	.slide3 .bgimg {background-image: url(/assets/demo/sequence/2-md.jpg);}
@@ -47,7 +47,7 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 }
 
 /*------------ media query for Small Screens 500px and down ------------ */
-@media only screen and (max-width: 480px) { 
+@media only screen and (max-width: 480px) {
 	.slide1 .bgimg {background-image: url(/assets/demo/sequence/1-sm.jpg);}
 	.slide2 .bgimg {background-image: url(/assets/demo/sequence/5-sm.jpg);}
 	.slide3 .bgimg {background-image: url(/assets/demo/sequence/2-sm.jpg);}
@@ -230,7 +230,7 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 }
 #sequence-theme .caption.light h2 {
     text-shadow: 2px -2px 2px rgba(0,0,0,.5);
-    
+
 }
 #sequence-theme .caption.dark h2 {
     text-shadow: 2px -2px 2px rgba(255,255,255,.5);
@@ -451,7 +451,7 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
     transition-duration: 2s;
 }
 /*------------------- LARGE Screens ------------------- */
-@media only screen and (min-width: 1980px) { 
+@media only screen and (min-width: 1980px) {
 	#sequence-theme .bgimg { background-size: 100% }
 	#sequence-theme #sequence { height: 590px }
 	#sequence-theme { height: 610px }
@@ -466,12 +466,12 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 	#sequence-theme .animate-in .title-from-top-animate { top: 50px }
 }
 
-@media only screen and (max-width: 1250px) { 
+@media only screen and (max-width: 1250px) {
 	#sequence-theme .caption h2 { font-size: 280% }
 	#sequence-theme .caption h3 { font-size: 180% }
 }
 
-@media only screen and (max-width: 980px) { 
+@media only screen and (max-width: 980px) {
 	#sequence-theme { margin-bottom: 30px }
 	#sequence-theme .caption h2 { font-size: 200% }
 	#sequence-theme .caption h3 { font-size: 150% }
@@ -486,7 +486,7 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 	#sequence-theme .animate-in .title-from-top-animate { top: 50px }
 }
 /*---------------------------------------*/
-@media only screen and (max-width: 850px) { 
+@media only screen and (max-width: 850px) {
 	#sequence-theme .caption {
 	    text-align: center;
 	    margin: 0;
@@ -569,7 +569,7 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 	    bottom: -100px;
 	}
 }
-@media only screen and (max-width: 767px) { 
+@media only screen and (max-width: 767px) {
 	#sequence-theme { margin: -20px 0 10px 0 }
 	#sequence-theme .next,
 	#sequence-theme .prev {
@@ -585,15 +585,15 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 	#sequence-theme .prev i {
  	   left: 0;
 	}
-		
+
 }
 
-@media only screen and (max-width: 500px) { 
+@media only screen and (max-width: 500px) {
 	#sequence-theme .caption h2 { font-size: 150% }
 	#sequence-theme .caption h3 { font-size: 120% }
 	.slide-image img { max-height: 200px }
 }
-@media only screen and (max-width: 480px) { 
+@media only screen and (max-width: 480px) {
 	#sequence-theme #sequence { height: 230px }
 	#sequence-theme { height: 250px }
 	.slide-image img { max-height: 130px }
@@ -618,10 +618,10 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 
 	#sequence-theme .caption h2 { font-size: 120% }
 	#sequence-theme .caption h3 { font-size: 80% }
-	#sequence-theme .animate-in .left-img-from-bottom-out-to-left, 
-	#sequence-theme .animate-out .left-img-from-bottom-out-to-left, 
-	#sequence-theme .animate-in .right-img-from-bottom-out-to-right, 
-	#sequence-theme .animate-out .right-img-from-bottom-out-to-right, 
+	#sequence-theme .animate-in .left-img-from-bottom-out-to-left,
+	#sequence-theme .animate-out .left-img-from-bottom-out-to-left,
+	#sequence-theme .animate-in .right-img-from-bottom-out-to-right,
+	#sequence-theme .animate-out .right-img-from-bottom-out-to-right,
 	#sequence-theme .animate-in .right-img-from-top-out-to-right { top: 60px }
 }
 

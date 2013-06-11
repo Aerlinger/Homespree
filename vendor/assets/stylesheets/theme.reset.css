@@ -1434,15 +1434,11 @@ label.radio.inline {
 }
 
 .btn-success {
-    color: #fff;
-    background: #6ba921;
-    border-color: #6ba921;
+    background: linear-gradient(to bottom, #68de08 0%, #61cf07 50%, #5cc507 50%, #5ac305 100%);
 }
 
 .btn-success:hover, .btn-success:active, .btn-success.active, .btn-success.disabled, .btn-success[disabled] {
-    color: #fff;
-    background-color: #6ba921;
-    border-color: #6ba921;
+    background: linear-gradient(to bottom, #68de08 50%, #61cf07 100%, #5cc507 50%, #5ac305 50%);
 }
 
 .btn-info {

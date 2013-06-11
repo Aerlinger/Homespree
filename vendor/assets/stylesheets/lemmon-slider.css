@@ -1,6 +1,6 @@
-/*================================================ 
-/* ## lemmon slider classes before media queries
-================================================== */
+/*================================================
+ ## lemmon slider classes before media queries
+==================================================*/
 .lemmon-wrap,
 .lemmon-wrap .prev-page,
 .lemmon-wrap .next-page,
@@ -52,9 +52,9 @@
 .no-js .lemmon-slider ul {
     margin: 0 auto
 }
-/*================================================ 
-/* ## captions before media queries
-================================================== */
+/*================================================
+ ## captions before media queries
+==================================================*/
 .lemmon-slider li div.summary {
     position: absolute;
     background: url(/assets/images/80p.png);
@@ -90,8 +90,8 @@
     padding: 0 15%;
     position: relative;
 }
-/*================================================ 
-/* ## controls
+/*================================================
+ ## controls
 ================================================== */
 .lemmon-wrap .controls {
     text-align: center;
@@ -132,33 +132,36 @@
 .lemmon-wrap .prev-page:hover {
     opacity: .5
 }
-/* no javascript fallback*/
+
+/*no javascript fallback */
+
 .no-js .prev-page,
 .no-js .next-page {
     display: none
 }
+
 /* ie sucks */
 .lt-ie9 .lemmon-slider,
 .lt-ie9 .lemmon-slider,
 .lt-ie9 .lemmon-slider img {
     height: 300px
 }
-/*================================================ 
+/*================================================
     ## media queries mobile up, I am not changing this as I have classes to cover IE
-================================================== */
-@media only screen and (max-width:320px) { 
-	/* height of slider on mobile */
+==================================================*/
+@media only screen and (max-width:320px) {
+	 /*height of slider on mobile*/
 	.lemmon-slider,
 	.lemmon-slider img {
 	    height: 125px
 	}
-	/* hides the hover captions on mobile */
+	 /*hides the hover captions on mobile*/
 	.lemmon-slider li div.summary,
 	.lemmon-slider li:hover div.summary {
 	    display: none
 	}
 }
-@media only screen and (min-width: 321px) and (max-width:767px) { 
+@media only screen and (min-width: 321px) and (max-width:767px) {
 	.lemmon-slider,
 	.lemmon-slider img {
 	    height: 175px
@@ -168,7 +171,7 @@
 	    display: none!important
 	}
 }
-@media only screen and (min-width: 768px) and (max-width: 979px) { 
+@media only screen and (min-width: 768px) and (max-width: 979px) {
 	.lemmon-slider,
 	.lemmon-slider img {
 	    height: 250px
@@ -178,36 +181,35 @@
 	    display: none
 	}
 }
-@media only screen and (min-width: 980px) { 
+@media only screen and (min-width: 980px) {
 	.lemmon-slider li p,
 	.lemmon-slider li:hover p {
 	    display: block
 	}
-	/* height of slider on desktop */
+	 /*height of slider on desktop*/
 	.lemmon-slider,
 	.lemmon-slider img {
 	    height: 300px
 	}
 }
-@media only screen and (min-width: 1100px) { 
+@media only screen and (min-width: 1100px) {
 	.lemmon-slider li p,
 	.lemmon-slider li:hover p {
 	    display: block
 	}
-	/* height of slider on desktop */
+	 /*height of slider on desktop*/
 	.lemmon-slider,
 	.lemmon-slider img {
 	    height: 350px
 	}
 }
-@media only screen and (max-width: 767px) { 
+@media only screen and (max-width: 767px) {
 	.lemmon-wrap {
 	    margin: 0 0 3% 0
 	}
 }
 
-
-/* hacks for IE and Firefox at Fullscreen sizes*/
+/*hacks for IE and Firefox at Fullscreen sizes*/
 
 @media only screen and (min-width: 2000px) {
 	:root .lemmon-wrap {
@@ -217,7 +219,7 @@
 	}
 }
 
-@-moz-document url-prefix() {    
+@-moz-document url-prefix() {
     .lemmon-wrap {
         margin-left:auto;
         margin-right:auto;

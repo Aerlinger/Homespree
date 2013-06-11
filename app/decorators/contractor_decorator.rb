@@ -45,23 +45,15 @@ class ContractorDecorator < Draper::Decorator
       return
     end
 
-    field_missing = contractor_has_attr?(attr_name) ? "missing-field" : ""
+    field_missing = contractor_missing_attr?(attr_name) ? "" : "_edited"
 
-    h.haml_tag(:li, class: "card-attribute #{field_missing}", id: "card_#{attr_name}") do
+    h.haml_tag(:li, class: "card-attribute #{field_missing}", id: "card_#{attr_name.to_s + field_missing}") do
       h.haml_tag(:strong, attrs[:title] || attr_name.to_s.titleize + ":")
       h.haml_concat(h.best_in_place(@object, attr_name, activator: "##{attr_name}", display_with: attrs[:display_with], :nil => attrs[:nil] || "No info"))
       if block_given?
         yield
       end
     end
-  end
-
-  def default_description
-    %Q[
-      Finding a trustworthy contractor at a reasonable price is usually quite a challenge. However,
-      Homespree lets you quickly upload project requests online or from your mobile device and receive
-      competitive estimates from quality local pros.
-    ]
   end
 
 
@@ -83,21 +75,41 @@ class ContractorDecorator < Draper::Decorator
   #   3. Visitor: Do nothing and return nil
   def edit_link(attr_name)
     unless visitor?
-      link_text = if contractor_has_attr?(attr_name)
+      link_text = if contractor_missing_attr?(attr_name)
                     "Add Info"
                   else
                     "Edit"
                   end
 
       h.link_to "javascript:void(0)", id: attr_name, class: "edit-link #{link_text}" do
-        #content_tag(:i, class: "e-icon-pencil", style: "height: 20px; line-height: 16px;")
+        #link_text += content_tag(:i, class: "e-icon-pencil", style: "height: 20px; line-height: 16px;")
         link_text
       end
     end
   end
 
+  # A simple wrapper object that handles the logic for in-place editing
+  # Nullifies DOM element if it has already been edited.
+  def in_place_edit(tag, attr, options = {}, &block)
+
+    # Nullify an edited tag for Intro sequence by changing its ID.
+    unless contractor_missing_attr?(attr)
+      attr = "#{attr}_edited"
+    end
+
+    content_tag(tag, options.merge(id: attr.to_s), &block)
+  end
+
+  # Defines a highlighted section for the intro sequence. By default, this will be only displayed once.
+  def intro_section(id, options, &block)
+    # Nullify an edited tag for Intro sequence by changing its ID
+    id = "#{id}_edited" if @object.edited?
+
+    content_tag(:div, options.merge(id: id), &block)
+  end
+
   # Check if this attribute is set and saved on the contractor's profile.
-  def contractor_has_attr?(attr_name)
+  def contractor_missing_attr?(attr_name)
     @object.send(attr_name).blank?
   end
 

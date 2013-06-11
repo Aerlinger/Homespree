@@ -22,8 +22,8 @@ gem 'best_in_place'
 gem 'geocoder'
 gem 'simple_form'
 
-gem 'jquery-rails'
-gem 'jquery-ui-rails'
+gem 'jquery-rails', "2.3.0"
+#gem 'jquery-ui-rails'
 gem 'acts_as_list'
 gem 'figaro', '>= 0.5.3'
 gem 'haml-rails'
@@ -86,5 +86,6 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 
   gem 'less-rails' #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+  gem 'less-rails-fontawesome'
   gem 'twitter-bootstrap-rails'
 end

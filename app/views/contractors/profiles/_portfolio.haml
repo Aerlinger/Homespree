@@ -5,22 +5,17 @@
       - if @photos.empty?
         = content_tag :li do
           = image_tag asset_path("portfolio_images/default.png")
-      = content_tag_for :li, @photos, class: "item flex-active-slide" do |photo|
-        = render photo, photo: photo
+
+      -# Image slider (Large images)
+      = render @photos
 
   #portfolio-carousel.flexslider
-    %ul.slides
-      - if @photos.empty?
-        = content_tag :li do
-          = image_tag asset_path("portfolio_images/default.png")
-      = content_tag_for :li, @photos do |photo|
-        = render photo, photo: photo
-        -#= image_tag photo.image_url.to_s, alt: "", style: "position: relative;"
-        -#= link_to contractor_photo_path(@contractor, photo), class: "photo-delete", remote: true, method: :delete, confirm: "Are you sure you wish to delete this photo?" do
-        -#  %i.icon-remove
-
     = s3_uploader_form post: contractor_photos_url(@contractor), as: "photo[image_url]" do
+      -#.file-field-wrapper
       = file_field_tag :file, multiple: true
+    %ul.slides
+      -# Image Carousel
+      = render @photos
 
     %script#template-upload(type= "text/x-tmpl")
       .upload

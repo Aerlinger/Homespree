@@ -1,3 +1,10 @@
 $(document).ready(function(evt) {
-    $("li<%= "#photo_#{params[:id]}" %>").hide(500)
-})
+	$("li<%= "#photo_#{params[:id]}" %>").remove();
+	$("li<%= "#photo_#{params[:id]}" %>").remove();
+
+	setTimeout(function(event){
+		$('#portfolio-carousel .slides li').first().click();
+	}, 500);
+
+	$('.flexslider').flexslider();
+});

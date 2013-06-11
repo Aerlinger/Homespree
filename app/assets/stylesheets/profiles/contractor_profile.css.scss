@@ -169,7 +169,7 @@
 
         .features {
 
-          .missing-field {
+          .new {
             .best_in_place {
               font-style: italic;
               color: $homespree_error;
@@ -265,6 +265,7 @@
 
       #book_contractor {
         background-color: green;
+        font-size: 1.7rem;
       }
     }
 
@@ -272,27 +273,38 @@
     // -------------------------------------------------------------------------------------------------------------
     #portfolio {
 
-      #portfolio-carousel {
-        ul.slides .photo {
-          width: 782px;
-          float: left;
-          display: block;
-        }
-
-        .upload-image {
-          display: block;
-          position: absolute;
-          top: 5px;
-          right: 5px;
-        }
+      #upload_photo {
+        position: relative;
       }
 
-      #portfolio-slider {
+      #upload_photo .file-field-wrapper {
+        opacity: 0;
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        z-index: 2;
+      }
+
+      #upload_photo .file-field-wrapper:hover {
+        opacity: .1;
+      }
+
+      #upload_photo button {
+        background-image: url("/assets/profile/upload_photo.png");
+        background-color: #ccc;
+        border: none;
+        color: #666;
+        padding: 3px 5px;
+        border-radius: 5px;
+      }
+
+      #portfolio-carousel {
         ul.slides .photo {
           width: 100px;
           float: left;
           display: block;
         }
+
         .photo-delete {
           z-index: 1000;
           color: white;
@@ -306,6 +318,31 @@
           &:hover {
             background-color: "#CF4422";
           }
+        }
+
+        // The portfolio slider doesn't have edit or enlarge buttons
+        a.fancyme {
+          display: none;
+        }
+      }
+
+      #portfolio-slider {
+        ul.slides .photo {
+          width: 782px;
+          float: left;
+          display: block;
+        }
+
+        .upload-image {
+          display: block;
+          position: absolute;
+          top: 5px;
+          right: 5px;
+        }
+
+        // The carousel doesn't have a delete (X) button
+        .photo-delete {
+          display: none;
         }
       }
 
@@ -342,6 +379,9 @@
     }
 
     #services {
+      li:nth-child(2n+1) {
+        background-color: white;
+      }
       #specialty_list {
         list-style: none;
         font-size: 1.5em;
@@ -350,11 +390,15 @@
       #contractor_specialties .badge {
         cursor: move;
       }
+      li{
+        line-height: 25px;
+      }
     }
 
     #service_area {
       #map {
         margin-bottom: 10px;
+        width: 100%;
       }
 
       label {
@@ -373,7 +417,6 @@
       }
 
       input:not(.btn), select {
-        width: 180px !important;
         margin-bottom: 10px !important;
         display: block !important;
       }

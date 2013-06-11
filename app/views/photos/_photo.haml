@@ -1,6 +1,13 @@
-= image_tag photo.image_url.to_s
--#= link_to photo.image_url.to_s, class: "zoom-image fancyme", data: {"fancybox-group" => "portfolio"} do
-  -#%i.icon-fullscreen
--#= link_to photo.image_url.to_s, class: "upload-image fancyme btn btn-info", data: {"fancybox-group" => "portfolio"}, style: "right: 5px;" do
-  -#%i.e-icon-plus-circled
-  -#Edit image
+=content_tag_for(:li, photo) do |p|
+  = image_tag p.image_url.to_s
+
+  = link_to photo.image_url.to_s, class: "zoom-image fancyme", data: {"fancybox-group" => "portfolio"} do
+    %i.icon-fullscreen
+  = link_to photo.image_url.to_s, class: "upload-image fancyme btn btn-info", data: {"fancybox-group" => "portfolio"}, style: "right: 5px;" do
+    %i.e-icon-plus-circled
+    Edit image
+
+  -# For Slider:
+  = link_to contractor_photo_path(@contractor, p), class: "photo-delete", remote: true, method: :delete,
+                                                              confirm: "Are you sure you wish to delete this photo?" do
+    %i.icon-remove

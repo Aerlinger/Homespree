@@ -58,14 +58,14 @@
     display: none
 }
 .widget .nav-pills>.active>a,
-.widget .nav-pills>.active>a:hover, 
+.widget .nav-pills>.active>a:hover,
 .widget .nav-pills>.active>a:focus {
     color: #ffffff;
     background-color: #5676a5;
 }
 /*--------------------------- blog general ---------------------- */
 .entry-post {
-    *zoom: 1 
+    *zoom: 1
 }
 .entry-post:before, .entry-post:after {
     display: table;
@@ -271,10 +271,10 @@
 .blog-detail {
     margin-bottom: 20px
 }
-.span9.blog-detail .entry-header, 
-.span9.blog-detail .entry-content, 
-.span9.blog-detail .entry-tags, 
-.span9.blog-detail .entry-pagination, 
+.span9.blog-detail .entry-header,
+.span9.blog-detail .entry-content,
+.span9.blog-detail .entry-tags,
+.span9.blog-detail .entry-pagination,
 .span9.blog-detail .entry-related {
     float: right;
     width: 80%;
@@ -410,7 +410,7 @@
 }
 /* media queries
 ================================================== */
-@media only screen and (max-width: 880px) { 
+@media only screen and (max-width: 880px) {
 	/******  date ******/
 	.span9 .blog-detail .date_share .addthis_toolbox {
 	    clear: both;
@@ -420,7 +420,7 @@
 	}
 }
 /*end*/
-@media only screen and (max-width:600px) { 
+@media only screen and (max-width:600px) {
 	.blog-detail .addthis_toolbox span {
 	    margin: 0 auto 10px auto
 	}
@@ -484,13 +484,13 @@
 
 
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2), 
-only screen and (min--moz-device-pixel-ratio: 2), 
-only screen and (-moz-min-device-pixel-ratio: 2), 
-only screen and (-o-min-device-pixel-ratio: 2/1), 
-only screen and (min-device-pixel-ratio: 2), 
-only screen and (min-resolution: 192dpi), 
-only screen and (min-resolution: 2dppx) { 
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-moz-min-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) {
 	.blog-summary-grid li.quotes .entry-summary blockquote {
 	    background-image: url(../images/retina/open-quote_@2x.png);
 		-moz-background-size: 25px 25px;

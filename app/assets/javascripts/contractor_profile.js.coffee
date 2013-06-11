@@ -11,33 +11,27 @@ fields = {
 
   # Card fields
   ##################################################################
-  title: {  # The company title
-    intro: "What is the name of your company?"
-    position: "bottom"
-  }
+#  title: {  # The company title
+#    intro: "What is the name of your company?"
+#    position: "bottom"
+#    required: true
+#  }
 
   # TODO: Enable editing first and last name in a single step
   card_first_name: {
     intro: "Name of the owner? (First and Last)"
+    required: true
   }
 
   card_mobile_number: {
     intro: "What is your phone number?"
+    required: true
   }
 
 # Should this be a dropdown?
   card_years_experience: {
     intro: "How many years have you been in business?"
-  }
-
-  card_insured_up_to: {
-    intro: "Insured Amount?"
-    skippable: "I do not have insurance"
-  }
-
-  card_bonded_up_to: {
-    intro: "Bonded Amount?"
-    skippable: "I am not bonded"
+    required: true
   }
 
   # Optional Fields
@@ -45,6 +39,7 @@ fields = {
   services: {
     intro: "What services does your company offer?"
     position: "left"
+    required: true
   }
 
   # Location Info:
@@ -52,6 +47,7 @@ fields = {
   service_area: {
     intro: "Where is your business located?"
     position: "left"
+    required: true
   }
 
   slogan: {
@@ -76,6 +72,7 @@ setupIntro = (intro_fields) ->
       "data-step": i
       "data-intro": value["intro"]
       "data-skip": value["skippable"]
+      "data-required": value["required"]
     })
 
 
@@ -99,6 +96,8 @@ onImagesLoaded = ->
 
   # Timeout is used to account for the delay when switching fields:
   introJs().onchange((targetElement) ->
+
+    # If the contractor has gone far enough to pass 'skippable' item, they do not need to see this message again.
     if $(targetElement).attr("data-step") > 1
       $('.introjs-overlay').click()
 
@@ -119,17 +118,9 @@ $(document).ready ->
   # Only run this script if we're on the contractor's profile page.
   if $("#page.profile").length > 0
 
-#    portfolio_images = $("ul.slides img").map ->
-#       return $(this).attr('src')
-
-#    $('.flexslider').flexslider {
-##      start: onImagesLoaded
-#    }
-
     $.preload $("ul.slides img").last().attr('src'), {
       onFinish: onImagesLoaded
     }
-
 
     # Make contractor specialties sortable
     $('#contractor_specialties').sortable

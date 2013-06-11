@@ -75,3 +75,11 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
   }
 
 }
+
+@media (max-width: 767px){
+  .secondary {
+    h1{
+      font-size: 200% !important;
+    }
+  }
+}

@@ -24,7 +24,7 @@
       =f.input :city, placeholder: @location.city || @address.city, label: "City"
 
     .address
-      =f.input :state, collection: us_states, label: "State"
+      =f.input :state, collection: us_states, label: "State", :style => "width: 600px;"
 
     %span.address
       =f.input :zipcode, maxlength: 5, placeholder: "Zipcode", label: "Zipcode"

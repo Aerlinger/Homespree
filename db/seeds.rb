@@ -8,10 +8,9 @@ kyle_email = Mailinglist.find_or_create_by_email("kyle@myhomespree.com")
 end
 
 puts "Creating admin users:"
-AdminUser.find_or_create_by_email!('admin@myhomespree.com', password: "Meetmike9")
-AdminUser.find_or_create_by_email!('anthony@myhomespree.com', password: "Meetmike9")
-AdminUser.find_or_create_by_email!('kyle@myhomespree.com', password: "Meetmike9")
-AdminUser.find_or_create_by_email!('joe@myhomespree.com', password: "Meetmike9")
+%w[admin anthony kyle joe].each do |name|
+  AdminUser.find_or_create_by_email!("#{name}@myhomespree.com", password: "Meetmike9")
+end
 
 puts "Success!"
 puts AdminUser.all

@@ -9,6 +9,8 @@ class Contractors::RegistrationsController < Devise::RegistrationsController
 
   def create
     super
+    #@contractor = Contractor.new({email: params[:email]})
+    #respond_with @contractor
   end
 
   def edit

@@ -56,7 +56,8 @@ class Contractor < ActiveRecord::Base
   # Accessors:  -------------------------------------------------------------------------------------------------------
   attr_accessible :address, :specialties, :first_name, :last_name, :email, :password, :remember_me, :slogan, :bonding_limit,
                   :description, :mobile_number, :office_number, :company_title, :custom_field, :latitude, :longitude,
-                  :facebook, :name, :specialties, :twitter, :website, :other_specialties, :specialty_ids, :logo
+                  :facebook, :name, :specialties, :twitter, :website, :other_specialties, :specialty_ids, :logo, :years_experience,
+                  :insurance_limit
 
 
   # Associations:  ----------------------------------------------------------------------------------------------------
@@ -76,6 +77,7 @@ class Contractor < ActiveRecord::Base
   validates_format_of :email, with: RegexDefinitions::email_regex, message: "is invalid"
   validates_uniqueness_of :email, message: "is already taken"
   validates_format_of :mobile_number, :office_number, with: /\A\d{10}\Z/, allow_blank: true, message: "must be valid"
+  validates_numericality_of :years_experience, allow_blank: true
   validate :name_or_title?
 
 
@@ -86,6 +88,7 @@ class Contractor < ActiveRecord::Base
 
   # Scopes:  ----------------------------------------------------------------------------------------------------------
   default_scope order("created_at desc")
+  scope :recent_signups, lambda { limit(100) }
 
   # Custom Methods:  --------------------------------------------------------------------------------------------------
   def incomplete_sections
@@ -120,6 +123,10 @@ class Contractor < ActiveRecord::Base
     end
   end
 
+  def new_profile?
+    sign_in_count <= 1
+  end
+
   def sanitize_phone_numbers
     self.mobile_number.gsub!(/\D/, '') if self.mobile_number.present?
     self.office_number.gsub!(/\D/, '') if self.office_number.present?
@@ -143,11 +150,6 @@ class Contractor < ActiveRecord::Base
     unless self.company_title.present? || (first_name.present? && last_name.present?)
       errors.add(:company_title, "must include either a title or first and last name")
     end
-  end
-
-  # This is used to prevent problems when params are missing in the controller before the contractor is created.
-  def nil_if_blank
-    self.attributes.each { |attr| self[attr] = nil if self[attr].blank? }
   end
 
   def single_address

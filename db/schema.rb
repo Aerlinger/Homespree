@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130608214438) do
+ActiveRecord::Schema.define(:version => 20130610063603) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -120,6 +120,7 @@ ActiveRecord::Schema.define(:version => 20130608214438) do
     t.string   "unlock_token"
     t.datetime "locked_at"
     t.string   "authentication_token"
+    t.boolean  "edited",                                               :default => false
   end
 
   add_index "contractors", ["authentication_token"], :name => "index_contractors_on_authentication_token", :unique => true

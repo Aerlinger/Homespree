@@ -4,7 +4,8 @@ class PhotosController < ApplicationController
     # Find the contractor (photographable type)
     @photo = Photo.new(params[:photo])
     id = params[:contractor_id]
-    Contractor.find(id).photos << @photo
+    @contractor = Contractor.find(id)
+    @contractor.photos << @photo
     respond_to do |format|
       format.js { render layout: false }
     end

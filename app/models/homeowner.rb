@@ -45,6 +45,7 @@ class Homeowner < ActiveRecord::Base
 
   has_many :appointments, through: :contractors
   has_many :contractors, through: :appointments
+  has_many :photos, as: :photographable, through: :appointments
 
   # Nested Attributes:  -----------------------------------------------------------------------------------------------
   accepts_nested_attributes_for :appointments, :appointments

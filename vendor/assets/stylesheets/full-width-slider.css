@@ -182,7 +182,7 @@
     cursor: default;
 }
 /************************************************* begin media queries */
-@media only screen and (max-width: 1350px) { 
+@media only screen and (max-width: 1350px) {
 	.full-width-slider.flexslider .caption {
 	    top: 5%;
 	    left: 5%;
@@ -196,7 +196,7 @@
 	    background: url(/assets/images/bgfade-small.png) repeat-x;
 	}
 }
-@media only screen and (max-width: 1200px) { 
+@media only screen and (max-width: 1200px) {
 	.full-width-slider.flexslider .caption {
 	    position: relative;
 	    clear: both;
@@ -212,7 +212,7 @@
 	    box-shadow: none;
 	}
 }
-@media only screen and (max-width: 850px) { 
+@media only screen and (max-width: 850px) {
 	.full-width-slider.flexslider span:before {
 	    top: -75px;
 	    height: 75px;
@@ -235,7 +235,7 @@
 	    border-radius: 60px;
 	}
 }
-@media only screen and (max-width: 500px) { 
+@media only screen and (max-width: 500px) {
 	.full-width-slider.flexslider span:before {
 	    top: -50px;
 	    height: 50px;
@@ -269,7 +269,7 @@
 	    border-radius: 40px;
 	}
 }
-@media only screen and (max-width: 320px) { 
+@media only screen and (max-width: 320px) {
 	.full-width-slider.flexslider span:before {
 	    display: none
 	}
