@@ -23,7 +23,7 @@ class Appointment < ActiveRecord::Base
   has_one :address, as: :addressable
   has_one :job
 
-  accepts_nested_attributes_for :job
+  accepts_nested_attributes_for :job, :address
 
   validates_presence_of :date, :time, :address, :contractor, :homeowner
 

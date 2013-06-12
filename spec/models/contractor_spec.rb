@@ -64,7 +64,6 @@ describe Contractor do
   it { should respond_to :facebook }
   it { should respond_to :twitter }
   it { should respond_to :specialties }
-  it { should respond_to :pictures }
   it { should respond_to :updated_at }
   it { should respond_to :password }
   it { should respond_to :password_confirmation }

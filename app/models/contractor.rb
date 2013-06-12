@@ -57,7 +57,7 @@ class Contractor < ActiveRecord::Base
   attr_accessible :address, :specialties, :first_name, :last_name, :email, :password, :remember_me, :slogan, :bonding_limit,
                   :description, :mobile_number, :office_number, :company_title, :custom_field, :latitude, :longitude,
                   :facebook, :name, :specialties, :twitter, :website, :other_specialties, :specialty_ids, :logo, :years_experience,
-                  :insurance_limit
+                  :insurance_limit, :license
 
 
   # Associations:  ----------------------------------------------------------------------------------------------------
@@ -68,8 +68,7 @@ class Contractor < ActiveRecord::Base
   has_many :messages, as: :messageable
 
   # Nested Attributes:  -----------------------------------------------------------------------------------------------
-  accepts_nested_attributes_for :address
-  accepts_nested_attributes_for :specialties, allow_destroy: true
+  accepts_nested_attributes_for :address, :photos, :appointments, :specialties
 
 
   # Validations:  -----------------------------------------------------------------------------------------------------

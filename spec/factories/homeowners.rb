@@ -8,6 +8,6 @@ FactoryGirl.define do
     last_name "RspecHomeowner"
 
     address
-    appointments { [FactoryGirl.create(:appointment)] }
+    #appointments { [FactoryGirl.create(:appointment)] }
   end
 end

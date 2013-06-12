@@ -2,8 +2,6 @@
 
 FactoryGirl.define do
   factory :message do
-    content "MyString"
-    author_id 1
-    thread_id 1
+    content "Message content"
   end
 end

@@ -28,10 +28,10 @@ FactoryGirl.define do
     association :address
 
     # Contractor has many photos, appointments and job categories
-    photos { [FactoryGirl.create(:photo)] }
-    appointments { [FactoryGirl.create(:appointment)] }
-    job_categories { [FactoryGirl.create(:job_category)] }
-    messages { [FactoryGirl.create(:message)] }
+    #photos { [FactoryGirl.create(:photo)] }
+    #appointments { [FactoryGirl.create(:appointment)] }
+    #job_categories { [FactoryGirl.create(:job_category)] }
+    #messages { [FactoryGirl.create(:message)] }
 
   end
 

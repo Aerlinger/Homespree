@@ -1,5 +1,11 @@
 require 'spec_helper'
 
 describe Message do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  let(:message) { FactoryGirl.create(:message) }
+
+  it "is valid" do
+    message.should be_valid
+  end
+
 end
