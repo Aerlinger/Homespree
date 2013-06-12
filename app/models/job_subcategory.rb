@@ -9,8 +9,11 @@
 #  updated_at  :datetime         not null
 #
 
-class Subcategory < ActiveRecord::Base
+class JobSubcategory < ActiveRecord::Base
   attr_accessible :category_id, :name
 
-  belongs_to :category
+  validates_presence_of :name
+  validates_presence_of :job_category
+
+  belongs_to :job_category
 end

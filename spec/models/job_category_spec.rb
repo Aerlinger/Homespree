@@ -12,18 +12,24 @@
 
 require 'spec_helper'
 
-describe Category do
+describe JobCategory do
 
-  let(:category) { FactoryGirl.create(:category) }
-  subject { category }
+  let(:job_category) { FactoryGirl.create(:job_category) }
+  subject { job_category }
 
   it { should respond_to :name }
-  it { should respond_to :subcategories }
+  it { should respond_to :job_subcategories }
   it { should respond_to :categorizable_type }
   it { should respond_to :categorizable_id }
 
+  its(:job_subcategories) { should_not be_empty }
+
   it "should be valid by default" do
-    category.should be_valid
+    job_category.should be_valid
+  end
+
+  it "should have many subcategories" do
+
   end
 
 end

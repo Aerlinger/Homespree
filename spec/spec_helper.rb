@@ -51,7 +51,7 @@ Spork.prefork do
     config.infer_base_class_for_anonymous_controllers = false
     config.run_all_when_everything_filtered = true
     config.treat_symbols_as_metadata_keys_with_true_values = true
-    config.filter_run :focus => true
+    #config.filter_run :focus => true
 
     config.before(:suite) do
       DatabaseCleaner.strategy = :transaction
@@ -74,6 +74,6 @@ Spork.each_run do
 
   # Force Spork to reload models each turn
   silence_warnings do
-    Dir["#{Rails.root}/app/models/**/*.rb"].each {|f| load f}
+    #Dir["#{Rails.root}/app/models/**/*.rb"].each {|f| load f}
   end
 end

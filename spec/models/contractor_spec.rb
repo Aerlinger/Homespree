@@ -45,7 +45,7 @@
 
 require 'spec_helper'
 
-describe Contractor, focus: true do
+describe Contractor do
 
   let(:mike) { FactoryGirl.create :contractor }
   subject { mike }
@@ -77,7 +77,10 @@ describe Contractor, focus: true do
   it { should respond_to :last_sign_in_ip }
   it { should respond_to :encrypted_password }
 
-  it "has one address"
+  it "has one address" do
+    mike.address.should_not be_nil
+  end
+
   it "has many photos"
   it "has many messages"
   it "has many jobs"
@@ -95,20 +98,11 @@ describe Contractor, focus: true do
     it { should be_valid }
     its(:mobile_number) { should eq '8083891234' }
     its(:office_number) { should eq '8085551234' }
-
   end
 
   describe "with nothing" do
     before do
       @contractor = Contractor.new
-      @contractor.save
-    end
-
-    it { @contractor.should_not be_valid }
-
-    it "should show error for non existent password" do
-      @contractor.errors.messages[:password].should eq ["can't be blank"]
-      @contractor.errors.messages[:company_title].should eq ["can't be blank"]
     end
   end
 
@@ -188,20 +182,24 @@ describe Contractor, focus: true do
   end
 
   describe "Joe The Contractor example" do
-    before do
-      @mike = Contractor.new
-    end
 
-    subject { @mike }
+    let(:new_guy) { Contractor.new }
+
+    subject { new_guy }
 
     it { should_not be_valid }
 
     it "should list incomplete sections" do
       incomplete_sections = [:first_name, :last_name, :company_title, :specialties, :mobile_number, :office_number, :slogan, :description, :address]
-      @mike.incomplete_sections.should == incomplete_sections
+      new_guy.incomplete_sections.should == incomplete_sections
 
-      @mike.first_name = "joe"
-      @mike.incomplete_sections == incomplete_sections - [:first_name]
+      new_guy.first_name = "joe"
+      new_guy.incomplete_sections == incomplete_sections - [:first_name]
+    end
+
+    it "should show error for non existent password" do
+      new_guy.valid?
+      new_guy.errors[:company_title].should eq ["can't be blank"]
     end
   end
 
@@ -213,7 +211,7 @@ describe Contractor, focus: true do
     it { should be_valid }
 
     its(:first_name) { should eq "Joe" }
-    its(:last_name) { should eq "ThePlumber" }
+    its(:last_name) { should eq "Theplumber" }
     its(:company_title) { should eq "Joe's Plumbing" }
 
     its(:license) { should eq "ABCDEFG12345" }

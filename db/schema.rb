@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130611152024) do
+ActiveRecord::Schema.define(:version => 20130612041015) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -73,14 +73,6 @@ ActiveRecord::Schema.define(:version => 20130611152024) do
     t.string   "description"
   end
 
-  create_table "categories", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
-    t.integer  "categorizable_id"
-    t.string   "categorizable_type"
-  end
-
   create_table "contractors", :force => true do |t|
     t.string   "first_name"
     t.text     "description"
@@ -90,7 +82,6 @@ ActiveRecord::Schema.define(:version => 20130611152024) do
     t.string   "twitter"
     t.datetime "created_at",                                                              :null => false
     t.datetime "updated_at",                                                              :null => false
-    t.text     "pictures"
     t.string   "email",                                                                   :null => false
     t.string   "last_name"
     t.string   "encrypted_password",                                   :default => "",    :null => false
@@ -110,10 +101,7 @@ ActiveRecord::Schema.define(:version => 20130611152024) do
     t.decimal  "bonding_limit",          :precision => 5, :scale => 2
     t.string   "photo_filename"
     t.text     "slogan"
-    t.boolean  "new_profile",                                          :default => false
     t.decimal  "years_experience"
-    t.float    "latitude"
-    t.float    "longitude"
     t.decimal  "availability_radius"
     t.string   "logo"
     t.integer  "failed_attempts",                                      :default => 0
@@ -156,11 +144,26 @@ ActiveRecord::Schema.define(:version => 20130611152024) do
   add_index "homeowners", ["email"], :name => "index_homeowners_on_email", :unique => true
   add_index "homeowners", ["reset_password_token"], :name => "index_homeowners_on_reset_password_token", :unique => true
 
-  create_table "jobs", :force => true do |t|
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+  create_table "job_categories", :force => true do |t|
     t.string   "name"
-    t.string   "description"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.integer  "categorizable_id"
+    t.string   "categorizable_type"
+  end
+
+  create_table "job_subcategories", :force => true do |t|
+    t.string   "name"
+    t.integer  "job_category_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "jobs", :force => true do |t|
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.string   "title"
+    t.text     "description",    :limit => 255
     t.integer  "category_id"
     t.integer  "appointment_id"
   end
@@ -172,6 +175,14 @@ ActiveRecord::Schema.define(:version => 20130611152024) do
     t.datetime "updated_at",                               :null => false
     t.text     "notes"
     t.boolean  "submitted_from_mobile"
+  end
+
+  create_table "messages", :force => true do |t|
+    t.string   "content"
+    t.integer  "author_id"
+    t.integer  "thread_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "photos", :force => true do |t|
@@ -192,13 +203,6 @@ ActiveRecord::Schema.define(:version => 20130611152024) do
     t.datetime "updated_at",    :null => false
     t.string   "description"
     t.integer  "position"
-  end
-
-  create_table "subcategories", :force => true do |t|
-    t.string   "name"
-    t.integer  "category_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
   end
 
 end

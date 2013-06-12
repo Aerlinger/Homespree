@@ -32,8 +32,7 @@ class Homeowner < ActiveRecord::Base
   # Authentication:  --------------------------------------------------------------------------------------------------
 
   # Include default devise modules. Others available are:
-  # :token_authenticatable, :confirmable,
-  # :lockable, :timeoutable and :omniauthable
+  # :token_authenticatable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
@@ -48,6 +47,6 @@ class Homeowner < ActiveRecord::Base
   has_many :photos, as: :photographable, through: :appointments
 
   # Nested Attributes:  -----------------------------------------------------------------------------------------------
-  accepts_nested_attributes_for :appointments, :appointments
+  accepts_nested_attributes_for :appointments, :address
 
 end

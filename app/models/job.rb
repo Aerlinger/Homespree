@@ -11,10 +11,12 @@
 #
 
 class Job < ActiveRecord::Base
-  belongs_to :appointment
-
   validates_presence_of :name, :description
   validates_associated :categories
 
-  has_many :categories, as: :categorizable
+  has_many :job_categories, as: :categorizable
+  has_many :before_photos, class_name: 'Photo', as: :photographable
+  has_many :after_photos, class_name: 'Photo', as: :photographable
+
+  belongs_to :appointment
 end

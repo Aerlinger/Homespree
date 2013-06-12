@@ -3,9 +3,8 @@ FactoryGirl.define do
     date Date.new(2013, 12, 3)
     time Time.new(12, 1, 3)
 
+    appointments { [FactoryGirl.create(:appointment)] }
     address
     job
-    contractor
-    homeowner
   end
 end

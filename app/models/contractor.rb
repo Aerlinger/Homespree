@@ -61,9 +61,9 @@ class Contractor < ActiveRecord::Base
 
 
   # Associations:  ----------------------------------------------------------------------------------------------------
+  has_one :address, as: :addressable, dependent: :destroy
   has_many :appointments, through: :homeowners
   has_many :specialties, dependent: :destroy
-  has_one :address, as: :addressable, dependent: :destroy
   has_many :photos, as: :photographable
   has_many :messages, as: :messageable
 

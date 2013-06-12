@@ -10,9 +10,10 @@
 #  categorizable_type :string(255)
 #
 
-class Category < ActiveRecord::Base
+class JobCategory < ActiveRecord::Base
   attr_accessible :name
 
-  has_many :subcategories
+  has_many :job_subcategories
+
   belongs_to :categorizable, polymorphic: true
 end

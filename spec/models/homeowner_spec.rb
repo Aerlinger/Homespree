@@ -29,7 +29,7 @@
 
 require 'spec_helper'
 
-describe Homeowner, focus: true do
+describe Homeowner do
   it { should respond_to :email }
 
   let(:homeowner) { FactoryGirl.create(:homeowner) }

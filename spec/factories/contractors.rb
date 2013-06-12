@@ -24,20 +24,20 @@ FactoryGirl.define do
     slogan "I am Joe the plumber"
     description "I am Joe The Plumber I have been in business for more than 140 years in the plumbing industry. I plumb everything from sinks to toilets. Been working in this working in the new jersey area for more than 50 years"
 
+    # Associations
     association :address
+
+    # Contractor has many photos, appointments and job categories
+    photos { [FactoryGirl.create(:photo)] }
+    appointments { [FactoryGirl.create(:appointment)] }
+    job_categories { [FactoryGirl.create(:job_category)] }
+    messages { [FactoryGirl.create(:message)] }
+
   end
 
   factory :invalid_contractor, parent: :contractor do
     email "invalidemail"
   end
 
-  factory :minimal_contractor, class: Contractor do
-    sequence :email do |n|
-      "min_contractor#{n}@rspec.com"
-    end
-
-    company_title "Mike's Contracting"
-    password "iamsecret"
-  end
 
 end

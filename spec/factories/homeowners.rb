@@ -4,9 +4,10 @@ FactoryGirl.define do
       "rspec_homeowner#{n}@email.com"
     end
     password "iamsecret"
-    first_name "MyString"
-    last_name "MyString"
+    first_name "RspecHomeowner"
+    last_name "RspecHomeowner"
 
     address
+    appointments { [FactoryGirl.create(:appointment)] }
   end
 end

@@ -1,10 +1,10 @@
 FactoryGirl.define do
   factory :job do
-    name "Job Title"
-    description "description of the job to be done"
+    title "Job Title"
+    description "This is a test description of the job to be done"
 
-    after_create do |job|
-      3.times { create(:category) }
-    end
+    before_photos { [FactoryGirl.create(:photo)] }
+    after_photos { [FactoryGirl.create(:photo)] }
+    job_categories { [FactoryGirl.create(:job_category)] }
   end
 end
