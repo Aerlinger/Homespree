@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe HomeownersController, focus: true do
+describe HomeownersController do
 
   def valid_session
     {}
@@ -15,7 +15,5 @@ describe HomeownersController, focus: true do
       assigns(:homeowner).should eq(homeowner)
     end
   end
-
-
 
 end

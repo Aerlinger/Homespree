@@ -71,4 +71,9 @@ end
 
 Spork.each_run do
   FactoryGirl.reload
+
+  # Force Spork to reload models each turn
+  silence_warnings do
+    Dir["#{Rails.root}/app/models/**/*.rb"].each {|f| load f}
+  end
 end

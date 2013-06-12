@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 
-describe Homeowners::RegistrationsController, focus: true do
+describe Homeowners::RegistrationsController do
 
   before do
     @request.env["devise.mapping"] = Devise.mappings[:homeowner]

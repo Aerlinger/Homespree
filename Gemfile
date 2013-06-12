@@ -46,13 +46,14 @@ group :test, :development do
   gem 'factory_girl_rails', '1.4.0'
 
   gem 'rb-fsevent'
-  gem 'guard-rspec'
-  gem 'guard-spork', '0.3.2'
-  gem 'spork', '0.9.0'
+
   gem 'launchy', '2.1.0'
 end
 
 group :test do
+  gem 'guard-rspec'
+  gem 'guard-spork', '0.3.2'
+  gem 'spork', '0.9.0'
   gem 'zeus'
   gem 'selenium-webdriver'
   gem 'simplecov', '>=0.3.8', :require => false

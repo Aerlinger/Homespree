@@ -45,7 +45,11 @@
 
 require 'spec_helper'
 
-describe Contractor do
+describe Contractor, focus: true do
+
+  let(:mike) { FactoryGirl.create :contractor }
+  subject { mike }
+
   it { should respond_to :address }
   it { should respond_to :appointments }
 
@@ -73,19 +77,25 @@ describe Contractor do
   it { should respond_to :last_sign_in_ip }
   it { should respond_to :encrypted_password }
 
-  let(:mike) { FactoryGirl.create :contractor }
-  subject { mike }
+  it "has one address"
+  it "has many photos"
+  it "has many messages"
+  it "has many jobs"
+  it "has many appointments"
+  it "has many homeowners through appointments"
+
 
   describe "sanitize phone numbers" do
     before do
-      mike.office_number = '(808)   389-1234'
       mike.mobile_number = '[808]389-1234'
-      mike.valid?
+      mike.office_number = '(808)   555-1234'
+      mike.save
     end
 
     it { should be_valid }
-    its(:office_number) { should eq "8083891234" }
-    its(:mobile_number) { should eq "8083891234" }
+    its(:mobile_number) { should eq '8083891234' }
+    its(:office_number) { should eq '8085551234' }
+
   end
 
   describe "with nothing" do
@@ -98,8 +108,7 @@ describe Contractor do
 
     it "should show error for non existent password" do
       @contractor.errors.messages[:password].should eq ["can't be blank"]
-      @contractor.errors.messages[:email].should eq ["can't be blank", "is invalid"]
-      @contractor.errors.messages[:company_title].should eq ["must include either a title or first and last name"]
+      @contractor.errors.messages[:company_title].should eq ["can't be blank"]
     end
   end
 
@@ -197,37 +206,9 @@ describe Contractor do
   end
 
   describe "should build a full contractor" do
-    before do
-      @plumber = Contractor.new do |c|
-        c.email = "joetheplumber@seed.com"
-        c.password = "iamsecret"
+    let(:plumber) { FactoryGirl.build(:contractor) }
 
-        c.id = 1
-        c.first_name = "joe"
-        c.last_name = "thePlumber"
-        c.company_title = "Joe's Plumbing"
-
-        c.bonding_limit = 100.00
-        c.insurance_limit = 200.00
-
-        c.office_number = "714-555-9652"
-        c.mobile_number = "949-555-6404"
-
-        c.slogan = "I am Joe the plumber"
-
-        c.description = Faker::Lorem.paragraphs(5).join
-
-        c.facebook = "www.facebook.com/joe_the_plumber"
-        c.twitter = "@joe_the_plumber"
-        c.license = "abcdefg12345"
-
-        c.website = "http://www.joesplumbing.com"
-      end
-
-      @plumber.save!
-    end
-
-    subject {@plumber}
+    subject {plumber}
 
     it { should be_valid }
 
@@ -235,17 +216,17 @@ describe Contractor do
     its(:last_name) { should eq "ThePlumber" }
     its(:company_title) { should eq "Joe's Plumbing" }
 
-    its(:bonding_limit) { should eq 100.00 }
-    its(:insurance_limit) { should eq 200.00 }
+    its(:license) { should eq "ABCDEFG12345" }
+    its(:insurance_limit) { should eq 200000.0 }
+    its(:bonding_limit) { should eq 100000.0 }
 
-    its(:office_number) { should eq "7145559652" }
-    its(:mobile_number) { should eq "9495556404" }
+    its(:office_number) { should eq "8485558443" }
+    its(:mobile_number) { should eq "8485558332" }
 
     its(:slogan) { should eq "I am Joe the plumber" }
 
     its(:facebook) { should eq "www.facebook.com/joe_the_plumber" }
     its(:twitter) { should eq "@joe_the_plumber" }
-    its(:license) { should eq "ABCDEFG12345" }
     its(:website) { should eq "http://www.joesplumbing.com" }
   end
 end

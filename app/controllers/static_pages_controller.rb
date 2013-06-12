@@ -35,4 +35,20 @@ class StaticPagesController < ApplicationController
     
   end
 
+  def team
+
+  end
+
+  def contractor_overview
+    
+  end
+
+  def contractor_how_it_works
+    
+  end
+
+  def for_professionals
+
+  end
+
 end

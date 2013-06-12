@@ -13,3 +13,11 @@ provement industry and how the traditional process of requesting and submitting 
 ---
 
 #### Developed by Anthony Erlinger (mailto:aerlinger@gmail.com)
+
+
+Requirements:
+
+
+sudo apt-get install libxml2-dev libxslt-dev libmagickcore-dev libmagickwand-dev libmysqlclient-dev libsqlite3-dev imagemagick libsndfile1-dev
+
+

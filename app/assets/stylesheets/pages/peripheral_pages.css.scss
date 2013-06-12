@@ -3,7 +3,11 @@
 $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
 
 .secondary {
-
+  #createprofilebutton{
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .container {
     padding: 0px;
     box-shadow: $shadow;

@@ -65,6 +65,7 @@ class Contractor < ActiveRecord::Base
   has_many :specialties, dependent: :destroy
   has_one :address, as: :addressable, dependent: :destroy
   has_many :photos, as: :photographable
+  has_many :messages, as: :messageable
 
   # Nested Attributes:  -----------------------------------------------------------------------------------------------
   accepts_nested_attributes_for :address
@@ -73,16 +74,18 @@ class Contractor < ActiveRecord::Base
 
   # Validations:  -----------------------------------------------------------------------------------------------------
   validates_format_of :first_name, :last_name, with: /\A\w+\z/, allow_blank: true, message: "should only contain letters"
-  validates_length_of :first_name, :last_name, minimum: 2, maximum: 20, allow_blank: true, message: "must be valid"
+  validates_length_of :first_name, :last_name, minimum: 2, maximum: 20, allow_blank: true, message: "must be a reasonable length"
   validates_format_of :email, with: RegexDefinitions::email_regex, message: "is invalid"
   validates_uniqueness_of :email, message: "is already taken"
   validates_format_of :mobile_number, :office_number, with: /\A\d{10}\Z/, allow_blank: true, message: "must be valid"
+  validates_presence_of :company_title
   validates_numericality_of :years_experience, allow_blank: true
-  validate :name_or_title?
 
 
   # Callbacks:  -------------------------------------------------------------------------------------------------------
-  before_save :titleize_name, :downcase_email, :upcase_license, :process_associations
+  before_save lambda { |contractor| contractor.first_name.try(:capitalize!); contractor.last_name.try(:capitalize!) }
+  before_save lambda { |contractor| contractor.email.try(:downcase!) }
+  before_save lambda { |contractor| contractor.license.try(:upcase!) }
   before_validation :sanitize_phone_numbers
 
 
@@ -107,55 +110,17 @@ class Contractor < ActiveRecord::Base
     return sections
   end
 
-  def name_or_title
-    if company_title.present?
-      return company_title
-    else
-      return "#{first_name} #{last_name}"
+  def single_address
+    if address
+      [address.line1, address.city, address.state].compact.join(', ')
     end
   end
 
   protected
 
-  def process_associations
-    if address.blank?
-      build_address
-    end
-  end
-
-  def new_profile?
-    sign_in_count <= 1
-  end
-
   def sanitize_phone_numbers
-    self.mobile_number.gsub!(/\D/, '') if self.mobile_number.present?
-    self.office_number.gsub!(/\D/, '') if self.office_number.present?
-  end
-
-  def titleize_name
-    self.first_name[0] = first_name[0].upcase if first_name.present?
-    self.last_name[0] = last_name[0].upcase if last_name.present?
-  end
-
-  def downcase_email
-    self.email.downcase! if self.email.present?
-  end
-
-  def upcase_license
-    self.license.upcase! if self.license.present?
-  end
-
-  # Validates the presence of first_name and last_name OR presence of a title
-  def name_or_title?
-    unless self.company_title.present? || (first_name.present? && last_name.present?)
-      errors.add(:company_title, "must include either a title or first and last name")
-    end
-  end
-
-  def single_address
-    if address
-      [address.line1, address.city, address.state].compact.join(', ')
-    end
+    self.mobile_number.try(:gsub!, /\D/, '')
+    self.office_number.try(:gsub!, /\D/, '')
   end
 
 end
