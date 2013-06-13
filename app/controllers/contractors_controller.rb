@@ -6,7 +6,7 @@ class ContractorsController < ApplicationController
     @location = request.location
 
     @contractor = Contractor.find(params[:id])
-    @address = @contractor.address.decorate
+    @address = @contractor.address
     @specialty = Specialty.new
     @specialties = @contractor.specialties
     @photos = @contractor.photos
