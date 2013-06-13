@@ -6,4 +6,8 @@ FactoryGirl.define do
     contractor
   end
 
+  factory :photos, class: "photo" do
+    create :photo
+  end
+
 end

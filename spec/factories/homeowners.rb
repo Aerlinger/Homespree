@@ -7,7 +7,7 @@ FactoryGirl.define do
     first_name "RspecHomeowner"
     last_name "RspecHomeowner"
 
-    address
+    #address
     #appointments { [FactoryGirl.create(:appointment)] }
   end
 end

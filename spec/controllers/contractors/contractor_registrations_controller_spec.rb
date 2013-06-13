@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe Contractors::RegistrationsController, "With valid input" do
 
+  # A simple trick to help devise cooperate with our test controller
   before :each do
     @request.env["devise.mapping"] = Devise.mappings[:contractor]
   end
@@ -27,7 +28,7 @@ describe Contractors::RegistrationsController, "With valid input" do
       end
       it "redirects to new profile" do
         post :create, contractor: attributes_for(:contractor)
-        expect(response).to redirect_to "/contractors/2"
+        expect(response).to redirect_to "/contractors/1"
       end
     end
 

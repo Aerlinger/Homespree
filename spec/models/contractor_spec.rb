@@ -48,6 +48,7 @@ require 'spec_helper'
 describe Contractor do
 
   let(:mike) { FactoryGirl.create :contractor }
+  before { @photo_attributes = {"0" => {:image_url=>"photo1", :caption=>"some_caption"}, "1" => {:image_url=>"photo1", :caption=>"some_caption"}} }
   subject { mike }
 
   it { should respond_to :address }
@@ -226,4 +227,6 @@ describe Contractor do
     its(:twitter) { should eq "@joe_the_plumber" }
     its(:website) { should eq "http://www.joesplumbing.com" }
   end
+
+
 end

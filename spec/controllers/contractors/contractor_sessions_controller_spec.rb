@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe Contractors::SessionsController do
 
+  # A simple trick to help devise cooperate with our test controller
   before :each do
     @request.env["devise.mapping"] = Devise.mappings[:contractor]
   end

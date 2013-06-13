@@ -25,6 +25,6 @@ class Appointment < ActiveRecord::Base
 
   accepts_nested_attributes_for :job, :address
 
-  validates_presence_of :date, :time, :address, :contractor, :homeowner
+  validates_presence_of :date, :time, :address
 
 end

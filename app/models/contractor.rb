@@ -57,18 +57,19 @@ class Contractor < ActiveRecord::Base
   attr_accessible :address, :specialties, :first_name, :last_name, :email, :password, :remember_me, :slogan, :bonding_limit,
                   :description, :mobile_number, :office_number, :company_title, :custom_field, :latitude, :longitude,
                   :facebook, :name, :specialties, :twitter, :website, :other_specialties, :specialty_ids, :logo, :years_experience,
-                  :insurance_limit, :license
+                  :insurance_limit, :license, :photos, :profile_picture, :photos_attributes
 
 
   # Associations:  ----------------------------------------------------------------------------------------------------
   has_one :address, as: :addressable, dependent: :destroy
+  has_one :profile_picture, as: :photographable, class_name: 'Photo'
   has_many :appointments, through: :homeowners
   has_many :specialties, dependent: :destroy
   has_many :photos, as: :photographable
   has_many :messages, as: :messageable
 
   # Nested Attributes:  -----------------------------------------------------------------------------------------------
-  accepts_nested_attributes_for :address, :photos, :appointments, :specialties
+  accepts_nested_attributes_for :address, :photos, :appointments, :specialties, :profile_picture
 
 
   # Validations:  -----------------------------------------------------------------------------------------------------

@@ -3,31 +3,30 @@ require 'spec_helper'
 describe ContractorsController do
 
 
-  let(:this_contractor) { FactoryGirl.create(:contractor) }
   let(:contractor) { FactoryGirl.create(:contractor) }
 
   describe "GET #show" do
-    before(:each) { get :show, id: this_contractor.id }
+    before(:each) { get :show, id: contractor.id }
 
     context "contractor is viewing their own profile" do
       it "should render controls to edit the page" do
-        expect(response).to render_template :show
+        expect(response).to render_template :profile
       end
     end
 
     it "should assign contractor to contractor" do
-      expect(assigns(:contractor)).to eq this_contractor
+      expect(assigns(:contractor)).to eq contractor
     end
 
     it "should render contractor page" do
-      expect(response).to render_template(:show)
+      expect(response).to render_template(:profile)
     end
   end
 
   describe "PUT #update" do
 
     before :each do
-      contractor = create(:contractor, email: "updatedcontractorrspec.com")
+      contractor = create(:contractor, email: "updatedcontractor@rspec.com")
     end
 
     it "locates the requested contractor" do
@@ -55,14 +54,13 @@ describe ContractorsController do
     end
 
     describe "with nested attributes for photos" do
-      let(:photo_attributes) { FactoryGirl.attributes_for(:photo) }
 
       it " properly updates photos on the Contractor model" do
-        put :update, attributes_for(:contractor, photos: photo_attributes)
+        put :update, controller: :contractors, id: contractor.id, photos: FactoryGirl.attributes_for(:photos)
       end
 
       it "increases the number of photos by 1" do
-        put :update, attributes_for(:contractor, photos: photo_attributes)
+        put :update, controller: :contractors, id: contractor.id, photos: FactoryGirl.attributes_for(:photos)
       end
 
     end
@@ -71,22 +69,22 @@ describe ContractorsController do
       let(:address_attributes) { FactoryGirl.attributes_for(:address) }
 
       it "should properly update the address on the Contractor model" do
-        put :update, attributes_for(:contractor, address: address_attributes)
+        put :update, controller: :contractors, id: contractor.id, address: FactoryGirl.attributes_for(:address)
       end
-
     end
 
     describe "with nested attributes for appointments" do
       let(:appointment_attributes) { FactoryGirl.attributes_for(:appointment) }
 
       it "properly updates appointments on the contractor profile" do
-        put :update, attributes_for(:contractor, address: address_attributes)
+        put :update, controller: :contractors, id: contractor.id, appointments: [FactoryGirl.attributes_for(:appointment)]
+        request.params[:appointments].should eq([FactoryGirl.attributes_for(:appointment)])
       end
 
       it "should create a new appointment" do
         expect {
-          put :update, attributes_for(:contractor, address: address_attributes)
-        }.to increase(Address.count).by(1)
+          put :update, controller: :contractors, id: contractor.id, appointments: [FactoryGirl.attributes_for(:appointment)]
+        }.to change{Appointment.count}.by(1)
       end
     end
 
