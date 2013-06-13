@@ -21,12 +21,12 @@ class Address < ActiveRecord::Base
   # Class Methods:  ---------------------------------------------------------------------------------------------------
   geocoded_by :single_address
 
-  attr_accessible :addressable_id, :addressable_type, :city, :line1, :line2, :state, :zipcode
+  attr_accessible :addressable_id, :addressable_type, :city, :line1, :line2, :state, :zipcode, :latitude, :longitude
 
   # Validations:  -----------------------------------------------------------------------------------------------------
   validates :zipcode, format: RegexDefinitions::zipcode_regex, allow_blank: true
-  validates_presence_of :line1, allow_blank: false
-  validates_presence_of :city, allow_blank: false
+  validates_presence_of :line1, allow_blank: true
+  validates_presence_of :city, allow_blank: true
   validates_format_of :state, with: /[A-Za-z][A-Za-z]/i, allow_blank: true
 
   belongs_to :addressable, polymorphic: true

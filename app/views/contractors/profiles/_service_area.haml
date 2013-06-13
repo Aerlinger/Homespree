@@ -1,5 +1,5 @@
 
-=image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@address.latitude}%2C#{@address.longitude}", id: "map"
+=image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@address.try(:latitude)}%2C#{@address.try(:longitude)}", id: "map"
 
 .no-edit
   .address.line1
@@ -21,12 +21,12 @@
       =f.input :line1, placeholder: "Address Line 1", label: "Street"
 
     %span.address
-      =f.input :city, placeholder: @location.city || @address.city, label: "City"
+      =f.input :city, placeholder: @address.try(:city), label: "City"
 
     .address
       =f.input :state, collection: us_states, label: "State", :style => "width: 600px;"
 
     %span.address
-      =f.input :zipcode, maxlength: 5, placeholder: "Zipcode", label: "Zipcode"
+      =f.input :zipcode, maxlength: 5, placeholder: @address.try(:zipcode), label: "Zipcode"
 
     = f.submit "Update Location", class: "btn custom-btn btn-small btn-info"

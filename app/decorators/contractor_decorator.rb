@@ -34,6 +34,7 @@ class ContractorDecorator < Draper::Decorator
   include Draper::LazyHelpers
   include ActionView::Helpers::UrlHelper
   include ActionView::Helpers::TagHelper
+  include Haml::Helpers
 
   delegate_all
   decorates :contractor
@@ -59,7 +60,7 @@ class ContractorDecorator < Draper::Decorator
 
   def city_and_state
     address = @object.address
-    if @object.address.valid?
+    if @object.try(:address).try(:valid?)
       "#{address.city}, #{address.state}"
     end
   end
@@ -82,8 +83,8 @@ class ContractorDecorator < Draper::Decorator
                   end
 
       h.link_to "javascript:void(0)", id: attr_name, class: "edit-link #{link_text}" do
-        #link_text += content_tag(:i, class: "e-icon-pencil", style: "height: 20px; line-height: 16px;")
-        link_text
+        h.content_tag(:i, class: "e-icon-pencil", style: "height: 20px; line-height: 16px;")
+        h.haml_concat(link_text)
       end
     end
   end
@@ -97,7 +98,7 @@ class ContractorDecorator < Draper::Decorator
       attr = "#{attr}_edited"
     end
 
-    content_tag(tag, options.merge(id: attr.to_s), &block)
+    h.content_tag(tag, options.merge(id: attr.to_s), &block)
   end
 
   # Defines a highlighted section for the intro sequence. By default, this will be only displayed once.
@@ -105,7 +106,7 @@ class ContractorDecorator < Draper::Decorator
     # Nullify an edited tag for Intro sequence by changing its ID
     id = "#{id}_edited" if @object.edited?
 
-    content_tag(:div, options.merge(id: id), &block)
+    h.content_tag(:div, options.merge(id: id), &block)
   end
 
   # Check if this attribute is set and saved on the contractor's profile.
