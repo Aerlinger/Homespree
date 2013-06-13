@@ -6,7 +6,7 @@ class ContractorsController < ApplicationController
 
   def show
     @contractor = Contractor.find(params[:id])
-    @contractor.address ||= @address
+    @address ||= @contractor.address
     @specialty = Specialty.new
     @specialties = @contractor.specialties
     @photos = @contractor.photos
