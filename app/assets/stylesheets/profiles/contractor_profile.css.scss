@@ -378,7 +378,7 @@
       }
     }
 
-    #services {
+    #services, #services_edited {
       li:nth-child(2n+1) {
         background-color: white;
       }
@@ -387,8 +387,14 @@
         font-size: 1.5em;
       }
 
-      #contractor_specialties .badge {
-        cursor: move;
+      #contractor_specialties li {
+        span {
+          cursor: move !important;
+        }
+
+        ui-sortable-placeholder {
+          list-style: none;
+        }
       }
       li{
         line-height: 25px;

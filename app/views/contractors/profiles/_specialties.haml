@@ -4,7 +4,7 @@
 
 -# List of specialties which have been claimed by this contractor ----------------------------------------------------
 = content_tag :ol, id: "contractor_specialties", class: "specialties", data: { "update-url" => "/contractors/#{@contractor.id}/specialties/sort" } do
-  =render @specialties
+  =render @contractor.specialties
 
 %h3{style: "font-size: 16px;"} Add more services to your profile
 %hr{style: "margin-top: 5px; margin-bottom: 5px"}

@@ -9,14 +9,6 @@
 # Order of fields to be displayed during the intro sequence -----------------------------------------------------------
 fields = {
 
-  # Card fields
-  ##################################################################
-#  title: {  # The company title
-#    intro: "What is the name of your company?"
-#    position: "bottom"
-#    required: true
-#  }
-
   # TODO: Enable editing first and last name in a single step
   card_first_name: {
     intro: "Name of the owner? (First and Last)"
@@ -80,52 +72,46 @@ setupIntro = (intro_fields) ->
 strtrim = (str) ->
   str?.replace(/^\s\s*/, '')?.replace(/\s\s*$/, '')
 
-onImagesLoaded = ->
-  console.log("images loaded")
-
-  # Load the definition of out introduction fields
-  setupIntro(fields)
-
-  $("#intro_js_start").attr({
-    "data-step": 1
-    "data-intro": "Welcome to your Homespree profile! Taking a few seconds to fill out your profile will help customers find your business."
-    "data-position": "right"
-  })
-
-#  {data: {intro: "Welcome to your Homespree profile! Taking a few seconds to fill out your profile will help customers find your business.", step: 1, position: "bottom"}}
-
-  # Timeout is used to account for the delay when switching fields:
-  introJs().onchange((targetElement) ->
-
-    # If the contractor has gone far enough to pass 'skippable' item, they do not need to see this message again.
-    if $(targetElement).attr("data-step") > 1
-      $('.introjs-overlay').click()
-
-      # Timeout is used to account for the delay when switching fields
-      setTimeout () ->
-        $(targetElement).find('a.edit-link').click()
-      , 500
-  ).start()
-
-  $('.best_in_place').best_in_place()
-  setTimeout () ->
-    $('.introjs-overlay').click()
-  , 500
-
-
 $(document).ready ->
+  console.log("images loaded")
 
   # Only run this script if we're on the contractor's profile page.
   if $("#page.profile").length > 0
 
-    $.preload $("ul.slides img").last().attr('src'), {
-      onFinish: onImagesLoaded
-    }
+    # Load the definition of out introduction fields
+    setupIntro(fields)
+
+    $("#intro_js_start").attr({
+      "data-step": 1
+      "data-intro": "Welcome to your Homespree profile! Taking a few seconds to fill out your profile will help customers find your business."
+      "data-position": "right"
+    })
+
+    # Timeout is used to account for the delay when switching fields:
+    introJs().onchange((targetElement) ->
+
+      # If the contractor has gone far enough to pass 'skippable' item, they do not need to see this message again.
+      if $(targetElement).attr("data-step") > 1
+        $('.introjs-overlay').click()
+
+        # Timeout is used to account for the delay when switching fields
+        setTimeout () ->
+          $(targetElement).find('a.edit-link').click()
+        , 500
+    ).start()
+
+    $('.best_in_place').best_in_place()
+    setTimeout () ->
+      $('.introjs-overlay').click()
+    , 500
 
     # Make contractor specialties sortable
     $('#contractor_specialties').sortable
-      cursorAt: { top: 0, left: 0 }
-      axis: 'y'
+      containment: "#services_edited"
+      helper: "clone"
+      appendTo: 'body'
+      revert: true
+      zIndex: 9999
       update: ->
         $.post($(this).data('update-url'), $(this).sortable('serialize'))
 

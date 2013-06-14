@@ -115,7 +115,7 @@ class ContractorDecorator < Draper::Decorator
   end
 
   def visitor?
-    return false
+    return false  # TODO: returns false for simple testing
     if contractor_signed_in? && current_contractor.id == params[:id]
       return false
     end
