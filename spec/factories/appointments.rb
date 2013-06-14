@@ -4,7 +4,7 @@ FactoryGirl.define do
     time Time.new(12, 1, 3)
 
     #appointments { [FactoryGirl.create(:appointment)] }
-    address
+    #address
     job
   end
 end

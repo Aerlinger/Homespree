@@ -38,12 +38,12 @@ class Contractors::RegistrationsController < Devise::RegistrationsController
 
   def geolocate
     resource.create_address do |address|
-      city = request.location.city || "New York"
-      zipcode = request.location.postal_code || 10027
-      latitude = request.location.latitude || -33.9417
-      longitude = request.location.longitude || 150.9473
+      address.city = request.location.city || "New York"
+      address.zipcode = request.location.postal_code || 10027
+      address.latitude = request.location.latitude || -33.9417
+      address.longitude = request.location.longitude || 150.9473
     end
-    resource.save!
+    resource.save
   end
 
 end

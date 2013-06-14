@@ -36,7 +36,7 @@ describe Contractors::RegistrationsController, "With valid input" do
       it "does not save a new contractor in the database" do
         expect {
           post :create, contractor: attributes_for(:invalid_contractor)
-        }.to_not change(Contractor, :count)
+        }.to_not change(Contractor.count)
       end
 
       it "re-renders the :new template" do
