@@ -109,13 +109,15 @@ class ContractorDecorator < Draper::Decorator
     h.content_tag(:div, options.merge(id: id), &block)
   end
 
+
+
   # Check if this attribute is set and saved on the contractor's profile.
   def contractor_missing_attr?(attr_name)
     @object.send(attr_name).blank?
   end
 
   def visitor?
-    return false  # TODO: returns false for simple testing
+    return false # TODO: returns false for simple testing
     if contractor_signed_in? && current_contractor.id == params[:id]
       return false
     end

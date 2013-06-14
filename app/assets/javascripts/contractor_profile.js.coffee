@@ -107,7 +107,7 @@ $(document).ready ->
 
     # Make contractor specialties sortable
     $('#contractor_specialties').sortable
-      containment: "#services_edited"
+#      containment: "#services"
       helper: "clone"
       appendTo: 'body'
       revert: true

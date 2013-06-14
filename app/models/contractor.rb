@@ -57,7 +57,7 @@ class Contractor < ActiveRecord::Base
   attr_accessible :address, :specialties, :first_name, :last_name, :email, :password, :remember_me, :slogan, :bonding_limit,
                   :description, :mobile_number, :office_number, :company_title, :custom_field, :latitude, :longitude,
                   :facebook, :name, :specialties, :twitter, :website, :other_specialties, :specialty_ids, :logo, :years_experience,
-                  :insurance_limit, :license, :photos, :profile_picture, :photos_attributes
+                  :insurance_limit, :license, :photos, :profile_picture, :photos_attributes, :address_attributes
 
 
   # Associations:  ----------------------------------------------------------------------------------------------------
@@ -92,6 +92,9 @@ class Contractor < ActiveRecord::Base
   # Scopes:  ----------------------------------------------------------------------------------------------------------
   default_scope order("created_at desc")
   scope :recent_signups, lambda { limit(100) }
+
+  # Delegations:  -----------------------------------------------------------------------------------------------------
+  delegate :line1, :line2, :city, :state, :zipcode, :latitude, :longitude, to: :address, allow_nil: true
 
   # Custom Methods:  --------------------------------------------------------------------------------------------------
   def incomplete_sections
