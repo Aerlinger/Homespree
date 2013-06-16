@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130612041015) do
+ActiveRecord::Schema.define(:version => 20130616212325) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -36,10 +36,11 @@ ActiveRecord::Schema.define(:version => 20130612041015) do
     t.string   "zipcode"
     t.integer  "addressable_id"
     t.string   "addressable_type"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
     t.float    "latitude"
     t.float    "longitude"
+    t.integer  "service_radius",   :default => 20
   end
 
   create_table "admin_users", :force => true do |t|
@@ -103,12 +104,15 @@ ActiveRecord::Schema.define(:version => 20130612041015) do
     t.text     "slogan"
     t.decimal  "years_experience"
     t.decimal  "availability_radius"
-    t.string   "logo"
     t.integer  "failed_attempts",                                      :default => 0
     t.string   "unlock_token"
     t.datetime "locked_at"
     t.string   "authentication_token"
     t.boolean  "edited",                                               :default => false
+    t.decimal  "hourly_rate"
+    t.string   "slug"
+    t.string   "portrait_url"
+    t.string   "logo_url"
   end
 
   add_index "contractors", ["authentication_token"], :name => "index_contractors_on_authentication_token", :unique => true
@@ -183,6 +187,20 @@ ActiveRecord::Schema.define(:version => 20130612041015) do
     t.integer  "thread_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "notification_settings", :force => true do |t|
+    t.boolean  "text_notifications",   :default => true
+    t.boolean  "email_notifications",  :default => true
+    t.boolean  "on_payment",           :default => true
+    t.boolean  "on_message",           :default => true
+    t.boolean  "on_scheduling",        :default => true
+    t.boolean  "on_deal",              :default => true
+    t.boolean  "featured_contractors", :default => true
+    t.integer  "notifiable_id"
+    t.string   "notifiable_type"
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
   end
 
   create_table "photos", :force => true do |t|

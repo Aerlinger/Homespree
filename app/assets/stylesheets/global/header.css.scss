@@ -1,26 +1,26 @@
 /* --------------------->>> Header-Logo <<<---------------------*/
 
 #logo{
-  margin-top: 07px;
-}
-header#logo{
-  margin: 0 !important;
-  margin-top: 07px;
-  padding: 0;
-  height: auto;
-  width: 200px !important;
-  a{
-    width: 10px !important;
-    margin: 0;
-    img{
-      float: left;
-      height: auto;
-      width: 10px;
-      margin: 0 !important;
-      display: inline !important;
-    }
+  margin-top: 10px;
+  background-image: url(/assets/logo_3.png);
+  background-repeat: no-repeat;
+  -webkit-background-size: 123px 30px;
+  background-size: 123px 30px;
+  height: 30px;
+  width: 123px;
+  a {
+    position:absolute;
+    width:200px !important;
+    height:50px;
+    top:0; left:0;
+    text-decoration:none; /* Makes sure the link   doesn't get underlined */
+    z-index:10; /* raises anchor tag above everything else in div */
+    background-color:white; /*workaround to make clickable in IE */
+    opacity: 0; /*workaround to make clickable in IE */
+    filter: alpha(opacity=1); /*workaround to make clickable in IE */
   }
 }
+
 /* --------------------->>> SVG logo see info.html for instructions <<<---------------------*/
 
 .logo-svg {

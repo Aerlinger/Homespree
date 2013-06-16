@@ -1,4 +1,3 @@
-
 =image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@contractor.try(:latitude)}%2C#{@contractor.try(:longitude)}", id: "map"
 
 .no-edit
@@ -28,5 +27,8 @@
 
     %span.address
       =f.input :zipcode, maxlength: 5, placeholder: @contractor.try(:zipcode), label: "Zipcode"
+
+    .address
+      =f.input :state, collection: Array((5..100).step(5)), label: "Service", :style => "width: 200px;", default: 25
 
     = f.submit "Update Location", class: "btn custom-btn btn-small btn-info"

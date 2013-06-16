@@ -23,8 +23,10 @@
             -#===============================================================================================
             %ul.optionheader
               %li#title.primary-color-bg
-                = best_in_place @contractor, :company_title, activator: "#title_edit"
-                = render "contractors/profiles/edit_link", activator: "title_edit"
+                = best_in_place @contractor, :company_title, activator: "#company_title"
+
+                -#= render "contractors/profiles/edit_link", activator: "title_edit" unless @contractor.visitor?
+                = @contractor.edit_link(:company_title )
 
               = render "contractors/profiles/logo"
               %span{style: "font-weight: bold"}
@@ -85,22 +87,20 @@
           .span5#business_description
             %h3.short_headline
               %div Business Description
-
             = @contractor.in_place_edit(:h6, :slogan) do
               = best_in_place @contractor, :slogan, activator: "#slogan_edit", nil: "No slogan entered"
+              -#= best_in_place @contractor, :slogan, activator: "#slogan", nil: "No slogan entered"
               = render "contractors/profiles/edit_link",  activator: "slogan_edit"
 
             = @contractor.in_place_edit(:p, :description) do
               = best_in_place @contractor, :description, type: :textarea, activator: "#description_edit", nil: default_description
               = render "contractors/profiles/edit_link", activator: "description_edit"
 
-          -#.span4#services
           = @contractor.intro_section("services", class: "span4") do
             %h3.short_headline
               %div Services Offered
             =render "contractors/profiles/specialties"
 
-          -#.span3#service_area
           = @contractor.intro_section("service_area", class: "span3") do
             %h3.short_headline
               %div Service Area

@@ -11,7 +11,6 @@
 #  twitter                :string(255)
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
-#  pictures               :text
 #  email                  :string(255)      not null
 #  last_name              :string(255)
 #  encrypted_password     :string(255)      default(""), not null
@@ -31,16 +30,17 @@
 #  bonding_limit          :decimal(5, 2)
 #  photo_filename         :string(255)
 #  slogan                 :text
-#  new_profile            :boolean          default(FALSE)
 #  years_experience       :decimal(, )
-#  latitude               :float
-#  longitude              :float
 #  availability_radius    :decimal(, )
-#  logo                   :string(255)
 #  failed_attempts        :integer          default(0)
 #  unlock_token           :string(255)
 #  locked_at              :datetime
 #  authentication_token   :string(255)
+#  edited                 :boolean          default(FALSE)
+#  hourly_rate            :decimal(, )
+#  slug                   :string(255)
+#  portrait_url           :string(255)
+#  logo_url               :string(255)
 #
 
 require 'spec_helper'
@@ -68,6 +68,9 @@ describe Contractor do
   it { should respond_to :updated_at }
   it { should respond_to :password }
   it { should respond_to :password_confirmation }
+  it { should respond_to :service_radius }
+  it { should respond_to :logo_url }
+  it { should respond_to :portrait_url }
 
   # Devise Columns:
   it { should respond_to :sign_in_count }
@@ -77,15 +80,32 @@ describe Contractor do
   it { should respond_to :last_sign_in_ip }
   it { should respond_to :encrypted_password }
 
+  it "has a service radius of 15 miles" do
+    mike.service_radius.should eq 15
+  end
+
   it "has one address" do
     mike.address.should_not be_nil
   end
 
-  it "has many photos"
-  it "has many messages"
-  it "has many jobs"
-  it "has many appointments"
-  it "has many homeowners through appointments"
+  it "has many photos" do
+    mike.photos.should_not be_empty
+  end
+
+  it "has many messages" do
+    mike.messages.should_not be_empty
+  end
+
+  it "has many jobs" do
+    mike.jobs.should_not be_empty
+  end
+
+  it "has many appointments" do
+    mike.appointments.should_not be_empty
+  end
+
+  it "has many homeowners through appointments" do
+  end
 
 
   describe "sanitize phone numbers" do

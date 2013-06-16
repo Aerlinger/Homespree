@@ -2,12 +2,13 @@
 #
 # Table name: jobs
 #
-#  id          :integer          not null, primary key
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  name        :string(255)
-#  description :string(255)
-#  category_id :integer
+#  id             :integer          not null, primary key
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  title          :string(255)
+#  description    :text(255)
+#  category_id    :integer
+#  appointment_id :integer
 #
 
 require 'spec_helper'

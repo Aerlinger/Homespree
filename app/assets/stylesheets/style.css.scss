@@ -1470,6 +1470,7 @@ html[xmlns] .slides, .no-js .slides > li:first-child {
     margin-left: auto !important;
     margin-right: auto !important;
     z-index: 3000;
+
   }
   .navbar.secondary-menu{
     #logo{
@@ -1516,15 +1517,16 @@ html[xmlns] .slides, .no-js .slides > li:first-child {
       text-align: center;
       font-size: 35px;
     }
-    margin: 10px auto 5px;
+    background-image: url(/assets/logo_3@2x.png);
+    margin: 07px !important;
     text-align: center;
     clear: both;
     position: relative;
     float: none;
-    width: auto;
-    height: auto;
+
   }
 /* ----------------------- svg logo mobile ---------------------------*/
+
   .logo-svg {
     height: auto;
     width: auto;
@@ -1556,6 +1558,7 @@ html[xmlns] .slides, .no-js .slides > li:first-child {
     padding: 0;
   }
 /* ----------------------- mobile navigation trigger ---------------------------*/
+
   .mobile_nav {
     margin: 0;
     display: block;
@@ -1579,15 +1582,16 @@ html[xmlns] .slides, .no-js .slides > li:first-child {
       &.active span {
         background-position: -60px 50%;
       }
+      position: absolute;
+      right: 0;
       color: #fff;
       text-decoration: none;
       display: block;
       padding: 0 0 0 5px;
       height: 40px;
-      width: 100%;
+      width: 70px;
       border: 0px;
       line-height: 38px;
-      position: relative;
       z-index: 2000;
     }
   }

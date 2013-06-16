@@ -155,6 +155,76 @@
       .wrapper {
         padding: 0 0 10px 0;
 
+        .price {
+          height: auto !important;
+          padding-bottom: 5px;
+
+          .btn {
+            margin: 0;
+          }
+
+          .badges {
+            ul {
+              background: none;
+              display: table;
+              margin: 0 auto;
+
+              li {
+                background: none;
+                display: inline-block;
+                float: left;
+                max-height: 100px;
+                width: auto;
+
+                img {
+                  max-height: 90px;
+                  width: auto;
+                }
+              }
+            }
+
+          }
+
+          #contractor_portrait {
+            display: table;
+            margin: 0 auto;
+            max-height: 150px;
+            width: auto;
+
+            &:not(._edited) {
+              margin-bottom: -50px;
+            }
+          }
+
+          #contractor_logo {
+            @include five-pixel-rounded;
+
+            display: table;
+            position: relative;
+
+            margin: auto;
+            width: 100px;
+
+            background: red;
+            color: white;
+            font: 14px solid red;
+
+            text-align: center;
+            padding: 5px 10px;
+
+            .upload_image {
+              display: block;
+            }
+
+            a {
+              position: absolute;
+            }
+          }
+        }
+
+
+
+
         .optionheader {
           #title {
             font-size: 1.4em;
@@ -168,7 +238,6 @@
         }
 
         .features {
-
           .new {
             .best_in_place {
               font-style: italic;
@@ -213,9 +282,10 @@
             width: 160px !important;
           }
         }
-
+        
         li.card-attribute {
           text-align: left;
+
           input {
             width: 90px !important;
           }
@@ -223,28 +293,26 @@
           a {
             float: right;
           }
+
+          &:not(._edited) {
+            font-style: italic;
+            background-color: $homespree_red_hint;
+            border-top: 3px solid white;
+
+            strong {
+              color: $homespree_error;
+            }
+
+            a {
+              color: $homespree_green;
+            }
+          }
+
         }
+
+
       }
 
-      #contractor_logo {
-        position: relative;
-
-        img {
-          margin: 0 auto;
-          max-width: 200px;
-          max-height: 150px;
-        }
-
-        #upload_image {
-          display: block;
-
-          @include five-pixel-rounded;
-        }
-
-        a {
-          position: absolute;
-        }
-      }
 
       #full_name {
         margin: 0;
@@ -401,7 +469,7 @@
       }
     }
 
-    #service_area {
+    #service_area, #service_area_edited {
       #map {
         margin-bottom: 10px;
         width: 100%;
@@ -419,10 +487,12 @@
       }
 
       input:not(.btn) {
+        width: 50%;
         height: 20px !important;
       }
 
       input:not(.btn), select {
+        width: 50%;
         margin-bottom: 10px !important;
         display: block !important;
       }

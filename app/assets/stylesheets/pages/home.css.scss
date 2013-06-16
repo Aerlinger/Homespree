@@ -41,10 +41,11 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
   #maintext{
     min-height: 850px;
     h1{
+      padding: 0 7%;
+      margin: 0 auto;
       color: white;
-      margin-left: 10%;
-      margin-top: 2%;
-      width: 80% !important;
+      width:1200px;
+      padding-top: 80px;
     }
     top: 15%;
     left: 10%;
@@ -58,13 +59,14 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
     }
 
     h2 {
-      margin-left: 10%;
+      padding: 0 7%;
+      margin: 0 auto;
       color: white;
+      width:1200px;
       text-align: left;
       font: 2.2em "helvetica neue", helvetica, sans-serif;
 
       text-shadow: 0 0 13px rgba(0, 0, 0, 1), 0 -1px 1px rgba(0, 0, 0, 1);
-      width: 80% !important;
   }
 }
   margin: 0 0 0 0; /* 40px (secondary-menu) + 80px (primary-menu and logo) + 40px (standard margin)*/
@@ -383,6 +385,12 @@ MEDIA QUERIES
   width: 100%;
   left: 0% !important;
   right: 0% !important;
+    h1{
+      width: 80% !important;
+    }
+    h2{
+      width: 80% !important;
+    }
   }
   .pitch{
   position: relative !important;
@@ -450,6 +458,11 @@ MEDIA QUERIES
 }
 
 @media (max-width: 767px) {
+  #maintext{
+    h1{
+      padding-top: 30px !important;
+    }
+  }
   .qualitypro{
     display: none;
   }
@@ -662,7 +675,7 @@ MEDIA QUERIES
   }
   #maintext{
     h1{
-      font-size: 4rem !important;
+      font-size: 3.2rem !important;
     }
     min-height: 800px !important;
   }

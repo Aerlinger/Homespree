@@ -49,7 +49,7 @@ Homespree::Application.routes.draw do
   # Static Pages: ----------------------------------------------------------------------------------------------------
 
 
-  %w(pitch home faqs about contact jobs how_it_works team for_professionals contractor_overview contractor_how_it_works).each do |page|
+  %w(pitch home faqs about contact jobs how_it_works team for_professionals).each do |page|
     get page, controller: :static_pages, action: page
   end
 

@@ -57,12 +57,12 @@ describe ContractorsController do
 
       it " properly updates photos on the Contractor model" do
         put :update, id: contractor, contractor: {id: contractor.id, photos_attributes: [FactoryGirl.attributes_for(:photo)]}
-        request.params[:photos_attributes].should eq([FactoryGirl.attributes_for(:photo)])
+        request.params[:contractor][:photos_attributes].should eq([FactoryGirl.attributes_for(:photo)])
       end
 
       it "increases the number of photos by 1" do
         put :update, id: contractor, contractor: {id: contractor.id, photos_attributes: [FactoryGirl.attributes_for(:photo)]}
-        request.params[:photos_attributes].should eq([FactoryGirl.attributes_for(:photo)])
+        request.params[:contractor][:photos_attributes].should eq([FactoryGirl.attributes_for(:photo)])
       end
 
     end
@@ -72,7 +72,7 @@ describe ContractorsController do
 
       it "should properly update the address on the Contractor model" do
         put :update, id: contractor, contractor: {id: contractor.id, address_attributes: FactoryGirl.attributes_for(:address)}
-        request.params[:address_attributes].should eq([FactoryGirl.attributes_for(:address)])
+        request.params[:contractor][:address_attributes].should eq([FactoryGirl.attributes_for(:address)])
       end
     end
 
@@ -81,12 +81,13 @@ describe ContractorsController do
 
       it "properly updates appointments on the contractor profile" do
         put :update, id: contractor, contractor: {id: contractor.id, appointments_attributes: [FactoryGirl.attributes_for(:appointment)]}
-        request.params[:appointments_attributes].should eq([FactoryGirl.attributes_for(:appointment)])
+        request.params[:contractor][:appointments_attributes].should eq([FactoryGirl.attributes_for(:appointment)])
+        expect(assigns())
       end
 
       it "should create a new appointment" do
         put :update, id: contractor, contractor: {id: contractor.id, appointments_attributes: [FactoryGirl.attributes_for(:appointment)]}
-        request.params[:appointments_attributes].should eq([FactoryGirl.attributes_for(:appointment)])
+        request.params[:contractor][:appointments_attributes].should eq([FactoryGirl.attributes_for(:appointment)])
       end
     end
 

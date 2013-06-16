@@ -21,9 +21,9 @@ gem 'draper'
 gem 'best_in_place'
 gem 'geocoder'
 gem 'simple_form'
+gem 'friendly_id'
 
 gem 'jquery-rails', "2.3.0"
-#gem 'jquery-ui-rails'
 gem 'acts_as_list'
 gem 'figaro', '>= 0.5.3'
 gem 'haml-rails'
@@ -42,8 +42,7 @@ group :test, :development do
   gem 'zeus-parallel_tests'
 
   gem 'faker'
-  # Todo: Consider Fabrication as an alternative to FactoryGirl (Builder design pattern)
-  gem 'factory_girl_rails', '1.4.0'
+  gem 'factory_girl_rails'
 
   gem 'rb-fsevent'
 

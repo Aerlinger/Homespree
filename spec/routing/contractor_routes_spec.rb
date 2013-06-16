@@ -49,4 +49,6 @@ describe ContractorsController do
   it "should index" do
     get("/contractors").should route_to("contractors#index")
   end
+
+  it "should "
 end

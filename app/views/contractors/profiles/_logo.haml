@@ -1,6 +1,10 @@
 %li.price.primary-color-bg
-  #contractor_logo{style:"position: relative;"}
-    =image_tag "http://placehold.it/150x75", id: "contractor_logo"
-    .on-edit
-      -#= s3_uploader_form callback_url: contractors_url, callback_method: :PUT, callback_param: "", id: "logo_uploader" do
-      -#  = file_field_tag :file, multiple: false
+  = content_tag(:div, style: "position: relative;") do
+    - @contractor.portrait
+    -#= @contractor.logo
+    = @contractor.logo_upload
+  = content_tag(:div, style: "position: relative;", class: "badges") do
+    %ul
+      %li
+        = @contractor.badge
+        = @contractor.badge

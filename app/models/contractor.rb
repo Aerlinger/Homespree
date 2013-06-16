@@ -11,7 +11,6 @@
 #  twitter                :string(255)
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
-#  pictures               :text
 #  email                  :string(255)      not null
 #  last_name              :string(255)
 #  encrypted_password     :string(255)      default(""), not null
@@ -31,50 +30,51 @@
 #  bonding_limit          :decimal(5, 2)
 #  photo_filename         :string(255)
 #  slogan                 :text
-#  new_profile            :boolean          default(FALSE)
 #  years_experience       :decimal(, )
-#  latitude               :float
-#  longitude              :float
 #  availability_radius    :decimal(, )
-#  logo                   :string(255)
 #  failed_attempts        :integer          default(0)
 #  unlock_token           :string(255)
 #  locked_at              :datetime
 #  authentication_token   :string(255)
+#  edited                 :boolean          default(FALSE)
+#  hourly_rate            :decimal(, )
+#  slug                   :string(255)
+#  portrait_url           :string(255)
+#  logo_url               :string(255)
 #
 
 class Contractor < ActiveRecord::Base
 
   # Authentication:  --------------------------------------------------------------------------------------------------
 
-  # Include default devise modules. Others available are:
-  # :token_authenticatable, :confirmable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable, :lockable,
-         :recoverable, :rememberable, :trackable, :validatable
+  # Include default devise modules. Others available are:  :token_authenticatable, :confirmable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable, :lockable, :recoverable, :rememberable, :trackable, :validatable
+
+  extend FriendlyId
+  friendly_id :company_title, use: :slugged
 
 
   # Accessors:  -------------------------------------------------------------------------------------------------------
-  attr_accessible :address, :specialties, :first_name, :last_name, :email, :password, :remember_me, :slogan, :bonding_limit,
-                  :description, :mobile_number, :office_number, :company_title, :custom_field, :latitude, :longitude,
-                  :facebook, :name, :specialties, :twitter, :website, :other_specialties, :specialty_ids, :logo, :years_experience,
-                  :insurance_limit, :license, :photos, :profile_picture, :photos_attributes, :address_attributes, :appointments_attributes
-
+  attr_protected
 
   # Associations:  ----------------------------------------------------------------------------------------------------
   has_one :address, as: :addressable, dependent: :destroy
   has_one :profile_picture, as: :photographable, class_name: 'Photo'
+  has_one :notification_settings, as: :notifiable
   has_many :homeowners
   has_many :appointments, through: :homeowners
   has_many :specialties, dependent: :destroy
   has_many :photos, as: :photographable
+  has_many :badges, as: :photographable, class_name: "Photo"
   has_many :messages, as: :messageable
 
+
   # Nested Attributes:  -----------------------------------------------------------------------------------------------
-  accepts_nested_attributes_for :address, :photos, :appointments, :specialties, :profile_picture
+  accepts_nested_attributes_for :address, :photos, :appointments, :specialties, :profile_picture, :notification_settings
 
 
   # Validations:  -----------------------------------------------------------------------------------------------------
-  validates_format_of :first_name, :last_name, with: /\A\w+\z/, allow_blank: true, message: "should only contain letters"
+  validates_format_of :first_name, :last_name, with: /\A\w+ ?\w*\z/, allow_blank: true, message: "should only contain letters"
   validates_length_of :first_name, :last_name, minimum: 2, maximum: 20, allow_blank: true, message: "must be a reasonable length"
   validates_format_of :email, with: RegexDefinitions::email_regex, message: "is invalid"
   validates_uniqueness_of :email, message: "is already taken"

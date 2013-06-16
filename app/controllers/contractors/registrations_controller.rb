@@ -2,7 +2,7 @@ class Contractors::RegistrationsController < Devise::RegistrationsController
 
   respond_to :html, :json
 
-  after_filter :geolocate, only: [:create]
+  after_filter :geolocate, :add_badges, only: [:create]
 
   def new
     super
@@ -37,13 +37,18 @@ class Contractors::RegistrationsController < Devise::RegistrationsController
   end
 
   def geolocate
-    resource.create_address do |address|
-      address.city = request.location.city || "New York"
-      address.zipcode = request.location.postal_code || 10027
-      address.latitude = request.location.latitude || -33.9417
-      address.longitude = request.location.longitude || 150.9473
+    location = request.location
+    resource.create_address! do |address|
+      address.city = location.city.presence || "New York"
+      address.state = location.state.presence || "New York"
+      address.zipcode = location.postal_code.presence || 10027
+      address.latitude = location.latitude.presence || -33.9417
+      address.longitude = location.longitude.presence || 150.9473
     end
-    resource.save
+  end
+
+  def add_badges
+    resources.badges << Badge.create(name: "approved")
   end
 
 end

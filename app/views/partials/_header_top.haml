@@ -5,6 +5,7 @@
         %ul.nav.accordmobile.pull-right
 
           - if contractor_signed_in?
+
             %li.dropdown.parent
               %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
                 Messages
@@ -33,7 +34,33 @@
 
             %li.dropdown.parent
               %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-                Admin
+                My Projects
+                %i.e-icon-tools
+              %ul.dropdown-menu
+                %li.visible-phone.visible-tablet.phonenumber
+                  %a{:href => "tel:+8135553333"} 813.555.3333
+                %li.menu-text.visible-desktop.phonenumber 813.555.3333
+                %li
+                  %a{:href => "mailto:contact@longdomaingoeshere.com"} email: admin@myhomespree.com
+                %li.divider
+                %li.nav-header Sign up for our mailing list!
+                %li
+                  %form{:action => "yourscript.php", :method => "post"}
+                    .input-append.custom-append
+                      %input{:name => "email", :placeholder => "Email Address", :type => "email"}/
+                      %button.btn.btn-primary Sign Up
+                %li.divider
+                %li.nav-header Follow Us!
+                %li
+                  .social.clearfix
+                    %a.fc-webicon.facebook.round{:href => "#", :title => "Facebook"}
+                    %a.fc-webicon.twitter.round{:href => "#", :title => "Twitter"}
+                    %a.fc-webicon.linkedin.round{:href => "#", :title => "Linked In"}
+                    %a.fc-webicon.pinterest.round{:href => "#", :title => "pinterest"}
+
+            %li.dropdown.parent
+              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                Settings
                 %i.e-icon-cog
               %ul.dropdown-menu
                 %li.current-user
@@ -72,5 +99,5 @@
             -#    %input{:placeholder => "search + enter", :type => "text"}/
 
       #logo
-        = link_to root_path do
-          = image_tag "homespree_logo3.png"
+        =link_to "", root_path
+

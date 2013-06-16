@@ -4,14 +4,15 @@
 
   /*This is the code for the main text and picture on the front page. All css is on home.css.scss*/
   #maintext
-    %h1 Stress-free home improvement.
-    %h2 Planning your next project has never been so easy.
+    %span
+      %h1 Stress-free home improvement.
+      %h2 Planning your next project has never been so easy.
 
 
     %section.pitch
       .container
         .row
-          %header.span12
+          %header
             .search-area
               -#-#%img.stressfree{:src => "/assets/stressfree.png"}/
               -#%h1 Stress-free home improvement.
@@ -67,4 +68,4 @@
         .span4
           %h2 Guaranteed
           = render :partial => 'dots'
-          %p We manage the payment and will make sure the contractor gets the job done right.
+          %p We manage the payment and will make sure your contractor gets the job done right.

@@ -25,13 +25,14 @@ FactoryGirl.define do
     description "I am Joe The Plumber I have been in business for more than 140 years in the plumbing industry. I plumb everything from sinks to toilets. Been working in this working in the new jersey area for more than 50 years"
 
     # Associations
-    address
+    #address
 
-    # Contractor has many photos, appointments and job categories
-    #photos { [FactoryGirl.create(:photo)] }
-    #appointments { [FactoryGirl.create(:appointment)] }
-    #job_categories { [FactoryGirl.create(:job_category)] }
-    #messages { [FactoryGirl.create(:message)] }
+    after(:build) do |contractor|
+      contractor.photos << FactoryGirl.build(:photo)
+      contractor.appointments << FactoryGirl.build(:appointment)
+      contractor.job_category << FactoryGirl.build(:job_category)
+      contractor.messages << FactoryGirl.build(:messages)
+    end
 
   end
 

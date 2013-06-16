@@ -14,6 +14,7 @@
 #  updated_at       :datetime         not null
 #  latitude         :float
 #  longitude        :float
+#  service_radius   :integer          default(20)
 #
 
 require 'spec_helper'
@@ -25,6 +26,7 @@ describe Address do
   it { should respond_to :city }
   it { should respond_to :state }
   it { should respond_to :zipcode }
+  it { should respond_to :service_radius }
   it { should respond_to :addressable_id }
   it { should respond_to :addressable_type }
 
@@ -41,11 +43,6 @@ describe Address do
     address.errors[:zipcode].should be_empty
   end
 
-  it "is invalid without address line" do
-    address.city = ""
-    address.should_not be_valid
-  end
-
   it "catches invalid zip code" do
     address.zipcode = "1234a"
     address.save
@@ -54,6 +51,31 @@ describe Address do
 
     address.zipcode = "1234"
     address.should_not be_valid
+  end
+
+  describe "created as a nested attribute of contractor" do
+
+    let(:params) do
+      {
+        contractor: FactoryGirl.attributes_for(:contractor,
+                                               address_attributes: FactoryGirl.attributes_for(:address))
+      }
+    end
+
+    before { @contractor = Contractor.create(params[:contractor]) }
+
+    it "should persist contractor" do
+      @contractor.should be_persisted
+    end
+
+    it "should have a valid address" do
+      @contractor.address.should be_persisted
+    end
+
+    it "should have a valid address" do
+      @contractor.address.single_address.should eq address.single_address
+    end
+
   end
 
 end

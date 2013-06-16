@@ -39,6 +39,28 @@ class ContractorDecorator < Draper::Decorator
   delegate_all
   decorates :contractor
 
+  def portrait(image_url="default_portrait.jpg")
+    portrait_missing = @object.portrait_url ? "_edited" : ""
+
+    h.haml_concat h.image_tag(asset_path("profile/#{@object.portrait_url || image_url}"), id: "contractor_portrait", class: portrait_missing)
+    h.haml_concat link_to "Upload portrait", "#", class: "btn btn-success btn-small"
+  end
+
+  def logo
+    h.content_tag(:div, id: "contractor_logo", class: "logo") do
+      @object.company_title
+    end
+  end
+
+  ## The contractor's own business logo
+  def logo_upload(image_url="logo_placeholder.jpg")
+    h.link_to "Upload logo", "#", class: "btn btn-info btn-small"
+  end
+
+  # Displays the badges for each contractor:
+  def badge(name = "approved")
+    h.image_tag(asset_path("profile/badges/#{name}_badge.png"))
+  end
 
   def card_item(attr_name, attrs = {})
     # Don't render blank attributes when a customer is visiting the page
@@ -50,7 +72,7 @@ class ContractorDecorator < Draper::Decorator
 
     h.haml_tag(:li, class: "card-attribute #{field_missing}", id: "card_#{attr_name.to_s + field_missing}") do
       h.haml_tag(:strong, attrs[:title] || attr_name.to_s.titleize + ":")
-      h.haml_concat(h.best_in_place(@object, attr_name, activator: "##{attr_name}", display_with: attrs[:display_with], :nil => attrs[:nil] || "No info"))
+      h.haml_concat(h.best_in_place(@object, attr_name, activator: "##{attr_name}", display_with: attrs[:display_with], :nil => attrs[:nil] || "No info provided"))
       if block_given?
         yield
       end
@@ -60,8 +82,8 @@ class ContractorDecorator < Draper::Decorator
 
   def city_and_state
     address = @object.address
-    if @object.try(:address).try(:valid?)
-      "#{address.city}, #{address.state}"
+    if @object.address.city? && @object.address.state?
+      "#{address.city.presence}, #{address.state.presence}"
     end
   end
 
@@ -83,8 +105,8 @@ class ContractorDecorator < Draper::Decorator
                   end
 
       h.link_to "javascript:void(0)", id: attr_name, class: "edit-link #{link_text}" do
-        h.content_tag(:i, class: "e-icon-pencil", style: "height: 20px; line-height: 16px;")
-        h.haml_concat(link_text)
+        #h.haml_concat h.content_tag(:i, class: "e-icon-pencil", style: "height: 20px; line-height: 16px;")
+        h.haml_concat link_text
       end
     end
   end
@@ -109,20 +131,24 @@ class ContractorDecorator < Draper::Decorator
     h.content_tag(:div, options.merge(id: id), &block)
   end
 
-
-
   # Check if this attribute is set and saved on the contractor's profile.
   def contractor_missing_attr?(attr_name)
     @object.send(attr_name).blank?
   end
 
   def visitor?
-    return false # TODO: returns false for simple testing
-    if contractor_signed_in? && current_contractor.id == params[:id]
+    if contractor_signed_in? && (params[:id] == current_contractor.slug || params[:id].to_i == current_contractor.id)
       return false
     end
     return true
   end
 
+  protected
+
+  def upload_for(attribute, name)
+    s3_uploader_form put: @contractor, as: "photo[#{attribute.to_s}]" do
+      file_field_tag :file, multiple: true
+    end
+  end
 
 end
