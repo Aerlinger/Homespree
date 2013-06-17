@@ -59,8 +59,6 @@ describe Appointment do
 
   describe "A homeowner creates an appointment" do
 
-    @homeowner.create_appointment(@contractor, )
-
   end
 
 end

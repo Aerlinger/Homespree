@@ -51,4 +51,8 @@ class Homeowner < ActiveRecord::Base
   # Nested Attributes:  -----------------------------------------------------------------------------------------------
   accepts_nested_attributes_for :appointments, :address
 
+  def mailboxer_email(object)
+    self.email
+  end
+
 end

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe ConversationsController do
+describe Users::ConversationsController do
 
 
 

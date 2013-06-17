@@ -51,6 +51,7 @@ describe Contractor do
   before { @photo_attributes = {"0" => {:image_url=>"photo1", :caption=>"some_caption"}, "1" => {:image_url=>"photo1", :caption=>"some_caption"}} }
   subject { contractor }
 
+  # Associations
   it { should respond_to :address }
   it { should respond_to :appointments }
 
@@ -88,6 +89,15 @@ describe Contractor do
 
   its(:photos) { should be_empty }
   its(:address) { should_not be_nil }
+
+  describe "Mailboxer association" do
+    subject { contractor.mailbox }
+
+    it { should respond_to :conversations }
+    it { should respond_to :inbox }
+    it { should respond_to :sentbox }
+    it { should respond_to :trash }
+  end
 
 
   describe "sanitize phone numbers" do

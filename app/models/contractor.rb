@@ -69,7 +69,6 @@ class Contractor < ActiveRecord::Base
   has_many :specialties, dependent: :destroy
   has_many :photos, as: :photographable
   has_many :badges
-  has_many :messages, as: :messageable
 
 
   # Nested Attributes:  -----------------------------------------------------------------------------------------------
@@ -115,6 +114,10 @@ class Contractor < ActiveRecord::Base
     sections << :address if address.blank?
 
     return sections
+  end
+
+  def mailboxer_email(object)
+    self.email
   end
 
   def single_address
