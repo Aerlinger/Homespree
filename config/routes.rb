@@ -36,6 +36,7 @@ Homespree::Application.routes.draw do
     resources :specialties, only: [:create, :update, :destroy] do
       post :sort, on: :collection
     end
+    resource :messages
     resource :address, only: [:update]
     resources :photos, only: [:create, :update, :destroy]
     resources :appointments

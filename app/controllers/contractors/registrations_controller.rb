@@ -1,5 +1,6 @@
 class Contractors::RegistrationsController < Devise::RegistrationsController
 
+  layout "static_page"
   respond_to :html, :json
 
   after_filter :geolocate, :add_badges, only: [:create]

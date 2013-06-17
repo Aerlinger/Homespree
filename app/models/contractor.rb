@@ -120,6 +120,16 @@ class Contractor < ActiveRecord::Base
     end
   end
 
+  def name
+    if first_name? && last_name?
+      "#{first_name} #{last_name}"
+    elsif first_name?
+      first_name
+    else
+      company_title
+    end
+  end
+
   protected
 
   def sanitize_phone_numbers

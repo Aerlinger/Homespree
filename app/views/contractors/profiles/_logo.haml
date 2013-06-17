@@ -1,10 +1,4 @@
-%li.price.primary-color-bg
-  = content_tag(:div, style: "position: relative;") do
-    - @contractor.portrait
-    -#= @contractor.logo
-    = @contractor.logo_upload
-  = content_tag(:div, style: "position: relative;", class: "badges") do
-    %ul
-      %li
-        = @contractor.badge
-        = @contractor.badge
+= content_tag(:div, style: "position: relative;") do
+  - @contractor.portrait
+  -#= @contractor.logo
+  = @contractor.logo_upload

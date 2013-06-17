@@ -157,13 +157,20 @@
 
         .price {
           height: auto !important;
-          padding-bottom: 5px;
+          padding: 5px 0 0 0;
 
           .btn {
             margin: 0;
           }
 
+          .rating {
+            padding: 5px 0;
+          }
+
           .badges {
+
+            shadow: $shadow !important;
+
             ul {
               background: none;
               display: table;
@@ -192,7 +199,7 @@
             width: auto;
 
             &:not(._edited) {
-              margin-bottom: -50px;
+              //margin-bottom: -50px;
             }
           }
 

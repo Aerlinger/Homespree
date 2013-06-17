@@ -11,10 +11,8 @@
 
   #portfolio-carousel.flexslider
     = s3_uploader_form post: contractor_photos_url(@contractor), as: "photo[image_url]" do
-      -#.file-field-wrapper
       = file_field_tag :file, multiple: true
     %ul.slides
-      -# Image Carousel
       = render @photos
 
     %script#template-upload(type= "text/x-tmpl")

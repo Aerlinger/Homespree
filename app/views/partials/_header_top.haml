@@ -37,26 +37,9 @@
                 My Projects
                 %i.e-icon-tools
               %ul.dropdown-menu
-                %li.visible-phone.visible-tablet.phonenumber
-                  %a{:href => "tel:+8135553333"} 813.555.3333
-                %li.menu-text.visible-desktop.phonenumber 813.555.3333
-                %li
-                  %a{:href => "mailto:contact@longdomaingoeshere.com"} email: admin@myhomespree.com
-                %li.divider
-                %li.nav-header Sign up for our mailing list!
-                %li
-                  %form{:action => "yourscript.php", :method => "post"}
-                    .input-append.custom-append
-                      %input{:name => "email", :placeholder => "Email Address", :type => "email"}/
-                      %button.btn.btn-primary Sign Up
-                %li.divider
-                %li.nav-header Follow Us!
-                %li
-                  .social.clearfix
-                    %a.fc-webicon.facebook.round{:href => "#", :title => "Facebook"}
-                    %a.fc-webicon.twitter.round{:href => "#", :title => "Twitter"}
-                    %a.fc-webicon.linkedin.round{:href => "#", :title => "Linked In"}
-                    %a.fc-webicon.pinterest.round{:href => "#", :title => "pinterest"}
+                %li.menu-text
+                  %i No projects found.
+                  -#  = link_to "Find jobs in my area"
 
             %li.dropdown.parent
               %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
@@ -64,14 +47,14 @@
                 %i.e-icon-cog
               %ul.dropdown-menu
                 %li.current-user
-                  %a{:href => "#"}
-                    %img.avatar.name{:src => "http://placehold.it/50x50"}
-                    %b.fullname= current_contractor.first_name
+                  = link_to current_contractor do
+                    %img.avatar.name{:src => "http://placehold.it/50x50", style: "float: right"}
+                    %b.fullname= current_contractor.name
                     %br/
                     %small Edit profile
                 %li.divider
                 %li
-                  =link_to "Account Settings"
+                  =link_to "Account Settings", edit_contractor_registration_path
                 %li
                   =link_to "Sign out", destroy_contractor_session_path, method: :get
 
