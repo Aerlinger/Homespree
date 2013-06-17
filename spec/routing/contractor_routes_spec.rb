@@ -50,7 +50,29 @@ describe ContractorsController do
     get("/contractors").should route_to("contractors#index")
   end
 
-  it "should show material calculator" do
+
+end
+
+describe "Contractor Dashboard" do
+
+  it "shows notifications" do
+    get("contractors/notifications").should route_to("alerts#index")
+  end
+
+  it "shows projects" do
+    get("contractors/myprojects").should route_to("jobs#index")
+  end
+
+  it "shows messages" do
+    get("contractors/messages").should route_to("conversations#index")
+  end
+
+  it "shows settings" do
+    get("/contractors/1/settings").should route_to("contractors#material_calculator", id: "1")
+  end
+
+  it "shows material calculator" do
     get("/contractors/1/material_calculator").should route_to("contractors#material_calculator", id: "1")
   end
+
 end

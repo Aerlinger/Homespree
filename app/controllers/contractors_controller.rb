@@ -31,4 +31,11 @@ class ContractorsController < ApplicationController
     end
   end
 
+  # Static page showing Contractor settings
+  def settings
+  end
+
+  def material_calculator
+  end
+
 end

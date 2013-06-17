@@ -1,5 +1,11 @@
 Homespree::Application.routes.draw do
 
+  get "alerts/create"
+
+  get "alerts/update"
+
+  get "alerts/destroy"
+
   # Root route must be before ActiveAdmin.routes(self)
   root :to => 'static_pages#home'
 
@@ -27,7 +33,7 @@ Homespree::Application.routes.draw do
   }
 
   resources :job_submissions
-  resources :jobs
+  #resources :jobs
 
   resources :homeowners do
     resource :address, only: [:update]
@@ -51,9 +57,11 @@ Homespree::Application.routes.draw do
     resource :address, only: [:update]
     resources :photos, only: [:create, :update, :destroy]
     resources :appointments
-    resources :jobs
+    resources :jobs, only: [:create, :update, :destroy]
 
-    match 'material_calculator' => 'contractors#material_calculator', on: :member
+    #get "projects" => "jobs#index"
+    get "messages" => "conversations#index", on: :collection
+    get 'material_calculator' => 'contractors#material_calculator', on: :collection
   end
 
   # Gallery Browsing: ------------------------------------------------------------------------------------------------
@@ -61,8 +69,6 @@ Homespree::Application.routes.draw do
   get "browse/inspire"
 
   # Static Pages: ----------------------------------------------------------------------------------------------------
-
-
   %w(pitch home faqs about contact jobs how_it_works team for_professionals).each do |page|
     get page, controller: :static_pages, action: page
   end
