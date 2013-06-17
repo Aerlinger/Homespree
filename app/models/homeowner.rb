@@ -36,6 +36,8 @@ class Homeowner < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  acts_as_messageable
+
   # Accessors:  -------------------------------------------------------------------------------------------------------
   attr_accessible :email, :password, :password_confirmation, :remember_me,
                    :address, :appointments, :email, :first_name, :last_name, :photos

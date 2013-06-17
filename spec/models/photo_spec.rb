@@ -23,8 +23,15 @@ describe Photo do
   let(:photo) { FactoryGirl.create(:photo) }
   let(:contractor) { FactoryGirl.create(:contractor) }
 
-  it "isn't valid without image_url" do
+  subject { photo }
 
+  it { should be_valid}
+
+  describe "invalid params" do
+    it "is not valid without image_url" do
+      photo.image_url = nil
+      photo.should_not be_valid
+    end
   end
 
   specify "Newly created contractor has no photos" do
@@ -40,10 +47,10 @@ describe Photo do
     let(:params) do
       {
         contractor: FactoryGirl.attributes_for(:contractor),
-                    photos_attributes: [
-                      FactoryGirl.attributes_for(:photo),
-                      FactoryGirl.attributes_for(:photo)
-                    ]
+                    photos_attributes: {
+                      "1" => FactoryGirl.attributes_for(:photo),
+                      "2" => FactoryGirl.attributes_for(:photo)
+                    }
       }
     end
 
@@ -51,6 +58,10 @@ describe Photo do
 
     it "should persist contractor" do
       @contractor.should be_persisted
+    end
+
+    it "should not have errors" do
+      @contractor.errors.should be_empty
     end
 
     it "should have one photo" do
@@ -61,6 +72,10 @@ describe Photo do
       photo = @contractor.photos.first
       photo.image_url.should be "contractor_default.jpg"
     end
+
+  end
+
+  describe "created as a nested attribute of a homeowner" do
 
   end
 

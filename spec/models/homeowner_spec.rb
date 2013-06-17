@@ -34,6 +34,21 @@ describe Homeowner do
 
   let(:homeowner) { FactoryGirl.create(:homeowner) }
 
+  # Mailboxer Methods:
+  it { should respond_to :send_message }
+  it { should respond_to :reply_to_all }
+  it { should respond_to :reply_to_conversation }
+  it { should respond_to :reply_to_sender }
+
+  # Devise Columns:
+  it { should respond_to :sign_in_count }
+  it { should respond_to :reset_password_sent_at }
+  it { should respond_to :reset_password_token }
+  it { should respond_to :last_sign_in_at }
+  it { should respond_to :last_sign_in_ip }
+  it { should respond_to :encrypted_password }
+
+
   it "is valid" do
     homeowner.should be_valid
     homeowner.should be_persisted

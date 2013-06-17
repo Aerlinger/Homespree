@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130617010842) do
+ActiveRecord::Schema.define(:version => 20130617032527) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -75,6 +75,13 @@ ActiveRecord::Schema.define(:version => 20130617010842) do
     t.integer  "homeowner_id"
   end
 
+  create_table "badges", :force => true do |t|
+    t.integer  "contractor_id"
+    t.string   "name"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
   create_table "contractors", :force => true do |t|
     t.string   "first_name"
     t.text     "description"
@@ -104,7 +111,6 @@ ActiveRecord::Schema.define(:version => 20130617010842) do
     t.string   "photo_filename"
     t.text     "slogan"
     t.decimal  "years_experience"
-    t.decimal  "availability_radius"
     t.integer  "failed_attempts",                                      :default => 0
     t.string   "unlock_token"
     t.datetime "locked_at"
@@ -114,6 +120,7 @@ ActiveRecord::Schema.define(:version => 20130617010842) do
     t.string   "slug"
     t.string   "portrait_url"
     t.string   "logo_url"
+    t.text     "notification_settings"
   end
 
   add_index "contractors", ["authentication_token"], :name => "index_contractors_on_authentication_token", :unique => true
@@ -188,14 +195,6 @@ ActiveRecord::Schema.define(:version => 20130617010842) do
     t.boolean  "submitted_from_mobile"
   end
 
-  create_table "messages", :force => true do |t|
-    t.string   "content"
-    t.integer  "author_id"
-    t.integer  "thread_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "notification_settings", :force => true do |t|
     t.boolean  "text_notifications",   :default => true
     t.boolean  "email_notifications",  :default => true
@@ -258,10 +257,11 @@ ActiveRecord::Schema.define(:version => 20130617010842) do
     t.string   "name"
     t.integer  "endorser_id"
     t.integer  "contractor_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
     t.string   "description"
     t.integer  "position"
+    t.decimal  "hourly_rate",   :default => 50.0
   end
 
 end

@@ -1,5 +1,5 @@
 FactoryGirl.define do
   factory :specialty do
-    name "Specialty"
+    name "Interior Painting"
   end
 end

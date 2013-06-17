@@ -50,5 +50,7 @@ describe ContractorsController do
     get("/contractors").should route_to("contractors#index")
   end
 
-  it "should "
+  it "should show material calculator" do
+    get("/contractors/1/material_calculator").should route_to("contractors#material_calculator", id: "1")
+  end
 end

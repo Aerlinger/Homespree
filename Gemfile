@@ -22,6 +22,7 @@ gem 'best_in_place'
 gem 'geocoder'
 gem 'simple_form'
 gem 'friendly_id'
+gem 'wicked'
 
 gem 'jquery-rails', "2.3.0"
 gem 'acts_as_list'

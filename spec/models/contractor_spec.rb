@@ -47,9 +47,9 @@ require 'spec_helper'
 
 describe Contractor do
 
-  let(:mike) { FactoryGirl.create :contractor }
+  let(:contractor) { FactoryGirl.create :contractor }
   before { @photo_attributes = {"0" => {:image_url=>"photo1", :caption=>"some_caption"}, "1" => {:image_url=>"photo1", :caption=>"some_caption"}} }
-  subject { mike }
+  subject { contractor }
 
   it { should respond_to :address }
   it { should respond_to :appointments }
@@ -68,9 +68,15 @@ describe Contractor do
   it { should respond_to :updated_at }
   it { should respond_to :password }
   it { should respond_to :password_confirmation }
-  it { should respond_to :service_radius }
   it { should respond_to :logo_url }
   it { should respond_to :portrait_url }
+
+  # Mailboxer Methods:
+  it { should respond_to :mailbox }
+  it { should respond_to :send_message }
+  it { should respond_to :reply_to_all }
+  it { should respond_to :reply_to_conversation }
+  it { should respond_to :reply_to_sender }
 
   # Devise Columns:
   it { should respond_to :sign_in_count }
@@ -80,39 +86,15 @@ describe Contractor do
   it { should respond_to :last_sign_in_ip }
   it { should respond_to :encrypted_password }
 
-  it "has a service radius of 15 miles" do
-    mike.service_radius.should eq 15
-  end
-
-  it "has one address" do
-    mike.address.should_not be_nil
-  end
-
-  it "has many photos" do
-    mike.photos.should_not be_empty
-  end
-
-  it "has many messages" do
-    mike.messages.should_not be_empty
-  end
-
-  it "has many jobs" do
-    mike.jobs.should_not be_empty
-  end
-
-  it "has many appointments" do
-    mike.appointments.should_not be_empty
-  end
-
-  it "has many homeowners through appointments" do
-  end
+  its(:photos) { should be_empty }
+  its(:address) { should_not be_nil }
 
 
   describe "sanitize phone numbers" do
     before do
-      mike.mobile_number = '[808]389-1234'
-      mike.office_number = '(808)   555-1234'
-      mike.save
+      contractor.mobile_number = '[808]389-1234'
+      contractor.office_number = '(808)   555-1234'
+      contractor.save
     end
 
     it { should be_valid }
@@ -120,17 +102,42 @@ describe Contractor do
     its(:office_number) { should eq '8085551234' }
   end
 
-  describe "with nothing" do
-    before do
-      @contractor = Contractor.new
+  describe "only requires email, company title, and password" do
+    let(:contractor) { Contractor.new }
+    subject { contractor }
+    before { contractor.valid? }
+
+    it { should_not be_valid}
+    it { should_not be_persisted }
+
+    it "email error includes" do
+      contractor.errors[:email].should include("can't be blank")
+      contractor.errors[:email].should include("is invalid")
+    end
+
+    it "company_title error includes" do
+      contractor.errors[:company_title].should include("can't be blank")
+    end
+
+    it "password erro includes" do
+      contractor.errors[:password].should include("can't be blank")
+    end
+
+    it "is valid once an email, company title are present" do
+      contractor.email = "asdf@asdf.com"
+      contractor.password = "iamsecret"
+      contractor.company_title = "iamsecret"
+
+      contractor.should be_valid
     end
   end
 
   it "is invalid with duplicate email address" do
     contractor = create :contractor
     duplicate_contractor = build :contractor, email: contractor.email
+    duplicate_contractor.valid?
 
-    expect(duplicate_contractor).to have(2).errors_on(:email)
+    duplicate_contractor.errors[:email].should include("has already been taken")
   end
 
   describe "valid contractor" do
@@ -143,47 +150,47 @@ describe Contractor do
     end
 
     it "has email" do
-      mike.email.should_not be_empty
+      contractor.email.should_not be_empty
     end
 
     it "has name" do
-      mike.first_name.should_not be_empty
-      mike.last_name.should_not be_empty
+      contractor.first_name.should_not be_empty
+      contractor.last_name.should_not be_empty
     end
 
     it "capitalizes first and last name" do
-      mike.first_name = "joe"
-      mike.last_name = "schmoe"
+      contractor.first_name = "joe"
+      contractor.last_name = "schmoe"
 
-      mike.save
+      contractor.save
 
-      mike.first_name.should eq "Joe"
-      mike.last_name.should eq "Schmoe"
+      contractor.first_name.should eq "Joe"
+      contractor.last_name.should eq "Schmoe"
     end
 
     it "downcases email" do
-      mike.email = "JoEtHEplumBEr@Lol.CoM"
-      mike.save
-      mike.email.should eq "joetheplumber@lol.com"
+      contractor.email = "JoEtHEplumBEr@Lol.CoM"
+      contractor.save
+      contractor.email.should eq "joetheplumber@lol.com"
     end
 
     describe "and invalidate him" do
       it "throws error when there is an invalid email" do
-        mike.email = "joseph"
-        mike.should_not be_valid
+        contractor.email = "joseph"
+        contractor.should_not be_valid
       end
 
       it "throws error there is an absent email" do
-        mike.email = ""
-        mike.should_not be_valid
+        contractor.email = ""
+        contractor.should_not be_valid
 
-        mike.email = nil
-        mike.should_not be_valid
+        contractor.email = nil
+        contractor.should_not be_valid
       end
 
       specify "with blank email" do
-        mike.email = ""
-        mike.should_not be_valid
+        contractor.email = ""
+        contractor.should_not be_valid
       end
 
       specify "with bad email address" do
@@ -204,7 +211,6 @@ describe Contractor do
   describe "Joe The Contractor example" do
 
     let(:new_guy) { Contractor.new }
-
     subject { new_guy }
 
     it { should_not be_valid }

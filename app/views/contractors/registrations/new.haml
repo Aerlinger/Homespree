@@ -10,13 +10,9 @@
       %span.blue Create Contractor Profile
 
     .body
-      = f.input :company_title, text: "Business name or title"
-      = f.input :email, label: 'Your Email', input_html: { value: @contractor.email }, placeholder: 'example@example.com'
-      = f.input :password
+      = f.input :company_title, text: "Business name or title", id: "company_title"
+      = f.input :email, label: 'Your Email', input_html: { value: @contractor.email }, placeholder: 'example@example.com', id: "email"
+      = f.input :password, id: "password"
 
       = f.button :submit, "Create profile", class: "btn btn-success"
-
-
-
-
 

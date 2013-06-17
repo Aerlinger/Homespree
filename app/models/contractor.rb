@@ -52,7 +52,7 @@ class Contractor < ActiveRecord::Base
 
   extend FriendlyId
   friendly_id :company_title, use: :slugged
-
+  acts_as_messageable
 
   # Accessors:  -------------------------------------------------------------------------------------------------------
   attr_protected
@@ -60,26 +60,24 @@ class Contractor < ActiveRecord::Base
   # Associations:  ----------------------------------------------------------------------------------------------------
   has_one :address, as: :addressable, dependent: :destroy
   has_one :profile_picture, as: :photographable, class_name: 'Photo'
-  has_one :notification_settings, as: :notifiable
+  #has_one :notification_settings, as: :notifiable
   has_many :homeowners
   has_many :appointments, through: :homeowners
   has_many :specialties, dependent: :destroy
   has_many :photos, as: :photographable
-  has_many :badges, as: :photographable, class_name: "Photo"
+  has_many :badges
   has_many :messages, as: :messageable
 
 
   # Nested Attributes:  -----------------------------------------------------------------------------------------------
-  accepts_nested_attributes_for :address, :photos, :appointments, :specialties, :profile_picture, :notification_settings,
-                                :messages
-
+  accepts_nested_attributes_for :address, :photos, :appointments, :specialties, :profile_picture
 
 
   # Validations:  -----------------------------------------------------------------------------------------------------
   validates_format_of :first_name, :last_name, with: /\A\w+ ?\w*\z/, allow_blank: true, message: "should only contain letters"
   validates_length_of :first_name, :last_name, minimum: 2, maximum: 20, allow_blank: true, message: "must be a reasonable length"
   validates_format_of :email, with: RegexDefinitions::email_regex, message: "is invalid"
-  validates_uniqueness_of :email, message: "is already taken"
+  validates_uniqueness_of :email
   validates_format_of :mobile_number, :office_number, with: /\A\d{10}\Z/, allow_blank: true, message: "must be valid"
   validates_presence_of :company_title
   validates_numericality_of :years_experience, allow_blank: true

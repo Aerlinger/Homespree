@@ -37,5 +37,4 @@ describe AdminUser do
   it { should respond_to :last_sign_in_ip }
   it { should respond_to :encrypted_password }
 
-
 end
