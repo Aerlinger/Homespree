@@ -51,6 +51,12 @@
   background-size: cover;
 }
 
+.custom_file_upload {
+  filter: alpha(opacity=0);
+  opacity: 0;
+  float: left;
+}
+
 // -------------------------------------------------------------------------------------------------------------------
 // Incomplete sections dropdown below header. Useful for displaying relevant information to the contractor.
 // -------------------------------------------------------------------------------------------------------------------
@@ -230,8 +236,6 @@
         }
 
 
-
-
         .optionheader {
           #title {
             font-size: 1.4em;
@@ -316,8 +320,6 @@
           }
 
         }
-
-
       }
 
 

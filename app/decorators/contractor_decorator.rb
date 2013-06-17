@@ -39,11 +39,10 @@ class ContractorDecorator < Draper::Decorator
   delegate_all
   decorates :contractor
 
-  def portrait(image_url="default_portrait.jpg")
+  def portrait(image_url= asset_path("profile/default_portrait.jpg"))
     portrait_missing = @object.portrait_url ? "_edited" : ""
 
-    h.haml_concat h.image_tag(asset_path("profile/#{@object.portrait_url || image_url}"), id: "contractor_portrait", class: portrait_missing)
-    #h.haml_concat
+    h.image_tag @object.portrait_url.to_s || image_url, id: "contractor_portrait", class: portrait_missing
   end
 
   def logo
@@ -54,7 +53,7 @@ class ContractorDecorator < Draper::Decorator
 
   ## The contractor's own business logo
   def logo_upload(image_url="logo_placeholder.jpg")
-    h.link_to "Upload logo", "#", class: "btn btn-info btn-small"
+    #h.link_to "Upload logo", "#", class: "btn btn-info btn-small"
   end
 
   # Displays the badges for each contractor:

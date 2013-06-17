@@ -45,7 +45,7 @@
 
 class Contractor < ActiveRecord::Base
 
-  # Authentication:  --------------------------------------------------------------------------------------------------
+  # Gem Class Methods:  ----------------------------------------------------------------------------------------------
 
   # Include default devise modules. Others available are:  :token_authenticatable, :confirmable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :lockable, :recoverable, :rememberable, :trackable, :validatable
@@ -53,6 +53,9 @@ class Contractor < ActiveRecord::Base
   extend FriendlyId
   friendly_id :company_title, use: :slugged
   acts_as_messageable
+
+  mount_uploader :logo_url, LogoUploader
+  mount_uploader :portrait_url, PortraitUploader
 
   # Accessors:  -------------------------------------------------------------------------------------------------------
   attr_protected

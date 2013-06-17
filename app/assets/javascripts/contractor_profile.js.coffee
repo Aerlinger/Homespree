@@ -10,20 +10,20 @@
 fields = {
 
 # TODO: Enable editing first and last name in a single step
-  card_first_name:
+card_first_name:
   {
     intro: "Name of the owner? (First and Last)"
     required: true
   }
 
-  card_mobile_number:
+card_mobile_number:
   {
     intro: "What is your phone number?"
     required: true
   }
 
 # Should this be a dropdown?
-  card_years_experience:
+card_years_experience:
   {
     intro: "How many years have you been in business?"
     required: true
@@ -31,7 +31,7 @@ fields = {
 
 # Optional Fields
 ##################################################################
-  services:
+services:
   {
     intro: "What services does your company offer?"
     position: "left"
@@ -40,19 +40,19 @@ fields = {
 
 # Location Info:
 ##################################################################
-  service_area:
+service_area:
   {
     intro: "Where is your business located?"
     position: "left"
     required: true
   }
 
-  slogan:
+slogan:
   {
     intro: "Your company's slogan?"
   }
 
-  description:
+description:
   {
     intro: "Enter a brief description of your company"
   }
@@ -103,17 +103,33 @@ fileUpload = ->
 
       done: (event, data) ->
         $('#your_documents').load("/documents?for_item=1234")
-
         $('#loading').hide()
+
+
+window.uploadfile = (form_id) ->
+  console.log "Uploading for form #{form_id}"
+
+  $(form_id).next().click()
+
+# The default HTML file upload field is rather nasty and non-customizable so we make it invisible and delegate
+# an onClick event to another, prettier, button.
+invisibleUploadFields = ->
+  $('#upload_portrait').click (evt) ->
+    $('#hidden_portrait_url').click()
+
+  $('#upload_logo').click (evt) ->
+    $('#hidden_logo_url').click()
 
 # Trims leading and trailing whitespace from a string:  ---------------------------------------------------------------
 strtrim = (str) ->
   str?.replace(/^\s\s*/, '')?.replace(/\s\s*$/, '')
 
+
 $(document).ready ->
   console.log("images loaded")
 
   $("#portrait_uploader").S3Uploader()
+  invisibleUploadFields()
 
   # Only run this script if we're on the contractor's profile page.
   if $("#page.profile").length > 0
@@ -144,6 +160,7 @@ $(document).ready ->
     setTimeout () ->
       $('.introjs-overlay').click()
     , 500
+
 
     # Make contractor specialties sortable
     $('#contractor_specialties').sortable

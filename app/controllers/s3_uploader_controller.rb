@@ -3,12 +3,12 @@ class S3UploaderController < ApplicationController
 
   def create
     klass = params[:class]
-    @data = klass.create(params[:data])
+    @object = klass.create(params[:data])
     render json: {
       :policy => s3_upload_policy_document,
       :signature => s3_upload_signature,
-      :key => @document.s3_key,
-      :success_action_redirect => document_upload_success_document_url(@document)
+      :key => @object.s3_key,
+      :success_action_redirect => document_upload_success_document_url(@object)
     }
   end
 
@@ -21,7 +21,7 @@ class S3UploaderController < ApplicationController
     ret = {"expiration" => 5.minutes.from_now.utc.xmlschema,
            "conditions" =>  [
              {"bucket" =>  params[:bucket]},
-             ["starts-with", "$key", @data.s3_key],
+             ["starts-with", "$key", @object.s3_key],
              {"acl" => "private"},
              {"success_action_status" => "200"},
              ["content-length-range", 0, 1048576]

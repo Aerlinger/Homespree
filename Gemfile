@@ -34,6 +34,9 @@ gem 'mailboxer'
 gem 'aws-s3'
 gem 's3_direct_upload'
 
+gem 'rmagick'
+gem 'carrierwave'
+
 
 group :test, :development do
   gem 'sqlite3'
