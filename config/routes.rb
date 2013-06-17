@@ -1,5 +1,19 @@
 Homespree::Application.routes.draw do
 
+  get "users/show"
+
+  get "users/profile"
+
+  get "users/new"
+
+  get "users/create"
+
+  get "users/edit"
+
+  get "users/update"
+
+  get "users/destroy"
+
   # Root route must be before ActiveAdmin.routes(self)
   root :to => 'static_pages#home'
 
