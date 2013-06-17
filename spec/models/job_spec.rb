@@ -26,6 +26,10 @@ describe Job do
     job.appointment.should_not be_nil
   end
 
+  it "must have an appointment in order to be valid" do
+
+  end
+
   its(:title) { should be "Job name"}
   its(:description) { should eq "This is a test description of the job to be done"}
 
@@ -37,6 +41,14 @@ describe Job do
     specify "after a job is done" do
       job.after_photos.should_not be_nil
     end
+
+  end
+
+  describe "is created by a contractor" do
+
+  end
+
+  describe "is created by a homeowner" do
 
   end
 

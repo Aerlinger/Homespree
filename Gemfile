@@ -29,29 +29,24 @@ gem 'figaro', '>= 0.5.3'
 gem 'haml-rails'
 gem 'annotate'
 
+gem 'mailboxer'
+
 
 group :test, :development do
   gem 'sqlite3'
-
   gem 'rspec-rails', '>= 2.12.0'
-
   gem 'turn', :require => false
   gem 'meta_request'
-
   gem 'parallel_tests'
   gem 'zeus-parallel_tests'
-
   gem 'faker'
   gem 'factory_girl_rails'
-
   gem 'rb-fsevent'
-
   gem 'launchy', '2.1.0'
 end
 
 group :test do
   gem 'guard-rspec'
-  gem 'guard-spork', '0.3.2'
   gem 'spork', '0.9.0'
   gem 'zeus'
   gem 'selenium-webdriver'

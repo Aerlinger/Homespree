@@ -11,7 +11,8 @@
 #
 
 class Message < ActiveRecord::Base
-  attr_accessible :author_id, :content, :thread_id
+  attr_accessible :author_id, :content
 
-  belongs_to :messageable, polymorphic: true
+  belongs_to :contractor
+  belongs_to :homeowner
 end

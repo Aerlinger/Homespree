@@ -28,10 +28,10 @@ FactoryGirl.define do
     #address
 
     after(:build) do |contractor|
-      contractor.photos << FactoryGirl.build(:photo)
-      contractor.appointments << FactoryGirl.build(:appointment)
-      contractor.job_category << FactoryGirl.build(:job_category)
-      contractor.messages << FactoryGirl.build(:messages)
+      #contractor.photos << FactoryGirl.build(:photo)
+      #contractor.appointments << FactoryGirl.build(:appointment)
+      #contractor.job_category << FactoryGirl.build(:job_category)
+      #contractor.messages << FactoryGirl.build(:messages)
     end
 
   end
@@ -39,6 +39,5 @@ FactoryGirl.define do
   factory :invalid_contractor, parent: :contractor do
     email "invalidemail"
   end
-
 
 end

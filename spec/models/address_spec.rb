@@ -16,7 +16,6 @@
 #  longitude        :float
 #  service_radius   :integer          default(20)
 #
-
 require 'spec_helper'
 
 describe Address do

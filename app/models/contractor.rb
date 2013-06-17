@@ -70,7 +70,9 @@ class Contractor < ActiveRecord::Base
 
 
   # Nested Attributes:  -----------------------------------------------------------------------------------------------
-  accepts_nested_attributes_for :address, :photos, :appointments, :specialties, :profile_picture, :notification_settings
+  accepts_nested_attributes_for :address, :photos, :appointments, :specialties, :profile_picture, :notification_settings,
+                                :messages
+
 
 
   # Validations:  -----------------------------------------------------------------------------------------------------

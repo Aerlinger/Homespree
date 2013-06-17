@@ -31,8 +31,37 @@ describe Photo do
     contractor.photos.should be_empty
   end
 
-  it "Photo gets added to a contractor" do
+  it " gets added to a contractor" do
     contractor.photos.create(FactoryGirl.attributes_for(:photo))
+  end
+
+  describe "created as a nested attribute of contractor" do
+
+    let(:params) do
+      {
+        contractor: FactoryGirl.attributes_for(:contractor),
+                    photos_attributes: [
+                      FactoryGirl.attributes_for(:photo),
+                      FactoryGirl.attributes_for(:photo)
+                    ]
+      }
+    end
+
+    before { @contractor = Contractor.create(params[:contractor]) }
+
+    it "should persist contractor" do
+      @contractor.should be_persisted
+    end
+
+    it "should have one photo" do
+      @contractor.photos.count.should be 2
+    end
+
+    it "saves the correct photo" do
+      photo = @contractor.photos.first
+      photo.image_url.should be "contractor_default.jpg"
+    end
+
   end
 
 end
