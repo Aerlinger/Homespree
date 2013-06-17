@@ -29,6 +29,6 @@
       =f.input :zipcode, maxlength: 5, placeholder: @contractor.try(:zipcode), label: "Zipcode"
 
     .address
-      =f.input :state, collection: Array((5..100).step(5)), label: "Service", :style => "width: 200px;", default: 25
+      =f.input :state, collection: service_radius, label: "Service radius", :style => "width: 200px", value: "25 miles", default: 25
 
-    = f.submit "Update Location", class: "btn custom-btn btn-small btn-info"
+    = f.submit "Update Location", class: "btn custom-btn btn-small btn-info", style: "width: 100%"

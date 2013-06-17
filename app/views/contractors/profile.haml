@@ -74,9 +74,9 @@
       .span8.offset4
         .row-fluid
           .span4.no-bg
-            = link_to "Ask a question", "#questions_modal"
-            %a.link-tab
+            = link_to "#questions_modal", class: "link-tab" do
               %i.icon-comment.icon-white &nbsp Ask a question
+
           .span4.no-bg
             %a.link-tab{href: "#helper_tabs"}
               %i.icon-map-marker.icon-white &nbsp Service area

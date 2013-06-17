@@ -69,4 +69,10 @@ module ApplicationHelper
     ]
   end
 
+  def service_radius
+    (5..100).step(5).collect do |item|
+      ["#{item} miles", item]
+    end
+  end
+
 end
