@@ -1,4 +1,6 @@
 = content_tag(:div, style: "position: relative;") do
   - @contractor.portrait
-  -#= @contractor.logo
+  -#= s3_uploader_form callback_url: @contractor, callback_param: "contractor[portrait_url]", id: "portrait_uploader" do
+    -#= file_field_tag :file, multiple: false
+  = link_to "Upload portrait", "#", class: "btn btn-success btn-small"
   = @contractor.logo_upload

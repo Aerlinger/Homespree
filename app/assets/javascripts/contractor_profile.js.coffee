@@ -9,44 +9,51 @@
 # Order of fields to be displayed during the intro sequence -----------------------------------------------------------
 fields = {
 
-  # TODO: Enable editing first and last name in a single step
-  card_first_name: {
+# TODO: Enable editing first and last name in a single step
+  card_first_name:
+  {
     intro: "Name of the owner? (First and Last)"
     required: true
   }
 
-  card_mobile_number: {
+  card_mobile_number:
+  {
     intro: "What is your phone number?"
     required: true
   }
 
 # Should this be a dropdown?
-  card_years_experience: {
+  card_years_experience:
+  {
     intro: "How many years have you been in business?"
     required: true
   }
 
-  # Optional Fields
-  ##################################################################
-  services: {
+# Optional Fields
+##################################################################
+  services:
+  {
     intro: "What services does your company offer?"
     position: "left"
     required: true
   }
 
-  # Location Info:
-  ##################################################################
-  service_area: {
+# Location Info:
+##################################################################
+  service_area:
+  {
     intro: "Where is your business located?"
     position: "left"
     required: true
   }
 
-  slogan: {
+  slogan:
+  {
     intro: "Your company's slogan?"
   }
 
-  description: {
+  description:
+  {
     intro: "Enter a brief description of your company"
   }
 }
@@ -67,6 +74,37 @@ setupIntro = (intro_fields) ->
       "data-required": value["required"]
     })
 
+fileUpload = ->
+  $('#file_upload').fileupload
+    forceIframeTransport: true,
+    autoUpload: true,
+
+    add: (event, data) ->
+      $.ajax
+        url: "/documents",
+        type: 'POST',
+        dataType: 'json',
+        data: {doc: {title: data.files[0].name}},
+        async: false,
+        success: (retData) ->
+          # after we created our document in rails, it is going to send back JSON of they key,
+          # policy, and signature.  We will put these into our form before it gets submitted to amazon.
+          $('#file_upload').find('input[name=key]').val(retdata.key);
+          $('#file_upload').find('input[name=policy]').val(retdata.policy);
+          $('#file_upload').find('input[name=signature]').val(retdata.signature);
+
+      data.submit()
+      send: (e, data) ->
+        $('#loading').show()
+
+      fail: (e, data) ->
+        console.log('fail');
+        console.log(data);
+
+      done: (event, data) ->
+        $('#your_documents').load("/documents?for_item=1234")
+
+        $('#loading').hide()
 
 # Trims leading and trailing whitespace from a string:  ---------------------------------------------------------------
 strtrim = (str) ->
@@ -74,6 +112,8 @@ strtrim = (str) ->
 
 $(document).ready ->
   console.log("images loaded")
+
+  $("#portrait_uploader").S3Uploader()
 
   # Only run this script if we're on the contractor's profile page.
   if $("#page.profile").length > 0

@@ -31,6 +31,8 @@ gem 'haml-rails'
 gem 'annotate'
 
 gem 'mailboxer'
+gem 'aws-s3'
+gem 's3_direct_upload'
 
 
 group :test, :development do

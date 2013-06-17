@@ -43,7 +43,7 @@ class ContractorDecorator < Draper::Decorator
     portrait_missing = @object.portrait_url ? "_edited" : ""
 
     h.haml_concat h.image_tag(asset_path("profile/#{@object.portrait_url || image_url}"), id: "contractor_portrait", class: portrait_missing)
-    h.haml_concat link_to "Upload portrait", "#", class: "btn btn-success btn-small"
+    #h.haml_concat
   end
 
   def logo
