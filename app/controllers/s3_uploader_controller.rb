@@ -1,6 +1,5 @@
 class S3UploaderController < ApplicationController
 
-
   def create
     klass = params[:class]
     @object = klass.create(params[:data])

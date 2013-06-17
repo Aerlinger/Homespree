@@ -74,43 +74,6 @@ setupIntro = (intro_fields) ->
       "data-required": value["required"]
     })
 
-fileUpload = ->
-  $('#file_upload').fileupload
-    forceIframeTransport: true,
-    autoUpload: true,
-
-    add: (event, data) ->
-      $.ajax
-        url: "/documents",
-        type: 'POST',
-        dataType: 'json',
-        data: {doc: {title: data.files[0].name}},
-        async: false,
-        success: (retData) ->
-          # after we created our document in rails, it is going to send back JSON of they key,
-          # policy, and signature.  We will put these into our form before it gets submitted to amazon.
-          $('#file_upload').find('input[name=key]').val(retdata.key);
-          $('#file_upload').find('input[name=policy]').val(retdata.policy);
-          $('#file_upload').find('input[name=signature]').val(retdata.signature);
-
-      data.submit()
-      send: (e, data) ->
-        $('#loading').show()
-
-      fail: (e, data) ->
-        console.log('fail');
-        console.log(data);
-
-      done: (event, data) ->
-        $('#your_documents').load("/documents?for_item=1234")
-        $('#loading').hide()
-
-
-window.uploadfile = (form_id) ->
-  console.log "Uploading for form #{form_id}"
-
-  $(form_id).next().click()
-
 # The default HTML file upload field is rather nasty and non-customizable so we make it invisible and delegate
 # an onClick event to another, prettier, button.
 invisibleUploadFields = ->
@@ -120,19 +83,25 @@ invisibleUploadFields = ->
   $('#upload_logo').click (evt) ->
     $('#hidden_logo_url').click()
 
+
+# A silly hack to force the form to submit when a file is uploaded:
+window.uploadfile = (form_id) ->
+  console.log "Uploading for form #{form_id}"
+  # click the submit button
+  $(form_id).next().click()
+
+
 # Trims leading and trailing whitespace from a string:  ---------------------------------------------------------------
 strtrim = (str) ->
   str?.replace(/^\s\s*/, '')?.replace(/\s\s*$/, '')
 
 
 $(document).ready ->
-  console.log("images loaded")
-
-  $("#portrait_uploader").S3Uploader()
-  invisibleUploadFields()
 
   # Only run this script if we're on the contractor's profile page.
   if $("#page.profile").length > 0
+
+    invisibleUploadFields()
 
     # Load the definition of out introduction fields
     setupIntro(fields)
@@ -145,7 +114,6 @@ $(document).ready ->
 
     # Timeout is used to account for the delay when switching fields:
     introJs().onchange((targetElement) ->
-
       # If the contractor has gone far enough to pass 'skippable' item, they do not need to see this message again.
       if $(targetElement).attr("data-step") > 1
         $('.introjs-overlay').click()
@@ -161,18 +129,16 @@ $(document).ready ->
       $('.introjs-overlay').click()
     , 500
 
-
     # Make contractor specialties sortable
     $('#contractor_specialties').sortable
-#      containment: "#services"
       helper: "clone"
       appendTo: 'body'
       revert: true
       zIndex: 9999
+      axis: 'y'
       update: ->
-        $.post($(this).data('update-url'), $(this).sortable('serialize'))
-
         # Update the info in the contractor's card
+        $.post($(this).data('update-url'), $(this).sortable('serialize'))
         $("#primary_service_text").text($(this).find('.specialty-name').first().text())
 
     # TODO: Tooltips aren't working for some reason.

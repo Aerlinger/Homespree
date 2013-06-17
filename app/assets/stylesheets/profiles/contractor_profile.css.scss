@@ -51,10 +51,25 @@
   background-size: cover;
 }
 
+
 .custom_file_upload {
+  font-size: 2px;
+  margin: 0;
+  padding: 0;
   filter: alpha(opacity=0);
+  display: block;
+  width: 1px;
+  height: 1px;
   opacity: 0;
   float: left;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: -999999999999999999;
+
+  input {
+
+  }
 }
 
 // -------------------------------------------------------------------------------------------------------------------
@@ -142,9 +157,7 @@
   // Section 1: Top-most section (Contractor card and Portfolio image carousel)
   // ---------------------------------------------------------------------------------------------------------------
   .feature-strip {
-
     background: none;
-
     padding-top: 25px;
 
     -webkit-background-size: cover;
@@ -174,7 +187,6 @@
           }
 
           .badges {
-
             shadow: $shadow !important;
 
             ul {

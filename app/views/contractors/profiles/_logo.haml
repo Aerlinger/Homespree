@@ -1,14 +1,14 @@
 = content_tag(:div, style: "position: relative;") do
-  - @contractor.portrait
+  = @contractor.portrait
 
   -# Invisible form to upload portrait image
-  = form_for @contractor, method: :put, remote: true do |f|
+  = form_for @contractor, remote: true, method: :put do |f|
     .custom_file_upload
       = f.file_field :portrait_url, id: "hidden_portrait_url", onchange: "uploadfile('#hidden_portrait_url')"
       = f.submit "", class: 'image-upload'
 
   -# Invisible form to upload logo image
-  = form_for @contractor, method: :put, remote: true do |f|
+  = form_for @contractor, remote: true, method: :put do |f|
     .custom_file_upload
       = f.file_field :logo_url, id: "hidden_logo_url", onchange: "uploadfile('#hidden_logo_url')"
       = f.submit "", class: 'image-upload'

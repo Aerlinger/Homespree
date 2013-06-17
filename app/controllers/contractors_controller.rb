@@ -19,12 +19,13 @@ class ContractorsController < ApplicationController
   def update
     @contractor = Contractor.find(params[:id])
 
-    if request.xhr? && !@contractor.edited?
-      @contractor.update_attribute(:edited, true)
-    end
-
     if @contractor.update_attributes(params[:contractor])
-      render status: 200, nothing: true
+      if request.xhr? && !@contractor.edited?
+        @contractor.update_attribute(:edited, true)
+        render status: 200, nothing: true
+      else
+        redirect_to contractor_path(id: @contractor.id)
+      end
     else
       render status: 422, nothing: true
     end

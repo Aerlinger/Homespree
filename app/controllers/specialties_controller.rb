@@ -11,19 +11,6 @@ class SpecialtiesController < ApplicationController
     respond_to do |format|
       format.js { render layout: false }
     end
-
-  end
-
-  def show
-    @specialty = Specialty.find(params[:id])
-
-    respond_to do |format|
-      format.json { render json: @specialty }
-    end
-  end
-
-  def edit
-    @specialty = Specialty.find(params[:id])
   end
 
   def update
