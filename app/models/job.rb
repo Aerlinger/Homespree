@@ -12,6 +12,10 @@
 #
 
 class Job < ActiveRecord::Base
+
+  attr_accessor :zipcode
+  attr_accessible :zipcode, :title
+
   validates_presence_of :title, :description
   validates_associated :job_categories, :appointment
 

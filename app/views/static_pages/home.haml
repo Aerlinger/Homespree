@@ -8,27 +8,21 @@
       %h1 Stress-free home improvement.
       %h2 Planning your next project has never been so easy.
 
-
     %section.pitch
       .container
         .row
           %header
             .search-area
-              -#-#%img.stressfree{:src => "/assets/stressfree.png"}/
-              -#%h1 Stress-free home improvement.
-              -#%h2{:style => "color: white;"} Planning your next home improvement project has never been so easy.
-              -#%br
-              -# Mailing List Form
+              -# Job Submission Form
               -#===========================================================================
               -# removed: authenticate_with: :none,
-              = form_tag mailinglists_path, method: :post, id: "search_form" do
-
+              = form_tag jobs_path, method: :post, id: "search_form" do
                 #customer_type.btn-group
                   %a#dropdown.btn.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
                     %span.text Select a project type
                     %span.caret.pull-right
 
-                  %input#user_type{:name => "user_type", :style => "display: none", :value => ""}/
+                  %input#user_type{:name => "category_name", :style => "display: none", :value => ""}/
                   %ul.dropdown-menu
                     %li
                       %a#contractor{:href => "javascript:void(0)", :onclick => "return false;"} Interior
@@ -42,15 +36,10 @@
                       %a#homeowner{:href => "javascript:void(0)", :onclick => "return false;"} Fence Staining/Painting
                     %li
                       %a#homeowner{:href => "javascript:void(0)", :onclick => "return false;"} Cabinetry Staining/Painting
-                = email_field_tag(:email, "", type: "text", id: "email_signup", placeholder: "Zip code")
+                = text_field_tag(:zipcode, "", type: "text", id: "email_signup", placeholder: "Zip code")
                 = hidden_field_tag "submitted_from_mobile", "false"
                 = submit_tag "Get started", id: "submit_location", class: "large green submit icon-and-text"
                 %p#submit_success Thanks! We'll keep you posted when we launch.
-
-
-
-
-
 
 
   %section#section_three.shadow

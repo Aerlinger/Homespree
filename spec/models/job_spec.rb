@@ -20,6 +20,7 @@ describe Job do
 
   it { should respond_to :appointment_id }
   it { should respond_to :appointment }
+  it { should respond_to :zipcode }
 
 
   it "should build an association for appointment do" do
@@ -30,7 +31,7 @@ describe Job do
 
   end
 
-  its(:title) { should be "Job name"}
+  its(:title) { should eq "Job name"}
   its(:description) { should eq "This is a test description of the job to be done"}
 
   describe "stores photos" do
