@@ -4,6 +4,5 @@ FactoryGirl.define do
     time Time.new(12, 1, 3)
 
     address
-    #job
   end
 end

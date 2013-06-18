@@ -1,4 +1,3 @@
-
 anthony_email = Mailinglist.find_or_create_by_email("aerlinger@gmail.com")
 joe_email = Mailinglist.find_or_create_by_email("joe@myhomespree.com")
 kyle_email = Mailinglist.find_or_create_by_email("kyle@myhomespree.com")
@@ -18,6 +17,14 @@ puts AdminUser.all
 # Create a default Contractor
 if Contractor.exists?(1)
   Contractor.destroy(1)
+end
+
+# Job categories should only be defined within this seeds.rb file
+JobCategory.destroy_all
+JobSubcategory.destroy_all
+
+%w[painting].each do |category|
+  jc = JobCategory.create(name: category)
 end
 
 joe_the_plumber = Contractor.new do |c|

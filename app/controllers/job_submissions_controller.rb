@@ -3,7 +3,6 @@ class JobSubmissionsController < ApplicationController
   include Wicked::Wizard
   steps :first_step, :project_details, :review_requests, :submit
 
-
   def show
     @homeowner = current_homeowner
     render_wizard

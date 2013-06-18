@@ -10,6 +10,7 @@
 #  updated_at    :datetime         not null
 #  description   :string(255)
 #  position      :integer
+#  hourly_rate   :decimal(, )      default(50.0)
 #
 
 class Specialty < ActiveRecord::Base

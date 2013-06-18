@@ -13,7 +13,6 @@ class JobSubcategory < ActiveRecord::Base
   attr_accessible :category_id, :name
 
   validates_presence_of :name
-  validates_presence_of :job_category
 
   belongs_to :job_category
 end

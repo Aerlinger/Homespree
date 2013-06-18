@@ -13,7 +13,9 @@
 class JobCategory < ActiveRecord::Base
   attr_accessible :name
 
-  has_many :job_subcategories
+  validates_presence_of :name
+
+  has_many :subcategories, class_name: "JobSubcategory"
 
   belongs_to :categorizable, polymorphic: true
 end

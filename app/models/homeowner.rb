@@ -44,6 +44,7 @@ class Homeowner < ActiveRecord::Base
 
   has_one :address, as: :addressable, dependent: :destroy
 
+  has_many :alerts, as: :alertable
   has_many :appointments, through: :contractors
   has_many :contractors, through: :appointments
   has_many :photos, as: :photographable, through: :appointments

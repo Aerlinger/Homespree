@@ -1,11 +1,5 @@
 Homespree::Application.routes.draw do
 
-  get "alerts/create"
-
-  get "alerts/update"
-
-  get "alerts/destroy"
-
   # Root route must be before ActiveAdmin.routes(self)
   root :to => 'static_pages#home'
 
@@ -50,6 +44,14 @@ Homespree::Application.routes.draw do
   }
 
   resources :contractors do
+    member do
+      get "notifications" => "alerts#index"
+      get "projects" => "jobs#index"
+      get "settings" => "settings#index"
+      get "messages" => "conversations#index"
+      get "material_calculator" => "contractors#material_calculator"
+    end
+
     resources :specialties, only: [:create, :update, :destroy] do
       post :sort, on: :collection
     end
@@ -57,11 +59,7 @@ Homespree::Application.routes.draw do
     resource :address, only: [:update]
     resources :photos, only: [:create, :update, :destroy]
     resources :appointments
-    resources :jobs, only: [:create, :update, :destroy]
-
-    #get "projects" => "jobs#index"
-    get "messages" => "conversations#index", on: :collection
-    get 'material_calculator' => 'contractors#material_calculator', on: :collection
+    #resources :jobs, only: [:create, :update, :destroy]
   end
 
   # Gallery Browsing: ------------------------------------------------------------------------------------------------

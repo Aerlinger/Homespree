@@ -49,30 +49,28 @@ describe ContractorsController do
   it "should index" do
     get("/contractors").should route_to("contractors#index")
   end
-
-
 end
 
 describe "Contractor Dashboard" do
 
   it "shows notifications" do
-    get("contractors/notifications").should route_to("alerts#index")
+    get("contractors/1/notifications").should route_to("alerts#index", id: "1")
   end
 
   it "shows projects" do
-    get("contractors/myprojects").should route_to("jobs#index")
+    get("contractors/1/projects").should route_to("jobs#index", id: "1")
   end
 
   it "shows messages" do
-    get("contractors/messages").should route_to("conversations#index")
+    get("contractors/1/messages").should route_to("conversations#index", id: "1")
   end
 
   it "shows settings" do
-    get("/contractors/1/settings").should route_to("contractors#material_calculator", id: "1")
+    get("contractors/1/settings").should route_to("contractors#settings", id: "1")
   end
 
   it "shows material calculator" do
-    get("/contractors/1/material_calculator").should route_to("contractors#material_calculator", id: "1")
+    get("contractors/1/material_calculator").should route_to("contractors#material_calculator", id: "1")
   end
 
 end

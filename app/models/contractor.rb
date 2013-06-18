@@ -31,7 +31,6 @@
 #  photo_filename         :string(255)
 #  slogan                 :text
 #  years_experience       :decimal(, )
-#  availability_radius    :decimal(, )
 #  failed_attempts        :integer          default(0)
 #  unlock_token           :string(255)
 #  locked_at              :datetime
@@ -41,6 +40,7 @@
 #  slug                   :string(255)
 #  portrait_url           :string(255)
 #  logo_url               :string(255)
+#  notification_settings  :text
 #
 
 class Contractor < ActiveRecord::Base
@@ -64,6 +64,7 @@ class Contractor < ActiveRecord::Base
   has_one :address, as: :addressable, dependent: :destroy
   has_one :profile_picture, as: :photographable, class_name: 'Photo'
   #has_one :notification_settings, as: :notifiable
+  has_many :alerts, as: :alertable
   has_many :homeowners
   has_many :appointments, through: :homeowners
   has_many :specialties, dependent: :destroy

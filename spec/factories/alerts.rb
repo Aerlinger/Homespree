@@ -2,10 +2,8 @@
 
 FactoryGirl.define do
   factory :alert do
-    title "MyString"
-    content "MyText"
-    alertable_id 1
-    alertable_type "MyString"
-    type ""
+    title "Alert Title"
+    content "Alert Content"
+    notice_type "notice"
   end
 end

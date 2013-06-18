@@ -17,11 +17,10 @@ class Job < ActiveRecord::Base
   attr_accessible :zipcode, :title
 
   validates_presence_of :title, :description
-  validates_associated :job_categories, :appointment
 
-  has_many :job_categories, as: :categorizable
+  has_many :categories, as: :categorizable, class_name: "JobCategory"
   has_many :before_photos, class_name: 'Photo', as: :photographable
   has_many :after_photos, class_name: 'Photo', as: :photographable
 
-  belongs_to :appointment
+  has_many :appointments
 end

@@ -189,7 +189,7 @@ GEM
     less-rails (2.3.3)
       actionpack (>= 3.1)
       less (~> 2.3.1)
-    less-rails-fontawesome (0.4.4)
+    less-rails-fontawesome (0.5.0)
       less-rails (>= 2.1.7)
       railties (>= 3.1.1)
     libv8 (3.11.8.13)

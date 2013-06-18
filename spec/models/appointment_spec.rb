@@ -13,6 +13,7 @@
 #  contractor_id :integer
 #  title         :string(255)
 #  description   :string(255)
+#  homeowner_id  :integer
 #
 
 require 'spec_helper'

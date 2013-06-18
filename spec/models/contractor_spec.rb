@@ -31,7 +31,6 @@
 #  photo_filename         :string(255)
 #  slogan                 :text
 #  years_experience       :decimal(, )
-#  availability_radius    :decimal(, )
 #  failed_attempts        :integer          default(0)
 #  unlock_token           :string(255)
 #  locked_at              :datetime
@@ -41,6 +40,7 @@
 #  slug                   :string(255)
 #  portrait_url           :string(255)
 #  logo_url               :string(255)
+#  notification_settings  :text
 #
 
 require 'spec_helper'

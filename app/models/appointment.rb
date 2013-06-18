@@ -13,6 +13,7 @@
 #  contractor_id :integer
 #  title         :string(255)
 #  description   :string(255)
+#  homeowner_id  :integer
 #
 
 class Appointment < ActiveRecord::Base
@@ -21,10 +22,9 @@ class Appointment < ActiveRecord::Base
   belongs_to :contractor
   belongs_to :homeowner
   has_one :address, as: :addressable
-  has_one :job
+  belongs_to :job
 
   accepts_nested_attributes_for :job, :address
-
   validates_presence_of :date, :time, :address
 
 end
