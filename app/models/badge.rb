@@ -7,10 +7,11 @@
 #  name          :string(255)
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
+#  description   :text
+#  image_url     :string(255)
 #
 
 class Badge < ActiveRecord::Base
-  attr_accessible :contractor_id, :name
 
   belongs_to :contractor
 

@@ -7,7 +7,7 @@
 #  content        :text
 #  alertable_id   :integer
 #  alertable_type :string(255)
-#  type           :string(255)
+#  type           :notice_type
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
 #

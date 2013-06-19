@@ -54,7 +54,10 @@ describe Receipt do
   specify { Receipt.should respond_to :update_receipts }
 
 
-  it { should be_valid }
+  it "is valid with homeowner as the receiver" do
+    receipt.receiver = FactoryGirl.create :contractor
+    receipt.should be_valid
+  end
 
 
 end

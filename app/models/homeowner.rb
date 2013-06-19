@@ -9,7 +9,6 @@
 #  updated_at             :datetime         not null
 #  first_name             :string(255)
 #  last_name              :string(255)
-#  address_id             :integer
 #  photos_id              :integer
 #  appointments_id        :integer
 #  encrypted_password     :string(255)      default(""), not null
@@ -39,15 +38,17 @@ class Homeowner < ActiveRecord::Base
   acts_as_messageable
 
   # Accessors:  -------------------------------------------------------------------------------------------------------
-  attr_accessible :email, :password, :password_confirmation, :remember_me,
-                   :address, :appointments, :email, :first_name, :last_name, :photos
+  attr_protected
 
+  # Associations:  ----------------------------------------------------------------------------------------------------
   has_one :address, as: :addressable, dependent: :destroy
-
   has_many :alerts, as: :alertable
-  has_many :appointments, through: :contractors
-  has_many :contractors, through: :appointments
-  has_many :photos, as: :photographable, through: :appointments
+
+  has_many :appointments
+  has_many :contractors, through: :appointments, uniq: true
+  has_many :jobs, through: :appointments
+
+  has_many :photos, as: :photographable, through: :jobs
 
   # Nested Attributes:  -----------------------------------------------------------------------------------------------
   accepts_nested_attributes_for :appointments, :address

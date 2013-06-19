@@ -40,6 +40,7 @@ gem 'carrierwave'
 
 group :test, :development do
   gem 'sqlite3'
+  gem 'shoulda-matchers'
   gem 'rspec-rails', '>= 2.12.0'
   gem 'turn', :require => false
   gem 'meta_request'
@@ -88,5 +89,5 @@ group :assets do
 
   gem 'less-rails' #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
   gem 'less-rails-fontawesome'
-  gem 'twitter-bootstrap-rails'
+  gem 'twitter-bootstrap-rails', '2.2.6'
 end

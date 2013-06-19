@@ -6,8 +6,5 @@ FactoryGirl.define do
     password "iamsecret"
     first_name "RspecHomeowner"
     last_name "RspecHomeowner"
-
-    #address
-    #appointments { [FactoryGirl.create(:appointment)] }
   end
 end

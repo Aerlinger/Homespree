@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :appointment do |f|
-    date Date.new(2013, 12, 3)
-    time Time.new(12, 1, 3)
+    starts_at DateTime.new(2013, 12, 3)
+    duration 2.2
 
     address
   end

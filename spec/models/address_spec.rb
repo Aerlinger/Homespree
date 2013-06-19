@@ -39,6 +39,8 @@ require 'spec_helper'
 
 describe Address do
 
+  it { should belong_to :addressable }
+
   it { should respond_to :line1 }
   it { should respond_to :line2 }
   it { should respond_to :city }
@@ -94,6 +96,52 @@ describe Address do
       @contractor.address.single_address.should eq address.single_address
     end
 
+  end
+
+  describe "created as a nested attribute of homeowner" do
+    let(:params) do
+      {
+        homeowner: FactoryGirl.attributes_for(:homeowner,
+                                               address_attributes: FactoryGirl.attributes_for(:address))
+      }
+    end
+
+    before { @homeowner = Homeowner.create(params[:homeowner]) }
+
+    it "should persist homeowner" do
+      @homeowner.should be_persisted
+    end
+
+    it "should have a valid address" do
+      @homeowner.address.should be_persisted
+    end
+
+    it "should have a valid address" do
+      @homeowner.address.single_address.should eq address.single_address
+    end
+  end
+
+  describe "created as a nested attribute of address" do
+    let(:params) do
+      {
+        appointment: FactoryGirl.attributes_for(:appointment,
+                                              address_attributes: FactoryGirl.attributes_for(:address))
+      }
+    end
+
+    before { @appointment = Appointment.create(params[:appointment]) }
+
+    it "should persist appointment" do
+      @appointment.should be_persisted
+    end
+
+    it "should have a valid address" do
+      @appointment.address.should be_persisted
+    end
+
+    it "should have a valid address" do
+      @appointment.address.single_address.should eq address.single_address
+    end
   end
 
 end

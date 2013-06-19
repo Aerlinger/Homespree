@@ -2,19 +2,18 @@
 #
 # Table name: jobs
 #
-#  id             :integer          not null, primary key
-#  created_at     :datetime         not null
-#  updated_at     :datetime         not null
-#  title          :string(255)
-#  description    :text(255)
-#  category_id    :integer
-#  appointment_id :integer
+#  id          :integer          not null, primary key
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  title       :string(255)
+#  description :text(255)
+#  category_id :integer
 #
 
 class Job < ActiveRecord::Base
 
   attr_accessor :zipcode
-  attr_accessible :zipcode, :title
+  attr_accessible :zipcode, :title, :descriptionuukkk
 
   validates_presence_of :title, :description
 

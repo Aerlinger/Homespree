@@ -2,7 +2,6 @@
 
 FactoryGirl.define do
   factory :badge do
-    contractor_id 1
-    name "MyString"
+    name "Badge name"
   end
 end

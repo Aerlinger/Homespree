@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130618013216) do
+ActiveRecord::Schema.define(:version => 20130619023405) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -61,23 +61,33 @@ ActiveRecord::Schema.define(:version => 20130618013216) do
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
-# Could not dump table "alerts" because of following StandardError
-#   Unknown type 'notice_type' for column 'type'
+  create_table "alerts", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "alertable_id"
+    t.string   "alertable_type"
+    t.string   "notice_type"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
 
   create_table "appointments", :force => true do |t|
-    t.date     "date"
-    t.datetime "time"
+    t.datetime "starts_at"
     t.integer  "address_id"
     t.string   "photos"
     t.string   "reminders"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",                                 :null => false
+    t.datetime "updated_at",                                 :null => false
     t.integer  "contractor_id"
     t.string   "title"
     t.string   "description"
     t.integer  "homeowner_id"
     t.decimal  "duration"
     t.integer  "job_id"
+    t.boolean  "verified_by_homeowner",   :default => false
+    t.boolean  "verified_by_contractor",  :default => false
+    t.boolean  "completed_by_homeowner",  :default => false
+    t.boolean  "completed_by_contractor", :default => false
   end
 
   create_table "badges", :force => true do |t|
@@ -85,6 +95,8 @@ ActiveRecord::Schema.define(:version => 20130618013216) do
     t.string   "name"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.text     "description"
+    t.string   "image_url"
   end
 
   create_table "contractors", :force => true do |t|
@@ -145,7 +157,6 @@ ActiveRecord::Schema.define(:version => 20130618013216) do
     t.datetime "updated_at",                             :null => false
     t.string   "first_name"
     t.string   "last_name"
-    t.integer  "address_id"
     t.integer  "photos_id"
     t.integer  "appointments_id"
     t.string   "encrypted_password",     :default => "", :null => false

@@ -9,7 +9,6 @@
 #  updated_at             :datetime         not null
 #  first_name             :string(255)
 #  last_name              :string(255)
-#  address_id             :integer
 #  photos_id              :integer
 #  appointments_id        :integer
 #  encrypted_password     :string(255)      default(""), not null

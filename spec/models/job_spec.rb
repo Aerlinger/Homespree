@@ -2,13 +2,12 @@
 #
 # Table name: jobs
 #
-#  id             :integer          not null, primary key
-#  created_at     :datetime         not null
-#  updated_at     :datetime         not null
-#  title          :string(255)
-#  description    :text(255)
-#  category_id    :integer
-#  appointment_id :integer
+#  id          :integer          not null, primary key
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  title       :string(255)
+#  description :text(255)
+#  category_id :integer
 #
 
 require 'spec_helper'
@@ -51,7 +50,7 @@ describe Job do
       contractor.should be_persisted
     end
 
-    it "creates a job" do
+    it "creates a job for the appointment" do
       contractor.jobs.should eq [job]
     end
 
@@ -61,7 +60,10 @@ describe Job do
     let(:homeowner) { FactoryGirl.create :homeowner }
 
     it "is persisted" do
-  
+    end
+
+    it "creates a job for an appointments" do
+
     end
 
 

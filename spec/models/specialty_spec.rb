@@ -19,7 +19,7 @@ describe Specialty do
 
   let(:contractor) { FactoryGirl.create(:contractor) }
   let(:specialty) { FactoryGirl.create(:specialty) }
-  subject { :specialty }
+  subject { specialty }
 
   it { should respond_to :name }
   it { should respond_to :description }
@@ -39,13 +39,12 @@ describe Specialty do
 
   describe "associated with a contractor" do
 
-    #before do
-    #  @specialty = Specialty.create(FactoryGirl.attributes_for(:specialty))
-    #  contractor.specialties << @specialty
-    #end
+    before do
+      contractor.specialties << specialty
+    end
 
     it "creates a single specialty" do
-      contractor.specialties.count.should eq 1
+      contractor.specialties.should eq [specialty]
     end
 
     it "persists the specialty" do

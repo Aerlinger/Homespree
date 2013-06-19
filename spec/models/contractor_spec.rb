@@ -54,6 +54,14 @@ describe Contractor do
   # Associations
   it { should respond_to :address }
   it { should respond_to :appointments }
+  it { should respond_to :homeowners }
+  it { should respond_to :jobs }
+  it { should respond_to :profile_picture }
+  it { should respond_to :badges }
+  it { should respond_to :alerts }
+  it { should respond_to :photos }
+  it { should respond_to :job_photos }
+  it { should respond_to :specialties }
 
   it { should respond_to :id }
   it { should respond_to :company_title }
@@ -65,7 +73,6 @@ describe Contractor do
   it { should respond_to :website }
   it { should respond_to :facebook }
   it { should respond_to :twitter }
-  it { should respond_to :specialties }
   it { should respond_to :updated_at }
   it { should respond_to :password }
   it { should respond_to :password_confirmation }
@@ -88,7 +95,7 @@ describe Contractor do
   it { should respond_to :encrypted_password }
 
   its(:photos) { should be_empty }
-  its(:address) { should_not be_nil }
+  its(:address) { should be_nil }
 
   describe "Mailboxer association" do
     subject { contractor.mailbox }

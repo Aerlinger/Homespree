@@ -63,12 +63,15 @@ class Contractor < ActiveRecord::Base
   # Associations:  ----------------------------------------------------------------------------------------------------
   has_one :address, as: :addressable, dependent: :destroy
   has_one :profile_picture, as: :photographable, class_name: 'Photo'
-  #has_one :notification_settings, as: :notifiable
   has_many :alerts, as: :alertable
-  has_many :homeowners
-  has_many :appointments, through: :homeowners
+
+  has_many :appointments
+  has_many :homeowners, through: :appointments, uniq: true
+  has_many :jobs, through: :appointments
+
   has_many :specialties, dependent: :destroy
   has_many :photos, as: :photographable
+  has_many :job_photos, as: :photographable, class_name: "Photo", through: :jobs
   has_many :badges
 
 
