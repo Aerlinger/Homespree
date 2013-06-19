@@ -2,6 +2,6 @@
 
 FactoryGirl.define do
   factory :badge do
-    name "Badge name"
+    name "early_adopter"
   end
 end

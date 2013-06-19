@@ -18,6 +18,7 @@ describe Badge do
   let(:badge) { FactoryGirl.create :badge }
   subject { badge }
 
+
   # Associations
   it { should belong_to :contractor }
   it { should respond_to :contractor_id }
@@ -28,6 +29,6 @@ describe Badge do
   # Validations
   it { should validate_presence_of :name }
 
-  its(:name) { should eq "Badge name" }
+  its(:name) { should eq "early_adopter" }
 
 end
