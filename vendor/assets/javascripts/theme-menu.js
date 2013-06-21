@@ -4,7 +4,7 @@
 $(document).ready(function () {
     $(".mobile_nav a.mobiletrigger").click(function () {
         $('.primary-menu, .secondary-menu')
-            .slideToggle(500);
+            .slideToggle(100);
         $(this).toggleClass("active");
         return false
     })

@@ -39,7 +39,7 @@ class ContractorDecorator < Draper::Decorator
   delegate_all
   decorates :contractor
 
-  def portrait_upload(image_url= asset_path("profile/default_portrait.jpg"))
+  def portrait_upload(image_url= asset_path("contractor_profiles/portrait_default.jpg"))
     portrait_missing = @object.portrait_url ? "_edited" : ""
 
     h.image_tag @object.portrait_url.to_s || image_url, id: "contractor_portrait", class: portrait_missing
