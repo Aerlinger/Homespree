@@ -1,1 +1,0 @@
-!function(){this.Mercury.modalHandlers.htmlEditor=function(){var e,t=this;return e=Mercury.region.content(null,!0,!1),this.element.find("textarea").val(e),this.element.find("form").on("submit",function(e){var i;return e.preventDefault(),i=t.element.find("textarea").val(),Mercury.trigger("action",{action:"replaceHTML",value:i}),t.hide()})}}.call(this);

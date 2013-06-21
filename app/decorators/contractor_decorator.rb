@@ -54,16 +54,18 @@ class ContractorDecorator < Draper::Decorator
     end
   end
 
-  def logo_url
+  def logo
     if @object.logo_url?
       h.haml_concat image_tag @object.logo_url
-    end
-    h.haml_concat link_to "Upload company logo", "#", class: "btn btn-info btn-small", id: "upload_logo"
-  end
-
-  def logo
-    h.content_tag(:div, id: "contractor_logo", class: "logo") do
-      @object.company_title
+      h.haml_concat link_to("Change logo", "#", class: "btn btn-info btn-mini", id: "upload_logo")
+      h.haml_concat link_to("Delete logo", contractor_path(id: @object.id, contractor: {remove_logo_url: true}),
+                            confirm: "Are you sure you want to delete your logo from the description?",
+                            method: :put, class: "btn btn-danger btn-mini delete-button pull-right")
+        #=%i.e-icon-cancel
+        #h.content_tag(:i, class: "e-icon-cancel")
+      #end
+    else
+        h.haml_concat link_to "Upload company logo", "#", class: "btn btn-info", id: "upload_logo"
     end
   end
 

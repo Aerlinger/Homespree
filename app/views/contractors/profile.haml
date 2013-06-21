@@ -97,10 +97,10 @@
               %div Business Description
             = @contractor.in_place_edit(:h6, :slogan) do
               = best_in_place @contractor, :slogan, activator: "#slogan_edit", nil: "No slogan entered"
-              = render "contractors/profiles/edit_link",  activator: "slogan_edit"
+              = render "contractors/profiles/edit_link", activator: "slogan_edit"
 
             #contractor_logo
-              - @contractor.logo_url
+              - @contractor.logo
 
             = @contractor.in_place_edit(:p, :description) do
               = best_in_place @contractor, :description, type: :textarea, activator: "#description_edit", nil: default_description

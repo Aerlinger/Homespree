@@ -27,7 +27,7 @@
     font-size: 85%;
 }
 .widget ul.blogposts span.date {
-    background: url(/assets/images/5p.png);
+    background: url(/assets/icons/5p.png);
     color: #000;
     -webkit-border-radius: 60px;
     -moz-border-radius: 60px;
@@ -83,7 +83,7 @@
     text-align: center;
     display: block;
     margin:0 auto;
-    background: url(/assets/images/5p.png);
+    background: url(/assets/icons/5p.png);
     color: #000;
     width: 70px;
     height: 57px;
@@ -160,7 +160,7 @@
     padding-top: 8px;
     font-size: 11px;
     text-transform: lowercase;
-    background: url(/assets/images/dot.png) 0 0 repeat-x;
+    background: url(/assets/icons/dot.png) 0 0 repeat-x;
 }
 .blog-summary-grid li a.commentlink {
     font-size: 11px;
@@ -225,7 +225,7 @@
 	-webkit-border-radius: 3px 3px 0 0;
     -moz-border-radius: 3px 3px 0 0;
     border-radius: 3px 3px 0 0;
-    background: url(/assets/images/50p.png);
+    background: url(/assets/icons/50p.png);
 }
 
 .blog-summary-grid li:hover div.hover span {
@@ -262,7 +262,7 @@
     width: 80%;
 }
 .blog-summary .entry-post {
-    background: url(/assets/images/dot.png) 0 100% repeat-x;
+    background: url(/assets/icons/dot.png) 0 100% repeat-x;
     padding-bottom: 10px;
     margin-bottom: 3%;
 }
@@ -304,7 +304,7 @@
 }
 /****** entry header ******/
 .blog-detail .entry-header {
-    background: url(/assets/images/dot.png) 0 100% repeat-x;
+    background: url(/assets/icons/dot.png) 0 100% repeat-x;
     padding-bottom: 10px;
     margin-bottom: 3%;
     position: relative;
@@ -492,7 +492,7 @@ only screen and (min-device-pixel-ratio: 2),
 only screen and (min-resolution: 192dpi),
 only screen and (min-resolution: 2dppx) {
 	.blog-summary-grid li.quotes .entry-summary blockquote {
-	    background-image: url(../images/retina/open-quote_@2x.png);
+	    background-image: url(../icons/retina/open-quote_@2x.png);
 		-moz-background-size: 25px 25px;
 		-ie-background-size: 25px 25px;
 		-o-background-size: 25px 25px;

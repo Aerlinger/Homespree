@@ -255,27 +255,6 @@
             }
           }
 
-          #contractor_logo {
-            position: relative;
-            padding: 5px 10px;
-
-            img, a {
-              display: table;
-              margin: 0 auto;
-            }
-
-            img {
-              max-width: 250px;
-              max-height: 150px;
-
-              width: auto;
-              height: auto;
-            }
-
-            a {
-              position: absolute;
-            }
-          }
         }
 
         .optionheader {
@@ -501,6 +480,31 @@
 
   #section_two {
     #business_description {
+
+      #contractor_logo {
+        position: relative;
+        padding: 5px 10px;
+
+        //img, a {
+        //  display: table;
+        //  margin: 0 auto;
+        //}
+
+        img {
+          display: table !important;
+          margin: 0 auto !important;
+          max-width: 250px;
+          max-height: 150px;
+
+          width: auto;
+          height: auto;
+        }
+
+        //a {
+        //  position: absolute;
+        //}
+      }
+
       .slogan {
         padding-left: 8px;
       }
@@ -540,7 +544,7 @@
       }
 
       #available_specialties {
-        margin-left: 0;
+        margin-left: 5px;
         li {
           list-style: none;
         }
