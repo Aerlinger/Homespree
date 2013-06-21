@@ -1,0 +1,1 @@
+!function(){jQuery(function(){return $("#show_debug").click(function(){return $(".debug").toggle()}),$("#show_debug").click()})}.call(this);
