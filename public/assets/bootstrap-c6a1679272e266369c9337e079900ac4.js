@@ -1,1 +1,0 @@
-(function(){jQuery(function(){return $("a[rel=popover]").popover(),$(".tooltip").tooltip(),$("a[rel=tooltip]").tooltip()}),$("body").on("touchstart.dropdown",".dropdown-menu",function(e){return e.stopPropagation()})}).call(this);

@@ -1,1 +1,0 @@
-(function(){$("body").on("touchstart.dropdown",".dropdown-menu",function(e){return e.stopPropagation()})}).call(this);

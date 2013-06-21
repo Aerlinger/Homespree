@@ -1,1 +1,0 @@
-(function(){this.Mercury.dialogHandlers.foreColor=function(){var e=this;return this.element.find(".picker, .last-picked").on("click",function(t){var n;return n=jQuery(t.target).css("background-color").toHex(),e.element.find(".last-picked").css({background:n}),e.button.css({backgroundColor:n}),Mercury.trigger("action",{action:"foreColor",value:n})})}}).call(this);

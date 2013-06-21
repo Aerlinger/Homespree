@@ -106,6 +106,23 @@ describe Contractor do
     it { should respond_to :trash }
   end
 
+  describe "default images" do
+
+    its(:logo_url) { should eq "/assets/contractor_profiles/logo_default.jpg" }
+    its(:portrait_url) { should eq "/assets/contractor_profiles/portrait_default.jpg" }
+
+    describe "has a single portrait url by default" do
+      let(:photos) { contractor.photos }
+
+      it "has a single photo" do
+        photo.length.should eq 1
+      end
+
+      it "is the default" do
+        photo.image_url.should eq "/assets/contractor_profiles/portfolio_default.jpg"
+      end
+    end
+  end
 
   describe "sanitize phone numbers" do
     before do
@@ -117,6 +134,29 @@ describe Contractor do
     it { should be_valid }
     its(:mobile_number) { should eq '8083891234' }
     its(:office_number) { should eq '8085551234' }
+  end
+
+  describe "sanitize price" do
+    before do
+      params = {
+        bonding_limit: "$2,111,134.50",
+        insurance_limit: "$1,134.50",
+        hourly_rate: "$134.50"
+      }
+      contractor.update_attributes(params)
+    end
+
+    it "for bonding limit" do
+      contractor.bonding_limit.should eq 2134.50
+    end
+
+    it "for insurance_limit" do
+      contractor.bonding_limit.should eq 1134.50
+    end
+
+    it "for hourly rate" do
+      contractor.bonding_limit.should eq 134.50
+    end
   end
 
   describe "only requires email, company title, and password" do
@@ -136,7 +176,7 @@ describe Contractor do
       contractor.errors[:company_title].should include("can't be blank")
     end
 
-    it "password erro includes" do
+    it "password error includes" do
       contractor.errors[:password].should include("can't be blank")
     end
 

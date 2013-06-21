@@ -1,11 +1,15 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  include Mobylette::RespondToMobileRequests
 
-  mobylette_config do |config|
-    config[:skip_user_agents] = [:ipad, :kindle]
-    config[:mobile_user_agents] = proc { %r{iphone|mobile|blackberry|nokia|palm|opera mini|windows ce}i }
-  end
+  #Mobile routing:
+
+  # include Mobylette::RespondToMobileRequests
+  # mobylette_config do |config|
+  #   config[:skip_user_agents] = [:ipad, :kindle]
+  #   config[:mobile_user_agents] = proc { %r{iphone|mobile|blackberry|nokia|palm|opera mini|windows ce}i }
+  # end
+
+
 
   # Devise Helpers:
 

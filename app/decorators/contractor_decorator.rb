@@ -39,10 +39,26 @@ class ContractorDecorator < Draper::Decorator
   delegate_all
   decorates :contractor
 
-  def portrait(image_url= asset_path("profile/default_portrait.jpg"))
+  def portrait_upload(image_url= asset_path("profile/default_portrait.jpg"))
     portrait_missing = @object.portrait_url ? "_edited" : ""
 
     h.image_tag @object.portrait_url.to_s || image_url, id: "contractor_portrait", class: portrait_missing
+    h.haml_concat link_to "Upload portrait", "#", class: "btn btn-success btn-small", id: "upload_portrait"
+  end
+
+  def portrait_url
+    if @object.portrait_url.to_s.blank?
+      "/assets/contractor_profiles/portrait_default.jpg"
+    else
+      @object.portrait_url
+    end
+  end
+
+  def logo_url
+    if @object.logo_url?
+      h.haml_concat image_tag @object.logo_url
+    end
+    h.haml_concat link_to "Upload company logo", "#", class: "btn btn-info btn-small", id: "upload_logo"
   end
 
   def logo
@@ -103,7 +119,7 @@ class ContractorDecorator < Draper::Decorator
                     "Edit"
                   end
 
-      h.link_to "javascript:void(0)", id: attr_name, class: "edit-link #{link_text}" do
+      h.link_to "javascript:void(0)", id: attr_name, class: "edit-link #{link_text} pull-right" do
         #h.haml_concat h.content_tag(:i, class: "e-icon-pencil", style: "height: 20px; line-height: 16px;")
         h.haml_concat link_text
       end

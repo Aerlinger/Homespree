@@ -100,7 +100,9 @@ $(document).ready ->
 
   # Only run this script if we're on the contractor's profile page.
   if $("#page.profile").length > 0
+    console.log "loading contractor page."
 
+    # Default upload fields are hidden from view
     invisibleUploadFields()
 
     # Load the definition of out introduction fields
@@ -131,11 +133,11 @@ $(document).ready ->
 
     # Make contractor specialties sortable
     $('#contractor_specialties').sortable
-      helper: "clone"
+#      helper: "clone"
       appendTo: 'body'
       revert: true
-      zIndex: 9999
-      axis: 'y'
+#      zIndex: 9999
+#      axis: 'y'
       update: ->
         # Update the info in the contractor's card
         $.post($(this).data('update-url'), $(this).sortable('serialize'))

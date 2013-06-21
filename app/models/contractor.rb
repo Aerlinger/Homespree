@@ -46,6 +46,7 @@
 class Contractor < ActiveRecord::Base
 
   # Gem Class Methods:  ----------------------------------------------------------------------------------------------
+  include ActionView::Helpers::NumberHelper
 
   # Include default devise modules. Others available are:  :token_authenticatable, :confirmable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :lockable, :recoverable, :rememberable, :trackable, :validatable
@@ -56,6 +57,8 @@ class Contractor < ActiveRecord::Base
 
   mount_uploader :logo_url, LogoUploader
   mount_uploader :portrait_url, PortraitUploader
+
+  @@portrait_default = "/assets/contractor_profiles/portrait_default.png"
 
   # Accessors:  -------------------------------------------------------------------------------------------------------
   attr_protected
@@ -90,18 +93,20 @@ class Contractor < ActiveRecord::Base
 
 
   # Callbacks:  -------------------------------------------------------------------------------------------------------
+  before_validation :sanitize_phone_numbers
+  before_validation :sanitize_price
   before_save lambda { |contractor| contractor.first_name.try(:capitalize!); contractor.last_name.try(:capitalize!) }
   before_save lambda { |contractor| contractor.email.try(:downcase!) }
   before_save lambda { |contractor| contractor.license.try(:upcase!) }
-  before_validation :sanitize_phone_numbers
-
+  after_create :set_image_defaults
+  before_create :add_badges
 
   # Scopes:  ----------------------------------------------------------------------------------------------------------
   default_scope order("created_at desc")
   scope :recent_signups, lambda { limit(100) }
 
   # Delegations:  -----------------------------------------------------------------------------------------------------
-  delegate :line1, :line2, :city, :state, :zipcode, :latitude, :longitude, to: :address, allow_nil: true
+  delegate :line1, :line2, :city, :state, :zipcode, :latitude, :longitude, :single_address, to: :address, allow_nil: true
 
   # Custom Methods:  --------------------------------------------------------------------------------------------------
   def incomplete_sections
@@ -124,12 +129,6 @@ class Contractor < ActiveRecord::Base
     self.email
   end
 
-  def single_address
-    if address
-      [address.line1, address.city, address.state].compact.join(', ')
-    end
-  end
-
   def name
     if first_name? && last_name?
       "#{first_name} #{last_name}"
@@ -140,11 +139,37 @@ class Contractor < ActiveRecord::Base
     end
   end
 
+  def default_portrait?
+    portrait_url.to_s == @@portrait_default
+  end
+
+  def default_logo?
+    logo_url.to_s == @@logo_default
+  end
+
   protected
 
   def sanitize_phone_numbers
     self.mobile_number.try(:gsub!, /\D/, '')
     self.office_number.try(:gsub!, /\D/, '')
+  end
+
+  def sanitize_price
+    #self.hourly_rate    = number_to_currency(hourly_rate, unit: "$")
+    #self.bonding_limit  = number_to_currency(bonding_limit, unit: "$")
+    #self.insurance_limit = number_to_currency(insurance_limit, unit: "$")
+  end
+
+  private
+
+  def set_image_defaults
+    self.photos = [Photo.create(image_url: "/assets/contractor_profiles/portfolio_images/default.png")]
+  end
+
+  def add_badges
+    badge = Badge.new
+    badge.image_url = 'early_adopter'
+    self.badges << badge
   end
 
 end

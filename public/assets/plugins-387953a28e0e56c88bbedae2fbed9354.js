@@ -1,1 +1,0 @@
-(function(){for(var t,e=function e(){},i=["assert","clear","count","debug","dir","dirxml","error","exception","group","groupCollapsed","groupEnd","info","log","markTimeline","profile","profileEnd","table","time","timeEnd","timeStamp","trace","warn"],n=i.length,s=window.console=window.console||{};n--;)t=i[n],s[t]||(s[t]=e)})();

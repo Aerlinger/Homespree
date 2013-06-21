@@ -71,6 +71,7 @@ group :development do
   gem 'brakeman'
   gem 'html2haml'
   gem 'quiet_assets'
+  gem 'meta_request'
 end
 
 group :production do

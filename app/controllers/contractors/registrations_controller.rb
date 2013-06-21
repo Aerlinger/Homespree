@@ -3,7 +3,7 @@ class Contractors::RegistrationsController < Devise::RegistrationsController
   layout "static_page", only: [:edit]
   respond_to :html, :json
 
-  after_filter :geolocate, :add_badges, only: [:create]
+  after_filter :geolocate, only: [:create]
 
   def new
     super
@@ -46,10 +46,6 @@ class Contractors::RegistrationsController < Devise::RegistrationsController
       address.latitude = location.latitude.presence || -33.9417
       address.longitude = location.longitude.presence || 150.9473
     end
-  end
-
-  def add_badges
-    resource.badges << Badge.create(name: "approved")
   end
 
 end

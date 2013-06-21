@@ -1,1 +1,0 @@
-(function(){$(document).ready(function(){return $(".best_in_place").best_in_place(),$("#licensed").tooltip(),console.log("test load")})}).call(this);

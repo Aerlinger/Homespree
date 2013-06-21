@@ -38,7 +38,6 @@
   font-weight: normal;
   padding-left: 3px;
   padding-right: 3px;
-  position: relative !important;
   font-style: italic !important;
 }
 
@@ -50,7 +49,6 @@
   -o-background-size: cover;
   background-size: cover;
 }
-
 
 .custom_file_upload {
   font-size: 2px;
@@ -120,7 +118,6 @@
   }
 }
 
-
 // -------------------------------------------------------------------------------------------------------------------
 // Body of the profile page. Is split into sections
 // -------------------------------------------------------------------------------------------------------------------
@@ -174,9 +171,46 @@
       .wrapper {
         padding: 0 0 10px 0;
 
+        #city_and_state {
+          font-size: 14px;
+          color: white;
+          font-weight: bold;
+          margin-top: 15px;
+        }
+
+        .primary-color-bg {
+          position: relative;
+          z-index: 3;
+          padding: 5px 40px !important;
+
+          .edit-link {
+            color: white;
+            font-weight: bold;
+
+            position: absolute !important;
+            top: 5px;
+            right: 5px;
+          }
+        }
+
+        .price:last-child {
+          position: relative;
+          z-index: 1;
+          border-radius: 0;
+          -webkit-border-radius: 0;
+          box-shadow: none;
+        }
+
         .price {
           height: auto !important;
-          padding: 5px 0 0 0;
+          padding: 0;
+
+          border-bottom-left-radius: 5px;
+          border-bottom-right-radius: 5px;
+          border-top-left-radius: 0px;
+          border-top-right-radius: 0px;
+
+          box-shadow: $shadow;
 
           .btn {
             margin: 0;
@@ -222,23 +256,20 @@
           }
 
           #contractor_logo {
-            @include five-pixel-rounded;
-
-            display: table;
             position: relative;
-
-            margin: auto;
-            width: 100px;
-
-            background: red;
-            color: white;
-            font: 14px solid red;
-
-            text-align: center;
             padding: 5px 10px;
 
-            .upload_image {
-              display: block;
+            img, a {
+              display: table;
+              margin: 0 auto;
+            }
+
+            img {
+              max-width: 250px;
+              max-height: 150px;
+
+              width: auto;
+              height: auto;
             }
 
             a {
@@ -247,12 +278,20 @@
           }
         }
 
-
         .optionheader {
           #title {
+            color: white;
+            font-weight: bold;
             font-size: 1.4em;
             line-height: 1.4em;
             padding: 5px 25px;
+            margin: -2px -1px 0 -1px;
+            border: 1px solid white;
+            border-bottom: 1px solid $homespree_accent;
+            box-shadow: $shadow;
+            -moz-box-shadow: $shadow;
+            position: relative;
+            z-index: 5;
           }
 
           background-color: $homespree_lightest;
@@ -284,6 +323,10 @@
             background-color: $homespree_lightest;
           }
 
+          li:last-child {
+            background: none;
+          }
+
           strong {
             font-size: 13px;
             font-weight: bold;
@@ -305,7 +348,7 @@
             width: 160px !important;
           }
         }
-        
+
         li.card-attribute {
           text-align: left;
 
@@ -334,7 +377,6 @@
         }
       }
 
-
       #full_name {
         margin: 0;
         padding-top: 5px;
@@ -353,6 +395,7 @@
       }
 
       #book_contractor {
+        margin-top: 2px;
         background-color: green;
         font-size: 1.7rem;
       }
@@ -465,6 +508,16 @@
       #description {
         text-align: justify;
       }
+
+      #contractor_logo {
+        display: table;
+        margin: 0 auto 20px;
+      }
+
+      //#upload_logo {
+      //  display: table;
+      //  margin: 0 auto 20px;
+      //}
     }
 
     #services, #services_edited {
@@ -485,26 +538,53 @@
           list-style: none;
         }
       }
-      li{
+
+      #available_specialties {
+        margin-left: 0;
+        li {
+          list-style: none;
+        }
+      }
+
+      li {
         line-height: 25px;
       }
     }
 
     #service_area, #service_area_edited {
       #map {
-        margin-bottom: 10px;
+        margin-bottom: 0;
         width: 100%;
       }
 
-      label {
-        display: block !important;
+      #update_message {
+        margin-top: 0;
+        margin-bottom: 10px;
+        border-radius: 0;
+        -moz-border-radius: 0;
+        -webkit-border-radius: 0;
+        display: none;
+      }
+
+      .control-label {
+        display: inline !important;
         float: left;
-        width: 120px !important;
+        margin-bottom: 10px;
         text-align: left;
 
         font-weight: bold;
         height: 30px !important;
         line-height: 30px;
+      }
+
+      #city {
+        width: 100px;
+      }
+
+      #zipcode {
+        input {
+          width: 70px;
+        }
       }
 
       input:not(.btn) {
@@ -513,9 +593,16 @@
       }
 
       input:not(.btn), select {
-        width: 50%;
+        float: right;
+        text-align: right;
+        width: 70%;
         margin-bottom: 10px !important;
         display: block !important;
+      }
+
+      #service_radius select {
+        width: 90px;
+        float: right;
       }
 
       .simple_form div.boolean {
@@ -659,6 +746,5 @@
       float: right;
     }
   }
-
 
 }

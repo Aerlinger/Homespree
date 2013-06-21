@@ -12,7 +12,6 @@
 
   -# Top Section (Info Card and Image Carousel)
   -#================================================================================================
-
   .feature-strip
     #top.container
       .row-fluid.pricingTable
@@ -24,20 +23,22 @@
             %ul.optionheader
               %li#title.primary-color-bg
                 = best_in_place @contractor, :company_title, activator: "#company_title"
-                -#= render "contractors/profiles/edit_link", activator: "title_edit" unless @contractor.visitor?
                 = @contractor.edit_link(:company_title )
+                %br
+                %span#city_and_state= @contractor.city_and_state
 
               %li.price.primary-color-bg
-                = render "contractors/profiles/logo"
                 %span.rating{style: "font-weight: bold"}
-                  = @contractor.city_and_state
-                  = @contractor.stars_rating
+
+                = image_tag @contractor.portrait_url
+                = content_tag(:div, style: "position: relative;") do
+                  - @contractor.portrait_upload
 
               %li.price
                 = content_tag(:div, style: "position: relative;", class: "badges") do
                   %ul
-                    %li
-                      = @contractor.badge
+                    = content_tag_for(:li, @contractor.badges) do |badge|
+                      = image_tag badge.image_url
 
 
             -# Contractor Card: list of Fields -- name, license info, etc...
@@ -96,8 +97,10 @@
               %div Business Description
             = @contractor.in_place_edit(:h6, :slogan) do
               = best_in_place @contractor, :slogan, activator: "#slogan_edit", nil: "No slogan entered"
-              -#= best_in_place @contractor, :slogan, activator: "#slogan", nil: "No slogan entered"
               = render "contractors/profiles/edit_link",  activator: "slogan_edit"
+
+            #contractor_logo
+              - @contractor.logo_url
 
             = @contractor.in_place_edit(:p, :description) do
               = best_in_place @contractor, :description, type: :textarea, activator: "#description_edit", nil: default_description
@@ -117,3 +120,15 @@
   -#=render "contractors/profiles/question_modal"
   =render "contractors/profiles/photos_modal"
   =render "partials/clean_footer"
+
+  -# Invisible form to upload portrait image
+  = form_for @contractor, remote: true, method: :put do |f|
+    .custom_file_upload
+      = f.file_field :portrait_url, id: "hidden_portrait_url", onchange: "uploadfile('#hidden_portrait_url')"
+      = f.submit "", class: 'image-upload'
+
+  -# Invisible form to upload logo image
+  = form_for @contractor, remote: true, method: :put do |f|
+    .custom_file_upload
+      = f.file_field :logo_url, id: "hidden_logo_url", onchange: "uploadfile('#hidden_logo_url')"
+      = f.submit "", class: 'image-upload'

@@ -1,5 +1,9 @@
 =image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@contractor.try(:latitude)}%2C#{@contractor.try(:longitude)}", id: "map"
 
+#update_message.alert.alert-success
+  Address updated!
+
+
 .no-edit
   .address.line1
     = @contractor.line1
@@ -19,16 +23,16 @@
     .address.line1
       =f.input :line1, placeholder: "Address Line 1", label: "Street"
 
-    %span.address
+    %span.address#city
       =f.input :city, placeholder: @contractor.try(:city), label: "City"
 
     .address
       =f.input :state, collection: us_states, label: "State", :style => "width: 600px;"
 
-    %span.address
+    %span.address#zipcode
       =f.input :zipcode, maxlength: 5, placeholder: @contractor.try(:zipcode), label: "Zipcode"
 
-    .address
-      =f.input :state, collection: service_radius, label: "Service radius", :style => "width: 200px", value: "25 miles", default: 25
+    .address#service_radius
+      = f.input :service_radius, collection: service_radius, label: "Availability radius", selected: @contractor.address.service_radius
 
     = f.submit "Update Location", class: "btn custom-btn btn-small btn-info", style: "width: 100%"

@@ -13,7 +13,7 @@
 class Job < ActiveRecord::Base
 
   attr_accessor :zipcode
-  attr_accessible :zipcode, :title, :descriptionuukkk
+  attr_accessible :zipcode, :title, :description
 
   validates_presence_of :title, :description
 

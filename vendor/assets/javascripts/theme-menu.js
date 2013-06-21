@@ -2,9 +2,9 @@
 
 /* -------------------------- TOGGLE THE MENUS ON MOBILE/TABLETS UNDER 979PX (BOOTSTRAP'S SIZING) ------------------------*/
 $(document).ready(function () {
-    $(".mobile_nav a").click(function () {
+    $(".mobile_nav a.mobiletrigger").click(function () {
         $('.primary-menu, .secondary-menu')
-            .slideToggle(100);
+            .slideToggle(500);
         $(this).toggleClass("active");
         return false
     })

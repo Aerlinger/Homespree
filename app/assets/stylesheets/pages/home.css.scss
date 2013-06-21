@@ -146,7 +146,7 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
 				margin-top: 1px;
 			}
 
-			input[name="email"] {
+			input[name="zipcode"] {
 				box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4) inset;
 				/*float: left;*/
 				border: 1px solid #000000;
@@ -273,7 +273,7 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
 
 			#email_signup {
 				color: black;
-				font-size: 1.9em;
+				font-size: 1.5em;
 				height: 30px;
 				line-height: normal;
 				margin-top: 2px;
@@ -376,10 +376,27 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
 	}
 }
 
-/*****************
-MEDIA QUERIES
-******************/
+/*********************************************************************************
+>>>>>>>>>>>>>>>>>>>MEDIA QUERIES<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+*********************************************************************************/
+
+/*>>>>>>>>>> MAX WIDTH: 1200 <<<<<<<<<<<<<<*/
+@media (max-width: 1200px) {
+  .pitch {
+    padding-top: 0;
+    height: auto;
+
+  }
+}
+
+/*>>>>>>>>>> MAX WIDTH: 966 <<<<<<<<<<<<<<*/
+
 @media (max-width: 966px) {
+  #logo{
+    a{
+      width: 150px !important;
+    }
+  }
   #maintext{
   position: relative !important;
   width: 100%;
@@ -396,66 +413,8 @@ MEDIA QUERIES
   position: relative !important;
   }
 }
-@media (max-width: 1200px) {
-  .pitch {
-    padding-top: 0;
-    height: auto;
 
-  }
-}
-
-@media (max-width: 750px) {
-  .submit {
-    &.large {
-      width: 297px !important;
-    }
-  }
-  #search_form {
-    width: 300px !important;
-    padding-left: 06px !important;
-  }
-
-  .navbar-inner {
-    padding: 0px !important;
-  }
-
-  .pitch {
-    #customer_type {
-      margin-left: 1px !important;
-    }
-
-    padding-top: 0px !important;
-
-    #iphone_preview {
-      height: 400px !important;
-      top: 160px !important;
-      width: 300px !important;
-      background-size: 300px !important;
-    }
-  }
-
-  .desktop {
-    position: relative;
-  }
-
-  .secondary {
-    position: relative;
-
-    .container {
-      position: relative !important;
-      margin-top: -60px;
-      padding-top: 70px !important;
-
-    }
-  }
-  #email_signup {
-    width: 270px !important;
-    margin-top: 06px !important;
-  }
-  #submit_location{
-    margin-top: 06px !important;
-  }
-}
+/*>>>>>>>>>> MAX WIDTH: 767 <<<<<<<<<<<<<<*/
 
 @media (max-width: 767px) {
   #maintext{
@@ -512,6 +471,63 @@ MEDIA QUERIES
   }
 
 }
+
+/*>>>>>>>>>> MAX WIDTH: 750 <<<<<<<<<<<<<<*/
+
+@media (max-width: 750px) {
+  .submit {
+    &.large {
+      width: 297px !important;
+    }
+  }
+  #search_form {
+    width: 300px !important;
+    padding-left: 06px !important;
+  }
+
+  .navbar-inner {
+    padding: 0px !important;
+  }
+
+  .pitch {
+    #customer_type {
+      margin-left: 1px !important;
+    }
+
+    padding-top: 0px !important;
+
+    #iphone_preview {
+      height: 400px !important;
+      top: 160px !important;
+      width: 300px !important;
+      background-size: 300px !important;
+    }
+  }
+
+  .desktop {
+    position: relative;
+  }
+
+  .secondary {
+    position: relative;
+
+    .container {
+      position: relative !important;
+      margin-top: -60px;
+      padding-top: 70px !important;
+
+    }
+  }
+  #email_signup {
+    width: 270px !important;
+    margin-top: 06px !important;
+  }
+  #submit_location{
+    margin-top: 06px !important;
+  }
+}
+
+/*>>>>>>>>>> MAX WIDTH: 610 <<<<<<<<<<<<<<*/
 
 @media (max-width: 610px) {
   .submit {
@@ -573,6 +589,8 @@ MEDIA QUERIES
     margin: 0 0 15px;
   }
 }
+
+/*>>>>>>>>>> MAX WIDTH: 500 <<<<<<<<<<<<<<*/
 
 @media (max-width: 500px) {
   body {
@@ -653,6 +671,9 @@ MEDIA QUERIES
     }
   }
 }
+
+/*>>>>>>>>>> MAX WIDTH: 321 <<<<<<<<<<<<<<*/
+
 @media (max-width: 321px) {
   #search_form {
     max-width: 250px !important;
