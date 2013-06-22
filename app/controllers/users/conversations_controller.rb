@@ -16,6 +16,14 @@ class Users::ConversationsController < ApplicationController
     #curren
   end
 
+  def show
+
+  end
+
+  def index
+
+  end
+
   def trash
   end
 

@@ -23,6 +23,7 @@ describe ContractorsController do
     end
   end
 
+
   describe "PUT #update" do
 
     before :each do
@@ -43,7 +44,7 @@ describe ContractorsController do
 
       it "redirects to the updated contractor profile" do
         put :update, id: contractor, contractor: attributes_for(:contractor, first_name: "George")
-        expect(response.status).to eq 200
+        expect(response.status).to eq 302
       end
     end
 
@@ -82,13 +83,40 @@ describe ContractorsController do
 
       it "properly updates appointments on the contractor profile" do
         put :update, id: contractor, contractor: {id: contractor.id, appointments_attributes: [FactoryGirl.attributes_for(:appointment)]}
-        #request.params[:contractor][:appointments_attributes].should eq([FactoryGirl.attributes_for(:appointment)])
-        #expect(assigns()
+        request.params[:contractor][:appointments_attributes].should
+          eq([FactoryGirl.attributes_for(:appointment)])
       end
 
       it "should create a new appointment" do
         put :update, id: contractor, contractor: {id: contractor.id, appointments_attributes: [FactoryGirl.attributes_for(:appointment)]}
-        #request.params[:contractor][:appointments_attributes].should eq([FactoryGirl.attributes_for(:appointment)])
+        request.params[:contractor][:appointments_attributes].should
+          eq(FactoryGirl.attributes_for(:appointment))
+      end
+    end
+
+    describe "sanitizes params" do
+      before do
+        params = {
+          hourly_rate: "$134.50",
+          bonding_limit: "$2,111,134.50",
+          insurance_limit: "$1,134.50"
+        }
+        put :update, id: contractor.id, contractor: params
+      end
+
+      it "sanitizes bonding limit" do
+        request.params[:contractor][:bonding_limit].should eq "2111134"
+        contractor.bonding_limit == 2111134
+      end
+
+      it "sanitizes insurance limit" do
+        request.params[:contractor][:insurance_limit].should eq "1134"
+        contractor.insurance_limit == 1134
+      end
+
+      it "sanitizes hourly_rate limit" do
+        request.params[:contractor][:hourly_rate].should eq "134"
+        contractor.hourly_rate == 134
       end
     end
 

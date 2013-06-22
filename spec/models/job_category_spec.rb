@@ -24,6 +24,7 @@ describe JobCategory do
   it { should respond_to :categorizable_id }
   it { should respond_to :created_at }
   it { should respond_to :updated_at }
+  it { should respond_to :params }
 
   its(:subcategories) { should be_empty }
 
@@ -62,4 +63,64 @@ describe JobCategory do
 
   end
 
+  describe "stores and retrieves params" do
+
+    describe "concrete" do
+      before do
+        params = {
+          location: "Interior",
+          desired_finish: "Stain / Coloring",
+          dimensions: "Square Feet"
+        }
+        job_category.params = params
+        job_category.save!
+      end
+
+      it "saves location" do
+        job_category.params['location'].should eq "Interior"
+      end
+
+      it "saves desired finish" do
+        job_category.params['desired_finish'].should eq "Stain / Coloring"
+      end
+
+    end
+
+    describe "Deck" do
+
+    end
+
+    describe "Doors" do
+
+    end
+
+    describe "Exterior" do
+
+    end
+
+    describe "Faux Finish" do
+
+    end
+
+    describe "Fence" do
+
+    end
+
+    describe "Interior Painting" do
+
+    end
+
+    describe "Wood Floor Finishing" do
+
+    end
+
+    describe "Powerwashing" do
+
+    end
+
+    describe "Windows" do
+
+    end
+
+  end
 end

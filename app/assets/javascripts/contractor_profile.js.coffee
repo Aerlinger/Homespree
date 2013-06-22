@@ -133,11 +133,11 @@ $(document).ready ->
 
     # Make contractor specialties sortable
     $('#contractor_specialties').sortable
-#      helper: "clone"
+      helper: "clone"
       appendTo: 'body'
       revert: true
-#      zIndex: 9999
-#      axis: 'y'
+      zIndex: 9999
+      axis: 'y'
       update: ->
         # Update the info in the contractor's card
         $.post($(this).data('update-url'), $(this).sortable('serialize'))

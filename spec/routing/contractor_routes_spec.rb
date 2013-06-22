@@ -46,12 +46,16 @@ describe ContractorsController do
     get("/contractors/1").should route_to("contractors#show", id: "1")
   end
 
-  it "should index" do
+  it "updates through :put" do
+    put("/contractors/1").should route_to("contractors#update", id: "1")
+  end
+
+  it "index" do
     get("/contractors").should route_to("contractors#index")
   end
 end
 
-describe "Contractor Dashboard" do
+describe ContractorsController do
 
   it "shows notifications" do
     get("contractors/1/notifications").should route_to("alerts#index", id: "1")
@@ -62,7 +66,7 @@ describe "Contractor Dashboard" do
   end
 
   it "shows messages" do
-    get("contractors/1/messages").should route_to("conversations#index", id: "1")
+    get("contractors/1/messages").should route_to("users/conversations#index", id: "1")
   end
 
   it "shows settings" do

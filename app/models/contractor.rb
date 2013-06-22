@@ -94,7 +94,6 @@ class Contractor < ActiveRecord::Base
 
   # Callbacks:  -------------------------------------------------------------------------------------------------------
   before_validation :sanitize_phone_numbers
-  before_validation :sanitize_price
   before_save lambda { |contractor| contractor.first_name.try(:capitalize!); contractor.last_name.try(:capitalize!) }
   before_save lambda { |contractor| contractor.email.try(:downcase!) }
   before_save lambda { |contractor| contractor.license.try(:upcase!) }
@@ -152,12 +151,6 @@ class Contractor < ActiveRecord::Base
   def sanitize_phone_numbers
     self.mobile_number.try(:gsub!, /\D/, '')
     self.office_number.try(:gsub!, /\D/, '')
-  end
-
-  def sanitize_price
-    #self.hourly_rate    = number_to_currency(hourly_rate, unit: "$")
-    #self.bonding_limit  = number_to_currency(bonding_limit, unit: "$")
-    #self.insurance_limit = number_to_currency(insurance_limit, unit: "$")
   end
 
   private

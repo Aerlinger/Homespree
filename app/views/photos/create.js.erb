@@ -1,12 +1,10 @@
 $("#portfolio-carousel ul.slides").append(
-		"<%= j(render @photo) %>"
+	"<%= j(render @photo) %>"
 );
 
 $("#portfolio-slider ul.slides").append(
-		"<%= j(render @photo) %>"
+	"<%= j(render @photo) %>"
 );
-
-addSlide
 
 //$("#portfolio-carousel ul.slides").flexslider();
 //$("#portfolio-slider ul.slides").flexslider();
@@ -66,3 +64,5 @@ $('.full-width-slider.flexslider').flexslider({
 	},
 	smoothHeight: true
 });
+
+window.location.reload(true);

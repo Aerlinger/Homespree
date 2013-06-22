@@ -79,18 +79,18 @@ var ww = $(window).width();
 var limit = 979;
 
 function refresh() {
-    ww = $(window).width();
-    var w = ww < limit ? (location.reload(true)) : (ww > limit ? (location.reload(true)) : ww = limit);
+//    ww = $(window).width();
+//    var w = ww < limit ? (location.reload(true)) : (ww > limit ? (location.reload(true)) : ww = limit);
 }
 
-var tOut;
-$(window).resize(function () {
-    var resW = $(window).width();
-    clearTimeout(tOut);
-    if ((ww > limit && resW < limit) || (ww < limit && resW > limit)) {
-        tOut = setTimeout(refresh, 100);
-    }
-});
+//var tOut;
+//$(window).resize(function () {
+//    var resW = $(window).width();
+//    clearTimeout(tOut);
+//    if ((ww > limit && resW < limit) || (ww < limit && resW > limit)) {
+//        tOut = setTimeout(refresh, 100);
+//    }
+//});
 
 
 /*================================================================*/
@@ -169,7 +169,6 @@ $(document).ready(function () {
         var deviceAgent = navigator.userAgent.toLowerCase();
         var agentID = deviceAgent.match(/(iphone|ipod|ipad|Android|BlackBerry)/);
         if (agentID) {
-
             $('.backToTop').css({
                 "position": "relative",
                 "clear": "both",
@@ -183,7 +182,6 @@ $(document).ready(function () {
                 "-border-radius": "0px",
                 "-webkit-border-radius": "0px"
             });
-
         }
 
     }); //end back to top

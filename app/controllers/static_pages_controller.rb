@@ -17,9 +17,6 @@ class StaticPagesController < ApplicationController
   def jobs
   end
 
-  def test_theme
-  end
-
   def test_ajax
     respond_to do |format|
       format.js { render layout: false }
@@ -32,15 +29,12 @@ class StaticPagesController < ApplicationController
   end
 
   def how_it_works
-    
   end
 
   def team
-
   end
 
   def for_professionals
-
   end
 
 end

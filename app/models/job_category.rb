@@ -13,6 +13,17 @@
 class JobCategory < ActiveRecord::Base
   attr_accessible :name
 
+  # Parameters for this category:  --------------------------------------------------------------------------------------------------
+  #
+  # Parameter Types:
+  #   Array of Strings
+  #   String Enum
+  #   Integer (e.g. Dimensions)
+  #   Float (e.g. Dimensions)
+  #   Boolean (YES/NO)
+  #   Boolean (Check mark)
+  serialize :params, Hash
+
   validates_presence_of :name
 
   has_many :subcategories, class_name: "JobSubcategory"

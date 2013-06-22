@@ -119,7 +119,7 @@ describe Contractor do
       end
 
       it "is the default" do
-        photo.image_url.should eq "/assets/contractor_profiles/portfolio_default.jpg"
+        photo.image_url.should eq ""
       end
     end
   end
@@ -147,15 +147,15 @@ describe Contractor do
     end
 
     it "for bonding limit" do
-      contractor.bonding_limit.should eq 2134.50
+      contractor.bonding_limit.should eq 2134
     end
 
     it "for insurance_limit" do
-      contractor.bonding_limit.should eq 1134.50
+      contractor.bonding_limit.should eq 1134
     end
 
     it "for hourly rate" do
-      contractor.bonding_limit.should eq 134.50
+      contractor.bonding_limit.should eq 134
     end
   end
 

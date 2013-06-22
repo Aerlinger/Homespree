@@ -47,8 +47,8 @@ Homespree::Application.routes.draw do
     member do
       get "notifications" => "alerts#index"
       get "projects" => "jobs#index"
-      get "settings" => "settings#index"
-      get "messages" => "conversations#index"
+      get "settings" => "contractors#settings"
+      get "messages" => "users/conversations#index"
       get "material_calculator" => "contractors#material_calculator"
     end
 

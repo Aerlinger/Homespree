@@ -2,6 +2,8 @@ class ContractorsController < ApplicationController
 
   layout "static_page", except: [:show, :edit]
 
+  before_filter :process_params, only: [:update, :create]
+
   def show
     @contractor = Contractor.find(params[:id])
     @specialty = Specialty.new
@@ -36,6 +38,16 @@ class ContractorsController < ApplicationController
   end
 
   def material_calculator
+  end
+
+  private
+
+  def process_params
+    if params[:contractor]
+      [:insurance_limit, :bonding_limit, :hourly_rate].each do |attr|
+        params[:contractor][attr].gsub!(/([$,#]|(\..+))/, '') if params[:contractor][attr]
+      end
+    end
   end
 
 end

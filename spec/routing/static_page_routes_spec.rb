@@ -24,4 +24,17 @@ describe StaticPagesController do
   it "should respond to /contact" do
     get("contact").should route_to("static_pages#contact")
   end
+
+  it "should respond to /for_professionals" do
+    get("for_professionals").should route_to("static_pages#for_professionals")
+  end
+
+  it "should respond to /pitch" do
+    get("pitch").should route_to("static_pages#pitch")
+  end
+
+  it "should respond to /team" do
+    get("team").should route_to("static_pages#team")
+  end
+
 end

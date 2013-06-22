@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130621015927) do
+ActiveRecord::Schema.define(:version => 20130622000757) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -106,15 +106,15 @@ ActiveRecord::Schema.define(:version => 20130621015927) do
     t.string   "website"
     t.string   "facebook"
     t.string   "twitter"
-    t.datetime "created_at",                                                                                                                  :null => false
-    t.datetime "updated_at",                                                                                                                  :null => false
-    t.string   "email",                                                                                                                       :null => false
+    t.datetime "created_at",                                                                                                 :null => false
+    t.datetime "updated_at",                                                                                                 :null => false
+    t.string   "email",                                                                                                      :null => false
     t.string   "last_name"
-    t.string   "encrypted_password",                                   :default => "",                                                        :null => false
+    t.string   "encrypted_password",                  :default => "",                                                        :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                                        :default => 0
+    t.integer  "sign_in_count",                       :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -123,20 +123,20 @@ ActiveRecord::Schema.define(:version => 20130621015927) do
     t.string   "mobile_number"
     t.string   "office_number"
     t.string   "license"
-    t.decimal  "insurance_limit",        :precision => 5, :scale => 2
-    t.decimal  "bonding_limit",          :precision => 5, :scale => 2
+    t.integer  "insurance_limit",        :limit => 5
+    t.integer  "bonding_limit",          :limit => 5
     t.string   "photo_filename"
     t.text     "slogan"
     t.decimal  "years_experience"
-    t.integer  "failed_attempts",                                      :default => 0
+    t.integer  "failed_attempts",                     :default => 0
     t.string   "unlock_token"
     t.datetime "locked_at"
     t.string   "authentication_token"
-    t.boolean  "edited",                                               :default => false
-    t.decimal  "hourly_rate"
+    t.boolean  "edited",                              :default => false
+    t.integer  "hourly_rate"
     t.string   "slug"
-    t.string   "portrait_url",                                         :default => "/assets/images/contractor_profiles/portrait_default.jpg"
-    t.string   "logo_url",                                             :default => "/assets/images/contractor_profiles/logo_default.jpg"
+    t.string   "portrait_url",                        :default => "/assets/images/contractor_profiles/portrait_default.jpg"
+    t.string   "logo_url",                            :default => "/assets/images/contractor_profiles/logo_default.jpg"
     t.text     "notification_settings"
   end
 
@@ -184,6 +184,7 @@ ActiveRecord::Schema.define(:version => 20130621015927) do
     t.datetime "updated_at",         :null => false
     t.integer  "categorizable_id"
     t.string   "categorizable_type"
+    t.text     "params"
   end
 
   create_table "job_subcategories", :force => true do |t|
