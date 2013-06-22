@@ -1,4 +1,4 @@
-class JobSubmissionsController < ApplicationController
+class ProjectSubmissionsController < ApplicationController
 
   include Wicked::Wizard
   steps :first_step, :project_details, :review_requests, :submit

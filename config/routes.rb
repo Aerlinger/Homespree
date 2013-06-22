@@ -18,13 +18,13 @@ Homespree::Application.routes.draw do
     passwords: "homeowners/passwords"
   }
 
-  resources :job_submissions
+  resources :project_submissions
 
   resources :homeowners do
     resource :address, only: [:update]
     resources :photos, only: [:create, :update, :destroy]
     resources :appointments
-    resources :jobs
+    resources :projects
   end
 
   # Contractors: -----------------------------------------------------------------------------------------------------
@@ -37,7 +37,7 @@ Homespree::Application.routes.draw do
   resources :contractors do
     member do
       get "notifications" => "alerts#index"
-      get "projects" => "jobs#index"
+      get "projects" => "projects#index"
       get "settings" => "contractors#settings"
       get "messages" => "users/conversations#index"
       get "material_calculator" => "contractors#material_calculator"
@@ -58,7 +58,7 @@ Homespree::Application.routes.draw do
     resource :address, only: [:update]
     resources :photos, only: [:create, :update, :destroy]
     resources :appointments
-    #resources :jobs, only: [:create, :update, :destroy]
+    #resources :projects, only: [:create, :update, :destroy]
   end
 
   # Gallery Browsing: ------------------------------------------------------------------------------------------------

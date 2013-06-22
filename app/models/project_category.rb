@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: job_categories
+# Table name: project_categories
 #
 #  id                 :integer          not null, primary key
 #  name               :string(255)
@@ -8,9 +8,10 @@
 #  updated_at         :datetime         not null
 #  categorizable_id   :integer
 #  categorizable_type :string(255)
+#  params             :text
 #
 
-class JobCategory < ActiveRecord::Base
+class ProjectCategory < ActiveRecord::Base
   attr_accessible :name
 
   # Parameters for this category:  ------------------------------------------------------------------------------------
@@ -18,7 +19,7 @@ class JobCategory < ActiveRecord::Base
 
   validates_presence_of :name
 
-  has_many :subcategories, class_name: "JobSubcategory"
+  has_many :subcategories, class_name: "ProjectSubcategory"
 
   belongs_to :categorizable, polymorphic: true
 end

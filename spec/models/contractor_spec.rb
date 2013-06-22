@@ -26,8 +26,8 @@
 #  mobile_number          :string(255)
 #  office_number          :string(255)
 #  license                :string(255)
-#  insurance_limit        :decimal(5, 2)
-#  bonding_limit          :decimal(5, 2)
+#  insurance_limit        :integer
+#  bonding_limit          :integer
 #  photo_filename         :string(255)
 #  slogan                 :text
 #  years_experience       :decimal(, )
@@ -36,10 +36,10 @@
 #  locked_at              :datetime
 #  authentication_token   :string(255)
 #  edited                 :boolean          default(FALSE)
-#  hourly_rate            :decimal(, )
+#  hourly_rate            :integer
 #  slug                   :string(255)
-#  portrait_url           :string(255)
-#  logo_url               :string(255)
+#  portrait_url           :string(255)      default("/assets/images/contractor_profiles/portrait_default.jpg")
+#  logo_url               :string(255)      default("/assets/images/contractor_profiles/logo_default.jpg")
 #  notification_settings  :text
 #
 
@@ -57,12 +57,12 @@ describe Contractor do
   it { should respond_to :address }
   it { should respond_to :appointments }
   it { should respond_to :homeowners }
-  it { should respond_to :jobs }
+  it { should respond_to :projects }
   it { should respond_to :profile_picture }
   it { should respond_to :badges }
   it { should respond_to :alerts }
   it { should respond_to :photos }
-  it { should respond_to :job_photos }
+  it { should respond_to :project_photos }
   it { should respond_to :specialties }
 
   it { should respond_to :id }

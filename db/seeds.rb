@@ -20,11 +20,11 @@ if Contractor.exists?(1)
 end
 
 # Job categories should only be defined within this seeds.rb file
-JobCategory.destroy_all
-JobSubcategory.destroy_all
+ProjectCategory.destroy_all
+ProjectSubcategory.destroy_all
 
 %w[painting].each do |category|
-  jc = JobCategory.create(name: category)
+  jc = ProjectCategory.create(name: category)
 end
 
 joe_the_plumber = Contractor.new do |c|

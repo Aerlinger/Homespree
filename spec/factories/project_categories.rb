@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :job_category do
+  factory :project_category do
     name "RspecPainting"
     params {}
   end

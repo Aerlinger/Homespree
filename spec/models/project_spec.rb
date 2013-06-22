@@ -1,21 +1,23 @@
 # == Schema Information
 #
-# Table name: jobs
+# Table name: projects
 #
-#  id          :integer          not null, primary key
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  title       :string(255)
-#  description :text(255)
-#  category_id :integer
+#  id            :integer          not null, primary key
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  title         :string(255)
+#  description   :text
+#  category_id   :integer
+#  contractor_id :integer
+#  homeowner_id  :integer
 #
 
 require 'spec_helper'
 
-describe Job do
+describe Project do
 
-  let(:job) { FactoryGirl.create(:job) }
-  subject { job }
+  let(:project) { FactoryGirl.create(:project) }
+  subject { project }
 
   # Associations
   it { should belong_to :contractor }
@@ -34,19 +36,19 @@ describe Job do
   it { should be_valid }
 
   describe "has correct defaults" do
-    its(:title) { should eq "Job name" }
-    its(:description) { should eq "This is a test description of the job to be done" }
+    its(:title) { should eq "Project name" }
+    its(:description) { should eq "This is a test description of the project to be done" }
 
     its(:appointments) { should be_empty }
   end
 
   describe "stores photos" do
-    specify "before a job is done" do
-      job.before_photos.should be_empty
+    specify "before a project is done" do
+      project.before_photos.should be_empty
     end
 
-    specify "after a job is done" do
-      job.after_photos.should be_empty
+    specify "after a project is done" do
+      project.after_photos.should be_empty
     end
   end
 
@@ -58,9 +60,9 @@ describe Job do
     let(:after_photo) { FactoryGirl.create :photo }
 
     before do
-      job.appointments << appointment
-      job.before_photos << before_photo
-      job.after_photos << after_photo
+      project.appointments << appointment
+      project.before_photos << before_photo
+      project.after_photos << after_photo
       homeowner.appointments << appointment
       contractor.appointments << appointment
     end
@@ -69,39 +71,39 @@ describe Job do
 
     it { should be_valid }
 
-    specify { appointment.job.should eq job }
+    specify { appointment.project.should eq project }
 
-    specify "job belongs to appointment" do
-      job.appointments.should eq [appointment]
+    specify "project belongs to appointment" do
+      project.appointments.should eq [appointment]
     end
 
     specify { Appointment.count.should eq 1 }
 
 
-    describe "contractor has jobs through" do
+    describe "contractor has projects through" do
 
       it "has one appointment" do
         contractor.appointments.should eq [appointment]
       end
 
-      it "has one job" do
-        contractor.jobs.should eq [job]
+      it "has one project" do
+        contractor.projects.should eq [project]
       end
 
       specify "appointment belongs to contractor" do
         appointment.contractor.should eq contractor
       end
 
-      it "creates a job for the appointment" do
-        contractor.jobs.should eq [appointment.job]
+      it "creates a project for the appointment" do
+        contractor.projects.should eq [appointment.project]
       end
 
       it "has one homeowner" do
         contractor.homeowners.should eq [homeowner]
       end
 
-      it "has same jobs as homeowner" do
-        contractor.jobs.should eq homeowner.jobs
+      it "has same projects as homeowner" do
+        contractor.projects.should eq homeowner.projects
       end
 
 
@@ -111,7 +113,7 @@ describe Job do
 
     end
 
-    describe "homeowner has jobs through" do
+    describe "homeowner has projects through" do
 
       specify "appointment belongs to homeowner" do
         appointment.homeowner.should eq homeowner
@@ -121,16 +123,16 @@ describe Job do
         homeowner.appointments.should eq [appointment]
       end
 
-      it "has one job" do
-        homeowner.jobs.should eq [job]
+      it "has one project" do
+        homeowner.projects.should eq [project]
       end
 
       it "has one contractor" do
         homeowner.contractors.should eq [contractor]
       end
 
-      it "creates a job for an appointments" do
-        homeowner.jobs.should eq contractor.jobs
+      it "creates a project for an appointments" do
+        homeowner.projects.should eq contractor.projects
       end
 
       it "has same appointments as contractor" do

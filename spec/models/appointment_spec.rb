@@ -14,7 +14,7 @@
 #  description             :string(255)
 #  homeowner_id            :integer
 #  duration                :decimal(, )
-#  job_id                  :integer
+#  project_id              :integer
 #  verified_by_homeowner   :boolean          default(FALSE)
 #  verified_by_contractor  :boolean          default(FALSE)
 #  completed_by_homeowner  :boolean          default(FALSE)
@@ -28,7 +28,7 @@ describe Appointment do
   let(:appointment) { FactoryGirl.create :appointment }
   let(:contractor) { FactoryGirl.create :contractor }
   let(:homeowner) { FactoryGirl.create :homeowner }
-  let(:job) { FactoryGirl.create :job }
+  let(:project) { FactoryGirl.create :project }
   let(:address) { FactoryGirl.create :address }
 
   subject { appointment }
@@ -37,7 +37,7 @@ describe Appointment do
   it { should have_one :address }
   it { should belong_to :contractor }
   it { should belong_to :homeowner }
-  it { should belong_to :job }
+  it { should belong_to :project }
 
   # Validations
   it { should validate_presence_of :starts_at }
@@ -64,7 +64,7 @@ describe Appointment do
   before do
     contractor.appointments << appointment
     homeowner.appointments << appointment
-    job.appointments << appointment
+    project.appointments << appointment
 
     appointment.address = address
   end
@@ -78,8 +78,8 @@ describe Appointment do
     appointment.should be_persisted
   end
 
-  it "should have a single association for contractor, homeowner, job, and address" do
-    [:contractor, :homeowner, :job, :address].each do |association|
+  it "should have a single association for contractor, homeowner, project, and address" do
+    [:contractor, :homeowner, :project, :address].each do |association|
       appointment.send(association).should be_valid
     end
   end
@@ -88,8 +88,8 @@ describe Appointment do
 
     describe "contractor" do
       its(:contractor) { should eq contractor }
-      it "has reverse association for jobs" do
-        contractor.jobs.should include(job)
+      it "has reverse association for projects" do
+        contractor.projects.should include(project)
       end
 
       it "has reverse association for appointment" do
@@ -104,7 +104,7 @@ describe Appointment do
     describe "homeowner" do
       its(:homeowner) { should eq homeowner }
       it "has reverse association" do
-        homeowner.jobs.should include(job)
+        homeowner.projects.should include(project)
       end
 
       it "has a contractor through appointments" do
@@ -112,27 +112,27 @@ describe Appointment do
       end
     end
 
-    describe "job" do
-      its(:job) { should eq job }
+    describe "project" do
+      its(:project) { should eq project }
       it "has reverse association" do
-        contractor.jobs.should include(job)
+        contractor.projects.should include(project)
       end
 
       it "for both contractor and homeowner" do
-        contractor.jobs.should eq homeowner.jobs
+        contractor.projects.should eq homeowner.projects
       end
     end
 
   end
 
-  describe "create a second appointment for a job" do
+  describe "create a second appointment for a project" do
 
     let(:appointment2) { FactoryGirl.create :appointment }
 
     before do
       contractor.appointments << appointment2
       homeowner.appointments << appointment2
-      job.appointments << appointment2
+      project.appointments << appointment2
 
       appointment2.address = address
     end

@@ -1,2 +1,0 @@
-class ProjectSubmissionControllerController < ApplicationController
-end

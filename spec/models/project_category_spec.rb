@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: job_categories
+# Table name: project_categories
 #
 #  id                 :integer          not null, primary key
 #  name               :string(255)
@@ -8,13 +8,15 @@
 #  updated_at         :datetime         not null
 #  categorizable_id   :integer
 #  categorizable_type :string(255)
+#  params             :text
+#
 
 require 'spec_helper'
 
-describe JobCategory do
+describe ProjectCategory do
 
-  let(:job_category) { FactoryGirl.create(:job_category) }
-  subject { job_category }
+  let(:project_category) { FactoryGirl.create(:project_category) }
+  subject { project_category }
 
   # Instance methods:
   it { should respond_to :id }
@@ -29,36 +31,36 @@ describe JobCategory do
   its(:subcategories) { should be_empty }
 
   it "should be valid by default" do
-    job_category.should be_valid
+    project_category.should be_valid
   end
 
   it "is invalid without a name" do
-    job_category.name = nil
-    job_category.should_not be_valid
+    project_category.name = nil
+    project_category.should_not be_valid
   end
 
   describe "with subcategories" do
-    let(:job_subcategory) { FactoryGirl.create :job_subcategory }
-    before { job_category.subcategories << job_subcategory }
+    let(:project_subcategory) { FactoryGirl.create :project_subcategory }
+    before { project_category.subcategories << project_subcategory }
 
     it "is persisted" do
-      job_category.should be_persisted
-      job_category.should be_valid
+      project_category.should be_persisted
+      project_category.should be_valid
     end
 
     it "has one job category" do
-      job_category.subcategories.length.should eq 1
+      project_category.subcategories.length.should eq 1
     end
 
     it "creates a subcategory" do
-      job_category.subcategories.should eq [job_subcategory]
+      project_category.subcategories.should eq [project_subcategory]
     end
 
     it "can add another subcategory" do
-      subcategory = FactoryGirl.create :job_subcategory
-      job_category.subcategories << subcategory
+      subcategory = FactoryGirl.create :project_subcategory
+      project_category.subcategories << subcategory
 
-      job_category.subcategories.should eq [job_subcategory, subcategory]
+      project_category.subcategories.should eq [project_subcategory, subcategory]
     end
 
   end
@@ -72,16 +74,16 @@ describe JobCategory do
           desired_finish: "Stain / Coloring",
           dimensions: "Square Feet"
         }
-        job_category.params = params
-        job_category.save!
+        project_category.params = params
+        project_category.save!
       end
 
       xit "saves location" do
-        job_category.params['location'].should eq "Interior"
+        project_category.params['location'].should eq "Interior"
       end
 
       xit "saves desired finish" do
-        job_category.params['desired_finish'].should eq "Stain / Coloring"
+        project_category.params['desired_finish'].should eq "Stain / Coloring"
       end
 
     end

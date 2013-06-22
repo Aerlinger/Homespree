@@ -24,6 +24,7 @@
 #  failed_attempts        :integer          default(0)
 #  unlock_token           :string(255)
 #  locked_at              :datetime
+#  guest                  :boolean
 #
 class Homeowner < ActiveRecord::Base
 
@@ -44,10 +45,10 @@ class Homeowner < ActiveRecord::Base
   has_many :alerts, as: :alertable
 
   has_many :appointments
-  has_many :jobs, through: :appointments
+  has_many :projects, through: :appointments
   has_many :contractors, through: :appointments, uniq: true
-  has_many :before_photos, as: :photographable, through: :jobs
-  has_many :after_photos, as: :photographable, through: :jobs
+  has_many :before_photos, as: :photographable, through: :projects
+  has_many :after_photos, as: :photographable, through: :projects
 
   # Nested Attributes:  -----------------------------------------------------------------------------------------------
   accepts_nested_attributes_for :appointments, :address

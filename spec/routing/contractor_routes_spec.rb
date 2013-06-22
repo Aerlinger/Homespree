@@ -62,7 +62,7 @@ describe ContractorsController do
   end
 
   it "shows projects" do
-    get("contractors/1/projects").should route_to("jobs#index", id: "1")
+    get("contractors/1/projects").should route_to("projects#index", id: "1")
   end
 
   it "shows messages" do

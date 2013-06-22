@@ -26,8 +26,8 @@
 #  mobile_number          :string(255)
 #  office_number          :string(255)
 #  license                :string(255)
-#  insurance_limit        :decimal(5, 2)
-#  bonding_limit          :decimal(5, 2)
+#  insurance_limit        :integer
+#  bonding_limit          :integer
 #  photo_filename         :string(255)
 #  slogan                 :text
 #  years_experience       :decimal(, )
@@ -36,10 +36,10 @@
 #  locked_at              :datetime
 #  authentication_token   :string(255)
 #  edited                 :boolean          default(FALSE)
-#  hourly_rate            :decimal(, )
+#  hourly_rate            :integer
 #  slug                   :string(255)
-#  portrait_url           :string(255)
-#  logo_url               :string(255)
+#  portrait_url           :string(255)      default("/assets/images/contractor_profiles/portrait_default.jpg")
+#  logo_url               :string(255)      default("/assets/images/contractor_profiles/logo_default.jpg")
 #  notification_settings  :text
 #
 
@@ -70,11 +70,11 @@ class Contractor < ActiveRecord::Base
 
   has_many :appointments
   has_many :homeowners, through: :appointments, uniq: true
-  has_many :jobs, through: :appointments
+  has_many :projects, through: :appointments
 
   has_many :specialties, dependent: :destroy
   has_many :photos, as: :photographable
-  has_many :job_photos, as: :photographable, class_name: "Photo", through: :jobs
+  has_many :project_photos, as: :photographable, class_name: "Photo", through: :projects
   has_many :badges
   has_many :alerts, as: :alertable
 

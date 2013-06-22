@@ -39,7 +39,7 @@ describe StaticPagesController do
 
   it "should respond to '/for_professionsals'" do
     get 'for_professionals'
-    expect(response).to render_template :team
+    expect(response).to render_template :for_professionals
   end
 
 end
