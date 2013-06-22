@@ -9,15 +9,7 @@ Homespree::Application.routes.draw do
   resources :mailinglists, only: [:create, :update, :destroy]
 
   # Users (Both Contractors and Homeowners): ------------------------------------------------------------------------
-  scope :users do
-    resources :conversations, only: [:index, :show, :new, :create] do
-      member do
-        post :reply
-        post :trash
-        post :untrash
-      end
-    end
-  end
+
 
   # Homeowners: -----------------------------------------------------------------------------------------------------
   devise_for :homeowners, :controllers => {
@@ -54,6 +46,14 @@ Homespree::Application.routes.draw do
 
     resources :specialties, only: [:create, :update, :destroy] do
       post :sort, on: :collection
+    end
+
+    resources :conversations, only: [:index, :show, :new, :create] do
+      member do
+        post :reply
+        post :trash
+        post :untrash
+      end
     end
 
     resource :address, only: [:update]

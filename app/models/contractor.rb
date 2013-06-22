@@ -94,7 +94,7 @@ class Contractor < ActiveRecord::Base
 
   # Callbacks:  -------------------------------------------------------------------------------------------------------
   before_validation :sanitize_phone_numbers
-  before_save lambda { |contractor| contractor.first_name.try(:capitalize!); contractor.last_name.try(:capitalize!) }
+  before_save :titleize_name
   before_save lambda { |contractor| contractor.email.try(:downcase!) }
   before_save lambda { |contractor| contractor.license.try(:upcase!) }
   after_create :set_image_defaults
@@ -130,7 +130,7 @@ class Contractor < ActiveRecord::Base
 
   def name
     if first_name? && last_name?
-      "#{first_name} #{last_name}"
+      "#{first_name.capitalize} #{last_name.capitalize}"
     elsif first_name?
       first_name
     else
@@ -162,7 +162,12 @@ class Contractor < ActiveRecord::Base
   def add_badges
     badge = Badge.new
     badge.image_url = 'early_adopter'
+    badge.save
     self.badges << badge
+  end
+
+  def titleize_name
+    self.first_name = first_name.try(:titleize)
   end
 
 end

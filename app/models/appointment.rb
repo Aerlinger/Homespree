@@ -41,7 +41,7 @@
 #  job_id        :integer
 #
 class Appointment < ActiveRecord::Base
-  attr_accessible :address_id, :photos, :reminders, :starts_at, :title, :description, :duration, :address_attributes
+  attr_accessible :address_id, :photos, :reminders, :starts_at, :title, :description, :duration, :address_attributes, :contractor_id, :homeowner_id
 
   # Associations:  --------------------------------------------------------------------------------------------------
   belongs_to :contractor
@@ -62,6 +62,26 @@ class Appointment < ActiveRecord::Base
 
   def overlaps_with?(other_appointment)
     (starts_at - other_appointment.ends_at) * (other_appointment.starts_at - ends_at) >= 0
+  end
+
+  def postpone_by(delay)
+    self.starts_at += delay
+  end
+
+  def time_passed
+    Time.now - ends_at
+  end
+
+  def passed?
+    Time.now > ends_at
+  end
+
+  def time_until
+    starts_at - Time.now
+  end
+
+  def in_progress?
+    Time.now < ends_at && Time.now > starts_at
   end
 
 end

@@ -175,4 +175,27 @@ describe Appointment do
     it "calculates ending time"
   end
 
+  describe "overlap with another appointment" do
+    let(:appointment2) { FactoryGirl.create :appointment }
+
+    specify "when actually overlapping" do
+      appointment2.overlaps_with?(appointment).should be_true
+    end
+
+    specify "when overlapping by one hour" do
+      appointment2.postpone_by(1.hours)
+      appointment2.overlaps_with?(appointment).should be_true
+    end
+
+    specify "when not overlapping" do
+      appointment2.postpone_by(2.22.hours)
+      appointment2.overlaps_with?(appointment).should be_false
+    end
+
+    specify "when not overlapping before" do
+      appointment2.postpone_by(-2.22.hours)
+      appointment2.overlaps_with?(appointment).should be_false
+    end
+  end
+
 end

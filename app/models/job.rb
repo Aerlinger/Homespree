@@ -21,5 +21,8 @@ class Job < ActiveRecord::Base
   has_many :before_photos, class_name: 'Photo', as: :photographable
   has_many :after_photos, class_name: 'Photo', as: :photographable
 
+  belongs_to :contractor
+  belongs_to :homeowner
+
   has_many :appointments
 end

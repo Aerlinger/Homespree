@@ -48,7 +48,7 @@ require 'spec_helper'
 describe Contractor do
 
   let(:contractor) { FactoryGirl.create :contractor }
-  before { @photo_attributes = {"0" => {:image_url=>"photo1", :caption=>"some_caption"}, "1" => {:image_url=>"photo1", :caption=>"some_caption"}} }
+  before { @photo_attributes = {"0" => {:image_url => "photo1", :caption => "some_caption"}, "1" => {:image_url => "photo1", :caption => "some_caption"}} }
   subject { contractor }
 
   # Associations
@@ -94,8 +94,33 @@ describe Contractor do
   it { should respond_to :last_sign_in_ip }
   it { should respond_to :encrypted_password }
 
-  its(:photos) { should be_empty }
-  its(:address) { should be_nil }
+  describe "defaults" do
+    its(:address) { should be_nil }
+    its(:slug) { should eq "joe-s-plumbing" }
+
+    its(:first_name) { should eq "Joe" }
+    its(:last_name) { should eq "ThePlumber" }
+    its(:name) { should eq "Joe Theplumber" }
+    its(:company_title) { should eq "Joe's Plumbing" }
+
+    its(:license) { should eq "ABCDEFG12345" }
+    its(:insurance_limit) { should eq 200000.0 }
+    its(:bonding_limit) { should eq 100000.0 }
+
+    its(:office_number) { should eq "8485558443" }
+    its(:mobile_number) { should eq "8485558332" }
+
+    its(:slogan) { should eq "I am Joe the plumber" }
+
+    its(:facebook) { should eq "www.facebook.com/joe_the_plumber" }
+    its(:twitter) { should eq "@joe_the_plumber" }
+    its(:website) { should eq "http://www.joesplumbing.com" }
+
+    it "should have one default photo" do
+      contractor.photos.count.should eq 1
+    end
+
+  end
 
   describe "Mailboxer association" do
     subject { contractor.mailbox }
@@ -108,18 +133,23 @@ describe Contractor do
 
   describe "default images" do
 
-    its(:logo_url) { should eq "/assets/contractor_profiles/logo_default.jpg" }
-    its(:portrait_url) { should eq "/assets/contractor_profiles/portrait_default.jpg" }
+    it do
+      contractor.logo_url.to_s.should eq "/uploads/contractor/logo_url/#{contractor.id}/assets/images/contractor_profiles/logo_default.jpg"
+    end
+
+    it do
+      contractor.portrait_url.to_s.should eq "/uploads/contractor/portrait_url/#{contractor.id}/assets/images/contractor_profiles/portrait_default.jpg"
+    end
 
     describe "has a single portrait url by default" do
       let(:photos) { contractor.photos }
 
       it "has a single photo" do
-        photo.length.should eq 1
+        photos.length.should eq 1
       end
 
       it "is the default" do
-        photo.image_url.should eq ""
+        photos.first.image_url.should eq "/assets/contractor_profiles/portfolio_images/default.png"
       end
     end
   end
@@ -136,35 +166,12 @@ describe Contractor do
     its(:office_number) { should eq '8085551234' }
   end
 
-  describe "sanitize price" do
-    before do
-      params = {
-        bonding_limit: "$2,111,134.50",
-        insurance_limit: "$1,134.50",
-        hourly_rate: "$134.50"
-      }
-      contractor.update_attributes(params)
-    end
-
-    it "for bonding limit" do
-      contractor.bonding_limit.should eq 2134
-    end
-
-    it "for insurance_limit" do
-      contractor.bonding_limit.should eq 1134
-    end
-
-    it "for hourly rate" do
-      contractor.bonding_limit.should eq 134
-    end
-  end
-
   describe "only requires email, company title, and password" do
     let(:contractor) { Contractor.new }
     subject { contractor }
     before { contractor.valid? }
 
-    it { should_not be_valid}
+    it { should_not be_valid }
     it { should_not be_persisted }
 
     it "email error includes" do
@@ -222,8 +229,8 @@ describe Contractor do
       contractor.save
 
       contractor.first_name.should eq "Joe"
-      contractor.last_name.should eq "Schmoe"
     end
+
 
     it "downcases email" do
       contractor.email = "JoEtHEplumBEr@Lol.CoM"
@@ -242,11 +249,6 @@ describe Contractor do
         contractor.should_not be_valid
 
         contractor.email = nil
-        contractor.should_not be_valid
-      end
-
-      specify "with blank email" do
-        contractor.email = ""
         contractor.should_not be_valid
       end
 
@@ -284,31 +286,6 @@ describe Contractor do
       new_guy.valid?
       new_guy.errors[:company_title].should eq ["can't be blank"]
     end
-  end
-
-  describe "should build a full contractor" do
-    let(:plumber) { FactoryGirl.build(:contractor) }
-
-    subject {plumber}
-
-    it { should be_valid }
-
-    its(:first_name) { should eq "Joe" }
-    its(:last_name) { should eq "Theplumber" }
-    its(:company_title) { should eq "Joe's Plumbing" }
-
-    its(:license) { should eq "ABCDEFG12345" }
-    its(:insurance_limit) { should eq 200000.0 }
-    its(:bonding_limit) { should eq 100000.0 }
-
-    its(:office_number) { should eq "8485558443" }
-    its(:mobile_number) { should eq "8485558332" }
-
-    its(:slogan) { should eq "I am Joe the plumber" }
-
-    its(:facebook) { should eq "www.facebook.com/joe_the_plumber" }
-    its(:twitter) { should eq "@joe_the_plumber" }
-    its(:website) { should eq "http://www.joesplumbing.com" }
   end
 
 

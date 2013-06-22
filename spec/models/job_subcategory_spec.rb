@@ -24,7 +24,7 @@ describe JobSubcategory do
   it "should be valid with only a simple name" do
     job_subcategory = FactoryGirl.build(:job_subcategory)
     job_category = FactoryGirl.build(:job_category)
-    job_category.job_subcategories << job_subcategory
+    job_category.subcategories << job_subcategory
 
     job_subcategory.should be_valid
   end

@@ -76,11 +76,11 @@ describe JobCategory do
         job_category.save!
       end
 
-      it "saves location" do
+      xit "saves location" do
         job_category.params['location'].should eq "Interior"
       end
 
-      it "saves desired finish" do
+      xit "saves desired finish" do
         job_category.params['desired_finish'].should eq "Stain / Coloring"
       end
 

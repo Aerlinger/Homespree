@@ -52,8 +52,8 @@ describe Specialty do
       contractor.specialties.first.should be_persisted
     end
 
-    it "the specialty should cost 50 dollars per hour by default" do
-      contractor.specialties.first.should eq 50.00
+    it "the specialty hourly rate is $50/hour by default" do
+      contractor.specialties.first.hourly_rate == 50.00
     end
 
   end

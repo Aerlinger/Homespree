@@ -45,10 +45,10 @@ class Homeowner < ActiveRecord::Base
   has_many :alerts, as: :alertable
 
   has_many :appointments
-  has_many :contractors, through: :appointments, uniq: true
   has_many :jobs, through: :appointments
-
-  has_many :photos, as: :photographable, through: :jobs
+  has_many :contractors, through: :appointments, uniq: true
+  has_many :before_photos, as: :photographable, through: :jobs
+  has_many :after_photos, as: :photographable, through: :jobs
 
   # Nested Attributes:  -----------------------------------------------------------------------------------------------
   accepts_nested_attributes_for :appointments, :address
