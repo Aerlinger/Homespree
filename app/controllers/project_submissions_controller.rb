@@ -1,7 +1,8 @@
 class ProjectSubmissionsController < ApplicationController
 
   include Wicked::Wizard
-  steps :first_step, :project_details, :review_requests, :submit
+  steps :request, :review_estimates, :appointment, :submit
+
 
   def show
     @homeowner = current_homeowner
@@ -16,7 +17,11 @@ class ProjectSubmissionsController < ApplicationController
   private
 
   def redirect_to_finish_wizard
-    redirect_to root_url, notice: "Thank you for signing up."
+    redirect_to root_url, notice: "Project"
+  end
+
+  def finish_wizard_path
+
   end
 
 end
