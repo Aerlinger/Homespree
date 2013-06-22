@@ -52,6 +52,8 @@ describe Contractor do
   subject { contractor }
 
   # Associations
+  it { should have_many :alerts }
+
   it { should respond_to :address }
   it { should respond_to :appointments }
   it { should respond_to :homeowners }
@@ -95,7 +97,6 @@ describe Contractor do
   it { should respond_to :encrypted_password }
 
   describe "defaults" do
-    its(:address) { should be_nil }
     its(:slug) { should eq "joe-s-plumbing" }
 
     its(:first_name) { should eq "Joe" }

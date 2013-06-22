@@ -26,8 +26,6 @@ describe Badge do
   it { should respond_to :description }
   it { should respond_to :image_url }
 
-  # Validations
-  it { should validate_presence_of :name }
 
   its(:name) { should eq "early_adopter" }
 

@@ -28,7 +28,7 @@ describe Contractors::RegistrationsController, "With valid input" do
       end
       it "redirects to new profile" do
         post :create, contractor: attributes_for(:contractor)
-        expect(response).to redirect_to "/contractors/1"
+        expect(response).to redirect_to "/contractors/joe-s-plumbing"
       end
     end
 
@@ -36,7 +36,7 @@ describe Contractors::RegistrationsController, "With valid input" do
       it "does not save a new contractor in the database" do
         expect {
           post :create, contractor: attributes_for(:invalid_contractor)
-        }.to_not change(Contractor.count)
+        }.to change(Contractor, :count).by(0)
       end
 
       it "re-renders the :new template" do

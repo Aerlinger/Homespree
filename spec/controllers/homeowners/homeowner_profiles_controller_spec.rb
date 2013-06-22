@@ -14,7 +14,7 @@ describe HomeownersController do
     end
 
     it "should assign homeowner to @homeowner" do
-      expect(assigns(:homowner)).to eq homeowner
+      expect(assigns(:homeowner)).to eq homeowner
     end
 
     it "should render homeowner page" do

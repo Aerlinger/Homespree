@@ -11,7 +11,7 @@ describe HomeownersController do
 
   describe "GET show" do
     it "assigns the requested homeowner as @homeowner" do
-      get :show, {:id => homeowner.id}, valid_session
+      get :show, :id => homeowner.id
       assigns(:homeowner).should eq(homeowner)
     end
   end

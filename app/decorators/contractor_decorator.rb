@@ -99,7 +99,7 @@ class ContractorDecorator < Draper::Decorator
 
   def city_and_state
     address = @object.address
-    if @object.address.city? && @object.address.state?
+    if address.city? && address.state?
       "#{address.city.presence}, #{address.state.presence}"
     end
   end

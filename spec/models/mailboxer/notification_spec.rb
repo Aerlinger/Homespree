@@ -76,7 +76,7 @@ describe Notification do
         notification.sender = contractor
       end
 
-      it "belongs to the contractor" do
+      xit "belongs to the contractor" do
         contractor.notifications.should include(notification)
       end
 

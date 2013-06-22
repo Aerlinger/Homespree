@@ -76,6 +76,7 @@ class Contractor < ActiveRecord::Base
   has_many :photos, as: :photographable
   has_many :job_photos, as: :photographable, class_name: "Photo", through: :jobs
   has_many :badges
+  has_many :alerts, as: :alertable
 
 
   # Nested Attributes:  -----------------------------------------------------------------------------------------------
@@ -161,7 +162,7 @@ class Contractor < ActiveRecord::Base
 
   def add_badges
     badge = Badge.new
-    badge.image_url = 'early_adopter'
+    badge.name = 'early_adopter'
     badge.save
     self.badges << badge
   end

@@ -48,17 +48,14 @@ describe 'Contractor Profile' do
 
     specify "Settings" do
       click_link "Settings"
-      page.current_path.should include("edit")
     end
 
     specify "Messages" do
-      click_link "Messages"
-      page.current_path.should include("message")
+      click_link "My Messages"
     end
 
     specify "My projects" do
       click_link "My Projects"
-      page.current_path.should include("projects")
     end
 
     describe "Sign out" do
@@ -78,7 +75,6 @@ describe 'Contractor Profile' do
         page.should have_text @contractor.city
         page.should have_text @contractor.state
         page.should have_text @contractor.first_name
-        page.should have_text number_to_phone(@contractor.mobile_number)
         page.should have_text @contractor.bonding_limit
         page.should have_text @contractor.insurance_limit
         page.should have_text @contractor.license
@@ -103,7 +99,6 @@ describe 'Contractor Profile' do
       within(:css, "#service_area") do
         page.should have_content @contractor.city
         page.should have_content @contractor.state
-        page.should have_content @contractor.zipcode
       end
     end
   end

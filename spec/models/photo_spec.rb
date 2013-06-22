@@ -25,6 +25,11 @@ describe Photo do
 
   subject { photo }
 
+  before do
+    contractor.photos = []
+    contractor.save
+  end
+
   it { should be_valid}
 
   describe "invalid params" do
@@ -44,17 +49,7 @@ describe Photo do
 
   describe "created as a nested attribute of contractor" do
 
-    let(:params) do
-      {
-        contractor: FactoryGirl.attributes_for(:contractor),
-                    photos_attributes: {
-                      "1" => FactoryGirl.attributes_for(:photo),
-                      "2" => FactoryGirl.attributes_for(:photo)
-                    }
-      }
-    end
-
-    before { @contractor = Contractor.create(params[:contractor]) }
+    before { @contractor = FactoryGirl.create(:contractor) }
 
     it "should persist contractor" do
       @contractor.should be_persisted
@@ -64,13 +59,19 @@ describe Photo do
       @contractor.errors.should be_empty
     end
 
+    describe "should have the correct photos" do
+      specify "first photo" do
+        @contractor.photos.should include(Photo.find(2))
+      end
+    end
+
     it "should have one photo" do
-      @contractor.photos.count.should be 2
+      @contractor.photos.count.should be 1
     end
 
     it "saves the correct photo" do
       photo = @contractor.photos.first
-      photo.image_url.should be "contractor_default.jpg"
+      photo.image_url.should eq "/assets/contractor_profiles/portfolio_images/default.png"
     end
 
   end
