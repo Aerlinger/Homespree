@@ -19,7 +19,6 @@ Homespree::Application.routes.draw do
   }
 
   resources :job_submissions
-  #resources :jobs
 
   resources :homeowners do
     resource :address, only: [:update]

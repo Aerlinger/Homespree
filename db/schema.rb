@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130622025505) do
+ActiveRecord::Schema.define(:version => 20130622052319) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -172,6 +172,7 @@ ActiveRecord::Schema.define(:version => 20130622025505) do
     t.integer  "failed_attempts",        :default => 0
     t.string   "unlock_token"
     t.datetime "locked_at"
+    t.boolean  "guest"
   end
 
   add_index "homeowners", ["authentication_token"], :name => "index_homeowners_on_authentication_token", :unique => true

@@ -25,7 +25,6 @@
 #  unlock_token           :string(255)
 #  locked_at              :datetime
 #
-
 class Homeowner < ActiveRecord::Base
 
   # Authentication:  --------------------------------------------------------------------------------------------------
@@ -55,6 +54,10 @@ class Homeowner < ActiveRecord::Base
 
   def mailboxer_email(object)
     self.email
+  end
+
+  def self.new_guest
+    new { |u| u.guest = true }
   end
 
 end

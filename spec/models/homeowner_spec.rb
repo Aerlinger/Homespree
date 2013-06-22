@@ -25,13 +25,23 @@
 #  unlock_token           :string(255)
 #  locked_at              :datetime
 #
-
 require 'spec_helper'
 
 describe Homeowner do
   it { should respond_to :email }
 
   let(:homeowner) { FactoryGirl.create(:homeowner) }
+
+  # Associations
+  it { should have_one :address }
+  it { should have_many :alerts }
+  it { should have_many :appointments }
+  it { should have_many :jobs }
+  it { should have_many :contractors }
+  it { should have_many :before_photos }
+  it { should have_many :after_photos }
+
+  it { should respond_to :guest }
 
   # Mailboxer Methods:
   it { should respond_to :send_message }
@@ -47,12 +57,18 @@ describe Homeowner do
   it { should respond_to :last_sign_in_ip }
   it { should respond_to :encrypted_password }
 
+  # Class Methods
+  specify { Homeowner.should respond_to :new_guest }
+
+  it "can be created as a guest" do
+    guest_homeowner = Homeowner.new_guest
+    guest_homeowner.guest.should be_true
+  end
 
   it "is valid" do
     homeowner.should be_valid
     homeowner.should be_persisted
   end
-
 
   it "should not be valid without email" do
     homeowner.email = "adf"
@@ -67,7 +83,6 @@ describe Homeowner do
   it "not valid with too short of a password" do
     homeowner.password = 'secre'
     homeowner.should_not be_valid
-    puts homeowner.errors
   end
 
   it "invalid with different password and confirmation" do

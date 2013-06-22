@@ -14,6 +14,5 @@ describe MailinglistsController do
       end
     end
 
-
   end
 end
