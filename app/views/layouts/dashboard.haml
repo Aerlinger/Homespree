@@ -3,10 +3,10 @@
     .container
       .span3.descriptiontext.bs-docs-sidebar.sidenav
         %ul.nav.nav-list.bs-docs-sidenav
-          %li
+          = content_tag(:li) do
             = link_to "Notifications", notifications_path
-          %li
-            = link_to "General Settings", general_path
+          = content_tag(:li, class: "active") do
+            = link_to "General Settings", general_settings_path
           %li
             = link_to "My Inbox", inbox_path
           %li

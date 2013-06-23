@@ -35,7 +35,7 @@ Homespree::Application.routes.draw do
   }
 
   get "notifications" => "contractors/dashboard#notifications"
-  get "general" => "contractors/dashboard#general_settings"
+  get "general_settings" => "contractors/dashboard#general_settings"
   get "inbox" => "contractors/dashboard#inbox"
   get "my_projects" => "contractors/dashboard#my_projects"
   get "my_income" => "contractors/dashboard#my_income"

@@ -8,6 +8,11 @@ describe "Home page" do
     visit root_path
   end
 
+  describe "shows project submission form" do
+
+
+  end
+
   describe "not signed in" do
     it "shows sign up link" do
       click_link "Sign Up"
@@ -20,6 +25,13 @@ describe "Home page" do
 
   describe "when signed in as homeowner" do
 
+  end
+
+  describe "when signed in as contractor" do
+    before do
+      sign_in_contractor FactoryGirl.create(:contractor)
+    end
+    page.should.find_link("My account")
   end
 
   describe "submitting a project from the home page" do
