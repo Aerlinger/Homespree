@@ -1,16 +1,18 @@
-%p
-  %strong Protip:
-  %em Drag services below based on their relevance.
+- unless @contractor.visitor?
+  %p
+    %strong Protip:
+    %em Drag services below based on their relevance.
 
 -# List of specialties which have been claimed by this contractor ----------------------------------------------------
 = content_tag :ol, id: "contractor_specialties", class: "specialties", data: { "update-url" => "/contractors/#{@contractor.id}/specialties/sort" } do
   =render @contractor.specialties
 
-%h3{style: "font-size: 16px;"} Add more services to your profile
-%hr{style: "margin-top: 5px; margin-bottom: 5px"}
-
 -# List of "available" pecialties which have not yet been selected:  --------------------------------------------------
-%ul.specialties#available_specialties
-  - available_specialties = Specialty.painting_types.values - @specialties.map(&:name)
-  - available_specialties.each do |specialty_name|
-    = render "specialties/available_specialty", specialty_name: specialty_name
+- unless @contractor.visitor?
+  %h3{style: "font-size: 16px;"} Add more services to your profile
+  %hr{style: "margin-top: 5px; margin-bottom: 5px"}
+
+  %ul.specialties#available_specialties
+    - available_specialties = Specialty.painting_types.values - @specialties.map(&:name)
+    - available_specialties.each do |specialty_name|
+      = render "specialties/available_specialty", specialty_name: specialty_name

@@ -43,7 +43,10 @@ class ContractorDecorator < Draper::Decorator
     portrait_missing = @object.portrait_url ? "_edited" : ""
 
     h.image_tag @object.portrait_url.to_s || image_url, id: "contractor_portrait", class: portrait_missing
-    h.haml_concat link_to "Upload portrait", "#", class: "btn btn-success btn-small", id: "upload_portrait"
+
+    unless visitor?
+      h.haml_concat link_to "Upload portrait", "#", class: "btn btn-success btn-small", id: "upload_portrait"
+    end
   end
 
   def portrait_url
@@ -57,15 +60,17 @@ class ContractorDecorator < Draper::Decorator
   def logo
     if @object.logo_url?
       h.haml_concat image_tag @object.logo_url
-      h.haml_concat link_to("Change logo", "#", class: "btn btn-info btn-mini", id: "upload_logo")
-      h.haml_concat link_to("Delete logo", contractor_path(id: @object.id, contractor: {remove_logo_url: true}),
-                            confirm: "Are you sure you want to delete your logo from the description?",
-                            method: :put, class: "btn btn-danger btn-mini delete-button pull-right")
-        #=%i.e-icon-cancel
-        #h.content_tag(:i, class: "e-icon-cancel")
-      #end
+
+      unless visitor?
+        h.haml_concat link_to("Change logo", "#", class: "btn btn-info btn-mini", id: "upload_logo")
+        h.haml_concat link_to("Delete logo", contractor_path(id: @object.id, contractor: {remove_logo_url: true}),
+                              confirm: "Are you sure you want to delete your logo from the description?",
+                              method: :put, class: "btn btn-danger btn-mini delete-button pull-right")
+      end
     else
+      unless visitor?
         h.haml_concat link_to "Upload company logo", "#", class: "btn btn-info", id: "upload_logo"
+      end
     end
   end
 
@@ -137,18 +142,18 @@ class ContractorDecorator < Draper::Decorator
     h.content_tag(:div, options.merge(id: id), &block)
   end
 
-  private
-
-  # Check if this attribute is set and saved on the contractor's profile.
-  def contractor_missing_attr?(attr_name)
-    @object.send(attr_name).blank?
-  end
-
   def visitor?
     if contractor_signed_in? && (params[:id] == current_contractor.slug || params[:id].to_i == current_contractor.id)
       return false
     end
     return true
+  end
+
+  private
+
+  # Check if this attribute is set and saved on the contractor's profile.
+  def contractor_missing_attr?(attr_name)
+    @object.send(attr_name).blank?
   end
 
 end

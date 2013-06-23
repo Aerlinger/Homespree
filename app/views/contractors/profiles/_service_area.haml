@@ -1,11 +1,7 @@
 =image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@contractor.try(:latitude)}%2C#{@contractor.try(:longitude)}", id: "map"
 
-#update_message.alert.alert-success
-  Address updated!
-
-
-.no-edit
-  .address.line1
+- if @contractor.visitor?
+  .address.line1{style: "font-weight: bold;"}
     = @contractor.line1
     = render "contractors/profiles/edit_link"
 
@@ -18,21 +14,25 @@
   %span.address
     = @contractor.state
 
-.on-edit
-  = simple_form_for @contractor.address, :url => { :controller => "addresses", :action => 'update', contractor_id: @contractor.id }, method: :put, class: "intro", remote: true do |f|
-    .address.line1
-      =f.input :line1, placeholder: "Address Line 1", label: "Street"
+- else
+  .on-edit
+    #update_message.alert.alert-success
+      Address updated!
 
-    %span.address#city
-      =f.input :city, placeholder: @contractor.try(:city), label: "City"
+    = simple_form_for @contractor.address, :url => { :controller => "addresses", :action => 'update', contractor_id: @contractor.id }, method: :put, class: "intro", remote: true do |f|
+      .address.line1
+        =f.input :line1, placeholder: "Address Line 1", label: "Street"
 
-    .address
-      =f.input :state, collection: us_states, label: "State", :style => "width: 600px;"
+      %span.address#city
+        =f.input :city, placeholder: @contractor.try(:city), label: "City"
 
-    %span.address#zipcode
-      =f.input :zipcode, maxlength: 5, placeholder: @contractor.try(:zipcode), label: "Zipcode"
+      .address
+        =f.input :state, collection: us_states, label: "State", :style => "width: 600px;"
 
-    .address#service_radius
-      = f.input :service_radius, collection: service_radius, label: "Availability radius", selected: @contractor.address.service_radius
+      %span.address#zipcode
+        =f.input :zipcode, maxlength: 5, placeholder: @contractor.try(:zipcode), label: "Zipcode"
 
-    = f.submit "Update Location", class: "btn custom-btn btn-small btn-info", style: "width: 100%"
+      .address#service_radius
+        = f.input :service_radius, collection: service_radius, label: "Availability radius", selected: @contractor.address.service_radius
+
+      = f.submit "Update Location", class: "btn custom-btn btn-small btn-info", style: "width: 100%"

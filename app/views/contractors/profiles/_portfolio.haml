@@ -10,8 +10,9 @@
       = render @photos
 
   #portfolio-carousel.flexslider
-    = s3_uploader_form post: contractor_photos_url(@contractor), as: "photo[image_url]" do
-      = file_field_tag :file, multiple: true
+    - unless @contractor.visitor?
+      = s3_uploader_form post: contractor_photos_url(@contractor), as: "photo[image_url]" do
+        = file_field_tag :file, multiple: true
     %ul.slides
       = render @photos
 

@@ -483,12 +483,10 @@
 
       #contractor_logo {
         position: relative;
-        padding: 5px 10px;
+        padding: 0 10px;
 
-        //img, a {
-        //  display: table;
-        //  margin: 0 auto;
-        //}
+        display: table;
+        margin: 0 auto 0;
 
         img {
           display: table !important;
@@ -499,10 +497,6 @@
           width: auto;
           height: auto;
         }
-
-        //a {
-        //  position: absolute;
-        //}
       }
 
       .slogan {
@@ -513,15 +507,6 @@
         text-align: justify;
       }
 
-      #contractor_logo {
-        display: table;
-        margin: 0 auto 20px;
-      }
-
-      //#upload_logo {
-      //  display: table;
-      //  margin: 0 auto 20px;
-      //}
     }
 
     #services, #services_edited {

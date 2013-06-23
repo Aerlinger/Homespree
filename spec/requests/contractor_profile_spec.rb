@@ -2,12 +2,12 @@ require 'spec_helper'
 
 describe 'Contractor Profile' do
 
+  let(:contractor) { FactoryGirl.build :contractor }
+
   subject { page }
 
   # Sign in from scratch:
   before :each do
-    contractor = FactoryGirl.build :contractor
-
     visit new_contractor_registration_path
 
     fill_in "Company title", with: contractor.company_title
@@ -67,41 +67,84 @@ describe 'Contractor Profile' do
     end
   end
 
-  describe "left hand contractor card" do
 
-    specify "populated fields" do
-      within(:css, ".wrapper") do
-        page.should have_text @contractor.company_title
-        page.should have_text @contractor.city
-        page.should have_text @contractor.state
-        page.should have_text @contractor.first_name
-        page.should have_text @contractor.bonding_limit
-        page.should have_text @contractor.insurance_limit
-        page.should have_text @contractor.license
+  describe "viewing own profile" do
+    describe "left hand contractor card" do
+      specify "populated fields" do
+        within(:css, ".wrapper") do
+          page.should have_text @contractor.company_title
+          page.should have_text @contractor.city
+          page.should have_text @contractor.state
+          page.should have_text @contractor.first_name
+          page.should have_text @contractor.bonding_limit
+          page.should have_text @contractor.insurance_limit
+          page.should have_text @contractor.license
+        end
+      end
+
+    end
+
+    describe "portfolio images" do
+
+    end
+
+    describe "Business description" do
+      it "has description and slogan" do
+        page.should have_text @contractor.slogan
+        page.should have_text @contractor.description
       end
     end
 
-  end
-
-  describe "portfolio images" do
-
-  end
-
-  describe "Business description" do
-    it "has description and slogan" do
-      page.should have_text @contractor.slogan
-      page.should have_text @contractor.description
-    end
-  end
-
-  describe "address" do
-    it "has city and state" do
-      within(:css, "#service_area") do
-        page.should have_content @contractor.city
-        page.should have_content @contractor.state
+    describe "address" do
+      it "has city and state" do
+        within(:css, "#service_area") do
+          page.should have_content @contractor.city
+        end
       end
     end
   end
 
+
+  describe "viewing another contractor's profile" do
+    let(:contractor2) { FactoryGirl.create :contractor }
+    before do
+      visit "/contractors/#{contractor2.id}"
+    end
+
+    specify { contractor.should be_visitor }
+
+    it "shows other contractor's name" do
+      page.should have_content contractor2.company_title
+    end
+
+    it "shows other contractor's name" do
+      page.should have_content contractor2.first_name
+    end
+
+    describe "Does not show" do
+
+      it "edit links" do
+        page.current_path.should eq "/contractors/#{contractor2.id}"
+      end
+
+      it "submit button for address" do
+        page.should_not have_content("Update Location")
+      end
+
+      it "Add services links" do
+        page.should_not have_content("Add")
+      end
+
+      it "Draggable services" do
+        page.should_not have_content("Drag services")
+      end
+
+      it "Should not have upload button" do
+
+      end
+
+    end
+  end
 
 end
+

@@ -1,9 +1,10 @@
 =content_tag_for(:li, specialty) do
-  %span.badge.badge-info.drag{style: "padding: 0 !important"}
-    &nbsp
-    %i.e-icon-arrow-combo
-    DRAG&nbsp
+  - unless @contractor.visitor?
+    %span.badge.badge-info.drag{style: "padding: 0 !important"}
+      &nbsp
+      %i.e-icon-arrow-combo
+      DRAG&nbsp
   %span.specialty-name= specialty.name
-
-  =link_to contractor_specialty_path(contractor_id: @contractor.id, id: specialty.id), method: :delete, remote: true, class: "delete-specialty pull-right", style: "position: relative; color: darkred;" do
-    %i.e-icon-cancel
+  - unless @contractor.visitor?
+    =link_to contractor_specialty_path(contractor_id: @contractor.id, id: specialty.id), method: :delete, remote: true, class: "delete-specialty pull-right", style: "position: relative; color: darkred;" do
+      %i.e-icon-cancel

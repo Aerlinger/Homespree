@@ -11,7 +11,7 @@ describe "Contractor Sign Up" do
   describe "with valid params" do
 
     before do
-      visit "/contractors/sign_up"
+      visit new_contractor_registration_path
 
       fill_in "Email", with: contractor.email
       fill_in "Company title", with: contractor.company_title
