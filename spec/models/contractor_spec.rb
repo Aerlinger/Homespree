@@ -289,5 +289,13 @@ describe Contractor do
     end
   end
 
+  describe "receives a message from admin after being created" do
+    it "one message" do
+      contractor.mailbox.conversations.count.should eq 1
+    end
+
+    it "is from Admin"
+  end
+
 
 end

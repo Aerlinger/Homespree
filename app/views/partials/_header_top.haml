@@ -36,21 +36,17 @@
                     %small Edit profile
                 %li.divider
                 %li
-                  =link_to "Account Settings", edit_contractor_registration_path
+                  =link_to "Account Settings", general_contractors_path
                 %li
                   =link_to "Sign out", destroy_contractor_session_path, method: :get
 
           - else
-
             %li
               =link_to "About", about_path
-
             %li
               =link_to "For Professionals", for_professionals_path
-
             %li
               =link_to "Sign Up ", new_contractor_registration_path
-
             %li.dropdown.parent
               =link_to new_contractor_session_path do
                 Sign In

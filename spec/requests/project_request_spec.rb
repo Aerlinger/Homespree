@@ -29,7 +29,7 @@ describe "Project request" do
 
       describe "click next on Appointment" do
         before { click_link 'next' }
-        
+
         it "routes to submit.haml" do
           page.should have_text("Submit")
           page.should have_text("4")

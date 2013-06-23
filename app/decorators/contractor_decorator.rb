@@ -69,16 +69,6 @@ class ContractorDecorator < Draper::Decorator
     end
   end
 
-  ## The contractor's own business logo
-  def logo_upload(image_url="logo_placeholder.jpg")
-    #h.link_to "Upload logo", "#", class: "btn btn-info btn-small"
-  end
-
-  # Displays the badges for each contractor:
-  def badge(name = "approved")
-    h.image_tag(asset_path("profile/badges/#{name}_badge.png"))
-  end
-
   def card_item(attr_name, attrs = {})
     # Don't render blank attributes when a customer is visiting the page
     if visitor? && @object.send(attr_name).blank?
@@ -95,7 +85,6 @@ class ContractorDecorator < Draper::Decorator
       end
     end
   end
-
 
   def city_and_state
     address = @object.address
@@ -148,6 +137,8 @@ class ContractorDecorator < Draper::Decorator
     h.content_tag(:div, options.merge(id: id), &block)
   end
 
+  private
+
   # Check if this attribute is set and saved on the contractor's profile.
   def contractor_missing_attr?(attr_name)
     @object.send(attr_name).blank?
@@ -158,14 +149,6 @@ class ContractorDecorator < Draper::Decorator
       return false
     end
     return true
-  end
-
-  protected
-
-  def upload_for(attribute, name)
-    s3_uploader_form put: @contractor, as: "photo[#{attribute.to_s}]" do
-      file_field_tag :file, multiple: true
-    end
   end
 
 end

@@ -27,6 +27,18 @@ ProjectSubcategory.destroy_all
   jc = ProjectCategory.create(name: category)
 end
 
+unless (Contractor.find_by_email("admin@myhomespree.com"))
+  contractor_admin = Contractor.create do |homespree_admin|
+    homespree_admin.email = "admin@myhomespree.com"
+    homespree_admin.first_name = "Homespree Admin"
+    homespree_admin.password = "Meetmike9"
+    homespree_admin.company_title = "Homespree Admin"
+  end
+end
+
+puts "Admin contractor: #{Contractor.find_by_email("admin@myhomespree.com").email}"
+
+
 joe_the_plumber = Contractor.new do |c|
 
   c.email = "joetheplumber@seed.com"
@@ -65,14 +77,6 @@ joe_the_plumber = Contractor.new do |c|
     a.zipcode = "12345"
     a.city = "Princeton"
   end
-
-  #(1..6).each do |photo_id|
-  #  photo = Photo.create! do |p|
-  #    p.image_url = "#{photo_id}.jpg"
-  #  end
-  #
-  #  c.photos << photo
-  #end
 
   c.address = address
 end

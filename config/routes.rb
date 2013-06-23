@@ -8,9 +8,6 @@ Homespree::Application.routes.draw do
 
   resources :mailinglists, only: [:create, :update, :destroy]
 
-  # Users (Both Contractors and Homeowners): ------------------------------------------------------------------------
-
-
   # Homeowners: -----------------------------------------------------------------------------------------------------
   devise_for :homeowners, :controllers => {
     registrations: "homeowners/registrations",
@@ -24,7 +21,10 @@ Homespree::Application.routes.draw do
     resource :address, only: [:update]
     resources :photos, only: [:create, :update, :destroy]
     resources :appointments
-    resources :projects
+
+    collection do
+      resources :projects
+    end
   end
 
   # Contractors: -----------------------------------------------------------------------------------------------------
@@ -35,12 +35,14 @@ Homespree::Application.routes.draw do
   }
 
   resources :contractors do
-    member do
-      get "notifications" => "alerts#index"
-      get "projects" => "projects#index"
-      get "settings" => "contractors#settings"
-      get "messages" => "users/conversations#index"
-      get "material_calculator" => "contractors#material_calculator"
+
+    collection do
+      get "notifications" => "contractors/dashboard#notifications"
+      get "general" => "contractors/dashboard#general_settings"
+      get "inbox" => "contractors/dashboard#inbox"
+      get "my_projects" => "contractors/dashboard#my_projects"
+      get "my_income" => "contractors/dashboard#my_income"
+      get "material_calculator" => "contractors/dashboard#material_calculator"
     end
 
     resources :specialties, only: [:create, :update, :destroy] do
@@ -55,10 +57,12 @@ Homespree::Application.routes.draw do
       end
     end
 
+
     resource :address, only: [:update]
     resources :photos, only: [:create, :update, :destroy]
     resources :appointments
-    #resources :projects, only: [:create, :update, :destroy]
+    resources :alerts
+    resources :projects
   end
 
   # Gallery Browsing: ------------------------------------------------------------------------------------------------

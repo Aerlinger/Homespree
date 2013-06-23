@@ -16,22 +16,23 @@ end
 
 # Goes through the steps of signing in a new contractor
 def sign_up_contractor
-  @contractor = FactoryGirl.build :contractor
+  contractor = FactoryGirl.build :contractor
   visit new_contractor_registration_path
 
-  fill_in "Email", with: @contractor.email
-  fill_in "Company title", with: @contractor.company_title
-  fill_in "Password", with: @contractor.password
+  fill_in "Email", with: contractor.email
+  fill_in "Company title", with: contractor.company_title
+  fill_in "Password", with: contractor.password
 
   click_button "sign_up"
-  return @contractor
+  return contractor
 end
 
-def sign_in_user(user)
-  get "contractors/sign_in"
+def sign_in_contractor(contractor)
 
-  fill_in "Email", with: user.email
-  fill_in "Password", with: user.password
+  visit new_contractor_session_path
+
+  fill_in "Email", with: contractor.email
+  fill_in "Password", with: contractor.password
 
   click_button "Sign In"
 end

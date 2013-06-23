@@ -11,15 +11,14 @@
 #  contractor_id :integer
 #  homeowner_id  :integer
 #
-
 class Project < ActiveRecord::Base
 
-  attr_accessor :zipcode
-  attr_accessible :zipcode, :title, :description
+  attr_accessor :zipcode, :category_name
+  attr_accessible :zipcode, :title, :description, :category_attributes, :appointment_attributes, :category_name
 
-  validates_presence_of :title, :description
+  validates_presence_of :category_name
 
-  has_many :categories, as: :categorizable, class_name: "ProjectCategory"
+  has_one :category, as: :categorizable, class_name: "ProjectCategory"
   has_many :before_photos, class_name: 'Photo', as: :photographable
   has_many :after_photos, class_name: 'Photo', as: :photographable
 
@@ -27,4 +26,14 @@ class Project < ActiveRecord::Base
   belongs_to :homeowner
 
   has_many :appointments
+
+  accepts_nested_attributes_for :category, :appointments
+
+  before_create :set_category
+
+  private
+
+  def set_category
+    self.create_category({name: category_name})
+  end
 end

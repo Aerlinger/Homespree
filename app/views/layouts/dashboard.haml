@@ -1,0 +1,25 @@
+- content_for :content do
+  .secondary
+    .container
+      .span3.descriptiontext.bs-docs-sidebar.sidenav
+        %ul.nav.nav-list.bs-docs-sidenav
+          %li
+            = link_to "Notifications"
+          %li
+            = link_to "General Settings"
+          %li
+            = link_to "My Inbox"
+          %li
+            = link_to "My Projects"
+          %li
+            = link_to "My Income"
+          %li
+            = link_to "Material Calculator"
+
+      #dashboard_section
+        = content_for?(:dashboard) ? yield(:dashboard) : yield
+
+= render :template => 'layouts/application'
+
+%hr/
+= link_to "&laquo Back to my profile".html_safe, :back

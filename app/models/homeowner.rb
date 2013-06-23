@@ -53,12 +53,41 @@ class Homeowner < ActiveRecord::Base
   # Nested Attributes:  -----------------------------------------------------------------------------------------------
   accepts_nested_attributes_for :appointments, :address
 
+  # Callbacks:  -------------------------------------------------------------------------------------------------------
+  after_create :send_welcome_message
+
   def mailboxer_email(object)
     self.email
   end
 
-  def self.new_guest
+  def self.new_homeowner_guest
     new { |u| u.guest = true }
+  end
+
+  def name
+    guest ? "Guest" : userrname
+  end
+
+  def move_to(homeowner)
+    appointments.update_all(homeowner_id: homeowner.id)
+    before_photos.update_all(photographabe_id: homeowner.id)
+    after_photos.update_all(photographabe_id: homeowner.id)
+  end
+
+  private
+
+  def send_welcome_message
+    welcome_conversation = Conversation.new({subject: "Welcome to Homespree!"})
+
+    welcome_message = Message.new do |message|
+      subject = "Welcome to Homespree!"
+      body = "Body message should go here"
+    end
+
+    welcome_conversation.messages << welcome_message
+    welcome_message.deliver
+
+    self.mailbox.conversations << welcome_conversation
   end
 
 end

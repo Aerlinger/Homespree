@@ -98,8 +98,9 @@ class Contractor < ActiveRecord::Base
   before_save :titleize_name
   before_save lambda { |contractor| contractor.email.try(:downcase!) }
   before_save lambda { |contractor| contractor.license.try(:upcase!) }
-  after_create :set_image_defaults
   before_create :add_badges
+  after_create :set_image_defaults
+  after_create :send_welcome_message
 
   # Scopes:  ----------------------------------------------------------------------------------------------------------
   default_scope order("created_at desc")
@@ -169,6 +170,18 @@ class Contractor < ActiveRecord::Base
 
   def titleize_name
     self.first_name = first_name.try(:titleize)
+  end
+
+  private
+
+  def send_welcome_message
+    admin = Contractor.find_by_email("admin@myhomespree.com")
+    if admin
+      subject = "Welcome to Homespree!"
+      body = "Body message should go here"
+
+      admin.send_message(self, body, subject)
+    end
   end
 
 end

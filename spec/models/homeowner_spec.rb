@@ -120,4 +120,6 @@ describe Homeowner do
     homeowner.should_not be_valid
   end
 
+
+
 end

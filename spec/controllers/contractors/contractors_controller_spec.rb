@@ -2,6 +2,11 @@ require 'spec_helper'
 
 describe ContractorsController do
 
+  it { should respond_to :show }
+  it { should respond_to :update }
+  it { should respond_to :settings }
+  it { should respond_to :material_calculator }
+
   let(:contractor) { FactoryGirl.create(:contractor) }
   params = {id: 11, photos_attributes: [{image_url: "asdf"}]}
 
@@ -12,6 +17,10 @@ describe ContractorsController do
       it "should render controls to edit the page" do
         expect(response).to render_template :profile
       end
+    end
+
+    it "decorates contractor" do
+      assigns(:contractor).should be_decorated_with ContractorDecorator
     end
 
     it "should assign contractor to contractor" do

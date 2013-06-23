@@ -2,20 +2,44 @@ require 'spec_helper'
 
 describe "Home page" do
 
-  before :all do
+  subject { page }
+
+  before do
     visit root_path
   end
 
-  subject { page }
-
-  describe "submitting an email from the home page" do
-    it "should raise invalid record when submitted with incomplete info" do
-      #expect {
-      #  fill_in "email_signup", with: "testmailinglist@rspec.com"
-      #  #click_button "Homeowner"
-      #  click_button "submit_location"
-      #}.to raise_exception(ActiveRecord::RecordInvalid)
+  describe "not signed in" do
+    it "shows sign up link" do
+      click_link "Sign Up"
     end
+
+    it "shows sign in link" do
+      click_link "Sign In"
+    end
+  end
+
+  describe "when signed in as homeowner" do
+
+  end
+
+  describe "submitting a project from the home page" do
+    before do
+      #click_link "Power Washing"
+      fill_in "email_signup", with: "10025"
+      click_button "submit_location"
+    end
+
+    it "navigates to project request" do
+      it "should have request title" do
+
+      end
+    end
+
+    xit "creates a new guest homeowner"  do
+
+    end
+
+
   end
 
 end

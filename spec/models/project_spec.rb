@@ -24,7 +24,7 @@ describe Project do
   it { should belong_to :homeowner }
   it { should have_many :before_photos }
   it { should have_many :after_photos }
-  it { should have_many :categories }
+  it { should have_one :category }
   it { should have_many :appointments }
   it { should respond_to :after_photos }
   it { should respond_to :before_photos }
@@ -33,11 +33,18 @@ describe Project do
   it { should respond_to :description }
   it { should respond_to :zipcode }
 
+  # Validations
+  it { should validate_presence_of :category_name }
+
   it { should be_valid }
 
   describe "has correct defaults" do
-    its(:title) { should eq "Project name" }
+    its(:title) { should eq "My painting project" }
     its(:description) { should eq "This is a test description of the project to be done" }
+
+    it "has a category for painting" do
+      project.category.name == "Painting"
+    end
 
     its(:appointments) { should be_empty }
   end

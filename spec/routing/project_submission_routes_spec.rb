@@ -4,14 +4,13 @@ describe ProjectSubmissionsController do
 
   it "routes to request" do
     get("project_submissions/request").should route_to("project_submissions#show", id: "request")
-    wizard_path.should eq ""
   end
 
-  it "routes to appointment" do
-    get("project_submissions/review_estimates").should route_to("project_submissions#show", id: "review_estimate")
+  it "routes to review estimates" do
+    get("project_submissions/review_estimates").should route_to("project_submissions#show", id: "review_estimates")
   end
 
-  it "routes to review estimate" do
+  it "routes to review appointent" do
     get("project_submissions/appointment").should route_to("project_submissions#show", id: "appointment")
   end
 
