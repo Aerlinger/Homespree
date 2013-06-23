@@ -34,16 +34,14 @@ Homespree::Application.routes.draw do
     passwords: "contractors/passwords"
   }
 
-  resources :contractors do
+  get "notifications" => "contractors/dashboard#notifications"
+  get "general" => "contractors/dashboard#general_settings"
+  get "inbox" => "contractors/dashboard#inbox"
+  get "my_projects" => "contractors/dashboard#my_projects"
+  get "my_income" => "contractors/dashboard#my_income"
+  get "material_calculator" => "contractors/dashboard#material_calculator"
 
-    collection do
-      get "notifications" => "contractors/dashboard#notifications"
-      get "general" => "contractors/dashboard#general_settings"
-      get "inbox" => "contractors/dashboard#inbox"
-      get "my_projects" => "contractors/dashboard#my_projects"
-      get "my_income" => "contractors/dashboard#my_income"
-      get "material_calculator" => "contractors/dashboard#material_calculator"
-    end
+  resources :contractors do
 
     resources :specialties, only: [:create, :update, :destroy] do
       post :sort, on: :collection

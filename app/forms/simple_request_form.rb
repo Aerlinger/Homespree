@@ -1,0 +1,4 @@
+class SimpleRequestForm < AbstractForm
+
+
+end

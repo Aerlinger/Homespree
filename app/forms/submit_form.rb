@@ -1,0 +1,5 @@
+class SubmitForm < AbstractForm
+
+
+
+end

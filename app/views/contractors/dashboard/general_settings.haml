@@ -7,53 +7,57 @@
 -#      Delete Account?
 -#===========================================================================
 - content_for :dashboard do
-  .span5.descriptiontext
+  .span8.descriptiontext
     = provide :title, "Edit account settings"
 
     .accordion#accordion2
       .accordion-group
         .accordion-heading
           %a.accordion-toggle{data: {toggle: "collapse", parent: "#accordion2"}, href: "#collapseOne"}
-            Email and Password Settings
+            %h7 Email and Password Settings
+
         #collapseOne.accordion-body.collapse.in
-          %hr/
-          %h3 Email
-          %br
+          -# Change Email Form
+          -#------------------------------------------------------------------------------------------------
+          = form_for(current_contractor, :html => {:method => :put}) do |f|
+            -#= devise_error_messages!
+            %div
+              = f.label "Change Email"
+              = f.email_field :email, :autofocus => true
+            %div
+              = f.label "Verify Password"
+              = f.password_field :current_password
+            %div= f.submit "Update", :class => "btn btn-success"
 
-        -# Change Email Form
-        -#------------------------------------------------------------------------------------------------
-        = form_for(current_contractor, :html => {:method => :put}) do |f|
-          -#= devise_error_messages!
-          %div
-            = f.label "Change Email"
-            = f.email_field :email, :autofocus => true
-          %div
-            = f.label "Verify Password"
-            = f.password_field :current_password
-          %div= f.submit "Update", :class => "btn btn-success"
+      .accordion-group
+        .accordion-heading
+          %a.accordion-toggle{data: {toggle: "collapse", parent: "#accordion2"}, href: "#collapseTwo"}
+            %h7 Password Settings
 
-    -# Change Password
-    -#------------------------------------------------------------------------------------------------
-    = form_for(current_contractor, :html => {:method => :put}) do |f|
-      -#= devise_error_messages!
-      %div
-        %br
-        %h3 Change Password
-        %br
-        = f.label "Current PAssword"
+          #collapseTwo.accordion-body.collapse.in
+            -# Change Password
+            -#------------------------------------------------------------------------------------------------
+            = form_for(current_contractor, :html => {:method => :put}) do |f|
+              -#= devise_error_messages!
+              %div
+                = f.label "Current Password"
+                = f.password_field :current_password
+              %div
+                = f.label "New Password"
+                = f.password_field :password, :autocomplete => "off"
+              %div
+                = f.label "Re-type New Password"
+                = f.password_field :password_confirmation
+              %div= f.submit "Update", :class => "btn btn-success"
 
-        = f.password_field :current_password
-      %div
-        = f.label "New Password"
-        = f.password_field :password, :autocomplete => "off"
-      %div
-        = f.label "Re-type New Password"
-        = f.password_field :password_confirmation
-      %div= f.submit "Update", :class => "btn btn-success"
+      .accordion-group
+        .accordion-heading
+          %a.accordion-toggle{data: {toggle: "collapse", parent: "#accordion2"}, href: "#collapseThree"}
+            %h7 Cancel my account
 
-    %hr/
-    %h3 Cancel my account
-    %br
+          #collapseThree.accordion-body.collapse.in
+            -# Change Password
+            -#------------------------------------------------------------------------------------------------
+            %p
+              Unhappy? #{button_to "Cancel my account", registration_path(current_contractor), :data => {:confirm => "Are you sure?"}, :method => :delete, :class => "btn btn-danger"}
 
-    %p
-      Unhappy? #{button_to "Cancel my account", registration_path(current_contractor), :data => {:confirm => "Are you sure?"}, :method => :delete, :class => "btn btn-danger"}

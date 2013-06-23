@@ -8,25 +8,16 @@ class AbstractForm
   validates_presence_of :username
   #validates_uniqueness_of :username
 
-  def initialize(user)
-    @user = user
-  end
-
-  def verify_original_password
-
-  end
-
-  def change_password
-
-  end
-
   def persisted?
     false
   end
 
-  def generate_token
-    #begin
-
-    #end while User.exists?(token token)
+  def initialize(homeowner)
+    @homeowner = homeowner
   end
+
+  def submit(params)
+
+  end
+
 end

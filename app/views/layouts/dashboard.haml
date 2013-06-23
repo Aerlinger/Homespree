@@ -4,17 +4,17 @@
       .span3.descriptiontext.bs-docs-sidebar.sidenav
         %ul.nav.nav-list.bs-docs-sidenav
           %li
-            = link_to "Notifications"
+            = link_to "Notifications", notifications_path
           %li
-            = link_to "General Settings"
+            = link_to "General Settings", general_path
           %li
-            = link_to "My Inbox"
+            = link_to "My Inbox", inbox_path
           %li
-            = link_to "My Projects"
+            = link_to "My Projects", my_projects_path
           %li
-            = link_to "My Income"
+            = link_to "My Income", my_income_path
           %li
-            = link_to "Material Calculator"
+            = link_to "Material Calculator", material_calculator_path
 
       #dashboard_section
         = content_for?(:dashboard) ? yield(:dashboard) : yield
