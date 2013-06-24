@@ -5,13 +5,26 @@ describe Contractors::SessionsController do
   # A simple trick to help devise cooperate with our test controller
   before :each do
     @request.env["devise.mapping"] = Devise.mappings[:contractor]
+
+    contractor = FactoryGirl.create :contractor
+    #@contractor.confirm!
+    sign_in contractor
   end
 
-  describe "Sign in a contractor" do
-    it "with helper" do
-      c = sign_in create :contractor
-      c.should_not be_nil
-    end
+  it "assigns current_contractor" do
+    current_contractor.should eq @contractor
+  end
+
+  it "current_user should equal current_contractor" do
+    current_user.should eq @contractor
+  end
+
+  it "shows contractor as signed in" do
+    contractor_signed_in?.should be true
+  end
+
+  it "is logged in" do
+    logged_in?.should be true
   end
 
   describe "GET #new" do

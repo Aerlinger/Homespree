@@ -6,7 +6,7 @@ class ProjectsController < ApplicationController
     @project = Project.new({category_name: params[:category_name], zipcode: params[:zipcode]})
     current_user.projects << @project
 
-    redirect_to project_submission_path("request", project_id: @project.id)
+    redirect_to project_wizard_path("request", project_id: @project.id)
   end
 
   private

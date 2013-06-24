@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130622055748) do
+ActiveRecord::Schema.define(:version => 20130623204917) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -127,7 +127,7 @@ ActiveRecord::Schema.define(:version => 20130622055748) do
     t.integer  "bonding_limit",          :limit => 5
     t.string   "photo_filename"
     t.text     "slogan"
-    t.decimal  "years_experience"
+    t.integer  "years_experience"
     t.integer  "failed_attempts",                     :default => 0
     t.string   "unlock_token"
     t.datetime "locked_at"

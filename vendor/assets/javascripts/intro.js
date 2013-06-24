@@ -454,11 +454,15 @@
         }
 
         if (this._currentStep == 0) {
+//            nextTooltipButton.className = 'introjs-button introjs-nextbutton btn btn-success';
             nextTooltipButton.className = 'introjs-button introjs-nextbutton';
             skipTooltipButton.innerHTML = this._options.skipLabel;
         } else if (this._introItems.length - 1 == this._currentStep) {
-            skipTooltipButton.innerHTML = this._options.doneLabel;
-            nextTooltipButton.className = 'introjs-button introjs-nextbutton introjs-disabled';
+//            skipTooltipButton.innerHTML = this._options.doneLabel;
+            nextTooltipButton.innerHTML = this._options.doneLabel;
+//            nextTooltipButton.className = 'introjs-button introjs-nextbutton introjs-disabled';
+            nextTooltipButton.onclick = skipTooltipButton.onclick
+            nextTooltipButton.className = 'introjs-button introjs-nextbutton';
         } else {
             nextTooltipButton.className = 'introjs-button introjs-nextbutton';
             skipTooltipButton.innerHTML = this._options.skipLabel;

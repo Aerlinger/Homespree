@@ -8,6 +8,9 @@ Homespree::Application.routes.draw do
 
   resources :mailinglists, only: [:create, :update, :destroy]
 
+  # Shared routes: (Contractors and Homeowners) ---------------------------------------------------------------------
+  get "sign_up" => "users/registrations#new"
+
   # Homeowners: -----------------------------------------------------------------------------------------------------
   devise_for :homeowners, :controllers => {
     registrations: "homeowners/registrations",
@@ -15,7 +18,7 @@ Homespree::Application.routes.draw do
     passwords: "homeowners/passwords"
   }
 
-  resources :project_submissions
+  resources :project_wizard
 
   resources :homeowners do
     resource :address, only: [:update]
@@ -42,7 +45,6 @@ Homespree::Application.routes.draw do
   get "material_calculator" => "contractors/dashboard#material_calculator"
 
   resources :contractors do
-
     resources :specialties, only: [:create, :update, :destroy] do
       post :sort, on: :collection
     end

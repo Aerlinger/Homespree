@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe ProjectSubmissionsController do
+describe ProjectWizardController do
 
   it "routes to request" do
     get("project_submissions/request").should route_to("project_submissions#show", id: "request")

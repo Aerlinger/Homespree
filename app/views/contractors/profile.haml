@@ -36,9 +36,10 @@
 
               %li.price
                 = content_tag(:div, style: "position: relative;", class: "badges") do
-                  %ul
+                  %ul#badge_list
                     = content_tag_for(:li, @contractor.badges) do |badge|
-                      = image_tag badge.image_url
+                      - if badge.image_url?
+                        = image_tag badge.image_url
 
 
             -# Contractor Card: list of Fields -- name, license info, etc...

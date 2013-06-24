@@ -209,7 +209,7 @@ GEM
     mercury-rails (0.9.0)
       coffee-rails
       railties (~> 3.2)
-    meta_request (0.2.6)
+    meta_request (0.2.7)
       callsite
       rack-contrib
       railties
@@ -306,7 +306,7 @@ GEM
       rspec-core (~> 2.13.0)
       rspec-expectations (~> 2.13.0)
       rspec-mocks (~> 2.13.0)
-    ruby2ruby (2.0.5)
+    ruby2ruby (2.0.6)
       ruby_parser (~> 3.1)
       sexp_processor (~> 4.0)
     ruby_parser (3.1.3)

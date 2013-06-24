@@ -13,94 +13,74 @@ describe "Contractor Dashboard" do
   subject { page }
 
   it "is navigated to after clicking Edit Profile" do
-    page.current_path.should eq "/contractors/#{contractor.slug}/general"
+    page.current_path.should eq "/general_settings"
   end
 
+  describe "General Settings" do
+
+    it "sets browser title" do
+      within(:css, "#dashboard_section") do
+        page.should have_content("Email")
+      end
+    end
+  end
 
   describe "Notifications" do
     before { click_link "Notifications" }
 
-    it "shows general settings by default" do
-      page.should have_content("General Settings")
-    end
-
-    it "sets browser title" do
-      page.should have_content("Edit account settings")
-    end
-
-    it "shows Password and Email Settings be default" do
-      page.should have_content("Password and Email Settings")
-    end
-  end
-
-  describe "General Settings" do
-    it "shows general settings by default" do
-      page.should have_content("General Settings")
-    end
-
-    it "sets browser title" do
-      page.should have_content("Edit account settings")
-    end
-
-    it "shows Password and Email Settings be default" do
-      page.should have_content("Password and Email Settings")
+    it "shows title" do
+      within(:css, "#dashboard_section") do
+        page.should have_content("Notifications")
+      end
     end
   end
 
   describe "My Inbox" do
     before { click_link "My Inbox" }
 
-    it "shows general settings by default" do
-      page.should have_content("General Settings")
+    it "shows My Inbox title" do
+      within(:css, "#dashboard_section") do
+        page.should have_content("My Inbox")
+      end
     end
 
-    it "sets browser title" do
-      page.should have_content("Edit account settings")
-    end
-
-    it "shows Password and Email Settings be default" do
-      save_and_open_page
-      page.should have_content("Password and Email Settings")
-    end
   end
 
   describe "My Projects" do
-    before { click_link "My Projects" }
-
-    it "shows general settings by default" do
-      page.should have_content("General Settings")
+    before do
+      within(:css, "#dashboard_nav") do
+        click_link "My Projects"
+      end
     end
 
-    it "sets browser title" do
-      page.should have_content("Edit account settings")
-    end
-
-    it "shows Password and Email Settings be default" do
-      page.should have_content("Password and Email Settings")
+    it "shows title" do
+      within(:css, "#dashboard_nav") do
+        page.should have_content("My Projects")
+      end
     end
   end
 
   describe "navigations links include" do
     specify "Notifications" do
-      within(:css, "#dashboard_section") do
+      within(:css, "#dashboard_nav") do
         page.should have_content("Notifications")
       end
     end
 
     specify "General Settings" do
-      within(:css, "#dashboard_section") do
+      within(:css, "#dashboard_nav") do
         page.should have_content("General Settings")
       end
     end
 
     specify "Messages" do
-      within(:css, "#dashboard_section") do
-        page.should have_content("Inbox")
+      within(:css, "#dashboard_nav") do
+        page.should have_content("My Inbox")
       end
     end
 
     specify "Payment" do
-      within(:css, "#dashboard_section") do
+      within(:css, "#dashboard_nav") do
         page.should have_content("My Income")
       end
     end
@@ -126,8 +106,6 @@ describe "Contractor Dashboard" do
     before do
       fill_in "Change email", with: "changed@rspec.com"
       fill_in "Verify password", with: contractor.password
-
-      save_and_open_page
     end
 
   end

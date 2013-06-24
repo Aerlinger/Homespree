@@ -27,6 +27,12 @@ ul.nav-collapse li a:hover {
   color: black !important;
 }
 
+.sidenav li.active a:hover {
+  color: white !important;
+
+  background: rgb(31, 66, 117);
+}
+
 .no-margin {
     margin: 0 !important;
 }

@@ -41,6 +41,17 @@
   font-style: italic !important;
 }
 
+// Hide helper tags on mobile and small screens
+@media (max-width: 768px) {
+  #helper_tabs {
+    display: none;
+  }
+}
+
+.introjs-skipbutton {
+  visibility: hidden;
+}
+
 #page {
   background: url("http://www.ivettearango.com/wp-content/uploads/2011/10/6-Valle-Living-Room-wide-web.jpg") no-repeat center center fixed;
 
@@ -69,6 +80,8 @@
 
   }
 }
+
+// Hide helper tags when screen shrinks mobile:
 
 // -------------------------------------------------------------------------------------------------------------------
 // Incomplete sections dropdown below header. Useful for displaying relevant information to the contractor.
@@ -223,10 +236,11 @@
           .badges {
             shadow: $shadow !important;
 
-            ul {
+            ul#badge_list {
               background: none;
               display: table;
               margin: 0 auto;
+              height: 0;
 
               li {
                 background: none;

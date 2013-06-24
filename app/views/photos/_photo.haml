@@ -7,7 +7,8 @@
   -#  %i.e-icon-plus-circled
   -#  Edit image
 
-  -# For Slider:
-  = link_to contractor_photo_path(@contractor, p), class: "photo-delete", remote: true, method: :delete,
+  -# For photo delete:
+  = unless @contractor.visitor?
+    = link_to contractor_photo_path(@contractor, p), class: "photo-delete", remote: true, method: :delete,
                                                               confirm: "Are you sure you wish to delete this photo?" do
-    %i.icon-remove
+      %i.icon-remove

@@ -31,7 +31,9 @@ describe "Home page" do
     before do
       sign_in_contractor FactoryGirl.create(:contractor)
     end
-    page.should.find_link("My account")
+    it "should have link for account" do
+      page.should.find_link("My account")
+    end
   end
 
   describe "submitting a project from the home page" do
@@ -47,7 +49,7 @@ describe "Home page" do
       end
     end
 
-    xit "creates a new guest homeowner"  do
+    xit "creates a new guest homeowner" do
 
     end
 

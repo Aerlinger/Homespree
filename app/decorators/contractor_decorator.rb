@@ -57,9 +57,9 @@ class ContractorDecorator < Draper::Decorator
     end
   end
 
-  def logo
+  def logo(attrs = {})
     if @object.logo_url?
-      h.haml_concat image_tag @object.logo_url
+      h.haml_concat image_tag @object.logo_url, attrs
 
       unless visitor?
         h.haml_concat link_to("Change logo", "#", class: "btn btn-info btn-mini", id: "upload_logo")
@@ -137,7 +137,7 @@ class ContractorDecorator < Draper::Decorator
   # Defines a highlighted section for the intro sequence. By default, this will be only displayed once.
   def intro_section(id, options, &block)
     # Nullify an edited tag for Intro sequence by changing its ID
-    id = "#{id}_edited" if @object.edited?
+    id = "#{id}_edited" if @object.edited? || visitor?
 
     h.content_tag(:div, options.merge(id: id), &block)
   end

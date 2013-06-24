@@ -257,7 +257,7 @@
     overflow: hidden;
   }
   &.navbar .current-user img {
-    width: 42px;
+    width: 50px;
   }
   .nav > li > .dropdown-menu .current-user a {
     padding-top: 10px;
@@ -266,7 +266,7 @@
   .current-user .name {
     margin-left: 48px;
     display: block;
-    margin-top: -42px;
+    margin-top: -40px;
   }
   .menu-text {
     padding-left: 20px;
@@ -342,9 +342,9 @@
       color: #fff;
       color: rgba(255, 255, 255, 0.5);
     }
-    &.active i:before {
-      content: "\2716";
-    }
+    //&.active i:before {
+      //content: "\2716";
+    //}
   }
   input {
     background-color: #fff;

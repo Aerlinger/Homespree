@@ -1,4 +1,4 @@
-class ProjectSubmissionsController < ApplicationController
+class ProjectWizardController < ApplicationController
 
   include Wicked::Wizard
   steps :request, :review_estimates, :appointment, :submit

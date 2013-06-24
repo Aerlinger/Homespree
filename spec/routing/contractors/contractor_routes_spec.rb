@@ -11,27 +11,27 @@ describe ContractorsController do
     end
 
     it "shows notifications" do
-      get("contractors/1/notifications").should route_to("contractors/dashboard#notifications", id: "1")
+      get("notifications").should route_to("contractors/dashboard#notifications")
     end
 
     it "shows projects" do
-      get("contractors/1/my_projects").should route_to("contractors/dashboard#my_projects", id: "1")
+      get("my_projects").should route_to("contractors/dashboard#my_projects")
     end
 
     it "shows inbox" do
-      get("contractors/1/inbox").should route_to("contractors/dashboard#inbox", id: "1")
+      get("inbox").should route_to("contractors/dashboard#inbox")
     end
 
     it "shows settings" do
-      get("contractors/1/general").should route_to("contractors/dashboard#general_settings", id: "1")
+      get("general_settings").should route_to("contractors/dashboard#general_settings")
     end
 
     it "shows settings" do
-      get("contractors/1/my_income").should route_to("contractors/dashboard#my_income", id: "1")
+      get("my_income").should route_to("contractors/dashboard#my_income")
     end
 
     it "shows material calculator" do
-      get("contractors/1/material_calculator").should route_to("contractors/dashboard#material_calculator", id: "1")
+      get("material_calculator").should route_to("contractors/dashboard#material_calculator")
     end
   end
 
