@@ -6,8 +6,6 @@ describe "Contractor Sign Up" do
 
   let(:contractor) { FactoryGirl.build :contractor }
 
-  #it { should have_content("Create your contractor profile") }
-
   describe "with valid params" do
 
     before do

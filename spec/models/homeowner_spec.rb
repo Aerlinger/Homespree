@@ -27,33 +27,6 @@
 #  guest                  :boolean
 #
 
-# == Schema Information
-#
-# Table name: homeowners
-#
-#  id                     :integer          not null, primary key
-#  name                   :string(255)
-#  email                  :string(255)
-#  created_at             :datetime         not null
-#  updated_at             :datetime         not null
-#  first_name             :string(255)
-#  last_name              :string(255)
-#  photos_id              :integer
-#  appointments_id        :integer
-#  encrypted_password     :string(255)      default(""), not null
-#  reset_password_token   :string(255)
-#  reset_password_sent_at :datetime
-#  remember_created_at    :datetime
-#  sign_in_count          :integer          default(0)
-#  current_sign_in_at     :datetime
-#  last_sign_in_at        :datetime
-#  current_sign_in_ip     :string(255)
-#  last_sign_in_ip        :string(255)
-#  authentication_token   :string(255)
-#  failed_attempts        :integer          default(0)
-#  unlock_token           :string(255)
-#  locked_at              :datetime
-#
 require 'spec_helper'
 
 describe Homeowner do
@@ -104,22 +77,34 @@ describe Homeowner do
     homeowner.should_not be_valid
   end
 
-  it "should not be valid without password" do
-    homeowner.password = ''
-    homeowner.should_not be_valid
-  end
-
   it "not valid with too short of a password" do
     homeowner.password = 'secre'
-    homeowner.should_not be_valid
-  end
-
-  it "invalid with different password and confirmation" do
-    homeowner.password = "secret"
-    homeowner.password_confirmation = "different"
-    homeowner.should_not be_valid
+    homeowner.errors.keys.should include(:password)
   end
 
 
+  context "Guest User" do
+    let(:guest_homeowner) { Homeowner.create_guest }
+    subject { guest_homeowner }
+
+    it { should be_guest }
+
+    its(:name) { should eq "Guest Homeowner" }
+
+    describe "Creating a project and upgrading account" do
+      let(:project) { FactoryGirl.create :project }
+
+      before do
+        guest_homeowner.projects << project
+      end
+
+      it "upgrades to guest homeowner when a password is given" do
+        guest_homeowner.email = "homeowner@home.com"
+        guest_homeowner.password = "iamsecret"
+        guest_homeowner.save
+        guest_homeowner.should_not be_guest
+      end
+    end
+  end
 
 end

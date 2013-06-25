@@ -11,6 +11,7 @@
 #  contractor_id :integer
 #  homeowner_id  :integer
 #
+
 class Project < ActiveRecord::Base
 
   attr_accessor :zipcode, :category_name
@@ -34,6 +35,6 @@ class Project < ActiveRecord::Base
   private
 
   def set_category
-    self.create_category({name: category_name})
+    self.category = create_category({name: category_name})
   end
 end

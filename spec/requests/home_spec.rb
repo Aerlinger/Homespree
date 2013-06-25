@@ -38,8 +38,8 @@ describe "Home page" do
 
   describe "submitting a project from the home page" do
     before do
-      #click_link "Power Washing"
-      fill_in "email_signup", with: "10025"
+      click_link "Power Washing"
+      fill_in "zipcode", with: "10025"
       click_button "submit_location"
     end
 

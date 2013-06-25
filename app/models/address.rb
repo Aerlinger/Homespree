@@ -33,6 +33,7 @@
 #  updated_at       :datetime         not null
 #  latitude         :float
 #  longitude        :float
+#  service_radius   :integer          default(20)
 #
 class Address < ActiveRecord::Base
 

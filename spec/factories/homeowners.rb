@@ -7,4 +7,8 @@ FactoryGirl.define do
     first_name "RspecHomeowner"
     last_name "RspecHomeowner"
   end
+
+  factory :guest_homeowner, class: "Homeowner" do
+    guest true
+  end
 end

@@ -1,10 +1,10 @@
 =content_tag_for(:li, specialty) do
-  - unless @contractor.visitor?
+  - if own_profile?
     %span.badge.badge-info.drag{style: "padding: 0 !important"}
       &nbsp
       %i.e-icon-arrow-combo
       DRAG&nbsp
   %span.specialty-name= specialty.name
-  - unless @contractor.visitor?
+  - if own_profile?
     =link_to contractor_specialty_path(contractor_id: @contractor.id, id: specialty.id), method: :delete, remote: true, class: "delete-specialty pull-right", style: "position: relative; color: darkred;" do
       %i.e-icon-cancel

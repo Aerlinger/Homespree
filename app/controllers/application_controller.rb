@@ -38,13 +38,13 @@ class ApplicationController < ActionController::Base
       end
       current_homeowner
     else
-      nil
+      guest_homeowner
     end
   end
 
   def guest_homeowner
     # Cache the value:
-    @cached_guest_user ||= User.find(session[:guest_homeowner_id] ||= create_guest_user.id)
+    @cached_guest_user ||= Homeowner.find(session[:guest_homeowner_id] ||= create_guest_homeowner.id)
   rescue ActiveRecord::RecordNotFound  # If session[:guest_homeowner_id] invalid
     session[:guest_homeowner_id] = nil
     #guest_homeowner
@@ -66,14 +66,7 @@ class ApplicationController < ActionController::Base
   end
 
   def create_guest_homeowner
-    guest_homeowner = Homeowner.new do |guest|
-      guest.name = "guest"
-      guest.email = "guest_homeowner_#{Time.now.to_i}#{rand(9999)}@example"
-    end
-    guest_homeowner.save(validate: false)
-
-    session[:guest_homeowner_id] = guest_homeowner.id
-    return guest_homeowner
+    session[:guest_homeowner_id] = Homeowner.create_guest
   end
 
 end

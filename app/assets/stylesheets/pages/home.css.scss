@@ -267,7 +267,7 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
 				}
 			}
 
-			#email_signup {
+			#zipcode {
 				color: black;
 				font-size: 1.5em;
 				height: 30px;
@@ -514,7 +514,7 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
 
     }
   }
-  #email_signup {
+  #zipcode {
     width: 270px !important;
     margin-top: 06px !important;
   }
@@ -630,7 +630,7 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
   #search_form {
     max-width: 300px !important;
 
-    #email_signup, #customer_type {
+    #zipcode, #customer_type {
       max-width: 272px !important;
       margin-right: 5px !important;
       a {
@@ -674,7 +674,7 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
   #search_form {
     max-width: 250px !important;
   }
-  #email_signup{
+  #zipcode{
     width: 222px !important;
   }
   .submit {

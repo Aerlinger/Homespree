@@ -26,6 +26,7 @@
 #  locked_at              :datetime
 #  guest                  :boolean
 #
+
 class Homeowner < ActiveRecord::Base
 
   # Authentication:  --------------------------------------------------------------------------------------------------
@@ -37,7 +38,10 @@ class Homeowner < ActiveRecord::Base
 
   acts_as_messageable
 
+  # Validations -------------------------------------------------------------------------------------------------------
+
   # Accessors:  -------------------------------------------------------------------------------------------------------
+  attr_accessor :password
   attr_protected
 
   # Associations:  ----------------------------------------------------------------------------------------------------
@@ -55,6 +59,7 @@ class Homeowner < ActiveRecord::Base
 
   # Callbacks:  -------------------------------------------------------------------------------------------------------
   after_create :send_welcome_message
+  before_save :upgrade_guest_if_logging_in, if: :guest
 
   def mailboxer_email(object)
     self.email
@@ -65,7 +70,7 @@ class Homeowner < ActiveRecord::Base
   end
 
   def name
-    guest ? "Guest" : userrname
+    guest ? "Guest" : first_name
   end
 
   def move_to(homeowner)
@@ -74,20 +79,42 @@ class Homeowner < ActiveRecord::Base
     after_photos.update_all(photographabe_id: homeowner.id)
   end
 
+  def self.create_guest(name = "Guest Homeowner")
+    guest_homeowner = Homeowner.new do |guest|
+      guest.name  = name
+      guest.guest = true
+      guest.email = "guest_homeowner_#{Time.now.to_i}#{rand(9999)}@example"
+    end
+    guest_homeowner.save(validate: false)
+    return guest_homeowner.id
+  end
+
+  def upgrade_to_homeowner
+    if self.guest?
+      projects
+    end
+  end
+
   private
 
   def send_welcome_message
-    welcome_conversation = Conversation.new({subject: "Welcome to Homespree!"})
+    welcome_conversation = Conversation.new({ subject: "Welcome to Homespree!" })
 
     welcome_message = Message.new do |message|
       subject = "Welcome to Homespree!"
-      body = "Body message should go here"
+      body    = "Body message should go here"
     end
 
     welcome_conversation.messages << welcome_message
     welcome_message.deliver
 
     self.mailbox.conversations << welcome_conversation
+  end
+
+  def upgrade_guest_if_logging_in
+    if self.password
+      self.guest = false
+    end
   end
 
 end

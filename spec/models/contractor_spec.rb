@@ -30,7 +30,7 @@
 #  bonding_limit          :integer
 #  photo_filename         :string(255)
 #  slogan                 :text
-#  years_experience       :decimal(, )
+#  years_experience       :integer
 #  failed_attempts        :integer          default(0)
 #  unlock_token           :string(255)
 #  locked_at              :datetime

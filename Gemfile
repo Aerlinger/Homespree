@@ -58,7 +58,6 @@ group :test do
   gem 'spork', '0.9.0'
   gem 'zeus'
   gem 'selenium-webdriver'
-  gem 'simplecov', '>=0.3.8', :require => false
   gem 'database_cleaner', '0.7.0'
   gem 'capybara'
   #gem 'vcr'
@@ -91,4 +90,9 @@ group :assets do
   gem 'less-rails' #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
   gem 'less-rails-fontawesome'
   gem 'twitter-bootstrap-rails', '2.2.6'
+
+  # Gems used for markdown
+  gem 'redcarpet' # Makes it possible to use a markdown filter within haml
+  gem 'markdown-rails'
+
 end

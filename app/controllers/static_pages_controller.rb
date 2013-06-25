@@ -37,4 +37,14 @@ class StaticPagesController < ApplicationController
   def for_professionals
   end
 
+  def privacy_policy
+  end
+
+  def consumer_terms
+  end
+
+  def contractor_terms
+    
+  end
+
 end

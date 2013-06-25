@@ -30,7 +30,7 @@
 #  bonding_limit          :integer
 #  photo_filename         :string(255)
 #  slogan                 :text
-#  years_experience       :decimal(, )
+#  years_experience       :integer
 #  failed_attempts        :integer          default(0)
 #  unlock_token           :string(255)
 #  locked_at              :datetime
@@ -57,8 +57,6 @@ class Contractor < ActiveRecord::Base
 
   mount_uploader :logo_url, LogoUploader
   mount_uploader :portrait_url, PortraitUploader
-
-  @@portrait_default = "/assets/contractor_profiles/portrait_default.png"
 
   # Accessors:  -------------------------------------------------------------------------------------------------------
   attr_protected
@@ -99,7 +97,7 @@ class Contractor < ActiveRecord::Base
   before_save lambda { |contractor| contractor.email.try(:downcase!) }
   before_save lambda { |contractor| contractor.license.try(:upcase!) }
   before_create :add_badges
-  after_create :set_image_defaults
+  after_create :add_portfolio_image
   after_create :send_welcome_message
 
   # Scopes:  ----------------------------------------------------------------------------------------------------------
@@ -140,14 +138,6 @@ class Contractor < ActiveRecord::Base
     end
   end
 
-  def default_portrait?
-    portrait_url.to_s == @@portrait_default
-  end
-
-  def default_logo?
-    logo_url.to_s == @@logo_default
-  end
-
   protected
 
   def sanitize_phone_numbers
@@ -157,14 +147,13 @@ class Contractor < ActiveRecord::Base
 
   private
 
-  def set_image_defaults
+  def add_portfolio_image
     self.photos = [Photo.create(image_url: "/assets/contractor_profiles/portfolio_images/default.png")]
   end
 
   def add_badges
     badge = Badge.new
     badge.name = 'early_adopter'
-    badge.save
     self.badges << badge
   end
 
@@ -180,7 +169,7 @@ class Contractor < ActiveRecord::Base
       subject = "Welcome to Homespree!"
       body = "Body message should go here"
 
-      admin.send_message(self, body, subject)
+      #admin.send_message(self, body, subject)
     end
   end
 

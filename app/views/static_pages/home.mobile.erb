@@ -9,13 +9,13 @@
     <small>Provide your email to receive an invite.</small>
   </div>
 
-  <%= form_tag mailinglists_path, authenticate_with: :none, method: :post, remote: true, id: "loginForm" do %>
-    <%= email_field_tag(:email, "", type: "text", id: "email_signup", placeholder: "Email") %>
+  <%= form_tag projects_path, authenticate_with: :none, method: :post, remote: true, id: "loginForm" do %>
+    <%= email_field_tag(:email, "", type: "text", id: "zipcode", placeholder: "Email") %>
     <%= select_tag :user_type,
                    options_for_select([["I am a...", ""], ["Homeowner", "homeowner"], ["Contractor", "contractor"]],
                    id: "user_type", class: "splash_form customer_type") %>
 
-    <%= submit_tag "Sign Up", id: "email_signup", class: "loginbutton green" %>
+    <%= submit_tag "Sign Up", id: "project_submit", class: "loginbutton green" %>
     <%= hidden_field_tag "submitted_from_mobile", "true" %>
 
     <p id="submit_success">Thanks! We'll be in touch.</p>

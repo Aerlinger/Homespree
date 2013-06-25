@@ -21,8 +21,8 @@ Spork.prefork do
     end
   end
 
-  require 'simplecov'
-  SimpleCov.start 'rails'
+  #require 'simplecov'
+  #SimpleCov.start 'rails'
 
   Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
