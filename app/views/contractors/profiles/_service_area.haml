@@ -1,20 +1,6 @@
 =image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@contractor.try(:latitude)}%2C#{@contractor.try(:longitude)}", id: "map"
 
-- if @contractor.visitor?
-  .address.line1{style: "font-weight: bold;"}
-    = @contractor.line1
-    = render "contractors/profiles/edit_link"
-
-  .address.line2
-    = @contractor.line2
-
-  %span.address
-    = @contractor.city
-
-  %span.address
-    = @contractor.state
-
-- else
+- if own_profile?
   .on-edit
     #update_message.alert.alert-success
       Address updated!
@@ -36,3 +22,17 @@
         = f.input :service_radius, collection: service_radius, label: "Availability radius", selected: @contractor.address.service_radius
 
       = f.submit "Update Location", class: "btn custom-btn btn-small btn-info", style: "width: 100%", id: "#area_update"
+
+- else
+  .address.line1{style: "font-weight: bold;"}
+    = @contractor.line1
+    = render "contractors/profiles/edit_link"
+
+  .address.line2
+    = @contractor.line2
+
+  %span.address
+    = @contractor.city
+
+  %span.address
+    = @contractor.state

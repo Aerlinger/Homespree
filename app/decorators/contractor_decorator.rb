@@ -44,46 +44,44 @@ class ContractorDecorator < Draper::Decorator
 
     h.image_tag @object.portrait_url.to_s, id: "contractor_portrait", class: portrait_missing
 
-    unless visitor?
+    if own_profile?
       h.haml_concat link_to "Upload portrait", "#", class: "btn btn-success btn-small", id: "upload_portrait"
     end
   end
 
   def portrait_url
-      @object.portrait_url
+    @object.portrait_url
   end
 
   def logo(attrs = {})
     if @object.logo_url?
       h.haml_concat image_tag @object.logo_url, attrs
 
-      unless visitor?
+      if own_profile
         h.haml_concat link_to("Change logo", "#", class: "btn btn-info btn-mini pull-left", id: "upload_logo")
-        h.haml_concat link_to("Delete logo", contractor_path(id: @object.id, contractor: {remove_logo_url: true}),
+        h.haml_concat link_to("Delete logo", contractor_path(id: @object.id, contractor: { remove_logo_url: true }),
                               confirm: "Are you sure you want to delete your logo from the description?",
-                              method: :put, class: "btn btn-danger btn-mini delete-button pull-right")
+                              method:  :put, class: "btn btn-danger btn-mini delete-button pull-right")
       end
-    else
-      unless visitor?
-        h.haml_concat link_to "Upload company logo", "#", class: "btn btn-info", id: "upload_logo"
-      end
+    elsif own_profile?
+      h.haml_concat link_to "Upload company logo", "#", class: "btn btn-info", id: "upload_logo"
     end
   end
 
   def card_item(attr_name, attrs = {})
     # Don't render blank attributes when a customer is visiting the page
-    if visitor? && @object.send(attr_name).blank?
-      return
-    end
+    if own_profile? && @object.send(attr_name).present?
 
-    field_missing = contractor_missing_attr?(attr_name) ? "" : "_edited"
+      field_missing = contractor_missing_attr?(attr_name) ? "" : "_edited"
 
-    h.haml_tag(:li, class: "card-attribute #{field_missing}", id: "card_#{attr_name.to_s + field_missing}") do
-      h.haml_tag(:strong, attrs[:title] || attr_name.to_s.titleize + ":")
-      h.haml_concat(h.best_in_place(@object, attr_name, activator: "##{attr_name}", display_with: attrs[:display_with], :nil => attrs[:nil] || "No info provided"))
-      if block_given?
-        yield
+      h.haml_tag(:li, class: "card-attribute #{field_missing}", id: "card_#{attr_name.to_s + field_missing}") do
+        h.haml_tag(:strong, attrs[:title] || attr_name.to_s.titleize + ":")
+        h.haml_concat(h.best_in_place(@object, attr_name, activator: "##{attr_name}", display_with: attrs[:display_with], :nil => attrs[:nil] || "No info provided"))
+        if block_given?
+          yield
+        end
       end
+
     end
   end
 
@@ -104,7 +102,7 @@ class ContractorDecorator < Draper::Decorator
   #   2. Contractor's own page and attribute isnt set: "Add Info"
   #   3. Visitor: Do nothing and return nil
   def edit_link(attr_name)
-    unless visitor?
+    if own_profile?
       link_text = if contractor_missing_attr?(attr_name)
                     "Add Info"
                   else
@@ -133,19 +131,13 @@ class ContractorDecorator < Draper::Decorator
   # Defines a highlighted section for the intro sequence. By default, this will be only displayed once.
   def intro_section(id, options, &block)
     # Nullify an edited tag for Intro sequence by changing its ID
-    id = "#{id}_edited" if @object.edited? || @object.sign_in_count > 1 || visitor?
+    id = "#{id}_edited" if @object.edited? || @object.sign_in_count > 1 || !own_profile?
 
     h.content_tag(:div, options.merge(id: id), &block)
   end
 
-  def visitor?
-    if contractor_signed_in? && (params[:id] == current_contractor.slug || params[:id].to_i == current_contractor.id)
-      return false
-    end
-    return true
-  end
-
   private
+
 
   # Check if this attribute is set and saved on the contractor's profile.
   def contractor_missing_attr?(attr_name)

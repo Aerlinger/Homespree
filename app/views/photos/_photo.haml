@@ -8,7 +8,7 @@
   -#  Edit image
 
   -# For photo delete:
-  - unless @contractor.visitor?
+  - if own_profile?
     = link_to contractor_photo_path(@contractor, p), class: "photo-delete", remote: true, method: :delete,
                                                               confirm: "Are you sure you wish to delete this photo?" do
       %i.icon-remove

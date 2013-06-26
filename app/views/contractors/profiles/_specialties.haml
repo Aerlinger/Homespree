@@ -1,4 +1,4 @@
-- unless @contractor.visitor?
+- if own_profile?
   %p
     %strong Protip:
     %em Drag services below based on their relevance.
@@ -9,7 +9,7 @@
   =render @contractor.specialties
 
 -# List of "available" pecialties which have not yet been selected:  --------------------------------------------------
-- unless @contractor.visitor?
+- if own_profile?
   %h3{style: "font-size: 16px;"} Add more services to your profile
   %hr{style: "margin-top: 5px; margin-bottom: 5px"}
 
