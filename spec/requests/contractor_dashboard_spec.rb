@@ -59,7 +59,7 @@ describe "Contractor Dashboard" do
         end
 
         it "redirects to home page" do
-          page.current_page.should eq "/"
+          page.current_path.should eq "/"
         end
 
         it "deletes that contractor" do

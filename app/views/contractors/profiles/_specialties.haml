@@ -4,7 +4,8 @@
     %em Drag services below based on their relevance.
 
 -# List of specialties which have been claimed by this contractor ----------------------------------------------------
-= content_tag :ol, id: "contractor_specialties", class: "specialties", data: { "update-url" => "/contractors/#{@contractor.id}/specialties/sort" } do
+- sortable_tag = "contractor_specialties#{"_disabled" unless own_profile?}"
+= content_tag :ol, id: sortable_tag, class: "specialties", data: { "update-url" => "/contractors/#{@contractor.id}/specialties/sort" } do
   =render @contractor.specialties
 
 -# List of "available" pecialties which have not yet been selected:  --------------------------------------------------

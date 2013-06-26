@@ -4,7 +4,7 @@ describe "Project request" do
 
   let(:project) { FactoryGirl.create :project }
 
-  before { visit project_submission_path(id: "request") }
+  before { visit project_wizard_path(id: "request", project_id: project.id) }
 
   it "routes to request page" do
     page.should have_text("Request")

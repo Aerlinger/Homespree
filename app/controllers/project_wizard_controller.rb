@@ -17,16 +17,12 @@ class ProjectWizardController < ApplicationController
 
   private
 
-  #def redirect_to_finish_wizard
-  #  redirect_to root_url, notice: "Project"
-  #end
-
   def finish_wizard_path
     redirect_to homeowner_projects_path(current_homeowner), notice: "project submitted!"
   end
 
   def find_project
-    @project = Project.find(params[:project_id])
+    @project ||= Project.find(params[:project_id])
   end
 
 end
