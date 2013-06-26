@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 
-describe Contractors::ConversationsController do
+describe Users::ConversationsController do
 
   xit "posts to reply" do
     post("/users/conversations/1/reply").should route_to("users/conversations#reply", id: "1")

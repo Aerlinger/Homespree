@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130623204917) do
+ActiveRecord::Schema.define(:version => 20130626014222) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -106,11 +106,11 @@ ActiveRecord::Schema.define(:version => 20130623204917) do
     t.string   "website"
     t.string   "facebook"
     t.string   "twitter"
-    t.datetime "created_at",                                                                                                 :null => false
-    t.datetime "updated_at",                                                                                                 :null => false
-    t.string   "email",                                                                                                      :null => false
+    t.datetime "created_at",                                                                                             :null => false
+    t.datetime "updated_at",                                                                                             :null => false
+    t.string   "email",                                                                                                  :null => false
     t.string   "last_name"
-    t.string   "encrypted_password",                  :default => "",                                                        :null => false
+    t.string   "encrypted_password",                  :default => "",                                                    :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -135,7 +135,7 @@ ActiveRecord::Schema.define(:version => 20130623204917) do
     t.boolean  "edited",                              :default => false
     t.integer  "hourly_rate"
     t.string   "slug"
-    t.string   "portrait_url",                        :default => "/assets/images/contractor_profiles/portrait_default.jpg"
+    t.string   "portrait_url",                        :default => ""
     t.string   "logo_url",                            :default => "/assets/images/contractor_profiles/logo_default.jpg"
     t.text     "notification_settings"
   end
