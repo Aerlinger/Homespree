@@ -74,6 +74,47 @@ setupIntro = (intro_fields) ->
       "data-required": value["required"]
     })
 
+
+sortableFields = ->
+  # Make contractor specialties sortable
+  $('#contractor_specialties').sortable
+	helper: "clone"
+	appendTo: '#contractor_specialties'
+	revert: true
+	zIndex: Number.MAX_VALUE
+	axis: 'y'
+	update: ->
+		# Update the info in the contractor's card
+		$.post($(this).data('update-url'), $(this).sortable('serialize'))
+		$("#primary_service_text").text($(this).find('.specialty-name').first().text())
+
+launchIntroJs = ->
+	# Load the definition of our introduction fields
+	setupIntro(fields)
+
+	$("#intro_js_start").attr({
+		"data-step": 1
+		"data-intro": "Welcome to your Homespree profile! Taking a few seconds to fill out your profile will help customers find your business."
+		"data-position": "right"
+	})
+
+	# Timeout is used to account for the delay when switching fields:
+	introJs().onchange((targetElement) ->
+		# If the contractor has gone far enough to pass 'skippable' item, they do not need to see this message again.
+		if $(targetElement).attr("data-step") > 1
+			$('.introjs-overlay').click()
+
+			# Timeout is used to account for the delay when switching fields
+			setTimeout () ->
+				$(targetElement).find('a.edit-link').click()
+			, 500
+	).start()
+
+	$('.best_in_place').best_in_place()
+	setTimeout () ->
+		$('.introjs-overlay').click()
+	, 500
+
 # The default HTML file upload field is rather nasty and non-customizable so we make it invisible and delegate
 # an onClick event to another, prettier, button.
 invisibleUploadFields = ->
@@ -105,44 +146,13 @@ $(document).ready ->
     # Default upload fields are hidden from view
     invisibleUploadFields()
 
-    # Load the definition of out introduction fields
-    setupIntro(fields)
+		<%# Block intro.js on mobile: %>
+		<%- unless is_mobile_request? %>
+			launchIntroJs()
+		<%- end %>
 
-    $("#intro_js_start").attr({
-      "data-step": 1
-      "data-intro": "Welcome to your Homespree profile! Taking a few seconds to fill out your profile will help customers find your business."
-      "data-position": "right"
-    })
+		sortableFields()
 
-    # Timeout is used to account for the delay when switching fields:
-    introJs().onchange((targetElement) ->
-      # If the contractor has gone far enough to pass 'skippable' item, they do not need to see this message again.
-      if $(targetElement).attr("data-step") > 1
-        $('.introjs-overlay').click()
-
-        # Timeout is used to account for the delay when switching fields
-        setTimeout () ->
-          $(targetElement).find('a.edit-link').click()
-        , 500
-    ).start()
-
-    $('.best_in_place').best_in_place()
-    setTimeout () ->
-      $('.introjs-overlay').click()
-    , 500
-
-    # Make contractor specialties sortable
-    $('#contractor_specialties').sortable
-      helper: "clone"
-      appendTo: 'body'
-      revert: true
-      zIndex: 9999
-      axis: 'y'
-      update: ->
-        # Update the info in the contractor's card
-        $.post($(this).data('update-url'), $(this).sortable('serialize'))
-        $("#primary_service_text").text($(this).find('.specialty-name').first().text())
-
-    # TODO: Tooltips aren't working for some reason.
-    $('#licensed').tooltip()
-    $('.item.photo').first().addClass("active");
+		# TODO: Tooltips aren't working for some reason.
+		$('#licensed').tooltip()
+		$('.item.photo').first().addClass("active");
