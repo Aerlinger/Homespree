@@ -27,16 +27,14 @@
 #  guest                  :boolean
 #
 
-class Homeowner < ActiveRecord::Base
+class Homeowner < User
 
   # Authentication:  --------------------------------------------------------------------------------------------------
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
-
-  acts_as_messageable
+  #devise :database_authenticatable, :registerable,
+  #       :recoverable, :rememberable, :trackable, :validatable
 
   # Validations -------------------------------------------------------------------------------------------------------
 
@@ -81,12 +79,12 @@ class Homeowner < ActiveRecord::Base
 
   def self.create_guest(name = "Guest Homeowner")
     guest_homeowner = Homeowner.new do |guest|
-      guest.name  = name
+      guest.first_name  = name
       guest.guest = true
       guest.email = "guest_homeowner_#{Time.now.to_i}#{rand(9999)}@example"
     end
     guest_homeowner.save(validate: false)
-    return guest_homeowner.id
+    return guest_homeowner
   end
 
   def upgrade_to_homeowner

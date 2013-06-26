@@ -55,12 +55,12 @@ describe Conversation do
       end
 
       it "creates association for homeowner" do
-        @conversation.recipients.should include homeowner
+        @conversation.recipients.should include User.find(homeowner.id)
       end
 
       it "creates association for contractor" do
-        @conversation.participants.should include homeowner
-        @conversation.participants.should include contractor
+        @conversation.participants.should include User.find(homeowner.id)
+        @conversation.participants.should include User.find(contractor.id)
       end
 
       it "has reference from contractor" do

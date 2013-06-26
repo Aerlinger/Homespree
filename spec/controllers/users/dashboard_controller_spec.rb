@@ -21,7 +21,7 @@ describe Users::DashboardController do
     end
 
     it "renders template" do
-      response.should render_template "/users/dashboard/general_settings"
+      response.should render_template "users/dashboard/general_settings, layouts/dashboard"
     end
   end
 

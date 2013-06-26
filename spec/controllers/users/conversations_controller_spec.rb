@@ -9,7 +9,6 @@ describe Users::ConversationsController do
   it { should respond_to :reply }
   it { should respond_to :trash }
   it { should respond_to :untrash }
-  it { should respond_to :mailbox }
 
   let(:params) do
     { subject: "New Job Request", recipients: "jane stevens, bill smith, steve smallberg", body: "Hey guys, what's up?\n Any updates on the latest project?" }

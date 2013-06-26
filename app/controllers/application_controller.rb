@@ -66,7 +66,6 @@ class ApplicationController < ActionController::Base
   end
 
   def create_guest_homeowner
-    session[:guest_homeowner_id] = Homeowner.create_guest
     return Homeowner.create_guest
   end
 

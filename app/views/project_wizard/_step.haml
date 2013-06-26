@@ -3,5 +3,5 @@
 
 %h6 Form builder will go here
 
-= link_to 'next', next_wizard_path
-= link_to 'previous', previous_wizard_path
+= link_to 'next', next_wizard_path(project_id: project.id)
+= link_to 'previous', previous_wizard_path(project_id: project.id)

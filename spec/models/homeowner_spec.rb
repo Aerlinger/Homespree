@@ -63,7 +63,7 @@ describe Homeowner do
   specify { Homeowner.should respond_to :new_guest }
 
   it "can be created as a guest" do
-    guest_homeowner = Homeowner.new_guest
+    guest_homeowner = Homeowner.create_guest
     guest_homeowner.guest.should be_true
   end
 
@@ -79,6 +79,7 @@ describe Homeowner do
 
   it "not valid with too short of a password" do
     homeowner.password = 'secre'
+    homeowner.save
     homeowner.errors.keys.should include(:password)
   end
 
@@ -89,7 +90,7 @@ describe Homeowner do
 
     it { should be_guest }
 
-    its(:name) { should eq "Guest Homeowner" }
+    its(:first_name) { should eq "Guest Homeowner" }
 
     describe "Creating a project and upgrading account" do
       let(:project) { FactoryGirl.create :project }

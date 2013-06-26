@@ -30,8 +30,8 @@ describe ProjectsController do
       end
 
       it "assigns project" do
-        project = create :project
-        post :create, id: project
+        project = build :project
+        post :create, FactoryGirl.attributes_for(:project)
         expect(assigns(:project)).to eq project
       end
 
@@ -45,13 +45,6 @@ describe ProjectsController do
           subject.current_user.class.should be Homeowner
         end
 
-        it "assigns new homeowner to be a guest" do
-          Homeowner.find(session[:guest_homeowner_id]).should be_guest
-        end
-
-        it "creates a session for guest homeowner" do
-          session[:guest_homeowner_id].should eq 1
-        end
       end
 
     end

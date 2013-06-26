@@ -59,11 +59,11 @@ describe Alert do
     end
 
     specify "alert has correct type" do
-      alert.alertable_type.should eq "Contractor"
+      alert.alertable_type.should eq "User"
     end
 
     specify "alert maintains reference to contractor" do
-      alert.alertable.should eq contractor
+      alert.alertable.should eq User.find(contractor.id)
     end
 
   end
@@ -84,11 +84,11 @@ describe Alert do
     end
 
     specify "alert has correct type" do
-      alert.alertable_type.should eq "Homeowner"
+      alert.alertable_type.should eq "User"
     end
 
     specify "alert maintains reference to homeowner" do
-      alert.alertable.should eq homeowner
+      alert.alertable.should eq User.find(homeowner.id)
     end
   end
 

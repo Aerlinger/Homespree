@@ -4,7 +4,7 @@ describe "Step 3: Confirm Appointment" do
 
   let(:project) { FactoryGirl.create :project }
 
-  before { visit project_submission_path("appointment") }
+  before { visit project_wizard_path("appointment") }
 
   subject { page }
 

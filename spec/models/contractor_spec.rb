@@ -142,11 +142,11 @@ describe Contractor do
   describe "default images" do
 
     it do
-      contractor.logo_url.to_s.should eq "/uploads/contractor/logo_url/#{contractor.id}/assets/images/contractor_profiles/logo_default.jpg"
+      contractor.logo_url.to_s.should eq ""
     end
 
     it do
-      contractor.portrait_url.to_s.should eq "/uploads/contractor/portrait_url/#{contractor.id}/assets/images/contractor_profiles/portrait_default.jpg"
+      contractor.portrait_url.to_s.should eq "/assets/contractor_profiles/portrait_default.jpg"
     end
 
     describe "has a single portrait url by default" do

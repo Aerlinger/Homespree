@@ -43,17 +43,16 @@
 #  notification_settings  :text
 #
 
-class Contractor < ActiveRecord::Base
+class Contractor < User
 
   # Gem Class Methods:  ----------------------------------------------------------------------------------------------
   include ActionView::Helpers::NumberHelper
 
   # Include default devise modules. Others available are:  :token_authenticatable, :confirmable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable, :lockable, :recoverable, :rememberable, :trackable, :validatable
+  #devise :database_authenticatable, :registerable, :lockable, :recoverable, :rememberable, :trackable, :validatable
 
   extend FriendlyId
   friendly_id :company_title, use: :slugged
-  acts_as_messageable
 
   mount_uploader :logo_url, LogoUploader
   mount_uploader :portrait_url, PortraitUploader

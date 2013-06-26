@@ -111,8 +111,6 @@ describe 'Contractor Profile' do
       visit "/contractors/#{contractor2.id}"
     end
 
-    specify { contractor.should be_visitor }
-
     it "shows other contractor's name" do
       page.should have_content contractor2.company_title
     end

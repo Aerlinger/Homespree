@@ -1,5 +1,7 @@
 Homespree::Application.routes.draw do
 
+  devise_for :users
+
   # Root route must be before ActiveAdmin.routes(self)
   root :to => 'static_pages#home'
 
@@ -18,13 +20,11 @@ Homespree::Application.routes.draw do
   get "my_income" => "users/dashboard#my_income"
   get "material_calculator" => "users/dashboard#material_calculator"
 
-  devise_scope :users do
-    get "sign_up", to: "users/registrations#new"
-    post "sign_up", to: "users/registrations#create"
-
-    resources :sessions, module: :users
-    resources :passwords, module: :users
-  end
+  devise_for :users, :controllers => {
+    registrations: "users/registrations",
+    sessions: "users/sessions",
+    passwords: "users/passwords"
+  }
 
   # Homeowners: -----------------------------------------------------------------------------------------------------
   devise_for :homeowners, :controllers => {
