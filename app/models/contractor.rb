@@ -45,11 +45,10 @@
 
 class Contractor < User
 
-  # Gem Class Methods:  ----------------------------------------------------------------------------------------------
+  # Concerns/Includes:  ----------------------------------------------------------------------------------------------
   include ActionView::Helpers::NumberHelper
 
-  # Include default devise modules. Others available are:  :token_authenticatable, :confirmable, :timeoutable and :omniauthable
-  #devise :database_authenticatable, :registerable, :lockable, :recoverable, :rememberable, :trackable, :validatable
+  # Gem Class Methods:  ----------------------------------------------------------------------------------------------
 
   extend FriendlyId
   friendly_id :company_title, use: :slugged
@@ -100,7 +99,7 @@ class Contractor < User
   after_create :send_welcome_message
 
   # Scopes:  ----------------------------------------------------------------------------------------------------------
-  #default_scope order("created_at desc") 
+  #default_scope order("created_at desc")
   scope :recent_signups, lambda { limit(100) }
 
   # Delegations:  -----------------------------------------------------------------------------------------------------

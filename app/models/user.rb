@@ -11,5 +11,5 @@ class User < ActiveRecord::Base
 
   acts_as_messageable
 
-
+  default_scope order("created_at desc")
 end

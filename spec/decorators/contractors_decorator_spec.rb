@@ -24,7 +24,7 @@ describe ContractorDecorator do
     edit_html.should eq "<div id=\"first_name_edited\">inner_html</div>"
   end
 
-  it "renders intro section" do
+  xit "renders intro section" do
     intro_wrapper = contractor.intro_section('#intro', class: "span3") {"inner html"}
     intro_wrapper.should eq "<div class=\"span3\" id=\"#intro\">inner html</div>"
   end

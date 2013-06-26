@@ -32,13 +32,13 @@ describe "Home page" do
       sign_in_contractor FactoryGirl.create(:contractor)
     end
     it "should have link for account" do
-      page.should.find_link("My account")
+      page.find_link("Account Settings").should be_visible
     end
   end
 
   describe "submitting a project from the home page" do
     before do
-      click_link "Power Washing"
+      select "Power Washing", from: '#user_type'
       fill_in "zipcode", with: "10025"
       click_button "submit_location"
     end

@@ -1,3 +1,5 @@
+puts "-- Seeding database in #{Rails.env} -- "
+
 anthony_email = Mailinglist.find_or_create_by_email("aerlinger@gmail.com")
 joe_email = Mailinglist.find_or_create_by_email("joe@myhomespree.com")
 kyle_email = Mailinglist.find_or_create_by_email("kyle@myhomespree.com")
@@ -26,17 +28,17 @@ ProjectSubcategory.destroy_all
 %w[painting].each do |category|
   jc = ProjectCategory.create(name: category)
 end
+#
+#unless (User.find_by_email("admin@myhomespree.com"))
+#  contractor_admin = User.create do |homespree_admin|
+#    homespree_admin.email = "admin@myhomespree.com"
+#    homespree_admin.first_name = "Homespree Admin"
+#    homespree_admin.password = "Meetmike9"
+#    homespree_admin.company_title = "Homespree Admin"
+#  end
+#end
 
-unless (Contractor.find_by_email("admin@myhomespree.com"))
-  contractor_admin = Contractor.create do |homespree_admin|
-    homespree_admin.email = "admin@myhomespree.com"
-    homespree_admin.first_name = "Homespree Admin"
-    homespree_admin.password = "Meetmike9"
-    homespree_admin.company_title = "Homespree Admin"
-  end
-end
-
-puts "Admin contractor: #{Contractor.find_by_email("admin@myhomespree.com").email}"
+#puts "Admin contractor: #{Contractor.find_by_email("admin@myhomespree.com").email}"
 
 
 joe_the_plumber = Contractor.new do |c|
