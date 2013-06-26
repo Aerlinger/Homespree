@@ -100,7 +100,7 @@ class Contractor < User
   after_create :send_welcome_message
 
   # Scopes:  ----------------------------------------------------------------------------------------------------------
-  default_scope order("created_at desc")
+  #default_scope order("created_at desc") 
   scope :recent_signups, lambda { limit(100) }
 
   # Delegations:  -----------------------------------------------------------------------------------------------------
