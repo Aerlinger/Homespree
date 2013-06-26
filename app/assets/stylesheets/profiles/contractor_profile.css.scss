@@ -585,6 +585,9 @@
       }
 
       #zipcode {
+        label {
+          margin-right: 50px;
+        }
         input {
           width: 70px;
         }
@@ -598,7 +601,7 @@
       input:not(.btn), select {
         float: right;
         text-align: right;
-        width: 70%;
+        width: 75%;
         margin-bottom: 10px !important;
         display: block !important;
       }
@@ -618,6 +621,11 @@
           margin: 0;
         }
       }
+
+      form {
+        margin-bottom: 40px !important;
+      }
+
     }
 
   }

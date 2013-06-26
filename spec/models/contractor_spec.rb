@@ -83,10 +83,17 @@ describe Contractor do
 
   # Mailboxer Methods:
   it { should respond_to :mailbox }
+  it { should respond_to :mark_as_read }
+  it { should respond_to :mark_as_unread }
+  it { should respond_to :notify }
   it { should respond_to :send_message }
   it { should respond_to :reply_to_all }
+  it { should respond_to :reply }
   it { should respond_to :reply_to_conversation }
   it { should respond_to :reply_to_sender }
+  it { should respond_to :search_messages }
+  it { should respond_to :trash }
+  it { should respond_to :untrash }
 
   # Devise Columns:
   it { should respond_to :sign_in_count }

@@ -139,3 +139,4 @@ describe "Contractor Dashboard" do
     end
 
   end
+end

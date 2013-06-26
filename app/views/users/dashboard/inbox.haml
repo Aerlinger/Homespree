@@ -1,0 +1,10 @@
+- content_for :dashboard do
+
+  %h1 My Inbox
+  %ul= render mailbox.inbox
+  %h1 Sent messages
+  %ul= render mailbox.sentbox
+  %h1 Trash
+  %ul= render mailbox.trash
+
+  = link_to 'Start Conversation', :new_conversation

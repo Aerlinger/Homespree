@@ -67,6 +67,11 @@ class ApplicationController < ActionController::Base
 
   def create_guest_homeowner
     session[:guest_homeowner_id] = Homeowner.create_guest
+    return Homeowner.create_guest
+  end
+
+  def user_class
+    current_user.klass if current_user.present?
   end
 
 end

@@ -54,12 +54,13 @@ describe Conversation do
         @conversation.should be_valid
       end
 
-      it "creates association for contractor" do
+      it "creates association for homeowner" do
         @conversation.recipients.should include homeowner
       end
 
       it "creates association for contractor" do
         @conversation.participants.should include homeowner
+        @conversation.participants.should include contractor
       end
 
       it "has reference from contractor" do

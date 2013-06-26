@@ -11,6 +11,13 @@ Homespree::Application.routes.draw do
   # Shared routes: (Contractors and Homeowners) ---------------------------------------------------------------------
   get "sign_up" => "users/registrations#new"
 
+  get "notifications" => "users/dashboard#notifications"
+  get "general_settings" => "users/dashboard#general_settings"
+  get "inbox" => "users/dashboard#inbox"
+  get "my_projects" => "users/dashboard#my_projects"
+  get "my_income" => "users/dashboard#my_income"
+  get "material_calculator" => "users/dashboard#material_calculator"
+
   # Homeowners: -----------------------------------------------------------------------------------------------------
   devise_for :homeowners, :controllers => {
     registrations: "homeowners/registrations",
@@ -36,13 +43,6 @@ Homespree::Application.routes.draw do
     sessions: "contractors/sessions",
     passwords: "contractors/passwords"
   }
-
-  get "notifications" => "contractors/dashboard#notifications"
-  get "general_settings" => "contractors/dashboard#general_settings"
-  get "inbox" => "contractors/dashboard#inbox"
-  get "my_projects" => "contractors/dashboard#my_projects"
-  get "my_income" => "contractors/dashboard#my_income"
-  get "material_calculator" => "contractors/dashboard#material_calculator"
 
   resources :contractors do
     resources :specialties, only: [:create, :update, :destroy] do

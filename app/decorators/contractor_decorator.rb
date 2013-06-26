@@ -133,7 +133,7 @@ class ContractorDecorator < Draper::Decorator
   # Defines a highlighted section for the intro sequence. By default, this will be only displayed once.
   def intro_section(id, options, &block)
     # Nullify an edited tag for Intro sequence by changing its ID
-    id = "#{id}_edited" if @object.edited? || visitor?
+    id = "#{id}_edited" if @object.edited? || @object.sign_in_count > 1 || visitor?
 
     h.content_tag(:div, options.merge(id: id), &block)
   end

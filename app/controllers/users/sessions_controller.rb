@@ -1,5 +1,7 @@
 class Users::SessionsController < Devise::SessionsController
 
+  before_filter :route_to_contractor_or_homeowner
+
   def new
     super
     @homeowner = Homeowner.new
@@ -22,6 +24,10 @@ class Users::SessionsController < Devise::SessionsController
 
   def after_sign_out_path_for(resource)
     root_path
+  end
+
+  def route_to_contractor_or_homeowner
+    route_to
   end
 
 end

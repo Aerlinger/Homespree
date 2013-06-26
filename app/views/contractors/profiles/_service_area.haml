@@ -21,7 +21,7 @@
 
     = simple_form_for @contractor.address, :url => { :controller => "addresses", :action => 'update', contractor_id: @contractor.id }, method: :put, class: "intro", remote: true do |f|
       .address.line1
-        =f.input :line1, placeholder: "Address Line 1", label: "Street"
+        =f.input :line1, placeholder: "Address Line 1", label: "Street", html: "<br />"
 
       %span.address#city
         =f.input :city, placeholder: @contractor.try(:city), label: "City"
@@ -35,4 +35,4 @@
       .address#service_radius
         = f.input :service_radius, collection: service_radius, label: "Availability radius", selected: @contractor.address.service_radius
 
-      = f.submit "Update Location", class: "btn custom-btn btn-small btn-info", style: "width: 100%"
+      = f.submit "Update Location", class: "btn custom-btn btn-small btn-info", style: "width: 100%", id: "#area_update"

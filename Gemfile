@@ -14,8 +14,6 @@ gem 'libv8', '= 3.11.8.13'
 # Mobile site optimization:
 gem 'mobylette'
 
-gem 'mercury-rails'
-
 # Tools used in User Profiles:
 gem 'draper'
 gem 'best_in_place'
@@ -43,7 +41,6 @@ group :test, :development do
   gem 'sqlite3'
   gem 'shoulda-matchers'
   gem 'rspec-rails', '>= 2.12.0'
-  gem 'turn', :require => false
   gem 'meta_request'
   gem 'parallel_tests'
   gem 'zeus-parallel_tests'
