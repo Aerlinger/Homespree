@@ -20,11 +20,11 @@ Homespree::Application.routes.draw do
   get "my_income" => "users/dashboard#my_income"
   get "material_calculator" => "users/dashboard#material_calculator"
 
-  devise_for :users, :controllers => {
-    registrations: "users/registrations",
-    sessions: "users/sessions",
-    passwords: "users/passwords"
-  }
+  #devise_for :users, :controllers => {
+  #  registrations: "users/registrations",
+  #  sessions: "users/sessions",
+  #  passwords: "users/passwords"
+  #}
 
   # Homeowners: -----------------------------------------------------------------------------------------------------
   devise_for :homeowners, :controllers => {
