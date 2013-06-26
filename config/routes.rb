@@ -8,7 +8,7 @@ Homespree::Application.routes.draw do
 
   resources :mailinglists, only: [:create, :update, :destroy]
 
-  # Shared routes: (Contractors and Homeowners) ---------------------------------------------------------------------
+  # User routes: (Contractors and Homeowners) ---------------------------------------------------------------------
   get "sign_up" => "users/registrations#new"
 
   get "notifications" => "users/dashboard#notifications"
@@ -17,6 +17,14 @@ Homespree::Application.routes.draw do
   get "my_projects" => "users/dashboard#my_projects"
   get "my_income" => "users/dashboard#my_income"
   get "material_calculator" => "users/dashboard#material_calculator"
+
+  devise_scope :users do
+    get "sign_up", to: "users/registrations#new"
+    post "sign_up", to: "users/registrations#create"
+
+    resources :sessions, module: :users
+    resources :passwords, module: :users
+  end
 
   # Homeowners: -----------------------------------------------------------------------------------------------------
   devise_for :homeowners, :controllers => {
@@ -56,7 +64,6 @@ Homespree::Application.routes.draw do
         post :untrash
       end
     end
-
 
     resource :address, only: [:update]
     resources :photos, only: [:create, :update, :destroy]
