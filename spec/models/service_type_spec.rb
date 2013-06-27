@@ -13,7 +13,7 @@
 
 require 'spec_helper'
 
-describe ProjectCategory do
+describe ServiceType do
 
   let(:project_category) { FactoryGirl.create(:project_category) }
   subject { project_category }

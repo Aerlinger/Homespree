@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130626033106) do
+ActiveRecord::Schema.define(:version => 20130627014219) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -99,85 +99,11 @@ ActiveRecord::Schema.define(:version => 20130626033106) do
     t.string   "image_url"
   end
 
-  create_table "contractors", :force => true do |t|
-    t.string   "first_name"
-    t.text     "description"
-    t.text     "specialties"
-    t.string   "website"
-    t.string   "facebook"
-    t.string   "twitter"
-    t.datetime "created_at",                                                                                             :null => false
-    t.datetime "updated_at",                                                                                             :null => false
-    t.string   "email",                                                                                                  :null => false
-    t.string   "last_name"
-    t.string   "encrypted_password",                  :default => "",                                                    :null => false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                       :default => 0
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.string   "company_title"
-    t.string   "mobile_number"
-    t.string   "office_number"
-    t.string   "license"
-    t.integer  "insurance_limit",        :limit => 5
-    t.integer  "bonding_limit",          :limit => 5
-    t.string   "photo_filename"
-    t.text     "slogan"
-    t.integer  "years_experience"
-    t.integer  "failed_attempts",                     :default => 0
-    t.string   "unlock_token"
-    t.datetime "locked_at"
-    t.string   "authentication_token"
-    t.boolean  "edited",                              :default => false
-    t.integer  "hourly_rate"
-    t.string   "slug"
-    t.string   "portrait_url",                        :default => ""
-    t.string   "logo_url",                            :default => "/assets/images/contractor_profiles/logo_default.jpg"
-    t.text     "notification_settings"
-  end
-
-  add_index "contractors", ["authentication_token"], :name => "index_contractors_on_authentication_token", :unique => true
-  add_index "contractors", ["email"], :name => "index_contractors_on_email", :unique => true
-  add_index "contractors", ["reset_password_token"], :name => "index_contractors_on_reset_password_token", :unique => true
-
   create_table "conversations", :force => true do |t|
     t.string   "subject",    :default => ""
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
   end
-
-  create_table "homeowners", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
-    t.string   "first_name"
-    t.string   "last_name"
-    t.integer  "photos_id"
-    t.integer  "appointments_id"
-    t.string   "encrypted_password",     :default => "", :null => false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          :default => 0
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.string   "authentication_token"
-    t.integer  "failed_attempts",        :default => 0
-    t.string   "unlock_token"
-    t.datetime "locked_at"
-    t.boolean  "guest"
-  end
-
-  add_index "homeowners", ["authentication_token"], :name => "index_homeowners_on_authentication_token", :unique => true
-  add_index "homeowners", ["email"], :name => "index_homeowners_on_email", :unique => true
-  add_index "homeowners", ["reset_password_token"], :name => "index_homeowners_on_reset_password_token", :unique => true
 
   create_table "mailinglists", :force => true do |t|
     t.string   "email"
@@ -232,16 +158,7 @@ ActiveRecord::Schema.define(:version => 20130626033106) do
     t.string   "photographable_type"
   end
 
-  create_table "project_categories", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
-    t.integer  "categorizable_id"
-    t.string   "categorizable_type"
-    t.text     "params"
-  end
-
-  create_table "project_subcategories", :force => true do |t|
+  create_table "project_types", :force => true do |t|
     t.string   "name"
     t.integer  "project_category_id"
     t.datetime "created_at",          :null => false
@@ -272,6 +189,15 @@ ActiveRecord::Schema.define(:version => 20130626033106) do
 
   add_index "receipts", ["notification_id"], :name => "index_receipts_on_notification_id"
 
+  create_table "service_types", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.integer  "categorizable_id"
+    t.string   "categorizable_type"
+    t.text     "params"
+  end
+
   create_table "specialties", :force => true do |t|
     t.string   "name"
     t.integer  "endorser_id"
@@ -284,8 +210,6 @@ ActiveRecord::Schema.define(:version => 20130626033106) do
   end
 
   create_table "users", :force => true do |t|
-    t.integer  "homeowner_id"
-    t.integer  "contractor_id"
     t.string   "user_type"
     t.string   "first_name"
     t.text     "description"

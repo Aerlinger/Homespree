@@ -11,7 +11,7 @@
 #  params             :text
 #
 
-class ProjectCategory < ActiveRecord::Base
+class ServiceType < ActiveRecord::Base
   attr_accessible :name
 
   # Parameters for this category:  ------------------------------------------------------------------------------------
@@ -19,7 +19,7 @@ class ProjectCategory < ActiveRecord::Base
 
   validates_presence_of :name
 
-  has_many :subcategories, class_name: "ProjectSubcategory"
+  has_many :subcategories, class_name: "ProjectType"
 
   belongs_to :categorizable, polymorphic: true
 end

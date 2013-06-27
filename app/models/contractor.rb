@@ -1,8 +1,11 @@
 # == Schema Information
 #
-# Table name: contractors
+# Table name: users
 #
 #  id                     :integer          not null, primary key
+#  homeowner_id           :integer
+#  contractor_id          :integer
+#  user_type              :string(255)
 #  first_name             :string(255)
 #  description            :text
 #  specialties            :text
@@ -38,9 +41,10 @@
 #  edited                 :boolean          default(FALSE)
 #  hourly_rate            :integer
 #  slug                   :string(255)
-#  portrait_url           :string(255)      default("/assets/images/contractor_profiles/portrait_default.jpg")
-#  logo_url               :string(255)      default("/assets/images/contractor_profiles/logo_default.jpg")
+#  portrait_url           :string(255)
+#  logo_url               :string(255)
 #  notification_settings  :text
+#  guest                  :boolean
 #
 
 class Contractor < User
@@ -82,8 +86,8 @@ class Contractor < User
   # Validations:  -----------------------------------------------------------------------------------------------------
   validates_format_of :first_name, :last_name, with: /\A\w+ ?\w*\z/, allow_blank: true, message: "should only contain letters"
   validates_length_of :first_name, :last_name, minimum: 2, maximum: 20, allow_blank: true, message: "must be a reasonable length"
-  validates_format_of :email, with: RegexDefinitions::email_regex, message: "is invalid"
-  validates_uniqueness_of :email
+  #validates_format_of :email, with: RegexDefinitions::email_regex, message: "is invalid"
+  #validates_uniqueness_of :email
   validates_format_of :mobile_number, :office_number, with: /\A\d{10}\Z/, allow_blank: true, message: "must be valid"
   validates_presence_of :company_title
   validates_numericality_of :years_experience, allow_blank: true
@@ -101,6 +105,7 @@ class Contractor < User
   # Scopes:  ----------------------------------------------------------------------------------------------------------
   #default_scope order("created_at desc")
   scope :recent_signups, lambda { limit(100) }
+  scope :locate, lambda { |zipcode, radius| nil }
 
   # Delegations:  -----------------------------------------------------------------------------------------------------
   delegate :line1, :line2, :city, :state, :zipcode, :latitude, :longitude, :single_address, to: :address, allow_nil: true

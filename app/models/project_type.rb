@@ -9,10 +9,10 @@
 #  updated_at          :datetime         not null
 #
 
-class ProjectSubcategory < ActiveRecord::Base
+class ProjectType < ActiveRecord::Base
   attr_accessible :category_id, :name
 
   validates_presence_of :name
 
-  belongs_to :project_category
+  belongs_to :service_type
 end

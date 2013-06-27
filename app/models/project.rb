@@ -19,7 +19,7 @@ class Project < ActiveRecord::Base
 
   validates_presence_of :category_name
 
-  has_one :category, as: :categorizable, class_name: "ProjectCategory"
+  has_one :category, as: :categorizable, class_name: "ServiceType"
   has_many :before_photos, class_name: 'Photo', as: :photographable
   has_many :after_photos, class_name: 'Photo', as: :photographable
 

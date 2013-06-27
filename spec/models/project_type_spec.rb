@@ -11,7 +11,7 @@
 
 require 'spec_helper'
 
-describe ProjectSubcategory do
+describe ProjectType do
 
   it {should respond_to :name}
   it {should respond_to :project_category}

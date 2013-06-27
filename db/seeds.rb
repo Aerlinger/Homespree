@@ -22,11 +22,11 @@ if Contractor.exists?(1)
 end
 
 # Job categories should only be defined within this seeds.rb file
-ProjectCategory.destroy_all
-ProjectSubcategory.destroy_all
+ServiceType.destroy_all
+ProjectType.destroy_all
 
 %w[painting].each do |category|
-  jc = ProjectCategory.create(name: category)
+  jc = ServiceType.create(name: category)
 end
 #
 #unless (User.find_by_email("admin@myhomespree.com"))

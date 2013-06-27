@@ -1,8 +1,11 @@
 # == Schema Information
 #
-# Table name: contractors
+# Table name: users
 #
 #  id                     :integer          not null, primary key
+#  homeowner_id           :integer
+#  contractor_id          :integer
+#  user_type              :string(255)
 #  first_name             :string(255)
 #  description            :text
 #  specialties            :text
@@ -38,9 +41,10 @@
 #  edited                 :boolean          default(FALSE)
 #  hourly_rate            :integer
 #  slug                   :string(255)
-#  portrait_url           :string(255)      default("/assets/images/contractor_profiles/portrait_default.jpg")
-#  logo_url               :string(255)      default("/assets/images/contractor_profiles/logo_default.jpg")
+#  portrait_url           :string(255)
+#  logo_url               :string(255)
 #  notification_settings  :text
+#  guest                  :boolean
 #
 
 require 'spec_helper'

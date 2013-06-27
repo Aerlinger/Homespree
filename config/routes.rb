@@ -1,7 +1,5 @@
 Homespree::Application.routes.draw do
 
-  devise_for :users
-
   # Root route must be before ActiveAdmin.routes(self)
   root :to => 'static_pages#home'
 
@@ -11,48 +9,41 @@ Homespree::Application.routes.draw do
   resources :mailinglists, only: [:create, :update, :destroy]
 
   # User routes: (Contractors and Homeowners) ---------------------------------------------------------------------
-  get "sign_up" => "users/registrations#new"
-
-  get "notifications" => "users/dashboard#notifications"
-  get "general_settings" => "users/dashboard#general_settings"
-  get "inbox" => "users/dashboard#inbox"
-  get "my_projects" => "users/dashboard#my_projects"
-  get "my_income" => "users/dashboard#my_income"
-  get "material_calculator" => "users/dashboard#material_calculator"
+  scope :dashboard do
+    get "notifications" => "users/dashboard#notifications"
+    get "general_settings" => "users/dashboard#general_settings"
+    get "inbox" => "users/dashboard#inbox"
+    get "my_projects" => "users/dashboard#my_projects"
+    get "my_income" => "users/dashboard#my_income"
+    get "material_calculator" => "users/dashboard#material_calculator"
+  end
 
   devise_for :users, :controllers => {
-    registrations: "users/registrations",
-    sessions: "users/sessions",
-    passwords: "users/passwords"
+    #registrations: "users/registrations",
+    sessions:      "users/sessions",
+    passwords:     "users/passwords"
   }
 
   # Homeowners: -----------------------------------------------------------------------------------------------------
-  devise_for :homeowners, :controllers => {
-    registrations: "homeowners/registrations",
-    sessions: "homeowners/sessions",
-    passwords: "homeowners/passwords"
-  }
-
   resources :project_wizard
 
-  resources :homeowners do
-    resource :address, only: [:update]
-    resources :photos, only: [:create, :update, :destroy]
-    resources :appointments
+  devise_for :homeowners, :controllers => { registrations: "homeowners/registrations" }
+
+  resources :homeowners, only: [:show, :update] do
 
     collection do
+      resource :address, only: [:update]
+      resources :photos, only: [:create, :update, :destroy]
+      resources :appointments
       resources :projects
     end
   end
 
   # Contractors: -----------------------------------------------------------------------------------------------------
-  devise_for :contractors, :controllers => {
-    registrations: "contractors/registrations",
-    sessions: "contractors/sessions",
-    passwords: "contractors/passwords"
-  }
+  devise_for :contractors, :controllers => { registrations: "contractors/registrations" }
 
-  resources :contractors do
+  resources :contractors, only: [:show, :update] do
+
     resources :specialties, only: [:create, :update, :destroy] do
       post :sort, on: :collection
     end
@@ -65,11 +56,13 @@ Homespree::Application.routes.draw do
       end
     end
 
-    resource :address, only: [:update]
-    resources :photos, only: [:create, :update, :destroy]
-    resources :appointments
-    resources :alerts
-    resources :projects
+    collection do
+      resource :address, only: [:update]
+      resources :photos, only: [:create, :update, :destroy]
+      resources :appointments, only: [:create, :update, :destroy, :show]
+      resources :alerts, only: [:create, :destroy]
+      resources :projects
+    end
   end
 
   # Gallery Browsing: ------------------------------------------------------------------------------------------------

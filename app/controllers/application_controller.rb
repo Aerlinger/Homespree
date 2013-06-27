@@ -25,21 +25,46 @@ class ApplicationController < ActionController::Base
   # homeowner if a homeowner is signed in
   # guest_homeowner if a homeowner guest is signed in
   # nil if none of the above
-  def current_user
-    if contractor_signed_in?
-      current_contractor
-    elsif homeowner_signed_in?
-      if session[:guest_homeowner_id]
-        # TODO: Upgrade guest_homeowner to homeowner and destroy session
-        # Example:
-        # logging_in
-        # guest_homeowner.destroy
-        # session[:guest_user_id] = nil
-      end
-      current_homeowner
-    else
-      guest_homeowner
+  #def current_user
+  #  if contractor_signed_in?
+  #    current_contractor
+  #  elsif homeowner_signed_in?
+  #    if session[:guest_homeowner_id]
+  #      # TODO: Upgrade guest_homeowner to homeowner and destroy session
+  #      # Example:
+  #      # logging_in
+  #      # guest_homeowner.destroy
+  #      # session[:guest_user_id] = nil
+  #    end
+  #    current_homeowner
+  #  else
+  #    guest_homeowner
+  #  end
+  #end
+
+  def signed_in_user
+    user = current_user
+    user.klass.find(user.id)
+  end
+
+  def current_contractor
+    if current_user? && current_user.class == Contractor
+      return current_user
     end
+  end
+
+  def current_contractor?
+    return current_contractor.present?
+  end
+
+  def current_homeowner
+    if current_user? && current_user.class == Homeowner
+      return current_user
+    end
+  end
+
+  def current_homeowner?
+    return current_homeowner.present?
   end
 
   def guest_homeowner
@@ -50,7 +75,11 @@ class ApplicationController < ActionController::Base
     #guest_homeowner
   end
 
-  helper_method :current_user
+  helper_method :current_homeowner
+  helper_method :current_homeowner?
+  helper_method :current_contractor
+  helper_method :current_contractor?
+  helper_method :signed_in_user
 
   private
 

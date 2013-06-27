@@ -1,4 +1,3 @@
-
 %footer.white.navbar-fixed-bottom
   Already have an account?
   =link_to "Sign in", new_user_session_path, class: "btn btn-black"
@@ -6,12 +5,10 @@
 #login-wraper
   = simple_form_for resource, :as => resource_name, :url => registration_path(resource), class: "form login-form" do |f|
     %legend
-      %span.blue Create a new Profile
+      %span.blue Create Homeowner Profile
 
     .body
-      = f.input :company_title, text: "Business name or title", id: "company_title"
-      = f.input :email, label: 'Your Email', input_html: { value: resource.email }, placeholder: 'user@example.com', id: "email"
+      = f.input :email, label: 'Your Email', input_html: { value: resource.email }, placeholder: 'example@example.com', id: "email"
       = f.input :password, id: "password"
 
       = f.button :submit, "Create profile", class: "btn btn-success"
-
