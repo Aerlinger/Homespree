@@ -17,24 +17,6 @@
 #  service_radius   :integer          default(20)
 #
 
-# == Schema Information
-#
-# Table name: addresses
-#
-#  id               :integer          not null, primary key
-#  line1            :string(255)
-#  line2            :string(255)
-#  city             :string(255)
-#  state            :string(255)
-#  zipcode          :string(255)
-#  addressable_id   :integer
-#  addressable_type :string(255)
-#  created_at       :datetime         not null
-#  updated_at       :datetime         not null
-#  latitude         :float
-#  longitude        :float
-#  service_radius   :integer          default(20)
-#
 class Address < ActiveRecord::Base
 
   # Class Methods:  ---------------------------------------------------------------------------------------------------

@@ -1,0 +1,18 @@
+SERVICE_TYPE: Painting
+PROJECT:
+  NAME: interior painting
+  FIELDS:
+    feet: decimal
+    check_if_needs_paint: boolean
+    surfaces:
+      - Walls
+      - Ceiling
+      - Trim
+      - Doors
+      - Windows
+    flat:
+      enabled:
+        type: boolean
+      quantity:
+        type: integer
+        if: enabled

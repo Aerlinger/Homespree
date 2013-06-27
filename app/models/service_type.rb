@@ -19,7 +19,11 @@ class ServiceType < ActiveRecord::Base
 
   validates_presence_of :name
 
-  has_many :subcategories, class_name: "ProjectType"
+  has_many :project_types
 
   belongs_to :categorizable, polymorphic: true
+
+  acts_as_list
+
+  default_scope order("position")
 end
