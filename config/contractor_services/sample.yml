@@ -1,3 +1,5 @@
+# A very simple example YAML file
+
 SERVICE_TYPE: Painting
 PROJECT:
   NAME: interior painting

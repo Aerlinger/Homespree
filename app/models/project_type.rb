@@ -15,4 +15,7 @@ class ProjectType < ActiveRecord::Base
   validates_presence_of :name
 
   belongs_to :service_type
+  has_many :projects
+
+
 end
