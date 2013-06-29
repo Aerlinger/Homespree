@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   ## Uncomment to enable Mobile routing:
-  # include Mobylette::RespondToMobileRequests
+  include Mobylette::RespondToMobileRequests
   # mobylette_config do |config|
   #   config[:skip_user_agents] = [:ipad, :kindle]
   #   config[:mobile_user_agents] = proc { %r{iphone|mobile|blackberry|nokia|palm|opera mini|windows ce}i }
@@ -48,9 +48,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_contractor
-    if current_user? && current_user.class == Contractor
-      return current_user
-    end
+    return current_user if current_user.class == Contractor
   end
 
   def current_contractor?
@@ -58,9 +56,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_homeowner
-    if current_user? && current_user.class == Homeowner
-      return current_user
-    end
+    return current_user if current_user.class == Homeowner
   end
 
   def current_homeowner?
@@ -70,7 +66,7 @@ class ApplicationController < ActionController::Base
   def guest_homeowner
     # Cache the value:
     @cached_guest_user ||= Homeowner.find(session[:guest_homeowner_id] ||= create_guest_homeowner.id)
-  rescue ActiveRecord::RecordNotFound  # If session[:guest_homeowner_id] invalid
+  rescue ActiveRecord::RecordNotFound # If session[:guest_homeowner_id] invalid
     session[:guest_homeowner_id] = nil
     #guest_homeowner
   end
@@ -95,7 +91,9 @@ class ApplicationController < ActionController::Base
   end
 
   def create_guest_homeowner
-    return Homeowner.create_guest
+    guest_homeowner = Homeowner.create_guest
+    session[:guest_homeowner_id] = guest_homeowner.id
+    return guest_homeowner
   end
 
   def user_class

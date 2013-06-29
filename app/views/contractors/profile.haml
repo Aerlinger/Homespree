@@ -133,3 +133,9 @@
     .custom_file_upload
       = f.file_field :logo_url, id: "hidden_logo_url", onchange: "uploadfile('#hidden_logo_url')"
       = f.submit "", class: 'image-upload'
+
+
+  -# Block intro.js on mobile:
+  - unless is_mobile_request?
+    :javascript
+      launchIntroJs();

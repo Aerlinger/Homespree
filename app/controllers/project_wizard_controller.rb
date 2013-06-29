@@ -1,5 +1,7 @@
 class ProjectWizardController < ApplicationController
 
+  layout "static_page"
+
   include Wicked::Wizard
   steps :request, :review_estimates, :appointment, :submit
 

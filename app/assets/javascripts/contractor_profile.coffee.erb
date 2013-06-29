@@ -145,12 +145,6 @@ $(document).ready ->
 
     # Default upload fields are hidden from view
     invisibleUploadFields()
-
-		<%# Block intro.js on mobile: %>
-		<%- unless is_mobile_request? %>
-			launchIntroJs()
-		<%- end %>
-
 		sortableFields()
 
 		# TODO: Tooltips aren't working for some reason.

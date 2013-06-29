@@ -5,7 +5,6 @@
 # -----------------------------------------------------------------------------------------------------------
 
 
-
 require 'psych'
 require 'yaml'
 
@@ -35,14 +34,14 @@ def render_leaf_attribute(value, data_type)
     array:          :options_for_select
   }
 
-  form_type = type_associations[data_type.to_sym]
+  #form_type = type_associations[data_type.to_sym]
 
   if data_type.is_a? String
     [:hs_field, value.to_sym, data_type]
   elsif data_type.is_a? Array
     [:hs_field, value.to_sym, data_type]
   elsif data_type.is_a? Hash
-    puts "\t\tf.send(:#{type_associations[data_type.to_sym]}) :#{value}"
+    puts "\t\tf.send(:#{type_associations[data_type]}) :#{value}"
   else
     raise TypeError.new("YAML file does not properly format type")
   end
@@ -61,7 +60,7 @@ end
 #
 def process_fields(fields)
   fields.each do |attribute, value|
-    render_leaf_attribute(attribute, value)
+    puts render_leaf_attribute(attribute, value)
   end
 end
 

@@ -1,0 +1,18 @@
+= f.fields_for :fields do |builder|
+  = render "text_field", builder, :wall_1, condition: "Check if needs paint"
+  = render "text_field", builder, :wall_2, condition: "Check if needs paint"
+  = render "text_field", builder, :wall_3, condition: "Check if needs paint"
+  = render "text_field", builder, :wall_4, condition: "Check if needs paint"
+
+  = render "select_box", builder, :surfaces, ["Walls", "Ceiling", "Trim", "Doors", "Windows"]
+
+  = render "text_field", builder, :wall_4, condition: "Check if needs paint"
+
+  = hs_field("Flat", :quantity, :integer, condition: "Enabled")
+  = hs_field("Panel", :quantity, :integer, condition: "Enabled")
+  = hs_field("French", :quantity, :integer, condition: "Enabled")
+  = hs_field("Louvered", :quantity, :integer, condition: "Enabled")
+  = hs_field("Bifold", :quantity, :integer, condition: "Enabled")
+  = hs_field("Single Pane", :quantity, :integer, condition: "Enabled")
+  = hs_field("Multi Pane", :quantity, :integer, condition: "Enabled")
+  = hs_field("Bay", :quantity, :integer, condition: "Enabled")

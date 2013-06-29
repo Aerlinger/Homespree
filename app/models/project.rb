@@ -15,8 +15,8 @@
 class Project < ActiveRecord::Base
 
   # Accessors:  -------------------------------------------------------------------------------------------------------
-  attr_accessor :zipcode, :category_name
-  attr_accessible :zipcode, :title, :description, :category_attributes, :appointment_attributes, :category_name, :service_type_attributes
+  attr_accessor :zipcode, :project_type_name, :service_type_name
+  attr_accessible :zipcode, :title, :description, :project_type_name, :service_type_name, :appointment_attributes, :service_type_attributes
 
   # Serialization for dynamic project submission (HStore through Postgres):  ------------------------------------------
   serialize :properties, Hash
@@ -33,25 +33,26 @@ class Project < ActiveRecord::Base
   has_many :appointments
 
   # Nested Attributes:  -----------------------------------------------------------------------------------------------
-  accepts_nested_attributes_for :category, :appointments, :service_type
+  accepts_nested_attributes_for :appointments, :service_type
 
   # Validations:  -----------------------------------------------------------------------------------------------------
-  validates_presence_of :category_name
+  validates_presence_of :zipcode
   validate :validate_properties
 
   # Callbacks:  -------------------------------------------------------------------------------------------------------
-  before_create :set_category
+  before_create :set_categories
 
   def validate_properties
-    fields.each do |field|
-      if field.required? && properties[field.name]
-      end
-    end
+    #fields.each do |field|
+    #  if field.required? && properties[field.name]
+    #  end
+    #end
   end
 
   private
 
-  def set_category
-    self.category = create_category({name: category_name})
+  def set_categories
+    self.service_type = ServiceType.create(name: service_type_name)
+    self.project_type = ProjectType.create(name: project_type_name)
   end
 end

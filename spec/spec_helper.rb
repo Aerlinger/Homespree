@@ -9,6 +9,7 @@ Spork.prefork do
   ENV["RAILS_ENV"] ||= 'test'
   require File.expand_path("../../config/environment", __FILE__)
   require 'rspec/rails'
+  require 'mobylette/helmet'
   require 'capybara/rspec'
   require 'capybara/rails'
   require 'rspec/autorun'
@@ -70,7 +71,6 @@ Spork.prefork do
     end
 
     config.mock_with :rspec
-    require 'mobylette/helmet'
 
     config.include Rails.application.routes.url_helpers
     config.include ActionView::TestCase::Behavior, example_group: {file_path: %r{spec/presenters}}

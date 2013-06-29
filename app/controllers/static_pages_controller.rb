@@ -3,6 +3,7 @@ class StaticPagesController < ApplicationController
   layout "static_page", except: [:home]
 
   def home
+    @project = Project.new
   end
 
   def faqs

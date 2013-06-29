@@ -1,1 +1,2 @@
-= render partial: 'step', locals: { title: 'Request', step_number: '1', project: @project }
+- content_for :static_page do
+  = render partial: 'step', locals: { title: 'Request', step_number: '1', project: @project }
