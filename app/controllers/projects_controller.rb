@@ -13,7 +13,9 @@ class ProjectsController < ApplicationController
   end
 
   def unavailable
+  end
 
+  def index
   end
 
   private

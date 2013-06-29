@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: project_categories
+# Table name: service_types
 #
 #  id                 :integer          not null, primary key
 #  name               :string(255)
@@ -9,14 +9,15 @@
 #  categorizable_id   :integer
 #  categorizable_type :string(255)
 #  params             :text
+#  position           :integer
 #
 
 require 'spec_helper'
 
 describe ServiceType do
 
-  let(:project_category) { FactoryGirl.create(:project_category) }
-  subject { project_category }
+  let(:project_type) { FactoryGirl.create(:project_type) }
+  subject { project_type }
 
   # Instance methods:
   it { should respond_to :id }
@@ -31,36 +32,36 @@ describe ServiceType do
   its(:subcategories) { should be_empty }
 
   it "should be valid by default" do
-    project_category.should be_valid
+    project_type.should be_valid
   end
 
   it "is invalid without a name" do
-    project_category.name = nil
-    project_category.should_not be_valid
+    project_type.name = nil
+    project_type.should_not be_valid
   end
 
   describe "with subcategories" do
     let(:project_subcategory) { FactoryGirl.create :project_subcategory }
-    before { project_category.subcategories << project_subcategory }
+    before { project_type.subcategories << project_subcategory }
 
     it "is persisted" do
-      project_category.should be_persisted
-      project_category.should be_valid
+      project_type.should be_persisted
+      project_type.should be_valid
     end
 
     it "has one job category" do
-      project_category.subcategories.length.should eq 1
+      project_type.subcategories.length.should eq 1
     end
 
     it "creates a subcategory" do
-      project_category.subcategories.should eq [project_subcategory]
+      project_type.subcategories.should eq [project_subcategory]
     end
 
     it "can add another subcategory" do
       subcategory = FactoryGirl.create :project_subcategory
-      project_category.subcategories << subcategory
+      project_type.subcategories << subcategory
 
-      project_category.subcategories.should eq [project_subcategory, subcategory]
+      project_type.subcategories.should eq [project_subcategory, subcategory]
     end
 
   end
@@ -74,16 +75,16 @@ describe ServiceType do
           desired_finish: "Stain / Coloring",
           dimensions: "Square Feet"
         }
-        project_category.params = params
-        project_category.save!
+        project_type.params = params
+        project_type.save!
       end
 
       xit "saves location" do
-        project_category.params['location'].should eq "Interior"
+        project_type.params['location'].should eq "Interior"
       end
 
       xit "saves desired finish" do
-        project_category.params['desired_finish'].should eq "Stain / Coloring"
+        project_type.params['desired_finish'].should eq "Stain / Coloring"
       end
 
     end

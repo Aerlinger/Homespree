@@ -3,8 +3,6 @@
 # Table name: users
 #
 #  id                     :integer          not null, primary key
-#  homeowner_id           :integer
-#  contractor_id          :integer
 #  user_type              :string(255)
 #  first_name             :string(255)
 #  description            :text
@@ -86,15 +84,15 @@ class Contractor < User
   # Validations:  -----------------------------------------------------------------------------------------------------
   validates_format_of :first_name, :last_name, with: /\A\w+ ?\w*\z/, allow_blank: true, message: "should only contain letters"
   validates_length_of :first_name, :last_name, minimum: 2, maximum: 20, allow_blank: true, message: "must be a reasonable length"
-  #validates_format_of :email, with: RegexDefinitions::email_regex, message: "is invalid"
-  #validates_uniqueness_of :email
+  validates_format_of :email, with: RegexDefinitions::email_regex, message: "is invalid"
+  validates_uniqueness_of :email
   validates_format_of :mobile_number, :office_number, with: /\A\d{10}\Z/, allow_blank: true, message: "must be valid"
   validates_presence_of :company_title
   validates_numericality_of :years_experience, allow_blank: true
 
 
   # Callbacks:  -------------------------------------------------------------------------------------------------------
-  before_validation :sanitize_phone_numbers
+  before_validation :sanitize_phone_numbers, :set_user_type
   before_save :titleize_name
   before_save lambda { |contractor| contractor.email.try(:downcase!) }
   before_save lambda { |contractor| contractor.license.try(:upcase!) }
@@ -106,6 +104,7 @@ class Contractor < User
   #default_scope order("created_at desc")
   scope :recent_signups, lambda { limit(100) }
   scope :locate, lambda { |zipcode, radius| nil }
+  scope :all, lambda { User.where("user_type = ?", "Contractor") }
 
   # Delegations:  -----------------------------------------------------------------------------------------------------
   delegate :line1, :line2, :city, :state, :zipcode, :latitude, :longitude, :single_address, to: :address, allow_nil: true
@@ -174,6 +173,10 @@ class Contractor < User
 
       #admin.send_message(self, body, subject)
     end
+  end
+
+  def set_user_type
+    self.user_type = "Contractor"
   end
 
 end

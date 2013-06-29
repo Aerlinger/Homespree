@@ -1,6 +1,5 @@
 FactoryGirl.define do
-  factory :project_category do
+  factory :service_type do
     name "RspecPainting"
-    params {}
   end
 end

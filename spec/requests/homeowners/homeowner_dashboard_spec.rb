@@ -1,12 +1,12 @@
 require "spec_helper"
 
 
-describe "Contractor Dashboard" do
+describe "Homeowner Dashboard" do
 
-  let(:contractor) { FactoryGirl.create :contractor }
+  let(:homeowner) { FactoryGirl.create :homeowner }
 
   before do
-    sign_in_user contractor
+    sign_in_user homeowner
     click_link "Account Settings"
   end
 

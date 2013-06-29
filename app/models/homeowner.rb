@@ -3,8 +3,6 @@
 # Table name: users
 #
 #  id                     :integer          not null, primary key
-#  homeowner_id           :integer
-#  contractor_id          :integer
 #  user_type              :string(255)
 #  first_name             :string(255)
 #  description            :text
@@ -71,8 +69,12 @@ class Homeowner < User
   accepts_nested_attributes_for :appointments, :address
 
   # Callbacks:  -------------------------------------------------------------------------------------------------------
+  before_validation :set_user_type
   after_create :send_welcome_message
   before_save :upgrade_guest_if_logging_in, if: :guest
+
+  # Scopes:  ----------------------------------------------------------------------------------------------------------
+  scope :all, lambda { User.where("user_type = ?", "Homeowner") }
 
   def mailboxer_email(object)
     self.email
@@ -128,6 +130,10 @@ class Homeowner < User
     if self.password
       self.guest = false
     end
+  end
+
+  def set_user_type
+    self.user_type = "Homeowner"
   end
 
 end

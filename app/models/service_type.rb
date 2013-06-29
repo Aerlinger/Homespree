@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: project_categories
+# Table name: service_types
 #
 #  id                 :integer          not null, primary key
 #  name               :string(255)
@@ -9,6 +9,7 @@
 #  categorizable_id   :integer
 #  categorizable_type :string(255)
 #  params             :text
+#  position           :integer
 #
 
 class ServiceType < ActiveRecord::Base

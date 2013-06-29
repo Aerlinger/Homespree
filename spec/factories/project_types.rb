@@ -1,7 +1,7 @@
 # Read about factories at http://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :project_subcategory do
+  factory :project_type do
     name "Wallpaper"
   end
 end

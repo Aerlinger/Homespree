@@ -3,8 +3,6 @@
 # Table name: users
 #
 #  id                     :integer          not null, primary key
-#  homeowner_id           :integer
-#  contractor_id          :integer
 #  user_type              :string(255)
 #  first_name             :string(255)
 #  description            :text

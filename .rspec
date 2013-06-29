@@ -1,4 +1,5 @@
 --drb
 --format documentation
 --color
+--order default
 #--backtrace

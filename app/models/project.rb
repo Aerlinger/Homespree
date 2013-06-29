@@ -10,6 +10,7 @@
 #  category_id   :integer
 #  contractor_id :integer
 #  homeowner_id  :integer
+#  properties    :text
 #
 
 class Project < ActiveRecord::Base

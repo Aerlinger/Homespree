@@ -3,8 +3,6 @@
 # Table name: users
 #
 #  id                     :integer          not null, primary key
-#  homeowner_id           :integer
-#  contractor_id          :integer
 #  user_type              :string(255)
 #  first_name             :string(255)
 #  description            :text
@@ -56,21 +54,12 @@ class User < ActiveRecord::Base
 
   attr_accessible :email, :password, :password_confirmation, :remember_me
 
-
   validates_inclusion_of :user_type, in: ["Homeowner", "Contractor"]
-
-  before_validation :set_user_type
 
   default_scope order("created_at desc")
 
   def klass
     return user_type.constantize
-  end
-
-  private
-
-  def set_user_type
-    self.user_type = self.class.to_s
   end
 
 end

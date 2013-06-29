@@ -14,28 +14,55 @@ module AuthHelper
   end
 end
 
+### -----------------------------------------------------------------------------------------------------------------
+# Sign Up:
+### -----------------------------------------------------------------------------------------------------------------
+
 # Goes through the steps of signing in a new contractor
 def sign_up_contractor
   contractor = FactoryGirl.build :contractor
   visit new_contractor_registration_path
 
-  fill_in "Email", with: contractor.email
   fill_in "Company title", with: contractor.company_title
+
+  fill_in "Email", with: contractor.email
   fill_in "Password", with: contractor.password
 
   click_button "sign_up"
   return contractor
 end
 
-def sign_in_contractor(contractor)
+### -----------------------------------------------------------------------------------------------------------------
+# Sign In:
+### -----------------------------------------------------------------------------------------------------------------
 
-  visit new_contractor_session_path
+# Goes through the steps of signing in a new contractor
+def sign_in_homeowner(homeowner)
+  homeowner = FactoryGirl.build :homeowner
+  visit new_homeowner_session_path
 
-  fill_in "Email", with: contractor.email
-  fill_in "Password", with: contractor.password
+  fill_in_login_details(homeowner)
 
   click_button "Sign In"
+
+  return homeowner
 end
+
+def sign_in_contractor(contractor)
+  visit new_contractor_session_path
+
+  fill_in "Company title", with: contractor.company_title
+
+  fill_in "Email", with: user.email
+  fill_in "Password", with: user.password
+
+  click_button "Sign In"
+  return contractor
+end
+
+### -----------------------------------------------------------------------------------------------------------------
+# Sign Out:
+### -----------------------------------------------------------------------------------------------------------------
 
 def sign_out_contractor
   get "contractors/sessions/destroy"
