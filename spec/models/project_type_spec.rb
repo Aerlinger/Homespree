@@ -24,18 +24,15 @@ describe ProjectType do
   describe "default values" do
     let(:project_types) { ProjectType.all }
 
-    it "includes Interior Painting" do
-      project_types.first.should eq project_type
-    end
-
     it "includes Exterior Painting" do
-      project_types.last.should eq project_type
+      ProjectType.find_by_name("Interior Painting").should_not be_nil
+      ProjectType.find_by_name("Exterior Painting").should_not be_nil
     end
 
   end
 
   it "has correct to_s" do
-    "#{project_type}".should eq "Wallpaper"
+    "#{project_type}".should include "Wallpaper"
   end
 
   describe "Can have many fields" do

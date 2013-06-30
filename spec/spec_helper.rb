@@ -29,12 +29,13 @@ Spork.prefork do
 
   RSpec.configure do |config|
 
-    #config.before(:all) do
-    #  DeferredGarbageCollection.start
-    #end
-    #config.after(:all) do
-    #  DeferredGarbageCollection.reconsider
-    #end
+    config.before(:all) do
+      DeferredGarbageCollection.start
+    end
+
+    config.after(:all) do
+      DeferredGarbageCollection.reconsider
+    end
 
     # Configure Geocoder:
     Geocoder.configure(lookup: :test)

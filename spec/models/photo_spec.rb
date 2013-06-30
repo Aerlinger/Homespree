@@ -30,7 +30,7 @@ describe Photo do
     contractor.save
   end
 
-  it { should be_valid}
+  it { should be_valid }
 
   describe "invalid params" do
     it "is not valid without image_url" do
@@ -47,33 +47,32 @@ describe Photo do
     contractor.photos.create(FactoryGirl.attributes_for(:photo))
   end
 
-  describe "created as a nested attribute of contractor" do
 
-    before { @contractor = FactoryGirl.create(:contractor) }
+  it "should persist contractor" do
+    contractor.should be_persisted
+  end
 
-    it "should persist contractor" do
-      @contractor.should be_persisted
+  it "should not have errors" do
+    contractor.errors.should be_empty
+  end
+
+  describe "should have the correct photos" do
+    before do
+      contractor.photos << photo
     end
 
-    it "should not have errors" do
-      @contractor.errors.should be_empty
-    end
-
-    describe "should have the correct photos" do
-      specify "first photo" do
-        @contractor.photos.should include(Photo.find(2))
-      end
+    specify "first photo" do
+      contractor.photos.should include(photo)
     end
 
     it "should have one photo" do
-      @contractor.photos.count.should be 1
+      contractor.photos.count.should be 1
     end
 
     it "saves the correct photo" do
-      photo = @contractor.photos.first
-      photo.image_url.should eq "/assets/contractor_profiles/portfolio_images/default.png"
+      photo = contractor.photos.first
+      photo.image_url.should eq "contractor_default.jpg"
     end
-
   end
 
   describe "created as a nested attribute of a homeowner" do

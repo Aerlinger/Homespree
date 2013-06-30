@@ -31,7 +31,7 @@ describe ServiceType do
   its(:project_types) { should be_empty }
 
   it "has correct to_s" do
-    "#{service_type}".should eq "RspecPainting"
+    "#{service_type}".should include "RspecPainting"
   end
 
   it "should be valid by default" do

@@ -9,6 +9,7 @@
 #  project_type_id :integer
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  field_data      :text
 #
 
 require 'spec_helper'

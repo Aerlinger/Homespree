@@ -162,12 +162,12 @@ class Contractor < User
   private
 
   def send_welcome_message
-    admin = Contractor.find_by_email("admin@myhomespree.com")
-    if admin
+    admin = Contractor.find(1)
+    if admin && admin.email == "admin@myhomespree.com"
       subject = "Welcome to Homespree!"
       body = "Body message should go here"
 
-      #admin.send_message(self, body, subject)
+      admin.send_message(self, body, subject)
     end
   end
 

@@ -6,15 +6,15 @@ end
 def populate_interior_painting_fields(interior_painting)
   interior_painting.fields.destroy_all
 
-  interior_painting.fields << ProjectField.create(field_type: :text_field, name: "Wall 1", required: true)
-  interior_painting.fields << ProjectField.create(field_type: :text_field, name: "Wall 2", required: true)
-  interior_painting.fields << ProjectField.create(field_type: :text_field, name: "Wall 3", required: true)
-  interior_painting.fields << ProjectField.create(field_type: :text_field, name: "Wall 4", required: true)
+  interior_painting.fields << ProjectField.create(field_type: :text_field, name: "Wall 1", required: false)
+  interior_painting.fields << ProjectField.create(field_type: :text_field, name: "Wall 2", required: false)
+  interior_painting.fields << ProjectField.create(field_type: :text_field, name: "Wall 3", required: false)
+  interior_painting.fields << ProjectField.create(field_type: :text_field, name: "Wall 4", required: false)
 
-  interior_painting.fields << ProjectField.create(field_type: :select, name: "Surfaces", field_data: [:walls, :ceiling, :trim, :doors, :windows], required: true)
+  interior_painting.fields << ProjectField.create(field_type: :select, name: "Surfaces", field_data: [:walls, :ceiling, :trim, :doors, :windows], required: false)
 
-  interior_painting.fields << ProjectField.create(field_type: :number_field, name: "Flat #")
-  interior_painting.fields << ProjectField.create(field_type: :checkbox, name: "Flat")
+  interior_painting.fields << ProjectField.create(field_type: :number_field, name: "Flat #", required: false)
+  interior_painting.fields << ProjectField.create(field_type: :checkbox, name: "Flat", required: false)
 end
 
 def create_project_types

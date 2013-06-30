@@ -10,7 +10,10 @@ puts "-- Seeding database in #{Rails.env} -- "
 
 create_service_types
 create_project_types
+unless Rails.env.test?
+  create_admins
+end
 create_default_contractors
 create_default_homeowners
 create_mailing_list_users
-create_admins
+

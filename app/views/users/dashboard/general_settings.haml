@@ -19,7 +19,7 @@
         .accordion-inner
           -# Change Email Form
           -#------------------------------------------------------------------------------------------------
-          = form_for(current_contractor, :html => {:method => :put}, id: 'change_email') do |f|
+          = form_for(current_contractor, :html => {:method => :put, id: 'change_email'}) do |f|
             -#= devise_error_messages!
             %div
               = f.label "Change Email"
@@ -38,7 +38,7 @@
           .accordion-inner
             -# Change Password
             -#------------------------------------------------------------------------------------------------
-            = form_for(current_contractor, :html => {:method => :put}, id: 'change_password') do |f|
+            = form_for(current_contractor, :html => {:method => :put, id: 'change_password'}) do |f|
               -#= devise_error_messages!
               %div
                 = f.label "Current Password"

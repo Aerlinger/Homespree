@@ -7,9 +7,13 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.create(params[:project])
 
-    render :unavailable
-    # TODO: Uncomment this when project wizard is ready
-    # redirect_to project_wizard_path("request", project_id: @project.id)
+    if Rails.env.production?
+      render :unavailable
+    else
+      # TODO: This work is still in progress
+      session[:project_id] = @project.id
+      redirect_to project_wizard_path({id: "request", project_id: @project.id})
+    end
   end
 
   def unavailable

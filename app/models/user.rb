@@ -83,7 +83,7 @@ class User < ActiveRecord::Base
 
   def capitalize_name
     first_name.try(:capitalize!)
-    last_name.try(:first).try(:capitalize!)
+    last_name.try(:capitalize!)
   end
 
 end

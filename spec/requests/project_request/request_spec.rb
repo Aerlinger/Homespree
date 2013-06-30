@@ -18,7 +18,7 @@ describe "Step 1: Request" do
   end
 
   it "has description" do
-    page.should have_content("Request home services in a matter of minutes")
+    page.should have_content("Stress-free home improvement.")
   end
 
   describe "sections" do

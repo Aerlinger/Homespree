@@ -1,5 +1,7 @@
 FactoryGirl.define do
   factory :service_type do
-    name "RspecPainting"
+    sequence(:name) do |n|
+      "RspecPainting #{n}"
+    end
   end
 end
