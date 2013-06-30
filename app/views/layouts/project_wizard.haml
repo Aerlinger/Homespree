@@ -1,0 +1,8 @@
+- content_for :content do
+  .secondary
+    .container
+      .row-fluid
+        .span6.offset2
+          = content_for?(:project_wizard) ? yield(:project_wizard) : yield
+
+= render :template => 'layouts/application'

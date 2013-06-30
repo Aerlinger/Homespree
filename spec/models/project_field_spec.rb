@@ -10,6 +10,8 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  field_data      :text
+#  default         :string(255)
+#  attr_name       :string(255)
 #
 
 require 'spec_helper'

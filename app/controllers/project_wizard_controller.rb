@@ -1,6 +1,6 @@
 class ProjectWizardController < ApplicationController
 
-  layout "static_page"
+  layout "project_wizard"
 
   include Wicked::Wizard
   steps :request, :review_estimates, :appointment, :submit
@@ -8,6 +8,7 @@ class ProjectWizardController < ApplicationController
   before_filter :find_project
 
   def show
+    @project = @project.decorate
     render_wizard
   end
 

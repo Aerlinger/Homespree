@@ -9,10 +9,12 @@ class ProjectsController < ApplicationController
 
     if Rails.env.production?
       render :unavailable
-    else
+    elsif @project.valid?
       # TODO: This work is still in progress
       session[:project_id] = @project.id
       redirect_to project_wizard_path({id: "request", project_id: @project.id})
+    else
+      redirect_to :back, notice: @project.errors.full_messages.first
     end
   end
 

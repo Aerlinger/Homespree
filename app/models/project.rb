@@ -36,12 +36,13 @@ class Project < ActiveRecord::Base
   # Nested Attributes:  -----------------------------------------------------------------------------------------------
   accepts_nested_attributes_for :appointments, :project_type, :contractor, :homeowner
 
-  # Alias method (delegates calls to project_type):  ------------------------------------------------------------------
-  alias_method :service_type, :project_type
-  alias_method :fields, :project_type
+  # Aliases and delegations (delegates calls to project_type):  -------------------------------------------------------
+  delegate :service_type, to: :project_type
+  delegate :fields, to: :project_type
 
   # Validations:  -----------------------------------------------------------------------------------------------------
   validates_presence_of :zipcode
+  validates :zipcode, format: RegexDefinitions::zipcode_regex
   validate :validate_properties, if: :project_type
 
   # Callbacks:  -------------------------------------------------------------------------------------------------------
@@ -62,7 +63,8 @@ class Project < ActiveRecord::Base
   private
 
   def set_project_type
-    self.project_type = ProjectType.create(name: project_type_name)
+    self.project_type = ProjectType.find_by_name(project_type_name)
+    return nil
   end
 
   def fully_valid?

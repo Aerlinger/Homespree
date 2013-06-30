@@ -25,6 +25,12 @@ class ProjectType < ActiveRecord::Base
   # Nested Attributes:  --------------------------------------------------------------------------------------------
   accepts_nested_attributes_for :fields, allow_destroy: true
 
+  def fields_attributes_list
+    fields.collect do |field|
+      field.attr_name.to_sym
+    end
+  end
+
   def to_s
     self.name
   end
