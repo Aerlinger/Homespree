@@ -18,7 +18,7 @@ class Project < ActiveRecord::Base
 
   # Accessors:  -------------------------------------------------------------------------------------------------------
   attr_accessor :zipcode, :project_type_name, :service_type_name
-  attr_accessible :zipcode, :title, :description, :project_type_name, :appointment_attributes, :project_type_id
+  attr_accessible :zipcode, :title, :description, :project_type_name, :appointment_attributes, :project_type_id, :service_type_name
 
   # Serialization for dynamic project submission (HStore through Postgres):  ------------------------------------------
   serialize :properties, Hash
@@ -42,7 +42,7 @@ class Project < ActiveRecord::Base
 
   # Validations:  -----------------------------------------------------------------------------------------------------
   validates_presence_of :zipcode
-  validate :validate_properties
+  validate :validate_properties, if: :project_type
 
   # Callbacks:  -------------------------------------------------------------------------------------------------------
   before_create :set_project_type
@@ -63,6 +63,19 @@ class Project < ActiveRecord::Base
 
   def set_project_type
     self.project_type = ProjectType.create(name: project_type_name)
+  end
+
+  def fully_valid?
+    incomplete_params.blank?
+  end
+
+  def incomplete_params
+    incompletes = []
+    incompletes << :appointment if appointments.blank?
+    incompletes << :contractor if contractor.blank?
+    incompletes << :description if description.blank?
+
+    return incompletes
   end
 
 end

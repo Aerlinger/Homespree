@@ -13,5 +13,11 @@
 
 class ProjectField < ActiveRecord::Base
   belongs_to :project_type
-  attr_accessible :field_type, :name, :required
+  attr_accessible :field_type, :name, :required, :project_type, :project_type_id, :field_data
+
+  serialize :field_data, Array
+
+  def to_s
+    "#{self.name} - #{self.project_type if self.project_type?}"
+  end
 end

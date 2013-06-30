@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :project_type do
-    name "Wallpaper"
-
-    #fields [association(:project_field)]
+    sequence(:name) do |n|
+      "Rspec Wallpaper #{n}"
+    end
   end
 end

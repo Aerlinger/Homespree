@@ -40,6 +40,8 @@ describe Project do
     project.project_type.name.should eq "Interior Painting"
   end
 
+  it { should_not be_fully_valid }
+
   it "has correct to_s" do
 
   end
@@ -156,7 +158,6 @@ describe Project do
   end
 
   describe "serializable" do
-
     let(:field1) { FactoryGirl.create :project_field }
     let(:field2) { FactoryGirl.create :project_field }
     let(:field3) { FactoryGirl.create :project_field }

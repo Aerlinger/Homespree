@@ -89,7 +89,7 @@ Spork.prefork do
 
     config.before(:suite) do
       DatabaseCleaner.strategy = :transaction
-      DatabaseCleaner.clean_with(:truncation)
+      DatabaseCleaner.clean_with :truncation, except: %w[project_types service_types project_fields]
     end
 
     config.before(:each) do

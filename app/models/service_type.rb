@@ -19,6 +19,7 @@ class ServiceType < ActiveRecord::Base
   serialize :params, Hash
 
   validates_presence_of :name
+  validates_uniqueness_of :name
 
   # Associations:  --------------------------------------------------------------------------------------------------
   has_many :project_types

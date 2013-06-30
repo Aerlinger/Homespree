@@ -18,8 +18,24 @@ describe ProjectType do
   it {should respond_to :name}
   it {should respond_to :service_type}
 
+  it { should validate_uniqueness_of :name }
+  it { should validate_presence_of :name }
+
+  describe "default values" do
+    let(:project_types) { ProjectType.all }
+
+    it "includes Interior Painting" do
+      project_types.first.should eq project_type
+    end
+
+    it "includes Exterior Painting" do
+      project_types.last.should eq project_type
+    end
+
+  end
+
   it "has correct to_s" do
-    "#{project_type}".should eq "Interior Painting"
+    "#{project_type}".should eq "Wallpaper"
   end
 
   describe "Can have many fields" do
