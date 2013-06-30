@@ -2,7 +2,7 @@ class ProjectsController < ApplicationController
 
   layout "static_page"
 
-  before_filter :create_guest_if_homeowner_not_signed_in, only: [:create]
+  before_filter :create_guest_if_homeowner_not_signed_in, only: :create
 
   def create
     @project = Project.create(params[:project])

@@ -16,52 +16,52 @@ require 'spec_helper'
 
 describe ServiceType do
 
-  let(:project_type) { FactoryGirl.create(:project_type) }
-  subject { project_type }
+  let(:service_type) { FactoryGirl.create(:service_type) }
+  subject { service_type }
 
   # Instance methods:
   it { should respond_to :id }
   it { should respond_to :name }
-  it { should respond_to :subcategories }
+  it { should respond_to :project_types }
   it { should respond_to :categorizable_type }
   it { should respond_to :categorizable_id }
   it { should respond_to :created_at }
   it { should respond_to :updated_at }
   it { should respond_to :params }
 
-  its(:subcategories) { should be_empty }
+  its(:project_types) { should be_empty }
 
   it "should be valid by default" do
-    project_type.should be_valid
+    service_type.should be_valid
   end
 
   it "is invalid without a name" do
-    project_type.name = nil
-    project_type.should_not be_valid
+    service_type.name = nil
+    service_type.should_not be_valid
   end
 
-  describe "with subcategories" do
-    let(:project_subcategory) { FactoryGirl.create :project_subcategory }
-    before { project_type.subcategories << project_subcategory }
+  describe "with project types as children" do
+    let(:project_type) { FactoryGirl.create :project_type }
+    before { service_type.project_types << project_type }
 
     it "is persisted" do
-      project_type.should be_persisted
-      project_type.should be_valid
+      service_type.should be_persisted
+      service_type.should be_valid
     end
 
     it "has one job category" do
-      project_type.subcategories.length.should eq 1
+      service_type.project_types.length.should eq 1
     end
 
-    it "creates a subcategory" do
-      project_type.subcategories.should eq [project_subcategory]
+    it "creates a project_types" do
+      service_type.project_types.should eq [project_type]
     end
 
     it "can add another subcategory" do
-      subcategory = FactoryGirl.create :project_subcategory
-      project_type.subcategories << subcategory
+      another_project_type = FactoryGirl.create :project_type
+      service_type.project_types << another_project_type
 
-      project_type.subcategories.should eq [project_subcategory, subcategory]
+      service_type.project_types.should == [project_type, another_project_type]
     end
 
   end

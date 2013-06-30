@@ -2,15 +2,17 @@
 #
 # Table name: projects
 #
-#  id            :integer          not null, primary key
-#  created_at    :datetime         not null
-#  updated_at    :datetime         not null
-#  title         :string(255)
-#  description   :text
-#  category_id   :integer
-#  contractor_id :integer
-#  homeowner_id  :integer
-#  properties    :text
+#  id              :integer          not null, primary key
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  title           :string(255)
+#  description     :text
+#  category_id     :integer
+#  contractor_id   :integer
+#  homeowner_id    :integer
+#  properties      :text
+#  project_type_id :integer
+#  service_type_id :integer
 #
 
 require 'spec_helper'
@@ -25,7 +27,6 @@ describe Project do
   it { should belong_to :homeowner }
   it { should have_many :before_photos }
   it { should have_many :after_photos }
-  it { should have_one :category }
   it { should have_many :appointments }
   it { should respond_to :after_photos }
   it { should respond_to :before_photos }
@@ -35,7 +36,7 @@ describe Project do
   it { should respond_to :zipcode }
 
   # Validations
-  it { should validate_presence_of :category_name }
+  #it { should validate_presence_of :category_name }
 
   it { should be_valid }
 
@@ -44,7 +45,7 @@ describe Project do
     its(:description) { should eq "This is a test description of the project to be done" }
 
     it "has a category for painting" do
-      project.category.name == "Painting"
+      project.service_type.name == "Painting"
     end
 
     its(:appointments) { should be_empty }

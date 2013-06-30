@@ -3,6 +3,8 @@ require 'spec_helper'
 describe ProjectsController do
 
   let(:project) { FactoryGirl.create }
+  let(:params ) { {zipcode: "10025", project_type: "Power Washing"} }
+
   it { should respond_to :create }
 
   it "creates a new guest homeowner" do

@@ -6,7 +6,7 @@ describe "Contractor Dashboard" do
   let(:contractor) { FactoryGirl.create :contractor }
 
   before do
-    sign_in contractor
+    user_sign_in contractor
     click_link "Account Settings"
   end
 

@@ -69,6 +69,18 @@ describe Appointment do
     appointment.address = address
   end
 
+  it "contractor has valid appointments" do
+    contractor.should be_valid
+  end
+
+  it "homeowner has valid appointments" do
+    homeowner.should be_valid
+  end
+
+  it "project has valid appointments" do
+    project.should be_valid
+  end
+
   it "contractor and homeowner have the same appointments" do
     contractor.appointments.should eq(homeowner.appointments)
   end
@@ -79,9 +91,17 @@ describe Appointment do
   end
 
   it "should have a single association for contractor, homeowner, project, and address" do
-    [:contractor, :homeowner, :project, :address].each do |association|
-      appointment.send(association).should be_valid
-    end
+    appointment.contractor.should be_valid
+    appointment.homeowner.should be_valid
+    appointment.project.should be_valid
+    appointment.address.should be_valid
+  end
+
+  it "should have a single association for contractor, homeowner, project, and address" do
+    appointment.contractor.should eq contractor
+    appointment.homeowner.should eq homeowner
+    appointment.project.should eq project
+    appointment.address.should eq address
   end
 
   describe "belongs to a" do

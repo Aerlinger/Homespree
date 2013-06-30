@@ -21,6 +21,7 @@ class ServiceType < ActiveRecord::Base
   validates_presence_of :name
 
   has_many :project_types
+  has_many :projects, through: :project_types
 
   belongs_to :categorizable, polymorphic: true
 

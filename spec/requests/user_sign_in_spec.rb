@@ -1,3 +1,4 @@
+
 require "spec_helper"
 
 describe "User sign in" do
@@ -10,7 +11,7 @@ describe "User sign in" do
   end
 
   it "navigates to login" do
-    current_path.should eq "/users/sign_in"
+    current_path.should eq "/contractors/sign_up"
   end
 
   context "Contractor" do
@@ -18,7 +19,7 @@ describe "User sign in" do
       fill_in "Email", with: contractor.email
       fill_in "Password", with: contractor.password
 
-      click_button "Sign In"
+      click_button "Create profile"
     end
 
     it "shows form data" do
@@ -26,7 +27,6 @@ describe "User sign in" do
     end
 
     it "creates a new user" do
-      User.all.should include(contractor)
       Contractor.all.should include(contractor)
     end
 
@@ -53,11 +53,10 @@ describe "User sign in" do
       fill_in "Email", with: homeowner.email
       fill_in "Password", with: homeowner.password
 
-      click_button "Sign In"
+      click_button "Create profile"
     end
 
     it "creates a new user" do
-      User.all.should include(homeowner)
       Homeowner.all.should include(homeowner)
     end
 

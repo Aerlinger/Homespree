@@ -111,7 +111,7 @@ describe Contractor do
   end
 
   it "is a Homeowner class object" do
-    contractor.class.should eq "Contractor"
+    contractor.class.should eq Contractor
   end
 
   describe "defaults" do

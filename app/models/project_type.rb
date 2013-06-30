@@ -2,11 +2,11 @@
 #
 # Table name: project_types
 #
-#  id                  :integer          not null, primary key
-#  name                :string(255)
-#  project_category_id :integer
-#  created_at          :datetime         not null
-#  updated_at          :datetime         not null
+#  id              :integer          not null, primary key
+#  name            :string(255)
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  service_type_id :integer
 #
 
 class ProjectType < ActiveRecord::Base
@@ -16,6 +16,5 @@ class ProjectType < ActiveRecord::Base
 
   belongs_to :service_type
   has_many :projects
-
 
 end

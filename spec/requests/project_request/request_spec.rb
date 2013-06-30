@@ -5,8 +5,9 @@ describe "Step 1: Request" do
   let(:project) { FactoryGirl.create :project }
 
   before do
-    visit project_wizard_path("request")
-    select('Painting', from: '#project_category')
+    #visit project_wizard_path(id: "request", project_id: project.id)
+    visit "/"
+    select('Interior Painting', from: :project_type_name)
     fill_in '#zipcode', with: '10025'
   end
 

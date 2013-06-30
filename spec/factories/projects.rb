@@ -4,6 +4,7 @@ FactoryGirl.define do
     description "This is a test description of the project to be done"
     service_type_name "Painting"
     project_type_name "Interior Painting"
+
     zipcode "12345"
   end
 end

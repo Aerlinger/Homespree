@@ -78,18 +78,18 @@ describe Homeowner do
   it { should respond_to :encrypted_password }
 
   # Class Methods
-  specify { Homeowner.should respond_to :new_guest }
+  specify { Homeowner.should respond_to :new_homeowner_guest }
 
   it "can be queried for its type type" do
     homeowner.should be_homeowner
   end
 
   it "is a Homeowner class object" do
-    hoemowner.class.should eq "Homeowner"
+    homeowner.class.should eq Homeowner
   end
 
   it "can be created as a guest" do
-    guest_homeowner = Homeowner.create_guest
+    guest_homeowner = Homeowner.new_homeowner_guest
     guest_homeowner.guest.should be_true
   end
 
@@ -119,9 +119,11 @@ describe Homeowner do
     its(:first_name) { should eq "Guest Homeowner" }
 
     describe "Creating a project and upgrading account" do
-      let(:project) { FactoryGirl.create :project }
+      let(:project) { FactoryGirl.build :project }
+      let(:appointment) { FactoryGirl.create(:appointment) }
 
       before do
+        project.appointments << appointment
         guest_homeowner.projects << project
       end
 

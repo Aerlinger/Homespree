@@ -2,15 +2,17 @@
 #
 # Table name: projects
 #
-#  id            :integer          not null, primary key
-#  created_at    :datetime         not null
-#  updated_at    :datetime         not null
-#  title         :string(255)
-#  description   :text
-#  category_id   :integer
-#  contractor_id :integer
-#  homeowner_id  :integer
-#  properties    :text
+#  id              :integer          not null, primary key
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  title           :string(255)
+#  description     :text
+#  category_id     :integer
+#  contractor_id   :integer
+#  homeowner_id    :integer
+#  properties      :text
+#  project_type_id :integer
+#  service_type_id :integer
 #
 
 class Project < ActiveRecord::Base
@@ -23,18 +25,18 @@ class Project < ActiveRecord::Base
   serialize :properties, Hash
 
   # Associations:  ----------------------------------------------------------------------------------------------------
-  has_one :service_type, as: :categorizable
   belongs_to :project_type
-  has_many :before_photos, class_name: 'Photo', as: :photographable
-  has_many :after_photos, class_name: 'Photo', as: :photographable
-
   belongs_to :contractor
   belongs_to :homeowner
 
+  has_many :before_photos, class_name: 'Photo', as: :photographable
+  has_many :after_photos, class_name: 'Photo', as: :photographable
   has_many :appointments
 
   # Nested Attributes:  -----------------------------------------------------------------------------------------------
-  accepts_nested_attributes_for :appointments, :service_type
+  accepts_nested_attributes_for :appointments, :project_type
+
+  alias_method :service_type, :project_type
 
   # Validations:  -----------------------------------------------------------------------------------------------------
   validates_presence_of :zipcode
@@ -53,7 +55,6 @@ class Project < ActiveRecord::Base
   private
 
   def set_categories
-    self.service_type = ServiceType.create(name: service_type_name)
     self.project_type = ProjectType.create(name: project_type_name)
   end
 end

@@ -46,7 +46,4 @@ describe Homeowners do
     get("/homeowners/1").should route_to("homeowners#show", id: "1")
   end
 
-  it "should index" do
-    get("/homeowners").should route_to("homeowners#index")
-  end
 end
