@@ -10,11 +10,17 @@
 #
 
 class ProjectType < ActiveRecord::Base
-  attr_accessible :category_id, :name
+  attr_accessible :name, :service_type_id
 
+  # Validations:  --------------------------------------------------------------------------------------------------
   validates_presence_of :name
 
+  # Associations:  -------------------------------------------------------------------------------------------------
   belongs_to :service_type
+
+  has_many :fields, class_name: "ProjectField"
   has_many :projects
 
+  # Nested Attributes:  --------------------------------------------------------------------------------------------
+  accepts_nested_attributes_for :fields, allow_destroy: true
 end

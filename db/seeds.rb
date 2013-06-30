@@ -1,3 +1,14 @@
+def create_service_types
+  ServiceType.destroy_all
+  #ServiceType <<
+end
+
+def create_project_types
+  ServiceType.each do |service_type|
+
+  end
+end
+
 def create_default_contractors
 
   %w[joe jim jack james jake].each do |name|

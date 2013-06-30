@@ -3,5 +3,7 @@
 FactoryGirl.define do
   factory :project_type do
     name "Wallpaper"
+
+    #fields [association(:project_field)]
   end
 end

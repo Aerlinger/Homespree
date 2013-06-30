@@ -70,7 +70,8 @@ class Contractor < User
   has_many :homeowners, through: :appointments, uniq: true
   has_many :projects, through: :appointments
 
-  has_many :specialties, dependent: :destroy
+  has_many :specialties
+  has_many :services, class_name: "ServiceType"
   has_many :photos, as: :photographable
   has_many :project_photos, as: :photographable, class_name: "Photo", through: :projects
   has_many :badges

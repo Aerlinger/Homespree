@@ -1,5 +1,0 @@
-class ProjectFormProxy
-
-
-
-end

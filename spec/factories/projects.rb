@@ -6,5 +6,7 @@ FactoryGirl.define do
     project_type_name "Interior Painting"
 
     zipcode "12345"
+
+    project_type
   end
 end

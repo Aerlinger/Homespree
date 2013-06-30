@@ -13,7 +13,7 @@
 #
 
 class ServiceType < ActiveRecord::Base
-  attr_accessible :name
+  attr_accessible :name, :categorizable_type, :params
 
   # Parameters for this category:  ------------------------------------------------------------------------------------
   serialize :params, Hash
@@ -23,7 +23,8 @@ class ServiceType < ActiveRecord::Base
   has_many :project_types
   has_many :projects, through: :project_types
 
-  belongs_to :categorizable, polymorphic: true
+  belongs_to :contractor
+  #belongs_to :categorizable, polymorphic: true
 
   acts_as_list
 

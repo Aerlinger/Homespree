@@ -12,7 +12,6 @@
 #  homeowner_id    :integer
 #  properties      :text
 #  project_type_id :integer
-#  service_type_id :integer
 #
 
 require 'spec_helper'
@@ -35,10 +34,12 @@ describe Project do
   it { should respond_to :description }
   it { should respond_to :zipcode }
 
-  # Validations
-  #it { should validate_presence_of :category_name }
-
   it { should be_valid }
+
+  it "has correct project name" do
+    project.project_type.name.should eq "Interior Painting"
+  end
+
 
   describe "has correct defaults" do
     its(:title) { should eq "My painting project" }
@@ -149,6 +150,32 @@ describe Project do
       end
 
     end
+  end
+
+  describe "serializable" do
+
+    let(:field1) { FactoryGirl.create :project_field }
+    let(:field2) { FactoryGirl.create :project_field }
+    let(:field3) { FactoryGirl.create :project_field }
+    let(:field4) { FactoryGirl.create :project_field }
+    let(:properties) { {one: 1, two: 2, three: 3} }
+
+    before do
+      project_type = project.project_type
+      project.project_type.fields = [field1, field2, field3, field4]
+
+      project.properties = properties
+      project.save
+    end
+
+    it "accesses all fields through delegation" do
+      project.project_type.fields.should include field1
+    end
+
+    it "properties can be stored as a hash object" do
+      project.properties.should eq (properties)
+    end
+
   end
 
 end
