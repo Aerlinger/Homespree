@@ -80,6 +80,12 @@ describe Homeowner do
   # Class Methods
   specify { Homeowner.should respond_to :new_homeowner_guest }
 
+  it "titlieizes name" do
+    ho = FactoryGirl.create(:homeowner, first_name: "betty", last_name: "boop")
+    ho.first_name.should eq "Betty"
+    ho.last_name.should eq "Boop"
+  end
+
   it "can be queried for its type type" do
     homeowner.should be_homeowner
   end
@@ -116,7 +122,7 @@ describe Homeowner do
 
     it { should be_guest }
 
-    its(:first_name) { should eq "Guest Homeowner" }
+    its(:first_name) { should eq "Guest homeowner" }
 
     describe "Creating a project and upgrading account" do
       let(:project) { FactoryGirl.build :project }
@@ -128,7 +134,7 @@ describe Homeowner do
       end
 
       it "upgrades to guest homeowner when a password is given" do
-        guest_homeowner.email = "homeowner@home.com"
+        guest_homeowner.email    = "homeowner@home.com"
         guest_homeowner.password = "iamsecret"
         guest_homeowner.save
         guest_homeowner.should_not be_guest

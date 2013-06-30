@@ -55,9 +55,14 @@ class Project < ActiveRecord::Base
     end
   end
 
+  def to_s
+    "#{project_type.to_s} #{service_type.to_s}"
+  end
+
   private
 
   def set_project_type
     self.project_type = ProjectType.create(name: project_type_name)
   end
+
 end

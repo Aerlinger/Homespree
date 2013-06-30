@@ -2,14 +2,12 @@
 #
 # Table name: service_types
 #
-#  id                 :integer          not null, primary key
-#  name               :string(255)
-#  created_at         :datetime         not null
-#  updated_at         :datetime         not null
-#  categorizable_id   :integer
-#  categorizable_type :string(255)
-#  params             :text
-#  position           :integer
+#  id         :integer          not null, primary key
+#  name       :string(255)
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  params     :text
+#  position   :integer
 #
 
 require 'spec_helper'
@@ -28,6 +26,10 @@ describe ServiceType do
   it { should respond_to :params }
 
   its(:project_types) { should be_empty }
+
+  it "has correct to_s" do
+    "#{service_type}".should eq "Painting"
+  end
 
   it "should be valid by default" do
     service_type.should be_valid

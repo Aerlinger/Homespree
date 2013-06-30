@@ -18,6 +18,10 @@ describe ProjectType do
   it {should respond_to :name}
   it {should respond_to :service_type}
 
+  it "has correct to_s" do
+    "#{project_type}".should eq "Interior Painting"
+  end
+
   describe "Can have many fields" do
     let(:field1) { FactoryGirl.create :project_field }
     let(:field2) { FactoryGirl.create :project_field }

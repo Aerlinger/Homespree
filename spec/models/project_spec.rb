@@ -40,6 +40,9 @@ describe Project do
     project.project_type.name.should eq "Interior Painting"
   end
 
+  it "has correct to_s" do
+
+  end
 
   describe "has correct defaults" do
     its(:title) { should eq "My painting project" }

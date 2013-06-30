@@ -132,6 +132,7 @@ class Homeowner < User
     end
   end
 
+
   def set_user_type
     self.user_type = "Homeowner"
   end

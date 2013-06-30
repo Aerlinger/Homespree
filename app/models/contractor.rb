@@ -94,7 +94,6 @@ class Contractor < User
 
   # Callbacks:  -------------------------------------------------------------------------------------------------------
   before_validation :sanitize_phone_numbers, :set_user_type
-  before_save :titleize_name
   before_save lambda { |contractor| contractor.email.try(:downcase!) }
   before_save lambda { |contractor| contractor.license.try(:upcase!) }
   before_create :add_badges
@@ -158,10 +157,6 @@ class Contractor < User
     badge = Badge.new
     badge.name = 'early_adopter'
     self.badges << badge
-  end
-
-  def titleize_name
-    self.first_name = first_name.try(:titleize)
   end
 
   private

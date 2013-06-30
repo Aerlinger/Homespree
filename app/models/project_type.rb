@@ -23,4 +23,8 @@ class ProjectType < ActiveRecord::Base
 
   # Nested Attributes:  --------------------------------------------------------------------------------------------
   accepts_nested_attributes_for :fields, allow_destroy: true
+
+  def to_s
+    self.name
+  end
 end

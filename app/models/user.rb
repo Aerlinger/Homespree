@@ -46,18 +46,25 @@
 #
 
 class User < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :token_authenticatable, :confirmable, :lockable, :timeoutable and :omniauthable
+  # Gem Class Methods:  ----------------------------------------------------------------------------------------------
+  # Include default devise modules. Others available are: :token_authenticatable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   acts_as_messageable
 
+  # Accessors:  ------------------------------------------------------------------------------------------------------
   attr_accessible :email, :password, :password_confirmation, :remember_me
 
+  # Validations:  ----------------------------------------------------------------------------------------------------
   validates_inclusion_of :user_type, in: ["Homeowner", "Contractor"]
 
+  # Scopes:  ---------------------------------------------------------------------------------------------------------
   default_scope order("created_at desc")
 
+  # Callbacks:  ------------------------------------------------------------------------------------------------------
+  before_save :capitalize_name
+
+  # Custom Methods:  --------------------------------------------------------------------------------------------------
   def homeowner?
     user_type == "Homeowner"
   end
@@ -72,6 +79,11 @@ class User < ActiveRecord::Base
 
   def to_sym
     user_type.downcase.to_sym
+  end
+
+  def capitalize_name
+    first_name.try(:capitalize!)
+    last_name.try(:capitalize!)
   end
 
 end
