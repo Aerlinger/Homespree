@@ -102,9 +102,9 @@ class Contractor < User
 
   # Scopes:  ----------------------------------------------------------------------------------------------------------
   #default_scope order("created_at desc")
+  default_scope lambda { User.where("user_type = ?", "Contractor") }
   scope :recent_signups, lambda { limit(100) }
   scope :locate, lambda { |zipcode, radius| nil }
-  scope :all, lambda { User.where("user_type = ?", "Contractor") }
 
   # Delegations:  -----------------------------------------------------------------------------------------------------
   delegate :line1, :line2, :city, :state, :zipcode, :latitude, :longitude, :single_address, to: :address, allow_nil: true

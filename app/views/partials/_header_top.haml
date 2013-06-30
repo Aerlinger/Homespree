@@ -5,7 +5,6 @@
         %ul.nav.accordmobile.pull-right
 
           - if user_signed_in?
-
             %li.dropdown.parent
               %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
                 My Messages
@@ -30,7 +29,7 @@
               %ul.dropdown-menu
                 %li.current-user
                   = link_to current_user do
-                    %b.fullname= signed_in_user.name
+                    %b.fullname= current_user.name
                     %br/
                     %small Edit profile
                     - if current_contractor && current_contractor.portrait_url?

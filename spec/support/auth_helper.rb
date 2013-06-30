@@ -3,7 +3,7 @@ module AuthHelper
     user = 'admin'
     pw = 'Meetmike'
 
-    env = {}
+    env ||= {}
     env['HTTP_AUTHORIZATION'] = ActionController::HttpAuthentication::Basic.encode_credentials(user, pw)
 
     return env
@@ -37,27 +37,14 @@ end
 ### -----------------------------------------------------------------------------------------------------------------
 
 # Goes through the steps of signing in a new contractor
-def sign_in_homeowner(homeowner)
-  homeowner = FactoryGirl.build :homeowner
-  visit new_homeowner_session_path
-
-  fill_in_login_details(homeowner)
-
-  click_button "Sign In"
-
-  return homeowner
-end
-
-def sign_in_contractor(contractor)
-  visit new_contractor_session_path
-
-  fill_in "Company title", with: contractor.company_title
+def sign_in (user)
+  visit new_user_session_path
 
   fill_in "Email", with: user.email
   fill_in "Password", with: user.password
 
   click_button "Sign In"
-  return contractor
+  return user
 end
 
 ### -----------------------------------------------------------------------------------------------------------------

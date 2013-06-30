@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Users::DashboardController do
 
   before do
-    sign_in_contractor FactoryGirl.create :contractor
+    sign_in FactoryGirl.create :homeowner
   end
 
   describe "GET 'notifications'" do

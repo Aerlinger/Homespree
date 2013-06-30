@@ -6,7 +6,7 @@ describe "Homeowner Dashboard" do
   let(:homeowner) { FactoryGirl.create :homeowner }
 
   before do
-    sign_in_user homeowner
+    sign_in homeowner
     click_link "Account Settings"
   end
 

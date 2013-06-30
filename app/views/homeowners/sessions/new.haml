@@ -3,9 +3,9 @@
   =link_to "Sign Up", new_contractor_registration_path, class: "btn btn-black"
 
 #login-wraper
-  = simple_form_for resource, :as => resource_name, :url => contractor_session_path(resource), class: "form login-form" do |f|
+  = simple_form_for resource, :as => resource_name, :url => homeowner_session_path(resource), class: "form login-form" do |f|
     %legend
-      %span.blue Contractor Sign In
+      %span.blue Homeowner Sign In
     .body
       = f.input :email, placeholder: 'example@example.com'
       = f.input :password

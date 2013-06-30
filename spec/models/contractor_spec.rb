@@ -105,6 +105,15 @@ describe Contractor do
   it { should respond_to :last_sign_in_ip }
   it { should respond_to :encrypted_password }
 
+
+  it "can be queried for its type type" do
+    contractor.should be_contractor
+  end
+
+  it "is a Homeowner class object" do
+    contractor.class.should eq "Contractor"
+  end
+
   describe "defaults" do
     its(:slug) { should eq "joe-s-plumbing" }
 

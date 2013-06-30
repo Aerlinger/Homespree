@@ -70,7 +70,7 @@ class ContractorDecorator < Draper::Decorator
 
   def card_item(attr_name, attrs = {})
     # Don't render blank attributes when a customer is visiting the page
-    if own_profile? && @object.send(attr_name).present?
+    if own_profile?# && @object.send(attr_name).present?
 
       field_missing = contractor_missing_attr?(attr_name) ? "" : "_edited"
 

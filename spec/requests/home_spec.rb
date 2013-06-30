@@ -29,7 +29,7 @@ describe "Home page" do
 
   describe "when signed in as contractor" do
     before do
-      sign_in_contractor FactoryGirl.create(:contractor)
+      sign_in FactoryGirl.create(:contractor)
     end
     it "should have link for account" do
       page.find_link("Account Settings").should be_visible

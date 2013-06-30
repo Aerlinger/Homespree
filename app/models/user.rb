@@ -58,8 +58,20 @@ class User < ActiveRecord::Base
 
   default_scope order("created_at desc")
 
+  def homeowner?
+    user_type == "Homeowner"
+  end
+
+  def contractor?
+    user_type == "Contractor"
+  end
+
   def klass
     return user_type.constantize
+  end
+
+  def to_sym
+    user_type.downcase.to_sym
   end
 
 end

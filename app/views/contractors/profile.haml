@@ -138,4 +138,8 @@
   -# Block intro.js on mobile:
   - unless is_mobile_request?
     :javascript
-      launchIntroJs();
+      $(document).ready(function(evt) {
+        launchIntroJs();
+        invisibleUploadFields();
+        sortableFields();
+      });

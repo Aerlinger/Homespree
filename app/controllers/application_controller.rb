@@ -47,21 +47,14 @@ class ApplicationController < ActionController::Base
     user.klass.find(user.id)
   end
 
-  def current_contractor
-    return current_user if current_user.class == Contractor
+  def current_user
+    current_homeowner || guest_homeowner || current_contractor
   end
 
-  def current_contractor?
-    return current_contractor.present?
+  def user_signed_in?
+    !current_user.nil?
   end
 
-  def current_homeowner
-    return current_user if current_user.class == Homeowner
-  end
-
-  def current_homeowner?
-    return current_homeowner.present?
-  end
 
   def guest_homeowner
     # Cache the value:
@@ -71,10 +64,8 @@ class ApplicationController < ActionController::Base
     #guest_homeowner
   end
 
-  helper_method :current_homeowner
-  helper_method :current_homeowner?
-  helper_method :current_contractor
-  helper_method :current_contractor?
+  helper_method :current_user
+  helper_method :user_signed_in?
   helper_method :signed_in_user
 
   private

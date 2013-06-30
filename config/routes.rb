@@ -19,7 +19,7 @@ Homespree::Application.routes.draw do
   end
 
   devise_for :users, :controllers => {
-    #registrations: "users/registrations",
+    registrations: "users/registrations",
     sessions:      "users/sessions",
     passwords:     "users/passwords"
   }
@@ -27,7 +27,11 @@ Homespree::Application.routes.draw do
   # Homeowners: -----------------------------------------------------------------------------------------------------
   resources :project_wizard
 
-  devise_for :homeowners, :controllers => { registrations: "homeowners/registrations" }
+  devise_for :homeowners, :controllers => {
+    registrations: "homeowners/registrations",
+    sessions:      "homeowners/sessions",
+    passwords:     "homeowners/passwords"
+  }
 
   resources :homeowners, only: [:show, :update] do
 
@@ -40,7 +44,11 @@ Homespree::Application.routes.draw do
   end
 
   # Contractors: -----------------------------------------------------------------------------------------------------
-  devise_for :contractors, :controllers => { registrations: "contractors/registrations" }
+  devise_for :contractors, :controllers => {
+    registrations: "contractors/registrations",
+    sessions:      "contractors/sessions",
+    passwords:     "contractors/passwords"
+  }
 
   resources :contractors, only: [:show, :update] do
 
@@ -56,13 +64,13 @@ Homespree::Application.routes.draw do
       end
     end
 
-    collection do
-      resource :address, only: [:update]
-      resources :photos, only: [:create, :update, :destroy]
-      resources :appointments, only: [:create, :update, :destroy, :show]
-      resources :alerts, only: [:create, :destroy]
-      resources :projects
-    end
+    #collection do
+    resource :address, only: [:update]
+    resources :photos, only: [:create, :update, :destroy]
+    resources :appointments, only: [:create, :update, :destroy, :show]
+    resources :alerts, only: [:create, :destroy]
+    resources :projects
+    #end
   end
 
   # Gallery Browsing: ------------------------------------------------------------------------------------------------

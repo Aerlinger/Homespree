@@ -80,6 +80,14 @@ describe Homeowner do
   # Class Methods
   specify { Homeowner.should respond_to :new_guest }
 
+  it "can be queried for its type type" do
+    homeowner.should be_homeowner
+  end
+
+  it "is a Homeowner class object" do
+    hoemowner.class.should eq "Homeowner"
+  end
+
   it "can be created as a guest" do
     guest_homeowner = Homeowner.create_guest
     guest_homeowner.guest.should be_true

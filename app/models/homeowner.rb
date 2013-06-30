@@ -74,7 +74,7 @@ class Homeowner < User
   before_save :upgrade_guest_if_logging_in, if: :guest
 
   # Scopes:  ----------------------------------------------------------------------------------------------------------
-  scope :all, lambda { User.where("user_type = ?", "Homeowner") }
+  default_scope lambda { User.where("user_type = ?", "Homeowner") }
 
   def mailboxer_email(object)
     self.email
