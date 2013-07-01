@@ -10,6 +10,7 @@ gem 'capistrano'
 gem 'newrelic_rpm'
 gem 'thin'
 gem 'libv8', '= 3.11.8.13'
+gem 'whenever', require: false
 
 # Mobile site optimization:
 gem 'mobylette'
