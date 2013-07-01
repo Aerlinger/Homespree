@@ -2,14 +2,9 @@
   %h1
     = @project.project_type
 
-  = @project.complete_form
-  -#- @project.fields.each do |field|
-  -#  %h5= field.name
-  -#  %p= field.field_type
-  -#  %p= field.required
-  -#  %p= field.field_data if field.field_data.present?
+  = select_tag "Service Types", options_for_select(ServiceType.all)
+  = select_tag "Project Types", options_for_select(ProjectType.all)
 
-  -#= form_for @project do |f|
-  -#  = @project.show_fields(f)
+  = @project.complete_form
 
   -#= render partial: 'step', locals: { title: 'Request', step_number: '1', project: @project }

@@ -1,27 +1,51 @@
+### --------------------------------------------------------------------------------------------------------------
+#
+# Custom form builder for dynamic project fields
+#
 class ProjectFormBuilder < ActionView::Helpers::FormBuilder
 
-  %w[text_field check_box text_area collection_select select].each do |method_name|
+  def text_field(name, *args)
+    options = args.extract_options!
 
-    define_method(method_name) do |name, *args|
-      @template.content_tag :div, class: "field" do
-        label(name) + @template.tag(:br) + super(name, *args)
-      end
+    wrap_field(name) do
+      super(name, *args)
     end
-
   end
 
-  #def text_field(name, *args)
-  #  @template.content_tag :div, class: "field" do
-  #    label(name) + @template.tag(:br)
-  #  end
-  #end
-  #
-  #def select(name, *args)
-  #
-  #end
-  #
-  #def collection_select(name, *args)
-  #
-  #end
+  def number_field(name, *args)
+    options = args.extract_options!
+
+    wrap_field(name) do
+      super(name, *args)
+    end
+  end
+
+  def check_box(name, *args)
+    options = args.extract_options!
+
+    wrap_field(name) do
+      super(name, *args)
+    end
+  end
+
+  def select(name, *args)
+    options = args.extract_options!
+
+    wrap_field(name) do
+      super(name, options[:data])
+    end
+  end
+
+
+  def wrap_field(name, *args, &block)
+    return_str = ""
+
+    @template.content_tag :div, class: "field" do
+      return_str = label(name)
+      if block_given?
+        return_str << yield
+      end
+    end
+  end
 
 end

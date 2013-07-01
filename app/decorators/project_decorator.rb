@@ -1,34 +1,52 @@
-#
+### ----------------------------------------------------------------------------------------------------------------
 # +ProjectDecorator+
-# Encapsulates logic and rendering data for dynamic Project forms.
+#   Decorator to encapsulates logic and rendering strategy for dynamic Project forms.
 #
+#   This class is a wrapper for both the Project model and ProjectFormBuilder
 #
-
 class ProjectDecorator < Draper::Decorator
   delegate_all
 
+  ### --------------------------------------------------------------------------------------------------------------
+  # Wrapper for custom form builder (ProjectFormBuilder)
+  #
+  # Delegates calls for building individual fields to the +process_field+
+  # method.
+  #
+  #  Requires:
+  #   - field_type (Symbol):
+  #       (ex - :text_field, :check_box)
+  #
   def complete_form
+    # Allow dynamic fields in our Project to be processed by form_for
     create_virtual_attributes_on_project
 
     h.form_for @object, builder: ProjectFormBuilder do |f|
       @object.fields.each do |field|
-        if field.field_type != "select"
-          h.haml_concat f.send("#{field.field_type}", field.attr_name)
-        end
+        h.haml_concat process_field(f, field)
       end
     end
   end
 
-  def process_field
-
-  end
-
-  def show_fields(builder)
-    h.haml_concat "<br />".html_safe
-    #@object.fields.each do |field|
-    #  h.haml_concat h.raw builder.send(field.field_type.to_sym, field.name, field.name, "default value")
-    #  h.haml_concat "<br />".html_safe
-    #end
+  ### --------------------------------------------------------------------------------------------------------------
+  # Passes dynamic field attributes to form builder:
+  #
+  #  Required Attributes:
+  #   - attr_name (Symbol):
+  #       (ex - :wall_1, :wall_2)
+  #
+  #  Optional Attributes
+  #   - field_data (Array/Hash):
+  #       (ex - [:walls, :ceiling, :trim, :doors, :windows])
+  #   - label (String)
+  #       (ex - "Wall 1 (Square Feet)")
+  #   - default (String/Boolean):
+  #       (ex - "Wood", true)
+  #   - required (True/False):
+  #       True if this field is required
+  #
+  def process_field(builder, field)
+    builder.send(field.field_type.to_sym, field.attr_name.to_sym, data: field.field_data, default: field.default, required: field.required)
   end
 
   private
@@ -47,24 +65,6 @@ class ProjectDecorator < Draper::Decorator
     @object.class_eval do
       attr_accessor *project_attributes
     end
-  end
-
-  # Custom form_builder methods
-
-  def select(builder, label, attr, default)
-    "f.select #{label}, #{attr}, #{default}"
-  end
-
-  def text_field(builder, label, attr, default)
-    "f.text_field #{label} - #{attr} - #{default}"
-  end
-
-  def number_field(builder, label, attr, default)
-    "f.number_field #{label} - #{attr} - #{default}"
-  end
-
-  def checkbox(builder, label, data, attr)
-    "f.checkbox #{label} - #{attr} - #{data}"
   end
 
 end

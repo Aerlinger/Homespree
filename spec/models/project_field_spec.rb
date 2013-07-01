@@ -12,6 +12,8 @@
 #  field_data      :text
 #  default         :string(255)
 #  attr_name       :string(255)
+#  label           :string(255)
+#  position        :string(255)
 #
 
 require 'spec_helper'

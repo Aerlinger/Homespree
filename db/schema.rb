@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130630214412) do
+ActiveRecord::Schema.define(:version => 20130701000525) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -161,13 +161,17 @@ ActiveRecord::Schema.define(:version => 20130630214412) do
   create_table "project_fields", :force => true do |t|
     t.string   "name"
     t.string   "field_type"
-    t.boolean  "required"
+    t.boolean  "required",        :default => false
     t.integer  "project_type_id"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
     t.text     "field_data"
     t.string   "default"
     t.string   "attr_name"
+    t.string   "label"
+    t.string   "position",        :default => "left"
+    t.string   "size",            :default => "normal"
+    t.boolean  "toggleable",      :default => false
   end
 
   add_index "project_fields", ["project_type_id"], :name => "index_project_fields_on_project_type_id"
