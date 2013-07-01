@@ -57,9 +57,11 @@ class ProjectField < ActiveRecord::Base
 
   belongs_to :project_type
 
+  validates_presence_of :attr_name, :field_type
+
   serialize :field_data, Array
 
   def to_s
-    "#{self.attr_name}"
+    "#{attr_name}: #{field_type}"
   end
 end

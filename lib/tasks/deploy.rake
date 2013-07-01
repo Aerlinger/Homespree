@@ -4,10 +4,8 @@ task STAGING = "homespree-staging"
 
 APP = ARGV[1] || STAGING
 
-puts "=== APP  ==="
+puts "=== APP #{APP} ==="
 puts <<-HOMESPREE
-
-
 
 
         `:oshdy`  .hdd:
@@ -21,9 +19,8 @@ puts <<-HOMESPREE
        .dmm:   ommh` `ymmhsydo` .dmm/  smms` `smmhsyoymmho+oo/ss++ymmy/.hmmdoohmds` hmms      /mmms+ooo-ommmysyo
        .//:    ::/-    .///:`   ./::` `::/.    -//:`  -///:`   .///:`  /mmd-://:`  `::/`       `:///-`   .///:`
                                                                       `ymms`
-                                                                      -mmm.
+                                                                      -mmm.    ---> #{Rails.env.to_s.upcase} <---
                                                                       -/-`
-      ----->  #{APP}
 
 HOMESPREE
 

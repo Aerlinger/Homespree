@@ -55,18 +55,18 @@
 #
 # END COMMENTS ---------------------------------------------------------------
 
-META:
-  EDIT_BY:
-    - Your name here
-    - Anthony
-  EDIT_NOTES:
-    - Your note here
-    - Removed some extra fields. All calculator fields have been moved to a separate YML file.
+#META:
+#  EDIT_BY:
+#    - Your name here
+#    - Anthony
+#  EDIT_NOTES:
+#    - Your note here
+#    - Removed some extra fields. All calculator fields have been moved to a separate YML file.
 
 painting:   # (TOP-LEVEL PROJECT CATEGORIES 0 SPACES INDENTED) (E.g. Painting, Plumbing, General Contractor)
 
- interior:  # Project category params will go here (Two spaces of indentation) -----------------------------
-
+  # Project category params will go here (Two spaces of indentation) -----------------------------
+  interior:
     # Project category fields will go here (Four spaces of indentation) -----------------------------
     wall_1:
       field_type: text_field
