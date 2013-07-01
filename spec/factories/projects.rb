@@ -7,6 +7,6 @@ FactoryGirl.define do
 
     zipcode "12345"
 
-    project_type ProjectType.first
+    #project_type ProjectType.first
   end
 end

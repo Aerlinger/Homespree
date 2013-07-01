@@ -4,7 +4,28 @@ task STAGING = "homespree-staging"
 
 APP = ARGV[1] || STAGING
 
-puts "=== APP #{APP} ==="
+puts "=== APP  ==="
+puts <<-HOMESPREE
+
+
+
+
+        `:oshdy`  .hdd:
+      -yh:.hmm/   /mmd`
+     :my` /mmd`  `hmm+                                                     ---
+    `sN/ `ymms.../mmd.  `/shyys.  `syy++yhy+`:shhs.    .oyyoyo`  `smmm.   smmhoshho.  /yyo:oyy.  :shssy:  `:shssy-
+     `:- -mmdysssdmms  /dmh- -mh``/mmmo-/ddmh:-ymmo  `omms` ym.  /ddmm-  .mmm+` ommy .mmms--hd-.hmd: .my -dmd: .m+
+        `smms   -mmd- /mmd.  +md++dmmo  /mmd. `ymm: `ommy``od:  /+-dmm:  +mmy`  +mmy /mmh`    .dmm: -yy`-dmd: -hs`
+        .mmm-   smmy .dmm+   -No .mmm:  hmmo  :mmh` -mdmy+o:` `+s``hmm+ `dmm/   ymm+`hmm+     ommdoo+-  ymmd+o+.
+        ommh   .dmm: .mmm:  -dh``smms  :mmd. `smm/  omdd.    .hh+``ymms:ymmh` `+mmh`:mmd.    `ymmo    `:ddms   ``
+       .dmm:   ommh` `ymmhsydo` .dmm/  smms` `smmhsyoymmho+oo/ss++ymmy/.hmmdoohmds` hmms      /mmms+ooo-ommmysyo
+       .//:    ::/-    .///:`   ./::` `::/.    -//:`  -///:`   .///:`  /mmd-://:`  `::/`       `:///-`   .///:`
+                                                                      `ymms`
+                                                                      -mmm.
+                                                                      -/-`
+      ----->  #{APP}
+
+HOMESPREE
 
 
 namespace :deploy do

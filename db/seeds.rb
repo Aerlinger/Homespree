@@ -17,3 +17,42 @@ create_default_contractors
 create_default_homeowners
 create_mailing_list_users
 
+puts <<-HOMESPREE
+                                                                                                    
+                                                                                                    
+                                           ::/++++++/           /++++++++++:                        
+                                     :/+shdmNNMMMMMMd          :NMMMMMMMMMM+                        
+                                 :/ohmNMMMMMMMMMMMMMo          sMMMMMMMMMMm                         
+                               /sdNMMMNmmMMMMMMMMMMm:         :mMMMMMMMMMMs                         
+                            :odNMMMMmy+:dMMMMMMMMMMy          oMMMMMMMMMMN:                         
+                          :omMMMMMm+:  /MMMMMMMMMMM/          dMMMMMMMMMMh                          
+                         /dMMMMMNs:    yMMMMMMMMMMh          +NMMMMMMMMMN+                          
+                        +NMMMMMN+     :NMMMMMMMMMM+          yMMMMMMMMMMd                           
+                       +NMMMMMMo      oMMMMMMMMMMN          :NMMMMMMMMMMo                           
+                      :mMMMMMMh      :dMMMMMMMMMMs          sMMMMMMMMMMm:                           
+                      /MMMMMMMo      +MMMMMMMMMMN:          mMMMMMMMMMMy                            
+                      /MMMMMMM:      hMMMMMMMMMMh          +MMMMMMMMMMN:                            
+                      :mMMMMMM      /NMMMMMMMMMMhssssssssssdMMMMMMMMMMh                             
+                       /mMMMMM+     sMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM+                             
+                         +yhmmd     NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm                              
+                                   oMMMMMMMMMMNysssssssssyNMMMMMMMMMMo                              
+                                   dMMMMMMMMMMy          +MMMMMMMMMMN:                              
+                                  /MMMMMMMMMMM:          dMMMMMMMMMMy                               
+                                  yMMMMMMMMMMh          /NMMMMMMMMMN/                               
+                                 :NMMMMMMMMMM+          yMMMMMMMMMMd                                
+                                 sMMMMMMMMMMN          :NMMMMMMMMMM+                                
+                                -dMMMMMMMMMMs          oMMMMMMMMMMm:                                
+                                +MMMMMMMMMMN:          mMMMMMMMMMMs                                 
+                               -hMMMMMMMMMMh          /MMMMMMMMMMN:                                 
+                               /NMMMMMMMMMN+         -hMMMMMMMMMMh-                                 
+                               yMMMMMMMMMMd-         :NMMMMMMMMMM/                                  
+                              -NMMMMMMMMMMo          sMMMMMMMMMMm                                   
+                              oMMMMMMMMMMm:         :mMMMMMMMMMMo                                   
+                              mMMMMMMMMMMy          +MMMMMMMMMMN-                                   
+                             /MMMMMMMMMMN:         -dMMMMMMMMMMy                                    
+                             :///////////-         -///////////-                                    
+                                                                                                    
+
+HOMESPREE
+
+puts "GREAT SUCCESS!!"
