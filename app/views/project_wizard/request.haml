@@ -2,9 +2,11 @@
   %h1
     = @project.project_type
 
-  = select_tag "Service Types", options_for_select(ServiceType.all)
-  = select_tag "Project Types", options_for_select(ProjectType.all)
+  = select_tag "Service Types", options_for_select(ServiceType.all), id: "service_types"
+  = select_tag "Project Types", options_for_select(ProjectType.all), id: "project_types"
+
+  %hr
 
   = @project.complete_form
 
-  -#= render partial: 'step', locals: { title: 'Request', step_number: '1', project: @project }
+  = render partial: 'step', locals: { step_number: '1', project: @project }

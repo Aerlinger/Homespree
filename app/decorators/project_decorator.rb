@@ -34,6 +34,8 @@ class ProjectDecorator < Draper::Decorator
   #  Required Attributes:
   #   - attr_name (Symbol):
   #       (ex - :wall_1, :wall_2)
+  #   - field_type (Symbol):
+  #       (ex - :text_field, :check_box)
   #
   #  Optional Attributes
   #   - field_data (Array/Hash):
@@ -46,7 +48,20 @@ class ProjectDecorator < Draper::Decorator
   #       True if this field is required
   #
   def process_field(builder, field)
-    builder.send(field.field_type.to_sym, field.attr_name.to_sym, data: field.field_data, default: field.default, required: field.required)
+    builder.send(field.field_type.to_sym,
+                 field.attr_name.to_sym,
+
+                 # Optional params
+                 {
+                   label:      field.label,
+                   data:       field.field_data,
+                   default:    field.default,
+                   required:   field.required,
+                   position:   field.position,
+                   size:       field.size,
+                   toggleable: field.toggleable
+                 }
+    )
   end
 
   private

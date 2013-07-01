@@ -16,14 +16,34 @@
               -# Job Submission Form
               -#===========================================================================
               -# removed: authenticate_with: :none,
-              = form_for @project, method: :post do |f|
-                = f.label "Your home project:"
-                = f.select :project_type_name, ProjectType.all
-                = f.hidden_field :service_type_name, value: "Painting"
-                = f.text_field :zipcode, type: "text", id: "zipcode", placeholder: "Zip"
-                = f.submit "Get started", id: "submit_location", class: "btn btn-large btn-success"
-                - if @project.errors.any?
-                  %p#submit_success Please enter a valid zipcode
+              = form_tag projects_path, method: :post, id: "search_form" do
+                #customer_type.btn-group
+                  %a#dropdown.btn.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                    %span.text Select a project type
+                    %span.caret.pull-right
+
+                  %input#user_type{:name => "category_name", :style => "display: none", :value => ""}/
+                  %ul.dropdown-menu
+                    %li
+                      %a#contractor{:href => "javascript:void(0)", :onclick => "return false;"} Painting
+                    %li
+                      %a#homeowner{:href => "javascript:void(0)", :onclick => "return false;"} Cleaning
+                    %li
+                      %a#homeowner{:href => "javascript:void(0)", :onclick => "return false;"} Lawn Care
+                    %li
+                      %a#homeowner{:href => "javascript:void(0)", :onclick => "return false;"} Flooring
+                    %li
+                      %a#homeowner{:href => "javascript:void(0)", :onclick => "return false;"} Other
+
+                = text_field_tag(:zipcode, "", type: "text", id: "zipcode", placeholder: "Zip code")
+                = hidden_field_tag "submitted_from_mobile", "false"
+
+                // This button that calls the modal with is rendered at the bottom of this page
+                %button#submit_location.demo.large.green.submit.icon-and-text{"data-toggle" => "modal", :href => "#responsive"} Get Started
+
+                //Orginal button that redirect user to project wizard
+                -#= submit_tag "Get started", id: "submit_location", class: "large green submit icon-and-text"
+                %p#submit_success Thanks! We'll keep you posted when we launch.
 
 
   %section#section_three.shadow
@@ -31,14 +51,17 @@
       .row-fluid
         .span4
           %h2 Convenient
-          = render :partial => 'static_pages/dots'
+          = render :partial => 'dots'
           %p
             No one likes waiting, that's why we provide 3 instant estimates for your next project.
         .span4
           %h2 Transparent
-          = render :partial => 'static_pages/dots'
+          = render :partial => 'dots'
           %p Compare prices, reviews and past work among our qualified and approved contractors.
         .span4
           %h2 Guaranteed
-          = render :partial => 'static_pages/dots'
+          = render :partial => 'dots'
           %p We manage the payment and will make sure your contractor gets the job done right.
+
+//This represents the partial for the submit modal HTML
+=render "static_pages/partials/submit_modal"

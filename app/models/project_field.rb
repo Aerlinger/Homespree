@@ -16,40 +16,42 @@
 #  position        :string(255)
 #
 
+### ----------------------------------------------------------------------------------------------------------------
+# +ProjectField+ ActiveModel to Encapsulate the data revolving around Dynamic Project Forms
+#
+#  Default ordering for dynamic fields:
+#
+#  == Required Attributes ==
+#
+#   - attr_name (Symbol):
+#       (ex - :wall_1, :wall_2)
+#   - field_type (Symbol):
+#       (ex - :text_field, :check_field)
+#
+#
+#  == Optional Attributes ==
+#
+#   - field_data: (Array/Hash)
+#       (ex - [:walls, :ceiling, :trim, :doors, :windows])
+#
+#   - label: (String)
+#       (ex - "Wall 1 (Square Feet)")
+#
+#   - position: (enum: [:left, :right])
+#       (ex - :left)
+#
+#   - size: (enum: [:tiny, :small, :normal, :large])
+#       (ex - :left)
+#
+#   - default: (String/Boolean)
+#       (ex - "Wood", true)
+#
+#   - required: (True/False)
+#       True if this field is required
+#
+#   - toggleable: True/False
+#       True if this field can be enabled/disabled by a check box.
 class ProjectField < ActiveRecord::Base
-  ### ----------------------------------------------------------------------------------------------------------------
-  # +ProjectField+ ActiveModel to Encapsulate the data revolving around Dynamic Project Forms
-  #
-  #  Default ordering for dynamic fields:
-  #
-  #  == Required Attributes ==
-  #
-  #   - attr_name (Symbol):
-  #       (ex - :wall_1, :wall_2)
-  #
-  #
-  #  == Optional Attributes ==
-  #
-  #   - field_data: (Array/Hash)
-  #       (ex - [:walls, :ceiling, :trim, :doors, :windows])
-  #
-  #   - label: (String)
-  #       (ex - "Wall 1 (Square Feet)")
-  #
-  #   - position: (enum: [:left, :right])
-  #       (ex - :left)
-  #
-  #   - size: (enum: [:tiny, :small, :normal, :large])
-  #       (ex - :left)
-  #
-  #   - default: (String/Boolean)
-  #       (ex - "Wood", true)
-  #
-  #   - required: (True/False)
-  #       True if this field is required
-  #
-  #   - toggleable: True/False
-  #       True if this field can be enabled/disabled by a check box.
 
   attr_protected
 
@@ -58,6 +60,6 @@ class ProjectField < ActiveRecord::Base
   serialize :field_data, Array
 
   def to_s
-    "#{self.name} - #{self.project_type if self.project_type?}"
+    "#{self.attr_name}"
   end
 end

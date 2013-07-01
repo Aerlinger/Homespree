@@ -20,7 +20,7 @@
 /* --------------------->>> change the font here <<<---------------------*/
 
 body, input, textarea, button, form, #countdown {
-  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -1469,7 +1469,7 @@ html[xmlns] .slides, .no-js .slides > li:first-child {
     top: 0px !important;
     margin-left: auto !important;
     margin-right: auto !important;
-    z-index: 3000;
+    z-index: 1000;
 
   }
   .navbar.secondary-menu{
@@ -1575,7 +1575,7 @@ html[xmlns] .slides, .no-js .slides > li:first-child {
         height: 40px;
         padding: 0;
         position: absolute;
-        right: 30px;
+        right: 15px;
         top: 0px;
         background: url(/assets/misc/navtriggerbg.png) -20px 50% no-repeat;
       }
@@ -1592,7 +1592,7 @@ html[xmlns] .slides, .no-js .slides > li:first-child {
       width: 70px;
       border: 0px;
       line-height: 38px;
-      z-index: 2000;
+      z-index: 1000;
     }
   }
   .no-js .mobile_nav {

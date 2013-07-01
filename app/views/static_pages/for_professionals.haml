@@ -3,7 +3,7 @@
   = render partial: "static_pages/partials/sidenav"
 
   #faqs.span8.descriptiontext
+    %h1.block-underline Why use Homespree?
     = render partial: "/Content/for_professionals"
-
-    #createprofilebutton
-      = link_to "Create a free profile", new_contractor_registration_path, class: 'btn btn-success'
+    %br
+    = link_to "Create FREE profile", new_contractor_registration_path, class: 'btn btn-success createprofilebutton'

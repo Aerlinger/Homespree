@@ -1,0 +1,85 @@
+painting:
+
+
+  interior_calculator:  # Calculator params will go here (Two spaces of indentation) -----------------------------
+    Wall Paint:
+      Hours per square foot: 0.015
+      Multiplier for height over 8' (per add'l ft): 0.05
+      Multiplier for 'fair' condition: 1.5
+      Multiplier for 'poor' condition: 2
+
+    Wall Prime:
+      Hours per square foot: 0.01
+        Multiplier for height over 8' (per add'l ft): 0.05
+
+    Wallpaper Hanging/Removal:
+      Hours per square foot: 0.025
+      Multiplier for height over 8' (per add'l ft):	0.05
+
+    Ceiling Paint:
+      Hours per square foot: 0.02
+      Multiplier for height over 8' (per add'l ft): 0.05
+      Multiplier for 'fair' condition: 1.5
+      Multiplier for 'poor' condition: 2
+
+    Trim:
+      Hours per linear foot (all trim): 0.025
+      Multiplier for height over 8' (per add'l ft - crown only): 1.05
+
+    Doors:
+      Hours per flat: 1
+      Hours per bifold: 1.5
+      Hours per paneled: 1.5
+      Hours per louvered: 2.5
+      Hours per french: 2.5
+
+    Windows:
+      Hours per single pane: 1
+      Hours per multiple pane: 2
+      Hours per bay: 3
+
+
+
+  concrete_calculator:    # EACH PROJECT TYPE WILL HAVE AN ASSOCIATED 'CALCULATOR' defining attributes and their defaults
+    concrete coating:
+      pricing:
+        Paint: 0.015
+        Epoxy: 0.025
+        Textured Coating: 0.02
+        Stain Only: 0.02
+        Sealant Only: 0.02
+        Stain & Sealant: 0.03
+
+
+
+  exterior_calculator:  # EXTERIOR PAINTING PROJECT CATEGORY SUBTYPE ------------------------------------------------
+    Siding Paint:
+      Hours per square foot: 0.015
+      Multiplier for height over 1 story (per add'l story): 1.05
+      Multiplier for 'fair' condition: 1.5
+      Multiplier for 'poor' condition: 2.0
+
+    Trim:
+      Hours per linear foot (all trim): 0.05
+      Multiplier for height over 1 story: 1.33
+
+    Doors:
+      Hours per flat: 1
+      Hours per bifold: 1.5
+      Hours per paneled: 1.5
+      Hours per louvered: 2.5
+      Hours per french: 2.5
+      Hours per Garage: 2.5
+
+    Windows:
+      Hours per single pane: 1
+      Hours per multiple pane: 2
+      Hours per bay: 3
+      Hours per shutter: 1
+      Multiplier for height over 1 story (per add'l story): 1.5
+
+    Porch:
+      Hours per square foot of decking: 0.015
+      Hours per linear foot of railing: 0.1
+      Hours per post: 1
+      Hours per step: .1

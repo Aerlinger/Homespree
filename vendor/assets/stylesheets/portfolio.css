@@ -249,3 +249,9 @@
     -khtml-opacity: 1;
     opacity: 1;
 }
+
+@media screen and (max-width: 766px){
+    #portfolio{
+        margin-top: 15px !important;
+    }
+}

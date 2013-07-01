@@ -1,10 +1,22 @@
 - content_for :dashboard do
 
-  %h1 My Inbox
+  %h1.block-underline My Inbox
+
+  %p
+    %em No messages found
+  %br
   -#%ul= render mailbox.inbox
-  %h1 Sent messages
+  %h1.block-underline Sent messages
+
+  %p
+    %em No messages found
+  %br
   -#%ul= render mailbox.sentbox
-  %h1 Trash
+  %h1.block-underline Trash
+
+  %p
+    %em No messages found
+  %br
   -#%ul= render mailbox.trash
 
   -#= link_to 'Start Conversation', :new_conversation

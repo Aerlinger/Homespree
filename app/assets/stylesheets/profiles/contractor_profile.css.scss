@@ -75,7 +75,6 @@
   left: 0;
   top: 0;
   z-index: -999999999999999999;
-
   input {
 
   }
@@ -453,7 +452,7 @@
 
       #portfolio-slider {
         ul.slides .photo {
-          width: 782px;
+          width: 100%;
           float: left;
           display: block;
         }

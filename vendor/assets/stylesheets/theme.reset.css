@@ -1434,11 +1434,13 @@ label.radio.inline {
 }
 
 .btn-success {
-    background: linear-gradient(to bottom, #68de08 0%, #61cf07 50%, #5cc507 50%, #5ac305 100%);
+    background-color:#61cf07;
+    border-color: #61cf07;
 }
 
 .btn-success:hover, .btn-success:active, .btn-success.active, .btn-success.disabled, .btn-success[disabled] {
-    background: linear-gradient(to bottom, #68de08 50%, #61cf07 100%, #5cc507 50%, #5ac305 50%);
+    background-color:#5ac305;
+    border-color: #5ac305;
 }
 
 .btn-info {

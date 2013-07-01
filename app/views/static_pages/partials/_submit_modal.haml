@@ -1,0 +1,13 @@
+#responsive.modal.hide.fade{"data-width" => "760", :tabindex => "-1"}
+    .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+        %h3 Contractors in your area have not yet joined Homespree
+    .modal-body
+        .row-fluid
+            %p We're growing quickly, but have not yet launched in your area. Please enter your email address below and we'll notify you when we do!
+            %p
+                Email:
+                %input{:type => "text"}
+    .modal-footer
+        %button.btn{"data-dismiss" => "modal", :type => "button"} Close
+        %button.btn.btn-success{"data-dismiss" => "modal", :type => "button"} Notify Me
