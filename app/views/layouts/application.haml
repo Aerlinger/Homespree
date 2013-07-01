@@ -17,8 +17,7 @@
     = render "partials/header"
     = render 'partials/flash', flash: flash
 
-    #content
-      = content_for?(:content) ? yield(:content) : yield
+    = content_for?(:content) ? yield(:content) : yield
 
     = render 'partials/footer_sub'
     = render 'partials/footer_scripts'

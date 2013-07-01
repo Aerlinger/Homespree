@@ -4,6 +4,8 @@ class ContractorsController < ApplicationController
 
   before_filter :process_params, only: [:update, :create]
 
+  respond_to :html, :json, only: :update
+
   def show
     @contractor = Contractor.find(params[:id])
     @specialty = Specialty.new
@@ -29,7 +31,7 @@ class ContractorsController < ApplicationController
         redirect_to contractor_path(id: @contractor.slug)
       end
     else
-      render status: 422, nothing: true
+      respond_with @contractor
     end
   end
 

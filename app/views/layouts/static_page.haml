@@ -1,6 +1,7 @@
-- content_for :content do
-  .secondary
-    .container
-      = content_for?(:static_page) ? yield(:static_page) : yield
+#content.static_page
+  - content_for :content do
+    .secondary
+      .container
+        = content_for?(:static_page) ? yield(:static_page) : yield
 
-= render :template => 'layouts/application'
+  = render :template => 'layouts/application'

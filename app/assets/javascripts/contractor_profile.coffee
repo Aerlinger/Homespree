@@ -85,7 +85,6 @@ window.sortableFields = ->
 		axis: 'y'
 		update: ->
 			$.post($(this).data('update-url'), $(this).sortable('serialize'))
-#			$("#primary_service_text").text($(this).find('.specialty-name').first().text())
 
 
 
@@ -109,7 +108,11 @@ window.launchIntroJs = ->
 			setTimeout () ->
 				$(targetElement).find('a.edit-link').click()
 			, 500
-	).start()
+	).oncomplete( ->
+    $('.introjs-overlay').click()
+    $('.content').click()
+    $('body').click()
+  ).start()
 
 	$('.best_in_place').best_in_place()
 	setTimeout () ->
@@ -140,13 +143,10 @@ strtrim = (str) ->
 
 $(document).ready ->
 
-	# Only run this script if we're on the contractor's profile page.
-	if $("#page.profile").length > 0
-		console.log "loading contractor page."
-
-	# Default upload fields are hidden from view
-	#    invisibleUploadFields()
-	#		sortableFields()
+  $('.best_in_place').bind "ajax:success", () ->
+    $(this).closest('li').effect 'highlight', {color: "#88FF22"} , 800, () ->
+      $(this).find('.edit-link').text("Edit")
+      $(this).addClass('_edited')
 
 	# TODO: Tooltips aren't working for some reason.
 	$('#licensed').tooltip()

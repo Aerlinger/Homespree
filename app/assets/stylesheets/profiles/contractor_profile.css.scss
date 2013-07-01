@@ -22,6 +22,22 @@
   ---------------------------------------------------------------------------------------------------------------------
 */
 
+#purr-container .flash-error {
+  position: fixed;
+  top: 30px;
+  left: 100px;
+  width: 250px;
+  padding: 20px;
+  background-color: #FCC;
+  border: solid 2px #666;
+
+  z-index: 99999999999999999;
+  &:first-letter {
+    text-transform: uppercase
+  }
+}
+
+
 .introjs-showElement {
   color: black;
 }
@@ -147,19 +163,6 @@
 
   h3 {
     margin-bottom: 5px;
-  }
-
-  .purr {
-    position: fixed;
-    top: 30px;
-    right: 100px;
-    width: 250px;
-    padding: 20px;
-    background-color: #FCC;
-    border: solid 2px #666;
-    &:first-letter {
-      text-transform: uppercase
-    }
   }
 
   // ---------------------------------------------------------------------------------------------------------------
@@ -556,7 +559,7 @@
 
     #service_area, #service_area_edited {
       form {
-        margin-bottom: 40px !important;
+        margin-bottom: 70px !important;
       }
 
       #map {
@@ -588,11 +591,11 @@
       // Address Line 1 Fields ------------------------------------------------------------------------------
 
       label[for="address_line1"] {
-        width: 20%;
+        width: 30%;
       }
 
       #address_line1 {
-        width: 75%;
+        width: 65%;
       }
 
       // Address City and State Fields ----------------------------------------------------------------------
@@ -639,7 +642,6 @@
         }
 
         label {
-          //float: none;
           margin: 0;
         }
       }

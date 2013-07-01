@@ -1,0 +1,11 @@
+.static_page {
+  background: url(/assets/backgrounds/background_small.jpg) no-repeat center center fixed;
+
+  min-height: 1050px;
+  position: relative;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
