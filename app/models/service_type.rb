@@ -30,6 +30,6 @@ class ServiceType < ActiveRecord::Base
   default_scope order("position")
 
   def to_s
-    return self.name
+     name.try(:titleize)
   end
 end

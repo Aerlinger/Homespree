@@ -26,7 +26,7 @@ class ContractorsController < ApplicationController
         @contractor.update_attribute(:edited, true)
         render status: 200, nothing: true
       else
-        redirect_to contractor_path(id: @contractor.id)
+        redirect_to contractor_path(id: @contractor.slug)
       end
     else
       render status: 422, nothing: true

@@ -17,7 +17,7 @@
               -#===========================================================================
               -# removed: authenticate_with: :none,
               = form_for @project, method: :post do |f|
-                = f.label "Your home project:"
+                = f.label "Your home project:", id: "pitch_label"
                 = f.select :project_type_name, ProjectType.all
                 = f.hidden_field :service_type_name, value: "Painting"
                 = f.text_field :zipcode, type: "text", id: "zipcode", placeholder: "Zip"

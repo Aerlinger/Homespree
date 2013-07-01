@@ -57,7 +57,7 @@ class ContractorDecorator < Draper::Decorator
     if @object.logo_url?
       h.haml_concat image_tag @object.logo_url, attrs
 
-      if own_profile
+      if own_profile?
         h.haml_concat link_to("Change logo", "#", class: "btn btn-info btn-mini pull-left", id: "upload_logo")
         h.haml_concat link_to("Delete logo", contractor_path(id: @object.id, contractor: { remove_logo_url: true }),
                               confirm: "Are you sure you want to delete your logo from the description?",

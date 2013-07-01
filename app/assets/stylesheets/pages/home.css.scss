@@ -99,9 +99,9 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
 
     #new_project {
       margin: 50px;
-      width: 471px;
+      width: 670px;
 
-      background: none repeat scroll 0px 0px rgba(255, 255, 255, 0.2);
+      background: none repeat scroll 0px 0px rgba(255, 255, 255, 0.7);
       box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
       border-radius: 3px 3px 3px 3px;
       border: 1px solid rgb(0, 0, 0);
@@ -109,6 +109,18 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
       padding-top: 3px;
       padding-right: 3px;
       line-height: 1.4;
+
+      #pitch_label {
+        display: block;
+        float: left;
+        height: 40px;
+        line-height: 40px;
+        font-weight: bold;
+
+        font-size: 18px;
+        color: black;
+        margin: 2px 10px 0 15px;
+      }
 
       .dropdown-menu {
         z-index: 10;
