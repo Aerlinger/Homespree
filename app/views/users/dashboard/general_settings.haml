@@ -8,18 +8,18 @@
 -#===========================================================================
 - content_for :dashboard do
   = provide :title, "Edit account settings"
-  %h1.block-underline General Settings
+
   .accordion#accordion2
     .accordion-group
       .accordion-heading
         %a.accordion-toggle{data: {toggle: "collapse", parent: "#accordion2"}, href: "#collapseOne"}
-          %h7 Email Settings
+          %h7 Email and Password Settings
 
       #collapseOne.accordion-body.collapse.in
         .accordion-inner
           -# Change Email Form
           -#------------------------------------------------------------------------------------------------
-          = form_for(current_contractor, :html => {:method => :put}, id: 'change_email') do |f|
+          = form_for(current_contractor, :html => {:method => :put, id: 'change_email'}) do |f|
             -#= devise_error_messages!
             %div
               = f.label "Change Email"
@@ -38,7 +38,7 @@
           .accordion-inner
             -# Change Password
             -#------------------------------------------------------------------------------------------------
-            = form_for(current_contractor, :html => {:method => :put}, id: 'change_password') do |f|
+            = form_for(current_contractor, :html => {:method => :put, id: 'change_password'}) do |f|
               -#= devise_error_messages!
               %div
                 = f.label "Current Password"
