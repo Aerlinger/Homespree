@@ -6,7 +6,7 @@
 
   <div class="mobileheader">
     <p>Submit home improvement requests straight from your smartphone.</p>
-    <small>Provide your email to receive an invite.</small>
+    <small>Provide your email to receive an invite</small>
   </div>
 
   <%= form_tag projects_path, authenticate_with: :none, method: :post, remote: true, id: "loginForm" do %>
