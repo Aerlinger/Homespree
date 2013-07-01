@@ -555,6 +555,10 @@
     }
 
     #service_area, #service_area_edited {
+      form {
+        margin-bottom: 40px !important;
+      }
+
       #map {
         margin-bottom: 0;
         width: 100%;
@@ -580,28 +584,46 @@
         line-height: 30px;
       }
 
-      #city {
-        width: 100px;
+
+      // Address Line 1 Fields ------------------------------------------------------------------------------
+
+      label[for="address_line1"] {
+        width: 20%;
       }
+
+      #address_line1 {
+        width: 75%;
+      }
+
+      // Address City and State Fields ----------------------------------------------------------------------
+
+      label[for="address_city"], label[for="address_state"] {
+        width: 45%;
+      }
+
+      #address_city, #address_state {
+        width: 50%;
+      }
+
+      // Address zipcode ------------------------------------------------------------------------------------
 
       #zipcode {
         label {
-          margin-right: 50px;
+          width: 60%;
         }
         input {
-          width: 70px;
+          width: 35%;
         }
       }
 
       input:not(.btn) {
-        width: 50%;
         height: 20px !important;
       }
 
       input:not(.btn), select {
         float: right;
         text-align: right;
-        width: 75%;
+        width: 150px;
         margin-bottom: 10px !important;
         display: block !important;
       }
@@ -617,13 +639,9 @@
         }
 
         label {
-          float: none;
+          //float: none;
           margin: 0;
         }
-      }
-
-      form {
-        margin-bottom: 40px !important;
       }
 
     }

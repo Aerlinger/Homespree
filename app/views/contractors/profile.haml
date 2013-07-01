@@ -93,7 +93,7 @@
     %section.strip{style: "margin: 0;"}
       .container
         .row-fluid.title-columns
-          .span5#business_description
+          .span4#business_description
             %h3.short_headline
               %div Business Description
             = @contractor.in_place_edit(:h6, :slogan) do
@@ -112,7 +112,7 @@
               %div Services Offered
             =render "contractors/profiles/specialties"
 
-          = @contractor.intro_section("service_area", class: "span3") do
+          = @contractor.intro_section("service_area", class: "span4") do
             %h3.short_headline
               %div Service Area
             =render "contractors/profiles/service_area"

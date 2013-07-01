@@ -19,7 +19,7 @@
       #dashboard_section.span8.descriptiontext
         = content_for?(:dashboard) ? yield(:dashboard) : yield
 
-= render :template => 'layouts/~application'
+= render :template => 'layouts/application'
 
 %hr/
 = link_to "&laquo Back to my profile".html_safe, :back

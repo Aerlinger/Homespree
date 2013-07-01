@@ -16,7 +16,7 @@
         =f.input :state, collection: us_states, label: "State", :style => "width: 600px;"
 
       %span.address#zipcode
-        =f.input :zipcode, maxlength: 5, placeholder: @contractor.try(:zipcode), label: "Zipcode"
+        =f.input :zipcode, maxlength: 5, placeholder: @contractor.try(:zipcode), label: "Zip Code"
 
       .address#service_radius
         = f.input :service_radius, collection: service_radius, label: "Availability radius", selected: @contractor.address.service_radius
