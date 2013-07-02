@@ -30,6 +30,7 @@
 - if Rails.env.development?
 
   .debug
+    = current_layout
     = debug(params)
     = debug(cookies)
     = debug(current_user)

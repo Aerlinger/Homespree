@@ -1,11 +1,21 @@
 module ApplicationHelper
 
+  def current_layout
+    layout = controller.send(:_layout)
+
+    if layout.is_a? String
+      return layout
+    else
+      return layout.virtual_path.name
+    end
+  end
+
   def check_active(page_name)
     "active" if current_page? page_name
   end
 
   def present(object, klass=nil)
-    klass ||= "#{object.class}Presenter".constantize
+    klass     ||= "#{object.class}Presenter".constantize
     presenter = klass.new(object, self)
 
     yield presenter if block_given?

@@ -1,0 +1,42 @@
+// --------------------------------------------------------------------------
+// Layout-specific styles.
+//    These tags should have the same class name as the layout's filename
+// --------------------------------------------------------------------------
+
+
+.application {
+  min-height: 100%;
+  //min-height: 1000px;
+
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+  background: url(/assets/backgrounds/background_small.jpg) no-repeat center center fixed;
+}
+
+.static_page {
+  @extend .application;
+
+  background: url(/assets/backgrounds/background_small.jpg) no-repeat center center fixed;
+}
+
+.login_page {
+  @extend .application;
+
+  background: url(/assets/backgrounds/homebackground.png) no-repeat center center fixed;
+}
+
+.project_wizard {
+  @extend .application;
+
+  background: url(/assets/backgrounds/background_small.jpg) no-repeat center center fixed;
+
+}
+
+.dashboard {
+  @extend .application;
+
+  background: url(/assets/backgrounds/background_small.jpg) no-repeat center center fixed;
+}
