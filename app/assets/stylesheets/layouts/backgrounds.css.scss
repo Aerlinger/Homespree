@@ -1,7 +1,8 @@
 .static_page {
   background: url(/assets/backgrounds/background_small.jpg) no-repeat center center fixed;
 
-  min-height: 1050px;
+  height: 100%;
+  //min-height: 1050px;
   position: relative;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -9,3 +10,14 @@
   background-size: cover;
 }
 
+.login_page {
+  background: url(/assets/backgrounds/homebackground.png) no-repeat center center fixed;
+
+  height: 100%;
+  //min-height: 1050px;
+  position: relative;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

@@ -35,7 +35,7 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
   }
 
   #maintext {
-    min-height: 850px;
+    //min-height: 850px;
     h1 {
       padding: 0 7%;
       margin: 0 auto;
@@ -599,9 +599,6 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
 /*>>>>>>>>>> MAX WIDTH: 500 <<<<<<<<<<<<<<*/
 
 @media (max-width: 500px) {
-  body {
-    //background-position-x: -320px !important;
-  }
 
   footer {
     padding: 10px !important;

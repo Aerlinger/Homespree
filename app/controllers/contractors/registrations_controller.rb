@@ -1,6 +1,7 @@
 class Contractors::RegistrationsController < Devise::RegistrationsController
 
-  layout "static_page", only: [:edit]
+  layout "login_page"
+
   respond_to :html, :json
 
   after_filter :geolocate, only: [:create]
