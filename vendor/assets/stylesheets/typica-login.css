@@ -30,15 +30,15 @@
   top: 50%;
   left: 50%;
   display: block;
-  padding: 25px;
-  width: 260px;
+  padding: 15px;
+  width: 240px;
   height: 100%;
   background: white;
   text-align: left;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 6%;
-  margin-top: 6%;
+  margin-top: 10% !important;
 }
 #login-wraper label{
     text-align: left;
@@ -269,7 +269,7 @@ footer.navbar-fixed-bottom {
 @media (max-width: 495px) {
 
   #login-wraper {
-    padding-top: 0px;
+    padding-top: 3%;
     padding-bottom: 20px;
     margin-top: 120px;
   }

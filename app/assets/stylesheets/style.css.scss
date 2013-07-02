@@ -995,6 +995,10 @@ ul.navigation {
 /*--------------------------- .footer-credits ---------------------- */
 
 .footer-credits {
+  .container{
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+  }
   z-index: 9000;
   font-size: 70%;
   clear: both;
