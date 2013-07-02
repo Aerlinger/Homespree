@@ -191,6 +191,42 @@ painting:   # (TOP-LEVEL PROJECT CATEGORIES 0 SPACES INDENTED) (E.g. Painting, P
         - Fair - Minor repair necessary
         - Poor - Major repair necessary
 
+  cleaning:
+    finish_type:
+      label: "Finish type"
+      field_type: select
+      field_data:
+        - Unfinished
+        - Painted
+        - Wallpapered
+
+  flooring:
+    finish_type:
+      label: "Finish type"
+      field_type: select
+      field_data:
+        - Unfinished
+        - Painted
+        - Wallpapered
+
+  lawn_care:
+    finish_type:
+      label: "Finish type"
+      field_type: select
+      field_data:
+        - Unfinished
+        - Painted
+        - Wallpapered
+
+  other:
+    finish_type:
+      label: "Finish type"
+      field_type: select
+      field_data:
+        - Unfinished
+        - Painted
+        - Wallpapered
+
 #    Flat:
 #      enabled: boolean
 #      quantity: integer, if: :enabled

@@ -2,7 +2,7 @@ class Contractors::RegistrationsController < Devise::RegistrationsController
 
   layout "login_page"
 
-  respond_to :html, :json
+  #respond_to :html, :json
 
   after_filter :geolocate, only: [:create]
 
@@ -11,9 +11,9 @@ class Contractors::RegistrationsController < Devise::RegistrationsController
     @contractor = Contractor.new({email: params[:email]})
   end
 
-  def create
-    super
-  end
+  #def create
+  #  super
+  #end
 
   def edit
     super
