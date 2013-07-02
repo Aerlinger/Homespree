@@ -36,18 +36,18 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
 
   #maintext {
     min-height: 850px;
-    h1 {
-      padding: 0 7%;
-      margin: 0 auto;
-      color: white;
-      width: 1200px;
-      padding-top: 80px;
-    }
     top: 15%;
     left: 10%;
     right: 10%;
+
     h1 {
+      padding: 0 7%;
+      padding-top: 80px;
+      margin: 0 auto;
+
       color: white;
+      width: 1200px;
+
       font-weight: 400;
       font-size: 4em;
       line-height: 1.1em;
@@ -65,16 +65,14 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
       text-shadow: 0 0 13px rgba(0, 0, 0, 1), 0 -1px 1px rgba(0, 0, 0, 1);
     }
   }
-  margin: 0 0 0 0; /* 40px (secondary-menu) + 80px (primary-menu and logo) + 40px (standard margin)*/
+
+  margin: 0 0 0 0;
 
   .pitch {
     top: 30%;
     width: 100%;
     min-height: $pitch_height;
     padding: 0px !important;
-
-    //.search-area {
-    //  margin-top: 10%;
 
     h1 {
       color: white;
@@ -176,8 +174,6 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
       margin-top: 1px;
     }
 
-
-
     .submit {
       margin-left: 3px !important;
       width: 150px;
@@ -193,27 +189,6 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
       }
 
       &.green {
-        //border-color: black;
-        //background: #5dc907;
-        //background: -moz-linear-gradient(top, #5dc907 0%, #57b906 50%, #50ad06 50.1%, #4fac04 100%);
-        //background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #5dc907), color-stop(50%, #57b906), color-stop(50.1%, #50ad06), color-stop(100%, #4fac04));
-        //background: -webkit-linear-gradient(top, #5dc907 0%, #57b906 50%, #50ad06 50.1%, #4fac04 100%);
-        //background: -o-linear-gradient(top, #5dc907 0%, #57b906 50%, #50ad06 50.1%, #4fac04 100%);
-        //background: -ms-linear-gradient(top, #5dc907 0%, #57b906 50%, #50ad06 50.1%, #4fac04 100%);
-        //background: linear-gradient(to bottom, #5dc907 0%, #57b906 50%, #50ad06 50.1%, #4fac04 100%);
-        //filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5dc907', endColorstr='#4fac04', GradientType=0);
-        //
-        //&:hover {
-        //  background: #68de08;
-        //  background: -moz-linear-gradient(top, #68de08 0%, #61cf07 50%, #5cc507 50%, #5ac305 100%);
-        //  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #68de08), color-stop(50%, #61cf07), color-stop(50%, #5cc507), color-stop(100%, #5ac305));
-        //  background: -webkit-linear-gradient(top, #68de08 0%, #61cf07 50%, #5cc507 50%, #5ac305 100%);
-        //  background: -o-linear-gradient(top, #68de08 0%, #61cf07 50%, #5cc507 50%, #5ac305 100%);
-        //  background: -ms-linear-gradient(top, #68de08 0%, #61cf07 50%, #5cc507 50%, #5ac305 100%);
-        //  background: linear-gradient(to bottom, #68de08 0%, #61cf07 50%, #5cc507 50%, #5ac305 100%);
-        //  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#68de08', endColorstr='#5ac305', GradientType=0);
-        //}
-
         .caret {
           border-top-color: black;
         }
@@ -294,8 +269,6 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
           border: none !important;
         }
       }
-
-
 
     }
     #iphone_preview {
@@ -390,15 +363,14 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
 }
 
 /*********************************************************************************
->>>>>>>>>>>>>>>>>>>MEDIA QUERIES<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-*********************************************************************************/
+>>>>>>>>>>>>>>>>>>>  MEDIA QUERIES  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+**********************************************************************************/
 
 /*>>>>>>>>>> MAX WIDTH: 1200 <<<<<<<<<<<<<<*/
 @media (max-width: 1200px) {
   .pitch {
     padding-top: 0;
     height: auto;
-
   }
 }
 
@@ -431,9 +403,11 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
 
 @media (max-width: 767px) {
 
-  body, .container {
-    padding: 0 !important;
-    margin: 0 !important;
+  #home {
+    body, .container {
+      padding: 0 !important;
+      margin: 0 !important;
+    }
   }
 
   .stress-free {
@@ -446,6 +420,8 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
   }
 
   #maintext {
+    min-height: 980px !important;
+
     h1 {
       padding-top: 30px !important;
     }
@@ -487,25 +463,28 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
     }
 
     #pitch_label {
-      display: block;
-      text-align: center;
-      margin-top: 0 !important;
+      font-size: 24px !important;
+      margin-top: 15px !important;
+      margin-bottom: 25px !important;
+      display: block !important;
+      text-align: center !important;
       width: 100% !important;
     }
 
     #project_project_type_name {
+      margin-left: 10px !important;
       width: 280px !important;
     }
 
     #zipcode {
-      width: 270px !important;
-      margin-top: 6px !important;
+      width: 200px !important;
+      margin-top: 15px !important;
     }
 
     #submit_location {
       width: 285px !important;
-      margin-top: 55px !important;
-      margin-bottom: 6px !important;
+      margin-top: 35px !important;
+      margin-bottom: 14px !important;
     }
   }
 
