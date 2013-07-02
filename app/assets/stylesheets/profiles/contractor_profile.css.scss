@@ -57,13 +57,6 @@
   font-style: italic !important;
 }
 
-// Hide helper tags on mobile and small screens
-@media (max-width: 768px) {
-  #helper_tabs {
-    display: none;
-  }
-}
-
 .introjs-skipbutton {
   visibility: hidden;
 }

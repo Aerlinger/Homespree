@@ -105,13 +105,13 @@ def create_admins
 
   unless (User.find_by_email("admin@myhomespree.com"))
     contractor_admin = Contractor.create do |homespree_admin|
-      homespree_admin.id            = 1
       homespree_admin.email         = "admin@myhomespree.com"
       homespree_admin.first_name    = "Homespree Admin"
       homespree_admin.password      = "Meetmike9"
       homespree_admin.company_title = "Homespree Admin"
     end
+
+    puts "ADMIN contractor created: #{User.find_by_email("admin@myhomespree.com").email} id: #{contractor_admin.id}"
   end
 
-  puts "Admin contractor: #{User.find_by_email("admin@myhomespree.com").email}"
 end

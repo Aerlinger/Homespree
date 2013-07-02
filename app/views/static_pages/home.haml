@@ -5,8 +5,8 @@
   /*This is the code for the main text and picture on the front page. All css is on home.css.scss*/
   #maintext
     %span
-      %h1 Stress-free home improvement.
-      %h2 Get quotes, schedule projects and manage payment.
+      %h1.stress-free Stress-free home improvement.
+      %h2.get-quotes Get quotes, schedule projects and manage payment.
 
     %section.pitch
       .container
@@ -15,7 +15,6 @@
             .search-area
               -# Job Submission Form
               -#===========================================================================
-              -# removed: authenticate_with: :none,
               = form_for @project, method: :post do |f|
                 = f.label "Your home project:", id: "pitch_label"
                 = f.select :project_type_name, ProjectType.all

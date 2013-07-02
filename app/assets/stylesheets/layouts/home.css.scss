@@ -430,6 +430,21 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
 /*>>>>>>>>>> MAX WIDTH: 767 <<<<<<<<<<<<<<*/
 
 @media (max-width: 767px) {
+
+  body, .container {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .stress-free {
+    font-size: 3em !important;
+    text-align: center;
+  }
+
+  .get-quotes {
+    display: none;
+  }
+
   #maintext {
     h1 {
       padding-top: 30px !important;
@@ -437,34 +452,6 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
   }
   .qualitypro {
     display: none;
-  }
-
-  body {
-    padding: 0;
-  }
-
-  .secondary {
-    .container {
-      padding-top: 0px !important;
-      margin-top: 0px !important;
-    }
-    sidenav {
-      margin-top: 0px !important;
-      padding-top: 0px !important;
-      z-index: 999;
-    }
-    .nav li a {
-      margin: 3px;
-      padding: 10px;
-      border: 1px solid gray;
-      border-radius: 3px;
-    }
-    .descriptiontext {
-      padding: 3% 3%;
-      img {
-        display: none;
-      }
-    }
   }
 
   .pitch {
@@ -480,19 +467,46 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
     }
   }
 
-}
-
-/*>>>>>>>>>> MAX WIDTH: 750 <<<<<<<<<<<<<<*/
-
-@media (max-width: 750px) {
   .submit {
     &.large {
       width: 297px !important;
     }
   }
+
   #new_project {
+
+    display: table !important;
+    margin: 50px auto !important;
+
     width: 300px !important;
-    padding-left: 06px !important;
+    padding: 8px !important;
+
+    label, input, .btn {
+      display: table !important;
+      margin: 8px auto !important;
+    }
+
+    #pitch_label {
+      display: block;
+      text-align: center;
+      margin-top: 0 !important;
+      width: 100% !important;
+    }
+
+    #project_project_type_name {
+      width: 280px !important;
+    }
+
+    #zipcode {
+      width: 270px !important;
+      margin-top: 6px !important;
+    }
+
+    #submit_location {
+      width: 285px !important;
+      margin-top: 55px !important;
+      margin-bottom: 6px !important;
+    }
   }
 
   .navbar-inner {
@@ -524,184 +538,7 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
     .container {
       position: relative !important;
       margin-top: -60px;
-
     }
   }
-  #zipcode {
-    width: 270px !important;
-    margin-top: 06px !important;
-  }
-  #submit_location {
-    margin-top: 06px !important;
-  }
+
 }
-
-/*>>>>>>>>>> MAX WIDTH: 610 <<<<<<<<<<<<<<*/
-
-@media (max-width: 610px) {
-  .submit {
-    &.large {
-      width: 296px !important;
-    }
-  }
-  footer {
-    padding: 10px !important;
-  }
-
-  #iphone_preview {
-    display: none;
-  }
-
-  form {
-    margin-top: 20px !important;
-  }
-
-//.search-area {
-//  margin-left: 0 !important;
-//  padding-left: 0 !important;
-//}
-
-  .pitch {
-    padding: 0 20px;
-    margin-bottom: 10px;
-
-    .stressfree {
-      display: none;
-    }
-
-    #new_project {
-      margin: 0 auto;
-    }
-  }
-
-  .secondary {
-    .nav li a {
-      margin: 3px;
-      padding: 10px;
-      border: 1px solid gray;
-      border-radius: 3px;
-    }
-  }
-
-  h1 {
-    font-size: em;
-  }
-
-  h3 {
-    font-size: 20px;
-    line-height: 32px;
-    text-align: center;
-    font: 2em Helvetica;
-    margin: 0 0 15px;
-  }
-}
-
-/*>>>>>>>>>> MAX WIDTH: 500 <<<<<<<<<<<<<<*/
-
-@media (max-width: 500px) {
-
-  footer {
-    padding: 10px !important;
-  }
-
-  #iphone_preview {
-    display: none;
-  }
-
-  .pitch {
-    padding: 0;
-    margin-bottom: 10px;
-    #new_project {
-      margin: 0 auto;
-      padding: 5px !important;
-
-      //.search-area .call-to-action {
-      //  width: 100% !important;
-      //}
-
-      #customer_type > a {
-        width: 298px;
-      }
-
-    }
-
-    //.search-area .call-to-action.large {
-    //  float: none !important;
-    //  margin-left: 0px;
-    //  margin-top: 10px !important;
-    //  margin-right: 5px !important;
-    //  width: 100% !important;
-    //}
-  }
-
-  #new_project {
-    max-width: 300px !important;
-
-    #zipcode, #customer_type {
-      max-width: 272px !important;
-      margin-right: 5px !important;
-      a {
-        width: 272px !important;
-      }
-      * {
-        max-width: 320px !important;
-
-      }
-    }
-  }
-
-  h1 {
-    font-size: 5rem !important;
-  }
-
-  h2 {
-    font-size: 32px;
-    line-height: 52px;
-    font: 2.2em "helvetica neue", helvetica, sans-serif;
-    margin: 18px 0;
-  }
-
-  h3 {
-    font-size: 20px;
-    line-height: 32px;
-    text-align: center;
-    font: 2em Helvetica;
-    margin: 0 0 15px;
-  }
-  #maintext {
-    h2 {
-      display: none !important;
-    }
-  }
-}
-
-/*>>>>>>>>>> MAX WIDTH: 321 <<<<<<<<<<<<<<*/
-
-@media (max-width: 321px) {
-  #new_project {
-    max-width: 250px !important;
-  }
-  #zipcode {
-    width: 222px !important;
-  }
-  .submit {
-    &.large {
-      width: 248px !important;
-    }
-  }
-  .dropdown-menu {
-    width: 245px !important;
-  }
-  .dropdown-menu {
-    a {
-      width: 10px !important;
-    }
-  }
-  #maintext {
-    h1 {
-      font-size: 3.2rem !important;
-    }
-    min-height: 800px !important;
-  }
-}
-
