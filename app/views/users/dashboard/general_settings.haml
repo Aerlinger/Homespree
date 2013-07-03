@@ -9,11 +9,13 @@
 - content_for :dashboard do
   = provide :title, "Edit account settings"
 
+  %h1.block-underline General Settings
+
   .accordion#accordion2
     .accordion-group
       .accordion-heading
         %a.accordion-toggle{data: {toggle: "collapse", parent: "#accordion2"}, href: "#collapseOne"}
-          %h7 Email settings
+          %h7 Email Settings
 
       #collapseOne.accordion-body.collapse.in
         .accordion-inner

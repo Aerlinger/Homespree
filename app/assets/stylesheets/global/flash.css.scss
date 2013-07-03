@@ -6,19 +6,25 @@
     border-radius: 0;
     -moz-border-radius: 0;
     -webkit-border-radius: 0;
+    color: red;
+    font-size: 1.2em;
   }
 }
 
 #flash_link {
+  z-index: 999;
   display: block;
-  position: fixed;
+  position: absolute;
   width: 100%;
-  height: 100%;
 
   box-shadow: $shadow;
 
   text-decoration: none;
   color: black;
+
+  button.close{
+      top: 15px !important;
+    }
 
   .alert {
     border-radius: 0 !important;
