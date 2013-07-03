@@ -13,8 +13,10 @@
     %title Homespree | Stress-free Home Improvement
     = render 'partials/header_extras'
 
-  -#%body.DESKTOP#{"."}
+  -#%body.DESKTOP
   = content_tag :body, class: "desktop #{current_layout}" do
+
+
     = render "partials/header"
     = render 'partials/flash', flash: flash
 

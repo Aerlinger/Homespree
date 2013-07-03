@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
+
   # Intercepts User-Agent for mobile routing
   include Mobylette::RespondToMobileRequests
 
