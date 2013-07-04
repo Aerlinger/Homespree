@@ -119,7 +119,7 @@
 
 
   -#=render "contractors/profiles/question_modal"
-  =render "contractors/profiles/photos_modal"
+  = render "contractors/profiles/photos_modal"
   -#=render "partials/clean_footer"
 
   -# Invisible form to upload portrait image
@@ -134,12 +134,15 @@
       = f.file_field :logo_url, id: "hidden_logo_url", onchange: "uploadfile('#hidden_logo_url')"
       = f.submit "", class: 'image-upload'
 
-
-  -# Block intro.js on mobile:
-  - unless is_mobile_request?
-    :javascript
-      $(document).ready(function(evt) {
+  :javascript
+    $(document).ready(function(evt) {
+      if( !(/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) ) {
+        // some code..
         launchIntroJs();
         invisibleUploadFields();
         sortableFields();
-      });
+      }
+    });
+
+  -# Block intro.js on mobile:
+  -#- unless is_mobile_request?

@@ -3,7 +3,9 @@ class ApplicationController < ActionController::Base
 
 
   # Intercepts User-Agent for mobile routing
-  include Mobylette::RespondToMobileRequests
+  # Note: -- This is disabled due to a conflict with Devise and MIME types.
+  # This is temporary until a more elegant solution is found.
+  #include Mobylette::RespondToMobileRequests
 
   def signed_in_user
     user = current_user

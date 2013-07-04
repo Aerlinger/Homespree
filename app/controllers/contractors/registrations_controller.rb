@@ -4,16 +4,6 @@ class Contractors::RegistrationsController < Devise::RegistrationsController
 
   respond_to :html, :json
 
-  before_filter :mobylette_devise_hack, only: :create
-
-  mobylette_config do |config|
-    config[:fallback_chains] = { mobile: [:html, :haml] }
-  end
-
-  def mobylette_devise_hack
-    session[:mobylette_override] = :ignore_mobile
-  end
-
   after_filter :geolocate, only: [:create]
 
   def new
