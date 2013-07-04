@@ -114,7 +114,6 @@ window.launchIntroJs = ->
     $('body').click()
   ).start()
 
-	$('.best_in_place').best_in_place()
 	setTimeout () ->
 		$('.introjs-overlay').click()
 	, 500
@@ -142,7 +141,7 @@ strtrim = (str) ->
 
 
 $(document).ready ->
-
+  $('.best_in_place').best_in_place()
   $('.best_in_place').bind "ajax:success", () ->
     $(this).closest('li').effect 'highlight', {color: "#88FF22"} , 800, () ->
       $(this).find('.edit-link').text("Edit")
