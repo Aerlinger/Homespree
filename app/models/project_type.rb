@@ -32,6 +32,6 @@ class ProjectType < ActiveRecord::Base
   end
 
   def to_s
-    "#{name.try(:titleize)} Painting"
+    name.try(:titleize)
   end
 end
