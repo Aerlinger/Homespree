@@ -148,8 +148,8 @@ $(document).ready ->
       $(this).addClass('_edited')
 
 	# TODO: Tooltips aren't working for some reason.
-	$('#licensed').tooltip()
-	$('.item.photo').first().addClass("active");
+  $('#licensed').tooltip()
+  $('.item.photo').first().addClass("active")
 
-  invisibleUploadFields();
-  sortableFields();
+  invisibleUploadFields()
+  sortableFields()
