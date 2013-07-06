@@ -32,6 +32,10 @@ class ProjectType < ActiveRecord::Base
   end
 
   def to_s
-    name.try(:titleize)
+    name
   end
+
+  scope :collection, Proc.new {
+    ProjectType.all.map { |type| [type.name.titleize, type.name] }
+  }
 end

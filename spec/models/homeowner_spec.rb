@@ -142,4 +142,18 @@ describe Homeowner do
     end
   end
 
+  # Mocks and Stubs:  ----------------------------------------------------------------------------------------------
+
+  context "Validations" do
+
+    let(:badge) { stub(name: 'early_adopter') }
+
+    it "before validation" do
+      homeowner.should_receive(:sanitize_phone_numbers)
+      homeowner.save
+    end
+
+  end
+
+
 end

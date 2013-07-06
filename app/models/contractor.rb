@@ -154,7 +154,7 @@ class Contractor < User
   end
 
   def add_badges
-    badge = Badge.new
+    badge      = Badge.new
     badge.name = 'early_adopter'
     self.badges << badge
   end
@@ -162,13 +162,14 @@ class Contractor < User
   private
 
   def send_welcome_message
-    #admin = Contractor.find(1)
-    #if admin && admin.email == "admin@myhomespree.com"
-    #  subject = "Welcome to Homespree!"
-    #  body = "Body message should go here"
-    #
-    #  admin.send_message(self, body, subject)
-    #end
+    admin = Contractor.find_by_email("admin@myhomespree.com")
+
+    if admin
+      subject = "Welcome to Homespree!"
+      body    = "Body message should go here"
+
+      admin.send_message(self, body, subject)
+    end
   end
 
   def set_user_type

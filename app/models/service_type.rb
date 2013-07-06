@@ -1,4 +1,4 @@
- # == Schema Information
+# == Schema Information
 #
 # Table name: service_types
 #
@@ -30,6 +30,10 @@ class ServiceType < ActiveRecord::Base
   default_scope order("position")
 
   def to_s
-     name.try(:titleize)
+    name
   end
+
+  scope :collection, Proc.new {
+    ServiceType.all.map { |type| [type.name.titleize, type.name] }
+  }
 end

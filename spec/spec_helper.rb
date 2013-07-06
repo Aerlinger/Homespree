@@ -85,19 +85,30 @@ Spork.prefork do
     config.use_transactional_fixtures = false
     config.infer_base_class_for_anonymous_controllers = false
     config.treat_symbols_as_metadata_keys_with_true_values = true
+    config.filter_run :focus => true
     config.run_all_when_everything_filtered = true
-    #config.filter_run :focus => true
+
 
     config.before(:suite) do
       DatabaseCleaner.strategy = :transaction
       DatabaseCleaner.clean_with :truncation, except: %w[project_types service_types project_fields]
     end
 
+    config.before(:all) do
+      DeferredGarbageCollection.start
+    end
+
+    config.after(:all) do
+      DeferredGarbageCollection.start
+    end
+
     config.before(:each) do
+      GC.disable
       DatabaseCleaner.start
     end
 
     config.after(:each) do
+      GC.enable
       DatabaseCleaner.clean
     end
   end

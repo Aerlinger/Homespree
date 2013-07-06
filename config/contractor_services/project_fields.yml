@@ -119,7 +119,6 @@ painting:   # (TOP-LEVEL PROJECT CATEGORIES 0 SPACES INDENTED) (E.g. Painting, P
         - Fair - Minor repair necessary
         - Poor - Major repair necessary
 
-
   concrete:         # (PROJECT SUB CATEGORIES 2 SPACES INDENTED) (Starts with a #) ---------------------------
     location:         # Project sub-type attributes are 4 spaces indented
       field_type: select

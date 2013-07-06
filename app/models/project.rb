@@ -64,7 +64,6 @@ class Project < ActiveRecord::Base
 
   def set_project_type
     self.project_type = ProjectType.find_by_name(project_type_name)
-    return nil
   end
 
   def fully_valid?

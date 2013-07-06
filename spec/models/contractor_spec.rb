@@ -49,25 +49,26 @@ require 'spec_helper'
 
 describe Contractor do
 
+  let(:admin) { FactoryGirl.create :contractor, email: "admin@myhomespree.com" }
   let(:contractor) { FactoryGirl.create :contractor }
   before { @photo_attributes = {"0" => {:image_url => "photo1", :caption => "some_caption"}, "1" => {:image_url => "photo1", :caption => "some_caption"}} }
   subject { contractor }
 
   # Associations
   it { should have_many :alerts }
+  it { should have_one :address }
 
-  it { should respond_to :address }
-  it { should respond_to :appointments }
-  it { should respond_to :homeowners }
-  it { should respond_to :projects }
+  it { should have_many :appointments }
+  it { should have_many :homeowners }
+  it { should have_many :projects }
+  it { should have_many :badges }
+
   it { should respond_to :profile_picture }
-  it { should respond_to :badges }
   it { should respond_to :alerts }
   it { should respond_to :photos }
   it { should respond_to :project_photos }
   it { should respond_to :specialties }
 
-  it { should respond_to :id }
   it { should respond_to :company_title }
   it { should respond_to :first_name }
   it { should respond_to :last_name }
@@ -118,7 +119,7 @@ describe Contractor do
     its(:slug) { should eq "joe-s-plumbing" }
 
     its(:first_name) { should eq "Joe" }
-    its(:last_name) { should eq "ThePlumber" }
+    its(:last_name) { should eq "Theplumber" }
     its(:name) { should eq "Joe Theplumber" }
     its(:company_title) { should eq "Joe's Plumbing" }
 
@@ -287,7 +288,6 @@ describe Contractor do
   end
 
   describe "Joe The Contractor example" do
-
     let(:new_guy) { Contractor.new }
     subject { new_guy }
 
@@ -308,12 +308,15 @@ describe Contractor do
   end
 
   describe "receives a message from admin after being created" do
-    it "one message" do
-      contractor.mailbox.conversations.count.should eq 1
+    before do
+      @admin = FactoryGirl.create(:contractor, email: "admin@myhomespree.com")
+      @contractor = FactoryGirl.create :contractor
+      @contractor.mailbox.conversations
     end
 
-    it "is from Admin"
+    it "is from Admin" do
+      @conversations.first.should
+    end
   end
-
 
 end

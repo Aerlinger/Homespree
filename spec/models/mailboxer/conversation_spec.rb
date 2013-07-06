@@ -4,9 +4,9 @@ describe Conversation do
 
   let(:conversation) { FactoryGirl.create(:conversation) }
 
-  # Associations
-  it { should respond_to :messages }  # has_many messages
-  it { should respond_to :receipts }  # has_many receipts through messages
+                                     # Associations
+  it { should respond_to :messages } # has_many messages
+  it { should respond_to :receipts } # has_many receipts through messages
 
   # Instance Methods:
   it { should respond_to :mark_as_read }
@@ -46,7 +46,7 @@ describe Conversation do
 
     describe "from contractor to homeowner" do
       before do
-        @receipt = contractor.send_message(homeowner, "body of the message", "subject of the message")
+        @receipt      = contractor.send_message(homeowner, "body of the message", "subject of the message")
         @conversation = @receipt.conversation
       end
 
@@ -90,6 +90,20 @@ describe Conversation do
 
         it "should have proper body in second message" do
           @conversation.messages[0].body.should include("body of the message")
+        end
+      end
+
+      describe "contractor association" do
+        specify "has conversation" do
+          contractor.mailbox.conversations.should include(@conversation)
+        end
+
+        specify "has conversation" do
+          contractor.mailbox.conversations.should include(@conversation)
+        end
+
+        specify "has conversation" do
+          homeowner.mailbox.conversations.count == 1
         end
       end
 

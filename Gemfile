@@ -39,36 +39,46 @@ gem 'carrierwave'
 
 
 group :test, :development do
-  gem 'sqlite3'
-  gem 'shoulda-matchers'
-  gem 'rspec-rails', '>= 2.12.0'
-  gem 'meta_request'
-  gem 'parallel_tests'
+  gem 'zeus'
   gem 'zeus-parallel_tests'
+  gem 'parallel_tests'
+
+  gem 'sqlite3'
+  gem 'rspec-rails', '>= 2.12.0'
+
+  gem 'meta_request'
   gem 'faker'
   gem 'factory_girl_rails'
   gem 'rb-fsevent'
-  gem 'launchy', '2.1.0'
+  gem 'rb-inotify', require: false
+  gem 'rb-fchange', require: false
+
 end
 
 group :test do
-  gem 'guard-rspec'
+  gem 'shoulda-matchers'
   gem 'spork', '0.9.0'
-  gem 'zeus'
   gem 'selenium-webdriver'
   gem 'database_cleaner', '0.7.0'
   gem 'capybara'
-  #gem 'vcr'
-  #gem 'fakeweb'
+  gem 'capybara-webkit'
+  gem 'launchy', '2.1.0'
 end
 
 group :development do
-  gem 'bullet'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'brakeman'
   gem 'html2haml'
   gem 'quiet_assets'
+
+  gem 'growl'
+  gem 'bullet'
+
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'guard-zeus'
+  gem 'guard-bundler'
 end
 
 group :production do

@@ -5,6 +5,10 @@ describe ProjectsController do
   let(:project) { FactoryGirl.create }
   let(:params ) { {zipcode: "10025", project_type: "Power Washing"} }
 
+  before do
+    request.env["HTTP_REFERER"]
+  end
+
   it { should respond_to :create }
 
   xit "creates a new guest homeowner" do
