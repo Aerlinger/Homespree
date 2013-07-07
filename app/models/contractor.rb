@@ -159,6 +159,10 @@ class Contractor < User
     self.badges << badge
   end
 
+  def contractor?
+    true
+  end
+
   private
 
   def send_welcome_message

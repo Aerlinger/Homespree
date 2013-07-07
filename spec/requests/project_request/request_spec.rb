@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "Step 1: Request" do
+describe "Step 1: Request", pending: true do
 
   let(:project) { FactoryGirl.create :project }
 

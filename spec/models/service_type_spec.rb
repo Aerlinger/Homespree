@@ -25,13 +25,13 @@ describe ServiceType do
   it { should respond_to :updated_at }
   it { should respond_to :params }
 
-  it { should validate_uniqueness_of :name }
-  it { should validate_presence_of :name }
+  #it { should validate_uniqueness_of :name }
+  #it { should validate_presence_of :name }
 
   its(:project_types) { should be_empty }
 
   it "has correct to_s" do
-    "#{service_type}".should include "RspecPainting"
+    "#{service_type}".should include "Painting"
   end
 
   it "should be valid by default" do

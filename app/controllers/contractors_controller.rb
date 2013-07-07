@@ -31,7 +31,7 @@ class ContractorsController < ApplicationController
         redirect_to contractor_path(id: @contractor.slug)
       end
     else
-      respond_with @contractor
+      redirect_to contractor_path(id: @contractor.slug, notice: "Couldn't save contractor")
     end
   end
 

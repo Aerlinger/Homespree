@@ -2,11 +2,11 @@ require 'spec_helper'
 
 describe ProjectsController do
 
-  let(:project) { FactoryGirl.create }
+  let(:project) { FactoryGirl.create :project }
   let(:params ) { {zipcode: "10025", project_type: "Power Washing"} }
 
   before do
-    request.env["HTTP_REFERER"]
+    request.env["HTTP_REFERER"] = "/"
   end
 
   it { should respond_to :create }
@@ -25,11 +25,7 @@ describe ProjectsController do
 
   describe "Creates a new project from homepage" do
     let(:params) do
-      { zipcode: "10025", category_name: "Power Washing" }
-    end
-
-    it "has correct params" do
-      params.should eq({ zipcode: "10025", category_name: "Power Washing" })
+      { project: { zipcode: "10025", project_type_name: "Power Washing" } }
     end
 
     describe "when a homeowner is not signed in" do
@@ -42,13 +38,12 @@ describe ProjectsController do
       end
 
       it "assigns project" do
-        project = create :project
-        post :create, FactoryGirl.attributes_for(:project)
         expect(assigns(:project).class).to eq project.class
       end
 
       it "redirects to homeowner" do
-        response.should redirect_to "/project_wizard/request"
+        proj = assigns(:project)
+        response.should redirect_to "/project_wizard/request?project_id=#{proj.id}"
       end
 
       describe "creates a guest homeowner" do

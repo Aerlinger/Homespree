@@ -18,8 +18,9 @@ class ServiceType < ActiveRecord::Base
   # Parameters for this category:  ------------------------------------------------------------------------------------
   serialize :params, Hash
 
+  # Validations:  --------------------------------------------------------------------------------------------------
   validates_presence_of :name
-  validates_uniqueness_of :name
+  #validates_uniqueness_of :name, message: "for Service Type is not unique"
 
   # Associations:  --------------------------------------------------------------------------------------------------
   has_many :project_types

@@ -17,9 +17,14 @@
 require 'spec_helper'
 
 describe Project do
-
   let(:project) { FactoryGirl.create(:project) }
+  let(:project_type) { FactoryGirl.create(:project_type) }
+
   subject { project }
+
+  before do
+    project.project_type = project_type
+  end
 
   # Associations
   it { should belong_to :contractor }
@@ -35,36 +40,16 @@ describe Project do
   it { should respond_to :zipcode }
 
   it { should be_valid }
-
-  it "has correct project name" do
-    project.project_type.name.should eq "Interior Painting"
-  end
-
   it { should_not be_fully_valid }
 
-  it "has correct to_s" do
+  its("project_type.name") { should include "Wallpapering" }
+  its(:to_s) { should include "Wallpapering" }
 
-  end
+  its("service_type.name") { should include "Painting" }
 
-  describe "has correct defaults" do
-    its(:title) { should eq "My painting project" }
-    its(:description) { should eq "This is a test description of the project to be done" }
-
-    it "has a category for painting" do
-      project.service_type.name == "Painting"
-    end
-
-    its(:appointments) { should be_empty }
-  end
-
-  describe "stores photos" do
-    specify "before a project is done" do
-      project.before_photos.should be_empty
-    end
-
-    specify "after a project is done" do
-      project.after_photos.should be_empty
-    end
+  describe "stores before and after photos" do
+    its(:before_photos) { should be_empty }
+    its(:after_photos) { should be_empty }
   end
 
   describe "with appointment" do
@@ -74,6 +59,8 @@ describe Project do
     let(:before_photo) { FactoryGirl.create :photo }
     let(:after_photo) { FactoryGirl.create :photo }
 
+    subject { appointment }
+
     before do
       project.appointments << appointment
       project.before_photos << before_photo
@@ -82,78 +69,33 @@ describe Project do
       contractor.appointments << appointment
     end
 
-    subject { appointment }
+    it { should be_persisted }
 
-    it { should be_valid }
-
-    specify { appointment.project.should eq project }
-
-    specify "project belongs to appointment" do
-      project.appointments.should eq [appointment]
-    end
-
-    specify { Appointment.count.should eq 1 }
-
+    its(:project) { should eq project }
+    its(:contractor) { should eq contractor }
+    its(:homeowner) { should eq homeowner }
+    its("project.appointments") { should eq [appointment] }
 
     describe "contractor has projects through" do
+      subject { contractor }
 
-      it "has one appointment" do
-        contractor.appointments.should eq [appointment]
-      end
-
-      it "has one project" do
-        contractor.projects.should eq [project]
-      end
-
-      specify "appointment belongs to contractor" do
-        appointment.contractor.should eq contractor
-      end
-
-      it "creates a project for the appointment" do
-        contractor.projects.should eq [appointment.project]
-      end
-
-      it "has one homeowner" do
-        contractor.homeowners.should eq [homeowner]
-      end
-
-      it "has same projects as homeowner" do
-        contractor.projects.should eq homeowner.projects
-      end
-
-
-      it "has same appointments as homeowner" do
-        contractor.appointments.should eq homeowner.appointments
-      end
-
+      its(:appointments) { should eq [appointment] }
+      its(:projects) { should eq [project] }
+      its(:projects) { should eq [appointment.project] }
+      its(:homeowners) { should eq [homeowner] }
+      its(:projects) { should eq homeowner.projects }
+      its(:appointments) { should eq homeowner.appointments }
     end
 
     describe "homeowner has projects through" do
+      subject { homeowner }
 
-      specify "appointment belongs to homeowner" do
-        appointment.homeowner.should eq homeowner
-      end
-
-      it "has one appointment" do
-        homeowner.appointments.should eq [appointment]
-      end
-
-      it "has one project" do
-        homeowner.projects.should eq [project]
-      end
-
-      it "has one contractor" do
-        homeowner.contractors.should eq [contractor]
-      end
-
-      it "creates a project for an appointments" do
-        homeowner.projects.should eq contractor.projects
-      end
-
-      it "has same appointments as contractor" do
-        homeowner.appointments.should eq contractor.appointments
-      end
-
+      its(:appointments) { should eq [appointment] }
+      its(:projects) { should eq [project] }
+      its(:projects) { should eq [appointment.project] }
+      its(:contractors) { should eq [contractor] }
+      its(:projects) { should eq contractor.projects }
+      its(:appointments) { should eq contractor.appointments }
     end
   end
 
@@ -162,22 +104,42 @@ describe Project do
     let(:field2) { FactoryGirl.create :project_field }
     let(:field3) { FactoryGirl.create :project_field }
     let(:field4) { FactoryGirl.create :project_field }
-    let(:properties) { {one: 1, two: 2, three: 3} }
+
+    subject { project }
+
 
     before do
-      project_type = project.project_type
-      project.project_type.fields = [field1, field2, field3, field4]
-
-      project.properties = properties
-      project.save
+      [field1, field2, field3, field4].each do |field|
+        project.project_type.fields << field
+      end
+      #project.save
     end
 
-    it "accesses all fields through delegation" do
-      project.project_type.fields.should include field1
+    it "doesn't have null fields" do
+      field1.to_s.should eq("Window height")
+      field2.to_s.should eq("Window height")
+      field3.to_s.should eq("Window height")
+      field4.to_s.should eq("Window height")
     end
 
-    it "properties can be stored as a hash object" do
-      project.properties.should eq (properties)
+    its("project_type.fields") { should eq [field1, field2, field3, field4] }
+    its(:fields) { should eq [field1, field2, field3, field4] }
+
+    it "can modify properties like a hash" do
+      project.properties == {}
+      project.properties[:some_bullshit] = "foo"
+      project.properties[:some_bullshit].should eq "foo"
+      project.properties == { some_bullshit: "foo" }
+      #project.save
+      #project.properties[:some_bullshit].should eq "foo"
+      #project.properties == { some_bullshit: "foo" }
+    end
+
+    it "can serialize properties" do
+      #project.load_properties({})
+      params = {
+
+      }
     end
 
   end

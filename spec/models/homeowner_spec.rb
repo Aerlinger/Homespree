@@ -78,45 +78,19 @@ describe Homeowner do
   it { should respond_to :encrypted_password }
 
   # Class Methods
-  specify { Homeowner.should respond_to :new_homeowner_guest }
+  specify { Homeowner.should respond_to :create_guest }
 
-  it "titlieizes name" do
-    ho = FactoryGirl.create(:homeowner, first_name: "betty", last_name: "boop")
-    ho.first_name.should eq "Betty"
-    ho.last_name.should eq "Boop"
+  it { should be_homeowner }
+  its(:class) { should eq Homeowner }
+
+  describe "titlieizes name" do
+    subject { FactoryGirl.create(:homeowner, first_name: "betty", last_name: "boop") }
+
+    its(:first_name) { should eq "Betty" }
+    its(:last_name) { should eq "Boop" }
   end
 
-  it "can be queried for its type type" do
-    homeowner.should be_homeowner
-  end
-
-  it "is a Homeowner class object" do
-    homeowner.class.should eq Homeowner
-  end
-
-  it "can be created as a guest" do
-    guest_homeowner = Homeowner.new_homeowner_guest
-    guest_homeowner.guest.should be_true
-  end
-
-  it "is valid" do
-    homeowner.should be_valid
-    homeowner.should be_persisted
-  end
-
-  it "should not be valid without email" do
-    homeowner.email = "adf"
-    homeowner.should_not be_valid
-  end
-
-  it "not valid with too short of a password" do
-    homeowner.password = 'secre'
-    homeowner.save
-    homeowner.errors.keys.should include(:password)
-  end
-
-
-  context "Guest User" do
+  context "Guest Homeowner" do
     let(:guest_homeowner) { Homeowner.create_guest }
     subject { guest_homeowner }
 
@@ -124,36 +98,32 @@ describe Homeowner do
 
     its(:first_name) { should eq "Guest homeowner" }
 
-    describe "Creating a project and upgrading account" do
-      let(:project) { FactoryGirl.build :project }
+    describe "creates a project" do
+      let(:project) { FactoryGirl.create :project }
       let(:appointment) { FactoryGirl.create(:appointment) }
 
       before do
         project.appointments << appointment
-        guest_homeowner.projects << project
+        appointment.project = project
+        guest_homeowner.appointments << appointment
+        #guest_homeowner.projects << project
       end
 
-      it "upgrades to guest homeowner when a password is given" do
-        guest_homeowner.email    = "homeowner@home.com"
-        guest_homeowner.password = "iamsecret"
-        guest_homeowner.save
-        guest_homeowner.should_not be_guest
+      specify { project.should be_valid }
+      specify { appointment.should be_valid }
+
+      its(:email) { should include "guest_homeowner" }
+      its(:password) { should be_nil }
+
+      describe "gets saved" do
+        before do
+          subject.password = "iamsecret"
+          subject.save
+        end
+
+        it { should_not be_guest }
       end
     end
   end
-
-  # Mocks and Stubs:  ----------------------------------------------------------------------------------------------
-
-  context "Validations" do
-
-    let(:badge) { stub(name: 'early_adopter') }
-
-    it "before validation" do
-      homeowner.should_receive(:sanitize_phone_numbers)
-      homeowner.save
-    end
-
-  end
-
 
 end

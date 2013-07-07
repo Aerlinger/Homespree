@@ -80,10 +80,6 @@ class Homeowner < User
     self.email
   end
 
-  def self.new_homeowner_guest
-    new { |u| u.guest = true }
-  end
-
   def name
     guest ? "Guest" : first_name
   end
@@ -98,7 +94,7 @@ class Homeowner < User
     guest_homeowner = Homeowner.new do |guest|
       guest.first_name  = name
       guest.guest = true
-      guest.email = "guest_homeowner_#{Time.now.to_i}#{rand(9999)}@example"
+      guest.email = "guest_homeowner_#{Time.now.to_i}_#{rand(99999)}@example"
     end
     guest_homeowner.save(validate: false)
     return guest_homeowner
@@ -132,6 +128,9 @@ class Homeowner < User
     end
   end
 
+  def homeowner?
+    true
+  end
 
   def set_user_type
     self.user_type = "Homeowner"

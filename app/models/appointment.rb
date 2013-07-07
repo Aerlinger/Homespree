@@ -4,7 +4,6 @@
 #
 #  id                      :integer          not null, primary key
 #  starts_at               :datetime
-#  address_id              :integer
 #  photos                  :string(255)
 #  reminders               :string(255)
 #  created_at              :datetime         not null

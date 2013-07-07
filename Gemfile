@@ -40,8 +40,8 @@ gem 'carrierwave'
 
 group :test, :development do
   gem 'zeus'
-  gem 'zeus-parallel_tests'
-  gem 'parallel_tests'
+  #gem 'zeus-parallel_tests'
+  #gem 'parallel_tests'
 
   gem 'sqlite3'
   gem 'rspec-rails', '>= 2.12.0'
@@ -102,5 +102,4 @@ group :assets do
   # Gems used for markdown
   gem 'redcarpet' # Makes it possible to use a markdown filter within haml
   gem 'markdown-rails'
-
 end

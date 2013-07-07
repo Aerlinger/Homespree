@@ -51,95 +51,90 @@ describe Contractor do
 
   let(:admin) { FactoryGirl.create :contractor, email: "admin@myhomespree.com" }
   let(:contractor) { FactoryGirl.create :contractor }
-  before { @photo_attributes = {"0" => {:image_url => "photo1", :caption => "some_caption"}, "1" => {:image_url => "photo1", :caption => "some_caption"}} }
+  before { @photo_attributes = { "0" => { :image_url => "photo1", :caption => "some_caption" }, "1" => { :image_url => "photo1", :caption => "some_caption" } } }
   subject { contractor }
 
   # Associations
-  it { should have_many :alerts }
-  it { should have_one :address }
+  context "Associations" do
+    it { should have_one :address }
+    it { should have_many :alerts }
+    it { should have_many :appointments }
+    it { should have_many :homeowners }
+    it { should have_many :projects }
+    it { should have_many :badges }
+  end
 
-  it { should have_many :appointments }
-  it { should have_many :homeowners }
-  it { should have_many :projects }
-  it { should have_many :badges }
-
-  it { should respond_to :profile_picture }
-  it { should respond_to :alerts }
-  it { should respond_to :photos }
-  it { should respond_to :project_photos }
-  it { should respond_to :specialties }
-
-  it { should respond_to :company_title }
-  it { should respond_to :first_name }
-  it { should respond_to :last_name }
-  it { should respond_to :mobile_number }
-  it { should respond_to :office_number }
-  it { should respond_to :description }
-  it { should respond_to :website }
-  it { should respond_to :facebook }
-  it { should respond_to :twitter }
-  it { should respond_to :updated_at }
-  it { should respond_to :password }
-  it { should respond_to :password_confirmation }
-  it { should respond_to :logo_url }
-  it { should respond_to :portrait_url }
+  context "Profile related params" do
+    it { should respond_to :profile_picture }
+    it { should respond_to :alerts }
+    it { should respond_to :photos }
+    it { should respond_to :project_photos }
+    it { should respond_to :specialties }
+    it { should respond_to :company_title }
+    it { should respond_to :first_name }
+    it { should respond_to :last_name }
+    it { should respond_to :mobile_number }
+    it { should respond_to :office_number }
+    it { should respond_to :description }
+    it { should respond_to :website }
+    it { should respond_to :facebook }
+    it { should respond_to :twitter }
+    it { should respond_to :updated_at }
+    it { should respond_to :password }
+    it { should respond_to :password_confirmation }
+    it { should respond_to :logo_url }
+    it { should respond_to :portrait_url }
+  end
 
   # Mailboxer Methods:
-  it { should respond_to :mailbox }
-  it { should respond_to :mark_as_read }
-  it { should respond_to :mark_as_unread }
-  it { should respond_to :notify }
-  it { should respond_to :send_message }
-  it { should respond_to :reply_to_all }
-  it { should respond_to :reply }
-  it { should respond_to :reply_to_conversation }
-  it { should respond_to :reply_to_sender }
-  it { should respond_to :search_messages }
-  it { should respond_to :trash }
-  it { should respond_to :untrash }
+  context "mailboxer methods" do
+    it { should respond_to :mailbox }
+    it { should respond_to :mark_as_read }
+    it { should respond_to :mark_as_unread }
+    it { should respond_to :notify }
+    it { should respond_to :send_message }
+    it { should respond_to :reply_to_all }
+    it { should respond_to :reply }
+    it { should respond_to :reply_to_conversation }
+    it { should respond_to :reply_to_sender }
+    it { should respond_to :search_messages }
+    it { should respond_to :trash }
+    it { should respond_to :untrash }
+  end
 
   # Devise Columns:
-  it { should respond_to :sign_in_count }
-  it { should respond_to :reset_password_sent_at }
-  it { should respond_to :reset_password_token }
-  it { should respond_to :last_sign_in_at }
-  it { should respond_to :last_sign_in_ip }
-  it { should respond_to :encrypted_password }
-
-
-  it "can be queried for its type type" do
-    contractor.should be_contractor
+  context "Devise attributes" do
+    it { should respond_to :sign_in_count }
+    it { should respond_to :reset_password_sent_at }
+    it { should respond_to :reset_password_token }
+    it { should respond_to :last_sign_in_at }
+    it { should respond_to :last_sign_in_ip }
+    it { should respond_to :encrypted_password }
   end
 
-  it "is a Homeowner class object" do
-    contractor.class.should eq Contractor
-  end
+  it { should be_contractor }
+  its(:class) { should eq Contractor }
 
-  describe "defaults" do
+  context "default assignments" do
     its(:slug) { should eq "joe-s-plumbing" }
-
-    its(:first_name) { should eq "Joe" }
-    its(:last_name) { should eq "Theplumber" }
     its(:name) { should eq "Joe Theplumber" }
-    its(:company_title) { should eq "Joe's Plumbing" }
-
-    its(:license) { should eq "ABCDEFG12345" }
-    its(:insurance_limit) { should eq 200000.0 }
-    its(:bonding_limit) { should eq 100000.0 }
 
     its(:office_number) { should eq "8485558443" }
     its(:mobile_number) { should eq "8485558332" }
 
-    its(:slogan) { should eq "I am Joe the plumber" }
+    its("photos.count") { should eq 1 }
+  end
 
-    its(:facebook) { should eq "www.facebook.com/joe_the_plumber" }
-    its(:twitter) { should eq "@joe_the_plumber" }
-    its(:website) { should eq "http://www.joesplumbing.com" }
+  context "validations" do
+    let(:new_contractor) { Contractor.new }
+    subject { new_contractor }
 
-    it "should have one default photo" do
-      contractor.photos.count.should eq 1
-    end
+    it { should_not be_valid }
+    it { should_not be_persisted }
 
+    it { should have(2).errors_on(:email) }
+    it { should have(1).errors_on(:company_title) }
+    it { should have(1).errors_on(:password) }
   end
 
   describe "Mailboxer association" do
@@ -152,25 +147,15 @@ describe Contractor do
   end
 
   describe "default images" do
-
-    it do
-      contractor.logo_url.to_s.should eq ""
-    end
-
-    it do
-      contractor.portrait_url.to_s.should eq "/assets/contractor_profiles/portrait_default.jpg"
-    end
+    its("logo_url.to_s") { should eq "" }
+    its("portrait_url.to_s") { should eq "/assets/contractor_profiles/portrait_default.jpg" }
 
     describe "has a single portrait url by default" do
       let(:photos) { contractor.photos }
+      subject { photos }
 
-      it "has a single photo" do
-        photos.length.should eq 1
-      end
-
-      it "is the default" do
-        photos.first.image_url.should eq "/assets/contractor_profiles/portfolio_images/default.png"
-      end
+      its(:length) { should eq 1 }
+      its("first.image_url") { should eq "/assets/contractor_profiles/portfolio_images/default.png" }
     end
   end
 
@@ -186,71 +171,27 @@ describe Contractor do
     its(:office_number) { should eq '8085551234' }
   end
 
-  describe "only requires email, company title, and password" do
-    let(:contractor) { Contractor.new }
-    subject { contractor }
-    before { contractor.valid? }
-
-    it { should_not be_valid }
-    it { should_not be_persisted }
-
-    it "email error includes" do
-      contractor.errors[:email].should include("can't be blank")
-      contractor.errors[:email].should include("is invalid")
-    end
-
-    it "company_title error includes" do
-      contractor.errors[:company_title].should include("can't be blank")
-    end
-
-    it "password error includes" do
-      contractor.errors[:password].should include("can't be blank")
-    end
-
-    it "is valid once an email, company title are present" do
-      contractor.email = "asdf@asdf.com"
-      contractor.password = "iamsecret"
-      contractor.company_title = "iamsecret"
-
-      contractor.should be_valid
-    end
-  end
-
   it "is invalid with duplicate email address" do
-    contractor = create :contractor
+    contractor           = create :contractor
     duplicate_contractor = build :contractor, email: contractor.email
     duplicate_contractor.valid?
 
     duplicate_contractor.errors[:email].should include("has already been taken")
   end
 
-  describe "valid contractor" do
-    it "checks phone numbers" do
-      [:office_number, :mobile_number].each do |number|
-        subject[number] = "123456789"
-        subject.should_not be_valid
-        expect(subject.errors.messages[number]).to eq ["must be valid"]
-      end
-    end
-
-    it "has email" do
-      contractor.email.should_not be_empty
-    end
-
-    it "has name" do
-      contractor.first_name.should_not be_empty
-      contractor.last_name.should_not be_empty
-    end
-
-    it "capitalizes first and last name" do
+  describe "capitalizes first and last name" do
+    before do
       contractor.first_name = "joe"
-      contractor.last_name = "schmoe"
+      contractor.last_name  = "schmoe"
 
       contractor.save
-
-      contractor.first_name.should eq "Joe"
     end
 
+    its(:first_name) { should eq "Joe" }
+    its(:last_name) { should eq "Schmoe" }
+  end
+
+  describe "valid contractor" do
 
     it "downcases email" do
       contractor.email = "JoEtHEplumBEr@Lol.CoM"
@@ -307,15 +248,15 @@ describe Contractor do
     end
   end
 
-  describe "receives a message from admin after being created" do
+  describe "receives a welcome message from admin after being created" do
     before do
-      @admin = FactoryGirl.create(:contractor, email: "admin@myhomespree.com")
-      @contractor = FactoryGirl.create :contractor
-      @contractor.mailbox.conversations
+      @admin        = FactoryGirl.create(:contractor, email: "admin@myhomespree.com")
+      @contractor   = FactoryGirl.create :contractor
+      @conversation = @contractor.mailbox.conversations.first
     end
 
     it "is from Admin" do
-      @conversations.first.should
+      @conversation.last_sender.email.should eq @admin.email
     end
   end
 

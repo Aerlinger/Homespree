@@ -12,67 +12,33 @@
 require 'spec_helper'
 
 describe ProjectType do
-
   let(:project_type) { FactoryGirl.create :project_type }
+  let(:service_type) { project_type.service_type }
 
-  it {should respond_to :name}
-  it {should respond_to :service_type}
+  subject { project_type }
 
-  it { should validate_uniqueness_of :name }
   it { should validate_presence_of :name }
 
-  describe "default values" do
-    let(:project_types) { ProjectType.all }
+  its("service_type.name") { should include "Painting" }
+  its("service_type.project_types") { should eq [project_type] }
+  its(:name) { should include "Wallpaper" }
+  its(:to_s) { should include "Wallpaper" }
 
-    it "includes Exterior Painting" do
-      ProjectType.find_by_name("Interior Painting").should_not be_nil
-      ProjectType.find_by_name("Exterior Painting").should_not be_nil
-    end
+  specify { ProjectType.where("name LIKE ?", "%Wallpaper%").should_not be_nil }
 
-  end
-
-  it "has correct to_s" do
-    "#{project_type}".should include "Wallpaper"
-  end
-
-  describe "Can have many fields" do
+  describe "has many fields" do
     let(:field1) { FactoryGirl.create :project_field }
     let(:field2) { FactoryGirl.create :project_field }
     let(:field3) { FactoryGirl.create :project_field }
     let(:field4) { FactoryGirl.create :project_field }
 
     before do
-      project_type.fields = [field1, field2, field3, field4]
+      project_type.fields << field1
+      project_type.fields << field2
+      project_type.fields << field3
+      project_type.fields << field4
     end
 
-    it "is persisted" do
-      project_type.should be_persisted
-    end
-
-    it "builds an association for each field" do
-      project_type.fields.should include(field1)
-      project_type.fields.should include(field2)
-      project_type.fields.should include(field3)
-      project_type.fields.should include(field4)
-    end
-
-    describe "with nested attributes for fields" do
-
-    end
-
+    its(:fields) { should eq [field1, field2, field3, field4] }
   end
-
-  it "is not valid with empty name" do
-    project_type = FactoryGirl.build(:project_type, name: "")
-    project_type.should_not be_valid
-  end
-
-  it "is valid with only a simple name" do
-    project_type = FactoryGirl.build(:project_type)
-    service_type = FactoryGirl.build(:service_type)
-    service_type.project_types << project_type
-
-    project_type.should be_valid
-  end
-
 end

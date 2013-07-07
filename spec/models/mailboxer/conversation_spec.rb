@@ -4,9 +4,9 @@ describe Conversation do
 
   let(:conversation) { FactoryGirl.create(:conversation) }
 
-                                     # Associations
-  it { should respond_to :messages } # has_many messages
-  it { should respond_to :receipts } # has_many receipts through messages
+  # Associations
+  it { should have_many :messages } # has_many messages
+  it { should have_many :receipts } # has_many receipts through messages
 
   # Instance Methods:
   it { should respond_to :mark_as_read }

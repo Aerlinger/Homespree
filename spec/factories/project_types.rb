@@ -3,7 +3,9 @@
 FactoryGirl.define do
   factory :project_type do
     sequence(:name) do |n|
-      "Rspec Wallpaper #{n}"
+      "Wallpapering #{n}"
     end
+
+    service_type
   end
 end

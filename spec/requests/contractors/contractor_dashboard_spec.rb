@@ -24,8 +24,8 @@ describe "Contractor Dashboard" do
       end
     end
 
-    describe "Changing Email" do
-      it "persists change on contractor" do
+    describe "Changing Email", pending: true do
+      xit "persists change on contractor" do
         within(:css, "#change_email") do
           fill_in "Change email", with: "changed@rspec.com"
           fill_in "Verify password", with: contractor.password
@@ -36,7 +36,7 @@ describe "Contractor Dashboard" do
         contractor.email.should eq "changed@rspec.com"
       end
 
-      describe "Changing password" do
+      describe "Changing password", pending: true do
         before do
           within(:css, "#change_password") do
             fill_in "Current Password", with: contractor.password
@@ -67,16 +67,6 @@ describe "Contractor Dashboard" do
         end
       end
 
-    end
-
-    describe "Notifications" do
-      before { click_link "Notifications" }
-
-      it "shows title" do
-        within(:css, "#dashboard_section") do
-          page.should have_content("Notifications")
-        end
-      end
     end
 
     describe "My Inbox" do
@@ -113,12 +103,6 @@ describe "Contractor Dashboard" do
     end
 
     describe "navigations links include" do
-      specify "Notifications" do
-        within(:css, "#dashboard_nav") do
-          page.should have_content("Notifications")
-        end
-      end
-
       specify "General Settings" do
         within(:css, "#dashboard_nav") do
           page.should have_content("General Settings")

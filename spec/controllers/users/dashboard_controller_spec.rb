@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe Users::DashboardController do
+describe Users::DashboardController, pending: true do
   context "get" do
 
     it "shows notifications" do

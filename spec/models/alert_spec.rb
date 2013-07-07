@@ -1,3 +1,5 @@
+require 'spec_helper'
+
 # == Schema Information
 #
 # Table name: alerts
@@ -11,8 +13,6 @@
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
 #
-
-require 'spec_helper'
 
 describe Alert do
 

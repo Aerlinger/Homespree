@@ -5,7 +5,7 @@
 #  id              :integer          not null, primary key
 #  name            :string(255)
 #  field_type      :string(255)
-#  required        :boolean
+#  required        :boolean          default(FALSE)
 #  project_type_id :integer
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
@@ -13,7 +13,9 @@
 #  default         :string(255)
 #  attr_name       :string(255)
 #  label           :string(255)
-#  position        :string(255)
+#  position        :string(255)      default("left")
+#  size            :string(255)      default("normal")
+#  toggleable      :boolean          default(FALSE)
 #
 
 ### ----------------------------------------------------------------------------------------------------------------
@@ -23,7 +25,7 @@
 #
 #  == Required Attributes ==
 #
-#   - attr_name (Symbol):
+#   - field_name (Symbol):
 #       (ex - :wall_1, :wall_2)
 #   - field_type (Symbol):
 #       (ex - :text_field, :check_field)
@@ -51,6 +53,7 @@
 #
 #   - toggleable: True/False
 #       True if this field can be enabled/disabled by a check box.
+#
 class ProjectField < ActiveRecord::Base
 
   attr_protected
@@ -62,6 +65,10 @@ class ProjectField < ActiveRecord::Base
   serialize :field_data, Array
 
   def to_s
-    "#{attr_name}: #{field_type}"
+    attr_name.try(:humanize)
+  end
+
+  def to_sym
+
   end
 end
