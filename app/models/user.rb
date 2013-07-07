@@ -52,8 +52,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   acts_as_messageable
 
-  # Accessors:  ------------------------------------------------------------------------------------------------------
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  # Accessor/Virtual Attributes:  ------------------------------------------------------------------------------------
+  attr_accessor :current_password
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :current_password
 
   # Validations:  ----------------------------------------------------------------------------------------------------
   validates_inclusion_of :user_type, in: ["Homeowner", "Contractor"]
