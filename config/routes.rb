@@ -18,17 +18,11 @@ Homespree::Application.routes.draw do
     get "material_calculator" => "users/dashboard#material_calculator"
   end
 
-  devise_for :contractors, :controllers => {
-    registrations: "contractors/registrations",
-    sessions:      "contractors/sessions",
-    passwords:     "contractors/passwords"
-  }
-
-  #devise_for :users, :controllers => {
+  devise_for :users, :controllers => {
   ##  registrations: "users/registrations",
-  #  sessions:      "users/sessions",
+    sessions:      "users/sessions"
   #  passwords:     "users/passwords"
-  #}
+  }
 
   # Homeowners: -----------------------------------------------------------------------------------------------------
   resources :project_wizard

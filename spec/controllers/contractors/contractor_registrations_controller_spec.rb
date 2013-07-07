@@ -4,7 +4,7 @@ describe Contractors::RegistrationsController, "With valid input" do
 
   let(:contractor) { FactoryGirl.create :contractor }
   let(:valid_params) { FactoryGirl.attributes_for :contractor }
-  let(:invalid_params) { FactoryGirl.attributes_for :contractor, email: nonsense }
+  let(:invalid_params) { FactoryGirl.attributes_for :contractor, email: "nonsense" }
 
   before :each do
     @request.env["devise.mapping"] = Devise.mappings[:contractor]
@@ -52,9 +52,6 @@ describe Contractors::RegistrationsController, "With valid input" do
   end
 
   describe "PUT #update" do
-    before do
-
-    end
   end
 
   describe "DELETE #destroy" do

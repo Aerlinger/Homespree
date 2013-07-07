@@ -65,6 +65,13 @@ class User < ActiveRecord::Base
   before_save :capitalize_name
 
   # Custom Methods:  -------------------------------------------------------------------------------------------------
+  def homeowner?
+    user_type == "Homeowner"
+  end
+
+  def contractor?
+    user_type == "Contractor"
+  end
 
   def klass
     return user_type.constantize
