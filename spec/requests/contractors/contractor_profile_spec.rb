@@ -85,7 +85,6 @@ describe 'Contractor Profile' do
     end
 
     describe "portfolio images" do
-
     end
 
     describe "Business description" do

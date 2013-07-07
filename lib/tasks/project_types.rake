@@ -91,7 +91,7 @@ namespace :db do
         # For each PROJECT FIELD:  ------------------------------------------------------------------------------------------
         project_fields.each do |project_field_name, project_field_attrs|
           pf = ProjectField.create do |p|
-            p.attr_name   = project_field_name
+            p.field_name   = project_field_name
 
             p.label       = project_field_attrs["label"]        if project_field_attrs["label"]
             p.default     = project_field_attrs["default"]      if project_field_attrs["default"]
@@ -107,8 +107,6 @@ namespace :db do
           pt.fields << pf
 
           puts "\t\t#{pf}"
-
-          pt = ProjectType.create name: project_type
         end
       end
     end

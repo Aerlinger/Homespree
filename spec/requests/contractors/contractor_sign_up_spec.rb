@@ -5,13 +5,15 @@ describe "Contractor Sign Up" do
 
   subject { page }
 
+  before do
+    visit new_contractor_registration_path
+    fill_in "Password", with: contractor.password
+    fill_in "Company title", with: contractor.company_title
+  end
+
   describe "with valid params" do
     before do
-      visit new_contractor_registration_path
-
       fill_in "Email", with: contractor.email
-      fill_in "Company title", with: contractor.company_title
-      fill_in "Password", with: contractor.password
       click_button "Create profile"
     end
 
@@ -21,16 +23,12 @@ describe "Contractor Sign Up" do
 
   describe "with incomplete parameters" do
     before do
-      visit "/contractors/sign_up"
-
       fill_in "Email", with: "nonsense"
-      fill_in "Company title", with: contractor.company_title
-      fill_in "Password", with: contractor.password
       click_button "Create profile"
     end
 
     its(:status_code) { should eq 422 }
-    its(:current_path) { should eq "/contractors/sign_up" }
+    its(:current_path) { should eq new_contractor_registration_path }
     it { should have_content("is invalid") }
   end
 end

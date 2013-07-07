@@ -15,7 +15,6 @@ require 'spec_helper'
 #
 
 describe Alert do
-
   let(:alert) { FactoryGirl.create :alert }
 
   subject { alert }
@@ -76,5 +75,4 @@ describe Alert do
     its(:alertable_type) { should eq "User" }
     its(:alertable) { should eq User.find(homeowner.id) }
   end
-
 end

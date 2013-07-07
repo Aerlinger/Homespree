@@ -20,24 +20,22 @@
 require 'spec_helper'
 
 describe Address do
-
-  it { should belong_to :addressable }
-
-  it { should respond_to :line1 }
-  it { should respond_to :line2 }
-  it { should respond_to :city }
-  it { should respond_to :state }
-  it { should respond_to :zipcode }
-  it { should respond_to :service_radius }
-  it { should respond_to :addressable_id }
-  it { should respond_to :addressable_type }
-
   let(:address) { FactoryGirl.create(:address) }
 
-  it "should be valid" do
-    address.should be_valid
-    address.should be_persisted
+  subject { address }
+
+  context "table columns" do
+    it { should respond_to :line1 }
+    it { should respond_to :line2 }
+    it { should respond_to :city }
+    it { should respond_to :state }
+    it { should respond_to :zipcode }
+    it { should respond_to :service_radius }
+    it { should respond_to :addressable_id }
+    it { should respond_to :addressable_type }
   end
+
+  it { should belong_to :addressable }
 
   it "catches valid zip code" do
     address.zipcode = "12345"
@@ -56,43 +54,22 @@ describe Address do
   end
 
   describe "created as a nested attribute of contractor" do
-
     let(:params) do
-      {
-        contractor: FactoryGirl.attributes_for(:contractor,
-                                               address_attributes: FactoryGirl.attributes_for(:address))
-      }
+      { contractor: attributes_for(:contractor, address_attributes: attributes_for(:address)) }
     end
+    let(:contractor) { Contractor.create(params[:contractor]) }
 
-    before { @contractor = Contractor.create(params[:contractor]) }
+    subject { contractor }
 
-    it "should persist contractor" do
-      @contractor.should be_persisted
-    end
-
-    it "should have a valid address" do
-      @contractor.address.should be_persisted
-    end
-
-    it "should have a valid address" do
-      @contractor.address.single_address.should eq address.single_address
-    end
-
+    its("address.single_address") { should eq address.single_address }
   end
 
   describe "created as a nested attribute of homeowner" do
     let(:params) do
-      {
-        homeowner: FactoryGirl.attributes_for(:homeowner,
-                                               address_attributes: FactoryGirl.attributes_for(:address))
-      }
+      { homeowner: attributes_for(:homeowner, address_attributes: attributes_for(:address)) }
     end
 
     before { @homeowner = Homeowner.create(params[:homeowner]) }
-
-    it "should persist homeowner" do
-      @homeowner.should be_persisted
-    end
 
     it "should have a valid address" do
       @homeowner.address.should be_persisted
@@ -105,10 +82,7 @@ describe Address do
 
   describe "created as a nested attribute of address" do
     let(:params) do
-      {
-        appointment: FactoryGirl.attributes_for(:appointment,
-                                              address_attributes: FactoryGirl.attributes_for(:address))
-      }
+      { appointment: attributes_for(:appointment, address_attributes: attributes_for(:address)) }
     end
 
     before { @appointment = Appointment.create(params[:appointment]) }
@@ -125,5 +99,4 @@ describe Address do
       @appointment.address.single_address.should eq address.single_address
     end
   end
-
 end

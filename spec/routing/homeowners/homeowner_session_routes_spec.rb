@@ -12,5 +12,4 @@ describe Homeowners::SessionsController do
   it "handles sign out route" do
     get("/homeowners/sign_out").should route_to("homeowners/sessions#destroy")
   end
-
 end

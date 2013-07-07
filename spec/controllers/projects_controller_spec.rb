@@ -1,9 +1,8 @@
 require 'spec_helper'
 
 describe ProjectsController do
-
   let(:project) { FactoryGirl.create :project }
-  let(:params ) { {zipcode: "10025", project_type: "Power Washing"} }
+  let(:params) { {project: {zipcode: "10025", project_type_name: "Power Washing"}}  }
 
   before do
     request.env["HTTP_REFERER"] = "/"
@@ -11,23 +10,19 @@ describe ProjectsController do
 
   it { should respond_to :create }
 
-  xit "creates a new guest homeowner" do
+  it "creates a new guest homeowner" do
     expect {
       post(:create, params)
     }.to change(Homeowner, :count).by(1)
   end
 
-  xit "creates a new project" do
+  it "creates a new project" do
     expect {
       post(:create, params)
     }.to change(Project, :count).by(1)
   end
 
   describe "Creates a new project from homepage" do
-    let(:params) do
-      { project: { zipcode: "10025", project_type_name: "Power Washing" } }
-    end
-
     describe "when a homeowner is not signed in" do
       before do
         post :create, params
@@ -53,7 +48,6 @@ describe ProjectsController do
       end
     end
 
-
     describe "when a homeowner is signed in" do
       let(:homeowner) { FactoryGirl.create :homeowner }
 
@@ -62,7 +56,5 @@ describe ProjectsController do
 
     describe "when a contractor is signed in" do
     end
-
   end
-
 end

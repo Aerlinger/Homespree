@@ -11,7 +11,6 @@ describe Users::SessionsController do
 
   context "Contractor" do
 
-    # A simple trick to help devise cooperate with our test controller
     before :each do
       @request.env["devise.mapping"] = Devise.mappings[:contractor]
       sign_in contractor
@@ -65,7 +64,6 @@ describe Users::SessionsController do
         it "redirects to the contractor's homepage" do
           expect(response).to redirect_to "/contractors/sign_in"
         end
-
       end
     end
 
@@ -75,6 +73,5 @@ describe Users::SessionsController do
         response.should_not be_nil
       end
     end
-
   end
 end

@@ -25,12 +25,18 @@ describe Contractors::RegistrationsController, "With valid input" do
   end
 
   describe "POST #create" do
+    before do
+      valid_params
+      contractor
+    end
+
     context "with valid attributes" do
       it "saves the new contractor in the database" do
         expect {
           post :create, contractor: valid_params
         }.to change(Contractor, :count).by(1)
       end
+
       it "redirects to new profile" do
         post :create, contractor: valid_params
         expect(response).to redirect_to "/contractors/joe-s-plumbing"
@@ -56,17 +62,18 @@ describe Contractors::RegistrationsController, "With valid input" do
 
   describe "DELETE #destroy" do
     before :each do
-      @contractor = create :contractor
+      contractor
+      valid_params
     end
 
     it "removes the contractor from the DB" do
       expect {
-        delete :destroy, id: @contractor.id
+        delete :destroy, id: contractor.id
       }.to change(Contractor, :count).by(-1)
     end
 
     it "redirects to sign in page" do
-      delete :destroy, id: @contractor.id
+      delete :destroy, id: contractor.id
       expect(response).to redirect_to(new_contractor_session_path)
     end
   end

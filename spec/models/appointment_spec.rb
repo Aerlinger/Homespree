@@ -42,29 +42,34 @@ describe Appointment do
   end
 
   # Assocations
-  it { should have_one :address }
-  it { should belong_to :contractor }
-  it { should belong_to :homeowner }
-  it { should belong_to :project }
+  context "associations" do
+    it { should have_one :address }
+    it { should belong_to :contractor }
+    it { should belong_to :homeowner }
+    it { should belong_to :project }
+  end
 
   # Validations
-  it { should validate_presence_of :starts_at }
-  it { should validate_presence_of :duration }
-  it { should validate_presence_of :address }
+  context "validations" do
+    it { should validate_presence_of :starts_at }
+    it { should validate_presence_of :duration }
+    it { should validate_presence_of :address }
 
-  it { should accept_nested_attributes_for :address }
+    it { should accept_nested_attributes_for :address }
+  end
 
   # Table columns
-  it { should respond_to :starts_at }
-  it { should respond_to :reminders }
-  it { should respond_to :photos }
-  it { should respond_to :title }
-  it { should respond_to :description }
-  it { should respond_to :verified_by_homeowner }
-  it { should respond_to :verified_by_contractor }
-  it { should respond_to :completed_by_homeowner }
-  it { should respond_to :completed_by_contractor }
-
+  context "table columns" do
+    it { should respond_to :starts_at }
+    it { should respond_to :reminders }
+    it { should respond_to :photos }
+    it { should respond_to :title }
+    it { should respond_to :description }
+    it { should respond_to :verified_by_homeowner }
+    it { should respond_to :verified_by_contractor }
+    it { should respond_to :completed_by_homeowner }
+    it { should respond_to :completed_by_contractor }
+  end
 
   its(:contractor) { should eq contractor }
   its(:homeowner) { should eq homeowner }

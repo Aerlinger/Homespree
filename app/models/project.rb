@@ -34,7 +34,6 @@ class Project < ActiveRecord::Base
   has_many :before_photos, class_name: 'Photo', as: :photographable
   has_many :after_photos, class_name: 'Photo', as: :photographable
   has_many :appointments
-  has_one :service_type, through: :project_type
 
   # Nested Attributes:  -----------------------------------------------------------------------------------------------
   accepts_nested_attributes_for :appointments, :project_type, :contractor, :homeowner
@@ -44,7 +43,7 @@ class Project < ActiveRecord::Base
   delegate :fields, to: :project_type
 
   # Validations:  -----------------------------------------------------------------------------------------------------
-  validates_presence_of :zipcode
+  validates_presence_of :zipcode, :project_type
   validates :zipcode, format: RegexDefinitions::zipcode_regex
   validate :validate_fields, if: :project_type
 
@@ -80,7 +79,9 @@ class Project < ActiveRecord::Base
   end
 
   def set_project_type
-    self.project_type = ProjectType.find_by_name(project_type_name)
+    if project_type_name && ProjectType.find_by_name(project_type_name)
+      self.project_type = ProjectType.find_by_name(project_type_name)
+    end
   end
 
   def convert_properties

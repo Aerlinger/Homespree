@@ -66,7 +66,7 @@
 painting:   # (TOP-LEVEL PROJECT CATEGORIES 0 SPACES INDENTED) (E.g. Painting, Plumbing, General Contractor)
 
   # Project category params will go here (Two spaces of indentation) -----------------------------
-  interior:
+  interior_painting:
     # Project category fields will go here (Four spaces of indentation) -----------------------------
     wall_1:
       field_type: text_field
@@ -136,7 +136,7 @@ painting:   # (TOP-LEVEL PROJECT CATEGORIES 0 SPACES INDENTED) (E.g. Painting, P
       Number Square Feet: :decimal  # 'SINGLE' attribute types have an associated type (:integer in this case)
 
 
-  exterior:  # EXTERIOR PAINTING -------------------------------------------------------------------------------------
+  exterior_painting:  # EXTERIOR PAINTING -------------------------------------------------------------------------------------
     # Project category fields will go here (Four spaces of indentation) -----------------------------
     wall_1:
       field_type: text_field
@@ -217,7 +217,7 @@ painting:   # (TOP-LEVEL PROJECT CATEGORIES 0 SPACES INDENTED) (E.g. Painting, P
         - Painted
         - Wallpapered
 
-  other:
+  other_painting:
     finish_type:
       label: "Finish type"
       field_type: select

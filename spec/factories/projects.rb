@@ -8,9 +8,6 @@ FactoryGirl.define do
 
     zipcode "12345"
 
-    # Build an association if you want:
-    # after(:build) do |project|
-    #   project.appointments << FactoryGirl.build(:appointment)
-    # end
+    project_type
   end
 end

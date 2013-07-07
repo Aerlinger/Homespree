@@ -1,5 +1,6 @@
 class Users::RegistrationsController < Devise::RegistrationsController
-  layout "login_page", only: [:new, :edit]
+  layout "login_page"
+
   respond_to :html, :json
 
   def new

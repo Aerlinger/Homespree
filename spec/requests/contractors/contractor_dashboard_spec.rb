@@ -2,7 +2,6 @@ require "spec_helper"
 
 
 describe "Contractor Dashboard" do
-
   let(:contractor) { FactoryGirl.create :contractor }
 
   before do
@@ -121,6 +120,5 @@ describe "Contractor Dashboard" do
         end
       end
     end
-
   end
 end

@@ -32,7 +32,7 @@ class ProjectDecorator < Draper::Decorator
   # Passes dynamic field attributes to form builder:
   #
   #  Required Attributes:
-  #   - attr_name (Symbol):
+  #   - field_name (Symbol):
   #       (ex - :wall_1, :wall_2)
   #   - field_type (Symbol):
   #       (ex - :text_field, :check_box)
@@ -49,7 +49,7 @@ class ProjectDecorator < Draper::Decorator
   #
   def process_field(builder, field)
     builder.send(field.field_type.to_sym,
-                 field.attr_name.to_sym,
+                 field.field_name.to_sym,
 
                  # Optional params
                  {

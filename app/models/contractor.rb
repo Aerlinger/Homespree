@@ -51,7 +51,6 @@ class Contractor < User
   include ActionView::Helpers::NumberHelper
 
   # Gem Class Methods:  ----------------------------------------------------------------------------------------------
-
   extend FriendlyId
   friendly_id :company_title, use: :slugged
 
@@ -77,10 +76,8 @@ class Contractor < User
   has_many :badges
   has_many :alerts, as: :alertable
 
-
   # Nested Attributes:  -----------------------------------------------------------------------------------------------
   accepts_nested_attributes_for :address, :photos, :appointments, :specialties, :profile_picture
-
 
   # Validations:  -----------------------------------------------------------------------------------------------------
   validates_format_of :first_name, :last_name, with: /\A\w+ ?\w*\z/, allow_blank: true, message: "should only contain letters"
@@ -166,14 +163,14 @@ class Contractor < User
   private
 
   def send_welcome_message
-    admin = Contractor.find_by_email("admin@myhomespree.com")
+    #admin = Contractor.find_by_email("admin@myhomespree.com")
 
-    if admin
-      subject = "Welcome to Homespree!"
-      body    = "Body message should go here"
+    #if admin
+    #  subject = "Welcome to Homespree!"
+    #  body    = "Body message should go here"
 
-      admin.send_message(self, body, subject)
-    end
+      #admin.send_message(self, body, subject)
+    #end
   end
 
   def set_user_type

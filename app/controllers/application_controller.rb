@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
 
   def guest_homeowner
     # Cache the value:
-    @cached_guest_user ||= Homeowner.find(session[:guest_homeowner_id] ||= create_guest_homeowner.id)
+    @cached_guest_user ||= Homeowner.find(session[:guest_homeowner_id])
   rescue ActiveRecord::RecordNotFound # If session[:guest_homeowner_id] invalid
     session[:guest_homeowner_id] = nil
     #guest_homeowner

@@ -32,7 +32,7 @@ class ProjectType < ActiveRecord::Base
   end
 
   def to_s
-    name
+    name.try(:humanize)
   end
 
   scope :collection, Proc.new {

@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe "Step 3: Confirm Appointment" do
-
   let(:project) { FactoryGirl.create :project }
 
   before { visit project_wizard_path("appointment") }
@@ -15,5 +14,4 @@ describe "Step 3: Confirm Appointment" do
   it "has box for project selection"
 
   it "has button to upload pictures"
-
 end
