@@ -27,7 +27,7 @@ class ProjectType < ActiveRecord::Base
 
   def fields_attributes_list
     fields.collect do |field|
-      field.attr_name.to_sym
+      field.to_sym
     end
   end
 

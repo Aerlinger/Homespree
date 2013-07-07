@@ -32,7 +32,7 @@ describe Alert do
 
   it { should be_valid }
 
-  describe "correct defaults" do
+  context "correct defaults" do
     its(:notice_type) { should eq "notice" }
     its(:title) { should eq "Alert Title" }
     its(:content) { should eq "Alert Content" }
@@ -40,56 +40,41 @@ describe Alert do
 
   describe "Created with contractor" do
     let(:contractor) { FactoryGirl.create :contractor }
+
+    subject { contractor }
+
     before do
       contractor.alerts << alert
     end
 
-    it "persists" do
-      contractor.should be_persisted
-      contractor.should be_valid
-    end
-
-    it "has only one alert" do
-      contractor.alerts.should eq [alert]
-    end
+    its(:alerts) { should eq [alert] }
 
     it "can add a new alert" do
       contractor.alerts << alert
       contractor.alerts.should eq [alert, alert]
     end
 
-    specify "alert has correct type" do
-      alert.alertable_type.should eq "User"
-    end
+    context "contractor's alert" do
+      subject { alert }
 
-    specify "alert maintains reference to contractor" do
-      alert.alertable.should eq User.find(contractor.id)
+      its(:alertable_type) { should eq "User" }
+      its(:alertable) { should eq User.find(contractor.id) }
     end
-
   end
 
   describe "Created with homeowner" do
     let(:homeowner) { FactoryGirl.create :homeowner }
+
     before do
       homeowner.alerts << alert
-    end
-
-    it "persists" do
-      homeowner.should be_persisted
-      homeowner.should be_valid
     end
 
     it "has only one alert" do
       homeowner.alerts.should eq [alert]
     end
 
-    specify "alert has correct type" do
-      alert.alertable_type.should eq "User"
-    end
-
-    specify "alert maintains reference to homeowner" do
-      alert.alertable.should eq User.find(homeowner.id)
-    end
+    its(:alertable_type) { should eq "User" }
+    its(:alertable) { should eq User.find(homeowner.id) }
   end
 
 end

@@ -27,10 +27,10 @@ describe ProjectType do
   specify { ProjectType.where("name LIKE ?", "%Wallpaper%").should_not be_nil }
 
   describe "has many fields" do
-    let(:field1) { FactoryGirl.create :project_field }
-    let(:field2) { FactoryGirl.create :project_field }
-    let(:field3) { FactoryGirl.create :project_field }
-    let(:field4) { FactoryGirl.create :project_field }
+    let(:field1) { FactoryGirl.create :project_field, field_name: "Ceiling height" }
+    let(:field2) { FactoryGirl.create :project_field, field_name: "room width" }
+    let(:field3) { FactoryGirl.create :project_field, field_name: "room length" }
+    let(:field4) { FactoryGirl.create :project_field, field_name: "paint color" }
 
     before do
       project_type.fields << field1
@@ -39,6 +39,9 @@ describe ProjectType do
       project_type.fields << field4
     end
 
+    specify { field4.to_s == "Paint color" }
+
     its(:fields) { should eq [field1, field2, field3, field4] }
+    its(:fields_attributes_list) { should eq [:ceiling_height, :room_width, :room_length, :paint_color] }
   end
 end

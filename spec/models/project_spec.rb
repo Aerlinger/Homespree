@@ -130,16 +130,10 @@ describe Project do
       project.properties[:some_bullshit] = "foo"
       project.properties[:some_bullshit].should eq "foo"
       project.properties == { some_bullshit: "foo" }
-      #project.save
-      #project.properties[:some_bullshit].should eq "foo"
-      #project.properties == { some_bullshit: "foo" }
     end
 
     it "can serialize properties" do
-      #project.load_properties({})
-      params = {
-
-      }
+      params = {}
     end
 
   end

@@ -208,9 +208,6 @@ describe Contractor do
       it "throws error there is an absent email" do
         contractor.email = ""
         contractor.should_not be_valid
-
-        contractor.email = nil
-        contractor.should_not be_valid
       end
 
       specify "with bad email address" do

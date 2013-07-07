@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :project_field do
-    attr_name "window_height"
+    field_name "window_height"
     field_type "text_field"
     required true
 
