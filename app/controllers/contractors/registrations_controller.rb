@@ -1,9 +1,4 @@
-class Contractors::RegistrationsController < Devise::RegistrationsController
-
-  layout "login_page", only: [:new, :edit]
-
-  respond_to :html, :json
-
+class Contractors::RegistrationsController < Users::RegistrationsController
   after_filter :geolocate, only: [:create]
 
   def new
@@ -11,31 +6,14 @@ class Contractors::RegistrationsController < Devise::RegistrationsController
     @contractor = Contractor.new({ email: params[:email] })
   end
 
-  def create
-    super
-  end
-
-  def edit
-    super
-  end
-
-  def update
-    super
-  end
-
-  def destroy
-    super
-    redirect_to root_path
-  end
-
-  def cancel
-    super
-  end
-
   protected
 
   def after_sign_up_path_for(resource)
     contractor_path id: resource.slug
+  end
+
+  def after_sign_up_fails_path_for(resource)
+    new_contractor_registration_path
   end
 
   def geolocate
@@ -48,5 +26,4 @@ class Contractors::RegistrationsController < Devise::RegistrationsController
       address.longitude = location.longitude.presence || 150.9473
     end
   end
-
 end

@@ -1,13 +1,11 @@
 require 'spec_helper'
 
-
 describe "Contractor Sign Up" do
-  subject { page }
-
   let(:contractor) { FactoryGirl.build :contractor }
 
-  describe "with valid params" do
+  subject { page }
 
+  describe "with valid params" do
     before do
       visit new_contractor_registration_path
 
@@ -17,18 +15,8 @@ describe "Contractor Sign Up" do
       click_button "Create profile"
     end
 
-    it "Should redirect to a valid page" do
-      page.status_code.should be 200
-    end
-
-    it "display contractors title" do
-      page.has_content?(contractor.company_title)
-    end
-
-    it "displays edit links" do
-      page.has_content?("Edit")
-    end
-
+    its(:status_code) { should eq 200 }
+    it { should have_content "Edit" }
   end
 
   describe "with incomplete parameters" do
@@ -41,7 +29,8 @@ describe "Contractor Sign Up" do
       click_button "Create profile"
     end
 
-    it "should display unprocessable entity (422)"
+    its(:status_code) { should eq 422 }
+    its(:current_path) { should eq "/contractors/sign_up" }
+    it { should have_content("is invalid") }
   end
-
 end

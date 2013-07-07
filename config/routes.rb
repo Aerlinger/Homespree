@@ -18,11 +18,17 @@ Homespree::Application.routes.draw do
     get "material_calculator" => "users/dashboard#material_calculator"
   end
 
-  devise_for :users, :controllers => {
-    registrations: "users/registrations",
-    sessions:      "users/sessions",
-    passwords:     "users/passwords"
+  devise_for :contractors, :controllers => {
+    registrations: "contractors/registrations",
+    sessions:      "contractors/sessions",
+    passwords:     "contractors/passwords"
   }
+
+  #devise_for :users, :controllers => {
+  ##  registrations: "users/registrations",
+  #  sessions:      "users/sessions",
+  #  passwords:     "users/passwords"
+  #}
 
   # Homeowners: -----------------------------------------------------------------------------------------------------
   resources :project_wizard
@@ -34,7 +40,6 @@ Homespree::Application.routes.draw do
   }
 
   resources :homeowners, only: [:show, :update] do
-
     collection do
       resource :address, only: [:update]
       resources :photos, only: [:create, :update, :destroy]
@@ -51,7 +56,6 @@ Homespree::Application.routes.draw do
   }
 
   resources :contractors, only: [:show, :update] do
-
     resources :specialties, only: [:create, :update, :destroy] do
       post :sort, on: :collection
     end

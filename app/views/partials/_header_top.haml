@@ -34,12 +34,11 @@
                     %small Edit profile
                     - if current_contractor && current_contractor.portrait_url?
                       = image_tag current_contractor.portrait_url.to_s, class: "name avatar pull-right"
-                    -#%img.avatar.name{:src => "http://placehold.it/50x50", style: "float: right"}
                 %li.divider
                 %li
                   =link_to "Account Settings", general_settings_path
                 %li
-                  =link_to "Sign out", destroy_user_session_path, method: :get
+                  =link_to "Sign out", destroy_contractor_session_path, method: :get
 
           - else
             %li
@@ -53,12 +52,12 @@
                 Sign In
                 %i.e-icon-login
 
-          -#%li.divider-vertical
-          -#  %li.search-wrapper
-          -#    %form{:action => "search", :method => "post"}
-          -#      #search-trigger
-          -#        %i.e-icon-search
-          -#      %input{:placeholder => "Search by job type", :type => "text"}/
+          %li.divider-vertical
+            %li.search-wrapper
+              %form{:action => "search", :method => "post"}
+                #search-trigger
+                  %i.e-icon-search
+                %input{:placeholder => "Search by job type", :type => "text"}/
 
       #logo
         =link_to "", root_path
