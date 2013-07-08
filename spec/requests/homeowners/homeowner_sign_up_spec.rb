@@ -7,7 +7,7 @@ describe "Homeowner Sign Up" do
 
   before do
     visit new_homeowner_registration_path
-    #fill_in "Password", with: homeowner.password
+    fill_in "Password", with: homeowner.password
   end
 
   its(:current_path) { should eq "/homeowners/sign_up" }
@@ -19,7 +19,6 @@ describe "Homeowner Sign Up" do
     end
 
     its(:status_code) { should eq 200 }
-    it { should have_content "Edit" }
   end
 
   describe "with incomplete parameters" do
@@ -28,8 +27,8 @@ describe "Homeowner Sign Up" do
       click_button "Create profile"
     end
 
-    its(:status_code) { should eq 422 }
-    its(:current_path) { should eq "/homeowner/sign_up" }
+    its(:status_code) { should eq 200 }
+    its(:current_path) { should eq "/homeowners" }
     it { should have_content("is invalid") }
   end
 end

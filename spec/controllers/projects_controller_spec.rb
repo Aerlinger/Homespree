@@ -2,19 +2,14 @@ require 'spec_helper'
 
 describe ProjectsController do
   let(:project) { FactoryGirl.create :project }
-  let(:params) { {project: {zipcode: "10025", project_type_name: "Power Washing"}}  }
+  let(:project_type) { FactoryGirl.create :project_type }
+  let(:params) { {project: { zipcode: "10025", project_type_id: project_type.id} }  }
 
   before do
     request.env["HTTP_REFERER"] = "/"
   end
 
   it { should respond_to :create }
-
-  it "creates a new guest homeowner" do
-    expect {
-      post(:create, params)
-    }.to change(Homeowner, :count).by(1)
-  end
 
   it "creates a new project" do
     expect {
@@ -42,6 +37,13 @@ describe ProjectsController do
       end
 
       describe "creates a guest homeowner" do
+        it "creates a new guest homeowner" do
+          params
+          expect {
+            post(:create, params)
+          }.to change(Homeowner, :count).by(1)
+        end
+
         xit "has correct class type" do
           subject.current_user.class.should be Homeowner
         end

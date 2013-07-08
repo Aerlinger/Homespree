@@ -14,11 +14,11 @@
   = @homeowner.address
 %p
   %b Photos:
-  = @homeowner.photos
+  = @homeowner.before_photos
 %p
   %b Appointments:
   = @homeowner.appointments
 
-= link_to 'Edit', edit_homeowner_path(@homeowner)
-\|
-= link_to 'Back', homeowners_path
+= link_to 'Edit Account', edit_homeowner_registration_path(@homeowner)
+= link_to 'Edit Account', destroy_user_session_path
+= link_to 'Logout', destroy_homeowner_session_path, method: :delete

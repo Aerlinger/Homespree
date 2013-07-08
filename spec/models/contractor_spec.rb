@@ -245,7 +245,7 @@ describe Contractor do
     end
   end
 
-  describe "receives a welcome message from admin after being created" do
+  describe "receives a welcome message from admin after being created", pending: true do
     before do
       @admin        = FactoryGirl.create(:contractor, email: "admin@myhomespree.com")
       @contractor   = FactoryGirl.create :contractor
@@ -256,5 +256,4 @@ describe Contractor do
       @conversation.last_sender.email.should eq @admin.email
     end
   end
-
 end

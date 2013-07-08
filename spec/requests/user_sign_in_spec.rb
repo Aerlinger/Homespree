@@ -1,24 +1,20 @@
-
 require "spec_helper"
 
 describe "User sign in" do
-  let(:contractor) { FactoryGirl.create :contractor }
-  let(:homeowner) { FactoryGirl.create :homeowner }
+
+  subject { page }
 
   before do
     visit "/"
     click_link "Sign In"
   end
 
-  it "navigates to login" do
-    current_path.should eq "/contractors/sign_in"
-  end
-
-  it "shows form data" do
-    page.should have_content "Don't have an account yet? Sign Up"
-  end
+  its(:current_path) { should eq "/contractors/sign_in" }
+  it { should have_content "Don't have an account yet? Sign Up" }
 
   context "Contractor" do
+    let(:contractor) { FactoryGirl.create :contractor }
+
     before do
       fill_in "Email", with: contractor.email
       fill_in "Password", with: contractor.password
@@ -42,37 +38,48 @@ describe "User sign in" do
 
     end
 
-    describe "sends erroneous data"
+    describe "with invalid params" do
 
+    end
   end
 
-  context "Homeowner" do
+  context "for Homeowner" do
+    let(:homeowner) { FactoryGirl.create :homeowner }
+
     before do
-      visit new_homeowner_registration_path
+      visit new_homeowner_session_path
 
-      fill_in "Email", with: homeowner.email
-      fill_in "Password", with: homeowner.password
-
-      click_button "Sign In"
+      within(:css, ".body") do
+        fill_in "Email", with: homeowner.email
+        fill_in "Password", with: homeowner.password
+      end
     end
 
-    xit "creates a new user" do
-      Homeowner.all.should include(homeowner)
+    specify do
+      homeowner.password == "iamsecret"
     end
 
-    xit "signs up" do
-      homeowner.should be_persisted
+    specify do
+      homeowner.email.should include("rspec_homeowner")
     end
 
-    xit "gets routed to their profile" do
+    it { should have_content "Don't have an account yet?" }
+    it { should have_content "Homeowner Sign In" }
+    its(:current_path) { should eq "/homeowners/sign_in" }
 
+    describe "with valid params" do
+      before do
+        within(:css, ".body") do
+          click_button "Sign In"
+        end
+      end
+
+      it { should have_content(homeowner.email)}
+      it { should have_content(homeowner.name)}
     end
 
-    xit "signs up" do
-      homeowner.user_type.should eq "Homeowner"
-    end
+    describe "with erroneous params" do
 
-    describe "sends erroneous data"
+    end
   end
-
 end

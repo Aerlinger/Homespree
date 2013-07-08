@@ -83,6 +83,7 @@ class User < ActiveRecord::Base
   end
 
   def capitalize_name
+    #read_attribute('category_name') || category.name
     first_name.try(:capitalize!)
     last_name.try(:capitalize!)
   end

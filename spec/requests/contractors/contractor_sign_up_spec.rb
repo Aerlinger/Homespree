@@ -27,8 +27,8 @@ describe "Contractor Sign Up" do
       click_button "Create profile"
     end
 
-    its(:status_code) { should eq 422 }
-    its(:current_path) { should eq new_contractor_registration_path }
+    its(:current_path) { should eq "/contractors" }
     it { should have_content("is invalid") }
+    it { should have_content("Create Contractor Profile") }
   end
 end

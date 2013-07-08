@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :homeowner do
     sequence :email do |n|
-      "rspec_homeowner#{n}@email.com"
+      "homeowner#{n}@email.com"
     end
 
     password "iamsecret"

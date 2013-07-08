@@ -1,5 +1,4 @@
 class ContractorsController < ApplicationController
-
   layout "static_page", except: [:show, :edit]
 
   before_filter :process_params, only: [:update, :create]
