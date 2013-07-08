@@ -13,24 +13,18 @@ class ProjectFormBuilder < ActionView::Helpers::FormBuilder
   end
 
   def number_field(name, *args)
-    #options = args.extract_options!
-
     wrap_field(name, *args) do
       super(name, *args)
     end
   end
 
   def check_box(name, *args)
-    #options = args.extract_options!
-
     wrap_field(name, *args) do
       super(name, *args)
     end
   end
 
   def select(name, *args)
-    #options = args.extract_options!
-
     wrap_field(name, *args) do
       super(name, *args)
     end
@@ -48,7 +42,7 @@ class ProjectFormBuilder < ActionView::Helpers::FormBuilder
 
     return_str = ""
     @template.content_tag :div, class: "field #{css_align}" do
-      return_str = label options[:label] || name
+      return_str = label(options[:label] || name)
 
       if block_given?
         return_str << yield

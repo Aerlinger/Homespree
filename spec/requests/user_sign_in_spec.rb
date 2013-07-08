@@ -39,7 +39,6 @@ describe "User sign in" do
     end
 
     describe "with invalid params" do
-
     end
   end
 
@@ -60,7 +59,7 @@ describe "User sign in" do
     end
 
     specify do
-      homeowner.email.should include("rspec_homeowner")
+      homeowner.email.should include("homeowner")
     end
 
     it { should have_content "Don't have an account yet?" }
@@ -79,7 +78,6 @@ describe "User sign in" do
     end
 
     describe "with erroneous params" do
-
     end
   end
 end

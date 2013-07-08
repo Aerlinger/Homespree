@@ -2,15 +2,14 @@ require "spec_helper"
 
 describe Users::SessionsController do
   let!(:contractor) { FactoryGirl.create :contractor }
-  let!(:contractor_params) { {email: contractor.email, password: contractor.password} }
-  let!(:contractor_invalid_params) { FactoryGirl.attributes_for(:contractor, email: "nonsense") }
+  let!(:contractor_params) { { user: { email: contractor.email, password: contractor.password}} }
+  let!(:contractor_invalid_params) { { user: FactoryGirl.attributes_for(:contractor, email: "nonsense") } }
 
   let(:homeowner) { FactoryGirl.create :homeowner }
   let!(:homeowner_params) { FactoryGirl.attributes_for :homeowner }
   let!(:homeowner_invalid_params) { FactoryGirl.attributes_for :contractor, email: "nonsense" }
 
   context "Contractor" do
-
     before :each do
       @request.env["devise.mapping"] = Devise.mappings[:contractor]
       sign_in contractor
@@ -33,7 +32,7 @@ describe Users::SessionsController do
     describe "POST #create (login) action" do
       context "with valid params" do
         before :each do
-          post :create, user: contractor_params
+          post :create, contractor_params
         end
 
         it "redirects to the contractor's homepage" do
@@ -54,7 +53,7 @@ describe Users::SessionsController do
 
       context "with invalid params" do
         before do
-          post :create, user: contractor_invalid_params
+          post :create, contractor_invalid_params
         end
 
         it "displays flash message" do
@@ -62,7 +61,7 @@ describe Users::SessionsController do
         end
 
         it "redirects to the contractor's homepage" do
-          expect(response).to redirect_to "/contractors/sign_in"
+          expect(response).to render_template :new
         end
       end
     end

@@ -24,6 +24,11 @@ Homespree::Application.routes.draw do
   #  passwords:     "users/passwords"
   }
 
+  namespace :users do
+    resources :messages
+    resources :conversations
+  end
+
   # Homeowners: -----------------------------------------------------------------------------------------------------
   resources :project_wizard
 
@@ -54,6 +59,7 @@ Homespree::Application.routes.draw do
       post :sort, on: :collection
     end
 
+    resources :messages
     resources :conversations, only: [:index, :show, :new, :create] do
       member do
         post :reply

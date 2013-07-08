@@ -1,5 +1,5 @@
 class Users::SessionsController < Devise::SessionsController
-  before_filter :set_user_type, only: [:create, :update, :destroy]
+  before_filter :set_user_type, only: [:create, :update]
 
   def new
     super
@@ -9,11 +9,11 @@ class Users::SessionsController < Devise::SessionsController
   def create
     super
 
-    #if @user
-    #  redirect_to contractor_path(id: @user.slug)
-    #else
-    #  redirect_to new_contractor_session_path, notice: "Could not sign in, please check your details"
-    #end
+    if @user
+      redirect_to contractor_path(id: @user.slug)
+    else
+      redirect_to new_contractor_session_path, notice: "Could not sign in, please check your details"
+    end
   end
 
   def destroy
@@ -27,6 +27,6 @@ class Users::SessionsController < Devise::SessionsController
   end
 
   def set_user_type
-    resource = User.find_by_email(params[:user][:email])
+    @user = User.find_by_email(params[:user][:email])
   end
 end

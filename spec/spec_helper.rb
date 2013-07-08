@@ -71,6 +71,16 @@ Spork.prefork do
       include ApplicationHelper
     end
 
+    class Warden::SessionSerializer
+      def serialize(record)
+        record
+      end
+
+      def deserialize(keys)
+        keys
+      end
+    end
+
     config.mock_with :rspec
 
     config.include Rails.application.routes.url_helpers
