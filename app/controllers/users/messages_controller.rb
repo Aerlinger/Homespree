@@ -1,7 +1,7 @@
 class Users::MessagesController < ApplicationController
 
   before_filter :authenticate_user!
-  before_filter :get_mailbox, :get_box, :get_actor
+  before_filter :get_mailbox, :get_box, :get_user
 
   def index
     redirect_to users_conversations_path(:box => @box)
@@ -11,7 +11,7 @@ class Users::MessagesController < ApplicationController
   # GET /messages/1.xml
   def show
     if @message = Message.find_by_id(params[:id]) and @conversation = @message.conversation
-      if @conversation.is_participant?(@actor)
+      if @conversation.is_participant?(@user)
         redirect_to conversation_path(@conversation, :box => @box, :anchor => "message_" + @message.id.to_s)
         return
       end
@@ -23,9 +23,9 @@ class Users::MessagesController < ApplicationController
   # GET /messages/new.xml
   def new
     if params[:receiver].present?
-      @recipient = Actor.find_by_slug(params[:receiver])
+      @recipient = User.find_by_slug(params[:receiver])
       return if @recipient.nil?
-      @recipient = nil if Actor.normalize(@recipient)==Actor.normalize(current_subject)
+      @recipient = nil if @recipient == current_subject
     end
   end
 
@@ -39,16 +39,16 @@ class Users::MessagesController < ApplicationController
   def create
     @recipients =
       if params[:_recipients].present?
-        @recipients = params[:_recipients].split(',').map{ |r| Actor.find(r) }
+        @recipients = params[:_recipients].split(',').map{ |r| User.find(r) }
       else
         []
       end
 
-    @receipt = @actor.send_message(@recipients, params[:body], params[:subject])
+    @receipt = @user.send_message(@recipients, params[:body], params[:subject])
     if (@receipt.errors.blank?)
       @conversation = @receipt.conversation
       flash[:success]= t('mailboxer.sent')
-      redirect_to conversation_path(@conversation, :box => :sentbox)
+      redirect_to users_conversation_path(@conversation, :box => :sentbox)
     else
       render :action => :new
     end
@@ -72,8 +72,8 @@ class Users::MessagesController < ApplicationController
     @mailbox = current_user.mailbox
   end
 
-  def get_actor
-    #@actor = Actor.normalize(current_subject)
+  def get_user
+    @user = current_user
   end
 
   def get_box

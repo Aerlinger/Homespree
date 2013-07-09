@@ -112,7 +112,6 @@ describe Conversation do
     describe "from homeowner to contractor" do
 
     end
-
   end
 
 end

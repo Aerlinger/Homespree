@@ -5,7 +5,8 @@
         %span.blue Create Homeowner Profile
 
       .body
-        = f.input :email, label: 'Your Email', input_html: { value: resource.email }, placeholder: 'example@example.com', id: "email"
+        = f.input :company_title, text: "Business name or title", id: "company_title"
+        = f.input :email, label: 'Your Email', input_html: { value: resource.email }, placeholder: 'user@example.com', id: "email"
         = f.input :password, id: "password"
 
         = f.button :submit, "Create profile", class: "btn btn-success"

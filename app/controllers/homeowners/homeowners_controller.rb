@@ -1,4 +1,4 @@
-class HomeownersController < ApplicationController
+class Homeowners::HomeownersController < ApplicationController
   layout "static_page", except: [:show, :edit]
 
 

@@ -12,7 +12,7 @@ Spork.prefork do
   require 'mobylette/helmet'
   require 'capybara/rspec'
   require 'capybara/rails'
-  require 'rspec/autorun'
+  #require 'rspec/autorun'
   require 'draper/test/rspec_integration'
 
   module ::RSpec::Core
