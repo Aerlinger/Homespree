@@ -1,0 +1,53 @@
+%h3
+  = conversation.subject
+.action
+  - unless @box.eql?'trash'
+    = link_to(image_tag('cancel.png', :alt => t('mailboxer.delete'), :title => t('mailboxer.delete')), |
+      conversation_path(conversation, :location => 'conversation', :box => @box),                      |
+      :confirm => t('mailboxer.delete_confirm', :object => conversation.subject),                      |
+      :method => :delete, :remote => true)                                                             |
+%h4
+  = t("message.participants")
+  \:
+.participants
+  - conversation.recipients.each do |recp|
+    = link_to image_tag(recp.logo.url(:small), :title=>recp.name, :alt => recp.name), recp.subject
+%hr.soften/
+.messages
+  - @receipts.each do |receipt|
+    = render receipt.message
+  - unless @box.eql?'trash'
+    %br/
+    = form_tag conversation_path(conversation), :method => :put, :class => "cont_conversation" do
+      - if @receipt and @receipt.errors.any?
+        .error
+          %h2
+            = pluralize(@receipt.errors.count, "error")
+            prohibited this message from being sent:
+          %ul
+            - @receipt.errors.full_messages.each do |msg|
+              %li
+                = msg
+      .editor
+        = text_area_tag :body, nil,:rows =>6, :cols=> 53, :class => "required form_tag"
+      .actions
+        = submit_tag t('mailboxer.reply'), :name => :reply_all,:class => "btn"
+= javascript_tag do
+  $(document).ready(function(){
+  $(".message .body img").each(function(){
+  var link = '<a href=\"' + $(this).attr('src') + '\" class=\"img_link\"><img src=\"' + $(this).attr('src') + '\">
+  ';
+  $(this).after(link);
+  $(this).remove();
+  $(".message .body img").aeImageResize({ height: 490, width: 490 });
+  $(".message .body a.img_link").lightBox({
+  maxHeight: 920,
+  maxWidth: 920,
+  imageLoading: '../assets/lightbox-ico-loading.gif',
+  imageBtnClose: '../assets/lightbox-btn-close.gif',
+  imageBtnPrev: '../assets/lightbox-btn-prev.gif',
+  imageBtnNext: '../assets/lightbox-btn-next.gif',
+  imageBlank: '../assets/lightbox-blank.gif'
+  });
+  })
+  });

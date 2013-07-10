@@ -1,0 +1,15 @@
+.notifications
+  %h1.colorfont
+    = t('notification.other')
+  .read_all
+    = link_to(t('notification.read_all'), update_all_notifications_path(:page => params[:page]), |
+      :method => :put, class: 'mark_as_read')                                                    |
+  .list
+    - @notifications.each do |notification|
+      - @notification = notification
+      - read_class = notification.is_unread?(@actor) ? 'unread' : ''
+      = render :partial => 'notification', :object => notification, :locals => {:read_class => read_class}
+  = javascript_tag do
+    $(function() {
+    SocialStream.Notification.index();
+    });

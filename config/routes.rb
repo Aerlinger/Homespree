@@ -25,8 +25,8 @@ Homespree::Application.routes.draw do
   }
 
   namespace :users do
-    resources :messages
-    resources :conversations
+    resources :messages, except: [:edit, :update, :destroy]
+    resources :conversations, only: [:index, :show, :update, :destroy]
   end
 
   # Homeowners: -----------------------------------------------------------------------------------------------------

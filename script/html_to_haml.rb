@@ -5,6 +5,5 @@ erb_files = Dir.glob("../app/views/**/*.html.erb")
 
 puts erb_files
 erb_files.each do |filename| 
-  puts "html2haml #{filename} > #{filename.gsub("html.erb", "haml")}"
-  #exec "html2haml #{filename} > #{filename.gsub("html.erb", "haml")}&"
+  `html2haml #{filename} > #{filename.gsub("html.erb", "haml")}`
 end

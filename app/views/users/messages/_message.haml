@@ -1,0 +1,15 @@
+= div_for(message, :class => (message.is_unread?(@actor) ? 'unread' : '')) do
+  .media
+    .pull-left
+      = link_to image_tag(message.sender.logo.url(:small), |
+                 :title => message.sender.name,            |
+                 :alt => message.sender.name),             |
+        message.sender.subject                             |
+    .media-heading.name
+      .name
+        = link_to truncate_name(message.sender.name), message.sender.subject
+      .date
+        = t('time.ago', :time => time_ago_in_words(message.updated_at))
+    .media-body
+      .word-break.pre-message
+        = raw(message.body)

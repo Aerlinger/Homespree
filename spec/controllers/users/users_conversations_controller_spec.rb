@@ -35,6 +35,62 @@ describe Users::ConversationsController do
       it { expect(assigns(:box)).to eq "inbox" }
 
       its(:response) { should render_template :index }
+
+      it "renders show when XHR" do
+        request.stub(:xhr?).and_return(true)
+        response.should render_template :index
+      end
+    end
+
+    context "PUT #update" do
+      let(:params) do
+        {
+          id:        contractor.id,
+          untrash:   true,
+          reply_all: true
+        }
+      end
+
+      before do
+        put :update, params
+      end
+
+      it { expect(assigns(:receipt)).to eq nil }
+      it { expect(assigns(:receipts)).to eq nil }
+
+      it { expect(assigns(:box)).to eq "inbox" }
+      it { should redirect_to action: :show, box: "inbox" }
+
+      describe "contractor sends another contractor a message" do
+
+        before do
+          @receipt = contractor.send_message(contractor2, "why hello", "subject")
+        end
+
+        let(:params) do
+          {
+            id:        contractor.id,
+            untrash:   true,
+            reply_all: true
+          }
+        end
+
+        before do
+          put :update, params
+        end
+
+        specify { @receipt.should_not be_nil }
+
+        it { contractor.mailbox.sentbox.size.should eq 1 }
+        it { contractor2.mailbox.inbox.size.should eq 1 }
+
+        it { expect(assigns(:receipt)).to eq nil }
+        it { expect(assigns(:receipts)).to eq nil }
+
+        it { expect(assigns(:box)).to eq "inbox" }
+        it { should redirect_to action: :show, box: "inbox" }
+
+      end
     end
 
     context "#show" do
@@ -46,16 +102,6 @@ describe Users::ConversationsController do
         get :show
       end
     end
-
-    context "PUT #update" do
-      before do
-        put :update, params
-      end
-
-      it { expect(assigns(:box)).to eq "inbox" }
-      it { should redirect_to action: :show, box: "inbox" }
-    end
-
 
     context "GET #show" do
       #let(:message) { FactoryGirl.create :message }

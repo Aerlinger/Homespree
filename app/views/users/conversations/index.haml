@@ -1,1 +1,9 @@
-%h1 All Messages
+- content_for :title do
+  = t('message.other')
+%section#conversations
+  = render partial: 'toolbar/messages'
+  = render :partial => 'index'
+  = javascript_tag do
+    $(function() {
+    // Index Conversations here
+    });

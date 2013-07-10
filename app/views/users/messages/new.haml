@@ -1,1 +1,9 @@
-%h1 New Message
+- content_for :title do
+  = t('message.other')
+%section#new_message
+  = render partial: 'toolbar/messages'
+  = render :partial => 'new'
+  = javascript_tag do
+    $(function() {
+      // Javascript for a new message will go here.
+    });

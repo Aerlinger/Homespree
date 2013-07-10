@@ -1,0 +1,8 @@
+.conversations
+  = render @conversations
+  = render partial: 'layouts/more',      |
+     locals: {                           |
+       path: conversations_path,         |
+       per_page: 9,                      |
+       total: @conversations.total_count |
+    }                                    |

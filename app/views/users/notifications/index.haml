@@ -1,0 +1,6 @@
+- content_for :title do
+  = current_subject.name
+%section#notifications
+  = render partial: 'toolbar/home'
+  = render :partial => 'index'
+  = render partial: 'sidebar/show'

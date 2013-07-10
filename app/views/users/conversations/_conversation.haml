@@ -1,0 +1,26 @@
+= div_for(conversation, :class =>"#{ 'unread ' if conversation.is_unread?(@user) }") do
+  .content_left
+    .avatar
+      = link_to image_tag(conversation.last_sender.logo.url(:small), |
+                  :title => conversation.last_sender.name,           |
+                  :alt => conversation.last_sender.name),            |
+        conversation.last_sender.subject                             |
+    %header
+      %h5
+        = link_to truncate_name(conversation.last_sender.name), conversation.last_sender.subject
+      .date
+        = t('time.ago', :time => time_ago_in_words(conversation.updated_at))
+  .content_right
+    .subject
+      = link_to(truncate(conversation.subject, :length => 55), conversation_path(conversation.id,:box => @box,:page => params[:page]))
+    - unless @box.eql?'trash'
+      .action
+        = link_to(image_tag('cancel.png', :alt => "Delete", :title => "Delete"), |
+          conversation_path(conversation, :location => @box,                                               |
+          :box => @box,                                                                                    |
+          :page => params[:page]),                                                                         |
+          :confirm => "Are you sure you wish to delete this message?"                                      |
+          :method => :delete,                                                                              |
+          :remote => true)                                                                                 |
+    .briefing
+      = raw(truncate(strip_tags(conversation.last_message.body), :length => 50))
