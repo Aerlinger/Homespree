@@ -52,7 +52,6 @@ class Homeowner < User
   # Validations -------------------------------------------------------------------------------------------------------
 
   # Accessors:  -------------------------------------------------------------------------------------------------------
-  attr_accessor :password
   attr_protected
 
   # Associations:  ----------------------------------------------------------------------------------------------------
@@ -69,7 +68,6 @@ class Homeowner < User
   accepts_nested_attributes_for :appointments, :address
 
   # Callbacks:  -------------------------------------------------------------------------------------------------------
-  #before_validation :set_user_type
   after_create :send_welcome_message
   before_save :upgrade_guest_if_logging_in, if: :guest
 
@@ -90,15 +88,15 @@ class Homeowner < User
     after_photos.update_all(photographabe_id: homeowner.id)
   end
 
-  def self.create_guest(name = "Guest Homeowner")
-    guest_homeowner = Homeowner.new do |guest|
-      guest.first_name  = name
-      guest.guest = true
-      guest.email = "guest_homeowner_#{Time.now.to_i}_#{rand(99999)}@example"
-    end
-    guest_homeowner.save(validate: false)
-    return guest_homeowner
-  end
+  #def self.create_guest(name = "Guest Homeowner")
+  #  guest_homeowner = Homeowner.new do |guest|
+  #    guest.first_name  = name
+  #    guest.guest = true
+  #    guest.email = "guest_homeowner_#{Time.now.to_i}_#{rand(99999)}@example"
+  #  end
+  #  guest_homeowner.save(validate: false)
+  #  return guest_homeowner
+  #end
 
   def upgrade_to_homeowner
     if self.guest?
@@ -127,13 +125,5 @@ class Homeowner < User
       self.guest = false
     end
   end
-
-  def homeowner?
-    true
-  end
-
-  #def set_user_type
-  #  self.user_type = "Homeowner"
-  #end
 
 end

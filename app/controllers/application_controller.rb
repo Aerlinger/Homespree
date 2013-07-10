@@ -13,7 +13,17 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    current_homeowner || guest_homeowner || current_contractor
+    #current_homeowner || guest_homeowner || current_contractor
+    # Todo: This is pretty hackish so it may be better to find a way to coerce devise to map the current_user
+    if session["warden.user.user.key"]
+      User.find(session["warden.user.user.key"][0][0])
+    end
+    if session["warden.user.contractor.key"]
+      User.find(session["warden.user.contractor.key"][0][0])
+    end
+    if session["warden.user.homeowner.key"]
+      User.find(session["warden.user.homeowner.key"][0][0])
+    end
   end
 
   def user_signed_in?
@@ -46,7 +56,7 @@ class ApplicationController < ActionController::Base
   end
 
   def create_guest_homeowner
-    guest_homeowner = Homeowner.create_guest
+    guest_homeowner              = Homeowner.create_guest
     session[:guest_homeowner_id] = guest_homeowner.id
     return guest_homeowner
   end

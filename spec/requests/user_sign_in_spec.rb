@@ -5,11 +5,11 @@ describe "User sign in" do
   subject { page }
 
   before do
-    visit "/"
-    click_link "Sign In"
+    visit "/users/sign_in"
+    #click_link "Sign In"
   end
 
-  its(:current_path) { should eq "/contractors/sign_in" }
+  its(:current_path) { should eq "/users/sign_in" }
   it { should have_content "Don't have an account yet? Sign Up" }
 
   context "Contractor" do
@@ -18,7 +18,7 @@ describe "User sign in" do
     before do
       fill_in "Email", with: contractor.email
       fill_in "Password", with: contractor.password
-
+      save_and_open_page
       click_button "Sign In"
     end
 
@@ -30,12 +30,8 @@ describe "User sign in" do
       contractor.should be_persisted
     end
 
-    it "signs up" do
-      contractor.user_type.should eq "Contractor"
-    end
-
     it "gets routed to their profile" do
-
+      page.should have_content("Edit")
     end
 
     describe "with invalid params" do
@@ -46,7 +42,7 @@ describe "User sign in" do
     let(:homeowner) { FactoryGirl.create :homeowner }
 
     before do
-      visit new_homeowner_session_path
+      visit new_user_session_path
 
       within(:css, ".body") do
         fill_in "Email", with: homeowner.email
@@ -67,16 +63,17 @@ describe "User sign in" do
     end
 
     it { should have_content "Don't have an account yet?" }
-    it { should have_content "Homeowner Sign In" }
-    its(:current_path) { should eq "/homeowners/sign_in" }
+    it { should have_content "Sign in to your Homespree account" }
+    its(:current_path) { should eq "/users/sign_in" }
 
     describe "with valid params" do
       before do
-        within(:css, ".body") do
+        #within(:css, ".body") do
           fill_in "Email", with: homeowner.email
           fill_in "Password", with: homeowner.password
+          save_and_open_page
           click_button "Sign In"
-        end
+        #end
       end
 
       it { should have_content(homeowner.email)}

@@ -3,7 +3,7 @@
   =link_to "Sign Up", new_contractor_registration_path, class: "btn btn-black"
 
 #login-wraper
-  = simple_form_for resource, :as => resource_name, :url => user_session_path(resource), class: "form login-form" do |f|
+  = simple_form_for resource, :as => resource_name, :url => session_path(resource), class: "form login-form" do |f|
     %legend
       %span.blue Sign in to your Homespree account
     .body
