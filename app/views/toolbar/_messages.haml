@@ -1,0 +1,16 @@
+%section#toolbar.toolbar-conversations
+  %nav.toolbar_menu
+    %ul.nav
+      %li
+        = link_to new_users_message_path do
+          <i class='icon_message-new #{'active' if controller.action_name == 'new'}'>
+      %li
+        = link_to users_conversations_path(box: :inbox) do
+          <i class='icon_message-inbox #{'active' if params[:box] == 'inbox'}'>
+          -#(#{current_subject.unread_messages_count})
+      %li
+        = link_to users_conversations_path(box: :sentbox) do
+          <i class='icon_message-sentbox #{'active' if params[:box] == 'sentbox'}'>
+      %li
+        = link_to users_conversations_path(box: :trash) do
+          <i class='icon_message-trash #{'active' if params[:box] == 'trash'}'>

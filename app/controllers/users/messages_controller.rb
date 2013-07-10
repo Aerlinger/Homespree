@@ -1,6 +1,6 @@
 class Users::MessagesController < ApplicationController
 
-  before_filter :authenticate_user!
+  #before_filter :authenticate_user!
   before_filter :get_mailbox, :get_box, :get_user
 
   def index
@@ -16,7 +16,7 @@ class Users::MessagesController < ApplicationController
         return
       end
     end
-    redirect_to conversations_path(:box => @box)
+    redirect_to users_conversations_path(:box => @box)
   end
 
   # GET /messages/new

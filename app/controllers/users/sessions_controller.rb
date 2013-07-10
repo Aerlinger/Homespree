@@ -7,7 +7,7 @@ class Users::SessionsController < Devise::SessionsController
   end
 
   def create
-    super
+    #super
 
     if @user
       redirect_to contractor_path(id: @user.slug)
@@ -27,6 +27,6 @@ class Users::SessionsController < Devise::SessionsController
   end
 
   def set_user_type
-    @user = User.find_by_email(params[:user][:email])
+    resource = User.find_by_email(params[:user][:email])
   end
 end

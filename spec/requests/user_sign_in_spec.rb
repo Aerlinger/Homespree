@@ -62,6 +62,10 @@ describe "User sign in" do
       homeowner.email.should include("homeowner")
     end
 
+    it "creates a new user" do
+      Homeowner.all.should include(homeowner)
+    end
+
     it { should have_content "Don't have an account yet?" }
     it { should have_content "Homeowner Sign In" }
     its(:current_path) { should eq "/homeowners/sign_in" }
@@ -69,6 +73,8 @@ describe "User sign in" do
     describe "with valid params" do
       before do
         within(:css, ".body") do
+          fill_in "Email", with: homeowner.email
+          fill_in "Password", with: homeowner.password
           click_button "Sign In"
         end
       end

@@ -3,7 +3,7 @@
 # Table name: users
 #
 #  id                     :integer          not null, primary key
-#  user_type              :string(255)
+#  type                   :string(255)
 #  first_name             :string(255)
 #  description            :text
 #  specialties            :text
@@ -57,7 +57,6 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :current_password
 
   # Validations:  ----------------------------------------------------------------------------------------------------
-  validates_inclusion_of :user_type, in: ["Homeowner", "Contractor"]
 
   # Scopes:  ---------------------------------------------------------------------------------------------------------
   default_scope order("created_at desc")
@@ -66,21 +65,7 @@ class User < ActiveRecord::Base
   before_save :capitalize_name
 
   # Custom Methods:  -------------------------------------------------------------------------------------------------
-  def homeowner?
-    user_type == "Homeowner"
-  end
 
-  def contractor?
-    user_type == "Contractor"
-  end
-
-  def klass
-    return user_type.constantize
-  end
-
-  def to_sym
-    user_type.downcase.to_sym
-  end
 
   def capitalize_name
     #read_attribute('category_name') || category.name

@@ -3,7 +3,7 @@
 # Table name: users
 #
 #  id                     :integer          not null, primary key
-#  user_type              :string(255)
+#  type                   :string(255)
 #  first_name             :string(255)
 #  description            :text
 #  specialties            :text
@@ -90,7 +90,7 @@ class Contractor < User
 
 
   # Callbacks:  -------------------------------------------------------------------------------------------------------
-  before_validation :sanitize_phone_numbers, :set_user_type
+  before_validation :sanitize_phone_numbers
   before_save lambda { |contractor| contractor.email.try(:downcase!) }
   before_save lambda { |contractor| contractor.license.try(:upcase!) }
   before_create :add_badges
@@ -99,7 +99,7 @@ class Contractor < User
 
   # Scopes:  ----------------------------------------------------------------------------------------------------------
   #default_scope order("created_at desc")
-  default_scope lambda { User.where("user_type = ?", "Contractor") }
+  #default_scope lambda { User.where("user_type = ?", "Contractor") }
   scope :recent_signups, lambda { limit(100) }
   scope :locate, lambda { |zipcode, radius| nil }
 
@@ -173,8 +173,5 @@ class Contractor < User
     #end
   end
 
-  def set_user_type
-    self.user_type = "Contractor"
-  end
 
 end

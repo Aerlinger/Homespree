@@ -3,7 +3,7 @@
 # Table name: users
 #
 #  id                     :integer          not null, primary key
-#  user_type              :string(255)
+#  type                   :string(255)
 #  first_name             :string(255)
 #  description            :text
 #  specialties            :text
@@ -49,6 +49,6 @@ require 'spec_helper'
 
 describe User do
 
-  it { should respond_to :user_type }
+  it { should respond_to :type }
 
 end

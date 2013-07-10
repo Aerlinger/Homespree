@@ -2,8 +2,6 @@ require 'spec_helper'
 
 describe Conversation do
 
-  let(:conversation) { FactoryGirl.create(:conversation) }
-
   # Associations
   it { should have_many :messages } # has_many messages
   it { should have_many :receipts } # has_many receipts through messages
@@ -44,24 +42,46 @@ describe Conversation do
     let(:homeowner) { FactoryGirl.create(:homeowner) }
     let(:contractor) { FactoryGirl.create(:contractor) }
 
+    it "creates a conversation when two users message one another" do
+      expect {
+        homeowner.send_message(contractor, "These are my project details", "RE: Details")
+      }.to change(Conversation, :count).by(1)
+    end
+
+    it "creates two new receipts" do
+      expect {
+        homeowner.send_message(contractor, "These are my project details", "RE: Details")
+      }.to change(Receipt, :count).by(2)
+    end
+
     describe "from contractor to homeowner" do
       before do
-        @receipt      = contractor.send_message(homeowner, "body of the message", "subject of the message")
-        @conversation = @receipt.conversation
+        @receipt1     = contractor.send_message(homeowner, "body of the message", "subject of the message")
+        @receipt2     = homeowner.reply_to_all(@receipt1, "body of the message", "subject of the message")
+        @receipt3     = contractor.reply_to_all(@receipt2, "body of the message", "subject of the message")
+        @receipt4     = homeowner.reply_to_all(@receipt3, "body of the message", "subject of the message")
+        @message1     = @receipt1.notification
+        @message4     = @receipt4.notification
+        @conversation = @message1.conversation
       end
 
-      it "is valid" do
-        @conversation.should be_valid
-      end
+      subject { @conversation }
 
-      it "creates association for homeowner" do
-        @conversation.recipients.should include User.find(homeowner.id)
-      end
+      it { should be_valid }
+      its(:recipients) { should match_array [contractor, homeowner]}
+      its(:participants) { should match_array [contractor, homeowner]}
 
-      it "creates association for contractor" do
-        @conversation.participants.should include User.find(homeowner.id)
-        @conversation.participants.should include User.find(contractor.id)
-      end
+      its(:last_sender) { should eq homeowner }
+      its(:originator) { should eq contractor }
+      its(:original_message) { should eq @message1 }
+      its(:last_message) { should eq @message4 }
+      its("recipients.count") { should eq 2 }
+      its("messages.length") { should eq 4}
+
+      #it "creates association for contractor" do
+      #  @conversation.participants.should include User.find(homeowner.id)
+      #  @conversation.participants.should include User.find(contractor.id)
+      #end
 
       it "has reference from contractor" do
         contractor.mailbox.conversations.should include @conversation
@@ -71,21 +91,17 @@ describe Conversation do
         homeowner.mailbox.conversations.should include @conversation
       end
 
-      it "has one message" do
-        @conversation.messages.length.should eq 1
-      end
-
       describe "and homeowner responds" do
         before do
           homeowner.reply_to_conversation(@conversation, "Reply reply")
         end
 
         it "should have multiple messages" do
-          @conversation.messages.length.should eq 2
+          @conversation.messages.length.should eq 5
         end
 
         it "should have proper body in second message" do
-          @conversation.messages[1].body.should include("Reply")
+          @conversation.messages[1].body.should include("body of the message")
         end
 
         it "should have proper body in second message" do
@@ -107,11 +123,51 @@ describe Conversation do
         end
       end
 
+      describe "scopes" do
+        let(:participant) { FactoryGirl.create :homeowner }
+        let(:inbox_conversation) { contractor.send_message(participant, "body", "subject").notification.conversation }
+        let(:sentbox_conversation) { participant.send_message(contractor, "body", "subject").notification.conversation }
+
+
+        specify ".participant finds conversations with receipts for participant" do
+          Conversation.participant(participant).should match_array [inbox_conversation, sentbox_conversation]
+        end
+
+        specify ".inbox finds inbox with receipts for participant" do
+          Conversation.inbox(participant).should == [inbox_conversation]
+        end
+
+        specify ".sentbox finds sentbox with receipts for participant" do
+          Conversation.sentbox(participant).should == [sentbox_conversation]
+        end
+
+        specify ".trash finds trash conversations with receipts for participant" do
+          trashed_conversation = contractor.send_message(participant, "Body", "Subject").notification.conversation
+          trashed_conversation.move_to_trash(participant)
+
+          Conversation.trash(participant).should == [trashed_conversation]
+        end
+
+        describe ".unread" do
+          it "finds unread conversations with receipts for participant" do
+            [sentbox_conversation, inbox_conversation].each {|c| c.mark_as_read(participant) }
+            unread_conversation = contractor.send_message(participant, "Body", "Subject").notification.conversation
+
+            Conversation.unread(participant).should == [unread_conversation]
+          end
+        end
+
+        describe "#is_completely_trashed?" do
+          it "returns true if all receipts in conversation are trashed for participant" do
+            @conversation.move_to_trash(contractor)
+            @conversation.is_completely_trashed?(contractor).should be_true
+          end
+        end
+
+      end
+
     end
 
-    describe "from homeowner to contractor" do
-
-    end
   end
 
 end

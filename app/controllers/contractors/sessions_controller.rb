@@ -2,7 +2,7 @@ class Contractors::SessionsController < Devise::SessionsController
 
   def new
     super
-    @contactor = Contractor.new
+    @contractor = Contractor.new
   end
 
   def create
