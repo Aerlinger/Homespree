@@ -19,9 +19,9 @@ Homespree::Application.routes.draw do
   end
 
   devise_for :users, :controllers => {
-  ##  registrations: "users/registrations",
+  #  registrations: "users/registrations",
     sessions:      "users/sessions"
-  #  passwords:     "users/passwords"
+    #passwords:     "users/passwords"
   }
 
   namespace :users do

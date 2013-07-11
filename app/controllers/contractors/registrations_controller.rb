@@ -1,4 +1,6 @@
-class Contractors::RegistrationsController < Users::RegistrationsController
+class Contractors::RegistrationsController < Devise::RegistrationsController
+  layout "login_page"
+
   after_filter :geolocate, only: [:create]
 
   def new
