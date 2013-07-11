@@ -15,13 +15,13 @@ class ApplicationController < ActionController::Base
   def current_user
     #current_homeowner || guest_homeowner || current_contractor
     # Todo: This is pretty hackish so it may be better to find a way to coerce devise to map the current_user
-    if session["warden.user.user.key"]
+    if session["warden.user.user.key"] && session["warden.user.user.key"][0]
       User.find(session["warden.user.user.key"][0][0])
     end
-    if session["warden.user.contractor.key"]
+    if session["warden.user.contractor.key"] && session["warden.user.contractor.key"][0]
       User.find(session["warden.user.contractor.key"][0][0])
     end
-    if session["warden.user.homeowner.key"]
+    if session["warden.user.homeowner.key"] && session["warden.user.homeowner.key"][0]
       User.find(session["warden.user.homeowner.key"][0][0])
     end
   end

@@ -69,25 +69,26 @@ class ContractorDecorator < Draper::Decorator
   end
 
   def card_item(attr_name, attrs = {})
+    field_missing = contractor_missing_attr?(attr_name) ? "" : "_edited"
+
+    unless own_profile?
+      field_missing = "_edited"
+    end
+
     # Don't render blank attributes when a customer is visiting the page
-    if own_profile?# && @object.send(attr_name).present?
-
-      field_missing = contractor_missing_attr?(attr_name) ? "" : "_edited"
-
-      h.haml_tag(:li, class: "card-attribute #{field_missing}", id: "card_#{attr_name.to_s + field_missing}") do
-        h.haml_tag(:strong, attrs[:title] || attr_name.to_s.titleize + ":")
-        h.haml_concat(h.best_in_place(@object, attr_name, activator: "##{attr_name}", display_with: attrs[:display_with], :nil => attrs[:nil] || "No info provided"))
-        if block_given?
-          yield
-        end
+    h.haml_tag(:li, class: "card-attribute #{field_missing}", id: "card_#{attr_name.to_s + field_missing}") do
+      h.haml_tag(:strong, attrs[:title] || attr_name.to_s.titleize + ":")
+      h.haml_concat(h.best_in_place(@object, attr_name, activator: "##{attr_name}", display_with: attrs[:display_with], :nil => attrs[:nil] || "No info provided"))
+      if block_given?
+        yield
       end
-
     end
   end
 
+
   def city_and_state
     address = @object.address
-    if address.city? && address.state?
+    if address && address.city? && address.state?
       "#{address.city.presence}, #{address.state.presence}"
     end
   end
@@ -96,11 +97,11 @@ class ContractorDecorator < Draper::Decorator
     raw "<span class='stars5'></span>"
   end
 
-  # Renders the "Edit" link to the right of fields on the contractor page.
-  # There are three possibilities:
-  #   1. Contractor's own page and attribute is set: "Edit"
-  #   2. Contractor's own page and attribute isnt set: "Add Info"
-  #   3. Visitor: Do nothing and return nil
+# Renders the "Edit" link to the right of fields on the contractor page.
+# There are three possibilities:
+#   1. Contractor's own page and attribute is set: "Edit"
+#   2. Contractor's own page and attribute isnt set: "Add Info"
+#   3. Visitor: Do nothing and return nil
   def edit_link(attr_name)
     if own_profile?
       link_text = if contractor_missing_attr?(attr_name)
@@ -116,8 +117,8 @@ class ContractorDecorator < Draper::Decorator
     end
   end
 
-  # A simple wrapper object that handles the logic for in-place editing
-  # Nullifies DOM element if it has already been edited.
+# A simple wrapper object that handles the logic for in-place editing
+# Nullifies DOM element if it has already been edited.
   def in_place_edit(tag, attr, options = {}, &block)
 
     # Nullify an edited tag for Intro sequence by changing its ID.
@@ -128,7 +129,7 @@ class ContractorDecorator < Draper::Decorator
     h.content_tag(tag, options.merge(id: attr.to_s), &block)
   end
 
-  # Defines a highlighted section for the intro sequence. By default, this will be only displayed once.
+# Defines a highlighted section for the intro sequence. By default, this will be only displayed once.
   def intro_section(id, options, &block)
     # Nullify an edited tag for Intro sequence by changing its ID
     id = "#{id}_edited" if @object.edited? || @object.sign_in_count > 1 || !own_profile?
@@ -139,7 +140,7 @@ class ContractorDecorator < Draper::Decorator
   private
 
 
-  # Check if this attribute is set and saved on the contractor's profile.
+# Check if this attribute is set and saved on the contractor's profile.
   def contractor_missing_attr?(attr_name)
     @object.send(attr_name).blank?
   end
