@@ -78,7 +78,7 @@ class ContractorDecorator < Draper::Decorator
     # Don't render blank attributes when a customer is visiting the page
     h.haml_tag(:li, class: "card-attribute #{field_missing}", id: "card_#{attr_name.to_s + field_missing}") do
       h.haml_tag(:strong, attrs[:title] || attr_name.to_s.titleize + ":")
-      h.haml_concat(h.best_in_place(@object, attr_name, activator: "##{attr_name}", display_with: attrs[:display_with], :nil => attrs[:nil] || "No info provided"))
+      h.haml_concat(h.best_in_place(@object, attr_name, activator: "##{attr_name}", display_with: attrs[:display_with], :nil => attrs[:nil] || ""))
       if block_given?
         yield
       end
@@ -105,7 +105,7 @@ class ContractorDecorator < Draper::Decorator
   def edit_link(attr_name)
     if own_profile?
       link_text = if contractor_missing_attr?(attr_name)
-                    "Add Info"
+                    "Add"
                   else
                     "Edit"
                   end
