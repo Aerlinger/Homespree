@@ -13,6 +13,6 @@ module ProfilesHelper
   end
 
   def own_profile?
-    contractor_signed_in? && (params[:id] == current_contractor.slug || params[:contractor_id].to_i == current_contractor.id)
+    (params[:id] == current_contractor.slug || params[:contractor_id].to_i == current_contractor.id)
   end
 end
