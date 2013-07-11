@@ -44,7 +44,7 @@ class ContractorDecorator < Draper::Decorator
 
     h.image_tag @object.portrait_url.to_s, id: "contractor_portrait", class: portrait_missing
 
-    if own_profile?
+    if h.own_profile?
       h.haml_concat link_to "Upload portrait", "#", class: "btn btn-success btn-small", id: "upload_portrait"
     end
   end
@@ -57,13 +57,13 @@ class ContractorDecorator < Draper::Decorator
     if @object.logo_url?
       h.haml_concat image_tag @object.logo_url, attrs
 
-      if own_profile?
+      if h.own_profile?
         h.haml_concat link_to("Change logo", "#", class: "btn btn-info btn-mini pull-left", id: "upload_logo")
         h.haml_concat link_to("Delete logo", contractor_path(id: @object.id, contractor: { remove_logo_url: true }),
                               confirm: "Are you sure you want to delete your logo from the description?",
                               method:  :put, class: "btn btn-danger btn-mini delete-button pull-right")
       end
-    elsif own_profile?
+    elsif h.own_profile?
       h.haml_concat link_to "Upload company logo", "#", class: "btn btn-info", id: "upload_logo"
     end
   end
@@ -71,7 +71,7 @@ class ContractorDecorator < Draper::Decorator
   def card_item(attr_name, attrs = {})
     field_missing = contractor_missing_attr?(attr_name) ? "" : "_edited"
 
-    unless own_profile?
+    unless h.own_profile?
       field_missing = "_edited"
     end
 
@@ -103,7 +103,7 @@ class ContractorDecorator < Draper::Decorator
 #   2. Contractor's own page and attribute isnt set: "Add Info"
 #   3. Visitor: Do nothing and return nil
   def edit_link(attr_name)
-    if own_profile?
+    if h.own_profile?
       link_text = if contractor_missing_attr?(attr_name)
                     "Add Info"
                   else
@@ -122,7 +122,7 @@ class ContractorDecorator < Draper::Decorator
   def in_place_edit(tag, attr, options = {}, &block)
 
     # Nullify an edited tag for Intro sequence by changing its ID.
-    unless contractor_missing_attr?(attr)
+    if !contractor_missing_attr?(attr) or !h.own_profile?
       attr = "#{attr}_edited"
     end
 
@@ -132,7 +132,7 @@ class ContractorDecorator < Draper::Decorator
 # Defines a highlighted section for the intro sequence. By default, this will be only displayed once.
   def intro_section(id, options, &block)
     # Nullify an edited tag for Intro sequence by changing its ID
-    id = "#{id}_edited" if @object.edited? || @object.sign_in_count > 1 || !own_profile?
+    id = "#{id}_edited" if @object.edited? || @object.sign_in_count > 1 || !h.own_profile?
 
     h.content_tag(:div, options.merge(id: id), &block)
   end
