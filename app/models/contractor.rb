@@ -53,9 +53,6 @@ class Contractor < User
   # Gem Class Methods:  ----------------------------------------------------------------------------------------------
   friendly_id :company_title, use: :slugged
 
-  mount_uploader :logo_url, LogoUploader
-  #mount_uploader :portrait_url, PortraitUploader
-
   # Accessors:  -------------------------------------------------------------------------------------------------------
   attr_protected
 

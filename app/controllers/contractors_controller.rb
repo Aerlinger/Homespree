@@ -9,8 +9,8 @@ class ContractorsController < ApplicationController
     @contractor = Contractor.find(params[:id])
     @contractor = @contractor.decorate
 
-    @portrait_uploader = @contractor.portrait_url
-    @logo_uploader = @contractor.logo_url
+    #@portrait_uploader = @contractor.portrait_url
+    #@logo_uploader = @contractor.logo_url
     #@uploader.success_action_redirect = contractor_path(@contractor)
 
     respond_to do |format|

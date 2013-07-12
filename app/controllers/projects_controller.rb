@@ -20,9 +20,11 @@ class ProjectsController < ApplicationController
 
   def update
     # TODO: This work is still in progress
-    params
+    @project = Project.find(params[:id])
 
-    redirect_to project_wizard_path(params[:id], project_id: params[:id])
+    @project.properties = params[:project] if params[:project]
+
+    redirect_to project_wizard_path, method: :put
   end
 
   def unavailable

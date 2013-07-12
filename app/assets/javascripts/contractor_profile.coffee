@@ -147,6 +147,14 @@ $(document).ready ->
       $(this).find('.edit-link').text("Edit")
       $(this).addClass('_edited')
 
+  $("#portrait_s3_upload").S3Uploader()
+  $('#portrait_s3_upload').bind "s3_upload_complete", (e, content) ->
+    console.log "Portrait Upload completed"
+
+  $("#logo_s3_upload").S3Uploader()
+  $('#logo_s3_upload').bind "s3_upload_complete", (e, content) ->
+    console.log "Portrait Upload completed"
+
 	# TODO: Tooltips aren't working for some reason.
   $('#licensed').tooltip()
   $('.item.photo').first().addClass("active")
