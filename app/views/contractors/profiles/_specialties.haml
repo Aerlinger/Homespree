@@ -5,8 +5,8 @@
 
 -# List of specialties which have been claimed by this contractor ----------------------------------------------------
 - sortable_tag = "contractor_specialties#{"_disabled" unless own_profile?}"
-= content_tag :ol, id: sortable_tag, class: "specialties", data: { "update-url" => "/contractors/#{@contractor.id}/specialties/sort" } do
-  =render @contractor.specialties
+= content_tag :ol, id: sortable_tag, class: "specialties", data: { "update-url" => "/contractors/#{id}/specialties/sort" } do
+  =render specialties
 
 -# List of "available" pecialties which have not yet been selected:  --------------------------------------------------
 - if own_profile?
@@ -14,7 +14,7 @@
   %hr{style: "margin-top: 5px; margin-bottom: 5px"}
 
   %ul.specialties#available_specialties
-    - available_specialties = Specialty.painting_types.values - @specialties.map(&:name)
+    - available_specialties = Specialty.painting_types.values - specialties.map(&:name)
     - available_specialties.each do |specialty_name|
       = render "specialties/available_specialty", specialty_name: specialty_name
 

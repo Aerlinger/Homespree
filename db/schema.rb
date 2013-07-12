@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130710020635) do
+ActiveRecord::Schema.define(:version => 20130712013005) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(:version => 20130710020635) do
     t.boolean  "verified_by_contractor",  :default => false
     t.boolean  "completed_by_homeowner",  :default => false
     t.boolean  "completed_by_contractor", :default => false
+    t.integer  "user_id"
   end
 
   create_table "badges", :force => true do |t|

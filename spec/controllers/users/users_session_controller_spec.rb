@@ -31,15 +31,6 @@ describe Users::SessionsController do
           post :create, contractor_params
         end
 
-        it "redirects to the contractor's homepage" do
-          #expect(response).to redirect_to("/contractors/#{contractor.slug}")
-          expect(response).to render_template :show
-        end
-
-        it "finds contractor" do
-          expect(assigns(:user).id).to eq contractor.id
-        end
-
         describe "then logout with DELETE #destroy" do
           it "Should redirect to root path" do
             delete :destroy, id: contractor.id
@@ -51,10 +42,6 @@ describe Users::SessionsController do
       context "with invalid params" do
         before do
           post :create, contractor_invalid_params
-        end
-
-        it "displays flash message" do
-          flash[:notice].should eq "Could not sign in, please check your details"
         end
 
         it "redirects to the contractor's homepage" do

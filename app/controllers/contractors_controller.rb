@@ -7,11 +7,11 @@ class ContractorsController < ApplicationController
 
   def show
     @contractor = Contractor.find(params[:id])
-    @specialty = Specialty.new
-    @specialties = @contractor.specialties
-    @photos = @contractor.photos
-
     @contractor = @contractor.decorate
+
+    @portrait_uploader = @contractor.portrait_url
+    @logo_uploader = @contractor.logo_url
+    #@uploader.success_action_redirect = contractor_path(@contractor)
 
     respond_to do |format|
       format.html { render "profile" }

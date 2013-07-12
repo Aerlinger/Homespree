@@ -44,14 +44,7 @@ describe Users::MessagesController do
       end
     end
 
-    context "GET #edit" do
-      before do
-        get :edit, params
-      end
 
-      it { expect(assigns(:box)).to eq "inbox" }
-      it { should render_template :edit }
-    end
 
     context "POST #create" do
 

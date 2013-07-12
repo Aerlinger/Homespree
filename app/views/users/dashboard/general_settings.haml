@@ -21,7 +21,7 @@
         .accordion-inner
           -# Change Email Form
           -#------------------------------------------------------------------------------------------------
-          = form_for(current_contractor, :html => {:method => :put, id: 'change_email'}) do |f|
+          = form_for(current_user, :html => {:method => :put, id: 'change_email'}) do |f|
             -#= devise_error_messages!
             %div
               = f.label "Change Email"
@@ -40,7 +40,7 @@
         .accordion-inner
           -# Change Password
           -#------------------------------------------------------------------------------------------------
-          = form_for(current_contractor, :html => {:method => :put, id: 'change_password'}) do |f|
+          = form_for(current_user, :html => {:method => :put, id: 'change_password'}) do |f|
             -#= devise_error_messages!
             %div
               = f.label "Current Password"
@@ -63,5 +63,5 @@
           -# Change Password
           -#------------------------------------------------------------------------------------------------
           %p
-            Unhappy? #{button_to "Cancel my account", registration_path(current_contractor), :data => {:confirm => "This action is permanent. Are you sure you wish to delete your profile and all associated information?"}, :method => :delete, :class => "btn btn-danger"}
+            Unhappy? #{button_to "Cancel my account", registration_path(current_user), :data => {:confirm => "This action is permanent. Are you sure you wish to delete your profile and all associated information?"}, :method => :delete, :class => "btn btn-danger"}
 

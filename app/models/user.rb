@@ -48,23 +48,43 @@
 class User < ActiveRecord::Base
   # Gem Class Methods:  ----------------------------------------------------------------------------------------------
   # Include default devise modules. Others available are: :token_authenticatable, :confirmable, :lockable, :timeoutable and :omniauthable
+  extend FriendlyId
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
   acts_as_messageable
 
   # Accessor/Virtual Attributes:  ------------------------------------------------------------------------------------
-  attr_accessor :current_password
+  attr_accessor :current_password, :password
   attr_accessible :email, :password, :password_confirmation, :remember_me, :current_password
 
+  # Associations:  ----------------------------------------------------------------------------------------------------
+  has_one :address, as: :addressable, dependent: :destroy
+  has_many :alerts, as: :alertable
+
+  # Nested Attributes:  -----------------------------------------------------------------------------------------------
+  accepts_nested_attributes_for :address, :alerts
+
   # Validations:  ----------------------------------------------------------------------------------------------------
+  validates_format_of :email, with: RegexDefinitions::email_regex, message: "is invalid"
+  validates_uniqueness_of :email
 
   # Scopes:  ---------------------------------------------------------------------------------------------------------
   default_scope order("created_at desc")
 
   # Callbacks:  ------------------------------------------------------------------------------------------------------
   before_save :capitalize_name
+  before_save lambda { |user| user.email.try(:downcase!) }
+  after_create :send_welcome_message
 
   # Custom Methods:  -------------------------------------------------------------------------------------------------
 
+  # Delegations:  -----------------------------------------------------------------------------------------------------
+  delegate :to_coordinates, :line1, :line2, :city, :state, :zipcode, :latitude, :longitude, :single_address, to: :address, allow_nil: true
+
+  def distance_to(another_user)
+    if self.address && another_user
+      self.address.distance_to(another_user)
+    end
+  end
 
   def capitalize_name
     #read_attribute('category_name') || category.name

@@ -25,6 +25,10 @@ class ProjectDecorator < Draper::Decorator
       @object.fields.each do |field|
         h.haml_concat process_field(f, field)
       end
+
+      if block_given?
+        yield f
+      end
     end
   end
 

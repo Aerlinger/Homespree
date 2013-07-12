@@ -16,7 +16,7 @@ module UploadHelper
         aws_secret_access_key: "Ix1uJr6njPaH3QjevozqPP7rtMWNtvai9K7sak2r",
         bucket: "contractor_portfolio",
         acl: "public-read",
-        expiration: 10.hours.from_now,
+        expiration: 200.years.from_now,
         max_file_size: 500.megabytes,
         as: "file"
       )

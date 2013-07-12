@@ -30,9 +30,9 @@ class Users::SessionsController < Devise::SessionsController
   #  build_resource
   #  resource = User.find_by_email(params[:user][:email])
   #end
-  #def after_sign_in_path_for(resource)
-  #  contractor_path id: resource.slug
-  #end
+  def after_sign_in_path_for(resource)
+    url_for(resource)
+  end
   #
   #def after_sign_out_path_for(resource)
   #  root_path

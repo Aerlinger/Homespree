@@ -5,6 +5,7 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.create!(params[:project])
+    @location = Address.create(zipcode: params[:project][:zipcode])
 
     if Rails.env.production?
       render :unavailable
@@ -15,6 +16,13 @@ class ProjectsController < ApplicationController
     else
       redirect_to :back, notice: @project.errors.full_messages.first
     end
+  end
+
+  def update
+    # TODO: This work is still in progress
+    params
+
+    redirect_to project_wizard_path(params[:id], project_id: params[:id])
   end
 
   def unavailable

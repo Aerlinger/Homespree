@@ -139,7 +139,6 @@ class ContractorDecorator < Draper::Decorator
 
   private
 
-
 # Check if this attribute is set and saved on the contractor's profile.
   def contractor_missing_attr?(attr_name)
     @object.send(attr_name).blank?

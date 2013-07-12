@@ -24,15 +24,18 @@
               %li#title.primary-color-bg
                 = best_in_place @contractor, :company_title, activator: "#company_title"
                 = @contractor.edit_link(:company_title )
-                %br
-                %span#city_and_state= @contractor.city_and_state
+                -#%br
+                #city_and_state= @contractor.city_and_state
 
               %li.price.primary-color-bg
                 %span.rating{style: "font-weight: bold"}
 
                 = image_tag @contractor.portrait_url
-                = content_tag(:div, style: "position: relative;") do
-                  - @contractor.portrait_upload
+                -#= direct_upload_form_for @uploader do |f|
+                  = f.file_field :image
+                  = f.submit "Upload Portrait"
+                -#= content_tag(:div, style: "position: relative;") do
+                -#  - @contractor.portrait_upload
 
               %li.price
                 = content_tag(:div, style: "position: relative;", class: "badges") do
@@ -69,7 +72,7 @@
         -# Portfolio image carousel
         -#===============================================================================================
         .span8
-          = render "contractors/profiles/portfolio"
+          = render "contractors/profiles/portfolio", photos: @contractor.photos
 
   #helper_tabs.row
     .container
@@ -110,7 +113,7 @@
           = @contractor.intro_section("services", class: "span4") do
             %h3.short_headline
               %div Services Offered
-            =render "contractors/profiles/specialties"
+            =render "contractors/profiles/specialties", specialties: @contractor.specialties, id: @contractor.id
 
           = @contractor.intro_section("service_area", class: "span4") do
             %h3.short_headline
@@ -119,7 +122,7 @@
 
 
   -#=render "contractors/profiles/question_modal"
-  = render "contractors/profiles/photos_modal"
+  = render "contractors/profiles/photos_modal", photos: @contractor.photos
   -#=render "partials/clean_footer"
 
   -# Invisible form to upload portrait image

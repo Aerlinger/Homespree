@@ -26,8 +26,8 @@ class Appointment < ActiveRecord::Base
                   :address_attributes, :contractor_id, :homeowner_id, :zipcode
 
   # Associations:  --------------------------------------------------------------------------------------------------
-  belongs_to :contractor
-  belongs_to :homeowner
+  belongs_to :contractor, foreign_key: "contractor_id"
+  belongs_to :homeowner, foreign_key: "homeowner_id"
   belongs_to :project
   has_one :address, as: :addressable
 

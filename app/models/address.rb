@@ -37,7 +37,7 @@ class Address < ActiveRecord::Base
   # Callback method definitions:  -------------------------------------------------------------------------------------
 
   def single_address
-    [line1, city, state].compact.join(', ')
+    [line1, city, state, zipcode].compact.join(', ')
   end
 
   protected

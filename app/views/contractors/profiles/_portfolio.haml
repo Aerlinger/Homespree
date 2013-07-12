@@ -2,19 +2,20 @@
   #portfolio-slider.flexslider
     %ul.slides
       -# Show a default image if the contractor hasn't uploaded any images yet:
-      - if @photos.empty?
+      - if photos.empty?
         = content_tag :li do
           = image_tag asset_path("portfolio_images/default.png")
 
       -# Image slider (Large images)
-      = render @photos
+      = render photos
 
   #portfolio-carousel.flexslider
     - if own_profile?
-      = s3_uploader_form post: contractor_photos_url(@contractor), as: "photo[image_url]" do
+      -#= s3_uploader_form post: contractor_photos_url(@contractor), as: "photo[image_url]" do
+      = s3_uploader_form post: photos, as: "photo[image_url]" do
         = file_field_tag :file, multiple: true
     %ul.slides
-      = render @photos
+      = render photos
 
     %script#template-upload(type= "text/x-tmpl")
       .upload

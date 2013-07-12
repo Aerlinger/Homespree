@@ -7,6 +7,6 @@
 
   %hr
 
-  = @project.complete_form
-
-  = render partial: 'step', locals: { step_number: '1', project: @project }
+  = @project.complete_form do |f|
+    = link_to 'previous', previous_wizard_path(project_id: @project.id)
+    = f.submit "next", class: "pull-right"
