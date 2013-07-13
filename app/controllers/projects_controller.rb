@@ -4,7 +4,8 @@ class ProjectsController < ApplicationController
   before_filter :create_guest_if_homeowner_not_signed_in, only: :create
 
   def create
-    @project = Project.create!(params[:project])
+    @project = Project.create(params[:project])
+    @location = Address.create(zipcode: params[:project][:zipcode])
 
     if Rails.env.production?
       render :unavailable
@@ -15,6 +16,15 @@ class ProjectsController < ApplicationController
     else
       redirect_to :back, notice: @project.errors.full_messages.first
     end
+  end
+
+  def update
+    # TODO: This work is still in progress
+    @project = Project.find(params[:id])
+
+    @project.properties = params[:project] if params[:project]
+
+    redirect_to project_wizard_path, method: :put
   end
 
   def unavailable

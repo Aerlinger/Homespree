@@ -51,39 +51,32 @@ class Contractor < User
   include ActionView::Helpers::NumberHelper
 
   # Gem Class Methods:  ----------------------------------------------------------------------------------------------
-  extend FriendlyId
   friendly_id :company_title, use: :slugged
-
-  mount_uploader :logo_url, LogoUploader
-  mount_uploader :portrait_url, PortraitUploader
 
   # Accessors:  -------------------------------------------------------------------------------------------------------
   attr_protected
 
   # Associations:  ----------------------------------------------------------------------------------------------------
-  has_one :address, as: :addressable, dependent: :destroy
   has_one :profile_picture, as: :photographable, class_name: 'Photo'
-  has_many :alerts, as: :alertable
 
   has_many :appointments
-  has_many :homeowners, through: :appointments, uniq: true
   has_many :projects, through: :appointments
+
+  has_many :homeowners, through: :appointments, uniq: true
 
   has_many :specialties
   has_many :services, class_name: "ServiceType"
   has_many :photos, as: :photographable
   has_many :project_photos, as: :photographable, class_name: "Photo", through: :projects
   has_many :badges
-  has_many :alerts, as: :alertable
 
   # Nested Attributes:  -----------------------------------------------------------------------------------------------
-  accepts_nested_attributes_for :address, :photos, :appointments, :specialties, :profile_picture
+  accepts_nested_attributes_for :photos, :specialties, :profile_picture, :appointments
 
   # Validations:  -----------------------------------------------------------------------------------------------------
   validates_format_of :first_name, :last_name, with: /\A\w+ ?\w*\z/, allow_blank: true, message: "should only contain letters"
   validates_length_of :first_name, :last_name, minimum: 2, maximum: 20, allow_blank: true, message: "must be a reasonable length"
-  validates_format_of :email, with: RegexDefinitions::email_regex, message: "is invalid"
-  validates_uniqueness_of :email
+
   validates_format_of :mobile_number, :office_number, with: /\A\d{10}\Z/, allow_blank: true, message: "must be valid"
   validates_presence_of :company_title
   validates_numericality_of :years_experience, allow_blank: true
@@ -91,20 +84,17 @@ class Contractor < User
 
   # Callbacks:  -------------------------------------------------------------------------------------------------------
   before_validation :sanitize_phone_numbers
-  before_save lambda { |contractor| contractor.email.try(:downcase!) }
+
   before_save lambda { |contractor| contractor.license.try(:upcase!) }
   before_create :add_badges
   after_create :add_portfolio_image
   after_create :send_welcome_message
 
   # Scopes:  ----------------------------------------------------------------------------------------------------------
-  #default_scope order("created_at desc")
-  #default_scope lambda { User.where("user_type = ?", "Contractor") }
+  default_scope order("created_at desc")
   scope :recent_signups, lambda { limit(100) }
   scope :locate, lambda { |zipcode, radius| nil }
 
-  # Delegations:  -----------------------------------------------------------------------------------------------------
-  delegate :line1, :line2, :city, :state, :zipcode, :latitude, :longitude, :single_address, to: :address, allow_nil: true
 
   # Custom Methods:  --------------------------------------------------------------------------------------------------
   def incomplete_sections
@@ -137,7 +127,9 @@ class Contractor < User
     end
   end
 
-  protected
+  def contractor?
+    true
+  end
 
   def sanitize_phone_numbers
     self.mobile_number.try(:gsub!, /\D/, '')
@@ -156,22 +148,6 @@ class Contractor < User
     self.badges << badge
   end
 
-  def contractor?
-    true
-  end
-
-  private
-
   def send_welcome_message
-    #admin = Contractor.find_by_email("admin@myhomespree.com")
-
-    #if admin
-    #  subject = "Welcome to Homespree!"
-    #  body    = "Body message should go here"
-
-      #admin.send_message(self, body, subject)
-    #end
   end
-
-
 end

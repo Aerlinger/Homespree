@@ -7,27 +7,12 @@ class ApplicationController < ActionController::Base
   # This is temporary until a more elegant solution is found.
   #include Mobylette::RespondToMobileRequests
 
-  def signed_in_user
-    user = current_user
-    user.klass.find(user.id)
-  end
 
-  def current_user
-    #current_homeowner || guest_homeowner || current_contractor
-    # Todo: This is pretty hackish so it may be better to find a way to coerce devise to map the current_user
-    if session["warden.user.user.key"] && session["warden.user.user.key"][0]
-      return User.find(session["warden.user.user.key"][0][0])
-    elsif session["warden.user.contractor.key"] && session["warden.user.contractor.key"][0]
-      return User.find(session["warden.user.contractor.key"][0][0])
-    elsif session["warden.user.homeowner.key"] && session["warden.user.homeowner.key"][0]
-      return User.find(session["warden.user.homeowner.key"][0][0])
-    end
-  end
-
-  def user_signed_in?
-    current_user.present?
-  end
-
+  # -----------------------------------------------------------------------------------------------------
+  # Note: I am bypassing Devise's dynamic finder here and directly interacting with the
+  #       session object established by Warden. Devise's dynamic methods use +method_missing
+  #       which isn't favorable in our case.
+  # -----------------------------------------------------------------------------------------------------
   def guest_homeowner
     # Cache the value:
     @cached_guest_user ||= Homeowner.find(session[:guest_homeowner_id])
@@ -36,7 +21,23 @@ class ApplicationController < ActionController::Base
     #guest_homeowner
   end
 
+  def current_user
+    if session["warden.user.user.key"]
+      @current_user ||= User.find(session["warden.user.user.key"][0][0])
+    elsif session["warden.user.contractor.key"]
+      @current_user ||= User.find(session["warden.user.contractor.key"][0][0])
+    elsif session["warden.user.homeowner.key"]
+      @current_user ||= User.find(session["warden.user.homeowner.key"][0][0])
+    end
+  end
+
+  def user_signed_in?
+    current_user.present?
+  end
+
   helper_method :current_user
+  helper_method :current_contractor
+  helper_method :current_hoemowner
   helper_method :user_signed_in?
   helper_method :signed_in_user
 
@@ -58,9 +59,4 @@ class ApplicationController < ActionController::Base
     session[:guest_homeowner_id] = guest_homeowner.id
     return guest_homeowner
   end
-
-  def user_class
-    current_user.klass if current_user.present?
-  end
-
 end

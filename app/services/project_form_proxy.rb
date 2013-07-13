@@ -1,2 +1,0 @@
-class ProjectFormProxy < OpenStruct
-end

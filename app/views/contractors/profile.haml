@@ -23,16 +23,22 @@
             %ul.optionheader
               %li#title.primary-color-bg
                 = best_in_place @contractor, :company_title, activator: "#company_title"
-                = @contractor.edit_link(:company_title )
-                %br
-                %span#city_and_state= @contractor.city_and_state
+                = @contractor.edit_link(:company_title)
+                #city_and_state= @contractor.city_and_state
 
               %li.price.primary-color-bg
                 %span.rating{style: "font-weight: bold"}
 
+                - # Portrait URL
                 = image_tag @contractor.portrait_url
                 = content_tag(:div, style: "position: relative;") do
                   - @contractor.portrait_upload
+
+                  -#%script#template-upload{type:"text/x-tmpl"}
+                    <div id="file-{%=o.unique_id%}" class="upload">                           |
+                      {%=o.name%}                                                            |
+                      <div class="progress"><div class="bar" style="width: 0%"></div></div>   |
+                    </div>
 
               %li.price
                 = content_tag(:div, style: "position: relative;", class: "badges") do
@@ -69,7 +75,7 @@
         -# Portfolio image carousel
         -#===============================================================================================
         .span8
-          = render "contractors/profiles/portfolio"
+          = render "contractors/profiles/portfolio", photos: @contractor.photos
 
   #helper_tabs.row
     .container
@@ -110,7 +116,7 @@
           = @contractor.intro_section("services", class: "span4") do
             %h3.short_headline
               %div Services Offered
-            =render "contractors/profiles/specialties"
+            =render "contractors/profiles/specialties", specialties: @contractor.specialties, id: @contractor.id
 
           = @contractor.intro_section("service_area", class: "span4") do
             %h3.short_headline
@@ -119,20 +125,17 @@
 
 
   -#=render "contractors/profiles/question_modal"
-  = render "contractors/profiles/photos_modal"
+  = render "contractors/profiles/photos_modal", photos: @contractor.photos
   -#=render "partials/clean_footer"
 
-  -# Invisible form to upload portrait image
-  = form_for @contractor, remote: true, method: :put do |f|
+  = s3_uploader_form callback_url: contractor_path(@contractor), callback_param: "contractor[portrait_url]", callback_method: :put, id: "portrait_s3_upload" do
     .custom_file_upload
-      = f.file_field :portrait_url, id: "hidden_portrait_url", onchange: "uploadfile('#hidden_portrait_url')"
-      = f.submit "", class: 'image-upload'
+      = file_field_tag :file, multiple: true, id: "hidden_portrait_url", onchange: "uploadfile('#hidden_portrait_url')"
 
-  -# Invisible form to upload logo image
-  = form_for @contractor, remote: true, method: :put do |f|
+  = s3_uploader_form callback_url: contractor_path(@contractor), callback_param: "contractor[logo_url]", callback_method: :put, id: "logo_s3_upload" do
     .custom_file_upload
-      = f.file_field :logo_url, id: "hidden_logo_url", onchange: "uploadfile('#hidden_logo_url')"
-      = f.submit "", class: 'image-upload'
+      = file_field_tag :file, multiple: true, id: "hidden_logo_url", onchange: "uploadfile('#hidden_logo_url')"
+
 
   :javascript
     $(document).ready(function(evt) {

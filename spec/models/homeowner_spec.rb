@@ -80,7 +80,6 @@ describe Homeowner do
   # Class Methods
   specify { Homeowner.should respond_to :create_guest }
 
-  it { should be_homeowner }
   its(:class) { should eq Homeowner }
 
   describe "titlieizes name" do

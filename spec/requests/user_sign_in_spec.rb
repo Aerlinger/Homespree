@@ -18,7 +18,6 @@ describe "User sign in" do
     before do
       fill_in "Email", with: contractor.email
       fill_in "Password", with: contractor.password
-      save_and_open_page
       click_button "Sign In"
     end
 
@@ -71,7 +70,6 @@ describe "User sign in" do
         #within(:css, ".body") do
           fill_in "Email", with: homeowner.email
           fill_in "Password", with: homeowner.password
-          save_and_open_page
           click_button "Sign In"
         #end
       end

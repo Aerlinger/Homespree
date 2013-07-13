@@ -4,6 +4,8 @@ class PortraitUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   include CarrierWave::RMagick
+  #include CarrierWave::MimeTypes
+  include CarrierWaveDirect::Uploader
   # include CarrierWave::MiniMagick
 
   # Include the Sprockets helpers for Rails 3.1+ asset pipeline compatibility:
@@ -29,6 +31,7 @@ class PortraitUploader < CarrierWave::Uploader::Base
   end
 
   # Process files as they are uploaded:
+  #process :set_content_type
   #process :scale => [200, 300]
   #
   #def scale(width, height)

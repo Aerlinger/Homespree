@@ -29,7 +29,6 @@ class UrlHelpers
 end
 
 class ContractorDecorator < Draper::Decorator
-
   include BestInPlace::BestInPlaceHelpers
   include Draper::LazyHelpers
   include ActionView::Helpers::UrlHelper
@@ -40,61 +39,44 @@ class ContractorDecorator < Draper::Decorator
   decorates :contractor
 
   def portrait_upload
-    portrait_missing = @object.portrait_url ? "_edited" : ""
+    h.image_tag @object.portrait_url.to_s, id: "contractor_portrait"
 
-    h.image_tag @object.portrait_url.to_s, id: "contractor_portrait", class: portrait_missing
-
-    if h.own_profile?
-      h.haml_concat link_to "Upload portrait", "#", class: "btn btn-success btn-small", id: "upload_portrait"
+    if own_profile?
+      h.haml_concat link_to("Upload portrait", "#", class: "btn btn-success btn-small", id: "upload_portrait")
     end
   end
 
-  def portrait_url
-    @object.portrait_url
-  end
-
   def logo(attrs = {})
-    if @object.logo_url?
-      h.haml_concat image_tag @object.logo_url, attrs
+    h.haml_concat image_tag @object.logo_url, attrs
 
-      if h.own_profile?
-        h.haml_concat link_to("Change logo", "#", class: "btn btn-info btn-mini pull-left", id: "upload_logo")
-        h.haml_concat link_to("Delete logo", contractor_path(id: @object.id, contractor: { remove_logo_url: true }),
-                              confirm: "Are you sure you want to delete your logo from the description?",
-                              method:  :put, class: "btn btn-danger btn-mini delete-button pull-right")
-      end
-    elsif h.own_profile?
+    if h.own_profile? && @object.logo_url?
+      h.haml_concat link_to("Change logo", "#", class: "btn btn-info btn-mini pull-left", id: "upload_logo")
+      h.haml_concat link_to("Delete logo", contractor_path(id: @object.id, contractor: { remove_logo_url: true }),
+                            confirm: "Are you sure you want to delete your logo from the description?",
+                            method:  :put, class: "btn btn-danger btn-mini delete-button pull-right")
+    else
       h.haml_concat link_to "Upload company logo", "#", class: "btn btn-info", id: "upload_logo"
     end
   end
 
   def card_item(attr_name, attrs = {})
-    field_missing = contractor_missing_attr?(attr_name) ? "" : "_edited"
+    field_missing = "_edited"
 
-    unless h.own_profile?
-      field_missing = "_edited"
+    if h.own_profile? && contractor_missing_attr?(attr_name)
+      field_missing = ""
     end
 
     # Don't render blank attributes when a customer is visiting the page
     h.haml_tag(:li, class: "card-attribute #{field_missing}", id: "card_#{attr_name.to_s + field_missing}") do
       h.haml_tag(:strong, attrs[:title] || attr_name.to_s.titleize + ":")
       h.haml_concat(h.best_in_place(@object, attr_name, activator: "##{attr_name}", display_with: attrs[:display_with], :nil => attrs[:nil] || "No info provided"))
-      if block_given?
-        yield
-      end
+
+      yield
     end
   end
-
 
   def city_and_state
-    address = @object.address
-    if address && address.city? && address.state?
-      "#{address.city.presence}, #{address.state.presence}"
-    end
-  end
-
-  def stars_rating
-    raw "<span class='stars5'></span>"
+    "#{@object.city.presence}, #{@object.state.presence}"
   end
 
 # Renders the "Edit" link to the right of fields on the contractor page.
@@ -104,21 +86,17 @@ class ContractorDecorator < Draper::Decorator
 #   3. Visitor: Do nothing and return nil
   def edit_link(attr_name)
     if h.own_profile?
-      link_text = if contractor_missing_attr?(attr_name)
-                    "Add Info"
-                  else
-                    "Edit"
-                  end
+      link_text = contractor_missing_attr?(attr_name) ? "Add Info" : "Edit"
 
-      h.link_to "javascript:void(0)", id: attr_name, class: "edit-link #{link_text} pull-right" do
+      h.link_to("javascript:void(0)", id: attr_name, class: "edit-link #{link_text} pull-right") do
         #h.haml_concat h.content_tag(:i, class: "e-icon-pencil", style: "height: 20px; line-height: 16px;")
         h.haml_concat link_text
       end
     end
   end
 
-# A simple wrapper object that handles the logic for in-place editing
-# Nullifies DOM element if it has already been edited.
+  # A simple wrapper object that handles the logic for in-place editing
+  # Nullifies DOM element if it has already been edited.
   def in_place_edit(tag, attr, options = {}, &block)
 
     # Nullify an edited tag for Intro sequence by changing its ID.
@@ -129,7 +107,7 @@ class ContractorDecorator < Draper::Decorator
     h.content_tag(tag, options.merge(id: attr.to_s), &block)
   end
 
-# Defines a highlighted section for the intro sequence. By default, this will be only displayed once.
+  # Defines a highlighted section for the intro sequence. By default, this will be only displayed once.
   def intro_section(id, options, &block)
     # Nullify an edited tag for Intro sequence by changing its ID
     id = "#{id}_edited" if @object.edited? || @object.sign_in_count > 1 || !h.own_profile?
@@ -139,10 +117,8 @@ class ContractorDecorator < Draper::Decorator
 
   private
 
-
-# Check if this attribute is set and saved on the contractor's profile.
+  # Check if this attribute is set and saved on the contractor's profile.
   def contractor_missing_attr?(attr_name)
     @object.send(attr_name).blank?
   end
-
 end
