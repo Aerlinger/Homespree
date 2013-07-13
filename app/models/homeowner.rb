@@ -93,6 +93,10 @@ class Homeowner < User
     return guest_homeowner
   end
 
+  def homeowner?
+    return true
+  end
+
   def upgrade_to_homeowner
     if self.guest?
     end

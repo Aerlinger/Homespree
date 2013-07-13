@@ -67,9 +67,9 @@ Spork.prefork do
     ]
     )
 
-    Draper::ViewContext.test_strategy :fast do
-      include ApplicationHelper
-    end
+    #Draper::ViewContext.test_strategy :fast do
+    #  include ApplicationHelper
+    #end
 
     class Warden::SessionSerializer
       def serialize(record)

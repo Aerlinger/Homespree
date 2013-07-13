@@ -127,7 +127,9 @@ class Contractor < User
     end
   end
 
-  protected
+  def contractor?
+    true
+  end
 
   def sanitize_phone_numbers
     self.mobile_number.try(:gsub!, /\D/, '')
@@ -146,14 +148,6 @@ class Contractor < User
     self.badges << badge
   end
 
-  def contractor?
-    true
-  end
-
-  private
-
   def send_welcome_message
   end
-
-
 end

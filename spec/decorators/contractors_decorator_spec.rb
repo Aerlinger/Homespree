@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe ContractorDecorator do
+  include Draper::ViewHelpers
 
   let(:contractor) { FactoryGirl.create(:contractor).decorate }
   subject { contractor }
@@ -10,10 +11,18 @@ describe ContractorDecorator do
   it { should respond_to :logo }
   it { should respond_to :card_item }
   it { should respond_to :city_and_state }
-  it { should respond_to :stars_rating }
   it { should respond_to :edit_link }
   it { should respond_to :in_place_edit }
   it { should respond_to :intro_section }
+
+
+  describe "portrait upload" do
+    it "receives own_portrait" do
+      subject.stub!(:own_profile?).and_return(true)
+      subject.should_receive(:own_profile?).and_return(true)
+      subject.portrait_upload.should eq "<a href=\"#\" class=\"btn btn-success btn-small\" id=\"upload_portrait\">Upload portrait</a>"
+    end
+  end
 
   it "renders portrait URL" do
     contractor.portrait_url == '/uploads/contractor/portrait_url/1/assets/images/contractor_profiles/portrait_default.jpg'

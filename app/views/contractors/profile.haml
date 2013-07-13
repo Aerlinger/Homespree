@@ -23,8 +23,7 @@
             %ul.optionheader
               %li#title.primary-color-bg
                 = best_in_place @contractor, :company_title, activator: "#company_title"
-                = @contractor.edit_link(:company_title )
-                -#%br
+                = @contractor.edit_link(:company_title)
                 #city_and_state= @contractor.city_and_state
 
               %li.price.primary-color-bg
@@ -35,7 +34,7 @@
                 = content_tag(:div, style: "position: relative;") do
                   - @contractor.portrait_upload
 
-                  %script#template-upload{type:"text/x-tmpl"}
+                  -#%script#template-upload{type:"text/x-tmpl"}
                     <div id="file-{%=o.unique_id%}" class="upload">                           |
                       {%=o.name%}                                                            |
                       <div class="progress"><div class="bar" style="width: 0%"></div></div>   |

@@ -1,6 +1,13 @@
 require "spec_helper"
 
 describe Users::SessionsController do
+
+  # Auth helpers
+  it { should respond_to :current_contractor }
+  it { should respond_to :current_homeowner }
+  it { should respond_to :current_user }
+  it { should respond_to :guest_homeowner }
+
   let!(:contractor) { FactoryGirl.create :contractor }
   let!(:contractor_params) { { user: { email: contractor.email, password: contractor.password}} }
   let!(:contractor_invalid_params) { { user: FactoryGirl.attributes_for(:contractor, email: "nonsense") } }
@@ -13,6 +20,12 @@ describe Users::SessionsController do
     before :each do
       @request.env["devise.mapping"] = Devise.mappings[:contractor]
       sign_in contractor
+    end
+
+    describe "creates a Warden session" do
+      it { should respond_to :session }
+      specify { contractor.should eq subject.current_user }
+      specify { session["warden.user.user.key"].should eq [[contractor.id], ""] }
     end
 
     describe "GET #new" do

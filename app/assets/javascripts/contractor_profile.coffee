@@ -127,6 +127,10 @@ window.invisibleUploadFields = ->
 	$('#upload_logo').click (evt) ->
 		$('#hidden_logo_url').click()
 
+  $('#upload_portfolio').click (evt) ->
+    $('#hidden_portfolio_url').click()
+
+
 
 # A silly hack to force the form to submit when a file is uploaded:
 window.uploadfile = (form_id) ->
@@ -134,11 +138,9 @@ window.uploadfile = (form_id) ->
 	# click the submit button
 	$(form_id).next().click()
 
-
 # Trims leading and trailing whitespace from a string:  ---------------------------------------------------------------
 strtrim = (str) ->
 	str?.replace(/^\s\s*/, '')?.replace(/\s\s*$/, '')
-
 
 $(document).ready ->
   $('.best_in_place').best_in_place()
@@ -147,17 +149,21 @@ $(document).ready ->
       $(this).find('.edit-link').text("Edit")
       $(this).addClass('_edited')
 
+	# TODO: Tooltips aren't working for some reason.
+  $('#licensed').tooltip()
+  $('.item.photo').first().addClass("active")
+
   $("#portrait_s3_upload").S3Uploader()
   $('#portrait_s3_upload').bind "s3_upload_complete", (e, content) ->
     console.log "Portrait Upload completed"
 
   $("#logo_s3_upload").S3Uploader()
   $('#logo_s3_upload').bind "s3_upload_complete", (e, content) ->
-    console.log "Portrait Upload completed"
+    console.log "Logo Upload completed"
 
-	# TODO: Tooltips aren't working for some reason.
-  $('#licensed').tooltip()
-  $('.item.photo').first().addClass("active")
+  $("#portfolio_s3_upload").S3Uploader()
+  $('#portfolio_s3_upload').bind "s3_upload_complete", (e, content) ->
+    console.log "portfolio Upload completed"
 
   invisibleUploadFields()
   sortableFields()

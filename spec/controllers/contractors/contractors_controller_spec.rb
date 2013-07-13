@@ -7,6 +7,7 @@ describe ContractorsController do
   it { should respond_to :settings }
   it { should respond_to :material_calculator }
 
+
   let(:contractor) { FactoryGirl.create(:contractor) }
   params = {id: 11, photos_attributes: [{image_url: "asdf"}]}
 
@@ -31,7 +32,6 @@ describe ContractorsController do
       expect(response).to render_template(:profile)
     end
   end
-
 
   describe "PUT #update" do
 
