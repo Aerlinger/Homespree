@@ -24,7 +24,7 @@ class Specialty < ActiveRecord::Base
       power_washing: "Power Washing",
       deck_painting: "Deck Painting/Staining",
       fence_painting: "Fence Painting",
-      drywall: "Drywall Hanging and Finishing",
+      drywall: "Drywall Finishing",
       drywall_repair: "Drywall Repair",
       wallpaper_hanging: "Wallpaper Hanging",
       wallpaper_removal: "Wallpaper Removal",

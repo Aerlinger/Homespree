@@ -146,7 +146,7 @@ $(document).ready ->
   $('.best_in_place').best_in_place()
   $('.best_in_place').bind "ajax:success", () ->
     $(this).closest('li').effect 'highlight', {color: "#88FF22"} , 800, () ->
-      $(this).find('.edit-link').text("Edit")
+      $(this).find('.edit-link').text("Edit").show()
       $(this).addClass('_edited')
 
 	# TODO: Tooltips aren't working for some reason.
@@ -164,6 +164,13 @@ $(document).ready ->
   $("#portfolio_s3_upload").S3Uploader()
   $('#portfolio_s3_upload').bind "s3_upload_complete", (e, content) ->
     console.log "portfolio Upload completed"
+
+  $('.edit-link').click (evt) ->
+    $(this).hide()
+
+  $('.form_in_place').focusout ->
+    $('.edit-link').show()
+
 
   invisibleUploadFields()
   sortableFields()
