@@ -1,12 +1,9 @@
 require "spec_helper"
 
 describe "User sign in" do
-
   subject { page }
-
   before do
     visit "/users/sign_in"
-    #click_link "Sign In"
   end
 
   its(:current_path) { should eq "/users/sign_in" }
@@ -33,49 +30,30 @@ describe "User sign in" do
       page.should have_content("Edit")
     end
 
-    describe "with invalid params" do
-    end
+    describe "with invalid params"
   end
 
-  context "for Homeowner" do
+  context "for Homeowner", pending: true do
     let(:homeowner) { FactoryGirl.create :homeowner }
 
-    before do
-      visit new_user_session_path
-
-      within(:css, ".body") do
-        fill_in "Email", with: homeowner.email
-        fill_in "Password", with: homeowner.password
-      end
-    end
-
-    specify do
-      homeowner.password == "iamsecret"
-    end
-
-    specify do
-      homeowner.email.should include("homeowner")
-    end
-
-    it "creates a new user" do
-      Homeowner.all.should include(homeowner)
-    end
-
+    its(:current_path) { should eq "/users/sign_in" }
     it { should have_content "Don't have an account yet?" }
     it { should have_content "Sign in to your Homespree account" }
-    its(:current_path) { should eq "/users/sign_in" }
 
     describe "with valid params" do
       before do
-        #within(:css, ".body") do
-          fill_in "Email", with: homeowner.email
-          fill_in "Password", with: homeowner.password
-          click_button "Sign In"
-        #end
+        @homeowner = sign_up_homeowner
+        #sign_out
+
+        visit new_user_session_path
+
+        fill_in "Email", with: @homeowner.email
+        fill_in "Password", with: @homeowner.password
+        click_button "Sign In"
       end
 
-      it { should have_content(homeowner.email)}
-      it { should have_content(homeowner.name)}
+      it { should have_content(@homeowner.email) }
+      it { should have_content(@homeowner.name) }
     end
 
     describe "with erroneous params" do

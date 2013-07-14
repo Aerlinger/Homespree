@@ -15,15 +15,10 @@ describe "Step 1: Request" do
     fill_in 'zipcode', with: '10025'
   end
 
-  it "is at root path" do
-    page.current_path.should eq "/"
-  end
+  its(:current_path) { should eq "/" }
+  it { should have_content "Stress-free home improvement."}
 
-  it "has description" do
-    page.should have_content("Stress-free home improvement.")
-  end
-
-  describe "sections" do
+  describe "Request" do
     before do
       click_button "Get started"
     end
@@ -31,17 +26,17 @@ describe "Step 1: Request" do
     it { should have_content "Interior painting" }
     it { should have_selector "#service_types" }
     it { should have_selector "#project_types" }
+    its(:current_path) { should eq "/project_wizard/request" }
 
     it { should have_content "previous" }
-    it { should have_selector "input[value=next]" }
-    specify { save_and_open_page }
 
-    describe "Click next" do
+    describe "Review Estimate" do
       before do
         click_button "next"
       end
 
-      specify { save_and_open_page }
+      its(:current_path) { should eq "/project_wizard/review_estimates" }
+      it { should have_content "Review Estimates" }
     end
   end
 end

@@ -28,8 +28,19 @@ def sign_up_contractor
   fill_in "Email", with: contractor.email
   fill_in "Password", with: contractor.password
 
-  click_button "sign_up"
+  click_button "Create Profile"
   return contractor
+end
+
+def sign_up_homeowner
+  contractor = FactoryGirl.build :homeowner
+  visit new_homeowner_registration_path
+
+  fill_in "Email", with: homeowner.email
+  fill_in "Password", with: homeowner.password
+
+  click_button "Create profile"
+  return homeowner
 end
 
 ### -----------------------------------------------------------------------------------------------------------------
@@ -53,4 +64,8 @@ end
 
 def sign_out_contractor
   get "contractors/sessions/destroy"
+end
+
+def sign_out
+  get "users/sessions/destroy"
 end

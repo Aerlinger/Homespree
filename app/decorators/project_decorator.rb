@@ -21,7 +21,7 @@ class ProjectDecorator < Draper::Decorator
     # Allow dynamic fields in our Project to be processed by form_for
     create_virtual_attributes_on_project
 
-    h.form_for @object, builder: ProjectFormBuilder do |f|
+    h.form_for @object, url: h.next_wizard_path, builder: ProjectFormBuilder do |f|
       @object.fields.each do |field|
         h.haml_concat process_field(f, field)
       end

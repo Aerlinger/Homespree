@@ -1,5 +1,4 @@
 Homespree::Application.routes.draw do
-
   # Root route must be before ActiveAdmin.routes(self)
   root :to => 'static_pages#home'
 
@@ -85,7 +84,6 @@ Homespree::Application.routes.draw do
   %w(pitch home faqs about contact jobs how_it_works team for_professionals privacy_policy consumer_terms contractor_terms).each do |page|
     get page, controller: :static_pages, action: page
   end
-
 end
 #== Route Map
 # Generated on 30 Jun 2013 20:08

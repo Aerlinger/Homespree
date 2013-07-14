@@ -16,7 +16,7 @@ describe "Project request", pending: true do
   end
 
   describe "click next on request page" do
-    before { click_link 'next' }
+    before { click_button 'next' }
 
     it "routes to review estimages" do
       page.should have_text("Review Estimates")
@@ -24,7 +24,7 @@ describe "Project request", pending: true do
     end
 
     describe "click next on review estimates" do
-      before { click_link 'next' }
+      before { click_button 'next' }
 
       it "routes to appointment.haml" do
         page.should have_text("Appointment")
@@ -32,7 +32,7 @@ describe "Project request", pending: true do
       end
 
       describe "click next on Appointment" do
-        before { click_link 'next' }
+        before { click_button 'next' }
 
         it "routes to submit.haml" do
           page.should have_text("Submit")
