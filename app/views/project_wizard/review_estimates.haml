@@ -1,2 +1,7 @@
-%h1 Review Estimates
-= render partial: 'step', locals: { title: 'Review Estimates', step_number: '2', project: @project }
+- content_for :project_wizard do
+  %h1 Review Estimates
+
+  = form_for @project, url: next_wizard_path do |f|
+    = f.text_field :zipcode
+    = link_to 'previous', previous_wizard_path
+    = f.submit 'next', class: 'pull-right'

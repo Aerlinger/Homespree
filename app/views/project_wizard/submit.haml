@@ -1,1 +1,8 @@
+- content_for :project_wizard do
+  %h1 Submit project
+  = form_for @project, url: next_wizard_path do |f|
+    = f.text_field :zipcode
+    = link_to 'previous', previous_wizard_path
+    = f.submit 'next', class: 'pull-right'
+
 = render partial: 'step', locals: { title: 'Submit', step_number: '4', project: @project }

@@ -2,16 +2,17 @@
 #
 # Table name: projects
 #
-#  id              :integer          not null, primary key
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
-#  title           :string(255)
-#  description     :text
-#  category_id     :integer
-#  contractor_id   :integer
-#  homeowner_id    :integer
-#  properties      :text
-#  project_type_id :integer
+#  id                :integer          not null, primary key
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#  title             :string(255)
+#  description       :text
+#  category_id       :integer
+#  contractor_id     :integer
+#  homeowner_id      :integer
+#  properties        :text
+#  project_type_id   :integer
+#  submission_status :string(255)
 #
 
 class Project < ActiveRecord::Base
@@ -43,7 +44,8 @@ class Project < ActiveRecord::Base
   delegate :fields, to: :project_type
 
   # Validations:  -----------------------------------------------------------------------------------------------------
-  validates_presence_of :zipcode, :project_type, if: :active?
+  validates_presence_of :zipcode, :project_type
+  validates_presence_of :contractor, :homeowner, :address, if: :active?
   validates :zipcode, format: RegexDefinitions::zipcode_regex
   validate :validate_fields, if: :project_type
 
@@ -70,6 +72,10 @@ class Project < ActiveRecord::Base
     incompletes << :description if description.blank?
 
     return incompletes
+  end
+
+  def find_three_nearby_contractors
+    address.nearbys(20)
   end
 
   private

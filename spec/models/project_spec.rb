@@ -2,16 +2,17 @@
 #
 # Table name: projects
 #
-#  id              :integer          not null, primary key
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
-#  title           :string(255)
-#  description     :text
-#  category_id     :integer
-#  contractor_id   :integer
-#  homeowner_id    :integer
-#  properties      :text
-#  project_type_id :integer
+#  id                :integer          not null, primary key
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#  title             :string(255)
+#  description       :text
+#  category_id       :integer
+#  contractor_id     :integer
+#  homeowner_id      :integer
+#  properties        :text
+#  project_type_id   :integer
+#  submission_status :string(255)
 #
 
 require 'spec_helper'

@@ -43,6 +43,7 @@
 #  logo_url               :string(255)
 #  notification_settings  :text
 #  guest                  :boolean
+#  disabled               :boolean          default(FALSE)
 #
 
 class User < ActiveRecord::Base
@@ -68,7 +69,7 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email
 
   # Scopes:  ---------------------------------------------------------------------------------------------------------
-  default_scope order("created_at desc")
+  default_scope order("created_at desc").where("disabled != ?", "false")
 
   # Callbacks:  ------------------------------------------------------------------------------------------------------
   before_save :capitalize_name
@@ -91,5 +92,4 @@ class User < ActiveRecord::Base
     first_name.try(:capitalize!)
     last_name.try(:capitalize!)
   end
-
 end

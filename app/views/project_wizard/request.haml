@@ -8,5 +8,5 @@
   %hr
 
   = @project.complete_form do |f|
-    = link_to 'previous', previous_wizard_path(project_id: @project.id)
+    = link_to 'previous', previous_wizard_path
     = f.submit 'next', class: 'pull-right'

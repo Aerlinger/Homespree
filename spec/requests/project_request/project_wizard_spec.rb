@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe "Project request", pending: true do
-
   let(:project) { FactoryGirl.create :project }
   let(:project_type) { FactoryGirl.create :project_type }
 
@@ -41,5 +40,4 @@ describe "Project request", pending: true do
       end
     end
   end
-
 end

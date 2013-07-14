@@ -43,6 +43,7 @@
 #  logo_url               :string(255)
 #  notification_settings  :text
 #  guest                  :boolean
+#  disabled               :boolean          default(FALSE)
 #
 
 class Contractor < User
@@ -91,7 +92,6 @@ class Contractor < User
   after_create :send_welcome_message
 
   # Scopes:  ----------------------------------------------------------------------------------------------------------
-  default_scope order("created_at desc")
   scope :recent_signups, lambda { limit(100) }
   scope :locate, lambda { |zipcode, radius| nil }
 
@@ -99,7 +99,6 @@ class Contractor < User
   # Custom Methods:  --------------------------------------------------------------------------------------------------
   def incomplete_sections
     sections = []
-
     sections << :first_name if first_name.blank?
     sections << :last_name if last_name.blank?
     sections << :company_title if company_title.blank?

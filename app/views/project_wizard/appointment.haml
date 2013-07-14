@@ -1,1 +1,6 @@
-= render partial: 'step', locals: { title: 'Appointment', step_number: '3', project: @project }
+- content_for :project_wizard do
+  %h1 Setup Appointment
+  = form_for @project, url: next_wizard_path do |f|
+    = f.text_field :zipcode
+    = link_to 'previous', previous_wizard_path
+    = f.submit 'next', class: 'pull-right'

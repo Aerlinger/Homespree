@@ -18,6 +18,7 @@
 #  verified_by_contractor  :boolean          default(FALSE)
 #  completed_by_homeowner  :boolean          default(FALSE)
 #  completed_by_contractor :boolean          default(FALSE)
+#  user_id                 :integer
 #
 
 require 'spec_helper'

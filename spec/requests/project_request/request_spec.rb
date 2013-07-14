@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "Step 1: Request" do
+describe "Project Wizard" do
   let(:project) { FactoryGirl.create :project }
   subject { page }
 
@@ -16,7 +16,7 @@ describe "Step 1: Request" do
   end
 
   its(:current_path) { should eq "/" }
-  it { should have_content "Stress-free home improvement."}
+  it { should have_content "Stress-free home improvement." }
 
   describe "Request" do
     before do
@@ -37,6 +37,33 @@ describe "Step 1: Request" do
 
       its(:current_path) { should eq "/project_wizard/review_estimates" }
       it { should have_content "Review Estimates" }
+
+      describe "Set appointment" do
+        before do
+          click_button "next"
+        end
+
+        its(:current_path) { should eq "/project_wizard/appointment" }
+        it { should have_content "Appointment" }
+
+        describe "Submit project" do
+          before do
+            click_button "next"
+          end
+
+          its(:current_path) { should eq "/project_wizard/submit" }
+          it { should have_content "Submit" }
+
+          describe "Success page" do
+            before do
+              click_button "next"
+            end
+
+            its(:current_path) { should eq "/project_wizard/success" }
+            it { should have_content "Submit" }
+          end
+        end
+      end
     end
   end
 end

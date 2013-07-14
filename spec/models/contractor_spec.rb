@@ -43,6 +43,7 @@
 #  logo_url               :string(255)
 #  notification_settings  :text
 #  guest                  :boolean
+#  disabled               :boolean          default(FALSE)
 #
 
 require 'spec_helper'
@@ -254,6 +255,14 @@ describe Contractor do
 
     it "is from Admin" do
       @conversation.last_sender.email.should eq @admin.email
+    end
+  end
+
+  describe "bans inactive contractor" do
+    specify { Contractor.all.should include(contractor) }
+    it "doesn't return inactive contractor in search" do
+      contractor.update_attribute(:disabled, true)
+      Contractor.all.should_not include(contractor)
     end
   end
 end

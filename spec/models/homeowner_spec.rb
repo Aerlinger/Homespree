@@ -43,6 +43,7 @@
 #  logo_url               :string(255)
 #  notification_settings  :text
 #  guest                  :boolean
+#  disabled               :boolean          default(FALSE)
 #
 
 require 'spec_helper'
