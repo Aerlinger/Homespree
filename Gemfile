@@ -16,7 +16,6 @@ gem 'figaro', '>= 0.5.3'
 
 # Image uploads and hosting-related ----------------------------------------------------------------------------------
 #gem 'fog'
-gem 'aws-s3'
 gem 's3_direct_upload'
 gem 'rmagick'
 gem 'carrierwave'
