@@ -1,7 +1,3 @@
-%footer.white.navbar-fixed-bottom
-  Don't have an account yet?
-  =link_to "Sign Up", new_contractor_registration_path, class: "btn btn-black"
-
 #content
   .container
     #login-wraper
@@ -12,3 +8,8 @@
           = f.input :email, placeholder: 'user@example.com'
           = f.input :password
           = f.button :submit, "Sign In", class: "btn btn-success"
+
+%footer.white.navbar-fixed-bottom
+  Don't have an account yet?
+  =link_to "Sign Up", new_contractor_registration_path, class: "btn btn-black"
+

@@ -2,11 +2,13 @@
   Don't have an account yet?
   =link_to "Sign Up", new_homeowner_registration_path, class: "btn btn-black"
 
-#login-wraper
-  = simple_form_for resource, :as => resource_name, :url => homeowner_session_path(resource_name), class: "form login-form" do |f|
-    %legend
-      %span.blue Homeowner Sign In
-    .body
-      = f.input :email, placeholder: 'user@example.com'
-      = f.input :password
-      = f.button :submit, "Sign In", class: "btn btn-success"
+#content
+  .container
+    #login-wraper
+      = simple_form_for resource, :as => resource_name, :url => homeowner_session_path(resource_name), class: "form login-form" do |f|
+        %legend
+          %span.blue Homeowner Sign In
+        .body
+          = f.input :email, placeholder: 'user@example.com'
+          = f.input :password
+          = f.button :submit, "Sign In", class: "btn btn-success"
