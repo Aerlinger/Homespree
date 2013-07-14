@@ -122,16 +122,12 @@ window.launchIntroJs = ->
 # an onClick event to another, prettier, button.
 window.invisibleUploadFields = ->
   # These should be declared in the order in which they appear in the DOM (portrait, portfolio, logo)
+
 	$('#upload_portrait').click (evt) ->
 		$('#hidden_portrait_url').click()
 
-  $('#upload_portfolio').click (evt) ->
-    $('#hidden_portfolio_url').click()
-
 	$('#upload_logo').click (evt) ->
 		$('#hidden_logo_url').click()
-
-
 
 
 # A silly hack to force the form to submit when a file is uploaded:
@@ -150,6 +146,8 @@ $(document).ready ->
     $(this).closest('li').effect 'highlight', {color: "#88FF22"} , 800, () ->
       $(this).find('.edit-link').text("Edit").show()
       $(this).addClass('_edited')
+
+  $('ul.slides').first().removeClass('flex-active-slide')
 
 	# TODO: Tooltips aren't working for some reason.
   $('#licensed').tooltip()
@@ -173,6 +171,8 @@ $(document).ready ->
   $('.form_in_place').focusout ->
     $('.edit-link').show()
 
+  $('#upload_portfolio').click (evt) ->
+    $('#hidden_portfolio_url').click()
 
   invisibleUploadFields()
   sortableFields()

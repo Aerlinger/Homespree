@@ -1,4 +1,4 @@
-=content_tag_for(:li, photo) do |p|
+=content_tag_for(:li, photo, class: 'flex-active-slide') do |p|
   = image_tag p.image_url.to_s
 
   = link_to photo.image_url.to_s, class: "zoom-image fancyme", data: {"fancybox-group" => "portfolio"} do
