@@ -292,6 +292,12 @@ GEM
       json (~> 1.4)
     redcarpet (2.3.0)
     ref (1.0.5)
+    reform (0.1.2)
+      activemodel
+      representable (>= 1.5.3)
+    representable (1.5.3)
+      multi_json
+      nokogiri
     request_store (1.0.5)
     responders (0.9.3)
       railties (~> 3.1)
@@ -440,6 +446,7 @@ DEPENDENCIES
   rb-fsevent
   rb-inotify
   redcarpet
+  reform
   rmagick
   rspec-rails (>= 2.12.0)
   s3_direct_upload
