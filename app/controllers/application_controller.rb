@@ -38,8 +38,7 @@ class ApplicationController < ActionController::Base
   end
 
   helper_method :current_user
-  helper_method :current_contractor
-  helper_method :current_hoemowner
+  helper_method :guest_homeowner
   helper_method :user_signed_in?
   helper_method :signed_in_user
 

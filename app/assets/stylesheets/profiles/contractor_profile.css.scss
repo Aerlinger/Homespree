@@ -58,22 +58,14 @@
 }
 
 .custom_file_upload {
-  font-size: 2px;
-  margin: 0;
-  padding: 0;
-  filter: alpha(opacity=0);
   display: block;
-  width: 1px;
-  height: 1px;
-  opacity: 0;
   float: left;
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: -999999999999999999;
+  position: absolute;
+  top: -300px;
   input {
 
   }
+  visibility: visible;
 }
 
 // Hide helper tags when screen shrinks mobile:

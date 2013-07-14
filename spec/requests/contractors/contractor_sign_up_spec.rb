@@ -1,4 +1,5 @@
 require 'spec_helper'
+include Warden::Test::Helpers
 
 describe "Contractor Sign Up" do
   let(:contractor) { FactoryGirl.build :contractor }
@@ -19,6 +20,20 @@ describe "Contractor Sign Up" do
 
     its(:status_code) { should eq 200 }
     it { should have_content "Edit" }
+    it { should have_content "Insured up to: Add Info" }
+    it { should have_content "Bonded for: Add Info" }
+    it { should have_content "Account Settings" }
+    it { should have_no_content "Sign Up" }
+
+    describe "can sign in again after signing up" do
+      before do
+        click_link "Sign out"
+      end
+
+      it { should have_content "Signed Out Successfully" }
+      its(:current_path) { should eq "/" }
+      it { should have_no_content "Account Settings" }
+    end
   end
 
   describe "with incomplete parameters" do
@@ -31,4 +46,5 @@ describe "Contractor Sign Up" do
     it { should have_content("is invalid") }
     it { should have_content("Create Contractor Profile") }
   end
+
 end

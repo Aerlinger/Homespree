@@ -136,6 +136,10 @@
     .custom_file_upload
       = file_field_tag :file, multiple: true, id: "hidden_logo_url", onchange: "uploadfile('#hidden_logo_url')"
 
+  - if own_profile?
+    = s3_uploader_form callback_url: contractor_photos_url(@contractor), callback_param: "photo[image_url]", id: "portfolio_s3_upload" do
+      .custom_file_upload
+        = file_field_tag :file, multiple: true, id: "hidden_portfolio_url", onchange: "uploadfile('#hidden_portfolio_url')"
 
   :javascript
     $(document).ready(function(evt) {

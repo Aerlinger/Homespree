@@ -47,7 +47,9 @@ class ContractorDecorator < Draper::Decorator
   end
 
   def logo(attrs = {})
-    h.haml_concat image_tag @object.logo_url, attrs
+    if @object.logo_url?
+      h.haml_concat image_tag @object.logo_url, attrs
+    end
 
     if h.own_profile? && @object.logo_url?
       h.haml_concat link_to("Change logo", "#", class: "btn btn-info btn-mini pull-left", id: "upload_logo")
@@ -116,6 +118,13 @@ class ContractorDecorator < Draper::Decorator
   end
 
   private
+
+  def change_or_delete_image()
+    h.haml_concat link_to("Change logo", "#", class: "btn btn-info btn-mini pull-left", id: "upload_logo")
+    h.haml_concat link_to("Delete logo", contractor_path(id: @object.id, contractor: { remove_logo_url: true }),
+                          confirm: "Are you sure you want to delete your logo from the description?",
+                          method:  :put, class: "btn btn-danger btn-mini delete-button pull-right")
+  end
 
   # Check if this attribute is set and saved on the contractor's profile.
   def contractor_missing_attr?(attr_name)

@@ -121,14 +121,16 @@ window.launchIntroJs = ->
 # The default HTML file upload field is rather nasty and non-customizable so we make it invisible and delegate
 # an onClick event to another, prettier, button.
 window.invisibleUploadFields = ->
+  # These should be declared in the order in which they appear in the DOM (portrait, portfolio, logo)
 	$('#upload_portrait').click (evt) ->
 		$('#hidden_portrait_url').click()
+
+  $('#upload_portfolio').click (evt) ->
+    $('#hidden_portfolio_url').click()
 
 	$('#upload_logo').click (evt) ->
 		$('#hidden_logo_url').click()
 
-  $('#upload_portfolio').click (evt) ->
-    $('#hidden_portfolio_url').click()
 
 
 

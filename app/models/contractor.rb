@@ -88,7 +88,7 @@ class Contractor < User
 
   before_save lambda { |contractor| contractor.license.try(:upcase!) }
   before_create :add_badges
-  after_create :add_portfolio_image
+  #after_create :add_portfolio_image
   after_create :send_welcome_message
 
   # Scopes:  ----------------------------------------------------------------------------------------------------------
@@ -137,6 +137,14 @@ class Contractor < User
   def sanitize_phone_numbers
     self.mobile_number.try(:gsub!, /\D/, '')
     self.office_number.try(:gsub!, /\D/, '')
+  end
+
+  def logo_url
+    read_attribute(:logo_url)
+  end
+
+  def portrait_url
+    read_attribute(:portrait_url) || "/assets/contractor_profiles/portrait_default.jpg"
   end
 
   private
