@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130712013005) do
+ActiveRecord::Schema.define(:version => 20130714132139) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -183,8 +183,8 @@ ActiveRecord::Schema.define(:version => 20130712013005) do
   end
 
   create_table "projects", :force => true do |t|
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
     t.string   "title"
     t.text     "description"
     t.integer  "category_id"
@@ -192,6 +192,7 @@ ActiveRecord::Schema.define(:version => 20130712013005) do
     t.integer  "homeowner_id"
     t.text     "properties"
     t.integer  "project_type_id"
+    t.string   "submission_status"
   end
 
   create_table "receipts", :force => true do |t|

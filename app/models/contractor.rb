@@ -127,6 +127,10 @@ class Contractor < User
     end
   end
 
+  def homeowner?
+    false
+  end
+
   def contractor?
     true
   end

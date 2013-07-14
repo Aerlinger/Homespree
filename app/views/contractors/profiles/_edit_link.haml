@@ -1,7 +1,7 @@
 - activator ||= "edit"
 - text ||= "Edit"
 
-- if current_contractor && (params[:id] == current_contractor.slug || params[:id].to_i == current_contractor.id)
+- if current_user && own_profile?
   =link_to "javascript:void(0)", id: activator, class: "edit-link", style: "position: relative; font-style: italic;" do
     %i.e-icon-pencil{style: "height: 20px; line-height: 16px;"}
     = text

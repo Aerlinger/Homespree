@@ -54,6 +54,7 @@ group :test, :development do
   #gem 'zeus-parallel_tests'
   #gem 'parallel_tests'
 
+  gem 'growl'
   gem 'meta_request'
   gem 'faker'
   gem 'rb-fsevent'
@@ -79,7 +80,6 @@ group :development do
   gem 'html2haml'
   gem 'quiet_assets'
 
-  gem 'growl'
   gem 'bullet'
 
   gem 'guard'

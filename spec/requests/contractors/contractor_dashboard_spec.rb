@@ -1,7 +1,7 @@
 require "spec_helper"
 
 
-describe "Contractor Dashboard" do
+describe "Contractor Dashboard", pending: true do
   let(:contractor) { FactoryGirl.create :contractor }
 
   before do
@@ -24,7 +24,7 @@ describe "Contractor Dashboard" do
     end
 
     describe "Changing Email", pending: true do
-      xit "persists change on contractor" do
+      it "persists change on contractor" do
         within(:css, "#change_email") do
           fill_in "Change email", with: "changed@rspec.com"
           fill_in "Verify password", with: contractor.password

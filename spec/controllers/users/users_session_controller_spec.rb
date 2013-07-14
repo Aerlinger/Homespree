@@ -3,8 +3,6 @@ require "spec_helper"
 describe Users::SessionsController do
 
   # Auth helpers
-  it { should respond_to :current_contractor }
-  it { should respond_to :current_homeowner }
   it { should respond_to :current_user }
   it { should respond_to :guest_homeowner }
 

@@ -33,7 +33,7 @@ describe ProjectsController do
 
       it "redirects to homeowner" do
         proj = assigns(:project)
-        response.should redirect_to "/project_wizard/request?project_id=#{proj.id}"
+        response.should redirect_to "/project_wizard/request"
       end
 
       describe "creates a guest homeowner" do
@@ -44,16 +44,18 @@ describe ProjectsController do
           }.to change(Homeowner, :count).by(1)
         end
 
-        xit "has correct class type" do
-          subject.current_user.class.should be Homeowner
-        end
+        its(:guest_homeowner) { should eq subject.current_user }
+        its(:current_user) { should be_guest }
       end
     end
 
     describe "when a homeowner is signed in" do
       let(:homeowner) { FactoryGirl.create :homeowner }
 
-      xit "homeowner login is not yet implemented"
+      before { sign_in homeowner }
+
+      its(:current_user) { should eq homeowner }
+      its(:current_user) { should be_homeowner }
     end
 
     describe "when a contractor is signed in" do

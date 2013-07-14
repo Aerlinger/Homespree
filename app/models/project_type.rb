@@ -14,7 +14,7 @@ class ProjectType < ActiveRecord::Base
 
   # Validations:  --------------------------------------------------------------------------------------------------
   validates_presence_of :name
-  #validates_uniqueness_of :name, message: "for project type isn't unique"
+  validates_uniqueness_of :name, message: "for project type isn't unique"
 
   # Associations:  -------------------------------------------------------------------------------------------------
   belongs_to :service_type

@@ -10,13 +10,11 @@ describe Homeowners::SessionsController do
   #end
   #
   #describe "Create a new sessions through #new" do
-  #
   #  it "should render a new page for the homeowner" do
   #    get :new
   #    assigns(:homeowner).should be_a_new(Homeowner)
   #    response.code.should eq "200"
   #  end
-  #
   #end
   #
   #describe "creating a new homeowner through #create" do

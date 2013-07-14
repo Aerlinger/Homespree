@@ -17,8 +17,8 @@ class ApplicationController < ActionController::Base
     # Cache the value:
     @cached_guest_user ||= Homeowner.find(session[:guest_homeowner_id])
   rescue ActiveRecord::RecordNotFound # If session[:guest_homeowner_id] invalid
+    # Returns nil if not found
     session[:guest_homeowner_id] = nil
-    #guest_homeowner
   end
 
   def current_user
@@ -28,6 +28,8 @@ class ApplicationController < ActionController::Base
       @current_user ||= User.find(session["warden.user.contractor.key"][0][0])
     elsif session["warden.user.homeowner.key"]
       @current_user ||= User.find(session["warden.user.homeowner.key"][0][0])
+    else
+      guest_homeowner
     end
   end
 

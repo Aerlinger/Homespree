@@ -43,7 +43,7 @@ class Project < ActiveRecord::Base
   delegate :fields, to: :project_type
 
   # Validations:  -----------------------------------------------------------------------------------------------------
-  validates_presence_of :zipcode, :project_type
+  validates_presence_of :zipcode, :project_type, if: :active?
   validates :zipcode, format: RegexDefinitions::zipcode_regex
   validate :validate_fields, if: :project_type
 
@@ -53,6 +53,10 @@ class Project < ActiveRecord::Base
 
   def to_s
     "#{project_type.to_s} #{service_type.to_s}"
+  end
+
+  def active?
+    submission_status == 'active'
   end
 
   def fully_valid?
