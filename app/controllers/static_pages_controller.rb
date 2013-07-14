@@ -3,7 +3,6 @@ class StaticPagesController < ApplicationController
   layout "static_page", except: [:home]
 
   def home
-    ContractorMailer.signup.deliver
     @project = Project.new
   end
 

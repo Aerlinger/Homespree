@@ -1,7 +1,7 @@
 class Contractors::RegistrationsController < Devise::RegistrationsController
   layout "login_page"
 
-  after_filter :geolocate, only: [:create]
+  after_filter :geolocate, :send_welcome_email, only: [:create]
 
   def new
     super
@@ -12,6 +12,10 @@ class Contractors::RegistrationsController < Devise::RegistrationsController
 
   def after_sign_up_path_for(resource)
     contractor_path id: resource.slug
+  end
+
+  def send_welcome_email
+    ContractorMailer.signup.deliver
   end
 
   def geolocate

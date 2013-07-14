@@ -5,6 +5,6 @@ class ContractorMailer < ActionMailer::Base
     @greeting = "Hi"
 
     @user = {name: "Anthony"}
-    mail to: "aerlinger@gmail.com", subject: "testing homespree email"
+    mail to: "aerlinger@gmail.com", subject: "Welcome to Homespree!"
   end
 end
