@@ -59,6 +59,7 @@ Homespree::Application.routes.draw do
     end
 
     resources :messages
+    resources :browse
     resources :conversations, only: [:index, :show, :new, :create] do
       member do
         post :reply
@@ -67,13 +68,11 @@ Homespree::Application.routes.draw do
       end
     end
 
-    #collection do
     resource :address, only: [:update]
     resources :photos, only: [:create, :update, :destroy]
     resources :appointments, only: [:create, :update, :destroy, :show]
     resources :alerts, only: [:create, :destroy]
     resources :projects
-    #end
   end
 
   # Gallery Browsing: ------------------------------------------------------------------------------------------------

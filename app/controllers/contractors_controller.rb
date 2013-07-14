@@ -41,6 +41,9 @@ class ContractorsController < ApplicationController
   def material_calculator
   end
 
+  def browse
+  end
+
   private
 
   def process_params
