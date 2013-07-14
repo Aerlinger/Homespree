@@ -4,9 +4,7 @@
 
   = select_tag "Service Types", options_for_select(ServiceType.all), id: "service_types"
   = select_tag "Project Types", options_for_select(ProjectType.all), id: "project_types"
-
   %hr
-
   = @project.complete_form do |f|
     = link_to 'previous', previous_wizard_path
     = f.submit 'next', class: 'pull-right'

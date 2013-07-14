@@ -1,10 +1,12 @@
 class ContractorMailer < ActionMailer::Base
-  default from: "anthony@myhomespree.com"
+  default from: "Homespree Support <support@myhomespree.com>"
 
-  def signup
-    @greeting = "Hi"
+  def signup(contractor)
+    @contractor = contractor
+    mail to: @contractor.email, subject: "Welcome to Homespree!"
+  end
 
-    @user = {name: "Anthony"}
-    mail to: "aerlinger@gmail.com", subject: "Welcome to Homespree!"
+  def notify_signup(resource, recipient)
+    mail to: "#{recipient}@myhomespree.com", subject: "New Contractor Signup: #{resource.email}"
   end
 end

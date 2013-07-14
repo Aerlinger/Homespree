@@ -1,7 +1,7 @@
 class Contractors::RegistrationsController < Devise::RegistrationsController
   layout "login_page"
 
-  after_filter :geolocate, :send_welcome_email, only: [:create]
+  after_filter :geolocate, :send_welcome_email, :send_notification_email, only: [:create]
 
   def new
     super
@@ -15,7 +15,13 @@ class Contractors::RegistrationsController < Devise::RegistrationsController
   end
 
   def send_welcome_email
-    ContractorMailer.signup.deliver
+    ContractorMailer.signup(resource).deliver
+  end
+
+  def send_notification_email
+    %w[kyle anthony joe].each do |admin|
+      ContractorMailer.notify_signup(resource, admin).deliver
+    end
   end
 
   def geolocate
