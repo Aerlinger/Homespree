@@ -88,7 +88,6 @@ class Contractor < User
 
   before_save lambda { |contractor| contractor.license.try(:upcase!) }
   before_create :add_badges
-  #after_create :add_portfolio_image
   after_create :send_welcome_message
 
   # Scopes:  ----------------------------------------------------------------------------------------------------------
@@ -152,10 +151,6 @@ class Contractor < User
   end
 
   private
-
-  def add_portfolio_image
-    self.photos = [Photo.create(image_url: "/assets/contractor_profiles/portfolio_images/default.png")]
-  end
 
   def add_badges
     badge      = Badge.new

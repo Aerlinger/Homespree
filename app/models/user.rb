@@ -69,7 +69,7 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email
 
   # Scopes:  ---------------------------------------------------------------------------------------------------------
-  default_scope order("created_at desc").where("disabled != ?", "false")
+  default_scope order("created_at desc").where("disabled == ?", "false")
 
   # Callbacks:  ------------------------------------------------------------------------------------------------------
   before_save :capitalize_name
@@ -88,7 +88,6 @@ class User < ActiveRecord::Base
   end
 
   def capitalize_name
-    #read_attribute('category_name') || category.name
     first_name.try(:capitalize!)
     last_name.try(:capitalize!)
   end

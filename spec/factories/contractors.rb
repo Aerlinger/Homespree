@@ -1,5 +1,4 @@
 FactoryGirl.define do
-
   factory :contractor do
     sequence :email do |n|
       "contractor#{n}@rspec.com"
@@ -16,6 +15,7 @@ FactoryGirl.define do
     website "http://www.joesplumbing.com"
     facebook "www.facebook.com/joe_the_plumber"
     twitter "@joe_the_plumber"
+    disabled false
 
     license "ABCDEFG12345"
     insurance_limit 200000.0
@@ -31,5 +31,4 @@ FactoryGirl.define do
   factory :invalid_contractor, parent: :contractor do
     email "invalidemail"
   end
-
 end

@@ -122,8 +122,6 @@ describe Contractor do
 
     its(:office_number) { should eq "8485558443" }
     its(:mobile_number) { should eq "8485558332" }
-
-    its("photos.count") { should eq 1 }
   end
 
   context "validations" do
@@ -150,14 +148,6 @@ describe Contractor do
   describe "default images" do
     its("logo_url.to_s") { should eq "" }
     its("portrait_url.to_s") { should eq "/assets/contractor_profiles/portrait_default.jpg" }
-
-    describe "has a single portrait url by default" do
-      let(:photos) { contractor.photos }
-      subject { photos }
-
-      its(:length) { should eq 1 }
-      its("first.image_url") { should eq "/assets/contractor_profiles/portfolio_images/default.png" }
-    end
   end
 
   describe "sanitize phone numbers" do
@@ -259,7 +249,7 @@ describe Contractor do
   end
 
   describe "bans inactive contractor" do
-    specify { Contractor.all.should include(contractor) }
+    specify { Contractor.all.should eq [contractor] }
     it "doesn't return inactive contractor in search" do
       contractor.update_attribute(:disabled, true)
       Contractor.all.should_not include(contractor)
