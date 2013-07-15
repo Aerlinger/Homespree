@@ -1,0 +1,26 @@
+%h1 Project
+
+%h2= @project
+%h4= @project.service_type
+%h4= @project.project_type
+
+%h3 Appointment Info:
+  = @project.contractor
+
+  - if current_user.contractor
+    = link_to "Send #{@project.contractor} a message."
+
+%h3 Contractor Info:
+  = @contractor.first_name
+  = @contractor.company_title
+
+  - if current_user.homeowner?
+    = link_to "Send #{@contractor.comapany_title} a message."
+
+%hr
+
+%h3 Homeowner Info:
+  = @homeowner.first_name.presence
+
+  - if current_user.contractor
+    = link_to "Send #{@homeowner.comapany_title} a message."

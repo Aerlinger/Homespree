@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
   before_filter :create_guest_if_homeowner_not_signed_in, only: :create
 
   def create
-    @project = Project.create(params[:project])
+    @project  = Project.create(params[:project])
     @location = Address.create(zipcode: params[:project][:zipcode])
 
     if Rails.env.production?
@@ -20,6 +20,15 @@ class ProjectsController < ApplicationController
   def update
     @project = Project.find(params[:id])
     @project.update_attributes(params[:project])
+  end
+
+  def show
+    @project     = Project.find(params[:id])
+    @project     = @project.decorate
+    @contractor  = @project.contractor
+    @homeowner   = @project.homeowner
+    @appointment = @project.appointment
+    @address     = @appointment.address
   end
 
   def unavailable

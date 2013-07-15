@@ -31,7 +31,7 @@ class ServiceType < ActiveRecord::Base
   default_scope order("position")
 
   def to_s
-    name
+    name.titleize
   end
 
   scope :collection, Proc.new {

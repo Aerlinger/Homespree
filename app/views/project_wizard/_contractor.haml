@@ -1,0 +1,16 @@
+.span4.contractor-preview
+  = image_tag contractor.portrait_url, class: "portrait"
+  %h5= contractor.company_title
+  %h6= contractor.first_name
+
+  = link_to "View Profile", "#", class: "btn btn-small btn-info btn-view-profile"
+
+  %hr
+
+  %p.description= contractor.description
+
+  %hr
+  %strong= "Hourly Rate: #{number_to_currency(40)}"
+  %hr
+
+  = link_to "Select Contractor", "#", class: "btn btn-success btn-select"

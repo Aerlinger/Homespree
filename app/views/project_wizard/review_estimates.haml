@@ -1,7 +1,12 @@
 - content_for :project_wizard do
   %h1 Review Estimates
 
-  = form_for @project, url: next_wizard_path do |f|
-    = f.text_field :zipcode
-    = link_to 'previous', previous_wizard_path
-    = f.submit 'next', class: 'pull-right'
+  %hr
+
+  .row
+    = render partial: 'contractor', collection: @contractors
+
+  %hr
+
+  = link_to 'back'
+  = link_to 'next', next_wizard_path, class: 'pull-right'

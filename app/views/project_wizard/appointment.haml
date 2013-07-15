@@ -1,6 +1,11 @@
 - content_for :project_wizard do
   %h1 Setup Appointment
+
   = form_for @project, url: next_wizard_path do |f|
+
+    = link_to "Calendar goes here"
+
     = f.text_field :zipcode
+    = f.date_select :zipcode
     = link_to 'previous', previous_wizard_path
     = f.submit 'next', class: 'pull-right'

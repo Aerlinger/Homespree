@@ -126,6 +126,10 @@ class Contractor < User
     end
   end
 
+  def to_s
+    name
+  end
+
   def homeowner?
     false
   end

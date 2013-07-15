@@ -35,6 +35,7 @@ describe Project do
   it { should have_many :appointments }
   it { should respond_to :after_photos }
   it { should respond_to :before_photos }
+  it { should respond_to :submission_status }
 
   it { should respond_to :title }
   it { should respond_to :description }

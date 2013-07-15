@@ -19,7 +19,7 @@ class Contractors::RegistrationsController < Devise::RegistrationsController
   end
 
   def send_notification_email
-    %w[kyle anthony joe].each do |admin|
+    %w[anthony].each do |admin|
       ContractorMailer.notify_signup(resource, admin).deliver
     end
   end

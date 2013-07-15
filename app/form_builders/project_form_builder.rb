@@ -3,7 +3,6 @@
 # Custom form builder for dynamic project fields
 #
 class ProjectFormBuilder < ActionView::Helpers::FormBuilder
-
   def text_field(name, *args)
     return_html = wrap_field(name, *args) do
       super(name, *args)
@@ -30,7 +29,6 @@ class ProjectFormBuilder < ActionView::Helpers::FormBuilder
     end
   end
 
-
   def wrap_field(name, *args, &block)
     options = args.extract_options!
 
@@ -53,5 +51,4 @@ class ProjectFormBuilder < ActionView::Helpers::FormBuilder
       #end
     end
   end
-
 end

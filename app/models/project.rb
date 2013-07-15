@@ -18,9 +18,9 @@
 class Project < ActiveRecord::Base
 
   # Accessors:  -------------------------------------------------------------------------------------------------------
-  attr_accessor :zipcode, :project_type_name, :service_type_name
-  attr_accessible :zipcode, :title, :description, :project_type_name,
-                  :appointment_attributes, :project_type_id, :service_type_name, :properties
+  attr_accessor :zipcode, :project_type_name, :service_type_name, :service_type
+  attr_accessible :zipcode, :title, :description, :project_type_name, :submission_status,
+                  :appointment_attributes, :project_type_id, :service_type_name, :properties, :service_type
 
   # Serialization for dynamic project submission (HStore through Postgres):  ------------------------------------------
   serialize :properties, Hash
@@ -51,6 +51,7 @@ class Project < ActiveRecord::Base
 
   # Callbacks:  -------------------------------------------------------------------------------------------------------
   before_create :set_project_type
+  before_create :set_service_type
   before_save :convert_properties
 
   def to_s
@@ -74,8 +75,13 @@ class Project < ActiveRecord::Base
     return incompletes
   end
 
-  def find_three_nearby_contractors
-    address.nearbys(20)
+  def find_nearby_contractors(limit = 3)
+    puts "The find_three_nearby_contractors is still a WIP"
+    Rails.logger.warn "The find_three_nearby_contractors is still a WIP"
+
+    #address.nearbys(20)
+
+    Contractor.limit(limit)
   end
 
   private
@@ -91,6 +97,12 @@ class Project < ActiveRecord::Base
   def set_project_type
     if project_type_name && ProjectType.find_by_name(project_type_name)
       self.project_type = ProjectType.find_by_name(project_type_name)
+    end
+  end
+
+  def set_service_type
+    if project_type.present?
+      self.project_type.service_type = ServiceType.find_by_name(project_type)
     end
   end
 

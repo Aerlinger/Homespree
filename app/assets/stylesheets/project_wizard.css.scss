@@ -1,0 +1,36 @@
+@import "global/mixins.css.scss";
+
+.contractor-preview {
+  @include five-pixel-rounded;
+
+  display: block;
+  min-height: 300px !important;
+  border: 1px solid black;
+  padding: 5px;
+
+  .portrait {
+    display: block;
+    width: 80px !important;
+    margin-right: 5px;
+    height: auto;
+    float: left;
+  }
+
+  .description {
+    text-align: justify;
+    font-size: .9em;
+    line-height: 1.2em;
+  }
+
+  .btn-view-profile {
+  }
+
+  .btn-select {
+    display: block;
+    margin: 20px auto;
+  }
+
+  hr {
+    margin: 5px;
+  }
+}

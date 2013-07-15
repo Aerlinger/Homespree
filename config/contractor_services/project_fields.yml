@@ -119,23 +119,6 @@ painting:   # (TOP-LEVEL PROJECT CATEGORIES 0 SPACES INDENTED) (E.g. Painting, P
         - Fair - Minor repair necessary
         - Poor - Major repair necessary
 
-  concrete:         # (PROJECT SUB CATEGORIES 2 SPACES INDENTED) (Starts with a #) ---------------------------
-    location:         # Project sub-type attributes are 4 spaces indented
-      field_type: select
-      field_data:
-        - interior        # Types that go in a drop-down start with a - (an collection of strings)
-        - exterior
-    desired_finish:
-      field_type: select
-      field_data:
-        - Stain / Coloring
-        - Paint / Epoxy
-        - Clear Sealant
-    dimensions:
-      field_type: text_field
-      Number Square Feet: :decimal  # 'SINGLE' attribute types have an associated type (:integer in this case)
-
-
   exterior_painting:  # EXTERIOR PAINTING -------------------------------------------------------------------------------------
     # Project category fields will go here (Four spaces of indentation) -----------------------------
     wall_1:
@@ -190,6 +173,22 @@ painting:   # (TOP-LEVEL PROJECT CATEGORIES 0 SPACES INDENTED) (E.g. Painting, P
         - Fair - Minor repair necessary
         - Poor - Major repair necessary
 
+  concrete:         # (PROJECT SUB CATEGORIES 2 SPACES INDENTED) (Starts with a #) ---------------------------
+    location:         # Project sub-type attributes are 4 spaces indented
+      field_type: select
+      field_data:
+        - interior        # Types that go in a drop-down start with a - (an collection of strings)
+        - exterior
+    desired_finish:
+      field_type: select
+      field_data:
+        - Stain / Coloring
+        - Paint / Epoxy
+        - Clear Sealant
+    dimensions:
+      field_type: text_field
+      Number Square Feet: :decimal  # 'SINGLE' attribute types have an associated type (:integer in this case)
+
   cleaning:
     finish_type:
       label: "Finish type"
@@ -225,6 +224,99 @@ painting:   # (TOP-LEVEL PROJECT CATEGORIES 0 SPACES INDENTED) (E.g. Painting, P
         - Unfinished
         - Painted
         - Wallpapered
+
+cleaning:
+  interior_cleaning:
+      # Project category fields will go here (Four spaces of indentation) -----------------------------
+      wall_1:
+        field_type: text_field
+        label: "Square footage of Wall 1"
+        data_type: decimal
+        toggleable: "Check if needs paint"
+      wall_2:
+        field_type: text_field
+        label: "Square footage of Wall 2"
+        data_type: decimal
+        toggleable: "Check if needs paint"
+      wall_3:
+        field_type: text_field
+        label: "Square footage of Wall 3"
+        data_type: decimal
+        toggleable: "Check if needs paint"
+      wall_4:
+        field_type: text_field
+        label: "Square footage of Wall 4"
+        data_type: decimal
+        toggleable: "Check if needs paint"
+      ceiling:
+        field_type: text_field
+        label: "Square footage of ceiling"
+        data_type: decimal
+        toggleable: "Check if needs paint"
+
+      surfaces:
+        field_type: select
+        field_data:
+          - Walls
+          - Ceiling
+          - Trim
+          - Doors
+          - Windows
+
+      finish_type:
+        label: "Finish type"
+        field_type: select
+        field_data:
+          - Unfinished
+          - Painted
+          - Wallpapered
+
+flooring:
+  interior_cleaning:
+      # Project category fields will go here (Four spaces of indentation) -----------------------------
+      wall_1:
+        field_type: text_field
+        label: "Square footage of Wall 1"
+        data_type: decimal
+        toggleable: "Check if needs paint"
+      wall_2:
+        field_type: text_field
+        label: "Square footage of Wall 2"
+        data_type: decimal
+        toggleable: "Check if needs paint"
+      wall_3:
+        field_type: text_field
+        label: "Square footage of Wall 3"
+        data_type: decimal
+        toggleable: "Check if needs paint"
+      wall_4:
+        field_type: text_field
+        label: "Square footage of Wall 4"
+        data_type: decimal
+        toggleable: "Check if needs paint"
+      ceiling:
+        field_type: text_field
+        label: "Square footage of ceiling"
+        data_type: decimal
+        toggleable: "Check if needs paint"
+
+      surfaces:
+        field_type: select
+        field_data:
+          - Walls
+          - Ceiling
+          - Trim
+          - Doors
+          - Windows
+
+      finish_type:
+        label: "Finish type"
+        field_type: select
+        field_data:
+          - Unfinished
+          - Painted
+          - Wallpapered
+
 
 #    Flat:
 #      enabled: boolean

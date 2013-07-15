@@ -17,20 +17,16 @@ class ProjectDecorator < Draper::Decorator
   #   - field_type (Symbol):
   #       (ex - :text_field, :check_box)
   #
-  def complete_form
+  def dynamic_form_fields(project, builder)
     # Allow dynamic fields in our Project to be processed by form_for
-    create_virtual_attributes_on_project
+    create_virtual_attributes(project)
 
-    h.form_for @object, url: h.next_wizard_path, builder: ProjectFormBuilder do |f|
-      @object.fields.each do |field|
-        h.haml_concat process_field(f, field)
-      end
-
-      if block_given?
-        yield f
-      end
+    project.fields.each do |field|
+      h.haml_concat process_field(builder, field)
     end
   end
+
+  private
 
   ### --------------------------------------------------------------------------------------------------------------
   # Passes dynamic field attributes to form builder:
@@ -55,7 +51,7 @@ class ProjectDecorator < Draper::Decorator
     builder.send(field.field_type.to_sym,
                  field.field_name.to_sym,
 
-                 # Optional params
+                 # Homespree Project Type Optional params
                  {
                    label:      field.label,
                    data:       field.field_data,
@@ -68,8 +64,6 @@ class ProjectDecorator < Draper::Decorator
     )
   end
 
-  private
-
   # Important Note:  -------------------------------------------------------------------------------------------------
   #
   #   This private method 'monkey patches' the fields to be virtual attributes of the project so that they can be
@@ -79,11 +73,10 @@ class ProjectDecorator < Draper::Decorator
   #   be instance attributes of the Project class by passing each attribute through the +attr_accessor+ class
   #   method.
   #
-  def create_virtual_attributes_on_project
-    project_attributes = @object.project_type.fields_attributes_list
-    @object.class_eval do
+  def create_virtual_attributes(project)
+    project_attributes = project.project_type.fields_attributes_list
+    project.class_eval do
       attr_accessor *project_attributes
     end
   end
-
 end
