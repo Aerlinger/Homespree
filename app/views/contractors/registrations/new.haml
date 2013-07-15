@@ -1,12 +1,14 @@
 - content_for :login_page do
-  #login-wraper
-    = simple_form_for resource, :as => resource_name, :url => registration_path(resource_name), class: "form login-form" do |f|
-      %legend
-        %span.blue Create Contractor Profile
+  .outer
+    .middle
+      #login-wrapper
+        = simple_form_for resource, :as => resource_name, :url => registration_path(resource_name), class: "form login-form" do |f|
+          %legend
+            %span.blue Create Contractor Profile
 
-      .body
-        = f.input :company_title, text: "Business name or title", id: "company_title"
-        = f.input :email, label: 'Your Email', input_html: { value: resource.email }, placeholder: 'user@example.com', id: "email"
-        = f.input :password, id: "password"
+          .body
+            = f.input :company_title, text: "Business name or title", id: "company_title"
+            = f.input :email, label: 'Your Email', input_html: { value: resource.email }, placeholder: 'user@example.com', id: "email"
+            = f.input :password, id: "password"
 
-        = f.button :submit, "Create profile", class: "btn btn-success"
+            = f.button :submit, "Create profile", class: "btn btn-success"

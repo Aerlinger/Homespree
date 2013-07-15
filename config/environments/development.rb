@@ -58,5 +58,4 @@ Homespree::Application.configure do
     Bullet.rails_logger = true
     Bullet.airbrake = true
   end
-
 end

@@ -64,19 +64,19 @@ class User < ActiveRecord::Base
   # Nested Attributes:  -----------------------------------------------------------------------------------------------
   accepts_nested_attributes_for :address, :alerts
 
-  # Validations:  ----------------------------------------------------------------------------------------------------
+  # Validations:  -----------------------------------------------------------------------------------------------------
   validates_format_of :email, with: RegexDefinitions::email_regex, message: "is invalid"
   validates_uniqueness_of :email
 
-  # Scopes:  ---------------------------------------------------------------------------------------------------------
-  default_scope order("created_at desc").where("disabled == ?", "false")
+  # Scope:  -----------------------------------------------------------------------------------------------------------
+  default_scope order("created_at desc")
 
-  # Callbacks:  ------------------------------------------------------------------------------------------------------
+  # Callbacks:  -------------------------------------------------------------------------------------------------------
   before_save :capitalize_name
   before_save lambda { |user| user.email.try(:downcase!) }
   after_create :send_welcome_message
 
-  # Custom Methods:  -------------------------------------------------------------------------------------------------
+  # Custom Methods:  --------------------------------------------------------------------------------------------------
 
   # Delegations:  -----------------------------------------------------------------------------------------------------
   delegate :to_coordinates, :line1, :line2, :city, :state, :zipcode, :latitude, :longitude, :single_address, to: :address, allow_nil: true

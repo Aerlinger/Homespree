@@ -24,8 +24,6 @@ describe "Project Wizard" do
     end
 
     it { should have_content "Interior painting" }
-    it { should have_selector "#service_types" }
-    it { should have_selector "#project_types" }
     its(:current_path) { should eq "/project_wizard/request" }
 
     it { should have_content "previous" }
@@ -40,7 +38,7 @@ describe "Project Wizard" do
 
       describe "Set appointment" do
         before do
-          click_button "next"
+          click_link "next"
         end
 
         its(:current_path) { should eq "/project_wizard/appointment" }

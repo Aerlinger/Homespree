@@ -1,7 +1,5 @@
 - content_for :content do
-  #content
-    .container
-      = content_for?(:login_page) ? yield(:login_page) : yield
+  = content_for?(:login_page) ? yield(:login_page) : yield
 
   %footer.white.navbar-fixed-bottom
     Already have an account?

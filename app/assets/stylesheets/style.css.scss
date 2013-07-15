@@ -40,7 +40,10 @@ html {
 }
 
 body {
-  min-height: 100%;
+  //min-height: 100%;
+  //display: absolute;
+  height: 100% !important;
+  color: #222222;
 
   font-size: 14px;
   font-size: 1.4rem;
@@ -147,9 +150,6 @@ body {
 
 /* --------------------->>> colors / general text-styles / general atmosphere <<<---------------------*/
 
-body {
-  color: #222222;
-}
 
 a {
   color: #222222;
@@ -994,28 +994,30 @@ ul.navigation {
 /*--------------------------- .footer-credits ---------------------- */
 
 .footer-credits {
-  .container{
-    padding-right: 0px !important;
-    padding-left: 0px !important;
-  }
   z-index: 9000;
   font-size: 70%;
   clear: both;
   text-align: center;
-  position: relative;
+  position: fixed;
   text-transform: uppercase;
   background: #5676a5;
   height: 70px;
   width: 100%;
-  position: absolute;
   left: 0;
   bottom: 0;
+
+  .container{
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+  }
+
   ul {
     list-style: none;
     padding: 10px 0;
     margin: 0;
     position: relative;
   }
+
   li {
     display: inline;
     padding: 0 12px 0 8px;

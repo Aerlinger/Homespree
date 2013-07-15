@@ -247,12 +247,4 @@ describe Contractor do
       @conversation.last_sender.email.should eq @admin.email
     end
   end
-
-  describe "bans inactive contractor" do
-    specify { Contractor.all.should eq [contractor] }
-    it "doesn't return inactive contractor in search" do
-      contractor.update_attribute(:disabled, true)
-      Contractor.all.should_not include(contractor)
-    end
-  end
 end
