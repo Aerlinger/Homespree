@@ -127,11 +127,10 @@
   -#=render "contractors/profiles/question_modal"
   - if @contractor.photos
     = render "contractors/profiles/photos_modal", photos: @contractor.photos
-  -#=render "partials/clean_footer"
 
-  = s3_uploader_form callback_url: contractor_path(@contractor), callback_param: "contractor[portrait_url]", callback_method: :put, id: "portrait_s3_upload" do
-    .custom_file_upload
-      = file_field_tag :file, multiple: true, id: "hidden_portrait_url", onchange: "uploadfile('#hidden_portrait_url')"
+  -#= s3_uploader_form callback_url: contractor_path(@contractor), callback_param: "contractor[portrait_url]", callback_method: :put, id: "portrait_s3_upload" do
+  -#  .custom_file_upload
+  -#    = file_field_tag :file, multiple: true, id: "hidden_portrait_url", onchange: "uploadfile('#hidden_portrait_url')"
 
   = s3_uploader_form callback_url: contractor_path(@contractor), callback_param: "contractor[logo_url]", callback_method: :put, id: "logo_s3_upload" do
     .custom_file_upload
@@ -145,7 +144,6 @@
   :javascript
     $(document).ready(function(evt) {
       if( !(/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) ) {
-        // some code..
         launchIntroJs();
       }
     });

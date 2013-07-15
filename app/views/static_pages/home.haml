@@ -22,19 +22,19 @@
                 = f.text_field :zipcode, type: "text", id: "zipcode", placeholder: "Zip code"
                 = f.submit "Get started", id: "submit_location", class: "btn btn-large btn-success"
 
-  %section#section_three.shadow
-    .container
-      .row-fluid
-        .span4
-          %h2 Convenient
-          = render :partial => 'static_pages/dots'
-          %p
-            No one likes waiting, that's why we provide 3 instant estimates for your next project.
-        .span4
-          %h2 Transparent
-          = render :partial => 'static_pages/dots'
-          %p Compare prices, reviews and past work among our qualified and approved contractors.
-        .span4
-          %h2 Guaranteed
-          = render :partial => 'static_pages/dots'
-          %p We manage the payment and will make sure your contractor gets the job done right.
+%section#section_three.shadow
+  .container
+    .row-fluid
+      .span4
+        %h2 Convenient
+        = render :partial => 'static_pages/dots'
+        %p
+          No one likes waiting, that's why we provide 3 instant estimates for your next project.
+      .span4
+        %h2 Transparent
+        = render :partial => 'static_pages/dots'
+        %p Compare prices, reviews and past work among our qualified and approved contractors.
+      .span4
+        %h2 Guaranteed
+        = render :partial => 'static_pages/dots'
+        %p We manage the payment and will make sure your contractor gets the job done right.
