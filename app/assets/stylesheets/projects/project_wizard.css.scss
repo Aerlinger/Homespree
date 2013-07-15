@@ -44,4 +44,11 @@
     }
   }
 
+  form {
+    input[type='radio'] {
+      display: block;
+      float: left;
+      margin-right: 5px;
+    }
+  }
 }

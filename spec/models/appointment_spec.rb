@@ -22,6 +22,7 @@
 #  appointment_type        :string(255)      default("project")
 #  priority                :string(255)
 #  message                 :string(255)
+#  address                 :belongs_to
 #
 
 require 'spec_helper'

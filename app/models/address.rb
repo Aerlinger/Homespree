@@ -18,7 +18,6 @@
 #
 
 class Address < ActiveRecord::Base
-
   # Class Methods:  ---------------------------------------------------------------------------------------------------
   geocoded_by :single_address
 
@@ -29,6 +28,7 @@ class Address < ActiveRecord::Base
   validates_format_of :state, with: /[A-Za-z][A-Za-z]/i, allow_blank: true
 
   belongs_to :addressable, polymorphic: true
+  has_many :appointments
 
   # Callbacks:  -------------------------------------------------------------------------------------------------------
   before_save :titleize_city
@@ -47,5 +47,4 @@ class Address < ActiveRecord::Base
       self.city = city.titleize
     end
   end
-
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130715221224) do
+ActiveRecord::Schema.define(:version => 20130715234117) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -71,27 +71,8 @@ ActiveRecord::Schema.define(:version => 20130715221224) do
     t.datetime "updated_at",     :null => false
   end
 
-  create_table "appointments", :force => true do |t|
-    t.datetime "starts_at"
-    t.string   "photos"
-    t.string   "reminders"
-    t.datetime "created_at",                                     :null => false
-    t.datetime "updated_at",                                     :null => false
-    t.integer  "contractor_id"
-    t.string   "title"
-    t.string   "description"
-    t.integer  "homeowner_id"
-    t.decimal  "duration"
-    t.integer  "project_id"
-    t.boolean  "verified_by_homeowner",   :default => false
-    t.boolean  "verified_by_contractor",  :default => false
-    t.boolean  "completed_by_homeowner",  :default => false
-    t.boolean  "completed_by_contractor", :default => false
-    t.integer  "user_id"
-    t.string   "appointment_type",        :default => "project"
-    t.string   "priority"
-    t.string   "message"
-  end
+# Could not dump table "appointments" because of following StandardError
+#   Unknown type 'belongs_to' for column 'address'
 
   create_table "badges", :force => true do |t|
     t.integer  "contractor_id"

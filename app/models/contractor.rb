@@ -58,7 +58,7 @@ class Contractor < User
   attr_protected
 
   # Associations:  ----------------------------------------------------------------------------------------------------
-  has_one :profile_picture, as: :photographable, class_name: 'Photo'
+  #has_one :profile_picture, as: :photographable, class_name: 'Photo'
 
   has_many :appointments
   has_many :projects, through: :appointments

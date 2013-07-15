@@ -12,6 +12,13 @@
       = builder.label "When?"
       = builder.select :priority, ["No Rush", "As soon as possible", "No later than a certain date"]
 
+    - if @homeowner.guest?
+      %h3 Have an account?
+    - else
+      = f.label "You are signed in as #{@homeowner.email}"
+
+    %hr
+
     - if @homeowner.address.present?
       = check_box_tag("Use my current address")
     - else
@@ -20,19 +27,25 @@
         = builder.text_field :line1
         = builder.label "Zipcode"
         = builder.text_field :zipcode
-        = builder.label "Zipcode"
-        = builder.text_field :state
 
-    - if @homeowner.guest?
-      = f.label "Create an account. Already have an account?"
-    - else
-      = f.label "You are signed in as #{@homeowner.email}"
+    %hr
 
+    = f.label "First name"
     = f.text_field :first_name
+
+    = f.label "Last name"
     = f.text_field :last_name
+
+    = f.label "Phone number"
     = f.text_field :mobile_number
+
+    = f.label "Email"
     = f.text_field :email
+
+    = f.label "Password"
     = f.text_field :password
+
+    %br
 
     = link_to 'previous', previous_wizard_path
     = f.submit 'next', class: 'pull-right'

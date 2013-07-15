@@ -35,6 +35,7 @@ class Project < ActiveRecord::Base
   has_many :before_photos, class_name: 'Photo', as: :photographable
   has_many :after_photos, class_name: 'Photo', as: :photographable
   has_many :appointments
+  has_many :addresses, through: :appointments
 
   # Nested Attributes:  -----------------------------------------------------------------------------------------------
   accepts_nested_attributes_for :appointments, allow_destroy: true

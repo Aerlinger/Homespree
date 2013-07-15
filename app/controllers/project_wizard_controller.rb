@@ -2,7 +2,7 @@ class ProjectWizardController < ApplicationController
   layout "project_wizard"
 
   include Wicked::Wizard
-  steps :request, :review_estimates, :appointment, :submit
+  steps :request, :review_estimates, :appointment
 
   before_filter :find_project
   before_filter :set_status, only: :update
@@ -26,8 +26,8 @@ class ProjectWizardController < ApplicationController
     create_guest_homeowner unless homeowner_signed_in?
   end
 
-  def finish_wizard
-    homeowner_projects_path(current_homeowner)
+  def finish_wizard_path
+    project_path(@project.id)
   end
 
   def find_contractors

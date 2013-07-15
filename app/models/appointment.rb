@@ -22,6 +22,7 @@
 #  appointment_type        :string(255)      default("project")
 #  priority                :string(255)
 #  message                 :string(255)
+#  address                 :belongs_to
 #
 
 class Appointment < ActiveRecord::Base
@@ -35,7 +36,7 @@ class Appointment < ActiveRecord::Base
   belongs_to :contractor, foreign_key: "contractor_id"
   belongs_to :homeowner, foreign_key: "homeowner_id"
   belongs_to :project
-  has_one :address, as: :addressable
+  belongs_to :address
 
   accepts_nested_attributes_for :address
 

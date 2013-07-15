@@ -27,8 +27,8 @@ class ProjectsController < ApplicationController
     @project     = @project.decorate
     @contractor  = @project.contractor
     @homeowner   = @project.homeowner
-    @appointment = @project.appointment
-    @address     = @appointment.address
+    @appointments = @project.appointments
+    #@address     = @appointment.address
   end
 
   def unavailable
