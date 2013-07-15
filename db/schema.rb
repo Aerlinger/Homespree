@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130714154956) do
+ActiveRecord::Schema.define(:version => 20130715221224) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -75,8 +75,8 @@ ActiveRecord::Schema.define(:version => 20130714154956) do
     t.datetime "starts_at"
     t.string   "photos"
     t.string   "reminders"
-    t.datetime "created_at",                                 :null => false
-    t.datetime "updated_at",                                 :null => false
+    t.datetime "created_at",                                     :null => false
+    t.datetime "updated_at",                                     :null => false
     t.integer  "contractor_id"
     t.string   "title"
     t.string   "description"
@@ -88,6 +88,9 @@ ActiveRecord::Schema.define(:version => 20130714154956) do
     t.boolean  "completed_by_homeowner",  :default => false
     t.boolean  "completed_by_contractor", :default => false
     t.integer  "user_id"
+    t.string   "appointment_type",        :default => "project"
+    t.string   "priority"
+    t.string   "message"
   end
 
   create_table "badges", :force => true do |t|

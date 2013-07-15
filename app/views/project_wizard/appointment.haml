@@ -1,9 +1,38 @@
 - content_for :project_wizard do
   %h1 Setup Appointment
 
-  = form_for @project, url: next_wizard_path do |f|
-    -#= f.text_field :zipcode
-    -#= f.label "Starts on"
-    -#= f.text_field :zipcode, id: "project_wizard_zipcode"
+  = form_for @homeowner, url: next_wizard_path do |f|
+    = f.fields_for :appointment do |builder|
+      = builder.label "I want to schedule:"
+      = builder.radio_button :appointment_type, "meeting"
+      = builder.label "Appointment to meet the contractor in person"
+      = builder.radio_button :appointment_type, "project"
+      = builder.label "Appointment to begin project"
+
+      = builder.label "When?"
+      = builder.select :priority, ["No Rush", "As soon as possible", "No later than a certain date"]
+
+    - if @homeowner.address.present?
+      = check_box_tag("Use my current address")
+    - else
+      = f.fields_for Address.new do |builder|
+        = builder.label "Street"
+        = builder.text_field :line1
+        = builder.label "Zipcode"
+        = builder.text_field :zipcode
+        = builder.label "Zipcode"
+        = builder.text_field :state
+
+    - if @homeowner.guest?
+      = f.label "Create an account. Already have an account?"
+    - else
+      = f.label "You are signed in as #{@homeowner.email}"
+
+    = f.text_field :first_name
+    = f.text_field :last_name
+    = f.text_field :mobile_number
+    = f.text_field :email
+    = f.text_field :password
+
     = link_to 'previous', previous_wizard_path
     = f.submit 'next', class: 'pull-right'

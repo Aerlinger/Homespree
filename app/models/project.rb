@@ -37,7 +37,8 @@ class Project < ActiveRecord::Base
   has_many :appointments
 
   # Nested Attributes:  -----------------------------------------------------------------------------------------------
-  accepts_nested_attributes_for :appointments, :project_type, :contractor, :homeowner
+  accepts_nested_attributes_for :appointments, allow_destroy: true
+  accepts_nested_attributes_for :project_type, :contractor, :homeowner
 
   # Aliases and delegations (delegates calls to project_type):  -------------------------------------------------------
   delegate :service_type, to: :project_type

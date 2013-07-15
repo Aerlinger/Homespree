@@ -19,6 +19,9 @@
 #  completed_by_homeowner  :boolean          default(FALSE)
 #  completed_by_contractor :boolean          default(FALSE)
 #  user_id                 :integer
+#  appointment_type        :string(255)      default("project")
+#  priority                :string(255)
+#  message                 :string(255)
 #
 
 require 'spec_helper'

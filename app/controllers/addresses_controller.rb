@@ -1,5 +1,4 @@
 class AddressesController < ApplicationController
-
   respond_to :js
 
   def show
@@ -14,5 +13,4 @@ class AddressesController < ApplicationController
       format.js { render layout: false }
     end
   end
-
 end

@@ -1,44 +1,47 @@
 @import "global/mixins.css.scss";
 @import "global/palette.css.scss";
 
-.contractor-preview {
-  @include five-pixel-rounded;
+#project_wizard {
+  .contractor-preview {
+    @include five-pixel-rounded;
 
-  box-shadow: $shadow;
-  -moz-box-shadow: $shadow;
+    box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
 
-  display: block;
-  min-height: 300px !important;
-  border: 1px solid lightgrey;
-  padding: 5px;
-
-  &:hover {
-    background-color: #FAFAFA;
-  }
-
-  .portrait {
     display: block;
-    width: 80px !important;
-    margin-right: 5px;
-    height: auto;
-    float: left;
+    min-height: 300px !important;
+    border: 1px solid lightgrey;
+    padding: 5px;
+
+    &:hover {
+      background-color: #FAFAFA;
+    }
+
+    .portrait {
+      display: block;
+      width: 80px !important;
+      margin-right: 5px;
+      height: auto;
+      float: left;
+    }
+
+    .description {
+      text-align: justify;
+      font-size: .9em;
+      line-height: 1.2em;
+    }
+
+    .btn-view-profile {
+    }
+
+    .btn-select {
+      display: block;
+      margin: 20px auto;
+    }
+
+    hr {
+      margin: 5px;
+    }
   }
 
-  .description {
-    text-align: justify;
-    font-size: .9em;
-    line-height: 1.2em;
-  }
-
-  .btn-view-profile {
-  }
-
-  .btn-select {
-    display: block;
-    margin: 20px auto;
-  }
-
-  hr {
-    margin: 5px;
-  }
 }

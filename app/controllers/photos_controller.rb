@@ -1,5 +1,4 @@
 class PhotosController < ApplicationController
-
   def create
     # Find the contractor (photographable type)
     @photo = Photo.new(params[:photo])

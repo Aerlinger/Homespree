@@ -19,12 +19,17 @@
 #  completed_by_homeowner  :boolean          default(FALSE)
 #  completed_by_contractor :boolean          default(FALSE)
 #  user_id                 :integer
+#  appointment_type        :string(255)      default("project")
+#  priority                :string(255)
+#  message                 :string(255)
 #
 
 class Appointment < ActiveRecord::Base
   attr_accessor :zipcode
   attr_accessible :address_id, :photos, :reminders, :starts_at, :title, :description, :duration,
                   :address_attributes, :contractor_id, :homeowner_id, :zipcode
+
+  APPOINTMENT_TYPES = [PROJECT = "project", MEETING = "meeting"]
 
   # Associations:  --------------------------------------------------------------------------------------------------
   belongs_to :contractor, foreign_key: "contractor_id"
@@ -36,6 +41,7 @@ class Appointment < ActiveRecord::Base
 
   # Validations:  --------------------------------------------------------------------------------------------------
   validates_presence_of :starts_at, :duration, :address
+  validates_inclusion_of :appointment_type, in: APPOINTMENT_TYPES
 
 
   # Custom Methods:  -----------------------------------------------------------------------------------------------

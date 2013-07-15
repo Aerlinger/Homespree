@@ -38,12 +38,13 @@ class ProjectWizardController < ApplicationController
 
   def set_status
     unless step.to_s == 'request'
-      params[:project][:submission_status] = step.to_s
-      params[:project][:submission_status] = 'active' if step == steps.last
+      #params[:project][:submission_status] = step.to_s
+      #params[:project][:submission_status] = 'active' if step == steps.last
     end
   end
 
   def find_project
     @project = Project.find(session[:project_id])
+    @homeowner = current_user
   end
 end
