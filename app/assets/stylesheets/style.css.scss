@@ -41,7 +41,7 @@ html {
 
 body {
   //min-height: 100%;
-  //display: absolute;
+  display: absolute;
   height: 100% !important;
   color: #222222;
 
@@ -998,7 +998,6 @@ ul.navigation {
   font-size: 70%;
   clear: both;
   text-align: center;
-  position: fixed;
   text-transform: uppercase;
   background: #5676a5;
   height: 70px;

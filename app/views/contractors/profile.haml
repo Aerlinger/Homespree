@@ -125,7 +125,8 @@
 
 
   -#=render "contractors/profiles/question_modal"
-  = render "contractors/profiles/photos_modal", photos: @contractor.photos
+  - if @contractor.photos
+    = render "contractors/profiles/photos_modal", photos: @contractor.photos
   -#=render "partials/clean_footer"
 
   = s3_uploader_form callback_url: contractor_path(@contractor), callback_param: "contractor[portrait_url]", callback_method: :put, id: "portrait_s3_upload" do
