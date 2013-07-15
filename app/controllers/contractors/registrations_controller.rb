@@ -1,7 +1,8 @@
 class Contractors::RegistrationsController < Devise::RegistrationsController
   layout "login_page"
 
-  after_filter :geolocate, :send_welcome_email, :send_notification_email, only: [:create]
+  after_filter :geolocate, only: [:create]
+  #after_filter :send_welcome_email, :send_notification_email, only: [:create]
 
   def new
     super

@@ -36,7 +36,8 @@
 //= require best_in_place
 //= require best_in_place.purr
 //= require_tree ../../../vendor/assets/javascripts
-//= require jquery-fileupload/basic
+//= require jquery.ui.datepicker
+// require jquery-fileupload/basic
 //= require jquery-fileupload/vendor/tmpl
 // require ../../../vendor/assets/javascripts/jquery.ui.widget.js
 // require ../../../vendor/assets/javascripts/jquery.iframe-transport.js

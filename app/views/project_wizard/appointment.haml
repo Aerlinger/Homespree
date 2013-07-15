@@ -4,8 +4,8 @@
   = form_for @project, url: next_wizard_path do |f|
 
     = link_to "Calendar goes here"
-
-    = f.text_field :zipcode
-    = f.date_select :zipcode
+    -#= f.text_field :zipcode
+    = f.label "Starts on"
+    = f.text_field :zipcode, id: "project_wizard_zipcode"
     = link_to 'previous', previous_wizard_path
     = f.submit 'next', class: 'pull-right'

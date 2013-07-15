@@ -188,6 +188,9 @@ GEM
     jquery-rails (2.3.0)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
+    jquery-ui-rails (4.0.3)
+      jquery-rails
+      railties (>= 3.1.0)
     json (1.8.0)
     kaminari (0.14.1)
       actionpack (>= 3.0.0)
@@ -430,6 +433,7 @@ DEPENDENCIES
   html2haml
   jquery-fileupload-rails
   jquery-rails (= 2.3.0)
+  jquery-ui-rails
   launchy (= 2.1.0)
   less-rails
   less-rails-fontawesome
