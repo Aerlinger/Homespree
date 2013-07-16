@@ -70,6 +70,8 @@ Homespree::Application.configure do
   }
   config.action_mailer.default_url_options = { :host => 'myhomespree.com' }
 
+  config.serve_static_assets = true
+
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
