@@ -139,6 +139,8 @@ strtrim = (str) ->
 	str?.replace(/^\s\s*/, '')?.replace(/\s\s*$/, '')
 
 $(document).ready ->
+  $('ul.slides').first().removeClass('flex-active-slide')
+  sortableFields()
 
 
 $(window).load ->
@@ -149,15 +151,14 @@ $(window).load ->
       $(this).addClass('_edited')
 
 
-  $('ul.slides').first().removeClass('flex-active-slide')
-
+	# TODO: Tooltips aren't working for some reason.
+  $('#licensed').tooltip()
+  $('.item.photo').first().addClass("active")
 
   $('#upload_portfolio').click (evt) ->
     $('#hidden_portfolio_url').click()
 
   invisibleUploadFields()
-
-  sortableFields()
 
   $("#portrait_s3_upload").S3Uploader()
   $('#portrait_s3_upload').bind "s3_upload_complete", (e, content) ->
