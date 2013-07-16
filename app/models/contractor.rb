@@ -72,7 +72,7 @@ class Contractor < User
   has_many :badges
 
   # Nested Attributes:  -----------------------------------------------------------------------------------------------
-  accepts_nested_attributes_for :photos, :specialties, :profile_picture, :appointments
+  accepts_nested_attributes_for :photos, :specialties, :appointments
 
   # Validations:  -----------------------------------------------------------------------------------------------------
   validates_format_of :first_name, :last_name, with: /\A\w+ ?\w*\z/, allow_blank: true, message: "should only contain letters"

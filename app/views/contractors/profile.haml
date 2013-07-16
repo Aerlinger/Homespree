@@ -125,24 +125,26 @@
 
 
   -#=render "contractors/profiles/question_modal"
-  - if @contractor.photos
+  - if @contractor.photos && own_profile?
     = render "contractors/profiles/photos_modal", photos: @contractor.photos
 
-  -#= s3_uploader_form callback_url: contractor_path(@contractor), callback_param: "contractor[portrait_url]", callback_method: :put, id: "portrait_s3_upload" do
-  -#  .custom_file_upload
-  -#    = file_field_tag :file, multiple: true, id: "hidden_portrait_url", onchange: "uploadfile('#hidden_portrait_url')"
+  - if own_profile?
+    - puts @contractor
+    - puts contractor_path @contractor
+    = s3_uploader_form callback_url: contractor_path(@contractor), callback_param: "contractor[portrait_url]", callback_method: :put, id: "portrait_s3_upload" do
+      .custom_file_upload
+        = file_field_tag :file, multiple: true, id: "hidden_portrait_url", onchange: "uploadfile('#hidden_portrait_url')"
 
-  -#= s3_uploader_form callback_url: contractor_path(@contractor), callback_param: "contractor[logo_url]", callback_method: :put, id: "logo_s3_upload" do
-    .custom_file_upload
-      = file_field_tag :file, multiple: true, id: "hidden_logo_url", onchange: "uploadfile('#hidden_logo_url')"
+    = s3_uploader_form callback_url: contractor_path(@contractor), callback_param: "contractor[logo_url]", callback_method: :put, id: "logo_s3_upload" do
+      .custom_file_upload
+        = file_field_tag :file, multiple: true, id: "hidden_logo_url", onchange: "uploadfile('#hidden_logo_url')"
 
-  -#- if own_profile?
     = s3_uploader_form callback_url: contractor_photos_url(@contractor), callback_param: "photo[image_url]", id: "portfolio_s3_upload" do
       .custom_file_upload
         = file_field_tag :file, multiple: true, id: "hidden_portfolio_url", onchange: "uploadfile('#hidden_portfolio_url')"
 
   :javascript
-    $(document).ready(function(evt) {
+    $(window).load(function(evt) {
       if( !(/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) ) {
         launchIntroJs();
       }

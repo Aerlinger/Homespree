@@ -44,7 +44,6 @@ class Appointment < ActiveRecord::Base
   validates_presence_of :starts_at, :duration, :address
   validates_inclusion_of :appointment_type, in: APPOINTMENT_TYPES
 
-
   # Custom Methods:  -----------------------------------------------------------------------------------------------
   def ends_at
     starts_at + duration.hours

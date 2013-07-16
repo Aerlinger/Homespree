@@ -11,7 +11,8 @@
         = render photos
 
   #portfolio-carousel.flexslider
-    = image_tag "/assets/contractor_profiles/upload_photo.png", id: "upload_portfolio"
+    - if own_profile?
+      = image_tag "/assets/contractor_profiles/upload_photo.png", id: "upload_portfolio"
     %ul.slides
       = render photos
 
@@ -19,4 +20,3 @@
       .upload
         .progress
           .bar(style= "width: 0%;height:100%") Loading...
-

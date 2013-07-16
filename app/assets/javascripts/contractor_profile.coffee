@@ -109,8 +109,6 @@ window.launchIntroJs = ->
 				$(targetElement).find('a.edit-link').click()
 			, 500
 	).oncomplete( ->
-    $('.introjs-overlay').click()
-    $('.content').click()
     $('body').click()
   ).start()
 
@@ -141,17 +139,25 @@ strtrim = (str) ->
 	str?.replace(/^\s\s*/, '')?.replace(/\s\s*$/, '')
 
 $(document).ready ->
+
+
+$(window).load ->
   $('.best_in_place').best_in_place()
   $('.best_in_place').bind "ajax:success", () ->
     $(this).closest('li').effect 'highlight', {color: "#88FF22"} , 800, () ->
       $(this).find('.edit-link').text("Edit").show()
       $(this).addClass('_edited')
 
+
   $('ul.slides').first().removeClass('flex-active-slide')
 
-	# TODO: Tooltips aren't working for some reason.
-  $('#licensed').tooltip()
-  $('.item.photo').first().addClass("active")
+
+  $('#upload_portfolio').click (evt) ->
+    $('#hidden_portfolio_url').click()
+
+  invisibleUploadFields()
+
+  sortableFields()
 
   $("#portrait_s3_upload").S3Uploader()
   $('#portrait_s3_upload').bind "s3_upload_complete", (e, content) ->
@@ -165,14 +171,6 @@ $(document).ready ->
   $('#portfolio_s3_upload').bind "s3_upload_complete", (e, content) ->
     console.log "portfolio Upload completed"
 
-  $('.edit-link').click (evt) ->
-    $(this).hide()
-
-  $('.form_in_place').focusout ->
-    $('.edit-link').show()
-
-  $('#upload_portfolio').click (evt) ->
-    $('#hidden_portfolio_url').click()
-
-  invisibleUploadFields()
-  sortableFields()
+  # TODO: Tooltips aren't working for some reason.
+  $('#licensed').tooltip()
+  $('.item.photo').first().addClass("active")
