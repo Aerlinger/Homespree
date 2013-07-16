@@ -42,13 +42,13 @@ class ProjectFormBuilder < ActionView::Helpers::FormBuilder
     @template.content_tag :div, class: "field #{css_align}" do
       return_str = label(options[:label] || name)
 
-      if block_given?
-        return_str << yield
-      end
+      return_str << yield
 
       #if toggleable
       #  return_str << label("Enable check box")
       #end
     end
+
+    return return_str.html_safe
   end
 end

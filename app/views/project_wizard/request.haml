@@ -11,7 +11,8 @@
 
     %hr
 
-    -#- @project.dynamic_form_fields(@project, f)
+    = f.fields_for @project, builder: ProjectFormBuilder do |builder|
+      - @project.dynamic_form_fields(@project, builder)
 
     = link_to 'previous', previous_wizard_path
     = f.submit 'next', class: 'pull-right'

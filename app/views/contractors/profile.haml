@@ -129,8 +129,7 @@
     = render "contractors/profiles/photos_modal", photos: @contractor.photos
 
   - if own_profile?
-    - puts @contractor
-    - puts contractor_path @contractor
+    = Rails.logger.warn contractor_path @contractor
     = s3_uploader_form callback_url: contractor_path(@contractor), callback_param: "contractor[portrait_url]", callback_method: :put, id: "portrait_s3_upload" do
       .custom_file_upload
         = file_field_tag :file, multiple: true, id: "hidden_portrait_url", onchange: "uploadfile('#hidden_portrait_url')"

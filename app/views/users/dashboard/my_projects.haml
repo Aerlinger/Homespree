@@ -1,5 +1,6 @@
 - content_for :dashboard do
   %h1.block-underline My Projects
+  = render current_user.projects
   %p
-      %em No projects found
+    %em No projects found
   %br

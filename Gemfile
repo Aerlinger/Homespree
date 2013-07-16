@@ -37,7 +37,6 @@ gem 'friendly_id'
 gem 'wicked'
 gem 'acts_as_list'
 gem 'mailboxer'
-gem 'aws-s3'
 gem 's3_direct_upload'
 
 # Views: -------------------------------------------------------------------------------------------------------------
