@@ -1,5 +1,4 @@
 class Contractors::DashboardController < ApplicationController
-
   layout "dashboard"
 
   def notifications
@@ -19,5 +18,4 @@ class Contractors::DashboardController < ApplicationController
 
   def material_calculator
   end
-
 end
