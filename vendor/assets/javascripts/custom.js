@@ -120,8 +120,6 @@ if (/(iPhone|iPod|iPad)/i.test(navigator.userAgent)) {
 /*================================================================*/
 
 $(document).ready(function () {
-
-
     /*================================================================*/
     /* BACK TO TOP with fixes for mobile
      /*================================================================*/
@@ -295,13 +293,14 @@ $(document).ready(function () {
     /*================================================================*/
     /*	ROTATING TESTIMONIALS jquery.easytabs.js
      /*================================================================*/
-    $(document).ready(function () {
-        $('.rotating-testimonials').easytabs({
-            animationSpeed: 400,
-            updateHash: false,
-            cycle: 5000
-        });
-    });
+    // TODO: Disabled
+//    $(document).ready(function () {
+//        $('.rotating-testimonials').easytabs({
+//            animationSpeed: 400,
+//            updateHash: false,
+//            cycle: 5000
+//        });
+//    });
 
     /*================================================================*/
     /* TOOL TIPS and POP OVERS bootstrap.min.js has inside it:

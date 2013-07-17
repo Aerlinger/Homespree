@@ -1,5 +1,6 @@
 = content_for :static_page do
   .div#unavailable{style: "text-align: center;"}
     %h1 Sorry!
-    %h5 Available contractors could not be found near the zipcode: #{@project.zipcode}
+    %h5 Available contractors could not be found for that zipcode.
+    %p Homespree is just being launched so be sure to check back soon.
     =link_to raw("&laquo Back to main page"), :back, class: "back"
