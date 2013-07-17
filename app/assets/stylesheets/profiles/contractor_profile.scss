@@ -26,7 +26,12 @@
   opacity: .2;
 }
 
-#purr-container .flash-error {
+hr {
+  margin-top: 10px !important;
+  margin-bottom: 15px !important;
+}
+
+.purr {
   position: fixed;
   top: 30px;
   left: 100px;
@@ -157,6 +162,16 @@
     height: auto;
   }
 
+  #upload_portrait, #delete_portrait, #change_logo, #delete_logo {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border: none !important;
+    width: 50%;
+    //margin-bottom: 5px;
+  }
+
   .feature-strip {
     background: none;
     padding-top: 25px;
@@ -176,16 +191,26 @@
         padding: 0 0 10px 0;
 
         #city_and_state {
+          background-color: rgb(81, 100, 192);
           font-size: 14px;
           color: white;
           font-weight: bold;
-          margin-top: 15px;
+          height: 20px;
+          font-size: 12px !important;
+          position: relative;
+          shadow: $shadow;
+          padding: auto 10px;
+          border-bottom: 1px solid rgba(255, 255, 255, .5);
         }
 
-        .primary-color-bg {
+        price.primary-color-bg {
           position: relative;
           z-index: 3;
-          padding: 5px 40px !important;
+          padding: 25px 40px 30px !important;
+        }
+
+        #title {
+          background-color: #023761;
 
           .edit-link {
             color: white;
@@ -215,6 +240,8 @@
           border-top-right-radius: 0px;
 
           box-shadow: $shadow;
+
+          background-color: #B9CBD3;
 
           .btn {
             margin: 0;
@@ -250,13 +277,16 @@
           }
 
           #contractor_portrait {
-            display: table;
-            margin: 0 auto;
-            max-height: 150px;
-            width: auto;
+            * {
+              border-radius: 0;
+              -moz-border-radius: 0;
+              -webkit-border-radius: 0;
+            }
 
-            &:not(._edited) {
-              //margin-bottom: -50px;
+            img {
+              display: table;
+              margin: 0 auto;
+              width: auto;
             }
           }
 
@@ -264,14 +294,17 @@
 
         .optionheader {
           #title {
+            //background-color: #105E9B !important;
             color: white;
             font-weight: bold;
             font-size: 1.4em;
             line-height: 1.4em;
             padding: 5px 25px;
             margin: -2px -1px 0 -1px;
-            border: 1px solid white;
-            border-bottom: 1px solid $homespree_accent;
+            border-top: 1px solid white;
+            border-left: 1px solid white;
+            border-right: 1px solid white;
+            border-bottom: 1px solid #939BC4;
             box-shadow: $shadow;
             -moz-box-shadow: $shadow;
             position: relative;
@@ -280,7 +313,7 @@
 
           background-color: $homespree_lightest;
           padding-bottom: 5px;
-          border-bottom: 1px solid lightgray;
+          //border-bottom: 1px solid lightgray;
         }
 
         .features {
@@ -301,6 +334,11 @@
 
           li {
             padding: 0 15px;
+          }
+
+          li:nth-child(1) {
+            font-size: 20px !important;
+
           }
 
           li:nth-child(2n+1) {
@@ -464,9 +502,7 @@
           display: none;
         }
       }
-
     }
-
   }
 
   // -------------------------------------------------------------------------------------------------------------------
@@ -508,8 +544,13 @@
         }
       }
 
-      .slogan {
-        padding-left: 8px;
+      #slogan, #slogan_edited {
+        //padding-left: 8px;
+
+        text-align: center;
+
+        font-weight: 500 !important;
+        font-style: italic;
       }
 
       #description, #description_edited {
@@ -522,7 +563,17 @@
       margin-bottom: 40px;
 
       li:nth-child(2n+1) {
-        background-color: white;
+        background-color: rgb(234, 234, 241);
+      }
+
+      li {
+        margin: 2px;
+        background-color: rgb(240, 240, 240)
+      }
+
+      .specialty {
+        border-radius: 18px;
+        padding: 0 5px;
       }
 
       #specialty_list {
@@ -544,6 +595,13 @@
         margin-left: 5px;
         li {
           list-style: none;
+          border-radius: 20px;
+          padding-left: 15px;
+          a {
+            margin: 2px;
+            height: 18px;
+            border-radius: 15px;
+          }
         }
       }
 
@@ -553,6 +611,15 @@
     }
 
     #service_area, #service_area_edited {
+
+      .address {
+        //div:nth-child(2n+1) {
+        //  * {
+        //    background: green !important;
+        //  }
+        //}
+      }
+
       form {
         margin-bottom: 70px !important;
       }
@@ -724,6 +791,10 @@
     font-size: 1.2em;
     background: #5676a5;
     margin: 0 !important;
+
+    &:hover {
+      background: #2A4D81;
+    }
   }
 
   .short_headline div {

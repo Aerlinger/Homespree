@@ -39,26 +39,10 @@ class ContractorDecorator < Draper::Decorator
   decorates :contractor
 
   def portrait_upload
-    h.image_tag @object.portrait_url.to_s, id: "contractor_portrait"
 
-    if own_profile?
-      h.haml_concat link_to("Upload portrait", "#", class: "btn btn-success btn-small", id: "upload_portrait")
-    end
   end
 
-  def logo(attrs = {})
-    #h.haml_concat image_tag @object.logo_url, attrs
 
-    if h.own_profile? && @object.logo_url?
-      h.haml_concat link_to("Change logo", "#", class: "btn btn-info btn-mini pull-left", id: "upload_logo", remote: true)
-      h.haml_concat link_to("Delete logo", contractor_path(@object, contractor: { logo_url: nil }),
-                            confirm: "Are you sure you want to delete your logo from the description?",
-                            method:  :put, class: "btn btn-danger btn-mini delete-button pull-right",
-                            remote:  true)
-    else
-      h.haml_concat link_to "Upload company logo", "#", class: "btn btn-info", id: "upload_logo", remote: true
-    end
-  end
 
   def card_item(attr_name, attrs = {})
     field_missing = "_edited"

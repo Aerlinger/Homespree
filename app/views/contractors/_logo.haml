@@ -1,0 +1,11 @@
+- if @contractor.logo_url?
+  = image_tag @contractor.logo_url
+
+- if own_profile? && @contractor.logo_url?
+  = link_to("Change logo", "#", class: "btn btn-info btn-mini pull-left", id: "change_logo", remote: true)
+  = link_to("Delete logo", contractor_path(@contractor, contractor: { logo_url: nil }),
+                          confirm: "Are you sure you want to delete your logo from the description?",
+                          method:  :put, class: "btn btn-danger btn-mini delete-button pull-right",
+                          remote:  true, id: "delete_logo")
+-else
+  = link_to "Upload company logo", "#", class: "btn btn-info", id: "upload_logo", remote: true

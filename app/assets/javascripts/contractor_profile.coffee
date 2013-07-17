@@ -140,11 +140,20 @@ window.launchIntroJs = ->
 window.invisibleUploadFields = ->
   # These should be declared in the order in which they appear in the DOM (portrait, portfolio, logo)
 
-	$('#upload_portrait').click (evt) ->
-		$('#hidden_portrait_url').click()
+  $("#portrait_s3_upload").S3Uploader()
+  $("#portfolio_s3_upload").S3Uploader()
+  $("#logo_s3_upload").S3Uploader()
 
-	$('#upload_logo').click (evt) ->
-		$('#hidden_logo_url').click()
+#  $('#hidden_portrait_url').load ->
+  $('#upload_portrait').click (evt) ->
+    $('#hidden_portrait_url').click()
+
+#  $('#hidden_logo_url').load ->
+  $('#upload_logo').click (evt) ->
+    $('#hidden_logo_url').click()
+
+  $('#upload_portfolio').click (evt) ->
+    $('#hidden_portfolio_url').click()
 
 
 # A silly hack to force the form to submit when a file is uploaded:
@@ -160,6 +169,7 @@ strtrim = (str) ->
 $(document).ready ->
 #  $('ul.slides').first().removeClass('flex-active-slide')
   sortableFields()
+  invisibleUploadFields()
 
 
 $(window).load ->
@@ -169,27 +179,9 @@ $(window).load ->
       $(this).find('.edit-link').text("Edit").show()
       $(this).addClass('_edited')
 
-
 	# TODO: Tooltips aren't working for some reason.
   $('#licensed').tooltip()
   $('.item.photo').first().addClass("active")
-
-  $('#upload_portfolio').click (evt) ->
-    $('#hidden_portfolio_url').click()
-
-  invisibleUploadFields()
-
-  $("#portrait_s3_upload").S3Uploader()
-  $('#portrait_s3_upload').bind "s3_upload_complete", (e, content) ->
-    console.log "Portrait Upload completed"
-
-  $("#logo_s3_upload").S3Uploader()
-  $('#logo_s3_upload').bind "s3_upload_complete", (e, content) ->
-    console.log "Logo Upload completed"
-
-  $("#portfolio_s3_upload").S3Uploader()
-  $('#portfolio_s3_upload').bind "s3_upload_complete", (e, content) ->
-    console.log "portfolio Upload completed"
 
   # TODO: Tooltips aren't working for some reason.
   $('#licensed').tooltip()

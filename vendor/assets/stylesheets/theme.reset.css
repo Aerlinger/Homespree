@@ -1451,8 +1451,8 @@ label.radio.inline {
 
 .btn-info:hover, .btn-info:active, .btn-info.active, .btn-info.disabled, .btn-info[disabled] {
     color: #fff;
-    background-color: #5bc0de;
-    border-color: #5bc0de;
+    background-color: #259FC4;
+    border-color: #259FC4;
 }
 
 .btn-inverse {

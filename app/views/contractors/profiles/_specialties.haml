@@ -11,7 +11,7 @@
 -# List of "available" pecialties which have not yet been selected:  --------------------------------------------------
 - if own_profile?
   %h3{style: "font-size: 16px;"} Add more services to your profile
-  %hr{style: "margin-top: 5px; margin-bottom: 5px"}
+  %hr
 
   %ul.specialties#available_specialties
     - available_specialties = Specialty.painting_types.values - specialties.map(&:name)

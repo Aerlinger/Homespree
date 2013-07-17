@@ -25,16 +25,13 @@
               %li#title.primary-color-bg
                 = best_in_place @contractor, :company_title, activator: "#company_title"
                 = @contractor.edit_link(:company_title)
+              %li#city_and_state
                 #city_and_state= @contractor.city_and_state
-
               %li.price.primary-color-bg
                 %span.rating{style: "font-weight: bold"}
-
                 - # Portrait URL
-                = image_tag @contractor.portrait_url, id: "portrait"
-                = content_tag(:div, style: "position: relative;") do
-                  - @contractor.portrait_upload
-
+                #contractor_portrait.no-border
+                  = render "contractors/portrait"
               %li.price
                 = content_tag(:div, style: "position: relative;", class: "badges") do
                   %ul#badge_list
@@ -102,8 +99,9 @@
               = render "contractors/profiles/edit_link", activator: "slogan_edit"
 
             #contractor_logo
-              - @contractor.logo
+              = render "contractors/logo"
 
+            %hr
             = @contractor.in_place_edit(:p, :description) do
               = best_in_place @contractor, :description, type: :textarea, activator: "#description_edit", nil: default_description
               = render "contractors/profiles/edit_link", activator: "description_edit"
@@ -124,17 +122,18 @@
     = render "contractors/profiles/photos_modal", photos: @contractor.photos
 
   - if own_profile?
-    = s3_uploader_form callback_url: contractor_path(@contractor), callback_param: "contractor[portrait_url]", callback_method: :put, id: "portrait_s3_upload", remote: true do
-      .custom_file_upload
-        = file_field_tag :file, multiple: true, id: "hidden_portrait_url", onchange: "uploadfile('#hidden_portrait_url')"
+    #s3_uploaders
+      = s3_uploader_form callback_url: contractor_path(@contractor), callback_param: "contractor[portrait_url]", callback_method: :put, id: "portrait_s3_upload", remote: true do
+        .custom_file_upload
+          = file_field_tag :file, multiple: true, id: "hidden_portrait_url", onchange: "uploadfile('#hidden_portrait_url')"
 
-    = s3_uploader_form callback_url: contractor_path(@contractor), callback_param: "contractor[logo_url]", callback_method: :put, id: "logo_s3_upload", remote: true do
-      .custom_file_upload
-        = file_field_tag :file, multiple: true, id: "hidden_logo_url", onchange: "uploadfile('#hidden_logo_url')"
+      = s3_uploader_form callback_url: contractor_path(@contractor), callback_param: "contractor[logo_url]", callback_method: :put, id: "logo_s3_upload", remote: true do
+        .custom_file_upload
+          = file_field_tag :file, multiple: true, id: "hidden_logo_url", onchange: "uploadfile('#hidden_logo_url')"
 
-    = s3_uploader_form callback_url: contractor_photos_url(@contractor), callback_param: "photo[image_url]", id: "portfolio_s3_upload" do
-      .custom_file_upload
-        = file_field_tag :file, multiple: true, id: "hidden_portfolio_url", onchange: "uploadfile('#hidden_portfolio_url')"
+      = s3_uploader_form callback_url: contractor_photos_url(@contractor), callback_param: "photo[image_url]", id: "portfolio_s3_upload" do
+        .custom_file_upload
+          = file_field_tag :file, multiple: true, id: "hidden_portfolio_url", onchange: "uploadfile('#hidden_portfolio_url')"
 
   :javascript
     $(window).load(function(evt) {
