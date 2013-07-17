@@ -1,6 +1,6 @@
 /*================================================================*/
 /* Remove Mobile Address Bar on iPhone and Android Devices
- /*================================================================*/
+/*================================================================*/
 $(document).ready(function () {
     if (/(iPhone)/i.test(navigator.userAgent)) {
         //For iPhone to remove Address bar when viewing website
@@ -20,9 +20,9 @@ $(document).ready(function () {
 $(window).load(function () {
     /*================================================================*/
     /* EQUAL HEIGHTS:
+     * http://stackoverflow.com/questions/13029090/jquery-equal-height-responsive-div-rows
+     */
      /*================================================================*/
-//http://stackoverflow.com/questions/13029090/jquery-equal-height-responsive-div-rows
-// UP VOTE THIS GUY, he rocks
 
     $.fn.eqHeights = function (options) {
 
@@ -65,16 +65,16 @@ $(window).load(function () {
 
         $(elements).height(max_height);
     };
-    
+
     $('.equal').eqHeights();
 });
 
 
 /*================================================================*/
-/*  REFRESH IF WINDOW IS UNDER OR OVER 979 PX WIDE - works alone - 
- This theme works w/o this, but I don't recommend removing it.
- /*
- /*================================================================*/
+/*  REFRESH IF WINDOW IS UNDER OR OVER 979 PX WIDE - works alone -
+This theme works w/o this, but I don't recommend removing it.
+/*
+/*================================================================*/
 var ww = $(window).width();
 var limit = 979;
 
@@ -95,11 +95,11 @@ function refresh() {
 
 /*================================================================*/
 /* LOGO FIXING ON IOS version 2-4
- /*================================================================*/
+/*================================================================*/
 // http://stackoverflow.com/questions/8348139/detect-ios-version-less-than-5-with-javascript
 if (/(iPhone|iPod|iPad)/i.test(navigator.userAgent)) {
     if (/OS [2-4]_\d(_\d)? like Mac OS X/i.test(navigator.userAgent)) {
-        // iOS 2-4 so Do Something   
+        // iOS 2-4 so Do Something
         $('#logo object').css({
             "display": "none"
         });
@@ -108,7 +108,7 @@ if (/(iPhone|iPod|iPad)/i.test(navigator.userAgent)) {
         });
 
     } else if (/CPU like Mac OS X/i.test(navigator.userAgent)) {
-        // iOS 1 so Do Something 
+        // iOS 1 so Do Something
     } else {
         // iOS 5 or Newer so Do Nothing
     }
@@ -117,28 +117,10 @@ if (/(iPhone|iPod|iPad)/i.test(navigator.userAgent)) {
 
 /*================================================================*/
 /* ROTATING BACKGROUND IMAGES works alone
- /*================================================================*/
+/*================================================================*/
 
 $(document).ready(function () {
 
-    /*  // TODO: Disabled by AE.
-     $('#page').prepend('<span class="bg"></span>');
-
-     var images = [
-     '1.jpg',
-     '2.jpg',
-     '3.jpg',
-     '4.jpg',
-     '5.jpg',
-     '6.jpg',
-     '7.jpg'
-     ];
-
-     $('.bg').css({
-     'background-image': 'url(assets/images/background/' + images[Math.floor(Math.random() * images.length)] + ')'
-     });
-     });
-     // */
 
     /*================================================================*/
     /* BACK TO TOP with fixes for mobile
@@ -332,3 +314,28 @@ $(document).ready(function () {
         });
     });
 });
+
+// Avoid `console` errors in browsers that lack a console.
+(function() {
+    var method;
+    var noop = function noop() {};
+    var methods = [
+        'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
+        'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
+        'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd',
+        'timeStamp', 'trace', 'warn'
+    ];
+    var length = methods.length;
+    var console = (window.console = window.console || {});
+
+    while (length--) {
+        method = methods[length];
+
+        // Only stub undefined methods.
+        if (!console[method]) {
+            console[method] = noop;
+        }
+    }
+}());
+
+// Place any jQuery/helper plugins in here.

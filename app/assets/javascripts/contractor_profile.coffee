@@ -86,7 +86,26 @@ window.sortableFields = ->
 		update: ->
 			$.post($(this).data('update-url'), $(this).sortable('serialize'))
 
+window.startFlexSlider = ->
+  console.log "Starting flexslider"
 
+  $('#portfolio-carousel').flexslider({
+    animation: "slide",
+    controlNav: false,
+    animationLoop: true,
+    slideshow: false,
+    itemWidth: 180,
+    itemMargin: 5,
+    asNavFor: '#portfolio-slider'
+  });
+
+  $("#portfolio-slider").flexslider({
+    animation: "slide",
+    controlNav: false,
+    animationLoop: true,
+    slideshow: false,
+    sync: "#portfolio-carousel",
+  })
 
 window.launchIntroJs = ->
 	# Load the definition of our introduction fields
@@ -139,7 +158,7 @@ strtrim = (str) ->
 	str?.replace(/^\s\s*/, '')?.replace(/\s\s*$/, '')
 
 $(document).ready ->
-  $('ul.slides').first().removeClass('flex-active-slide')
+#  $('ul.slides').first().removeClass('flex-active-slide')
   sortableFields()
 
 
@@ -175,3 +194,5 @@ $(window).load ->
   # TODO: Tooltips aren't working for some reason.
   $('#licensed').tooltip()
   $('.item.photo').first().addClass("active")
+
+  startFlexSlider()

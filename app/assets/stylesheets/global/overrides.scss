@@ -1,0 +1,78 @@
+#home {
+  margin: 120px 0 0 0; /* 40px (secondary-menu) + 80px (primary-menu and logo) + 40px (standard margin)*/
+  clear: both;
+}
+
+
+section.strip.odd {
+  margin: 0 !important;
+}
+
+.pricingTable {
+  margin-bottom: 0 !important;
+}
+
+.carousel-inner {
+  img {
+    max-height: 400px;
+  }
+}
+
+.white-bg {
+  background-color: white !important;
+}
+
+.optionheader {
+  li {
+    &:first-child {
+      margin-top: 10px;
+      background-color: #91a2f5;
+      color: black;
+
+      border-top-right-radius: 2px;
+      border-top-left-radius: 2px;
+      -moz-border-radius-topleft: 2px;
+      -moz-border-radius-topright: 2px;
+      -webkit-border-top-left-radius: 2px;
+      -webkit-border-top-right-radius: 2px;
+    }
+  }
+}
+
+.simple-social {
+  float: left;
+}
+
+.price.primary-color-bg {
+  img {
+
+
+  }
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+.wrapper {
+  margin-bottom: 0 !important;
+}
+
+//.feature-strip-image-slider.flexslider .flex-direction-nav {
+//  display: block !important;
+//}
+
+#portfolio_images {
+  background: black !important;
+}
+
+span.bg {
+  background-image: url("/assets/homebackground.jpg") !important;
+  background-size: cover !important;
+}
+
+.features li {
+  line-height: 34px !important;
+  height: 34px !important;
+}

@@ -15,11 +15,8 @@ gem 'whenever', require: false
 gem 'figaro', '>= 0.5.3'
 
 # Image uploads and hosting-related ----------------------------------------------------------------------------------
-#gem 'fog'
-gem 's3_direct_upload'
 gem 'rmagick'
 gem 'carrierwave'
-#gem 'carrierwave_direct'
 
 # Tools/utilities:  --------------------------------------------------------------------------------------------------
 gem 'annotate'
@@ -98,6 +95,8 @@ group :assets do
   gem 'jquery-fileupload-rails'
   gem 'jquery-ui-rails'
 
+  gem 'flexslider', :git => 'https://github.com/constantm/Flexslider-2-Rails-Gem.git'
+
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer', :platforms => :ruby
   gem 'uglifier', '>= 1.0.3'
@@ -106,7 +105,5 @@ group :assets do
   gem 'less-rails-fontawesome'
   gem 'twitter-bootstrap-rails', '2.2.6'
 
-  # Gems used for markdown (Can we remove these please?)
-  gem 'redcarpet' # Makes it possible to use a markdown filter within haml
-  gem 'markdown-rails'
+  gem 'redcarpet'
 end

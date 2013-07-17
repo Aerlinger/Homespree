@@ -1,0 +1,121 @@
+@import "global/palette";
+
+$shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
+
+.secondary {
+  #createprofilebutton{
+
+  }
+  .container {
+    padding: 0px;
+    box-shadow: $shadow;
+    background-color: white;
+    padding-bottom: 2em;
+    padding-top: 20px;
+
+    min-height: 1024px;
+  }
+
+  a {
+    color: $homespree_blue;
+    text-decoration: none;
+
+    &:hover {
+      color: $homespree_light;
+      text-decoration: underline;
+    }
+  }
+
+  iframe {
+    margin-top: 10px;
+  }
+
+  .bs-docs-sidebar {
+    //margin-top: 30px;
+    color: black;
+    margin: 0 0 15px 0;
+  }
+
+  a:visited {
+    text-decoration: none;
+  }
+
+  .nav-stacked {
+    color: black;
+  }
+
+  .description-block {
+    margin-bottom: 2em;
+
+    img {
+      padding: 10px;
+    }
+
+    .iphone {
+      width: 145px;
+      height: 304px;
+    }
+
+    p {
+      margin-top: 1em;
+      text-align: justify;
+    }
+
+  }
+
+  .intro {
+    margin-bottom: 3em;
+
+    img {
+      float: right;
+      padding: 0 0 0 20px;
+    }
+
+    p {
+      display: block;
+      text-align: justify;
+    }
+  }
+
+}
+
+.createprofilebutton{
+  font-size: 1.7rem !important;
+  width: 93% !important;
+  height: 50px;
+  text-align: center !important;
+  line-height: 50px;
+
+}
+
+.white.navbar-fixed-bottom{
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+.block-underline {
+  display: block;
+  width: 100%;
+  overflow: show !important;
+  text-align: left;
+  line-height: 1.4em;
+  border-bottom: 1px solid $homespree_accent_light;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300 !important;
+}
+
+// --------------------------------------------------------------------------
+// Media Queries:
+// --------------------------------------------------------------------------
+
+/*>>>>>>>>>> MAX WIDTH: 767 <<<<<<<<<<<<<<*/
+
+@media (max-width: 767px){
+  .secondary {
+    h1{
+      font-size: 200% !important;
+    }
+  }
+}

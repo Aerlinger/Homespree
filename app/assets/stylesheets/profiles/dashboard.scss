@@ -1,0 +1,27 @@
+@import "global/palette";
+@import "global/mixins";
+
+/*
+  ---------------------------------------------------------------------------------------------------------------------
+
+  Styles for contractor profile page (namespaced to .profile class
+
+  3 Sections:
+
+    1. Top (#Top):
+      - Contractor Info Card
+      - Portfolio images
+
+    2. Center(#second_strip): Secondary information about the contractor
+      - Description
+      - Services
+      - Service Area
+
+    3. Reviews: Not yet implemented
+
+  ---------------------------------------------------------------------------------------------------------------------
+*/
+
+#dashboard_section {
+  //padding-left: 20px;
+}

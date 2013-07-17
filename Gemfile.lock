@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/constantm/Flexslider-2-Rails-Gem.git
+  revision: 68e604abbc5461015ac67edc6e2e93af4e2f058e
+  specs:
+    flexslider (2.0.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -215,9 +221,6 @@ GEM
       carrierwave (>= 0.5.8)
       foreigner (>= 0.9.1)
       rails (> 3.0.0)
-    markdown-rails (0.2.1)
-      rails
-      rdiscount (>= 1.6.8, < 2.0)
     meta_request (0.2.7)
       callsite
       rack-contrib
@@ -286,7 +289,6 @@ GEM
       ffi (>= 0.5.0)
     rb-kqueue (0.2.0)
       ffi (>= 0.5.0)
-    rdiscount (1.6.8)
     rdoc (3.12.2)
       json (~> 1.4)
     redcarpet (2.3.0)
@@ -416,6 +418,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   figaro (>= 0.5.3)
+  flexslider!
   friendly_id
   geocoder
   growl
@@ -433,7 +436,6 @@ DEPENDENCIES
   less-rails-fontawesome
   libv8 (= 3.11.8.13)
   mailboxer
-  markdown-rails
   meta_request
   mobylette
   newrelic_rpm

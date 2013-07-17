@@ -34,12 +34,6 @@
                 = content_tag(:div, style: "position: relative;") do
                   - @contractor.portrait_upload
 
-                  -#%script#template-upload{type:"text/x-tmpl"}
-                    <div id="file-{%=o.unique_id%}" class="upload">                           |
-                      {%=o.name%}                                                            |
-                      <div class="progress"><div class="bar" style="width: 0%"></div></div>   |
-                    </div>
-
               %li.price
                 = content_tag(:div, style: "position: relative;", class: "badges") do
                   %ul#badge_list

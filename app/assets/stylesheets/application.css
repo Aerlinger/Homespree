@@ -12,5 +12,6 @@
  *= require s3_direct_upload_progress_bars
  *= require jquery.ui.datepicker
  *= require_tree .
+ *= require flexslider.css
  *= require_tree ../../../vendor/assets/stylesheets
  */

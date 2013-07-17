@@ -1,16 +1,13 @@
 %section.footer-credits
   .container
-    %ul.clearfix
-
+    %ul
       %li
         =link_to "Team", team_path
       %li
         =link_to "Terms", consumer_terms_path
-
       %li.logo-center
         =link_to root_path do
           =image_tag "favicon.png"
-
       %li
         =link_to "Blog", "http://homespree.wordpress.com/", target: "_blank"
       %li
@@ -19,15 +16,15 @@
         = link_to "Are you a quality pro?", new_contractor_registration_path, class: "pull_right", style: "position: absolute; right: 50px; top: 50px; color: white;"
 
 
-- if Rails.env.development?
+-#- if Rails.env.development?
   %a#show_debug
     Show/Hide Debug Info
 
-%span.backToTop
+-#%span.backToTop
   %a{:href => "#top"}
     %i.e-icon-up-open-big
 
-- if Rails.env.development?
+-#- if Rails.env.development?
   .debug
     = current_layout
     = debug(params)
