@@ -336,11 +336,6 @@ hr {
             padding: 0 15px;
           }
 
-          li:nth-child(1) {
-            font-size: 20px !important;
-
-          }
-
           li:nth-child(2n+1) {
             background-color: $homespree_lightest;
           }
@@ -840,5 +835,4 @@ hr {
       float: right;
     }
   }
-
 }

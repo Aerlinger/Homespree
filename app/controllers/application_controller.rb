@@ -1,12 +1,10 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-
   # Intercepts User-Agent for mobile routing
   # Note: -- This is disabled due to a conflict with Devise and MIME types.
   # This is temporary until a more elegant solution is found.
   #include Mobylette::RespondToMobileRequests
-
 
   # -----------------------------------------------------------------------------------------------------
   # Note: I am bypassing Devise's dynamic finder here and directly interacting with the

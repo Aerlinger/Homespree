@@ -4,10 +4,10 @@ class Contractors::RegistrationsController < Devise::RegistrationsController
   after_filter :geolocate, only: [:create]
   #after_filter :send_welcome_email, :send_notification_email, only: [:create]
 
-  def new
-    super
-    @contractor = Contractor.new({ email: params[:email] })
-  end
+  #def new
+    #super
+    #@contractor = Contractor.new({ email: params[:email] })
+  #end
 
   protected
 

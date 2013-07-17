@@ -184,8 +184,4 @@ $(window).load ->
   $('#licensed').tooltip()
   $('.item.photo').first().addClass("active")
 
-  # TODO: Tooltips aren't working for some reason.
-  $('#licensed').tooltip()
-  $('.item.photo').first().addClass("active")
-
   startFlexSlider()

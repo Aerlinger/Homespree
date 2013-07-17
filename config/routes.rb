@@ -7,35 +7,13 @@ Homespree::Application.routes.draw do
 
   resources :mailinglists, only: [:create, :update, :destroy]
 
-  # User routes: (Contractors and Homeowners) ---------------------------------------------------------------------
-  scope :dashboard do
-    get "notifications" => "users/dashboard#notifications"
-    get "general_settings" => "users/dashboard#general_settings"
-    get "inbox" => "users/dashboard#inbox"
-    get "my_projects" => "users/dashboard#my_projects"
-    get "my_income" => "users/dashboard#my_income"
-    get "material_calculator" => "users/dashboard#material_calculator"
-  end
-
-  devise_for :users, :controllers => {
-    #registrations: "users/registrations",
-    sessions:      "users/sessions"
-    #passwords:     "users/passwords"
-  }
-
-  namespace :users do
-    resources :messages, except: [:update, :destroy]
-    resources :conversations, only: [:index, :show, :update, :destroy]
-  end
-
   # Homeowners: -----------------------------------------------------------------------------------------------------
   resources :project_wizard
 
   devise_for :homeowners, :controllers => {
     registrations: "homeowners/registrations",
-    sessions:      "homeowners/sessions",
     passwords:     "homeowners/passwords"
-  }
+  },         skip:                     :sessions
 
   resources :homeowners, only: [:show, :update] do
     collection do
@@ -49,9 +27,8 @@ Homespree::Application.routes.draw do
   # Contractors: -----------------------------------------------------------------------------------------------------
   devise_for :contractors, :controllers => {
     registrations: "contractors/registrations",
-    sessions:      "contractors/sessions",
     passwords:     "contractors/passwords"
-  }
+  },         skip:                      :sessions
 
   resources :contractors, only: [:show, :update] do
     resources :specialties, only: [:create, :update, :destroy] do
@@ -73,6 +50,25 @@ Homespree::Application.routes.draw do
     resources :appointments, only: [:create, :update, :destroy, :show]
     resources :alerts, only: [:create, :destroy]
     resources :projects
+  end
+
+  # User routes: (Contractors and Homeowners) ---------------------------------------------------------------------
+  scope :dashboard do
+    get "notifications" => "users/dashboard#notifications"
+    get "general_settings" => "users/dashboard#general_settings"
+    get "inbox" => "users/dashboard#inbox"
+    get "my_projects" => "users/dashboard#my_projects"
+    get "my_income" => "users/dashboard#my_income"
+    get "material_calculator" => "users/dashboard#material_calculator"
+  end
+
+  devise_for :users, :controllers => {
+    sessions: "users/sessions"
+  }, skip: :registrations
+
+  namespace :users do
+    resources :messages, except: [:update, :destroy]
+    resources :conversations, only: [:index, :show, :update, :destroy]
   end
 
   # Gallery Browsing: ------------------------------------------------------------------------------------------------

@@ -4,7 +4,7 @@
       .nav-collapse.collapse
         %ul.nav.accordmobile.pull-right
 
-          - if user_signed_in?
+          - if user_signed_in? && !current_user.guest?
             %li.dropdown.parent
               %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
                 My Messages
@@ -38,7 +38,7 @@
                 %li
                   =link_to "Account Settings", general_settings_path
                 %li
-                  =link_to "Sign out", destroy_contractor_session_path, method: :get
+                  =link_to "Sign out", destroy_user_session_path, method: :get
 
           - else
             %li

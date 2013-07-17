@@ -53,10 +53,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
   acts_as_messageable
 
-  # Accessor/Virtual Attributes:  ------------------------------------------------------------------------------------
-  attr_accessor :current_password, :password
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :current_password
-
   # Associations:  ----------------------------------------------------------------------------------------------------
   has_one :address, as: :addressable, dependent: :destroy
   has_many :alerts, as: :alertable
