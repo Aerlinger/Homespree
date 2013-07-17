@@ -14,7 +14,6 @@
 //= require jquery-ui
 //= require jquery_ujs
 //= require jquery.purr
-//= require twitter/bootstrap
 //= require s3_direct_upload
 //= require custom
 //= require helper

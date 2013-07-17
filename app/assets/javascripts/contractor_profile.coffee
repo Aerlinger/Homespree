@@ -102,6 +102,7 @@ window.startFlexSlider = ->
   $("#portfolio-slider").flexslider({
     animation: "slide",
     controlNav: false,
+    smoothHeight: true,
     animationLoop: true,
     slideshow: false,
     sync: "#portfolio-carousel"
