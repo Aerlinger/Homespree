@@ -1,0 +1,35 @@
+.space {
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.fifty_pixels_space {
+  @extend .space;
+  height: 50px !important;
+}
+
+.forty_pixels_space {
+  @extend .space;
+  height: 40px !important;
+}
+
+.sixty_pixels_space {
+  @extend .space;
+  height: 60px !important;
+}
+
+.ten_pixels_space {
+  @extend .space;
+  height: 10px !important;
+}
+
+.twenty_pixels_space {
+  @extend .space;
+  height: 20px !important;
+}
+
+.one_hundred_pixels_space {
+  @extend .space;
+  height: 100px !important;
+}

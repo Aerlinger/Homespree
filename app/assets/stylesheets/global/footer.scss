@@ -1,26 +1,5 @@
 .footer-credits {
-  position: static;
 
-  ul li a {
-    color: white;
-    font-size: .9rem;
-
-    &:hover {
-      color: inherit;
-      text-decoration: underline;
-    }
-  }
-
-  .logo-center {
-    a:hover {
-      text-decoration: none;
-    }
-    img {
-      display: inline;
-      max-width: 50px !important;
-      max-height: 50px !important;
-    }
-  }
 }
 
 .footer-box {

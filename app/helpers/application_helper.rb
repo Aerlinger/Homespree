@@ -1,13 +1,13 @@
 module ApplicationHelper
 
   def current_layout
-    #layout = controller.send(:_layout)
-    #
-    #if layout.is_a? String
-    #  return layout
-    #else
-    #  return layout.virtual_path.name
-    #end
+    layout = controller.send(:_layout)
+
+    if layout.is_a? String
+      return layout
+    else
+      return layout.virtual_path.name
+    end
   end
 
   def check_active(page_name)

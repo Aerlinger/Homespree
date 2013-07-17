@@ -1,6 +1,8 @@
-/* ----------------------------------->>>>>>>>> MENU <<<<<<<<<<<-----------------------------------*/
+/* ------------------------->>>>>>>>> MENU <<<<<<<<<<<----------------------*/
 
-/* -------------------------- TOGGLE THE MENUS ON MOBILE/TABLETS UNDER 979PX (BOOTSTRAP'S SIZING) ------------------------*/
+// --------------------------------------------------------------------------
+// TOGGLE THE MENUS ON MOBILE/TABLETS UNDER 979PX (BOOTSTRAP'S SIZING)
+// --------------------------------------------------------------------------
 $(document).ready(function () {
     $(".mobile_nav a.mobiletrigger").click(function () {
         $('.primary-menu, .secondary-menu')
@@ -10,7 +12,10 @@ $(document).ready(function () {
     })
 });
 
-/* -------------------------- GET HOVERS TO WORK AS CLICKS ON IPAD VERSIONS THAT DON'T SUPPORT HOVER  ------------------------*/
+
+// --------------------------------------------------------------------------
+// GET HOVERS TO WORK AS CLICKS ON IPAD VERSIONS THAT DON'T SUPPORT HOVER
+// --------------------------------------------------------------------------
 
 $(document).ready(function () {
     if (navigator.platform == "iPad") {

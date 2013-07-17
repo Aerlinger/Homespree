@@ -9,6 +9,7 @@
   -#================================================================================================
   -#=render "contractors/profiles/info_header"
   %br
+  .twenty_pixels_space
 
   -# Top Section (Info Card and Image Carousel)
   -#================================================================================================
@@ -30,7 +31,7 @@
                 %span.rating{style: "font-weight: bold"}
 
                 - # Portrait URL
-                = image_tag @contractor.portrait_url
+                = image_tag @contractor.portrait_url, id: "portrait"
                 = content_tag(:div, style: "position: relative;") do
                   - @contractor.portrait_upload
 
@@ -123,11 +124,11 @@
     = render "contractors/profiles/photos_modal", photos: @contractor.photos
 
   - if own_profile?
-    = s3_uploader_form callback_url: contractor_path(@contractor), callback_param: "contractor[portrait_url]", callback_method: :put, id: "portrait_s3_upload" do
+    = s3_uploader_form callback_url: contractor_path(@contractor), callback_param: "contractor[portrait_url]", callback_method: :put, id: "portrait_s3_upload", remote: true do
       .custom_file_upload
         = file_field_tag :file, multiple: true, id: "hidden_portrait_url", onchange: "uploadfile('#hidden_portrait_url')"
 
-    = s3_uploader_form callback_url: contractor_path(@contractor), callback_param: "contractor[logo_url]", callback_method: :put, id: "logo_s3_upload" do
+    = s3_uploader_form callback_url: contractor_path(@contractor), callback_param: "contractor[logo_url]", callback_method: :put, id: "logo_s3_upload", remote: true do
       .custom_file_upload
         = file_field_tag :file, multiple: true, id: "hidden_logo_url", onchange: "uploadfile('#hidden_logo_url')"
 

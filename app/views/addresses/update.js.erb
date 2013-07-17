@@ -2,4 +2,10 @@ $("#map").attr({
 	"src": "<%= j raw "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@address.latitude}%2C#{@address.longitude}" %>"
 });
 
-$('#update_message').show(600)
+$('#update_message').removeClass('.alert-success').removeClass('.alert-error')
+
+if("<%= j @success.to_s %> == true") {
+	$('#update_message').addClass('.alert-success').text("Address updated!").show(600)
+} else {
+	$('#update_message').addClass('.alert-error').text("Invalid address").show(600)
+}

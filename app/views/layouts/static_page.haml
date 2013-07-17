@@ -5,3 +5,5 @@
         = content_for?(:static_page) ? yield(:static_page) : yield
 
 = render :template => 'layouts/application'
+
+= render "partials/footer", position: "absolute"

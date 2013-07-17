@@ -16,6 +16,7 @@
   display: block;
   position: absolute;
   width: 100%;
+  opacity: .7;
 
   box-shadow: $shadow;
 
@@ -23,17 +24,25 @@
   color: black;
   font-size: .7em !important;
 
-  button.close{
-      top: 15px !important;
+  &:hover {
+    opacity: 1;
+  }
+
+  button.close {
+    top: 5px !important;
+    border: none;
+    &:hover {
+      border:none !important;
     }
+  }
 
   .alert {
     border-radius: 0 !important;
     -moz-border-radius: 0 !important;
     -webkit-border-radius: 0 !important;
-    height: 50px;
+    height: 30px;
 
-    padding: 0;
+    padding: 1px;
     margin: 0;
     z-index: 0;
 
@@ -41,11 +50,12 @@
       color: black;
       margin: 0;
       vertical-align: center;
-      line-height: 50px;
+      line-height: 30px;
       text-align: center;
       text-decoration: none;
       text-shadow: none;
       display: block;
+      font-weight: 400 !important;
     }
   }
 }

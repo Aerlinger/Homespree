@@ -1,0 +1,4 @@
+$('#portrait').attr("src", "<%= j @contractor.portrait_url %>")
+
+$('#contractor_logo').removeAll('img')
+$('#contractor_logo').prepend('<img src="<%= j @contractor.logo_url %>" />')

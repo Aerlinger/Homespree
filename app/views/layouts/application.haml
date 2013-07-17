@@ -13,12 +13,12 @@
     %title Homespree | Stress-free Home Improvement
     = render 'partials/header_extras'
 
-  = content_tag :body do #, class: "desktop #{current_layout}" do
+  = content_tag :body, class: "desktop #{current_layout}" do
 
     = render 'partials/header'
     = render 'partials/flash', flash: flash
 
     = content_for?(:content) ? yield(:content) : yield
 
-    = render 'partials/footer_sub'
+    -#= render 'partials/footer'
     = render 'partials/footer_scripts'

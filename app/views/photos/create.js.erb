@@ -1,3 +1,4 @@
+/**
 $("#portfolio-carousel ul.slides").append(
 	"<%= j(render @photo) %>"
 );
@@ -6,63 +7,23 @@ $("#portfolio-slider ul.slides").append(
 	"<%= j(render @photo) %>"
 );
 
-//$("#portfolio-carousel ul.slides").flexslider();
-//$("#portfolio-slider ul.slides").flexslider();
-
-// The slider being synced must be initialized first
 $('#portfolio-carousel').flexslider({
 	animation: "slide",
 	controlNav: false,
-	animationLoop: false,
+	animationLoop: true,
 	slideshow: false,
 	itemWidth: 100,
 	itemMargin: 5,
-	useCSS: false, //thins type if true
 	asNavFor: '#portfolio-slider'
 });
 
-$('#portfolio-slider').flexslider({
+$("#portfolio-slider").flexslider({
 	animation: "slide",
 	controlNav: false,
-	animationLoop: false,
-	prevText: "<i class='e-icon-left-open-big'></i>",
-	nextText: "<i class=' e-icon-right-open-big'></i>",
-	slideshow: false,
-	touch: true,
-	sync: "#portfolio-carousel",
-	smoothHeight: true,
-	useCSS: false //thins type if true
-});
-
-$('.image-slider').flexslider({
-	animation: "slide",
-	touch: true,
-	animationLoop: false,
-	smoothHeight: true,
-	controlNav: false,
-	prevText: "<i class='e-icon-left-open-big'></i>",
-	nextText: "<i class=' e-icon-right-open-big'></i>",
-	useCSS: false //thins type if true and screws up video
-});
-
-$('.feature-strip-image-slider.flexslider').flexslider({
-	animation: "slide",
-	touch: true,
 	animationLoop: true,
-	smoothHeight: true,
-	controlNav: true,
-	useCSS: false //thins type if true and screws up video
-});
-
-$('.full-width-slider.flexslider').flexslider({
-	animation: "slide",
-	touch: true,
-	prevText: "<i class='e-icon-left-open-big'></i>",
-	nextText: "<i class=' e-icon-right-open-big'></i>",
-	start: function(){
-		$(".bg").remove();
-	},
-	smoothHeight: true
-});
+	slideshow: false,
+	sync: "#portfolio-carousel",
+})
+*/
 
 window.location.reload(true);

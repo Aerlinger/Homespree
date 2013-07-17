@@ -94,7 +94,7 @@ window.startFlexSlider = ->
     controlNav: false,
     animationLoop: true,
     slideshow: false,
-    itemWidth: 180,
+    itemWidth: 100,
     itemMargin: 5,
     asNavFor: '#portfolio-slider'
   });
@@ -104,7 +104,7 @@ window.startFlexSlider = ->
     controlNav: false,
     animationLoop: true,
     slideshow: false,
-    sync: "#portfolio-carousel",
+    sync: "#portfolio-carousel"
   })
 
 window.launchIntroJs = ->

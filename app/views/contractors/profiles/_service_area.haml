@@ -3,7 +3,6 @@
 - if own_profile?
   .on-edit
     #update_message.alert.alert-success
-      Address updated!
 
     = simple_form_for @contractor.address, :url => { :controller => "addresses", :action => 'update', contractor_id: @contractor.id }, method: :put, class: "intro", remote: true do |f|
       .address.line1
@@ -16,7 +15,7 @@
         =f.input :state, collection: us_states, label: "State", :style => "width: 600px;"
 
       %span.address#zipcode
-        =f.input :zipcode, maxlength: 5, placeholder: @contractor.try(:zipcode), label: "Zip Code"
+        =f.input :zipcode, maxlength: 5, placeholder: "5 digits", label: "Zip Code"
 
       .address#service_radius
         = f.input :service_radius, collection: service_radius, label: "Availability radius", selected: @contractor.address.service_radius

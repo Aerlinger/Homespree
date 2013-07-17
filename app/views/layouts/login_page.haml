@@ -1,7 +1,10 @@
 - content_for :content do
   = content_for?(:login_page) ? yield(:login_page) : yield
 
-  %footer.white.navbar-fixed-bottom
-    Already have an account?
-    =link_to "Sign in", new_user_session_path, class: "btn btn-black"
 = render :template => 'layouts/application'
+
+%footer.white.navbar-fixed-bottom
+  Already have an account?
+  =link_to "Sign in", new_user_session_path, class: "btn btn-black"
+
+= render "partials/footer", position: "absolute"

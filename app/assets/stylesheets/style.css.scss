@@ -37,7 +37,10 @@ html, body {
   display: block;
   width: 100%;
   height: 100%;
-  //min-height: 100%;
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 750px;
 }
 
 html {
@@ -56,10 +59,6 @@ body {
   overflow-x: hidden;
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
-}
-
-#content{
-  padding-bottom: 70px;
 }
 
 .btn, .footer, .footer-credits {
@@ -996,11 +995,11 @@ ul.navigation {
 /*--------------------------- .footer-credits ---------------------- */
 
 .footer-credits {
-  position: absolute;
-  position: static;
+  //position: absolute;
+  position: inherit;
   z-index: 9000;
   font-size: 70%;
-  //clear: both;
+  clear: both;
   text-align: center;
   text-transform: uppercase;
   background: #5676a5;
@@ -1008,6 +1007,29 @@ ul.navigation {
   width: 100%;
   left: 0;
   bottom: 0;
+
+  //position: static;
+
+  ul li a {
+    color: white;
+    font-size: .9rem;
+
+    &:hover {
+      color: inherit;
+      text-decoration: underline;
+    }
+  }
+
+  .logo-center {
+    a:hover {
+      text-decoration: none;
+    }
+    img {
+      display: inline;
+      max-width: 50px !important;
+      max-height: 50px !important;
+    }
+  }
 
   .container{
     padding-right: 0px !important;
