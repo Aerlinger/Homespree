@@ -1,5 +1,4 @@
 class Users::ConversationsController < ApplicationController
-
   before_filter :authenticate_user!
   before_filter :get_mailbox, :get_box, :get_user
   before_filter :check_current_subject_in_conversation, only: [:show, :update, :destroy]

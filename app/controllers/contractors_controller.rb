@@ -41,5 +41,4 @@ class ContractorsController < ApplicationController
       end
     end
   end
-
 end

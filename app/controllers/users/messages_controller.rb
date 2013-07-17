@@ -1,5 +1,4 @@
 class Users::MessagesController < ApplicationController
-
   before_filter :authenticate_user!
   before_filter :get_mailbox, :get_box, :get_user
 
@@ -83,5 +82,4 @@ class Users::MessagesController < ApplicationController
     end
     @box = params[:box]
   end
-
 end

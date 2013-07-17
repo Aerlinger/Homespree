@@ -1,5 +1,4 @@
 class MailinglistsController < ApplicationController
-
   def create
     @mailinglist = Mailinglist.new(params[:mailinglist])
 
@@ -25,5 +24,4 @@ class MailinglistsController < ApplicationController
     mailinglist = Mailinglist.find_by_email(@user_email)
     mailinglist.destroy
   end
-
 end

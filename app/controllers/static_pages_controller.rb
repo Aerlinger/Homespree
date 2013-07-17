@@ -1,5 +1,4 @@
 class StaticPagesController < ApplicationController
-
   layout "static_page", except: [:home]
 
   def home
@@ -45,7 +44,5 @@ class StaticPagesController < ApplicationController
   end
 
   def contractor_terms
-    
   end
-
 end
