@@ -12,7 +12,7 @@
 #  twitter                :string(255)
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
-#  email                  :string(255)      not null
+#  email                  :string(255)
 #  last_name              :string(255)
 #  encrypted_password     :string(255)      default(""), not null
 #  reset_password_token   :string(255)
@@ -64,7 +64,7 @@ class Homeowner < User
   has_many :after_photos, as: :photographable, through: :projects
 
   # Callbacks:  -------------------------------------------------------------------------------------------------------
-  after_save :upgrade_guest_if_logging_in, if: :guest
+  before_save :upgrade_guest_on_signup, if: :guest?
   accepts_nested_attributes_for :appointments
 
   # Scopes:  ----------------------------------------------------------------------------------------------------------
@@ -88,7 +88,7 @@ class Homeowner < User
     guest_homeowner = Homeowner.new do |guest|
       guest.first_name  = name
       guest.guest = true
-      guest.email = "guest_homeowner_#{Time.now.to_i}_#{rand(99999)}@example"
+      guest.email = "hs_guest_homeowner_#{Time.now.to_i}_#{rand(99999)}@example"
     end
     guest_homeowner.save(validate: false)
     return guest_homeowner
@@ -100,11 +100,6 @@ class Homeowner < User
 
   def contractor?
     return false
-  end
-
-  def upgrade_to_homeowner
-    if self.guest?
-    end
   end
 
   private
@@ -123,9 +118,7 @@ class Homeowner < User
     self.mailbox.conversations << welcome_conversation
   end
 
-  def upgrade_guest_if_logging_in
-    if self.password
-      self.guest = false
-    end
+  def upgrade_guest_on_signup
+    self.guest = false unless self.email.include? "hs_guest_homeowner_"
   end
 end

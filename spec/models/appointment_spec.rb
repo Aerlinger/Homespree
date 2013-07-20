@@ -19,10 +19,7 @@
 #  completed_by_homeowner  :boolean          default(FALSE)
 #  completed_by_contractor :boolean          default(FALSE)
 #  user_id                 :integer
-#  appointment_type        :string(255)      default("project")
-#  priority                :string(255)
-#  message                 :string(255)
-#  address                 :belongs_to
+#  address_id              :integer
 #
 
 require 'spec_helper'
@@ -48,7 +45,7 @@ describe Appointment do
 
   # Assocations
   context "associations" do
-    it { should have_one :address }
+    it { should belong_to :address }
     it { should belong_to :contractor }
     it { should belong_to :homeowner }
     it { should belong_to :project }
@@ -58,7 +55,6 @@ describe Appointment do
   context "validations" do
     it { should validate_presence_of :starts_at }
     it { should validate_presence_of :duration }
-    it { should validate_presence_of :address }
 
     it { should accept_nested_attributes_for :address }
   end

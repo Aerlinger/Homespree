@@ -22,7 +22,7 @@ class Contractors::RegistrationsController < Devise::RegistrationsController
   def send_notification_email
     %w[anthony].each do |admin|
       ContractorMailer.notify_signup(resource, admin).deliver
-    end
+   a end
   end
 
   def geolocate

@@ -21,6 +21,8 @@ class ProjectsController < ApplicationController
 
   def update
     @project = Project.find(params[:id])
+    @project.homeowner = current_user if current_user.homeowner? || guest_homeowner
+    @project.save
     @project.update_attributes(params[:project])
   end
 
@@ -30,7 +32,6 @@ class ProjectsController < ApplicationController
     @contractor   = @project.contractor
     @homeowner    = @project.homeowner
     @appointments = @project.appointments
-    #@address     = @appointment.address
   end
 
   def unavailable

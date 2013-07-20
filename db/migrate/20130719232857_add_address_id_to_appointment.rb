@@ -1,4 +1,4 @@
-class AddAddressIdToAppointments < ActiveRecord::Migration
+class AddAddressIdToAppointment < ActiveRecord::Migration
   def change
     add_column :appointments, :address_id, :integer
   end

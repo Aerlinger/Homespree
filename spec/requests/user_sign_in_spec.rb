@@ -7,7 +7,7 @@ describe "User sign in" do
   end
 
   its(:current_path) { should eq "/users/sign_in" }
-  it { should have_content "Don't have an account yet? Sign Up" }
+  it { should have_content "Don't have an account yet? Sign up" }
 
   context "Contractor" do
     let(:contractor) { FactoryGirl.create :contractor }

@@ -12,7 +12,7 @@
 #  twitter                :string(255)
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
-#  email                  :string(255)      not null
+#  email                  :string(255)
 #  last_name              :string(255)
 #  encrypted_password     :string(255)      default(""), not null
 #  reset_password_token   :string(255)
@@ -66,7 +66,6 @@ describe Contractor do
   end
 
   context "Profile related params" do
-    it { should respond_to :profile_picture }
     it { should respond_to :alerts }
     it { should respond_to :photos }
     it { should respond_to :project_photos }

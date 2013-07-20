@@ -78,11 +78,7 @@ class Project < ActiveRecord::Base
   end
 
   def find_nearby_contractors(limit = 3)
-    puts "The find_three_nearby_contractors is still a WIP"
-    Rails.logger.warn "The find_three_nearby_contractors is still a WIP"
-
     #address.nearbys(20)
-
     Contractor.limit(limit)
   end
 

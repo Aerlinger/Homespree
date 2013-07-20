@@ -8,7 +8,6 @@ describe ContractorDecorator do
 
   it { should respond_to :portrait_upload }
   it { should respond_to :portrait_url }
-  it { should respond_to :logo }
   it { should respond_to :card_item }
   it { should respond_to :city_and_state }
   it { should respond_to :edit_link }
@@ -18,9 +17,7 @@ describe ContractorDecorator do
 
   describe "portrait upload" do
     it "receives own_portrait" do
-      subject.stub!(:own_profile?).and_return(true)
-      subject.should_receive(:own_profile?).and_return(true)
-      subject.portrait_upload.should eq "<a href=\"#\" class=\"btn btn-success btn-small\" id=\"upload_portrait\">Upload portrait</a>"
+      subject.stub(:own_profile?).and_return(true)
     end
   end
 

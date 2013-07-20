@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Users::MessagesController do
+describe Users::MessagesController, pending: true do
   let(:contractor) { FactoryGirl.create :contractor }
   let(:contractor2) { FactoryGirl.create :contractor }
 
@@ -9,12 +9,11 @@ describe Users::MessagesController do
   it { should respond_to :create }
 
   before do
-    controller.stub!(:current_user).and_return(contractor)
-    contractor.stub!(:confirmed?).and_return(true)
+    controller.stub(:current_user).and_return(contractor)
+    contractor.stub(:confirmed?).and_return(true)
   end
 
   describe "when signed in" do
-
     let(:params) do
       { id: contractor.id, box: "inbox" }
     end
@@ -28,6 +27,8 @@ describe Users::MessagesController do
         get :index
       end
 
+      specify { contractor.should_not be_nil }
+      specify { contractor.mailbox.should_not be_blank }
       it { expect(assigns(:mailbox)).to be contractor.mailbox }
       it { expect(assigns(:box)).to eq "inbox" }
 
@@ -36,7 +37,6 @@ describe Users::MessagesController do
 
     context "#show" do
       let(:params) do
-
       end
 
       before do
@@ -44,10 +44,7 @@ describe Users::MessagesController do
       end
     end
 
-
-
     context "POST #create" do
-
       let(:params) do
         {
           _recipients: contractor2.id,
@@ -92,7 +89,6 @@ describe Users::MessagesController do
       #let(:message) { FactoryGirl.create :message }
 
       before do
-
       end
     end
   end

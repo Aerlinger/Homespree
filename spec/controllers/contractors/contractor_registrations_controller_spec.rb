@@ -79,7 +79,7 @@ describe Contractors::RegistrationsController, "With valid input" do
     it "redirects to sign in page" do
       sign_in contractor
       delete :destroy
-      expect(response).to redirect_to(new_contractor_session_path)
+      expect(response).to redirect_to(root_path)
     end
   end
 

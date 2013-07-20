@@ -19,10 +19,7 @@
 #  completed_by_homeowner  :boolean          default(FALSE)
 #  completed_by_contractor :boolean          default(FALSE)
 #  user_id                 :integer
-#  appointment_type        :string(255)      default("project")
-#  priority                :string(255)
-#  message                 :string(255)
-#  address                 :belongs_to
+#  address_id              :integer
 #
 
 class Appointment < ActiveRecord::Base
@@ -41,7 +38,7 @@ class Appointment < ActiveRecord::Base
   accepts_nested_attributes_for :address
 
   # Validations:  --------------------------------------------------------------------------------------------------
-  validates_presence_of :starts_at, :duration, :address
+  validates_presence_of :starts_at, :duration
   validates_inclusion_of :appointment_type, in: APPOINTMENT_TYPES
 
   # Custom Methods:  -----------------------------------------------------------------------------------------------

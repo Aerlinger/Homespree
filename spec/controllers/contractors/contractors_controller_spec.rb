@@ -53,7 +53,7 @@ describe ContractorsController do
 
       it "redirects to the updated contractor profile" do
         put :update, id: contractor, contractor: attributes_for(:contractor, first_name: "George")
-        expect(response.status).to eq 302
+        expect(response).to render_template(:update)
       end
     end
 

@@ -67,7 +67,7 @@ class ContractorDecorator < Draper::Decorator
 # Renders the "Edit" link to the right of fields on the contractor page.
 # There are three possibilities:
 #   1. Contractor's own page and attribute is set: "Edit"
-#   2. Contractor's own page and attribute isnt set: "Add Info"
+#   2. Contractor's own page and attribute isnt set: "Add"
 #   3. Visitor: Do nothing and return nil
   def edit_link(attr_name)
     if h.own_profile?

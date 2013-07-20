@@ -1,6 +1,6 @@
 - content_for :content do
   = content_for?(:login_page) ? yield(:login_page) : yield
 
-= render :template => 'layouts/application'
+  = render "partials/footer", position: "absolute"
 
-= render "partials/footer", position: "absolute"
+= render :template => 'layouts/application'

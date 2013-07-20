@@ -5,9 +5,11 @@ class ProjectWizardController < ApplicationController
   steps :request, :review_estimates, :appointment
 
   before_filter :find_project
-  before_filter :set_status, only: :update
   before_filter :find_contractors, only: :show
   before_filter :create_guest_if_homeowner_not_signed_in, only: :create
+
+  before_filter :process_params, only: :update
+  before_filter :set_status, only: :update
 
   def show
     @project = Project.find(session[:project_id])
@@ -38,9 +40,14 @@ class ProjectWizardController < ApplicationController
 
   def set_status
     unless step.to_s == 'request'
-      #params[:project][:submission_status] = step.to_s
-      #params[:project][:submission_status] = 'active' if step == steps.last
+      params[:project][:submission_status] = step.to_s
+      params[:project][:submission_status] = 'active' if step == steps.last
     end
+  end
+
+  def process_params
+    params[:project] = {}
+    #params[:project][:homeowner_id] = current_user.id
   end
 
   def find_project

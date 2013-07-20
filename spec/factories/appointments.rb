@@ -3,6 +3,5 @@ FactoryGirl.define do
     starts_at DateTime.new(2013, 12, 3)
     duration 2.2
     zipcode "10025"
-    association :address
   end
 end

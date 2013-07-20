@@ -20,7 +20,7 @@
 %hr
 
 %h3 Homeowner Info:
--#= @homeowner.first_name.presence
+= @homeowner.try(:first_name)
 
 -#- if current_user.contractor
 -#  = link_to "Send #{@homeowner.comapany_title} a message."

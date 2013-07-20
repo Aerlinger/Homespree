@@ -139,9 +139,7 @@ describe 'Contractor Profile' do
       it "Should not have upload button" do
 
       end
-
     end
   end
-
 end
 

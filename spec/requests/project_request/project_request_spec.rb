@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe "Project Wizard" do
-  let(:project) { FactoryGirl.create :project }
   subject { page }
 
   before(:all) do
@@ -49,17 +48,7 @@ describe "Project Wizard" do
             click_button "next"
           end
 
-          its(:current_path) { should eq "/project_wizard/submit" }
-          it { should have_content "Submit" }
-
-          describe "Success page" do
-            before do
-              click_button "next"
-            end
-
-            its(:current_path) { should eq "/project_wizard/success" }
-            it { should have_content "Submit" }
-          end
+          its(:current_path) { should eq "/homeowners/projects/1" }
         end
       end
     end
