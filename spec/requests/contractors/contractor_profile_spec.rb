@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe 'Contractor Profile' do
+describe 'Contractor Profile', js: true do
 
-  let(:contractor) { FactoryGirl.build :contractor }
+  let(:contractor) { FactoryGirl.build :contractor } 
 
   subject { page }
 
@@ -29,11 +29,12 @@ describe 'Contractor Profile' do
   its(:status_code) { status_code.should be 200 }
   its(:current_path) { should eq "/contractors/#{@contractor.slug}" }
 
-  it "should create a valid contractor" do
+  it "creates a valid contractor" do
     @contractor.should be_valid
   end
 
-  it "should create a default address for the contractor" do
+
+  it "creates a default address for the contractor" do
     address = @contractor.address
     address.city.should_not be_empty
     address.zipcode.should be_present

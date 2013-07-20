@@ -54,6 +54,7 @@ class User < ActiveRecord::Base
   acts_as_messageable
 
   # Accessor/Virtual Attributes:  ------------------------------------------------------------------------------------
+  attr_accessible :email, :password
 
   # Associations:  ----------------------------------------------------------------------------------------------------
   has_one :address, as: :addressable, dependent: :destroy

@@ -17,8 +17,6 @@ class Users::ConversationsController < ApplicationController
     end
   end
 
-  # GET /conversations/1
-  # GET /conversations/1.xml
   def show
     if @box.eql 'trash'
       @receipts = @mailbox.receipts_for(@conversation).trash
@@ -30,10 +28,7 @@ class Users::ConversationsController < ApplicationController
     @receipts.mark_as_read
   end
 
-  # PUT /conversations/1
-  # PUT /conversations/1.xml
   def update
-
     if params[:untrash].present?
       @conversation.untrash(@user)
     end
@@ -51,11 +46,8 @@ class Users::ConversationsController < ApplicationController
 
     redirect_to action: :show
     @receipts.mark_as_read
-
   end
 
-  # DELETE /conversations/1
-  # DELETE /conversations/1.xml
   def destroy
     @conversation.move_to_trash(@user)
 

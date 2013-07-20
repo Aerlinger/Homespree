@@ -2,6 +2,7 @@ class ContractorsController < ApplicationController
   layout "static_page", except: [:show, :edit]
 
   before_filter :process_params, only: [:update, :create]
+  before_filter :authenticate_contractor!, except: [:show]
 
   respond_to :js, :html, :json, only: :update
 

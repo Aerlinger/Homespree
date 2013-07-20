@@ -1,11 +1,12 @@
 require "spec_helper"
 
 
-describe "Contractor Dashboard", pending: true do
+describe "Contractor Dashboard", js: true do
   let(:contractor) { FactoryGirl.create :contractor }
 
   before do
-    user_sign_in contractor
+    #user_sign_in contractor
+    sign_up_contractor
     click_link "Account Settings"
   end
 

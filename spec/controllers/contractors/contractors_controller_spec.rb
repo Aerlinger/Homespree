@@ -11,6 +11,12 @@ describe ContractorsController do
   let(:contractor) { FactoryGirl.create(:contractor) }
   params = {id: 11, photos_attributes: [{image_url: "asdf"}]}
 
+  before { sign_in contractor }
+
+  it "assigns current_user to the contractor" do
+    current_user.should eq contractor
+  end
+
   describe "GET #show" do
     before(:each) { get :show, id: contractor.id }
 
@@ -65,7 +71,7 @@ describe ContractorsController do
     end
 
     describe "with nested attributes for photos" do
-
+ 
       it " properly updates photos on the Contractor model" do
         put :update, id: contractor, contractor: {id: contractor.id, photos_attributes: [FactoryGirl.attributes_for(:photo)]}
         request.params[:contractor][:photos_attributes].should eq([FactoryGirl.attributes_for(:photo).stringify_keys])
