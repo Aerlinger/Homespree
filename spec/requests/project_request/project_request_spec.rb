@@ -1,47 +1,46 @@
 require 'spec_helper'
 
-describe "Project Wizard", js: true do
+describe 'Project Wizard'  do
   subject { page }
 
-  before(:all) do
-    ProjectType.find_or_create_by_name "Interior painting"
-    ProjectType.find_or_create_by_name "Exterior painting"
-  end
+  before :each do
+    ProjectType.find_or_create_by_name 'Interior painting'
+    ProjectType.find_or_create_by_name 'Exterior painting'
 
-  before do
-    visit "/"
-    select('Interior painting', from: "project_project_type_id")
+    visit '/'
+    select('Interior painting', from: 'project_project_type_id')
     fill_in 'zipcode', with: '10025'
   end
 
-  it { should have_content "Stress-free home improvement." }
+  it { should have_content 'Stress-free home improvement' }
 
-  describe "Request" do
-    before { click_button "Get started" }
+  describe 'Page 1: Request' do
+    before(:each) { click_button 'Get started' }
 
-    it { should have_content "Interior painting" }
-    it { should have_content "previous" }
-    its(:current_path) { should eq "/project_wizard/request" }
+    its(:current_path) { should eq '/project_wizard/request' }
 
-    it "has dynamic input controls for the interior project"
-    it "updates fields on when project type is changed"
+    it { should have_content 'Interior painting' }
+    it { should have_content 'previous' }
 
-    describe "Review Estimate" do
-      before { click_button "next"}
+    it 'has dynamic input controls for the interior project'
+    it 'updates fields on when project type is changed'
 
-      its(:current_path) { should eq "/project_wizard/review_estimates" }
-      it { should have_content "Review Estimates" }
+    describe 'Page 2: Review Estimate' do
+      before(:each) { click_button 'next'}
 
-      describe "Set appointment" do
-        before { click_link "next" }
+      its(:current_path) { should eq '/project_wizard/review_estimates' }
+      it { should have_content 'Review Estimates' }
 
-        its(:current_path) { should eq "/project_wizard/appointment" }
-        it { should have_content "Appointment" }
+      describe 'Page 3: Set appointment' do
+        before(:each) { click_link 'next' }
 
-        describe "Submit project" do
-          before { click_button "next" }
+        its(:current_path) { should eq '/project_wizard/appointment' }
+        it { should have_content 'Appointment' }
 
-          its(:current_path) { should eq "/homeowners/projects/1" }
+        describe 'Page 4: Submit project' do
+          before(:each) { click_button 'next' }
+
+          its(:current_path) { should match /\/homeowners\/projects\/\d+/ }
         end
       end
     end

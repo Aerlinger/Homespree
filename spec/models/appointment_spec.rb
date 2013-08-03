@@ -20,6 +20,7 @@
 #  completed_by_contractor :boolean          default(FALSE)
 #  user_id                 :integer
 #  address_id              :integer
+#  appointment_type        :string(255)      default("project")
 #
 
 require 'spec_helper'

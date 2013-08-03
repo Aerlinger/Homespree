@@ -1,7 +1,7 @@
 require "spec_helper"
 
 
-describe "Contractor Dashboard", js: true do
+describe "Contractor Dashboard", js: false do
   let(:contractor) { FactoryGirl.create :contractor }
 
   before do

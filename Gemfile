@@ -46,17 +46,12 @@ group :test, :development do
   gem 'factory_girl_rails'
   gem 'zeus'
 
-  # Parallel tests have been giving me issues so I've disabled them temporarily
-  #gem 'zeus-parallel_tests'
-  #gem 'parallel_tests'
-
   gem 'growl'
   gem 'meta_request'
   gem 'faker'
   gem 'rb-fsevent'
   gem 'rb-inotify', require: false
   gem 'rb-fchange', require: false
-
 end
 
 group :test do

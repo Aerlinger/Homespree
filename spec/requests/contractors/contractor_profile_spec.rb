@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe 'Contractor Profile', js: true do
+describe 'Contractor Profile', js: false do
 
-  let(:contractor) { FactoryGirl.build :contractor } 
+  let(:contractor) { FactoryGirl.build :contractor }
 
   subject { page }
 
@@ -17,6 +17,8 @@ describe 'Contractor Profile', js: true do
 
     @contractor = Contractor.find_by_email(contractor.email)
   end
+
+  specify { save_and_open_page }
 
   describe "default address without geolocation" do
     subject { @contractor.address }

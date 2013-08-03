@@ -11,8 +11,8 @@
 
     %hr
 
-    = f.fields_for @project, builder: ProjectFormBuilder do |builder|
-      - @project.dynamic_form_fields(@project, builder)
+    = f.fields_for :properties, builder: ProjectFormBuilder do |builder|
+      - @project.dynamic_form_fields(builder)
 
     = link_to 'previous', previous_wizard_path
     = f.submit 'next', class: 'pull-right'

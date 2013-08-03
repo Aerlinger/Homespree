@@ -10,6 +10,8 @@ class ProjectsController < ApplicationController
       @project  = Project.create(params[:project])
       @location = Address.create(zipcode: params[:project][:zipcode])
 
+      # Redirect to the project submission wizard if all fields are present
+      # display error message otherwise
       if @project.valid?
         session[:project_id] = @project.id
         redirect_to project_wizard_path(:request)

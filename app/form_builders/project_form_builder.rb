@@ -24,8 +24,11 @@ class ProjectFormBuilder < ActionView::Helpers::FormBuilder
   end
 
   def select(name, *args)
-    wrap_field(name, *args) do
-      super(name, *args)
+    options = args.extract_options!
+
+    #options[:field_data]
+    return wrap_field(name, *args) do
+      super(name, options[:data])
     end
   end
 

@@ -17,11 +17,11 @@ class ProjectDecorator < Draper::Decorator
   #   - field_type (Symbol):
   #       (ex - :text_field, :check_box)
   #
-  def dynamic_form_fields(project, builder)
+  def dynamic_form_fields(builder)
     # Allow dynamic fields in our Project to be processed by form_for
-    create_virtual_attributes(project)
+    create_virtual_attributes
 
-    project.fields.each do |field|
+    @object.fields.each do |field|
       h.haml_concat process_field(builder, field)
     end
   end
@@ -73,9 +73,9 @@ class ProjectDecorator < Draper::Decorator
   #   be instance attributes of the Project class by passing each attribute through the +attr_accessor+ class
   #   method.
   #
-  def create_virtual_attributes(project)
-    project_attributes = project.project_type.fields_attributes_list
-    project.class_eval do
+  def create_virtual_attributes
+    project_attributes = @object.project_type.fields_attributes_list
+    @object.class_eval do
       attr_accessor *project_attributes
     end
   end

@@ -68,29 +68,19 @@ painting:   # (TOP-LEVEL PROJECT CATEGORIES 0 SPACES INDENTED) (E.g. Painting, P
   # Project category params will go here (Two spaces of indentation) -----------------------------
   interior_painting:
     # Project category fields will go here (Four spaces of indentation) -----------------------------
-    wall_1:
+    height:
       field_type: text_field
-      label: "Square footage of Wall 1"
+      label: "Length of room (in feet)"
       data_type: decimal
       toggleable: "Check if needs paint"
-    wall_2:
+    width:
       field_type: text_field
-      label: "Square footage of Wall 2"
+      label: "Width of room (in feet)"
       data_type: decimal
       toggleable: "Check if needs paint"
-    wall_3:
+    length:
       field_type: text_field
-      label: "Square footage of Wall 3"
-      data_type: decimal
-      toggleable: "Check if needs paint"
-    wall_4:
-      field_type: text_field
-      label: "Square footage of Wall 4"
-      data_type: decimal
-      toggleable: "Check if needs paint"
-    ceiling:
-      field_type: text_field
-      label: "Square footage of ceiling"
+      label: "Height of room (in feet)"
       data_type: decimal
       toggleable: "Check if needs paint"
 
