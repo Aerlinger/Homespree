@@ -146,6 +146,7 @@ GEM
       actionpack (>= 3.0)
     friendly_id (4.0.9)
     geocoder (1.1.8)
+    gmaps4rails (1.5.6)
     growl (1.0.3)
     guard (1.8.2)
       formatador (>= 0.2.4)
@@ -432,6 +433,7 @@ DEPENDENCIES
   flexslider!
   friendly_id
   geocoder
+  gmaps4rails
   growl
   guard
   guard-bundler
