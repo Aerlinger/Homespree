@@ -58,6 +58,7 @@ class Homeowner < User
   # Associations:  ----------------------------------------------------------------------------------------------------
   has_many :appointments
   has_many :projects, through: :appointments
+  has_many :payments
 
   has_many :contractors, through: :appointments, uniq: true
   has_many :before_photos, as: :photographable, through: :projects
