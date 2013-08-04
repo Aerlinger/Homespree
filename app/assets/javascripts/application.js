@@ -11,9 +11,11 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+// require jquery.turbolinks
 //= require jquery-ui
 //= require jquery_ujs
 //= require jquery.purr
+//= require turbolinks
 //= require s3_direct_upload
 //= require custom
 //= require helper

@@ -2,9 +2,11 @@ class ContractorsController < ApplicationController
   layout "static_page", except: [:show, :edit]
 
   before_filter :process_params, only: [:update, :create]
-  before_filter :authenticate_contractor!, except: [:show]
+  before_filter :authenticate_contractor!, except: [:show, :map]
 
   respond_to :js, :html, :json, only: :update
+
+  http_basic_authenticate_with name: "admin", password: "MeetMike9", only: :map
 
   def show
     @contractor = Contractor.find(params[:id])
@@ -31,6 +33,10 @@ class ContractorsController < ApplicationController
   end
 
   def browse
+  end
+
+  def map
+    @contractors = Contractor.all
   end
 
   private

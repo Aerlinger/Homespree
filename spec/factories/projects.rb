@@ -11,5 +11,14 @@ FactoryGirl.define do
     project_type
 
     homeowner
+
+    factory :request do
+      #properties {
+      #  width: {
+      #    label: :window_height,
+      #    field_type: :text_field
+      #  }
+      #}
+    end
   end
 end

@@ -38,6 +38,9 @@ Homespree::Application.routes.draw do
       post :sort, on: :collection
     end
 
+    get :map, on: :collection
+
+
     resources :messages
     resources :browse
     resources :conversations, only: [:index, :show, :new, :create] do
@@ -67,7 +70,7 @@ Homespree::Application.routes.draw do
 
   devise_for :users, :controllers => {
     sessions: "users/sessions"
-  }, skip: :registrations
+  },         skip:                :registrations
 
   namespace :users do
     resources :messages, except: [:update, :destroy]

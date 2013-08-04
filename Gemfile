@@ -27,6 +27,7 @@ gem 'mobylette'
 gem 'draper'
 gem 'best_in_place'
 gem 'geocoder'
+gem 'gmaps4rails'
 gem 'reform'  # TODO: Deprecated
 gem 'simple_form'
 gem 'friendly_id'
@@ -40,6 +41,7 @@ gem 'libv8', '= 3.11.8.13'
 gem 'turbolinks'
 gem 'haml-rails'
 gem 'jquery-rails', '2.3.0'
+gem 'jquery-turbolinks'
 
 group :assets do
   gem 'coffee-rails', '~> 3.2.1'
@@ -50,7 +52,7 @@ group :assets do
 
   gem 'flexslider', :git => 'https://github.com/constantm/Flexslider-2-Rails-Gem.git'
 
-                   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
+  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer', :platforms => :ruby
   gem 'uglifier', '>= 1.0.3'
 

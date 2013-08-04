@@ -20,7 +20,6 @@
 require 'spec_helper'
 
 describe ProjectField do
-
   let(:project_field) { FactoryGirl.create :project_field }
 
   subject { project_field }
