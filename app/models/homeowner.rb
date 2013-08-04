@@ -88,7 +88,7 @@ class Homeowner < User
     guest_homeowner = Homeowner.new do |guest|
       guest.first_name  = name
       guest.guest = true
-      guest.email = "hs_guest_homeowner_#{Time.now.to_i}_#{rand(99999)}@example"
+      guest.email = "hs_guest_homeowner_#{Time.now.to_i}_#{rand(99999)}@example.com"
     end
     guest_homeowner.save(validate: false)
     return guest_homeowner

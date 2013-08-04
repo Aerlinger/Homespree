@@ -7,8 +7,8 @@ class ProjectsController < ApplicationController
     if Rails.env.production?
       render :unavailable
     else
-      @project  = Project.create(params[:project])
-      @location = Address.create(zipcode: params[:project][:zipcode])
+      @project  = Project.create!(params[:project])
+      @location = Address.create!(zipcode: params[:project][:zipcode])
 
       # Redirect to the project submission wizard if all fields are present
       # display error message otherwise
@@ -45,6 +45,10 @@ class ProjectsController < ApplicationController
   private
 
   def create_guest_if_homeowner_not_signed_in
-    create_guest_homeowner unless homeowner_signed_in?
+    unless homeowner_signed_in?
+      @guest                       = create_guest_homeowner
+      @guest.address               = Address.create(zipcode: params[:project][:zipcode])
+      params[:project][:homeowner] = @guest
+    end
   end
 end

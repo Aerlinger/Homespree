@@ -85,7 +85,7 @@ painting:   # (TOP-LEVEL PROJECT CATEGORIES 0 SPACES INDENTED) (E.g. Painting, P
       toggleable: "Check if needs paint"
 
     surfaces:
-      field_type: select
+      field_type: checkbox
       field_data:
         - Walls
         - Ceiling

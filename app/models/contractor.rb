@@ -93,7 +93,7 @@ class Contractor < User
   # Scopes:  ----------------------------------------------------------------------------------------------------------
   #default_scope order("created_at desc").where("disabled == ?", "false")
   scope :recent_signups, lambda { limit(100) }
-  scope :locate, lambda { |zipcode, radius| nil }
+
 
 
   # Custom Methods:  --------------------------------------------------------------------------------------------------

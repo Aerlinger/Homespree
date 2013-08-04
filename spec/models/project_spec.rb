@@ -102,42 +102,43 @@ describe Project do
   end
 
   describe "serializable" do
-    let(:field1) { FactoryGirl.create :project_field }
-    let(:field2) { FactoryGirl.create :project_field }
-    let(:field3) { FactoryGirl.create :project_field }
-    let(:field4) { FactoryGirl.create :project_field }
+    let(:field1) { FactoryGirl.create :project_field, field_name: "window height", label: "Width", field_type: 'text_field' }
+    let(:field2) { FactoryGirl.create :project_field, field_name: "width", field_type: 'text_field' }
+    let(:field3) { FactoryGirl.create :project_field, field_name: "length", field_type: 'text_field' }
+    let(:field4) { FactoryGirl.create :project_field, field_name: "surfaces", label: "surfaces", field_type: 'checkbox' }
 
     subject { project }
 
 
     before do
-      [field1, field2, field3, field4].each do |field|
+      fields = [field1, field2, field3, field4]
+      fields.each do |field|
         project.project_type.fields << field
       end
-      #project.save
+
+      project.properties = {
+        field1.to_sym => '30',
+        field2.to_sym => '50',
+      }
     end
 
-    it "doesn't have null fields" do
-      field1.to_s.should eq("Window height")
-      field2.to_s.should eq("Window height")
-      field3.to_s.should eq("Window height")
-      field4.to_s.should eq("Window height")
-    end
+    its(:properties) { should eq "" }
 
     its("project_type.fields") { should eq [field1, field2, field3, field4] }
     its(:fields) { should eq [field1, field2, field3, field4] }
 
-    it "can modify properties like a hash" do
-      project.properties == {}
-      project.properties[:some_bullshit] = "foo"
-      project.properties[:some_bullshit].should eq "foo"
-      project.properties == { some_bullshit: "foo" }
+
+    describe "project" do
+      it "can modify properties like a hash" do
+        project.properties == {}
+        project.properties[:some_bullshit] = "foo"
+        project.properties[:some_bullshit].should eq "foo"
+        project.properties == { some_bullshit: "foo" }
+      end
     end
 
     it "can serialize properties" do
       params = {}
     end
-
   end
-
 end

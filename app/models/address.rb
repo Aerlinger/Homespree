@@ -24,15 +24,15 @@ class Address < ActiveRecord::Base
   attr_protected :latitude, :longitude
 
   # Validations:  -----------------------------------------------------------------------------------------------------
-  validates :zipcode, format: RegexDefinitions::zipcode_regex, allow_blank: true
-  validates_format_of :state, with: /[A-Za-z][A-Za-z]/i, allow_blank: true
+  #validates :zipcode, format: RegexDefinitions::zipcode_regex, allow_blank: true
+  #validates_format_of :state, with: /[A-Za-z][A-Za-z]/i, allow_blank: true
 
   belongs_to :addressable, polymorphic: true
   has_many :appointments
 
   # Callbacks:  -------------------------------------------------------------------------------------------------------
   before_save :titleize_city
-  after_validation :geocode unless Rails.env.test?    # Running Geocoder in tests causes the API to throttle us.
+  #after_validation :geocode unless Rails.env.test?    # Running Geocoder in tests causes the API to throttle us.
 
   # Callback method definitions:  -------------------------------------------------------------------------------------
 

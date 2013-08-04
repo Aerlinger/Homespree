@@ -39,14 +39,14 @@ class ProjectWizardController < ApplicationController
   end
 
   def set_status
-    unless step.to_s == 'request'
-      params[:project][:submission_status] = step.to_s
-      params[:project][:submission_status] = 'active' if step == steps.last
-    end
+    #unless step.to_s == 'request'
+    #  params[:project][:submission_status] = step.to_s
+    #  params[:project][:submission_status] = 'active' if step == steps.last
+    #end
   end
 
   def process_params
-    params[:project] = {}
+    #params[:project] = {}
     #params[:project][:homeowner_id] = current_user.id
   end
 

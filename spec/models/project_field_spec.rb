@@ -34,4 +34,20 @@ describe ProjectField do
   it { should respond_to :project_type_id }
 
   its(:to_s) { should eq "Window height" }
+
+  let(:field1) { FactoryGirl.create :project_field, field_name: "window height", label: "Width", field_type: 'text_field' }
+  let(:field2) { FactoryGirl.create :project_field, field_name: "width", field_type: 'text_field' }
+  let(:field3) { FactoryGirl.create :project_field, field_name: "length", field_type: 'text_field' }
+  let(:field4) { FactoryGirl.create :project_field, field_name: "surfaces", label: "surfaces", field_type: 'checkbox' }
+
+  it "doesn't have null fields" do
+    field1.to_s.should eq("Window height")
+    field2.to_s.should eq("Width")
+    field3.to_s.should eq("Length")
+    field4.to_s.should eq("Surfaces")
+  end
+
+  def to_hash
+
+  end
 end

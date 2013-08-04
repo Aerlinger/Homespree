@@ -19,7 +19,7 @@ class Project < ActiveRecord::Base
 
   # Accessors:  -------------------------------------------------------------------------------------------------------
   attr_accessor :zipcode, :project_type_name, :service_type_name, :service_type
-  attr_accessible :zipcode, :title, :description, :project_type_name, :submission_status,
+  attr_accessible :zipcode, :title, :description, :project_type_name, :submission_status, :homeowner, :homeowner_id,
                   :appointment_attributes, :project_type_id, :service_type_name, :properties, :service_type
 
   # Serialization for dynamic project submission (HStore through Postgres):  ------------------------------------------
@@ -35,7 +35,7 @@ class Project < ActiveRecord::Base
   has_many :before_photos, class_name: 'Photo', as: :photographable
   has_many :after_photos, class_name: 'Photo', as: :photographable
   has_many :appointments
-  has_many :addresses, through: :appointments
+  has_many :addresses, through: :appointments, uniq: true
 
   # Nested Attributes:  -----------------------------------------------------------------------------------------------
   accepts_nested_attributes_for :appointments, allow_destroy: true
@@ -43,11 +43,12 @@ class Project < ActiveRecord::Base
 
   # Aliases and delegations (delegates calls to project_type):  -------------------------------------------------------
   delegate :service_type, to: :project_type
+  delegate :address, to: :homeowner
   delegate :fields, to: :project_type
 
   # Validations:  -----------------------------------------------------------------------------------------------------
-  validates_presence_of :zipcode, :project_type
-  validates_presence_of :contractor, :homeowner, :address, if: :active?
+  validates_presence_of :zipcode, :project_type, :homeowner
+  validates_presence_of :contractor, :address, if: :active?
   validates :zipcode, format: RegexDefinitions::zipcode_regex
   validate :validate_fields, if: :project_type
 
@@ -55,6 +56,7 @@ class Project < ActiveRecord::Base
   before_create :set_project_type
   before_create :set_service_type
   before_save :convert_properties
+  before_save :validate_fields
 
   def to_s
     "#{project_type.to_s} #{service_type.to_s}"
@@ -77,9 +79,18 @@ class Project < ActiveRecord::Base
     return incompletes
   end
 
-  def find_nearby_contractors(limit = 3)
-    #address.nearbys(20)
-    Contractor.limit(limit)
+  # Finds all contractors within a 25 mile radius of this location.
+  # Todo: selection algorithm?
+  def find_nearby_contractors(limit = 3, search_radius = 25)
+    #Contractor.locate(zipcode, search_radius).limit(3)
+
+    #self.address.nearbys(search_radius)
+  end
+
+  def address
+    if appointments.present?
+      appointments.first.address
+    end
   end
 
   private
