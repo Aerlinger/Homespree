@@ -1,4 +1,7 @@
 Homespree::Application.routes.draw do
+  resources :payments
+
+
   # Root route must be before ActiveAdmin.routes(self)
   root :to => 'static_pages#home'
 

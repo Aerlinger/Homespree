@@ -7,8 +7,10 @@
   -#/ <![endif]
   %head
     = javascript_include_tag 'application'
+    = stylesheet_link_tag 'https://js.stripe.com/v1', 'application'
     = stylesheet_link_tag 'application'
     = csrf_meta_tags
+    = tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY
 
     %title Homespree | Stress-free Home Improvement
     = render 'partials/header_extras'

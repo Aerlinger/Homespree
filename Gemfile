@@ -6,13 +6,12 @@ ruby '1.9.3'
 # Server-side --------------------------------------------------------------------------------------------------------
 gem 'devise'
 gem 'activeadmin'
-gem 'turbolinks'
 gem 'capistrano'
 gem 'newrelic_rpm'
 gem 'thin'
-gem 'libv8', '= 3.11.8.13'
 gem 'whenever', require: false
 gem 'figaro', '>= 0.5.3'
+gem 'stripe'
 
 # Image uploads and hosting-related ----------------------------------------------------------------------------------
 gem 'rmagick'
@@ -28,7 +27,7 @@ gem 'mobylette'
 gem 'draper'
 gem 'best_in_place'
 gem 'geocoder'
-gem 'reform'
+gem 'reform'  # TODO: Deprecated
 gem 'simple_form'
 gem 'friendly_id'
 gem 'wicked'
@@ -37,6 +36,8 @@ gem 'mailboxer'
 gem 's3_direct_upload'
 
 # Views: -------------------------------------------------------------------------------------------------------------
+gem 'libv8', '= 3.11.8.13'
+gem 'turbolinks'
 gem 'haml-rails'
 gem 'jquery-rails', '2.3.0'
 
@@ -59,7 +60,6 @@ group :assets do
 
   gem 'redcarpet'
 end
-
 
 group :test, :development do
   gem 'rspec-rails', '>= 2.12.0'
@@ -93,8 +93,7 @@ group :development do
   gem 'html2haml'
   gem 'quiet_assets'
 
-  #gem 'bullet'
-
+  #gem 'bullet'   #FIXME: Bullet is throwing exceptions AirbrakeNotifier, disabled for now.
   gem 'guard'
   gem 'guard-rspec'
   gem 'guard-zeus'
@@ -108,4 +107,3 @@ end
 group :staging do
   gem 'ruby-prof'
 end
-
