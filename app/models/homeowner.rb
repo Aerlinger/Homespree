@@ -68,7 +68,9 @@ class Homeowner < User
   accepts_nested_attributes_for :appointments
 
   # Scopes:  ----------------------------------------------------------------------------------------------------------
-
+  def nearby_contractors
+    contractor_addresses = self.address.nearbys
+  end
 
   def mailboxer_email(object)
     self.email
@@ -80,8 +82,8 @@ class Homeowner < User
 
   def move_to(homeowner)
     appointments.update_all(homeowner_id: homeowner.id)
-    before_photos.update_all(photographabe_id: homeowner.id)
-    after_photos.update_all(photographabe_id: homeowner.id)
+    before_photos.update_all(photographable_id: homeowner.id)
+    after_photos.update_all(photographable_id: homeowner.id)
   end
 
   def self.create_guest(name = "Guest Homeowner")

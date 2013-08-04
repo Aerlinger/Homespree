@@ -96,6 +96,7 @@ namespace :db do
             p.label       = project_field_attrs["label"]        if project_field_attrs["label"]
             p.default     = project_field_attrs["default"]      if project_field_attrs["default"]
             p.size        = project_field_attrs["size"]         if project_field_attrs["size"]
+            p.width       = project_field_attrs["width"]        if project_field_attrs["width"]
             p.position    = project_field_attrs["position"]     if project_field_attrs["position"]
             p.toggleable  = project_field_attrs["toggleable"]   if project_field_attrs["toggleable"]
             p.name        = project_field_attrs["name"]         if project_field_attrs["name"]

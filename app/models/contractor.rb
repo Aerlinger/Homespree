@@ -50,6 +50,7 @@ class Contractor < User
 
   # Concerns/Includes:  ----------------------------------------------------------------------------------------------
   include ActionView::Helpers::NumberHelper
+  geocoded_by :single_address
 
   # Gem Class Methods:  ----------------------------------------------------------------------------------------------
   friendly_id :company_title, use: :slugged
@@ -85,6 +86,7 @@ class Contractor < User
 
   # Callbacks:  -------------------------------------------------------------------------------------------------------
   before_validation :sanitize_phone_numbers
+  after_validation :geocode
 
   before_save lambda { |contractor| contractor.license.try(:upcase!) }
   before_create :add_badges

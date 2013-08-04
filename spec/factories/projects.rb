@@ -9,5 +9,7 @@ FactoryGirl.define do
     zipcode "12345"
 
     project_type
+
+    homeowner
   end
 end

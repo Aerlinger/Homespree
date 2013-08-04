@@ -52,4 +52,11 @@ describe User do
 
   it { should respond_to :type }
 
+  let(:homeowner) { FactoryGirl.create :homeowner }
+
+  it "can search for the nearest user" do
+    subject.should_receive(:address).and_return(subject.address)
+
+    subject.distance_to(homeowner)
+  end
 end

@@ -68,6 +68,7 @@ painting:   # (TOP-LEVEL PROJECT CATEGORIES 0 SPACES INDENTED) (E.g. Painting, P
   # Project category params will go here (Two spaces of indentation) -----------------------------
   interior_painting:
     # Project category fields will go here (Four spaces of indentation) -----------------------------
+    section: "Dimensions of the room"
     height:
       field_type: text_field
       label: "Length of room (in feet)"
@@ -78,14 +79,17 @@ painting:   # (TOP-LEVEL PROJECT CATEGORIES 0 SPACES INDENTED) (E.g. Painting, P
       label: "Width of room (in feet)"
       data_type: decimal
       toggleable: "Check if needs paint"
+      placeholder: e.g. 12.5
+      width:
     length:
       field_type: text_field
       label: "Height of room (in feet)"
       data_type: decimal
       toggleable: "Check if needs paint"
 
+    section: "Room details"
     surfaces:
-      field_type: checkbox
+      field_type: check_box
       field_data:
         - Walls
         - Ceiling
@@ -108,6 +112,8 @@ painting:   # (TOP-LEVEL PROJECT CATEGORIES 0 SPACES INDENTED) (E.g. Painting, P
         - Excellent - No repair necessary
         - Fair - Minor repair necessary
         - Poor - Major repair necessary
+
+    add: "Add another room"
 
   exterior_painting:  # EXTERIOR PAINTING -------------------------------------------------------------------------------------
     # Project category fields will go here (Four spaces of indentation) -----------------------------

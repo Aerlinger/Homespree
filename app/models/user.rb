@@ -78,7 +78,7 @@ class User < ActiveRecord::Base
   # Custom Methods:  --------------------------------------------------------------------------------------------------
 
   # Delegations:  -----------------------------------------------------------------------------------------------------
-  delegate :to_coordinates, :line1, :line2, :city, :state, :zipcode, :latitude, :longitude, :single_address, to: :address, allow_nil: true
+  delegate :to_coordinates, :line1, :line2, :city, :state, :state=, :zipcode=, :zipcode, :latitude, :latitude=, :longitude=, :longitude, :single_address, to: :address, allow_nil: true
 
   def distance_to(another_user)
     if self.address && another_user

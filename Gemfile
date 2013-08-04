@@ -55,6 +55,7 @@ group :test, :development do
 end
 
 group :test do
+  gem 'simplecov', '>=0.3.8', require: false
   gem 'shoulda-matchers'
   gem 'spork', '0.9.0'
   gem 'selenium-webdriver'

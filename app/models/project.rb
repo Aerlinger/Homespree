@@ -83,7 +83,10 @@ class Project < ActiveRecord::Base
   # Todo: selection algorithm?
   def find_nearby_contractors(limit = 3, search_radius = 25)
     #Contractor.locate(zipcode, search_radius).limit(3)
-
+    if appointments.any?
+    else
+      homeowner.nearby_contractors
+    end
     #self.address.nearbys(search_radius)
   end
 

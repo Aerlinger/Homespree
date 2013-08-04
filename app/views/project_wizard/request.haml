@@ -5,6 +5,7 @@
   -# Updates the properties of this project. Also used to update service type, project type, and
   = form_for @project, url: next_wizard_path do |f|
     = f.label "Your home project:", id: "pitch_label"
+    -# TODO: <option value="" disabled selected>Select your option</option>
     = f.select :service_type, ServiceType.all.collect { |service_type| [ service_type.to_s, service_type.id ] }
     = f.select :project_type_id, ProjectType.all.collect { |project_type| [ project_type.to_s, project_type.id ] }
     = f.hidden_field :service_type_name, value: "Painting"

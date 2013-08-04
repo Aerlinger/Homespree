@@ -8,8 +8,9 @@ class ApplicationController < ActionController::Base
 
   # -----------------------------------------------------------------------------------------------------
   # Note: I am bypassing Devise's dynamic finder here and directly interacting with the
-  #       session object established by Warden. Devise's dynamic methods use +method_missing
-  #       which isn't favorable in our case.
+  #       session object established by Warden. Devise's dynamic methods use +method_missing+
+  #       which causes some problems. This may be fragile if the warden implementation
+  #       changes in the future.
   # -----------------------------------------------------------------------------------------------------
   def guest_homeowner
     # Cache the value:
