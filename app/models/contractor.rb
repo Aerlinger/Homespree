@@ -47,7 +47,6 @@
 #
 
 class Contractor < User
-
   # Concerns/Includes:  ----------------------------------------------------------------------------------------------
   include ActionView::Helpers::NumberHelper
 

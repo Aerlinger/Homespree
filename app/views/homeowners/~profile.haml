@@ -1,0 +1,113 @@
+-# Contractor Profile Page
+-#
+-#  params: @contractor   # Instance of contractor for this contractor
+-#==================================================================================================
+
+#page.profile
+
+  -# Top information prompt (This is temporarily removed pending completion)
+  -#================================================================================================
+  -#=render "contractors/profiles/info_header"
+  %br
+  .twenty_pixels_space
+
+  -# Top Section (Info Card and Image Carousel)
+  -#================================================================================================
+  .feature-strip
+    #top.container
+      .row-fluid.pricingTable
+        .span4.wrapper.white-bg
+
+          -# Homeowner Appointments
+          -#===============================================================================================
+          %ul.optionheader
+            %li#title.primary-color-bg
+              My Appointments
+            %li#city_and_state
+              #city_and_state= @homeowner.zipcode
+
+          -# Contractor Card: list of Fields -- name, license info, etc...
+          -#===============================================================================================
+          %ul.features
+            %li= @homeowner.first_name
+            %li= @homeowner.email
+            %li= @homeowner.email
+            %li= @homeowner.email
+            %li= @homeowner.email
+            %li= @homeowner.email
+            %li= @homeowner.email
+            %li= @homeowner.email
+
+            =link_to "Start a new project", "javascript:void(0)", class: "btn btn-large btn-primary", id: "book_contractor"
+
+        -# Portfolio image carousel
+        -#===============================================================================================
+        .span8
+          -#= render "contractors/profiles/portfolio", photos: @contractor.photos
+
+
+  -# Section Two (Description, Services Offered, and Maps
+  -#================================================================================================
+  #section_two.main-content
+    %section.strip{style: "margin: 0;"}
+      .container
+        .row-fluid.title-columns
+          .span12#settings
+            %h4.short_headline
+              %div My Settings & Information
+              .descriptiontext
+
+                -#%div= f.submit "Update", :class => "btn btn-success"
+                -#- if devise_mapping.confirmable? && @homeowner.pending_reconfirmation?
+                  %div
+                    Currently waiting confirmation for: #{resource.unconfirmed_email}
+            -#= @contractor.in_place_edit(:h6, :slogan) do
+              = best_in_place @contractor, :slogan, activator: "#slogan_edit", nil: "No slogan entered"
+              -#= render "contractors/profiles/edit_link", activator: "slogan_edit"
+
+            #contractor_logo
+              -#= render "contractors/logo"
+
+            %hr
+            -#= @contractor.in_place_edit(:p, :description) do
+              = best_in_place @contractor, :description, type: :textarea, activator: "#description_edit", nil: default_description
+              = render "contractors/profiles/edit_link", activator: "description_edit"
+
+          -#= @contractor.intro_section("services", class: "span4") do
+            %h3.short_headline
+              %div Services Offered
+            =render "contractors/profiles/specialties", specialties: @contractor.specialties, id: @contractor.id
+
+          -#= @contractor.intro_section("service_area", class: "span4") do
+            %h3.short_headline
+              %div Service Area
+            =render "contractors/profiles/service_area"
+
+
+  -#=render "contractors/profiles/question_modal"
+  -#- if @contractor.photos && own_profile?
+    = render "contractors/profiles/photos_modal", photos: @contractor.photos
+
+  -#- if own_profile?
+    #s3_uploaders
+      = s3_uploader_form callback_url: contractor_path(@contractor), callback_param: "contractor[portrait_url]", callback_method: :put, id: "portrait_s3_upload", remote: true do
+        .custom_file_upload
+          = file_field_tag :file, multiple: true, id: "hidden_portrait_url", onchange: "uploadfile('#hidden_portrait_url')"
+
+      = s3_uploader_form callback_url: contractor_path(@contractor), callback_param: "contractor[logo_url]", callback_method: :put, id: "logo_s3_upload", remote: true do
+        .custom_file_upload
+          = file_field_tag :file, multiple: true, id: "hidden_logo_url", onchange: "uploadfile('#hidden_logo_url')"
+
+      = s3_uploader_form callback_url: contractor_photos_url(@contractor), callback_param: "photo[image_url]", id: "portfolio_s3_upload" do
+        .custom_file_upload
+          = file_field_tag :file, multiple: true, id: "hidden_portfolio_url", onchange: "uploadfile('#hidden_portfolio_url')"
+
+  :javascript
+    $(window).load(function(evt) {
+      if( !(/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) ) {
+        launchIntroJs();
+      }
+    });
+
+  -# Block intro.js on mobile:
+  -#- unless is_mobile_request?

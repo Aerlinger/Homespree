@@ -1,6 +1,4 @@
-class Homeowners::RegistrationsController < Devise::RegistrationsController
-  layout "login_page"
-
+class Homeowners::RegistrationsController < Users::RegistrationsController
   def new
     super
     @homeowner = Homeowner.new({email: params[:email]})

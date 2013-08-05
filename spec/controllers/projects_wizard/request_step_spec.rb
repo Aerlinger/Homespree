@@ -1,7 +1,4 @@
 require 'spec_helper'
 
-describe ProjectWizardController
-
-
-
-end
+#describe ProjectWizardController
+#end

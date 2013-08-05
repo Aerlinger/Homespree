@@ -1,7 +1,4 @@
-class Contractors::RegistrationsController < Devise::RegistrationsController
-  layout "login_page"
-
-  after_filter :geolocate, only: [:create]
+class Contractors::RegistrationsController < Users::RegistrationsController
   #after_filter :send_welcome_email, :send_notification_email, only: [:create]
 
   #def new
@@ -22,17 +19,6 @@ class Contractors::RegistrationsController < Devise::RegistrationsController
   def send_notification_email
     %w[anthony].each do |admin|
       ContractorMailer.notify_signup(resource, admin).deliver
-   a end
-  end
-
-  def geolocate
-    location = request.location
-    resource.create_address! do |address|
-      address.city      = location.city.presence || "New York"
-      address.state     = location.state.presence || "NY"
-      address.zipcode   = location.postal_code.presence || 10027
-      address.latitude  = location.latitude.presence || -33.9417
-      address.longitude = location.longitude.presence || 150.9473
-    end
+   end
   end
 end
