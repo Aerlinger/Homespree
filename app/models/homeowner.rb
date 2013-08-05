@@ -45,6 +45,8 @@
 #  guest                  :boolean
 #  disabled               :boolean          default(FALSE)
 #  gmaps                  :boolean          default(TRUE)
+#  latitude               :float
+#  longitude              :float
 #
 
 class Homeowner < User

@@ -45,6 +45,8 @@
 #  guest                  :boolean
 #  disabled               :boolean          default(FALSE)
 #  gmaps                  :boolean          default(TRUE)
+#  latitude               :float
+#  longitude              :float
 #
 
 class User < ActiveRecord::Base
@@ -55,7 +57,7 @@ class User < ActiveRecord::Base
   acts_as_messageable
 
   # Accessor/Virtual Attributes:  ------------------------------------------------------------------------------------
-  attr_accessible :email, :password
+  attr_accessible :email, :password, :latitude, :longitude
 
   # Associations:  ----------------------------------------------------------------------------------------------------
   has_one :address, as: :addressable, dependent: :destroy
@@ -75,11 +77,12 @@ class User < ActiveRecord::Base
   before_save :capitalize_name
   before_save lambda { |user| user.email.try(:downcase!) }
   after_create :send_welcome_message
+  #after_update :update_coordinates
 
   # Custom Methods:  --------------------------------------------------------------------------------------------------
 
   # Delegations:  -----------------------------------------------------------------------------------------------------
-  delegate :to_coordinates, :line1, :line2, :city, :state, :state=, :zipcode=, :zipcode, :latitude, :latitude=, :longitude=, :longitude, :gmaps4rails_address, to: :address, allow_nil: true
+  delegate :to_coordinates, :line1, :line2, :city, :state, :state=, :zipcode=, :zipcode, :gmaps4rails_address, :nearby, :nearbys, to: :address, allow_nil: true
 
   def gmaps4rails_marker_picture
     marker_color = 'red'
@@ -95,5 +98,21 @@ class User < ActiveRecord::Base
   def capitalize_name
     first_name.try(:capitalize!)
     last_name.try(:capitalize!)
+  end
+
+  def update_coordinates
+    #if address
+      self.latitude  = address.latitude
+      self.longitude = address.longitude
+      #save
+    #end
+  end
+
+  # TODO: FixMe
+  def nearbys
+    #nearby_users
+    #User.all.each do |user|
+    #  user.address.nearbys
+    #end
   end
 end

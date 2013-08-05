@@ -1,11 +1,11 @@
 def create_default_contractors
+  puts "Creating contractors"
 
   contractor_names = %w[joe jim jack james jake]
   zipcodes = %w[10025 10001 10012 10005 10050]
   simple_contractors = Hash[contractor_names.zip(zipcodes)]
 
   simple_contractors.each do |name, zipcode|
-
     # Delete this contractor if it already exists:
     existing_contractor = Contractor.find_by_email("#{name}@seed.com")
     existing_contractor.destroy if existing_contractor
@@ -24,7 +24,7 @@ def create_default_contractors
       c.office_number = "7145559652"
       c.mobile_number = "9495556404"
 
-      c.slogan = "Asdfjkl;"
+      c.slogan = "The best painter in all of the great lands! LOL!"
       c.gmaps = true
 
       c.description = "Terrell Design & Development and the Golden Triangle Design Group is a full-service Design and General Contracting Consulting firm that specializes in new construction, as well as extensive remodels and additions. Over the past two decades, the Golden Triangle Design Group has become known for their ability to solve complex design issues, while implementing all of the clients needs and wants. By providing exceptional expertise and technical knowledge to every phase of the project, clients are able to rely on the GTDG to deliver a product unlike any other."
@@ -46,13 +46,10 @@ def create_default_contractors
 
     puts "Created contractor: #{contractor.first_name} #{contractor.last_name} - #{contractor.company_title}"
   end
-
 end
 
 def create_default_homeowners
-
   %w[betty bob bonnie beth beckie billy].each do |name|
-
     # Delete this homeowner if it already exists:
     existing_homeowner = Homeowner.find_by_email("#{name}@seed.com")
     existing_homeowner.destroy if existing_homeowner
@@ -100,6 +97,7 @@ def create_admins
     AdminUser.find_or_create_by_email!("#{name}@myhomespree.com", password: "Meetmike9")
   end
 
+  puts "creating master contractor"
   unless (User.find_by_email("admin@myhomespree.com"))
     contractor_admin = Contractor.create do |homespree_admin|
       homespree_admin.email         = "admin@myhomespree.com"
@@ -110,5 +108,4 @@ def create_admins
 
     puts "ADMIN contractor created: #{User.find_by_email("admin@myhomespree.com").email} id: #{contractor_admin.id}"
   end
-
 end

@@ -42,7 +42,6 @@ describe "Contractor Sign Up" do
       click_button "Create profile"
     end
 
-    it { save_and_open_page }
     its(:current_path) { should eq "/contractors" }
     it { should have_content("is invalid") }
     it { should have_content("Create Contractor Profile") }

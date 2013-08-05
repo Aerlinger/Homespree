@@ -16,5 +16,6 @@ create_default_contractors
 create_default_homeowners
 create_mailing_list_users
 
-
-puts "GREAT SUCCESS!!"
+puts "--------------------------------------------------------------------"
+puts "-------------------------- GREAT SUCCESS!! -------------------------"
+puts "--------------------------------------------------------------------"

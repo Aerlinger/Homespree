@@ -4,10 +4,10 @@
   = form_for @homeowner, url: next_wizard_path do |f|
     = f.fields_for :appointment do |builder|
       = builder.label "I want to schedule:"
-      = builder.radio_button :appointment_type, "meeting"
-      = builder.label "Appointment to meet the contractor in person"
       = builder.radio_button :appointment_type, "project"
       = builder.label "Appointment to begin project"
+      = builder.radio_button :appointment_type, "meeting"
+      = builder.label "Appointment to meet the contractor in person"
 
       = builder.label "When?"
       = builder.select :priority, ["No Rush", "As soon as possible", "No later than a certain date"]

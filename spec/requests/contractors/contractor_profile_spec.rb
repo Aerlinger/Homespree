@@ -18,8 +18,6 @@ describe 'Contractor Profile', js: false do
     @contractor = Contractor.find_by_email(contractor.email)
   end
 
-  specify { save_and_open_page }
-
   describe "default address without geolocation" do
     subject { @contractor.address }
     its(:city) { should eq "New York" }

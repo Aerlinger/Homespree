@@ -1,48 +1,155 @@
 @import "global/mixins";
 @import "global/palette";
 
+$header_height: 110px;
+
 #project_wizard {
+
+  .container {
+    background: none;
+  }
+
   .contractor-preview {
     @include five-pixel-rounded;
 
     box-shadow: $shadow;
     -moz-box-shadow: $shadow;
 
+    position: relative;
     display: block;
     min-height: 300px !important;
-    border: 1px solid lightgrey;
-    padding: 5px;
+    border: 2px solid $homespree_light;
+    background-color: white;
 
     &:hover {
       background-color: #FAFAFA;
+      border: 2px solid black;
+    }
+
+    .header {
+      height: $header_height;
+      font-size: 11px;
+      background-color: $homespree_lightest;
+
+      -moz-border-radius-topleft: 4px;
+      -moz-border-radius-topright: 4px;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+      -webkit--top-left-radius: 4px;
+      -webkit-top-right-radius: 4px;
+
+      img {
+        position: absolute;
+      }
+
+      .title {
+        position: absolute;
+        height: $header_height;
+        margin: 0;
+        padding: 0;
+        right: 0;
+
+        .slogan {
+          font-size: 12px;
+          font-style: italic;
+          color: black;
+          padding-left: 5px;
+          margin: 0;
+        }
+
+        h5 {
+          border-bottom: 2px solid white;
+          //border-right: 1px solid white;
+          //border-left: 1px solid white;
+          -moz-border-radius-topright: 3px;
+          border-top-right-radius: 3px;
+          -webkit-top-right-radius: 3px;
+
+          margin: 0;
+          font-size: 14px;
+          font-weight: bold !important;
+          background-color: $homespree_blue;
+          color: white;
+          padding: 4px 5px;
+          text-align: center;
+        }
+
+        .btn-view-profile {
+          font-weight: bold;
+          display: table;
+
+          width: 100px;
+          bottom: 5px;
+          margin: 5px auto;
+        }
+      }
     }
 
     .portrait {
       display: block;
-      width: 80px !important;
-      margin-right: 5px;
-      height: auto;
+      position: absolute;
+      height: $header_height !important;
+
+      width: auto;
       float: left;
+
+      font-style: normal;
+      border-radius: 3px 0 0 0;
     }
 
     .description {
       text-align: justify;
       font-size: .9em;
       line-height: 1.2em;
+      padding: 15px 10px;
     }
 
-    .btn-view-profile {
+    .hourly-rate {
+      display: block;
+      background-color: $homespree_lightest;
+
+      border-top: 3px solid rgb(196, 196, 196);
+      border-bottom: 1px solid rgb(196, 196, 196);
+
+      text-align: center;
+      padding: 0;
+      margin: 0;
+    }
+
+    .select-contractor {
+      margin-bottom: 0 !important;
     }
 
     .btn-select {
       display: block;
       margin: 20px auto;
+
+      border-top: 5px solid $homespree_green;
+
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      -moz-border-radius-topleft: 0;
+      -moz-border-radius-topright: 0;
+      -webkit-border-top-left-radius: 0;
+      -webkit-border-top-left-radius: 0;
     }
 
     hr {
       margin: 5px;
     }
+
+    .select-contractor {
+      color: white;
+      font-size: 18px;
+      //font-weight: bold;
+      padding: 15px;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
   }
+
 
   form {
     input[type='radio'] {

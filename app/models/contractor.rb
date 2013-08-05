@@ -45,6 +45,8 @@
 #  guest                  :boolean
 #  disabled               :boolean          default(FALSE)
 #  gmaps                  :boolean          default(TRUE)
+#  latitude               :float
+#  longitude              :float
 #
 
 class Contractor < User
@@ -62,8 +64,6 @@ class Contractor < User
   attr_protected
 
   # Associations:  ----------------------------------------------------------------------------------------------------
-  #has_one :profile_picture, as: :photographable, class_name: 'Photo'
-
   has_many :appointments
   has_many :projects, through: :appointments
 
@@ -96,8 +96,10 @@ class Contractor < User
   after_create :send_welcome_message
 
   # Scopes:  ----------------------------------------------------------------------------------------------------------
-  #default_scope order("created_at desc").where("disabled == ?", "false")
+  default_scope order("created_at desc").where("disabled = ?", false)
   scope :recent_signups, lambda { limit(100) }
+  # TOOD: Fix
+  scope :nearbys, lambda { |zipcode| Contractor.limit(3) }
 
 
 

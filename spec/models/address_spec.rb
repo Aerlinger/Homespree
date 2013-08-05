@@ -53,49 +53,72 @@ describe Address do
     address.should_not be_valid
   end
 
-  describe "created as a nested attribute of contractor" do
-    let(:params) do
-      { contractor: attributes_for(:contractor, address_attributes: attributes_for(:address)) }
-    end
-    let(:contractor) { Contractor.create(params[:contractor]) }
-
-    subject { contractor }
-
-    its("address.gmaps4rails_address") { should eq address.gmaps4rails_address }
-  end
+  #describe "created as a nested attribute of contractor" do
+  #  let(:params) do
+  #    { contractor: attributes_for(:contractor, address_attributes: attributes_for(:address)) }
+  #  end
+  #  let(:contractor) { Contractor.create(params[:contractor]) }
+  #
+  #  subject { contractor }
+  #
+  #  its("address.gmaps4rails_address") { should eq address.gmaps4rails_address }
+  #end
 
   describe "created as a nested attribute of homeowner" do
+    let(:address) { FactoryGirl.create :address, latitude: 28.5, longitude: 29.5 }
+
     let(:params) do
-      { homeowner: attributes_for(:homeowner, address_attributes: attributes_for(:address)) }
+      { homeowner: attributes_for(:homeowner, address: address) }
     end
 
     before { @homeowner = Homeowner.create(params[:homeowner]) }
 
-    it "should have a valid address" do
+    it "has a valid address" do
       @homeowner.address.should be_persisted
     end
 
-    it "should have a valid address" do
+    it "has a valid address" do
       @homeowner.address.gmaps4rails_address.should eq address.gmaps4rails_address
+    end
+
+    specify "address has User as an addressable type" do
+      address.addressable_type.should eq "User"
+    end
+
+    it "doesn't updates parent on save" do
+      #address.should_receive(:update_parent)
+      @homeowner.should_receive(:update_coordinates)
+      @homeowner.should_receive(:latitude)
+      @homeowner.should_receive(:longitude)
+
+      #address.update_attributes!(latitude: 29, longitude: 30)
+      address.latitude = 29
+      address.longitude = 29
+      address.save!
+
+      @homeowner.save!
+      @homeowner.reload
+      #@homeowner.address.should eq address
+      #@homeowner.latitude.should eq 29
     end
   end
 
-  describe "created as a nested attribute of address" do
+  describe "created as a nested attribute of an appointment" do
     let(:params) do
       { appointment: attributes_for(:appointment, address_attributes: attributes_for(:address)) }
     end
 
     before { @appointment = Appointment.create(params[:appointment]) }
 
-    it "should persist appointment" do
+    it "persists appointment" do
       @appointment.should be_persisted
     end
 
-    it "should have a valid address" do
+    it "has a valid address" do
       @appointment.address.should be_persisted
     end
 
-    it "should have a valid address" do
+    it "has have a valid address" do
       @appointment.address.gmaps4rails_address.should eq address.gmaps4rails_address
     end
   end

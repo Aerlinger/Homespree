@@ -13,14 +13,18 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
   min-height: 600px;
 }
 
+// The Form on the Homepage
 #new_project {
   margin: 50px;
   width: 670px;
 
-  background: none repeat scroll 0px 0px rgba(255, 255, 255, 0.7);
+  display: table;
+  margin: 50px auto;
+
+  background: none repeat scroll 0px 0px $homespree_blue;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
   border-radius: 3px 3px 3px 3px;
-  border: 1px solid rgb(0, 0, 0);
+  border: 3px solid white;
   padding: 7px;
   line-height: 1.4;
 
@@ -32,7 +36,7 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
     font-weight: bold;
 
     font-size: 18px;
-    color: black;
+    color: white;
     margin: 2px 10px 0 15px;
   }
 
@@ -52,7 +56,7 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
     margin-left: 20px;
   }
 
-  #submit_location{
+  #submit_location {
     height: 40px !important;
   }
 
@@ -61,6 +65,7 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
     -moz-border-radius: 3px !important;
     -webkit-border-radius: 3px !important;
     border: 1px solid black;
+    margin-left: 5px !important;
   }
 
   select {
@@ -68,12 +73,12 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
     font-size: 1.5em;
     padding-left: 15px;
     margin-left: 5px;
+    margin-bottom: 0;
     border: 1px solid black;
   }
 
   #zipcode {
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4) inset;
-    /*float: left;*/
     border: 1px solid #000000;
     border-radius: 3px;
     text-shadow: 0 1px 1px #FFFFFF;
@@ -84,9 +89,7 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
     font-size: 1.5em;
     width: 100px;
   }
-
 }
-
 
 #home {
   height: 400px;
@@ -112,13 +115,12 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
   }
 
   #maintext {
-    //min-height: 650px;
     height: 100%;
-    top: 15%;
-    left: 10%;
-    right: 10%;
+    display: table;
+    margin: 0 auto;
 
     h1 {
+      text-align: center;
       padding: 0 7%;
       padding-top: 80px;
       margin: 0 auto;
@@ -126,21 +128,23 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
       color: white;
       width: 1200px;
 
-      font-weight: 400;
+      font-weight: 500 !important;
       font-size: 4em;
       line-height: 1.1em;
-      text-shadow: 0 0 15px rgba(0, 0, 0, 1), 0 -1px 1px rgba(0, 0, 0, 1);
+      text-shadow: 0 0 21px rgba(0, 0, 0, 1), 0 -1px 1px rgba(0, 0, 0, 1);
     }
 
     h2 {
+      text-align: center !important;
       padding: 0 7%;
       margin: 0 auto;
+      font-weight: 500 !important;
       color: white;
       width: 1200px;
       text-align: left;
       font: 2.2em "helvetica neue", helvetica, sans-serif;
 
-      text-shadow: 0 0 13px rgba(0, 0, 0, 1), 0 -1px 1px rgba(0, 0, 0, 1);
+      text-shadow: 0 0 15px rgba(0, 0, 0, 1), 0 -1px 1px rgba(0, 0, 0, 1);
     }
   }
 
@@ -501,7 +505,7 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
       margin-top: 15px !important;
       margin-bottom: 14px !important;
     }
-    select{
+    select {
       width: 280px !important;
       margin-left: 10px !important;
     }
@@ -534,7 +538,7 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
   .secondary {
     position: relative;
 
-    img{
+    img {
       display: none;
     }
 

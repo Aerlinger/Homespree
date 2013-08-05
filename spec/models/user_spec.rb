@@ -45,6 +45,8 @@
 #  guest                  :boolean
 #  disabled               :boolean          default(FALSE)
 #  gmaps                  :boolean          default(TRUE)
+#  latitude               :float
+#  longitude              :float
 #
 
 require 'spec_helper'
@@ -56,7 +58,7 @@ describe User do
   let(:homeowner) { FactoryGirl.create :homeowner }
 
   it "can search for the nearest user" do
-    subject.should_receive(:address).and_return(subject.address)
+    subject.should_receive(:address)#.exactly(2).times
 
     subject.distance_to(homeowner)
   end

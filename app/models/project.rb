@@ -82,11 +82,17 @@ class Project < ActiveRecord::Base
   # Finds all contractors within a 25 mile radius of this location.
   # Todo: selection algorithm?
   def find_nearby_contractors(limit = 3, search_radius = 25)
-    #Contractor.locate(zipcode, search_radius).limit(3)
-    if appointments.any?
-    else
-      homeowner.nearby_contractors
+    # TODO: Needs a stable implementation
+    unless Rails.env.production?
+      @contractors = Contractor.limit(3)
     end
+
+    # TODO: WIP
+    #Contractor.locate(zipcode, search_radius).limit(3)
+    #if appointments.any?
+    #else
+    #  homeowner.nearby_contractors
+    #end
     #self.address.nearbys(search_radius)
   end
 

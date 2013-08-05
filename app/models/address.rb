@@ -27,12 +27,13 @@ class Address < ActiveRecord::Base
   validates :zipcode, format: RegexDefinitions::zipcode_regex, allow_blank: true
   validates_format_of :state, with: /[A-Za-z][A-Za-z]/i, allow_blank: true
 
-  belongs_to :addressable, polymorphic: true
+  belongs_to :addressable, polymorphic: true, touch: true
   has_many :appointments
 
   # Callbacks:  -------------------------------------------------------------------------------------------------------
+  after_validation :geocode unless Rails.env.test? # Running Geocoder in tests causes the API to throttle us.
   before_save :titleize_city
-  after_validation :geocode unless Rails.env.test?    # Running Geocoder in tests causes the API to throttle us.
+  #after_save :update_parent
 
   # Callback method definitions:  -------------------------------------------------------------------------------------
 
@@ -47,4 +48,10 @@ class Address < ActiveRecord::Base
       self.city = city.titleize
     end
   end
+
+  #def update_parent
+  #  if %w[User Contractor Homeowner].include? addressable_type
+  #    addressable.update_attributes(latitude: latitude, longitude: longitude)
+    #end
+  #end
 end
