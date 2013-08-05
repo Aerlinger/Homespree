@@ -1,14 +1,13 @@
 @import "palette";
 
 textarea:not(.pitch), input:not(.pitch) {
-    border-radius: 0 !important;
-    -moz-border-radius: 0 !important;
-    -webkit-border-radius: 0 !important;
+  border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  -webkit-border-radius: 0 !important;
 }
 
-
 .no-bg {
-    background: none !important;
+  background: none !important;
 }
 
 .navbar-fixed-top {
@@ -34,11 +33,11 @@ ul.nav-collapse li a:hover {
 }
 
 .no-margin {
-    margin: 0 !important;
+  margin: 0 !important;
 }
 
 .no-padding {
-    padding: 0 !important;
+  padding: 0 !important;
 }
 
 .field {
@@ -54,6 +53,21 @@ ul.nav-collapse li a:hover {
 .delete-button {
   position: relative;
   color: darkred;
+}
+
+.bs-docs-sidenav li {
+  margin: 1px 0;
+
+  a {
+    //border-top: 1px solid $homespree_accent_light;
+    border-left: 5px solid $homespree_blue !important;
+  }
+
+  &.active {
+    a {
+      border-left: 5px solid $homespree_accent !important;
+    }
+  }
 }
 
 body.DESKTOP {
@@ -258,12 +272,13 @@ body.DESKTOP {
     }
   }
 }
+
 footer {
   opacity: 1;
   background: white;
 }
 
-#show_debug{
+#show_debug {
   z-index: 1000 !important;
   position: absolute !important;
   bottom: 0 !important;

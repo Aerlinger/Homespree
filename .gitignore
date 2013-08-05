@@ -17,6 +17,10 @@
 .idea
 ./.idea
 .idea
+/**/*.psd
+/app/assets/images/psd/*.psd
+/app/assets/images/psd/bg_template
+/app/assets/images/**/*.psd
 
 # Ignore application configuration
 /config/application.yml
