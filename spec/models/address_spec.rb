@@ -61,7 +61,7 @@ describe Address do
 
     subject { contractor }
 
-    its("address.single_address") { should eq address.single_address }
+    its("address.gmaps4rails_address") { should eq address.gmaps4rails_address }
   end
 
   describe "created as a nested attribute of homeowner" do
@@ -76,7 +76,7 @@ describe Address do
     end
 
     it "should have a valid address" do
-      @homeowner.address.single_address.should eq address.single_address
+      @homeowner.address.gmaps4rails_address.should eq address.gmaps4rails_address
     end
   end
 
@@ -96,7 +96,7 @@ describe Address do
     end
 
     it "should have a valid address" do
-      @appointment.address.single_address.should eq address.single_address
+      @appointment.address.gmaps4rails_address.should eq address.gmaps4rails_address
     end
   end
 end

@@ -78,7 +78,12 @@ class User < ActiveRecord::Base
   # Custom Methods:  --------------------------------------------------------------------------------------------------
 
   # Delegations:  -----------------------------------------------------------------------------------------------------
-  delegate :to_coordinates, :line1, :line2, :city, :state, :state=, :zipcode=, :zipcode, :latitude, :latitude=, :longitude=, :longitude, :single_address, to: :address, allow_nil: true
+  delegate :to_coordinates, :line1, :line2, :city, :state, :state=, :zipcode=, :zipcode, :latitude, :latitude=, :longitude=, :longitude, :gmaps4rails_address, to: :address, allow_nil: true
+
+  def gmaps4rails_marker_picture
+    marker_color = 'red'
+    { picture: "/assets/map_markers/#{self.class.name}-icon#{marker_color}.png", width: "28", height: "33" }
+  end
 
   def distance_to(another_user)
     if self.address && another_user

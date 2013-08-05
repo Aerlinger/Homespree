@@ -50,9 +50,12 @@ class Contractor < User
 
   # Concerns/Includes:  ----------------------------------------------------------------------------------------------
   include ActionView::Helpers::NumberHelper
-  geocoded_by :single_address
 
   # Gem Class Methods:  ----------------------------------------------------------------------------------------------
+  geocoded_by :gmaps4rails_address
+  acts_as_gmappable
+
+
   friendly_id :company_title, use: :slugged
 
   # Accessors:  -------------------------------------------------------------------------------------------------------
@@ -138,6 +141,11 @@ class Contractor < User
 
   def contractor?
     true
+  end
+
+  # TODO: Move this into a module
+  def gmaps4rails_address
+    [line1, city, state, zipcode].compact.join(', ')
   end
 
   def sanitize_phone_numbers

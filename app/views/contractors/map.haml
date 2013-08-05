@@ -1,10 +1,14 @@
+- markers = ""
 - @contractors.each do |contractor|
   = @latitude = contractor.latitude
   = @longitude = contractor.longitude
-
+  - markers << "&markers=color:red%7Ccolor:red%7C#{@latitude},#{@longitude}"
   .div
     %ul
       %li= @latitude
       %li= @longitude
       %br
 
+-#= gmaps("markers" => {"data" => @json, "options" => {"custom_infowindow_class" => "yellow" } })
+-#= gmaps("markers" => {"data" => @json}, "map_options" =>  { "provider" => "openlayers"})
+=image_tag "http://maps.google.com/maps/api/staticmap?size=800x600&zoom=16#{markers}&sensor=false", id: "map"

@@ -1,6 +1,10 @@
 def create_default_contractors
 
-  %w[joe jim jack james jake].each do |name|
+  contractor_names = %w[joe jim jack james jake]
+  zipcodes = %w[10025 10001 10012 10005 10050]
+  simple_contractors = Hash[contractor_names.zip(zipcodes)]
+
+  simple_contractors.each do |name, zipcode|
 
     # Delete this contractor if it already exists:
     existing_contractor = Contractor.find_by_email("#{name}@seed.com")
@@ -10,9 +14,9 @@ def create_default_contractors
       c.email    = "#{name}@seed.com"
       c.password = "iamsecret"
 
-      c.first_name    = name
+      c.first_name    = "#{name}"
       c.last_name     = "Smith"
-      c.company_title = "#{name}'s Most Excellent Contracting"
+      c.company_title = "#{name}"
 
       c.bonding_limit   = 100.00
       c.insurance_limit = 200.00
@@ -21,6 +25,7 @@ def create_default_contractors
       c.mobile_number = "9495556404"
 
       c.slogan = "Asdfjkl;"
+      c.gmaps = true
 
       c.description = "Terrell Design & Development and the Golden Triangle Design Group is a full-service Design and General Contracting Consulting firm that specializes in new construction, as well as extensive remodels and additions. Over the past two decades, the Golden Triangle Design Group has become known for their ability to solve complex design issues, while implementing all of the clients needs and wants. By providing exceptional expertise and technical knowledge to every phase of the project, clients are able to rely on the GTDG to deliver a product unlike any other."
 
@@ -36,15 +41,7 @@ def create_default_contractors
         c.specialties << Specialty.new(name: specialty)
       end
 
-      address = Address.new do |a|
-        a.line1   = "1234 Blue collar road"
-        a.line2   = "4th Main Providence"
-        a.state   = "NJ"
-        a.zipcode = "12345"
-        a.city    = "Trenton"
-      end
-
-      c.address = address
+      c.create_address(zipcode: zipcode)
     end
 
     puts "Created contractor: #{contractor.first_name} #{contractor.last_name} - #{contractor.company_title}"

@@ -19,7 +19,7 @@
 
 class Address < ActiveRecord::Base
   # Class Methods:  ---------------------------------------------------------------------------------------------------
-  geocoded_by :single_address
+  geocoded_by :gmaps4rails_address
 
   attr_protected :latitude, :longitude
 
@@ -36,7 +36,7 @@ class Address < ActiveRecord::Base
 
   # Callback method definitions:  -------------------------------------------------------------------------------------
 
-  def single_address
+  def gmaps4rails_address
     [line1, city, state, zipcode].compact.join(', ')
   end
 
