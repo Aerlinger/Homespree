@@ -1,7 +1,8 @@
 class ProjectsController < ApplicationController
   layout "static_page"
 
-  before_filter :create_guest_if_homeowner_not_signed_in, only: :create
+
+  before_filter :get_active_user, only: :create
 
   def create
     if Rails.env.production?
@@ -44,11 +45,17 @@ class ProjectsController < ApplicationController
 
   private
 
-  def create_guest_if_homeowner_not_signed_in
+  def get_active_user
+    @user = homeowner_signed_in? ? current_user : create_guest_with_zip
+
+    params[:project][:homeowner] = @user
+  end
+
+  def create_guest_with_zip
     unless homeowner_signed_in?
-      @guest                       = create_guest_homeowner
-      @guest.address               = Address.create(zipcode: params[:project][:zipcode])
-      params[:project][:homeowner] = @guest
+      @guest         = create_guest_homeowner
+      @guest.address = Address.create(zipcode: params[:project][:zipcode])
     end
+    return @guest
   end
 end

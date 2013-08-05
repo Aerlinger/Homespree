@@ -13,14 +13,15 @@
                 %li.menu-text
                   %i No Messages found.
 
-            %li.dropdown.parent
-              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-                My Projects
-                %i.e-icon-tools
-              %ul.dropdown-menu
-                %li.menu-text
-                  %i No projects found.
-                  -#  = link_to "Find jobs in my area"
+            - if current_user.contractor?
+              %li.dropdown.parent
+                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                  My Projects
+                  %i.e-icon-tools
+                %ul.dropdown-menu
+                  %li.menu-text
+                    %i No projects found.
+                    -#  = link_to "Find jobs in my area"
 
             %li.dropdown.parent
               %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}

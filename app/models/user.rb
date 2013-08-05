@@ -44,6 +44,7 @@
 #  notification_settings  :text
 #  guest                  :boolean
 #  disabled               :boolean          default(FALSE)
+#  gmaps                  :boolean          default(TRUE)
 #
 
 class User < ActiveRecord::Base

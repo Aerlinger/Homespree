@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130804151103) do
+ActiveRecord::Schema.define(:version => 20130805010224) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -281,7 +281,7 @@ ActiveRecord::Schema.define(:version => 20130804151103) do
     t.text     "notification_settings"
     t.boolean  "guest"
     t.boolean  "disabled",                            :default => false
-    t.boolean  "gmaps"
+    t.boolean  "gmaps",                               :default => true
   end
 
   add_index "users", ["authentication_token"], :name => "index_users_on_authentication_token", :unique => true

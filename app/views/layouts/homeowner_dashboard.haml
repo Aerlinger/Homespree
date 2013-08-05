@@ -1,0 +1,21 @@
+#content
+  - content_for :content do
+    .secondary
+      .container
+        .span3.descriptiontext.bs-docs-sidebar.sidenav
+          %ul#dashboard_nav.nav.nav-list.bs-docs-sidenav
+            %li{class: active_notifications_path}
+              = link_to "Notifications", notifications_path
+            %li{class: active_general_settings_path}
+              = link_to "General Settings", general_settings_path
+            %li{class: active_inbox_path}
+              = link_to "My Inbox", inbox_path
+            %li{class: active_my_projects_path}
+              = link_to "My Projects", my_projects_path
+            %li{class: active_my_income_path}
+              = link_to "My Income", my_income_path
+
+        #dashboard_section.span8.descriptiontext
+          = content_for?(:dashboard) ? yield(:dashboard) : yield
+
+  = render :template => 'layouts/application'

@@ -19,6 +19,25 @@ describe "Homeowner Sign Up" do
     end
 
     its(:status_code) { should eq 200 }
+
+    describe "and visit homepage" do
+      before do
+        ProjectType.find_or_create_by_name 'Interior painting'
+        ProjectType.find_or_create_by_name 'Exterior painting'
+
+        visit '/'
+        select('Interior painting', from: 'project_project_type_id')
+        fill_in 'zipcode', with: '10025'
+      end
+
+      it { should have_content 'Stress-free home improvement' }
+
+      it 'takes logged in user through the project wizard' do
+        click_button 'Get started'
+
+        current_path.should eq '/project_wizard/request'
+      end
+    end
   end
 
   describe "with incomplete parameters" do
