@@ -15,7 +15,6 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
 
 .btn {
   border-radius: 0;
-  //font-weight: bold;
   color: white !important;
 
   &:hover {
@@ -26,11 +25,10 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
 
 // The Form on the Homepage
 #new_project {
-  margin: 50px;
   width: 670px;
 
   display: table;
-  margin: 50px auto;
+  margin: 120px auto 40px;
 
   background: none repeat scroll 0px 0px $homespree_blue;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
@@ -520,7 +518,6 @@ $shadow: 0px 0 8px 0 rgba(0, 0, 0, 0.5);
       width: 280px !important;
       margin-left: 10px !important;
     }
-
   }
 
   .navbar-inner {

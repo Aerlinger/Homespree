@@ -163,6 +163,18 @@ class Contractor < User
     read_attribute(:portrait_url) || "/assets/contractor_profiles/portrait_default.jpg"
   end
 
+  def licensed?
+    true
+  end
+
+  def bonded?
+    true
+  end
+
+  def insured?
+    true
+  end
+
   private
 
   def add_badges

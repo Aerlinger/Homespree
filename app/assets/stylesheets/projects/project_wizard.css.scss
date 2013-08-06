@@ -4,17 +4,52 @@
 $header_height: 110px;
 
 #project_wizard {
-
   .container {
-    //background: none;
+  }
+
+  .outset {
+    width: 670px;
+    display: table;
+    margin: 10px auto;
+
+    background: none repeat scroll 0px 0px $homespree_lightest;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 3px 3px 3px 3px;
+    border: 3px solid white;
+    padding: 7px;
+    line-height: 1.4;
+
+    label {
+      display: inline;
+    }
+
+    input {
+      width: 50px;
+    }
+  }
+
+  .square-feet {
+    * {
+      font-weight: bold;
+    }
+  }
+
+  #submit_request {
+    display: table;
+    margin: 30px auto;
+    width: 500px;
   }
 
   #new_project {
     margin: 10px auto;
 
+    #update_project {
+      width: 100px;
+    }
+
     select {
       height: 40px;
-      width: 200px;
+      width: 250px;
       font-size: 1.5em;
       padding-left: 15px;
       margin-left: 5px;
@@ -23,11 +58,11 @@ $header_height: 110px;
     }
   }
 
+  .add-room, .add-wall {
+    font-weight: bold;
+  }
 
   .project_form {
-    margin: 10px auto;
-
-    margin: 50px;
     width: 670px;
 
     display: table;
@@ -73,6 +108,8 @@ $header_height: 110px;
       font-size: 11px;
       background-color: $homespree_lightest;
 
+      margin: 0;
+
       -moz-border-radius-topleft: 4px;
       -moz-border-radius-topright: 4px;
       border-top-left-radius: 4px;
@@ -85,6 +122,7 @@ $header_height: 110px;
       }
 
       .title {
+
         position: absolute;
         height: $header_height;
         margin: 0;
@@ -92,6 +130,7 @@ $header_height: 110px;
         right: 0;
 
         .slogan {
+          text-align: center;
           font-size: 12px;
           font-style: italic;
           color: black;
@@ -101,13 +140,13 @@ $header_height: 110px;
 
         h5 {
           border-bottom: 2px solid white;
-          //border-right: 1px solid white;
-          //border-left: 1px solid white;
           -moz-border-radius-topright: 3px;
           border-top-right-radius: 3px;
           -webkit-top-right-radius: 3px;
 
+
           margin: 0;
+          margin-left: -30px;
           font-size: 14px;
           font-weight: bold !important;
           background-color: $homespree_blue;
@@ -117,40 +156,55 @@ $header_height: 110px;
         }
 
         .btn-view-profile {
+          position: absolute;
           font-weight: bold;
           display: table;
 
           width: 100px;
           bottom: 5px;
-          margin: 5px auto;
+          left: 30px;
         }
       }
     }
 
     .portrait {
-      display: block;
-      position: absolute;
-      height: $header_height !important;
+      position: relative;
 
-      width: auto;
-      float: left;
+      img {
+        display: block;
+        position: absolute;
+        height: $header_height !important;
 
-      font-style: normal;
-      border-radius: 3px 0 0 0;
+        z-index: 1;
+
+        width: auto;
+        float: left;
+
+        font-style: normal;
+        border-radius: 3px 0 0 0;
+      }
     }
 
     .description {
+      display: block;
       text-align: justify;
       font-size: .9em;
       line-height: 1.2em;
-      padding: 15px 10px;
+      padding: 10px 0px;
+      height: 150px;
+      margin: 0;
+
+      p {
+        display: static;
+        padding: 0 10px;
+      }
     }
 
     .hourly-rate {
       display: block;
       background-color: $homespree_lightest;
 
-      border-top: 3px solid rgb(196, 196, 196);
+      border-top: 2px solid $homespree_blue;
       border-bottom: 1px solid rgb(196, 196, 196);
 
       text-align: center;
@@ -160,6 +214,27 @@ $header_height: 110px;
 
     .select-contractor {
       margin-bottom: 0 !important;
+    }
+
+    .accreditations {
+      display: block;
+      margin: 0;
+      border-top: 1px solid white;
+
+      .span-tri {
+        width: 33.3333%;
+        //border-left: 2px solid $homespree_blue;
+        cursor: default;
+        border-left: 2px solid white;
+        display: table;
+        text-align: center;
+        line-height: 30px;
+        margin: auto;
+
+        font-weight: bold;
+        background-color: $homespree_lightgreen;
+        color: white;
+      }
     }
 
     .btn-select {
@@ -183,7 +258,6 @@ $header_height: 110px;
     .select-contractor {
       color: white;
       font-size: 18px;
-      //font-weight: bold;
       padding: 15px;
 
       &:hover {
@@ -191,7 +265,6 @@ $header_height: 110px;
       }
     }
   }
-
 
   form {
     input[type='radio'] {

@@ -1,5 +1,5 @@
 jQuery ->
-  Stripe.setPublishableKey($('meta[name="stripe-key"').attr('content'))
+  Stripe.setPublishableKey($('meta[name="stripe-key"]').attr('content'))
   payment.setupForm()
 
 payment =

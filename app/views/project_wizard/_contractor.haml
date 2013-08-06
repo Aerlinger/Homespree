@@ -1,17 +1,28 @@
 .span4.contractor-preview
   .row-fluid.header
-    .span5
-      = image_tag contractor.portrait_url, class: "portrait"
+    .span5.portrait
+      = image_tag contractor.portrait_url
+
     .span7.title
       %h5= contractor.company_title
       %p.slogan= contractor.slogan
 
-      = link_to "View Profile", "#", class: "btn btn-small btn-success btn-view-profile"
+      = link_to "View Profile", contractor, class: "btn btn-small btn-success btn-view-profile"
 
-  .row-fluid
-    %strong.hourly-rate= "Hourly Rate: #{number_to_currency(40)}"
+  .row-fluid.accreditations
+    .span-tri
+      %i.e-icon-check
+      %span Licensed
+    .span-tri
+      %i.e-icon-check
+      %span Bonded
+    .span-tri
+      %i.e-icon-check
+      %span Insured
+  .row-fluid.hourly-rate
+    %strong= "Hourly Rate: #{number_to_currency(40)}"
 
-  .row-fluid
-    %p.description= contractor.description
+  .row-fluid.description
+    %p= raw truncate(contractor.description, length: 430, :omission => "... #{link_to 'Read more', contractor}")
 
   = link_to "Select Contractor", "#", class: "btn btn-success btn-select select-contractor"

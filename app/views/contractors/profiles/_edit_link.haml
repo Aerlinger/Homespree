@@ -2,6 +2,6 @@
 - text ||= "Edit"
 
 - if current_user && own_profile?
-  =link_to "javascript:void(0)", id: activator, class: "edit-link", style: "position: relative; font-style: italic;" do
+  = link_to "javascript:void(0)", id: activator, class: "edit-link", style: "position: relative; font-style: italic;" do
     %i.e-icon-pencil{style: "height: 20px; line-height: 16px;"}
     = text

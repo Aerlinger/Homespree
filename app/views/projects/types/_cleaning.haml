@@ -1,0 +1,26 @@
+- content_for :project_request
+  .row.outset
+    .field.flooring-type-installation
+      = label_tag :flooring_type_installation, "What type of flooring do you need installed?"
+      = select_tag :flooring_type_installation, %w[Hardwood Tile Carpet Linoleum]
+
+  .row.outset
+    .field.flooring-type-removal
+      = label_tag :flooring_type_removal, "Type of painting project"
+      = select_tag :flooring_type_removal, %w[Hardwood Tile Carpet Linoleum]
+
+    .field.square-feet
+      = label_tag :flooring_type, "Current Finish"
+      = text_field_tag :square_feet
+
+    .field.num-stairs
+      = label_tag :flooring_type, "How many stairs"
+      = number_field_tag :square_feet
+
+    .field.waste-removal
+      = label_tag :waste_removal, "Would you like the contractor to haul away the waste?"
+      = number_field_tag :square_feet
+
+    .field.move-furniture
+      = label_tag :move_furniture, "Does the contractor need to move any furniture?"
+      = number_field_tag :move_furniture

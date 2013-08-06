@@ -2,7 +2,6 @@
 #
 # Acts as a wrapper for contractor view data.
 #
-
 #
 #- if @contractor.first_name.present?
 #  %li#full_name

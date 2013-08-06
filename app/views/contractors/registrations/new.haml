@@ -14,7 +14,8 @@
 
             = f.button :submit, "Create profile", class: "btn btn-success"
 
-        %a <b>Homeowner?</b> Create an account #{link_to "here", new_homeowner_registration_path}
+        %span.sign-in-homeowner
+          %a <b>Homeowner?</b> Create an account #{link_to "here", new_homeowner_registration_path, class: 'here'}
 
   %footer.white.navbar-fixed-bottom
     Already have an account?
