@@ -1,6 +1,9 @@
 class Users::DashboardController < ApplicationController
   layout "dashboard"
 
+  def my_projects
+  end
+
   def notifications
   end
 
@@ -8,9 +11,6 @@ class Users::DashboardController < ApplicationController
   end
 
   def inbox
-  end
-
-  def my_projects
   end
 
   def my_income

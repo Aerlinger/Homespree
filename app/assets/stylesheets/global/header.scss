@@ -1,3 +1,4 @@
+@import "palette";
 /* --------------------->>> Header-Logo <<<---------------------*/
 
 #logo {
@@ -35,6 +36,7 @@
 
 .accordmobile {
   background: #5676a5 !important;
+  //background: $homespree_accent !important;
 }
 
 .mobile_nav {
@@ -46,6 +48,7 @@
 
 .secondary-menu {
   background-color: #5676a5;
+  //background-color: $homespree_blue;
   color: #fff;
 }
 

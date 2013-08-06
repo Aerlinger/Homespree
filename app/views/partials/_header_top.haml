@@ -5,13 +5,6 @@
         %ul.nav.accordmobile.pull-right
 
           - if user_signed_in? && !current_user.guest?
-            %li.dropdown.parent
-              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-                My Messages
-                %i.e-icon-comment
-              %ul.dropdown-menu
-                %li.menu-text
-                  %i No Messages found.
 
             - if current_user.contractor?
               %li.dropdown.parent
@@ -22,6 +15,27 @@
                   %li.menu-text
                     %i No projects found.
                     -#  = link_to "Find jobs in my area"
+            - else
+              %li
+                -#%i.e-icon-tools
+                = link_to "Request a Project", root_path
+              -#%li.dropdown.parent
+                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                  Request a Project
+                  %i.e-icon-tools
+                -#%ul.dropdown-menu
+                -#  %li.menu-text
+                -#    = link_to "Search contractors"
+                -#  %li.menu-text
+                -#    = link_to "Browse professionals in your area"
+
+            %li.dropdown.parent
+              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                My Messages
+                %i.e-icon-comment
+              %ul.dropdown-menu
+                %li.menu-text
+                  %i No Messages found.
 
             %li.dropdown.parent
               %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
@@ -29,12 +43,15 @@
                 %i.e-icon-cog
               %ul.dropdown-menu
                 %li.current-user
-                  = link_to current_user do
-                    %b.fullname= current_user.name
-                    %br/
-                    %small Edit profile
-                    - if current_user.contractor? && current_user.portrait_url?
-                      = image_tag current_user.portrait_url.to_s, class: "name avatar pull-right"
+                  - if current_user.contractor?
+                    = link_to current_user do
+                      %b.fullname= current_user.name
+                      %br/
+                      %small Edit profile
+                      - if current_user.contractor? && current_user.portrait_url?
+                        = image_tag current_user.portrait_url.to_s, class: "name avatar pull-right"
+                  - else
+                    = link_to "My Projects", current_user
                 %li.divider
                 %li
                   =link_to "Account Settings", general_settings_path
