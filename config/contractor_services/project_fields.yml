@@ -169,7 +169,7 @@ painting:   # (TOP-LEVEL PROJECT CATEGORIES 0 SPACES INDENTED) (E.g. Painting, P
         - Fair - Minor repair necessary
         - Poor - Major repair necessary
 
-  concrete:         # (PROJECT SUB CATEGORIES 2 SPACES INDENTED) (Starts with a #) ---------------------------
+  window_and_door_finishing:         # (PROJECT SUB CATEGORIES 2 SPACES INDENTED) (Starts with a #) ---------------------------
     location:         # Project sub-type attributes are 4 spaces indented
       field_type: select
       field_data:
@@ -185,7 +185,7 @@ painting:   # (TOP-LEVEL PROJECT CATEGORIES 0 SPACES INDENTED) (E.g. Painting, P
       field_type: text_field
       Number Square Feet: :decimal  # 'SINGLE' attribute types have an associated type (:integer in this case)
 
-  cleaning:
+  stair_and_railing_finishing:
     finish_type:
       label: "Finish type"
       field_type: select
@@ -194,7 +194,7 @@ painting:   # (TOP-LEVEL PROJECT CATEGORIES 0 SPACES INDENTED) (E.g. Painting, P
         - Painted
         - Wallpapered
 
-  flooring:
+  power_washing:
     finish_type:
       label: "Finish type"
       field_type: select
@@ -203,7 +203,7 @@ painting:   # (TOP-LEVEL PROJECT CATEGORIES 0 SPACES INDENTED) (E.g. Painting, P
         - Painted
         - Wallpapered
 
-  lawn_care:
+  hardwood_flooring:
     finish_type:
       label: "Finish type"
       field_type: select
@@ -212,7 +212,7 @@ painting:   # (TOP-LEVEL PROJECT CATEGORIES 0 SPACES INDENTED) (E.g. Painting, P
         - Painted
         - Wallpapered
 
-  other_painting:
+  fence_painting:
     finish_type:
       label: "Finish type"
       field_type: select
@@ -220,6 +220,16 @@ painting:   # (TOP-LEVEL PROJECT CATEGORIES 0 SPACES INDENTED) (E.g. Painting, P
         - Unfinished
         - Painted
         - Wallpapered
+
+  deck_painting:
+    finish_type:
+      label: "Finish type"
+      field_type: select
+      field_data:
+        - Unfinished
+        - Painted
+        - Wallpapered
+
 
 cleaning:
   interior_cleaning:

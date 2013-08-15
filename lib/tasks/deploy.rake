@@ -1,5 +1,4 @@
-
-task PRODUCTION = "homespree"  # "task" here stubs to prevent rake errors with commandline
+task PRODUCTION = "homespree" # "task" here stubs to prevent rake errors with commandline
 task STAGING = "homespree-staging"
 
 APP = ARGV[1] || STAGING
@@ -26,7 +25,6 @@ HOMESPREE
 
 
 namespace :deploy do
-
   task :migrations => [:push, :off, :migrate, :restart, :on]
 
   task :production => [:precompile_assets, :push, :restart, :tag]
@@ -76,8 +74,8 @@ namespace :deploy do
   end
 
   task :push_previous do
-    prefix = "#{APP}_release-"
-    releases = `git tag`.split("\n").select { |t| t[0..prefix.length-1] == prefix }.sort
+    prefix          = "#{APP}_release-"
+    releases        = `git tag`.split("\n").select { |t| t[0..prefix.length-1] == prefix }.sort
     current_release = releases.last
     previous_release = releases[-2] if releases.length >= 2
     if previous_release
