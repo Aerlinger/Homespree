@@ -84,23 +84,6 @@ describe Address do
     specify "address has User as an addressable type" do
       address.addressable_type.should eq "User"
     end
-
-    it "doesn't updates parent on save" do
-      #address.should_receive(:update_parent)
-      @homeowner.should_receive(:update_coordinates)
-      @homeowner.should_receive(:latitude)
-      @homeowner.should_receive(:longitude)
-
-      #address.update_attributes!(latitude: 29, longitude: 30)
-      address.latitude = 29
-      address.longitude = 29
-      address.save!
-
-      @homeowner.save!
-      @homeowner.reload
-      #@homeowner.address.should eq address
-      #@homeowner.latitude.should eq 29
-    end
   end
 
   describe "created as a nested attribute of an appointment" do

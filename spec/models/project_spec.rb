@@ -122,7 +122,9 @@ describe Project do
       }
     end
 
-    its(:properties) { should eq "" }
+    its(:properties) { should eq({
+      width: '50', window_height: '30'
+    }) }
 
     its("project_type.fields") { should eq [field1, field2, field3, field4] }
     its(:fields) { should eq [field1, field2, field3, field4] }

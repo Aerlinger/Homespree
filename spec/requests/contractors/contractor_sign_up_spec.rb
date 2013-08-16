@@ -44,7 +44,7 @@ describe "Contractor Sign Up" do
 
     its(:current_path) { should eq "/contractors" }
     it { should have_content("is invalid") }
-    it { should have_content("Create Contractor Profile") }
+    it { should have_content("Join Homespree as a Professional") }
   end
 
 end

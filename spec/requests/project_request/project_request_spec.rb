@@ -20,13 +20,13 @@ describe 'Project Wizard'  do
     its(:current_path) { should eq '/project_wizard/request' }
 
     it { should have_content 'Interior painting' }
-    it { should have_content 'previous' }
+    it { should_not have_content 'previous' }
 
     it 'has dynamic input controls for the interior project'
     it 'updates fields on when project type is changed'
 
     describe 'Page 2: Review Estimate' do
-      before(:each) { click_button 'next'}
+      before(:each) { click_button 'Submit Project Request'}
 
       its(:current_path) { should eq '/project_wizard/review_estimates' }
       it { should have_content 'Review Estimates' }

@@ -98,7 +98,7 @@ group :development do
   #gem 'bullet'   #FIXME: Bullet is throwing exceptions AirbrakeNotifier, disabled for now.
   gem 'guard'
   gem 'guard-rspec'
-  gem 'guard-zeus'
+  #gem 'guard-zeus'
   gem 'guard-bundler'
 end
 
