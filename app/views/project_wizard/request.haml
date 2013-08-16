@@ -1,11 +1,13 @@
 - content_for :project_wizard do
-  %h1 New Project Request
-  %hr
+  .top-row{style: "background-color: white;"}
+    %h1 New Project Request
+    %hr
 
   = form_for @project, url: next_wizard_path do |f|
     -# Updates the properties of this project. Also used to update service type, project type and zip.
     #new_project
-      = f.select :service_type, ServiceType.all.collect { |service_type| [ service_type.to_s, service_type.id ] }
+      -#= f.select :service_type, ServiceType.all.collect { |service_type| [ service_type.to_s, service_type.id ] }
+      = f.select :project_type_id, ProjectType.all.collect { |project_type| [ project_type.to_s, project_type.id ] }
       = f.hidden_field :service_type_name, value: "Painting"
       = f.text_field :zipcode, type: "text", id: "zipcode", placeholder: "Zip code", value: @project.homeowner.zipcode
 
@@ -14,5 +16,5 @@
     %hr
     = render partial: "projects/types/painting", locals: { f: f }
 
-    %hr
-    = f.submit "Submit Project Request", id: "submit_request", class: "btn btn-large btn-success"
+    .bottom-row{style: "background-color: white;"}
+      = f.submit "Submit Project Request", id: "submit_request", class: "btn btn-large btn-success"

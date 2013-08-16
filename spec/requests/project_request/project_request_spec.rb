@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'Project Wizard'  do
+describe 'Project Wizard', js: false do
   subject { page }
 
   before :each do
@@ -26,7 +26,13 @@ describe 'Project Wizard'  do
     it 'updates fields on when project type is changed'
 
     describe 'Page 2: Review Estimate' do
-      before(:each) { click_button 'Submit Project Request'}
+      before do
+        fill_in "Width in feet", with: '10'
+        fill_in "Height in feet", with: '20'
+        fill_in "Length in feet", with: '30'
+
+        click_button 'Submit Project Request'
+      end
 
       its(:current_path) { should eq '/project_wizard/review_estimates' }
       it { should have_content 'Review Estimates' }
