@@ -6,19 +6,23 @@ ruby '1.9.3'
 # Let the party begin ------------------------------------------------------------------------------------------------
 gem 'homespree'
 
+             # Active Admin gems for rails 4:
+gem 'devise',              github: 'plataformatec/devise'
+gem 'responders',          github: 'plataformatec/responders'
+gem 'inherited_resources', github: 'josevalim/inherited_resources'
+gem 'ransack'#,             github: 'ernie/ransack', branch: 'rails-4'
+gem 'activeadmin',         github: 'gregbell/active_admin', branch: 'rails4'
+gem 'formtastic',          github: 'justinfrench/formtastic'
+gem 'sass-rails'
+
 # Server-side --------------------------------------------------------------------------------------------------------
-gem 'devise'
-gem 'activeadmin'
-gem 'capistrano'
-gem 'newrelic_rpm'
+gem 'libv8', '= 3.11.8.13'
+gem 'therubyracer', :platforms => :ruby
+gem 'delayed_job_active_record', '>= 4.0.0.beta2'
 gem 'thin'
 gem 'whenever', require: false
 gem 'figaro', '>= 0.5.3'
 gem 'stripe'
-
-# Image uploads and hosting-related ----------------------------------------------------------------------------------
-#gem 'rmagick'
-#gem 'carrierwave'
 
 # Tools/utilities:  --------------------------------------------------------------------------------------------------
 gem 'annotate'
@@ -41,32 +45,31 @@ gem 'mailboxer'
 gem 'email_validator'
 gem 's3_direct_upload'
 
+# Misc.
+gem 'email_validator'
+
 # Views: -------------------------------------------------------------------------------------------------------------
-gem 'libv8', '= 3.11.8.13'
 gem 'turbolinks'
 gem 'haml-rails'
-gem 'jquery-rails', '2.3.0'
+
+
+# Assets
+gem 'coffee-rails'
+gem 'sass-rails'
 gem 'jquery-turbolinks'
+gem 'jquery-fileupload-rails'
+gem 'jquery-ui-rails'
+gem 'jquery-rails'
 
-group :assets do
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'sass-rails',   '~> 3.2.3'
+gem 'flexslider', :git => 'https://github.com/constantm/Flexslider-2-Rails-Gem.git'
 
-  gem 'jquery-fileupload-rails'
-  gem 'jquery-ui-rails'
+gem 'uglifier'
 
-  gem 'flexslider', :git => 'https://github.com/constantm/Flexslider-2-Rails-Gem.git'
+gem 'less-rails' #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+gem 'less-rails-fontawesome'
 
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyracer', :platforms => :ruby
-  gem 'uglifier', '>= 1.0.3'
+gem 'twitter-bootstrap-rails'#, '2.2.6'
 
-  gem 'less-rails' #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
-  gem 'less-rails-fontawesome'
-  gem 'twitter-bootstrap-rails', '2.2.6'
-
-  gem 'redcarpet'
-end
 
 group :test, :development do
   gem 'rspec-rails', '>= 2.12.0'
@@ -74,6 +77,7 @@ group :test, :development do
   gem 'factory_girl_rails'
   gem 'zeus'
 
+  gem 'shoulda-matchers'
   gem 'growl'
   gem 'meta_request'
   gem 'faker'
@@ -91,6 +95,7 @@ group :test do
   gem 'capybara'
   gem 'capybara-webkit', require: false
   gem 'launchy', '2.1.0'
+  gem 'timecop'
 end
 
 group :development do
@@ -107,7 +112,9 @@ group :development do
   gem 'guard-bundler'
 end
 
-group :production do
+group :staging, :production do
+  gem 'newrelic_rpm', '>= 3.5.7'
+  gem 'rails_12factor'
   gem 'pg'
 end
 
