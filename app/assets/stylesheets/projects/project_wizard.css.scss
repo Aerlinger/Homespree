@@ -3,6 +3,17 @@
 
 $header_height: 110px;
 
+.project-form {
+  h1, h2, h3, h4, h5 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
+
+  hr {
+    margin-top: 25px;
+  }
+}
+
 #project_wizard {
   .container {
   }

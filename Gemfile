@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.12'
 ruby '1.9.3'
 
+# Let the party begin ------------------------------------------------------------------------------------------------
+gem 'homespree'
+
 # Server-side --------------------------------------------------------------------------------------------------------
 gem 'devise'
 gem 'activeadmin'
@@ -14,8 +17,8 @@ gem 'figaro', '>= 0.5.3'
 gem 'stripe'
 
 # Image uploads and hosting-related ----------------------------------------------------------------------------------
-gem 'rmagick'
-gem 'carrierwave'
+#gem 'rmagick'
+#gem 'carrierwave'
 
 # Tools/utilities:  --------------------------------------------------------------------------------------------------
 gem 'annotate'

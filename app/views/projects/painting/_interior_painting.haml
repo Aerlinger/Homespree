@@ -3,40 +3,41 @@
 -#    = label_tag :flooring_type_removal, "Type of painting project"
 -#    = f.select :project_type_id, ProjectType.all.collect { |project_type| [ project_type.to_s, project_type.id ] }
 
-.outset
-  %h1
-    Room details
+.project-form.interior-painting
+  .outset
+    %h1
+      Room details
 
-  = render layout: "project_wizard/form_section", locals: { section_name: "dimensions" } do
-    = render "project_wizard/components/text_field", param: :width, label: "Width in feet"
-    = render "project_wizard/components/text_field", param: :height, label: "Height in feet"
-    = render "project_wizard/components/text_field", param: :length, label: "Length in feet"
+    = render layout: "project_wizard/form_section", locals: { section_name: "dimensions" } do
+      = render "project_wizard/components/text_field", param: :width, label: "Width in feet"
+      = render "project_wizard/components/text_field", param: :height, label: "Height in feet"
+      = render "project_wizard/components/text_field", param: :length, label: "Length in feet"
 
-  = render layout: "project_wizard/form_section", locals: { section_name: "additional-items" } do
-    = render "project_wizard/components/text_field", param: :height, label: "Number of doors to be painted"
-    = render "project_wizard/components/text_field", param: :length, label: "Number of windows to be painted"
-
-    .field.square-feet.pull-right
-      = label_tag :waste_removal, "Square Feet: "
-      = label_tag "0", "0", class: "square-feet"
-
-    = link_to "Add another wall", nil, class: 'add-wall'
-
-
-  = render layout: "project_wizard/form_section", locals: { section_name: "conditions" } do
-      = render "project_wizard/components/text_field", param: :length, label: "Number of windows to be painted", options_for_select([["Unfinished", "unfinished"], ["Stain & Urethane", "stain_and_urethane"], ["Wallpapered", "wallpapered"]])
+    = render layout: "project_wizard/form_section", locals: { section_name: "additional-items" } do
+      = render "project_wizard/components/text_field", param: :height, label: "Number of doors to be painted"
       = render "project_wizard/components/text_field", param: :length, label: "Number of windows to be painted"
 
-    -#.field.length
-    -#  = label_tag :current_finish
-    -#  = select_tag :current_finish, options_for_select([["Unfinished", "unfinished"], ["Stain & Urethane", "stain_and_urethane"], ["Wallpapered", "wallpapered"]])
-    -#
-    -#.field.length
-    -#  = label_tag :desired_finish
-    -#  = select_tag :desired_finish, options_for_select([["Unfinished", "unfinished"], ["Stain & Urethane", "stain_and_urethane"], ["Wallpapered", "wallpapered"]])
+      .field.square-feet.pull-right
+        = label_tag :waste_removal, "Square Feet: "
+        = label_tag "0", "0", class: "square-feet"
 
-    .field.move-furniture
-      = label_tag :move_furniture, "Does the contractor need to move any furniture?"
-      = number_field_tag :move_furniture
+      = link_to "Add another wall", nil, class: 'add-wall'
 
-    = link_to "Add another room", nil, class: 'add-room'
+
+    = render layout: "project_wizard/form_section", locals: { section_name: "conditions" } do
+      = render "project_wizard/components/select_field", param: :length, label: "Number of windows to be painted", tags: options_for_select([["Unfinished", "unfinished"], ["Stain & Urethane", "stain_and_urethane"], ["Wallpapered", "wallpapered"]])
+      = render "project_wizard/components/select_field", param: :length, label: "Number of windows to be painted", tags: options_for_select([["Unfinished", "unfinished"], ["Stain & Urethane", "stain_and_urethane"], ["Wallpapered", "wallpapered"]])
+
+      -#.field.length
+      -#  = label_tag :current_finish
+      -#  = select_tag :current_finish, options_for_select([["Unfinished", "unfinished"], ["Stain & Urethane", "stain_and_urethane"], ["Wallpapered", "wallpapered"]])
+      -#
+      -#.field.length
+      -#  = label_tag :desired_finish
+      -#  = select_tag :desired_finish, options_for_select([["Unfinished", "unfinished"], ["Stain & Urethane", "stain_and_urethane"], ["Wallpapered", "wallpapered"]])
+
+      .field.move-furniture
+        = label_tag :move_furniture, "Does the contractor need to move any furniture?"
+        = number_field_tag :move_furniture
+
+      = link_to "Add another room", nil, class: 'add-room'
