@@ -1,0 +1,5 @@
+.field{class: param.to_s}
+  = label_tag param, label
+  - tags.each do |field_param, field_label|
+    = label_tag field_param, field_label
+    = text_field_tag field_param

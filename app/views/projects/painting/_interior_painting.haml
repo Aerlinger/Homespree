@@ -9,30 +9,20 @@
       = hs_text_field(:length, "Length in feet")
 
     = render layout: "project_wizard/form_section", locals: { section_name: "additional-items" } do
-      = render "project_wizard/components/text_field", param: :height, label: "Number of doors to be painted"
-      = render "project_wizard/components/text_field", param: :length, label: "Number of windows to be painted"
+      = hs_number_field(:num_doors, "Number of doors to be painted")
+      = hs_number_field(:num_windows, "Number of windows to be painted")
 
-      .field.square-feet.pull-right
-        = label_tag :waste_removal, "Square Feet: "
-        = label_tag "0", "0", class: "square-feet"
+      = hs_number_field(:paint_ceiling, "Paint ceiling?")
 
-      = link_to "Add another wall", nil, class: 'add-wall'
+      = label_tag "Select trim to be painted"
 
+      = hs_check_collection_field(:paint_ceiling, "Paint ceiling?", {baseboard: "Baseboard", casing: "Casing", crown_molding: "Crown Molding", wainscoting: "Wainscoting"})
 
     = render layout: "project_wizard/form_section", locals: { section_name: "conditions" } do
-      = render "project_wizard/components/select_field", param: :length, label: "Number of windows to be painted", tags: options_for_select([["Unfinished", "unfinished"], ["Stain & Urethane", "stain_and_urethane"], ["Wallpapered", "wallpapered"]])
-      = render "project_wizard/components/select_field", param: :length, label: "Number of windows to be painted", tags: options_for_select([["Unfinished", "unfinished"], ["Stain & Urethane", "stain_and_urethane"], ["Wallpapered", "wallpapered"]])
+      = render "project_wizard/components/select_field", param: :length, label: "Condition of walls", tags: {good: "Good", fair: "Fair", poor: "Poor"}
+      = render "project_wizard/components/select_field", param: :length, label: "Current finish", tags: { unfinished: "Unfinished", painted: "Painted", stain_and_urethane: "Stain & Urethane", wallpapered: "Wallpapered"}
+      = render "project_wizard/components/select_field", param: :length, label: "Desired finish", tags: { painted: "Painted", stain_and_urethane: "Stain & Urethane", wallpapered: "Wallpapered"}
 
-      -#.field.length
-      -#  = label_tag :current_finish
-      -#  = select_tag :current_finish, options_for_select([["Unfinished", "unfinished"], ["Stain & Urethane", "stain_and_urethane"], ["Wallpapered", "wallpapered"]])
-      -#
-      -#.field.length
-      -#  = label_tag :desired_finish
-      -#  = select_tag :desired_finish, options_for_select([["Unfinished", "unfinished"], ["Stain & Urethane", "stain_and_urethane"], ["Wallpapered", "wallpapered"]])
-
-      .field.move-furniture
-        = label_tag :move_furniture, "Does the contractor need to move any furniture?"
-        = number_field_tag :move_furniture
+      = hs_radio_collection_field(:room_furnished, "Is the room furnished?", {:true => "Yes", :false => "No"})
 
       = link_to "Add another room", nil, class: 'add-room'
