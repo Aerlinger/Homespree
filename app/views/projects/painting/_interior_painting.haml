@@ -1,17 +1,12 @@
--#.outset
--#  .field.painting-type
--#    = label_tag :flooring_type_removal, "Type of painting project"
--#    = f.select :project_type_id, ProjectType.all.collect { |project_type| [ project_type.to_s, project_type.id ] }
-
 .project-form.interior-painting
   .outset
     %h1
       Room details
 
     = render layout: "project_wizard/form_section", locals: { section_name: "dimensions" } do
-      = render "project_wizard/components/text_field", param: :width, label: "Width in feet"
-      = render "project_wizard/components/text_field", param: :height, label: "Height in feet"
-      = render "project_wizard/components/text_field", param: :length, label: "Length in feet"
+      = hs_text_field(:width, "Width in feet")
+      = hs_text_field(:height, "Height in feet")
+      = hs_text_field(:length, "Length in feet")
 
     = render layout: "project_wizard/form_section", locals: { section_name: "additional-items" } do
       = render "project_wizard/components/text_field", param: :height, label: "Number of doors to be painted"
