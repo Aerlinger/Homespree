@@ -1,6 +1,4 @@
 Homespree::Application.routes.draw do
-  resources :payments
-
 
   # Root route must be before ActiveAdmin.routes(self)
   root :to => 'static_pages#home'
@@ -24,6 +22,7 @@ Homespree::Application.routes.draw do
       resources :photos, only: [:create, :update, :destroy]
       resources :appointments
       resources :projects
+      resources :payments
     end
   end
 
