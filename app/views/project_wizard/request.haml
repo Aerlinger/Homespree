@@ -14,7 +14,7 @@
       = link_to "Update", "", id: "update_project", class: "btn btn-large btn-success pull-right"
 
     %hr
-    = render partial: "projects/types/painting", locals: { f: f }
+    = render partial: "projects/painting/interior_painting", locals: { f: f }
 
     .bottom-row{style: "background-color: white;"}
       = f.submit "Submit Project Request", id: "submit_request", class: "btn btn-large btn-success"

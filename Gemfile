@@ -33,7 +33,9 @@ gem 'simple_form'
 gem 'friendly_id'
 gem 'wicked'
 gem 'acts_as_list'
+gem 'rack-timeout'
 gem 'mailboxer'
+gem 'email_validator'
 gem 's3_direct_upload'
 
 # Views: -------------------------------------------------------------------------------------------------------------

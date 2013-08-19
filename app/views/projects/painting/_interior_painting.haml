@@ -8,7 +8,6 @@
     Room details
 
   = render layout: "project_wizard/form_section", locals: { section_name: "dimensions" } do
-
     = render "project_wizard/components/text_field", param: :width, label: "Width in feet"
     = render "project_wizard/components/text_field", param: :height, label: "Height in feet"
     = render "project_wizard/components/text_field", param: :length, label: "Length in feet"
@@ -25,13 +24,16 @@
 
 
   = render layout: "project_wizard/form_section", locals: { section_name: "conditions" } do
-    .field.length
-      = label_tag :current_finish
-      = select_tag :current_finish, options_for_select([["Unfinished", "unfinished"], ["Stain & Urethane", "stain_and_urethane"], ["Wallpapered", "wallpapered"]])
+      = render "project_wizard/components/text_field", param: :length, label: "Number of windows to be painted", options_for_select([["Unfinished", "unfinished"], ["Stain & Urethane", "stain_and_urethane"], ["Wallpapered", "wallpapered"]])
+      = render "project_wizard/components/text_field", param: :length, label: "Number of windows to be painted"
 
-    .field.length
-      = label_tag :desired_finish
-      = select_tag :desired_finish, options_for_select([["Unfinished", "unfinished"], ["Stain & Urethane", "stain_and_urethane"], ["Wallpapered", "wallpapered"]])
+    -#.field.length
+    -#  = label_tag :current_finish
+    -#  = select_tag :current_finish, options_for_select([["Unfinished", "unfinished"], ["Stain & Urethane", "stain_and_urethane"], ["Wallpapered", "wallpapered"]])
+    -#
+    -#.field.length
+    -#  = label_tag :desired_finish
+    -#  = select_tag :desired_finish, options_for_select([["Unfinished", "unfinished"], ["Stain & Urethane", "stain_and_urethane"], ["Wallpapered", "wallpapered"]])
 
     .field.move-furniture
       = label_tag :move_furniture, "Does the contractor need to move any furniture?"

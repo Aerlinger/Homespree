@@ -123,6 +123,8 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       request_store (~> 1.0.3)
+    email_validator (1.4.0)
+      activemodel
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (1.4.0)
@@ -268,6 +270,7 @@ GEM
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
+    rack-timeout (0.0.4)
     rails (3.2.12)
       actionmailer (= 3.2.12)
       actionpack (= 3.2.12)
@@ -424,6 +427,7 @@ DEPENDENCIES
   database_cleaner (= 0.7.0)
   devise
   draper
+  email_validator
   factory_girl_rails
   faker
   figaro (>= 0.5.3)
@@ -451,6 +455,7 @@ DEPENDENCIES
   newrelic_rpm
   pg
   quiet_assets
+  rack-timeout
   rails (= 3.2.12)
   rb-fchange
   rb-fsevent
