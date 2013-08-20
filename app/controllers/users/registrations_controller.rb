@@ -14,5 +14,4 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
   end
 
-  after_filter :geolocate, only: [:create]
 end

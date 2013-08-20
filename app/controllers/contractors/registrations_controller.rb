@@ -1,10 +1,9 @@
 class Contractors::RegistrationsController < Users::RegistrationsController
   #after_filter :send_welcome_email, :send_notification_email, only: [:create]
 
-  #def new
-    #super
-    #@contractor = Contractor.new({ email: params[:email] })
-  #end
+  before_filter :update_sanitized_params, if: :devise_controller?
+
+
 
   protected
 
@@ -19,6 +18,12 @@ class Contractors::RegistrationsController < Users::RegistrationsController
   def send_notification_email
     %w[anthony].each do |admin|
       ContractorMailer.notify_signup(resource, admin).deliver
-   end
+    end
+  end
+
+  private
+
+  def update_sanitized_params
+    devise_parameter_sanitizer.for(:sign_up) {|u| u.permit(:company_title, :email, :password)}
   end
 end

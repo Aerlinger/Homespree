@@ -12,9 +12,10 @@
 //
 //= require jquery
 // require jquery.turbolinks
-//= require jquery-ui
+// require jquery-ui
+// require jquery.ui.all
 //= require jquery_ujs
-//= require jquery.purr
+// require jquery.purr
 //= require turbolinks
 //= require s3_direct_upload
 //= require custom

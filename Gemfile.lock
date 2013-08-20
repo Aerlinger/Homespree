@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/bernat/best_in_place.git
+  revision: df178520bf9ba405baee9528d5dbb630d6ff760c
+  specs:
+    best_in_place (2.1.0)
+      jquery-rails
+      rails (>= 3.1)
+
+GIT
   remote: git://github.com/gregbell/active_admin.git
   revision: 72a9c30cef47b3f38c38039de021aaa3194c188b
   branch: rails4
@@ -56,6 +64,12 @@ GIT
   specs:
     flexslider (2.0.1)
 
+GIT
+  remote: https://github.com/norman/friendly_id.git
+  revision: 823c46d67984f4401eeb0ccd272acc3e9e218ace
+  specs:
+    friendly_id (5.0.0.beta2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -93,8 +107,6 @@ GEM
     arel (4.0.0)
     atomic (1.1.13)
     bcrypt-ruby (3.1.1)
-    best_in_place (0.2.3)
-      rails (>= 3.0.0)
     better_errors (0.9.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -175,7 +187,6 @@ GEM
     foreigner (1.4.2)
       activerecord (>= 3.0.0)
     formatador (0.2.4)
-    friendly_id (4.0.10)
     geocoder (1.1.8)
     gmaps4rails (1.5.6)
     growl (1.0.3)
@@ -269,6 +280,8 @@ GEM
     polyamorous (0.6.3)
       activerecord (>= 3.0)
     polyglot (0.3.3)
+    protected_attributes (1.0.3)
+      activemodel (>= 4.0.0, < 5.0)
     pry (0.9.12.2)
       coderay (~> 1.0.5)
       method_source (~> 0.8)
@@ -432,7 +445,7 @@ DEPENDENCIES
   activeadmin!
   acts_as_list
   annotate
-  best_in_place
+  best_in_place!
   better_errors
   binding_of_caller
   brakeman
@@ -449,7 +462,7 @@ DEPENDENCIES
   figaro (>= 0.5.3)
   flexslider!
   formtastic!
-  friendly_id
+  friendly_id!
   geocoder
   gmaps4rails
   growl
@@ -473,6 +486,7 @@ DEPENDENCIES
   mobylette
   newrelic_rpm (>= 3.5.7)
   pg
+  protected_attributes
   quiet_assets
   rack-timeout
   rails (= 4.0.0)

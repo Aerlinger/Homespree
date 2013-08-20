@@ -96,7 +96,7 @@ class Contractor < User
   after_create :send_welcome_message
 
   # Scopes:  ----------------------------------------------------------------------------------------------------------
-  default_scope order("created_at desc").where("disabled = ?", false)
+  #default_scope order("created_at desc").where("disabled = ?", false)
   scope :recent_signups, lambda { limit(100) }
   # TOOD: Fix
   scope :nearbys, lambda { |zipcode| Contractor.limit(3) }

@@ -3,6 +3,7 @@ class ContractorsController < ApplicationController
 
   before_filter :process_params, only: [:update, :create]
   before_filter :authenticate_contractor!, except: [:show, :map]
+  #before_action :contractor_params
 
   respond_to :js, :html, :json, only: :update
 
@@ -59,5 +60,9 @@ class ContractorsController < ApplicationController
         params[:contractor][attr].gsub!(/([$,#]|(\..+))/, '') if params[:contractor][attr]
       end
     end
+  end
+
+  def contractor_params
+    params.require(:contractor).permit(:company_title, :email, :password)
   end
 end

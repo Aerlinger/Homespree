@@ -32,12 +32,12 @@ gem 'mobylette'
 
 # Tools used in User Profiles: ---------------------------------------------------------------------------------------
 gem 'draper'
-gem 'best_in_place'
+gem 'best_in_place', github: 'bernat/best_in_place'
 gem 'geocoder'
 gem 'gmaps4rails'
 gem 'reform'  # TODO: Deprecated
 gem 'simple_form'
-gem 'friendly_id'
+gem 'friendly_id', git: "https://github.com/norman/friendly_id.git"
 gem 'wicked'
 gem 'acts_as_list'
 gem 'rack-timeout'
@@ -47,6 +47,7 @@ gem 's3_direct_upload'
 
 # Misc.
 gem 'email_validator'
+gem 'protected_attributes'
 
 # Views: -------------------------------------------------------------------------------------------------------------
 gem 'turbolinks'
