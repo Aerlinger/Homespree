@@ -1,7 +1,7 @@
 require "spec_helper"
 
 describe ContractorsController do
-  it "should show profile" do
+  it "shows profile" do
     get("/contractors/1").should route_to("contractors#show", id: "1")
   end
 

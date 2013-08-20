@@ -19,7 +19,7 @@ describe ContractorsController do
     before(:each) { get :show, id: contractor.id }
 
     context "contractor is viewing their own profile" do
-      it "should render controls to edit the page" do
+      it "renders controls to edit the page" do
         expect(response).to render_template :profile
       end
     end
@@ -28,11 +28,11 @@ describe ContractorsController do
       assigns(:contractor).should be_decorated_with ContractorDecorator
     end
 
-    it "should assign contractor to contractor" do
+    it "assigns contractor to contractor" do
       expect(assigns(:contractor)).to eq contractor
     end
 
-    it "should render contractor page" do
+    it "renders contractor page" do
       expect(response).to render_template(:profile)
     end
   end
@@ -85,7 +85,7 @@ describe ContractorsController do
     describe "with nested attributes for address" do
       let(:address_attributes) { FactoryGirl.attributes_for(:address) }
 
-      it "should properly update the address on the Contractor model" do
+      it "properly updates the address on the Contractor model" do
         put :update, id: contractor, contractor: {id: contractor.id, address_attributes: FactoryGirl.attributes_for(:address)}
         request.params[:contractor][:address_attributes].should eq(FactoryGirl.attributes_for(:address).stringify_keys)
       end
@@ -100,7 +100,7 @@ describe ContractorsController do
           eq([FactoryGirl.attributes_for(:appointment)])
       end
 
-      it "should create a new appointment" do
+      it "creates a new appointment" do
         put :update, id: contractor, contractor: {id: contractor.id, appointments_attributes: [FactoryGirl.attributes_for(:appointment)]}
         request.params[:contractor][:appointments_attributes].should
           eq(FactoryGirl.attributes_for(:appointment))

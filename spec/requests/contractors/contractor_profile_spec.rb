@@ -41,7 +41,7 @@ describe 'Contractor Profile', js: false do
     address.state.should be_present
   end
 
-  it "should not have any errors" do
+  it "doesn't have any errors" do
     @contractor.errors.should be_empty
   end
 

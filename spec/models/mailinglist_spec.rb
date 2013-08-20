@@ -24,11 +24,11 @@ describe Mailinglist do
   describe "with valid params" do
     it { should be_persisted }
 
-    it "should save to contractor" do
+    it "saves to contractor" do
       subject.should be_contractor
     end
 
-    it "should be able to destroy a contractor" do
+    it "is able to destroy a contractor" do
       mailinglist = create :mailinglist
       expect{ mailinglist.destroy }.to change{Mailinglist.count}.by(-1)
     end
@@ -52,7 +52,7 @@ describe Mailinglist do
     it { should_not be_valid }
   end
 
-  it "should default to homeowner if substring does not contain contractor" do
+  it "defaults to homeowner if substring does not contain contractor" do
     subject.update_attributes(user_type: "l")
     subject.should_not be_contractor
   end

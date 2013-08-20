@@ -40,7 +40,7 @@ describe "Home page" do
 
     it { should_not have_text "Invalid" }
 
-    it "should have link for account" do
+    it "has link for account" do
       page.find_link("Account Settings").should be_visible
     end
   end

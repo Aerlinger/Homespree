@@ -96,15 +96,15 @@ describe Conversation do
           homeowner.reply_to_conversation(@conversation, "Reply reply")
         end
 
-        it "should have multiple messages" do
+        it "has multiple messages" do
           @conversation.messages.length.should eq 5
         end
 
-        it "should have proper body in second message" do
+        it "has proper body in second message" do
           @conversation.messages[1].body.should include("body of the message")
         end
 
-        it "should have proper body in second message" do
+        it "has proper body in second message" do
           @conversation.messages[0].body.should include("body of the message")
         end
       end

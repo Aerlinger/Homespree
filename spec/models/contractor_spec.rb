@@ -224,7 +224,7 @@ describe Contractor do
 
     it { should_not be_valid }
 
-    it "should list incomplete sections" do
+    it "lists incomplete sections" do
       incomplete_sections = [:first_name, :last_name, :company_title, :specialties, :mobile_number, :office_number, :slogan, :description, :address]
       new_guy.incomplete_sections.should == incomplete_sections
 
@@ -232,7 +232,7 @@ describe Contractor do
       new_guy.incomplete_sections == incomplete_sections - [:first_name]
     end
 
-    it "should show error for non existent password" do
+    it "shows error for non existent password" do
       new_guy.valid?
       new_guy.errors[:company_title].should eq ["can't be blank"]
     end
