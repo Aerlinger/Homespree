@@ -1,10 +1,6 @@
 require 'rubygems'
-require 'spork'
 require 'simplecov'
 SimpleCov.start 'rails'
-
-#uncomment the following line to use spork with the debugger
-#require 'spork/ext/ruby-debug'
 
 
 ENV["RAILS_ENV"] ||= 'test'
@@ -30,13 +26,13 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
 RSpec.configure do |config|
 
-  config.before(:all) do
-    DeferredGarbageCollection.start
-  end
-
-  config.after(:all) do
-    DeferredGarbageCollection.reconsider
-  end
+  #config.before(:all) do
+  #  DeferredGarbageCollection.start
+  #end
+  #
+  #config.after(:all) do
+  #  DeferredGarbageCollection.reconsider
+  #end
 
   # Configure Geocoder:
   Geocoder.configure(lookup: :test)
@@ -101,8 +97,18 @@ RSpec.configure do |config|
 
 
   config.before(:suite) do
+    #DatabaseCleaner.strategy = :transaction
     DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
     #DatabaseCleaner.clean_with :truncation, except: %w[project_types service_types project_fields]
+  end
+
+  config.before(:each) do
+    DatabaseCleaner.start
+  end
+
+  config.after(:each) do
+    DatabaseCleaner.clean
   end
 
   #config.before(:all) do

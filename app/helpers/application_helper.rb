@@ -6,7 +6,7 @@ module ApplicationHelper
     if layout.is_a? String
       return layout
     else
-      return layout.virtual_path.grep(/\/[a-z]+$/)[0]  # Todo: fix
+      return "application" #layout.virtual_path.grep(/\/[a-z]+$/)[0]  # Todo: fix
     end
   end
 
