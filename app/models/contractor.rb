@@ -57,7 +57,7 @@ class Contractor < User
   geocoded_by :gmaps4rails_address
   acts_as_gmappable
 
-  friendly_id :company_title, use: :slugged
+  friendly_id :company_title, use: [:slugged, :finders]
 
   # Accessors:  -------------------------------------------------------------------------------------------------------
   attr_protected

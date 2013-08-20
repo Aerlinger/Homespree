@@ -13,7 +13,7 @@ describe "Contractor Dashboard", js: false do
   subject { page }
 
   it "is navigated to after clicking Edit Profile" do
-    page.current_path.should eq "/general_settings"
+    page.current_path.should eq "/dashboard/general_settings"
   end
 
   describe "General Settings" do

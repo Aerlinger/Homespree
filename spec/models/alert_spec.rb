@@ -41,6 +41,7 @@ describe Alert do
     let(:contractor) { FactoryGirl.create :contractor }
 
     subject { contractor }
+    let(:alert2) { FactoryGirl.create :alert }
 
     before do
       contractor.alerts << alert
@@ -49,8 +50,8 @@ describe Alert do
     its(:alerts) { should eq [alert] }
 
     it "can add a new alert" do
-      contractor.alerts << alert
-      contractor.alerts.should eq [alert, alert]
+      contractor.alerts << alert2
+      contractor.alerts.should eq [alert, alert2]
     end
 
     context "contractor's alert" do
