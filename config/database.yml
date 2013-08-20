@@ -20,10 +20,12 @@ test:
   timeout: 10000
 
 staging:
-  adapter: sqlite3
-  database: db/staging.sqlite3
-  pool: 5
-  timeout: 5000
+  adapter: mysql2
+  database: hs_production
+  username: admin
+  password: Meetmike9
+  host: hs-production.cuonaaids60i.us-east-1.rds.amazonaws.com:3306
+  port: 3306
 
 production:
   adapter: sqlite3

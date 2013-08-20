@@ -19,10 +19,13 @@ gem 'sass-rails'
 gem 'libv8', '= 3.11.8.13'
 gem 'therubyracer', :platforms => :ruby
 gem 'delayed_job_active_record', '>= 4.0.0.beta2'
-gem 'thin'
 gem 'whenever', require: false
 gem 'figaro', '>= 0.5.3'
 gem 'stripe'
+gem 'recipient_interceptor'
+gem 'rack-timeout'
+gem 'thin'
+gem 'unicorn'
 
 # Tools/utilities:  --------------------------------------------------------------------------------------------------
 gem 'annotate'
@@ -42,7 +45,6 @@ gem 'wicked'
 gem 'acts_as_list'
 gem 'rack-timeout'
 gem 'mailboxer'
-gem 'email_validator'
 gem 's3_direct_upload'
 
 # Misc.
@@ -52,7 +54,7 @@ gem 'protected_attributes'
 # Views: -------------------------------------------------------------------------------------------------------------
 gem 'turbolinks'
 gem 'haml-rails'
-
+gem 'markdown-rails'
 
 # Assets
 gem 'coffee-rails'
@@ -116,6 +118,7 @@ end
 group :staging, :production do
   gem 'newrelic_rpm', '>= 3.5.7'
   gem 'rails_12factor'
+  gem 'mysql2'
   gem 'pg'
 end
 

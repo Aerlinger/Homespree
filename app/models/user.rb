@@ -67,7 +67,7 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :address, :alerts
 
   # Validations:  -----------------------------------------------------------------------------------------------------
-  validates_format_of :email, with: RegexDefinitions::email_regex, message: "is invalid"
+  validates :email, email: true
   validates_uniqueness_of :email
 
   # Scope:  -----------------------------------------------------------------------------------------------------------
