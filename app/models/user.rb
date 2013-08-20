@@ -84,6 +84,11 @@ class User < ActiveRecord::Base
   # Delegations:  -----------------------------------------------------------------------------------------------------
   delegate :to_coordinates, :line1, :line2, :city, :state, :state=, :zipcode=, :zipcode, :gmaps4rails_address, :nearby, :nearbys, to: :address, allow_nil: true
 
+  # TODO: FIXME (This is a cheap trick to force STI complicance for FriendlyId gem)
+  def self.find(id)
+    self.find_by(slug: id)
+  end
+
   def gmaps4rails_marker_picture
     marker_color = 'red'
     { picture: "/assets/map_markers/#{self.class.name}-icon#{marker_color}.png", width: "28", height: "33" }
