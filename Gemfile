@@ -6,7 +6,7 @@ ruby '1.9.3'
 # Let the party begin ------------------------------------------------------------------------------------------------
 gem 'homespree'
 
-             # Active Admin gems for rails 4:
+# Active Admin gems for rails 4:
 gem 'devise',              github: 'plataformatec/devise'
 gem 'responders',          github: 'plataformatec/responders'
 gem 'inherited_resources', github: 'josevalim/inherited_resources'
@@ -63,14 +63,10 @@ gem 'jquery-turbolinks'
 gem 'jquery-fileupload-rails'
 gem 'jquery-ui-rails'
 gem 'jquery-rails'
-
 gem 'flexslider', :git => 'https://github.com/constantm/Flexslider-2-Rails-Gem.git'
-
 gem 'uglifier'
-
 gem 'less-rails' #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem 'less-rails-fontawesome'
-
 gem 'twitter-bootstrap-rails'#, '2.2.6'
 
 
@@ -92,7 +88,6 @@ end
 group :test do
   gem 'simplecov', '>=0.3.8', require: false
   gem 'shoulda-matchers'
-  gem 'spork', '0.9.0'
   gem 'selenium-webdriver'
   gem 'database_cleaner', '0.7.0'
   gem 'capybara'
@@ -111,7 +106,6 @@ group :development do
   #gem 'bullet'   #FIXME: Bullet is throwing exceptions AirbrakeNotifier, disabled for now.
   gem 'guard'
   gem 'guard-rspec'
-  #gem 'guard-zeus'
   gem 'guard-bundler'
 end
 

@@ -281,79 +281,413 @@ a {
 <div class="results">
 <div id="div_group_1" class="example_group passed">
   <dl style="margin-left: 0px;">
-  <dt id="example_group_1" class="passed">Project Wizard</dt>
-    <script type="text/javascript">moveProgressBar('9.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">should text &quot;Stress-free home improvement&quot;</span><span class='duration'>0.35529s</span></dd>
+  <dt id="example_group_1" class="passed">ContractorsController</dt>
+    <script type="text/javascript">makeRed('rspec-header');</script>
+    <script type="text/javascript">makeRed('div_group_1');</script>
+    <script type="text/javascript">makeRed('example_group_1');</script>
+    <script type="text/javascript">moveProgressBar('4.7');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">example at ./spec/controllers/contractors/contractors_controller_spec.rb:5</span>
+      <span class="duration">0.26998s</span>
+      <div class="failure" id="failure_1">
+        <div class="message"><pre>Validation failed: Email has already been taken</pre></div>
+        <div class="backtrace"><pre>./spec/controllers/contractors/contractors_controller_spec.rb:9:in `block (2 levels) in &lt;top (required)&gt;&#39;
+-e:1:in `&lt;main&gt;&#39;</pre></div>
+    <pre class="ruby"><code><span class="linenum">7</span>  it { should respond_to :material_calculator }
+<span class="linenum">8</span>
+<span class="offending"><span class="linenum">9</span>  let!(:contractor) { FactoryGirl.create(:contractor) }</span>
+<span class="linenum">10</span>  params = {id: 11, photos_attributes: [{image_url: "asdf"}]}
+<span class="linenum">11</span>
+<span class="linenum">12</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
+    <script type="text/javascript">moveProgressBar('9.5');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">assigns current_user to the contractor</span>
+      <span class="duration">0.01909s</span>
+      <div class="failure" id="failure_2">
+        <div class="message"><pre>Validation failed: Email has already been taken</pre></div>
+        <div class="backtrace"><pre>./spec/controllers/contractors/contractors_controller_spec.rb:9:in `block (2 levels) in &lt;top (required)&gt;&#39;
+-e:1:in `&lt;main&gt;&#39;</pre></div>
+    <pre class="ruby"><code><span class="linenum">7</span>  it { should respond_to :material_calculator }
+<span class="linenum">8</span>
+<span class="offending"><span class="linenum">9</span>  let!(:contractor) { FactoryGirl.create(:contractor) }</span>
+<span class="linenum">10</span>  params = {id: 11, photos_attributes: [{image_url: "asdf"}]}
+<span class="linenum">11</span>
+<span class="linenum">12</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
+    <script type="text/javascript">moveProgressBar('14.2');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">example at ./spec/controllers/contractors/contractors_controller_spec.rb:7</span>
+      <span class="duration">0.02100s</span>
+      <div class="failure" id="failure_3">
+        <div class="message"><pre>Validation failed: Email has already been taken</pre></div>
+        <div class="backtrace"><pre>./spec/controllers/contractors/contractors_controller_spec.rb:9:in `block (2 levels) in &lt;top (required)&gt;&#39;
+-e:1:in `&lt;main&gt;&#39;</pre></div>
+    <pre class="ruby"><code><span class="linenum">7</span>  it { should respond_to :material_calculator }
+<span class="linenum">8</span>
+<span class="offending"><span class="linenum">9</span>  let!(:contractor) { FactoryGirl.create(:contractor) }</span>
+<span class="linenum">10</span>  params = {id: 11, photos_attributes: [{image_url: "asdf"}]}
+<span class="linenum">11</span>
+<span class="linenum">12</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
+    <script type="text/javascript">moveProgressBar('19.0');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">example at ./spec/controllers/contractors/contractors_controller_spec.rb:6</span>
+      <span class="duration">0.02023s</span>
+      <div class="failure" id="failure_4">
+        <div class="message"><pre>Validation failed: Email has already been taken</pre></div>
+        <div class="backtrace"><pre>./spec/controllers/contractors/contractors_controller_spec.rb:9:in `block (2 levels) in &lt;top (required)&gt;&#39;
+-e:1:in `&lt;main&gt;&#39;</pre></div>
+    <pre class="ruby"><code><span class="linenum">7</span>  it { should respond_to :material_calculator }
+<span class="linenum">8</span>
+<span class="offending"><span class="linenum">9</span>  let!(:contractor) { FactoryGirl.create(:contractor) }</span>
+<span class="linenum">10</span>  params = {id: 11, photos_attributes: [{image_url: "asdf"}]}
+<span class="linenum">11</span>
+<span class="linenum">12</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
+    <script type="text/javascript">moveProgressBar('23.8');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">example at ./spec/controllers/contractors/contractors_controller_spec.rb:4</span>
+      <span class="duration">0.01915s</span>
+      <div class="failure" id="failure_5">
+        <div class="message"><pre>Validation failed: Email has already been taken</pre></div>
+        <div class="backtrace"><pre>./spec/controllers/contractors/contractors_controller_spec.rb:9:in `block (2 levels) in &lt;top (required)&gt;&#39;
+-e:1:in `&lt;main&gt;&#39;</pre></div>
+    <pre class="ruby"><code><span class="linenum">7</span>  it { should respond_to :material_calculator }
+<span class="linenum">8</span>
+<span class="offending"><span class="linenum">9</span>  let!(:contractor) { FactoryGirl.create(:contractor) }</span>
+<span class="linenum">10</span>  params = {id: 11, photos_attributes: [{image_url: "asdf"}]}
+<span class="linenum">11</span>
+<span class="linenum">12</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
   </dl>
 </div>
 <div id="div_group_2" class="example_group passed">
   <dl style="margin-left: 15px;">
-  <dt id="example_group_2" class="passed">Page 1: Request</dt>
-    <script type="text/javascript">moveProgressBar('18.1');</script>
-    <dd class="example passed"><span class="passed_spec_name">should text &quot;Interior painting&quot;</span><span class='duration'>0.56898s</span></dd>
-    <script type="text/javascript">makeYellow('rspec-header');</script>
-    <script type="text/javascript">makeYellow('div_group_2');</script>
-    <script type="text/javascript">makeYellow('example_group_2');</script>
-    <script type="text/javascript">moveProgressBar('27.2');</script>
-    <dd class="example not_implemented"><span class="not_implemented_spec_name">updates fields on when project type is changed (PENDING: Not yet implemented)</span></dd>
-    <script type="text/javascript">makeYellow('rspec-header');</script>
-    <script type="text/javascript">makeYellow('div_group_2');</script>
-    <script type="text/javascript">makeYellow('example_group_2');</script>
-    <script type="text/javascript">moveProgressBar('36.3');</script>
-    <dd class="example not_implemented"><span class="not_implemented_spec_name">has dynamic input controls for the interior project (PENDING: Not yet implemented)</span></dd>
-    <script type="text/javascript">moveProgressBar('45.4');</script>
-    <dd class="example passed"><span class="passed_spec_name">should not text &quot;previous&quot;</span><span class='duration'>0.17314s</span></dd>
+  <dt id="example_group_2" class="passed">GET #show</dt>
+    <script type="text/javascript">makeRed('div_group_2');</script>
+    <script type="text/javascript">makeRed('example_group_2');</script>
+    <script type="text/javascript">moveProgressBar('28.5');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">decorates contractor</span>
+      <span class="duration">0.02122s</span>
+      <div class="failure" id="failure_6">
+        <div class="message"><pre>Validation failed: Email has already been taken</pre></div>
+        <div class="backtrace"><pre>./spec/controllers/contractors/contractors_controller_spec.rb:9:in `block (2 levels) in &lt;top (required)&gt;&#39;
+-e:1:in `&lt;main&gt;&#39;</pre></div>
+    <pre class="ruby"><code><span class="linenum">7</span>  it { should respond_to :material_calculator }
+<span class="linenum">8</span>
+<span class="offending"><span class="linenum">9</span>  let!(:contractor) { FactoryGirl.create(:contractor) }</span>
+<span class="linenum">10</span>  params = {id: 11, photos_attributes: [{image_url: "asdf"}]}
+<span class="linenum">11</span>
+<span class="linenum">12</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
+    <script type="text/javascript">moveProgressBar('33.3');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">should render contractor page</span>
+      <span class="duration">0.02158s</span>
+      <div class="failure" id="failure_7">
+        <div class="message"><pre>Validation failed: Email has already been taken</pre></div>
+        <div class="backtrace"><pre>./spec/controllers/contractors/contractors_controller_spec.rb:9:in `block (2 levels) in &lt;top (required)&gt;&#39;
+-e:1:in `&lt;main&gt;&#39;</pre></div>
+    <pre class="ruby"><code><span class="linenum">7</span>  it { should respond_to :material_calculator }
+<span class="linenum">8</span>
+<span class="offending"><span class="linenum">9</span>  let!(:contractor) { FactoryGirl.create(:contractor) }</span>
+<span class="linenum">10</span>  params = {id: 11, photos_attributes: [{image_url: "asdf"}]}
+<span class="linenum">11</span>
+<span class="linenum">12</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
+    <script type="text/javascript">moveProgressBar('38.0');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">should assign contractor to contractor</span>
+      <span class="duration">0.01883s</span>
+      <div class="failure" id="failure_8">
+        <div class="message"><pre>Validation failed: Email has already been taken</pre></div>
+        <div class="backtrace"><pre>./spec/controllers/contractors/contractors_controller_spec.rb:9:in `block (2 levels) in &lt;top (required)&gt;&#39;
+-e:1:in `&lt;main&gt;&#39;</pre></div>
+    <pre class="ruby"><code><span class="linenum">7</span>  it { should respond_to :material_calculator }
+<span class="linenum">8</span>
+<span class="offending"><span class="linenum">9</span>  let!(:contractor) { FactoryGirl.create(:contractor) }</span>
+<span class="linenum">10</span>  params = {id: 11, photos_attributes: [{image_url: "asdf"}]}
+<span class="linenum">11</span>
+<span class="linenum">12</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
   </dl>
 </div>
 <div id="div_group_3" class="example_group passed">
   <dl style="margin-left: 30px;">
-  <dt id="example_group_3" class="passed">current_path</dt>
-    <script type="text/javascript">moveProgressBar('54.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">should eq &quot;/project_wizard/request&quot;</span><span class='duration'>0.16075s</span></dd>
+  <dt id="example_group_3" class="passed">contractor is viewing their own profile</dt>
+    <script type="text/javascript">makeRed('div_group_3');</script>
+    <script type="text/javascript">makeRed('example_group_3');</script>
+    <script type="text/javascript">moveProgressBar('42.8');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">should render controls to edit the page</span>
+      <span class="duration">0.02051s</span>
+      <div class="failure" id="failure_9">
+        <div class="message"><pre>Validation failed: Email has already been taken</pre></div>
+        <div class="backtrace"><pre>./spec/controllers/contractors/contractors_controller_spec.rb:9:in `block (2 levels) in &lt;top (required)&gt;&#39;
+-e:1:in `&lt;main&gt;&#39;</pre></div>
+    <pre class="ruby"><code><span class="linenum">7</span>  it { should respond_to :material_calculator }
+<span class="linenum">8</span>
+<span class="offending"><span class="linenum">9</span>  let!(:contractor) { FactoryGirl.create(:contractor) }</span>
+<span class="linenum">10</span>  params = {id: 11, photos_attributes: [{image_url: "asdf"}]}
+<span class="linenum">11</span>
+<span class="linenum">12</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
   </dl>
 </div>
 <div id="div_group_4" class="example_group passed">
-  <dl style="margin-left: 30px;">
-  <dt id="example_group_4" class="passed">Page 2: Review Estimate</dt>
-    <script type="text/javascript">moveProgressBar('63.6');</script>
-    <dd class="example passed"><span class="passed_spec_name">should text &quot;Review Estimates&quot;</span><span class='duration'>0.20543s</span></dd>
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_4" class="passed">PUT #update</dt>
+    <script type="text/javascript">makeRed('div_group_4');</script>
+    <script type="text/javascript">makeRed('example_group_4');</script>
+    <script type="text/javascript">moveProgressBar('47.6');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">locates the requested contractor</span>
+      <span class="duration">0.02238s</span>
+      <div class="failure" id="failure_10">
+        <div class="message"><pre>Validation failed: Email has already been taken</pre></div>
+        <div class="backtrace"><pre>./spec/controllers/contractors/contractors_controller_spec.rb:9:in `block (2 levels) in &lt;top (required)&gt;&#39;
+-e:1:in `&lt;main&gt;&#39;</pre></div>
+    <pre class="ruby"><code><span class="linenum">7</span>  it { should respond_to :material_calculator }
+<span class="linenum">8</span>
+<span class="offending"><span class="linenum">9</span>  let!(:contractor) { FactoryGirl.create(:contractor) }</span>
+<span class="linenum">10</span>  params = {id: 11, photos_attributes: [{image_url: "asdf"}]}
+<span class="linenum">11</span>
+<span class="linenum">12</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
   </dl>
 </div>
 <div id="div_group_5" class="example_group passed">
-  <dl style="margin-left: 45px;">
-  <dt id="example_group_5" class="passed">current_path</dt>
-    <script type="text/javascript">moveProgressBar('72.7');</script>
-    <dd class="example passed"><span class="passed_spec_name">should eq &quot;/project_wizard/review_estimates&quot;</span><span class='duration'>0.28942s</span></dd>
+  <dl style="margin-left: 30px;">
+  <dt id="example_group_5" class="passed">with nested attributes for photos</dt>
+    <script type="text/javascript">makeRed('div_group_5');</script>
+    <script type="text/javascript">makeRed('example_group_5');</script>
+    <script type="text/javascript">moveProgressBar('52.3');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name"> properly updates photos on the Contractor model</span>
+      <span class="duration">0.01899s</span>
+      <div class="failure" id="failure_11">
+        <div class="message"><pre>Validation failed: Email has already been taken</pre></div>
+        <div class="backtrace"><pre>./spec/controllers/contractors/contractors_controller_spec.rb:9:in `block (2 levels) in &lt;top (required)&gt;&#39;
+-e:1:in `&lt;main&gt;&#39;</pre></div>
+    <pre class="ruby"><code><span class="linenum">7</span>  it { should respond_to :material_calculator }
+<span class="linenum">8</span>
+<span class="offending"><span class="linenum">9</span>  let!(:contractor) { FactoryGirl.create(:contractor) }</span>
+<span class="linenum">10</span>  params = {id: 11, photos_attributes: [{image_url: "asdf"}]}
+<span class="linenum">11</span>
+<span class="linenum">12</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
+    <script type="text/javascript">moveProgressBar('57.1');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">increases the number of photos by 1</span>
+      <span class="duration">0.02228s</span>
+      <div class="failure" id="failure_12">
+        <div class="message"><pre>Validation failed: Email has already been taken</pre></div>
+        <div class="backtrace"><pre>./spec/controllers/contractors/contractors_controller_spec.rb:9:in `block (2 levels) in &lt;top (required)&gt;&#39;
+-e:1:in `&lt;main&gt;&#39;</pre></div>
+    <pre class="ruby"><code><span class="linenum">7</span>  it { should respond_to :material_calculator }
+<span class="linenum">8</span>
+<span class="offending"><span class="linenum">9</span>  let!(:contractor) { FactoryGirl.create(:contractor) }</span>
+<span class="linenum">10</span>  params = {id: 11, photos_attributes: [{image_url: "asdf"}]}
+<span class="linenum">11</span>
+<span class="linenum">12</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
   </dl>
 </div>
 <div id="div_group_6" class="example_group passed">
-  <dl style="margin-left: 45px;">
-  <dt id="example_group_6" class="passed">Page 3: Set appointment</dt>
-    <script type="text/javascript">moveProgressBar('81.8');</script>
-    <dd class="example passed"><span class="passed_spec_name">should text &quot;Appointment&quot;</span><span class='duration'>0.24538s</span></dd>
+  <dl style="margin-left: 30px;">
+  <dt id="example_group_6" class="passed">with nested attributes for appointments</dt>
+    <script type="text/javascript">makeRed('div_group_6');</script>
+    <script type="text/javascript">makeRed('example_group_6');</script>
+    <script type="text/javascript">moveProgressBar('61.9');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">properly updates appointments on the contractor profile</span>
+      <span class="duration">0.02088s</span>
+      <div class="failure" id="failure_13">
+        <div class="message"><pre>Validation failed: Email has already been taken</pre></div>
+        <div class="backtrace"><pre>./spec/controllers/contractors/contractors_controller_spec.rb:9:in `block (2 levels) in &lt;top (required)&gt;&#39;
+-e:1:in `&lt;main&gt;&#39;</pre></div>
+    <pre class="ruby"><code><span class="linenum">7</span>  it { should respond_to :material_calculator }
+<span class="linenum">8</span>
+<span class="offending"><span class="linenum">9</span>  let!(:contractor) { FactoryGirl.create(:contractor) }</span>
+<span class="linenum">10</span>  params = {id: 11, photos_attributes: [{image_url: "asdf"}]}
+<span class="linenum">11</span>
+<span class="linenum">12</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
+    <script type="text/javascript">moveProgressBar('66.6');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">should create a new appointment</span>
+      <span class="duration">0.02619s</span>
+      <div class="failure" id="failure_14">
+        <div class="message"><pre>Validation failed: Email has already been taken</pre></div>
+        <div class="backtrace"><pre>./spec/controllers/contractors/contractors_controller_spec.rb:9:in `block (2 levels) in &lt;top (required)&gt;&#39;
+-e:1:in `&lt;main&gt;&#39;</pre></div>
+    <pre class="ruby"><code><span class="linenum">7</span>  it { should respond_to :material_calculator }
+<span class="linenum">8</span>
+<span class="offending"><span class="linenum">9</span>  let!(:contractor) { FactoryGirl.create(:contractor) }</span>
+<span class="linenum">10</span>  params = {id: 11, photos_attributes: [{image_url: "asdf"}]}
+<span class="linenum">11</span>
+<span class="linenum">12</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
   </dl>
 </div>
 <div id="div_group_7" class="example_group passed">
-  <dl style="margin-left: 60px;">
-  <dt id="example_group_7" class="passed">current_path</dt>
-    <script type="text/javascript">moveProgressBar('90.9');</script>
-    <dd class="example passed"><span class="passed_spec_name">should eq &quot;/project_wizard/appointment&quot;</span><span class='duration'>0.21198s</span></dd>
+  <dl style="margin-left: 30px;">
+  <dt id="example_group_7" class="passed">sanitizes params</dt>
+    <script type="text/javascript">makeRed('div_group_7');</script>
+    <script type="text/javascript">makeRed('example_group_7');</script>
+    <script type="text/javascript">moveProgressBar('71.4');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">sanitizes bonding limit</span>
+      <span class="duration">0.02577s</span>
+      <div class="failure" id="failure_15">
+        <div class="message"><pre>Validation failed: Email has already been taken</pre></div>
+        <div class="backtrace"><pre>./spec/controllers/contractors/contractors_controller_spec.rb:9:in `block (2 levels) in &lt;top (required)&gt;&#39;
+-e:1:in `&lt;main&gt;&#39;</pre></div>
+    <pre class="ruby"><code><span class="linenum">7</span>  it { should respond_to :material_calculator }
+<span class="linenum">8</span>
+<span class="offending"><span class="linenum">9</span>  let!(:contractor) { FactoryGirl.create(:contractor) }</span>
+<span class="linenum">10</span>  params = {id: 11, photos_attributes: [{image_url: "asdf"}]}
+<span class="linenum">11</span>
+<span class="linenum">12</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
+    <script type="text/javascript">moveProgressBar('76.1');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">sanitizes hourly_rate limit</span>
+      <span class="duration">0.02187s</span>
+      <div class="failure" id="failure_16">
+        <div class="message"><pre>Validation failed: Email has already been taken</pre></div>
+        <div class="backtrace"><pre>./spec/controllers/contractors/contractors_controller_spec.rb:9:in `block (2 levels) in &lt;top (required)&gt;&#39;
+-e:1:in `&lt;main&gt;&#39;</pre></div>
+    <pre class="ruby"><code><span class="linenum">7</span>  it { should respond_to :material_calculator }
+<span class="linenum">8</span>
+<span class="offending"><span class="linenum">9</span>  let!(:contractor) { FactoryGirl.create(:contractor) }</span>
+<span class="linenum">10</span>  params = {id: 11, photos_attributes: [{image_url: "asdf"}]}
+<span class="linenum">11</span>
+<span class="linenum">12</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
+    <script type="text/javascript">moveProgressBar('80.9');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">sanitizes insurance limit</span>
+      <span class="duration">0.05795s</span>
+      <div class="failure" id="failure_17">
+        <div class="message"><pre>Validation failed: Email has already been taken</pre></div>
+        <div class="backtrace"><pre>./spec/controllers/contractors/contractors_controller_spec.rb:9:in `block (2 levels) in &lt;top (required)&gt;&#39;
+-e:1:in `&lt;main&gt;&#39;</pre></div>
+    <pre class="ruby"><code><span class="linenum">7</span>  it { should respond_to :material_calculator }
+<span class="linenum">8</span>
+<span class="offending"><span class="linenum">9</span>  let!(:contractor) { FactoryGirl.create(:contractor) }</span>
+<span class="linenum">10</span>  params = {id: 11, photos_attributes: [{image_url: "asdf"}]}
+<span class="linenum">11</span>
+<span class="linenum">12</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
   </dl>
 </div>
 <div id="div_group_8" class="example_group passed">
-  <dl style="margin-left: 60px;">
-  <dt id="example_group_8" class="passed">Page 4: Submit project</dt>
+  <dl style="margin-left: 30px;">
+  <dt id="example_group_8" class="passed">with nested attributes for address</dt>
+    <script type="text/javascript">makeRed('div_group_8');</script>
+    <script type="text/javascript">makeRed('example_group_8');</script>
+    <script type="text/javascript">moveProgressBar('85.7');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">should properly update the address on the Contractor model</span>
+      <span class="duration">0.02779s</span>
+      <div class="failure" id="failure_18">
+        <div class="message"><pre>Validation failed: Email has already been taken</pre></div>
+        <div class="backtrace"><pre>./spec/controllers/contractors/contractors_controller_spec.rb:9:in `block (2 levels) in &lt;top (required)&gt;&#39;
+-e:1:in `&lt;main&gt;&#39;</pre></div>
+    <pre class="ruby"><code><span class="linenum">7</span>  it { should respond_to :material_calculator }
+<span class="linenum">8</span>
+<span class="offending"><span class="linenum">9</span>  let!(:contractor) { FactoryGirl.create(:contractor) }</span>
+<span class="linenum">10</span>  params = {id: 11, photos_attributes: [{image_url: "asdf"}]}
+<span class="linenum">11</span>
+<span class="linenum">12</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
   </dl>
 </div>
 <div id="div_group_9" class="example_group passed">
-  <dl style="margin-left: 75px;">
-  <dt id="example_group_9" class="passed">current_path</dt>
-    <script type="text/javascript">moveProgressBar('100.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">should match /\/homeowners\/projects\/\d+/</span><span class='duration'>0.41188s</span></dd>
+  <dl style="margin-left: 30px;">
+  <dt id="example_group_9" class="passed">with valid params</dt>
+    <script type="text/javascript">makeRed('div_group_9');</script>
+    <script type="text/javascript">makeRed('example_group_9');</script>
+    <script type="text/javascript">moveProgressBar('90.4');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">save the new contractor in the database</span>
+      <span class="duration">0.03309s</span>
+      <div class="failure" id="failure_19">
+        <div class="message"><pre>Validation failed: Email has already been taken</pre></div>
+        <div class="backtrace"><pre>./spec/controllers/contractors/contractors_controller_spec.rb:9:in `block (2 levels) in &lt;top (required)&gt;&#39;
+-e:1:in `&lt;main&gt;&#39;</pre></div>
+    <pre class="ruby"><code><span class="linenum">7</span>  it { should respond_to :material_calculator }
+<span class="linenum">8</span>
+<span class="offending"><span class="linenum">9</span>  let!(:contractor) { FactoryGirl.create(:contractor) }</span>
+<span class="linenum">10</span>  params = {id: 11, photos_attributes: [{image_url: "asdf"}]}
+<span class="linenum">11</span>
+<span class="linenum">12</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
+    <script type="text/javascript">moveProgressBar('95.2');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">redirects to the updated contractor profile</span>
+      <span class="duration">0.03556s</span>
+      <div class="failure" id="failure_20">
+        <div class="message"><pre>Validation failed: Email has already been taken</pre></div>
+        <div class="backtrace"><pre>./spec/controllers/contractors/contractors_controller_spec.rb:9:in `block (2 levels) in &lt;top (required)&gt;&#39;
+-e:1:in `&lt;main&gt;&#39;</pre></div>
+    <pre class="ruby"><code><span class="linenum">7</span>  it { should respond_to :material_calculator }
+<span class="linenum">8</span>
+<span class="offending"><span class="linenum">9</span>  let!(:contractor) { FactoryGirl.create(:contractor) }</span>
+<span class="linenum">10</span>  params = {id: 11, photos_attributes: [{image_url: "asdf"}]}
+<span class="linenum">11</span>
+<span class="linenum">12</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
   </dl>
 </div>
-<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>2.71551 seconds</strong>";</script>
-<script type="text/javascript">document.getElementById('totals').innerHTML = "11 examples, 0 failures, 2 pending";</script>
+<div id="div_group_10" class="example_group passed">
+  <dl style="margin-left: 30px;">
+  <dt id="example_group_10" class="passed">with invalid params</dt>
+    <script type="text/javascript">makeRed('div_group_10');</script>
+    <script type="text/javascript">makeRed('example_group_10');</script>
+    <script type="text/javascript">moveProgressBar('100.0');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">does not change contractors attributes</span>
+      <span class="duration">0.02612s</span>
+      <div class="failure" id="failure_21">
+        <div class="message"><pre>Validation failed: Email has already been taken</pre></div>
+        <div class="backtrace"><pre>./spec/controllers/contractors/contractors_controller_spec.rb:9:in `block (2 levels) in &lt;top (required)&gt;&#39;
+-e:1:in `&lt;main&gt;&#39;</pre></div>
+    <pre class="ruby"><code><span class="linenum">7</span>  it { should respond_to :material_calculator }
+<span class="linenum">8</span>
+<span class="offending"><span class="linenum">9</span>  let!(:contractor) { FactoryGirl.create(:contractor) }</span>
+<span class="linenum">10</span>  params = {id: 11, photos_attributes: [{image_url: "asdf"}]}
+<span class="linenum">11</span>
+<span class="linenum">12</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
+  </dl>
+</div>
+<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>0.97286 seconds</strong>";</script>
+<script type="text/javascript">document.getElementById('totals').innerHTML = "21 examples, 21 failures";</script>
 </div>
 </div>
 </body>

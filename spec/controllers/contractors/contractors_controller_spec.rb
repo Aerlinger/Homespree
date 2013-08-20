@@ -1,14 +1,12 @@
 require 'spec_helper'
 
 describe ContractorsController do
-
   it { should respond_to :show }
   it { should respond_to :update }
   it { should respond_to :settings }
   it { should respond_to :material_calculator }
 
-
-  let(:contractor) { FactoryGirl.create(:contractor) }
+  let!(:contractor) { FactoryGirl.create(:contractor) }
   params = {id: 11, photos_attributes: [{image_url: "asdf"}]}
 
   before { sign_in contractor }
@@ -40,14 +38,14 @@ describe ContractorsController do
   end
 
   describe "PUT #update" do
-
-    before :each do
-      @contractor = create(:contractor, email: "updatedcontractor@rspec.com")
-    end
+    let(:contractor2) { FactoryGirl.create :contractor, email: "updatedcontractor@rspec.com" }
+    #before :each do
+    #  contractor2 = create(:contractor, email: "updatedcontractor@rspec.com")
+    #end
 
     it "locates the requested contractor" do
-      put :update, id: @contractor.id, contractor: attributes_for(:contractor, email: "updatedcontractorrspec.com")
-      expect(assigns(:contractor)).to eq(@contractor)
+      put :update, id: contractor2.id, contractor: attributes_for(:contractor, email: "updatedcontractorrspec.com")
+      expect(assigns(:contractor)).to eq(contractor2)
     end
 
     context "with valid params" do
@@ -65,8 +63,8 @@ describe ContractorsController do
 
     context "with invalid params" do
       it "does not change contractors attributes" do
-        put :update, id: @contractor, contractor: attributes_for(:contractor, email: "lol")
-        expect(assigns(:contractor)).to eq(@contractor)
+        put :update, id: contractor2, contractor: attributes_for(:contractor, email: "lol")
+        expect(assigns(:contractor)).to eq(contractor2)
       end
     end
 
@@ -134,7 +132,5 @@ describe ContractorsController do
         contractor.hourly_rate == 134
       end
     end
-
   end
-
 end

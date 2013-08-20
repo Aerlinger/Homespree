@@ -68,7 +68,7 @@ class User < ActiveRecord::Base
 
   # Validations:  -----------------------------------------------------------------------------------------------------
   validates :email, email: true
-  validates_uniqueness_of :email
+  #validates_uniqueness_of :email
 
   # Scope:  -----------------------------------------------------------------------------------------------------------
   default_scope order("created_at desc")

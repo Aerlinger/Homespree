@@ -52,6 +52,6 @@ class ProjectWizardController < ApplicationController
 
   def find_project
     @project = Project.find(session[:project_id])
-    @homeowner = current_user
+    @homeowner = current_user || @project.homeowner
   end
 end
