@@ -4,7 +4,7 @@
   - if @contractor.portrait_url
     = link_to("Change portrait", "#", class: "btn btn-info btn-mini pull-left", id: "upload_portrait", remote: true)
     = link_to("Delete portrait", contractor_path(@contractor, contractor: { portrait_url: "/assets/contractor_profiles/portrait_default.jpg" }),
-                            confirm: "Are you sure you want to delete your portrait?",
+                            data: { confirm: "Are you sure you want to delete your portrait?" },
                             method:  :put, class: "btn btn-danger btn-mini delete-button pull-right",
                             remote:  true, id: "delete_portrait")
     .clear-both

@@ -17,7 +17,6 @@ describe "Contractor Dashboard", js: false do
   end
 
   describe "General Settings" do
-
     it "sets browser title" do
       within(:css, "#dashboard_section") do
         page.should have_content("Email")
@@ -66,7 +65,6 @@ describe "Contractor Dashboard", js: false do
           contractor.should be_nil
         end
       end
-
     end
 
     describe "My Inbox" do

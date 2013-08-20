@@ -4,8 +4,8 @@ describe 'Project Wizard', js: false do
   subject { page }
 
   before :each do
-    ProjectType.find_or_create_by_name 'Interior painting'
-    ProjectType.find_or_create_by_name 'Exterior painting'
+    ProjectType.find_or_create_by(name: 'Interior painting')
+    ProjectType.find_or_create_by(name: 'Exterior painting')
 
     visit '/'
     select('Interior painting', from: 'project_project_type_id')
