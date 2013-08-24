@@ -60,7 +60,7 @@ class Homeowner < User
   has_many :projects, through: :appointments
   has_many :payments
 
-  has_many :contractors, through: :appointments, uniq: true
+  has_many :contractors, lambda { distinct }, through: :appointments
   has_many :before_photos, as: :photographable, through: :projects
   has_many :after_photos, as: :photographable, through: :projects
 

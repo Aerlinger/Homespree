@@ -8,7 +8,7 @@ class ProjectsController < ApplicationController
     if Rails.env.production?
       render :unavailable
     else
-      @project  = Project.create!(params[:project])
+      @project  = Project.create!(project_attributes)
       @location = Address.create!(zipcode: params[:project][:zipcode])
 
       # Redirect to the project submission wizard if all fields are present
@@ -45,17 +45,22 @@ class ProjectsController < ApplicationController
 
   private
 
+  def project_attributes
+    params.require(:project).permit(:zipcode, :homeowner, :project_type, :project_type_id, :homeowner_id)
+  end
+
   def get_active_user
     @user = homeowner_signed_in? ? current_user : create_guest_with_zip
 
-    params[:project][:homeowner] = @user
+    params[:project][:homeowner_id] = @user.id
   end
 
   def create_guest_with_zip
-    unless homeowner_signed_in?
-      @guest         = create_guest_homeowner
-      @guest.address = Address.create(zipcode: params[:project][:zipcode])
-    end
+    return if homeowner_signed_in?
+    sign_out current_contractor if contractor_signed_in?
+
+    @guest         = create_guest_homeowner
+    @guest.address = Address.create(zipcode: params[:project][:zipcode])
     return @guest
   end
 end

@@ -61,9 +61,9 @@ class Contractor < User
 
   # Associations:  ----------------------------------------------------------------------------------------------------
   has_many :appointments
-  has_many :projects, through: :appointments
+  has_many :projects, lambda { distinct }, through: :appointments
 
-  has_many :homeowners, through: :appointments, uniq: true
+  has_many :homeowners, through: :appointments
 
   has_many :specialties
   has_many :services, class_name: "ServiceType"
