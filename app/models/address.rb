@@ -21,8 +21,6 @@ class Address < ActiveRecord::Base
   # Class Methods:  ---------------------------------------------------------------------------------------------------
   geocoded_by :gmaps4rails_address
 
-  attr_protected :latitude, :longitude
-
   # Validations:  -----------------------------------------------------------------------------------------------------
   validates :zipcode, format: RegexDefinitions::zipcode_regex, allow_blank: true
   validates_format_of :state, with: /[A-Za-z][A-Za-z]/i, allow_blank: true

@@ -20,6 +20,7 @@ describe 'Project Wizard', js: false do
     its(:current_path) { should eq '/project_wizard/request' }
 
     it { should have_content 'Interior painting' }
+
     it { should_not have_content 'previous' }
 
     it 'has dynamic input controls for the interior project'
@@ -30,6 +31,14 @@ describe 'Project Wizard', js: false do
         fill_in "Width in feet", with: '10'
         fill_in "Height in feet", with: '20'
         fill_in "Length in feet", with: '30'
+
+        fill_in "Number of doors to be painted", with: '2'
+        fill_in "Number of windows to be painted", with: '2'
+        fill_in "Paint ceiling?", with: 'yes'
+
+        # TODO: Select trim to be painted
+
+        #select()
 
         click_button 'Submit Project Request'
       end

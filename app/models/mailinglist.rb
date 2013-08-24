@@ -15,7 +15,6 @@ class Mailinglist < ActiveRecord::Base
 
   # Accessors:  ----------------------------------------------------------------------------------------------------
   attr_accessor :user_type
-  attr_accessible :contractor, :email, :user_type, :notes, :submitted_from_mobile
 
   # Validations:  --------------------------------------------------------------------------------------------------
   validates_presence_of :email, allow_blank: false

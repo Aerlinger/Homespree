@@ -54,7 +54,6 @@
 #       True if this field can be enabled/disabled by a check box.
 #
 class ProjectField < ActiveRecord::Base
-  attr_protected
 
   belongs_to :project_type
 

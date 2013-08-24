@@ -10,8 +10,6 @@
 #
 
 class ProjectType < ActiveRecord::Base
-  attr_accessible :name, :service_type_id
-
   # Validations:  --------------------------------------------------------------------------------------------------
   validates_presence_of :name
   validates_uniqueness_of :name, message: "for project type isn't unique"

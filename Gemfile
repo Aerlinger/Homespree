@@ -49,7 +49,7 @@ gem 's3_direct_upload'
 
 # Misc.
 gem 'email_validator'
-gem 'protected_attributes'
+#gem 'protected_attributes'
 
 # Views: -------------------------------------------------------------------------------------------------------------
 gem 'turbolinks'

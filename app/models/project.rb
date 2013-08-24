@@ -19,8 +19,6 @@ class Project < ActiveRecord::Base
 
   # Accessors:  -------------------------------------------------------------------------------------------------------
   attr_accessor :zipcode, :project_type_name, :service_type_name, :service_type
-  attr_accessible :zipcode, :title, :description, :project_type_name, :submission_status, :homeowner, :homeowner_id,
-                  :appointment_attributes, :project_type_id, :service_type_name, :properties, :service_type
 
   # Serialization for dynamic project submission (HStore through Postgres):  ------------------------------------------
   serialize :properties, Hash

@@ -103,7 +103,6 @@ describe Users::ConversationsController, pending: true do
       #let(:message) { FactoryGirl.create :message }
 
       before do
-
       end
     end
 
@@ -111,7 +110,6 @@ describe Users::ConversationsController, pending: true do
       #let(:message) { FactoryGirl.create :message }
 
       before do
-
       end
     end
   end

@@ -25,8 +25,6 @@
 
 class Appointment < ActiveRecord::Base
   attr_accessor :zipcode
-  attr_accessible :address_id, :photos, :reminders, :starts_at, :title, :description, :duration,
-                  :address_attributes, :contractor_id, :homeowner_id, :zipcode
 
   APPOINTMENT_TYPES = [PROJECT = "project", MEETING = "meeting"]
 

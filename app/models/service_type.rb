@@ -13,8 +13,6 @@
 class ServiceType < ActiveRecord::Base
   acts_as_list
 
-  attr_accessible :name, :params
-
   # Parameters for this category:  ------------------------------------------------------------------------------------
   serialize :params, Hash
 

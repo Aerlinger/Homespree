@@ -14,8 +14,6 @@
 #
 
 class Specialty < ActiveRecord::Base
-  attr_accessible :name, :contractor_id, :endorsements, :endorser_id, :other_specialties
-
   # Contractor job specialties
   def self.painting_types
     {

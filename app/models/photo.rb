@@ -13,7 +13,6 @@
 #
 
 class Photo < ActiveRecord::Base
-  attr_accessible :contractor_id, :caption, :image_url, :name, :photo, :image
 
   belongs_to :photographable, polymorphic: true
 

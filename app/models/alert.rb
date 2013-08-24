@@ -13,7 +13,5 @@
 #
 
 class Alert < ActiveRecord::Base
-  attr_accessible :alertable_id, :alertable_type, :content, :title, :notice_type
-
   belongs_to :alertable, polymorphic: true
 end

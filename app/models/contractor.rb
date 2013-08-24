@@ -59,9 +59,6 @@ class Contractor < User
 
   friendly_id :company_title, use: [:slugged, :finders]
 
-  # Accessors:  -------------------------------------------------------------------------------------------------------
-  attr_protected
-
   # Associations:  ----------------------------------------------------------------------------------------------------
   has_many :appointments
   has_many :projects, through: :appointments
