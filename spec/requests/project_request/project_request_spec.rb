@@ -21,7 +21,7 @@ describe 'Project Wizard', js: false do
 
     it { should have_content 'Interior painting' }
 
-    it { should_not have_content 'previous' }
+    it { save_and_open_page; should_not have_content 'previous' }
 
     it 'has dynamic input controls for the interior project'
     it 'updates fields on when project type is changed'
@@ -47,7 +47,11 @@ describe 'Project Wizard', js: false do
       it { should have_content 'Review Estimates' }
 
       describe 'Page 3: Set appointment' do
-        before(:each) { click_link 'next' }
+        before(:each) do
+          #click_link 'next'
+          save_and_open_page
+          first(".contractor-preview").click
+        end
 
         its(:current_path) { should eq '/project_wizard/appointment' }
         it { should have_content 'Appointment' }

@@ -1,6 +1,8 @@
 - content_for :project_wizard do
   %h1 Setup Appointment
 
+  = render partial: "project_wizard/contractor", locals: { contractor: @project.contractor }
+
   = form_for @homeowner, url: next_wizard_path do |f|
     = f.fields_for :appointment do |builder|
       = builder.label "I want to schedule:"

@@ -1,6 +1,6 @@
 class MailinglistsController < ApplicationController
   def create
-    @mailinglist = Mailinglist.new(params[:mailinglist])
+    @mailinglist = Mailinglist.new(mailinglist_params)
 
     if params && params[:user_type] =~ /contractor/i
       @mailinglist.save
@@ -23,5 +23,11 @@ class MailinglistsController < ApplicationController
     @user_email = params[:email]
     mailinglist = Mailinglist.find_by_email(@user_email)
     mailinglist.destroy
+  end
+
+  private
+
+  def mailinglist_params
+    params.require(:mailinglist).permit(:email, :username, :name, :zipcode, :user_type)
   end
 end

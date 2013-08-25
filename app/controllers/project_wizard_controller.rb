@@ -1,21 +1,21 @@
 class ProjectWizardController < ApplicationController
+  include Wicked::Wizard
   layout "project_wizard"
 
-  include Wicked::Wizard
   steps :request, :review_estimates, :appointment
 
   before_action :get_project
   before_action :get_contractors, only: :show
 
+  def update
+    @project.update_attributes! project_params
+    redirect_to action: :show
+  end
+
   def show
     @project = Project.find(session[:project_id])
     @project = @project.decorate
     render_wizard
-  end
-
-  def update
-    @project.update_attributes project_params
-    redirect_to action: :show
   end
 
   private
@@ -31,8 +31,7 @@ class ProjectWizardController < ApplicationController
   end
 
   def project_params
-    params.permit(:project)
-    params.permit(:contractor_id)
+    params.require(:project).permit(:contractor_id, :project_type_id, :zipcode, :service_type_name)
   end
 
   def get_project

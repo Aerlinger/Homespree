@@ -25,4 +25,4 @@
   .row-fluid.description
     %p= raw truncate(contractor.description, length: 430, :omission => "... #{link_to 'Read more', contractor}")
 
-  = link_to "Select Contractor", project_wizard_path(id: "appointment", project: { contractor_id: contractor.id }), method: :put
+  = link_to "Select Contractor", project_wizard_path(id: "appointment", project: { contractor_id: contractor.id }), method: :put, class: "btn btn-success btn-select"

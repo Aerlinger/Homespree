@@ -7,12 +7,11 @@ Homespree::Application.configure do
   # and recreated between test runs. Don't rely on the data there!
   config.cache_classes = true
 
+  config.eager_load = false
+
   # Configure static asset server for tests with Cache-Control for performance
   config.serve_static_assets = true
   config.static_cache_control = "public, max-age=3600"
-
-  # Log error messages when you accidentally call methods on nil
-  config.whiny_nils = true
 
   # Show full error reports and disable caching
   config.consider_all_requests_local       = true
@@ -23,6 +22,7 @@ Homespree::Application.configure do
 
   # Disable request forgery protection in test environment
   config.action_controller.allow_forgery_protection    = false
+  config.action_controller.action_on_unpermitted_parameters = :raise
 
   # Tell Action Mailer not to deliver emails to the real world.
   # The :test delivery method accumulates sent emails in the

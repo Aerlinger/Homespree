@@ -98,8 +98,8 @@ class User < ActiveRecord::Base
   end
 
   def capitalize_name
-    first_name.try(:capitalize!)
-    last_name.try(:capitalize!)
+    self.first_name = first_name.try(:downcase).try(:titleize)
+    self.last_name = last_name.try(:downcase).try(:titleize)
   end
 
   def update_coordinates

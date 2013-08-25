@@ -13,7 +13,6 @@
 #
 
 class Photo < ActiveRecord::Base
-
   belongs_to :photographable, polymorphic: true
 
   before_create :default_name
@@ -23,5 +22,4 @@ class Photo < ActiveRecord::Base
   def default_name
     self.name ||= File.basename(image_url, '.*').titleize if image_url
   end
-
 end

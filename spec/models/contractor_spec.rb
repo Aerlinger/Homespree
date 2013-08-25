@@ -121,6 +121,8 @@ describe Contractor do
   context "default assignments" do
     its(:slug) { should eq "joe-s-plumbing" }
     its(:name) { should eq "Joe Theplumber" }
+    its(:first_name) { should eq "Joe" }
+    its(:last_name) { should eq "Theplumber" }
 
     its(:office_number) { should eq "8485558443" }
     its(:mobile_number) { should eq "8485558332" }

@@ -15,7 +15,6 @@ FactoryGirl.define do
     website "http://www.joesplumbing.com"
     facebook "www.facebook.com/joe_the_plumber"
     twitter "@joe_the_plumber"
-    disabled false
 
     license "ABCDEFG12345"
     insurance_limit 200000.0

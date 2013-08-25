@@ -56,37 +56,35 @@ describe ContractorsController do
       end
 
       it "redirects to the updated contractor profile" do
-        put :update, id: contractor, contractor: attributes_for(:contractor, first_name: "George")
+        put :update, id: contractor.id, contractor: attributes_for(:contractor, first_name: "George")
         expect(response).to render_template(:update)
       end
     end
 
     context "with invalid params" do
       it "does not change contractors attributes" do
-        put :update, id: contractor2, contractor: attributes_for(:contractor, email: "lol")
+        put :update, id: contractor2.id, contractor: attributes_for(:contractor, email: "lol")
         expect(assigns(:contractor)).to eq(contractor2)
       end
     end
 
     describe "with nested attributes for photos" do
- 
       it " properly updates photos on the Contractor model" do
-        put :update, id: contractor, contractor: {id: contractor.id, photos_attributes: [FactoryGirl.attributes_for(:photo)]}
+        put :update, id: contractor.id, contractor: {photos_attributes: [FactoryGirl.attributes_for(:photo)]}
         request.params[:contractor][:photos_attributes].should eq([FactoryGirl.attributes_for(:photo).stringify_keys])
       end
 
       it "increases the number of photos by 1" do
-        put :update, id: contractor, contractor: {id: contractor.id, photos_attributes: [FactoryGirl.attributes_for(:photo)]}
+        put :update, id: contractor.id, contractor: {photos_attributes: [FactoryGirl.attributes_for(:photo)]}
         request.params[:contractor][:photos_attributes].should eq([FactoryGirl.attributes_for(:photo).stringify_keys])
       end
-
     end
 
     describe "with nested attributes for address" do
       let(:address_attributes) { FactoryGirl.attributes_for(:address) }
 
       it "properly updates the address on the Contractor model" do
-        put :update, id: contractor, contractor: {id: contractor.id, address_attributes: FactoryGirl.attributes_for(:address)}
+        put :update, id: contractor, contractor: {address_attributes: FactoryGirl.attributes_for(:address)}
         request.params[:contractor][:address_attributes].should eq(FactoryGirl.attributes_for(:address).stringify_keys)
       end
     end
@@ -95,13 +93,13 @@ describe ContractorsController do
       let(:appointment_attributes) { FactoryGirl.attributes_for(:appointment) }
 
       it "properly updates appointments on the contractor profile" do
-        put :update, id: contractor, contractor: {id: contractor.id, appointments_attributes: [FactoryGirl.attributes_for(:appointment)]}
+        put :update, id: contractor, contractor: {appointments_attributes: [FactoryGirl.attributes_for(:appointment)]}
         request.params[:contractor][:appointments_attributes].should
           eq([FactoryGirl.attributes_for(:appointment)])
       end
 
       it "creates a new appointment" do
-        put :update, id: contractor, contractor: {id: contractor.id, appointments_attributes: [FactoryGirl.attributes_for(:appointment)]}
+        put :update, id: contractor, contractor: {appointments_attributes: [FactoryGirl.attributes_for(:appointment)]}
         request.params[:contractor][:appointments_attributes].should
           eq(FactoryGirl.attributes_for(:appointment))
       end

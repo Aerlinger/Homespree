@@ -5,6 +5,7 @@
 #   This class is a wrapper for both the Project model and ProjectFormBuilder
 #
 class ProjectDecorator < Draper::Decorator
+  include Concerns::ProjectParams
   delegate_all
 
   ### --------------------------------------------------------------------------------------------------------------

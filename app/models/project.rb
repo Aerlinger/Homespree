@@ -33,21 +33,18 @@ class Project < ActiveRecord::Base
   has_many :before_photos, class_name: 'Photo', as: :photographable
   has_many :after_photos, class_name: 'Photo', as: :photographable
   has_many :appointments
-  has_many :addresses, through: :appointments, uniq: true
 
   # Nested Attributes:  -----------------------------------------------------------------------------------------------
   accepts_nested_attributes_for :appointments, allow_destroy: true
-  accepts_nested_attributes_for :project_type, :contractor, :homeowner
+  accepts_nested_attributes_for :project_type
 
   # Aliases and delegations (delegates calls to project_type):  -------------------------------------------------------
   delegate :service_type, to: :project_type
-  delegate :address, to: :homeowner
   delegate :fields, to: :project_type
 
   # Validations:  -----------------------------------------------------------------------------------------------------
-  validates_presence_of :zipcode, :project_type, :homeowner
-  validates_presence_of :contractor, :address, if: :active?
-  validates :zipcode, format: RegexDefinitions::zipcode_regex
+  validates_presence_of :project_type, :homeowner
+  validates_presence_of :contractor, if: :active?
   validate :validate_fields, if: :project_type
 
   # Callbacks:  -------------------------------------------------------------------------------------------------------
@@ -70,7 +67,7 @@ class Project < ActiveRecord::Base
 
   def incomplete_params
     incompletes = []
-    incompletes << :appointment if appointments.blank?
+    incompletes << :appointments if appointments.blank?
     incompletes << :contractor if contractor.blank?
     incompletes << :description if description.blank?
 
@@ -95,9 +92,7 @@ class Project < ActiveRecord::Base
   end
 
   def address
-    if appointments.present?
-      appointments.first.address
-    end
+    self.appointments.first.address
   end
 
   private
@@ -124,12 +119,6 @@ class Project < ActiveRecord::Base
 
   def convert_properties
     if project_type.present?
-
     end
-    #self.fields.each do |field|
-    #  field_name = field.name
-    #  properties[field_name]
-    #end
   end
-
 end

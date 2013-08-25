@@ -165,5 +165,4 @@ describe Appointment do
       appointment2.overlaps_with?(appointment).should be_false
     end
   end
-
 end

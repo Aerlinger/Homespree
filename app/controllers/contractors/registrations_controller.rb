@@ -1,9 +1,7 @@
 class Contractors::RegistrationsController < Users::RegistrationsController
-  #after_filter :send_welcome_email, :send_notification_email, only: [:create]
+  include Concerns::ContractorParams
 
   before_filter :update_sanitized_params, if: :devise_controller?
-
-
 
   protected
 
@@ -24,6 +22,25 @@ class Contractors::RegistrationsController < Users::RegistrationsController
   private
 
   def update_sanitized_params
-    devise_parameter_sanitizer.for(:sign_up) {|u| u.permit(:company_title, :email, :password)}
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:company_title,
+                                                             :email,
+                                                             :password,
+                                                             :first_name,
+                                                             :last_name,
+                                                             :office_number,
+                                                             :mobile_number,
+                                                             :website,
+                                                             :facebook,
+                                                             :twitter,
+                                                             :license,
+                                                             :bonding_limit,
+                                                             :insurance_limit,
+                                                             :hourly_rate,
+                                                             :slogan,
+                                                             :description,
+                                                             address_attributes:      [:zipcode, :line1, :line2, :city, :state],
+                                                             appointments_attributes: [:address, :starts_at, :duration, :attributes, :zipcode],
+                                                             photos_attributes:       [:image_url, :name, :caption]
+    ) }
   end
 end

@@ -1,7 +1,9 @@
 class PhotosController < ApplicationController
+  include Concerns::PhotoParams
+
   def create
     # Find the contractor (photographable type)
-    @photo = Photo.new(params[:photo])
+    @photo = Photo.new(photo_params)
     id = params[:contractor_id]
     @contractor = Contractor.find(id)
     @contractor.photos << @photo

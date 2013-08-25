@@ -1,4 +1,5 @@
 class HomeownersController < ApplicationController
+  #include HomeownerParams
   layout "dashboard"
 
   before_filter :authenticate_homeowner!

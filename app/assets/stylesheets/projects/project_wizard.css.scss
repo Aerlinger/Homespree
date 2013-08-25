@@ -231,6 +231,11 @@ $header_height: 110px;
       display: block;
       margin: 0;
       border-top: 1px solid white;
+      height: 20px;
+
+      .row-fluid {
+        min-height: 20px;
+      }
 
       .span-tri {
         width: 33.3333%;
@@ -239,7 +244,7 @@ $header_height: 110px;
         border-left: 2px solid white;
         display: table;
         text-align: center;
-        line-height: 30px;
+        line-height: 20px;
         margin: auto;
 
         font-weight: bold;
@@ -250,7 +255,7 @@ $header_height: 110px;
 
     .btn-select {
       display: block;
-      margin: 20px auto;
+      //margin: 20px auto;
 
       border-top: 5px solid $homespree_green;
 
@@ -260,6 +265,14 @@ $header_height: 110px;
       -moz-border-radius-topright: 0;
       -webkit-border-top-left-radius: 0;
       -webkit-border-top-left-radius: 0;
+
+
+      border-bottom-left-radius: 3px;
+      border-bottom-right-radius: 3px;
+      -moz-border-radius-bottomleft: 3px;
+      -moz-border-radius-bottomright: 3px;
+      -webkit-border-bottom-left-radius: 3px;
+      -webkit-border-bottom-left-radius: 3px;
     }
 
     hr {

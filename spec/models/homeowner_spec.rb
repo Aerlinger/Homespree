@@ -99,7 +99,7 @@ describe Homeowner do
 
     it { should be_guest }
 
-    its(:first_name) { should eq "Guest homeowner" }
+    its(:first_name) { should eq "Guest Homeowner" }
 
     describe "creates a project" do
       let(:project) { FactoryGirl.create :project }
