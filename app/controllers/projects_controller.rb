@@ -8,11 +8,12 @@ class ProjectsController < ApplicationController
     if Rails.env.production?
       render :unavailable
     else
+      zipcode = params[:project][:zipcode]
       @project  = Project.create!(project_params)
-      @location = Address.create!(zipcode: params[:project][:zipcode])
+      @location = Address.create!(zipcode: zipcode)
+      @contractors = Contractor.close_to(zipcode)
 
-      # Redirect to the project submission wizard if all fields are present
-      # display error message otherwise
+      # Redirect to the project submission wizard if all fields are present. Display error message otherwise
       if @project.valid?
         session[:project_id] = @project.id
         redirect_to project_wizard_path(:request)
@@ -34,7 +35,7 @@ class ProjectsController < ApplicationController
     @project      = @project.decorate
     @contractor   = @project.contractor
     @homeowner    = @project.homeowner
-    @appointment = @project.appointment
+    @appointments = @project.appointments
   end
 
   def unavailable
@@ -44,10 +45,6 @@ class ProjectsController < ApplicationController
   end
 
   private
-
-  #def project_attributes
-    #params.require(:project).permit(:zipcode, :homeowner, :project_type, :project_type_id, :homeowner_id)
-  #end
 
   def get_active_user
     @user = homeowner_signed_in? ? current_user : create_guest_with_zip

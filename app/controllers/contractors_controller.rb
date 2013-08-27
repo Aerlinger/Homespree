@@ -37,22 +37,6 @@ class ContractorsController < ApplicationController
   def browse
   end
 
-  def map
-    @contractors = Contractor.all
-
-    @json = @contractors.to_gmaps4rails do |user, marker|
-      marker.infowindow render_to_string(:partial => "/contractors/contractor", :locals => { :object => user })
-      marker.picture({
-                       :picture => "http://www.blankdots.com/img/github-32x32.png",
-                       :width   => 32,
-                       :height  => 32
-                     })
-      marker.title "i'm the title"
-      marker.sidebar "i'm the sidebar"
-      marker.json({ :id => user.id, :foo => "bar" })
-    end
-  end
-
   private
 
   def process_params

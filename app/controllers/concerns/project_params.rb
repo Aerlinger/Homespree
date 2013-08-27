@@ -9,7 +9,10 @@ module Concerns::ProjectParams
       :description,
       :homeowner_id,
       :contractor_id,
-      :service_type_name
+      :service_type_name,
+      address_attributes: [:zipcode, :line1, :line2, :city, :state],
+      appointments_attributes: [:address, :starts_at, :duration, :attributes, :zipcode],
+      photos_attributes: [:image_url, :name, :caption]
     )
   end
 end

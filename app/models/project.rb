@@ -33,10 +33,10 @@ class Project < ActiveRecord::Base
   has_many :before_photos, class_name: 'Photo', as: :photographable
   has_many :after_photos, class_name: 'Photo', as: :photographable
   has_many :appointments
+  has_one :address, as: :addressable
 
   # Nested Attributes:  -----------------------------------------------------------------------------------------------
-  accepts_nested_attributes_for :appointments, allow_destroy: true
-  accepts_nested_attributes_for :project_type
+  accepts_nested_attributes_for :appointments, :address, :before_photos, :after_photos, allow_destroy: true
 
   # Aliases and delegations (delegates calls to project_type):  -------------------------------------------------------
   delegate :service_type, to: :project_type
@@ -45,6 +45,7 @@ class Project < ActiveRecord::Base
   # Validations:  -----------------------------------------------------------------------------------------------------
   validates_presence_of :project_type, :homeowner
   validates_presence_of :contractor, if: :active?
+  validates_presence_of :appointments, if: :active?
   validate :validate_fields, if: :project_type
 
   # Callbacks:  -------------------------------------------------------------------------------------------------------
@@ -89,10 +90,6 @@ class Project < ActiveRecord::Base
     #  homeowner.nearby_contractors
     #end
     #self.address.nearbys(search_radius)
-  end
-
-  def address
-    self.appointments.first.address
   end
 
   private

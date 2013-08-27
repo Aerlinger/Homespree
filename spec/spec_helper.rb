@@ -9,7 +9,6 @@ require 'rspec/rails'
 require 'mobylette/helmet'
 require 'capybara/rspec'
 require 'capybara/rails'
-#require 'rspec/autorun'
 require 'draper/test/rspec_integration'
 
 module ::RSpec::Core
@@ -97,10 +96,8 @@ RSpec.configure do |config|
 
 
   config.before(:suite) do
-    #DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with :truncation, except: %w[project_types service_types project_fields]
     DatabaseCleaner.strategy = :transaction
-    DatabaseCleaner.clean_with(:truncation)
-    #DatabaseCleaner.clean_with :truncation, except: %w[project_types service_types project_fields]
   end
 
   config.before(:each) do
@@ -129,4 +126,3 @@ RSpec.configure do |config|
   #  DatabaseCleaner.clean
   #end
 end
-

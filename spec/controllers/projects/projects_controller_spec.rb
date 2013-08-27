@@ -18,6 +18,11 @@ describe ProjectsController do
   end
 
   describe "Creates a new project from homepage" do
+
+    let!(:contractor1) { FactoryGirl.create :contractor }
+    let!(:contractor2) { FactoryGirl.create :contractor }
+    let!(:contractor3) { FactoryGirl.create :contractor }
+
     describe "when a homeowner is not signed in" do
       before do
         post :create, params
@@ -27,12 +32,19 @@ describe ProjectsController do
         response.should be_redirect
       end
 
-      it "assigns project" do
+      it "assigns a project instance variable" do
         expect(assigns(:project).class).to eq project.class
       end
 
+      it "sets the homeowner for the project" do
+        expect(assigns(:guest).name).to eq "Guest"
+      end
+
+      it "finds contractors for the project" do
+        expect(assigns(:contractors).all).to eq [contractor3, contractor2, contractor1]
+      end
+
       it "redirects to homeowner" do
-        proj = assigns(:project)
         response.should redirect_to "/project_wizard/request"
       end
 
@@ -52,9 +64,12 @@ describe ProjectsController do
     describe "when a homeowner is signed in" do
       let(:homeowner) { FactoryGirl.create :homeowner }
 
-      before { sign_in homeowner }
+      before do
+        sign_in homeowner
+        post :create, params
+      end
 
-      its(:current_user) { should eq homeowner }
+      specify { response.should be_redirect }
       its(:current_user) { should be_homeowner }
     end
 

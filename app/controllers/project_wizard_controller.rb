@@ -1,5 +1,7 @@
 class ProjectWizardController < ApplicationController
   include Wicked::Wizard
+  include Concerns::ProjectParams
+
   layout "project_wizard"
 
   steps :request, :review_estimates, :appointment

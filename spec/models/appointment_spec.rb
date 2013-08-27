@@ -31,7 +31,6 @@ describe Appointment do
   let(:contractor) { FactoryGirl.create :contractor }
   let(:homeowner) { FactoryGirl.create :homeowner }
   let(:project) { FactoryGirl.create :project }
-  let(:address) { FactoryGirl.create :address }
 
   subject { appointment }
 
@@ -40,13 +39,11 @@ describe Appointment do
     homeowner.appointments << appointment
     project.appointments << appointment
 
-    appointment.address = address
     project.save
   end
 
   # Assocations
   context "associations" do
-    it { should belong_to :address }
     it { should belong_to :contractor }
     it { should belong_to :homeowner }
     it { should belong_to :project }
@@ -57,7 +54,6 @@ describe Appointment do
     it { should validate_presence_of :starts_at }
     it { should validate_presence_of :duration }
 
-    it { should accept_nested_attributes_for :address }
   end
 
   # Table columns
@@ -76,7 +72,6 @@ describe Appointment do
   its(:contractor) { should eq contractor }
   its(:homeowner) { should eq homeowner }
   its(:project) { should eq project }
-  its(:address) { should eq address }
 
   context "belongs to a contractor" do
     subject { contractor }
@@ -103,14 +98,6 @@ describe Appointment do
     it { should be_valid }
   end
 
-  context "has one address" do
-    subject { address }
-
-    it { should be_valid }
-    its(:city) { should eq appointment.address.city }
-    its(:state) { should eq appointment.address.state }
-    its(:zipcode) { should eq appointment.address.zipcode }
-  end
 
   describe "create a second appointment for a project" do
     let(:appointment2) { FactoryGirl.create :appointment }
@@ -122,7 +109,6 @@ describe Appointment do
       homeowner.appointments << appointment2
       project.appointments << appointment2
 
-      appointment2.address = address
     end
 
     its(:homeowner) { should eq homeowner }

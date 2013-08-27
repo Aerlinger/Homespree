@@ -1,26 +1,57 @@
-%h1 Project
-
-%h2= @project
-%h4= @project.service_type
-%h4= @project.project_type
-
-%h3 Appointment Info:
-= @project.contractor
-
-- if current_user.contractor?
-  = link_to "Send #{@project.contractor} a message."
-
-%h3 Contractor Info:
--#= @contractor.first_name
--#= @contractor.company_title
-
--#- if current_user.homeowner?
-  -#= link_to "Send #{@contractor.company_title} a message."
+%h1= @project.project_type
 
 %hr
 
-%h3 Homeowner Info:
-= @homeowner.try(:first_name)
+%h3 Appointment Info:
+- if @project.appointments.blank?
+  = render "projects/appointment", collection: @project.appointments
+- else
+  = render "projects/appointment"
 
--#- if current_user.contractor
--#  = link_to "Send #{@homeowner.comapany_title} a message."
+
+%hr
+
+%h3 Contractor Info:
+#homeowner_name
+  %strong Name:
+  = "#{@homeowner.try(:first_name)} #{@homeowner.try(:last_name)}"
+
+#homeowner_phone_number
+  %strong Mobile number:
+  = @homeowner.try(:mobile_number)
+
+#homeowner_email
+  %strong Email:
+  = @homeowner.try(:email)
+-#%h5= @contractor.company_title
+-#%h7= @contractor.first_name
+
+.contractor-link
+  = link_to @project.contractor
+.send-contractor-message
+  - if current_user.homeowner?
+    = link_to "Send #{@contractor.company_title} a message."
+
+
+%hr
+
+%h5 Homeowner Info:
+
+#homeowner_name
+  %strong Name:
+  = "#{@homeowner.try(:first_name)} #{@homeowner.try(:last_name)}"
+
+#homeowner_phone_number
+  %strong Mobile number:
+  = @homeowner.try(:mobile_number)
+
+#homeowner_email
+  %strong Email:
+  = @homeowner.try(:email)
+
+%br
+%h5 Homeowner Address:
+= @homeowner.try(:line1)
+= @homeowner.try(:city)
+= @homeowner.try(:state)
+= @homeowner.try(:zipcode)

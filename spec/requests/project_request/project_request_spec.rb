@@ -3,6 +3,10 @@ require 'spec_helper'
 describe 'Project Wizard', js: false do
   subject { page }
 
+  let!(:contractor1) { FactoryGirl.create :contractor }
+  let!(:contractor2) { FactoryGirl.create :contractor }
+  let!(:contractor3) { FactoryGirl.create :contractor }
+
   before :each do
     ProjectType.find_or_create_by(name: 'Interior painting')
     ProjectType.find_or_create_by(name: 'Exterior painting')
@@ -21,7 +25,7 @@ describe 'Project Wizard', js: false do
 
     it { should have_content 'Interior painting' }
 
-    it { save_and_open_page; should_not have_content 'previous' }
+    it { should_not have_content 'previous' }
 
     it 'has dynamic input controls for the interior project'
     it 'updates fields on when project type is changed'
@@ -37,7 +41,6 @@ describe 'Project Wizard', js: false do
         fill_in "Paint ceiling?", with: 'yes'
 
         # TODO: Select trim to be painted
-
         #select()
 
         click_button 'Submit Project Request'
@@ -48,18 +51,20 @@ describe 'Project Wizard', js: false do
 
       describe 'Page 3: Set appointment' do
         before(:each) do
-          #click_link 'next'
-          save_and_open_page
-          first(".contractor-preview").click
+          first(:link, "Select Contractor").click
         end
 
         its(:current_path) { should eq '/project_wizard/appointment' }
         it { should have_content 'Appointment' }
 
         describe 'Page 4: Submit project' do
-          before(:each) { click_button 'next' }
+          before(:each) {
+            click_button 'Finish'
+          }
 
-          its(:current_path) { should match /\/homeowners\/projects\/\d+/ }
+          its(:current_path) {
+            should match /\/homeowners\/projects\/\d+/
+          }
         end
       end
     end

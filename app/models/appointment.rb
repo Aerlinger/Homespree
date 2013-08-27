@@ -32,9 +32,6 @@ class Appointment < ActiveRecord::Base
   belongs_to :contractor, foreign_key: "contractor_id"
   belongs_to :homeowner, foreign_key: "homeowner_id"
   belongs_to :project
-  belongs_to :address
-
-  accepts_nested_attributes_for :address
 
   # Validations:  --------------------------------------------------------------------------------------------------
   validates_presence_of :starts_at, :duration

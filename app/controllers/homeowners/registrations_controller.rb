@@ -12,7 +12,7 @@ class Homeowners::RegistrationsController < Users::RegistrationsController
   protected
 
   def after_sign_up_path_for(resource)
-    homeowner_path id: resource.id
+    my_projects_path
   end
 
   def update_sanitized_params

@@ -95,7 +95,7 @@ class Contractor < User
   #default_scope order("created_at desc").where("disabled = ?", false)
   scope :recent_signups, lambda { limit(100) }
   # TOOD: Fix
-  scope :nearbys, lambda { |zipcode| Contractor.limit(3) }
+  scope :close_to, lambda { |zipcode| Contractor.limit(3) }
 
 
 

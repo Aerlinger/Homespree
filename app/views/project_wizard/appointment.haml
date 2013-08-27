@@ -1,53 +1,65 @@
 - content_for :project_wizard do
-  %h1 Setup Appointment
+  %h1 Setup Appointment With #{@project.contractor.company_title}
 
-  = render partial: "project_wizard/contractor", locals: { contractor: @project.contractor }
+  %hr
+  = form_for @project, url: next_wizard_path do |f|
+    .row-fluid
+      .span8
+        %h4 I want to schedule:
+        = f.fields_for :appointment do |builder|
+          = builder.radio_button :appointment_type, "project", checked: true
+          = builder.label "Appointment to begin project"
+          = builder.radio_button :appointment_type, "meeting"
+          = builder.label "Appointment to meet the contractor in person"
 
-  = form_for @homeowner, url: next_wizard_path do |f|
-    = f.fields_for :appointment do |builder|
-      = builder.label "I want to schedule:"
-      = builder.radio_button :appointment_type, "project"
-      = builder.label "Appointment to begin project"
-      = builder.radio_button :appointment_type, "meeting"
-      = builder.label "Appointment to meet the contractor in person"
+          %hr
 
-      = builder.label "When?"
-      = builder.select :priority, ["No Rush", "As soon as possible", "No later than a certain date"]
+          %strong When?
+          Choose a timeline and the contractor will provide you appointment options.
+          = builder.select :priority, ["No Rush", "As soon as possible", "No later than a certain date"]
 
-    - if @homeowner.guest?
-      %h3 Have an account?
-    - else
-      = f.label "You are signed in as #{@homeowner.email}"
-
-    %hr
-
-    - if @homeowner.address.present?
-      = check_box_tag("Use my current address")
-    - else
-      = f.fields_for Address.new do |builder|
-        = builder.label "Street"
-        = builder.text_field :line1
-        = builder.label "Zipcode"
-        = builder.text_field :zipcode
+      .row-fluid
+        = render partial: "project_wizard/contractor", locals: { contractor: @project.contractor }
 
     %hr
+      %strong Where is this project?
+      .row-fluid
+        %fieldset.project-address
+          = f.fields_for :address do |builder|
+            = builder.text_field :address, placeholder: "Address"
+            = builder.text_field :city, placeholder: "City"
+            = builder.text_field :state, placeholder: "State"
+            = builder.text_field :zipcode, placeholder: "Zip", maxlength: 5
 
-    = f.label "First name"
-    = f.text_field :first_name
+          %br
 
-    = f.label "Last name"
-    = f.text_field :last_name
+          = radio_button_tag :appointment_type, "I'll be home", checked: true
+          = label_tag :appointment_type, "I'll be home"
+          = radio_button_tag :appointment_type, "I'll leave the key under the mat"
+          = label_tag :appointment_type, "I'll leave the key under the mat"
 
-    = f.label "Phone number"
-    = f.text_field :mobile_number
+    %hr
+    .row-fluid
+      %strong Create Account
+      Already have an account? #{link_to "Sign In", user_session_path}
 
-    = f.label "Email"
-    = f.text_field :email
+    %hr
+    .row-fluid
+      .span6
+        %fieldset
+          = f.fields_for :homeowner do |builder|
+            = builder.text_field :first_name, placeholder: "First Name", value: ""
+            = builder.text_field :last_name, placeholder: "Last Name"
+            = builder.text_field :mobile_number, placeholder: "Phone Number"
+            = builder.text_field :email, placeholder: "Email", value: ""
+            = builder.password_field :password, placeholder: "Password"
 
-    = f.label "Password"
-    = f.text_field :password
+      .span6
+        %fieldset
+          = text_field_tag :credit_card_number, nil, placeholder: "Credit Card Number"
+          = date_select 'Expiration month', 'expiration_month', use_month_numbers: true, discard_day: true, with_css_classes: true, order: [:month, :year, :day]
+          = text_field_tag :cvc, nil, placeholder: "CVC", size: 4, maxlength: 3
 
-    %br
-
-    = link_to 'previous', previous_wizard_path
-    = f.submit 'next', class: 'pull-right'
+    %hr
+    .bottom-row{style: "background-color: white;"}
+      = f.submit "Finish", id: "submit_request", class: "btn btn-large btn-success"
