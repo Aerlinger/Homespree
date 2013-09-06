@@ -169,7 +169,6 @@ describe Contractor do
   it "is invalid with duplicate email address" do
     contractor           = create :contractor
     duplicate_contractor = build :contractor, email: contractor.email
-    duplicate_contractor.valid?
 
     duplicate_contractor.errors[:email].should include("has already been taken")
   end

@@ -38,7 +38,7 @@ gem 'draper'
 gem 'best_in_place', github: 'bernat/best_in_place'
 gem 'geocoder'
 gem 'gmaps4rails'
-gem 'reform'  # TODO: Deprecated
+#gem 'reform'  # TODO: Deprecated
 gem 'simple_form'
 gem 'friendly_id', git: "https://github.com/norman/friendly_id.git"
 gem 'wicked'
@@ -83,13 +83,13 @@ group :test, :development do
   gem 'rb-fsevent'
   gem 'rb-inotify', require: false
   gem 'rb-fchange', require: false
+  gem 'faraday'
 end
 
 group :test do
   gem 'simplecov', '>=0.3.8', require: false
   gem 'shoulda-matchers'
   gem 'selenium-webdriver'
-  #gem 'database_cleaner'#, '0.7.0'
   gem 'database_cleaner', '< 1.1.0'
   gem 'capybara'
   gem 'capybara-webkit', require: false

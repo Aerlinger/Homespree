@@ -93,6 +93,13 @@ describe Homeowner do
     its(:last_name) { should eq "Boop" }
   end
 
+  describe "creates address when initialized with zipcode" do
+    let(:homeowner_zip) { FactoryGirl.create :homeowner, zipcode: '10027' }
+
+    specify { homeowner_zip.zipcode.should eq '10027' }
+    specify { homeowner_zip.address.zipcode.should eq '10027' }
+  end
+
   context "Guest Homeowner" do
     let(:guest_homeowner) { Homeowner.create_guest }
     subject { guest_homeowner }

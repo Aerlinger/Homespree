@@ -53,16 +53,16 @@ describe Address do
     address.should_not be_valid
   end
 
-  #describe "created as a nested attribute of contractor" do
-  #  let(:params) do
-  #    { contractor: attributes_for(:contractor, address_attributes: attributes_for(:address)) }
-  #  end
-  #  let(:contractor) { Contractor.create(params[:contractor]) }
-  #
-  #  subject { contractor }
-  #
-  #  its("address.gmaps4rails_address") { should eq address.gmaps4rails_address }
-  #end
+  describe "created as a nested attribute of contractor" do
+    let(:params) do
+      { contractor: attributes_for(:contractor, address_attributes: attributes_for(:address)) }
+    end
+    let(:contractor) { Contractor.create(params[:contractor]) }
+
+    subject { contractor }
+
+    its("address.gmaps4rails_address") { should eq address.gmaps4rails_address }
+  end
 
   describe "created as a nested attribute of homeowner" do
     let(:address) { FactoryGirl.create :address, latitude: 28.5, longitude: 29.5 }
@@ -88,21 +88,13 @@ describe Address do
 
   describe "created as a nested attribute of an appointment" do
     let(:params) do
-      { appointment: attributes_for(:appointment, address_attributes: attributes_for(:address)) }
+      { appointment: attributes_for(:appointment) }
     end
 
     before { @appointment = Appointment.create(params[:appointment]) }
 
     it "persists appointment" do
       @appointment.should be_persisted
-    end
-
-    it "has a valid address" do
-      @appointment.address.should be_persisted
-    end
-
-    it "has have a valid address" do
-      @appointment.address.gmaps4rails_address.should eq address.gmaps4rails_address
     end
   end
 end

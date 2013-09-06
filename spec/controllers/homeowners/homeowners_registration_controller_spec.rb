@@ -33,7 +33,7 @@ describe Homeowners::RegistrationsController do
       end
       it "redirects to new profile" do
         post :create, homeowner: valid_params
-        expect(response).to redirect_to "/homeowners/#{homeowner.id - 1}"
+        expect(response).to redirect_to "/homeowners/dashboard/my_projects"
       end
     end
 
@@ -70,5 +70,4 @@ describe Homeowners::RegistrationsController do
       expect(response).to redirect_to(root_path)
     end
   end
-
 end

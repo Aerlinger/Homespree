@@ -51,10 +51,12 @@
 
 class User < ActiveRecord::Base
   # Gem Class Methods:  ----------------------------------------------------------------------------------------------
-  # Include default devise modules. Others available are: :token_authenticatable, :confirmable, :lockable, :timeoutable and :omniauthable
+  # Devise Modules: :token_authenticatable, :confirmable, :lockable, :timeoutable and :omniauthable
   extend FriendlyId
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
   acts_as_messageable
+
+  #attr_accessor :zipcode
 
   # Associations:  ----------------------------------------------------------------------------------------------------
   has_one :address, as: :addressable, dependent: :destroy
@@ -65,26 +67,33 @@ class User < ActiveRecord::Base
 
   # Validations:  -----------------------------------------------------------------------------------------------------
   validates :email, email: true
-  #validates_uniqueness_of :email
+  validates_uniqueness_of :email
 
   # Scope:  -----------------------------------------------------------------------------------------------------------
-  default_scope order("created_at desc")
+  default_scope -> { order("created_at desc") }
+
+
+  # TODO: FixMe
+  def nearby_contractors(radius = 25)
+    nearby_addresses = self.address.nearbys.where(addressable_type: 'User').where.not(addressable_id: nil)
+    Contractor.joins(:address).where(id: nearby_addresses.map(&:addressable_id))
+  end
+
+  def nearby_homeowners(radius = 25)
+    nearby_addresses = self.address.nearbys.where(addressable_type: 'User').where.not(addressable_id: nil)
+    Homeowner.joins(:address).where(id: nearby_addresses.map(&:addressable_id))
+  end
 
   # Callbacks:  -------------------------------------------------------------------------------------------------------
   before_save :capitalize_name
   before_save lambda { |user| user.email.try(:downcase!) }
+  before_create :set_address_from_zipcode
   after_create :send_welcome_message
-  #after_update :update_coordinates
 
-  # Custom Methods:  --------------------------------------------------------------------------------------------------
 
   # Delegations:  -----------------------------------------------------------------------------------------------------
-  delegate :to_coordinates, :line1, :line2, :city, :state, :state=, :zipcode=, :zipcode, :gmaps4rails_address, :nearby, :nearbys, to: :address, allow_nil: true
-
-  # TODO: FIXME (This is a cheap trick to force STI complicance for FriendlyId gem)
-  #def self.find(id)
-  #  self.find_by(slug: id)
-  #end
+  delegate :to_coordinates, :line1, :line2, :city, :state, :state=, :zipcode,
+           :gmaps4rails_address, :nearby, to: :address, allow_nil: true
 
   def gmaps4rails_marker_picture
     marker_color = 'red'
@@ -97,24 +106,33 @@ class User < ActiveRecord::Base
     end
   end
 
+  def latitude
+    address.latitude
+  end
+
+  def longitude
+    address.longitude
+  end
+
+  def zipcode=(value)
+    if address.present?
+      self.address.zipcode = value
+    else
+      self.create_address(zipcode: value)
+    end
+  end
+
   def capitalize_name
     self.first_name = first_name.try(:downcase).try(:titleize)
-    self.last_name = last_name.try(:downcase).try(:titleize)
+    self.last_name  = last_name.try(:downcase).try(:titleize)
   end
 
-  def update_coordinates
-    #if address
-      self.latitude  = address.latitude
-      self.longitude = address.longitude
-      #save
-    #end
+  private
+
+  def set_address_from_zipcode
+    if self.zipcode.present?
+      self.create_address(zipcode: zipcode)
+    end
   end
 
-  # TODO: FixMe
-  def nearbys
-    #nearby_users
-    #User.all.each do |user|
-    #  user.address.nearbys
-    #end
-  end
 end

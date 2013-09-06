@@ -65,5 +65,4 @@ class Appointment < ActiveRecord::Base
   def in_progress?
     Time.now < ends_at && Time.now > starts_at
   end
-
 end

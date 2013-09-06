@@ -85,6 +85,7 @@ RSpec.configure do |config|
 
   config.include Mobylette::Helmet, :type => :controller
   config.include Devise::TestHelpers, :type => :controller
+  config.include CapybaraRequest
 
   config.order = "random"
   config.mock_with :rspec

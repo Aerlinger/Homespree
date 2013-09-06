@@ -33,6 +33,7 @@ class ProjectWizardController < ApplicationController
   end
 
   def project_params
+    # TODO: Add params validation for appointment and homeowner attributes
     params.require(:project).permit(:contractor_id, :project_type_id, :zipcode, :service_type_name)
   end
 

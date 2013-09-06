@@ -26,7 +26,6 @@ class Project < ActiveRecord::Base
   # Associations:  ----------------------------------------------------------------------------------------------------
   belongs_to :project_type
 
-  # Todo: should this be a has_one?
   belongs_to :contractor
   belongs_to :homeowner
 
@@ -47,6 +46,7 @@ class Project < ActiveRecord::Base
   validates_presence_of :contractor, if: :active?
   validates_presence_of :appointments, if: :active?
   validate :validate_fields, if: :project_type
+  validates_inclusion_of :submission_status, in: %w[request review_estimates appointment], allow_blank: true
 
   # Callbacks:  -------------------------------------------------------------------------------------------------------
   before_create :set_project_type
@@ -78,18 +78,9 @@ class Project < ActiveRecord::Base
   # Finds all contractors within a 25 mile radius of this location.
   # Todo: selection algorithm?
   def find_nearby_contractors(limit = 3, search_radius = 25)
-    # TODO: Needs a stable implementation
     unless Rails.env.production?
       @contractors = Contractor.limit(3)
     end
-
-    # TODO: WIP
-    #Contractor.locate(zipcode, search_radius).limit(3)
-    #if appointments.any?
-    #else
-    #  homeowner.nearby_contractors
-    #end
-    #self.address.nearbys(search_radius)
   end
 
   private

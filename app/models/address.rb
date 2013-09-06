@@ -31,7 +31,10 @@ class Address < ActiveRecord::Base
   # Callbacks:  -------------------------------------------------------------------------------------------------------
   after_validation :geocode unless Rails.env.test? # Running Geocoder in tests causes the API to throttle us.
   before_save :titleize_city
-  #after_save :update_parent
+
+  # Scopes:  ----------------------------------------------------------------------------------------------------------
+  scope :users, -> { where(addressable_type: 'User').where.not(addressable_id: nil) }
+  scope :projects, -> { where(addressable_type: 'Project').where.not(addressable_id: nil) }
 
   # Callback method definitions:  -------------------------------------------------------------------------------------
 

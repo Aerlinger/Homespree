@@ -81,10 +81,12 @@ class Contractor < User
   validates_format_of :mobile_number, :office_number, with: /\A\d{10}\Z/, allow_blank: true, message: "must be valid"
   validates_presence_of :company_title
   validates_numericality_of :years_experience, allow_blank: true
+  #validates_exclusion_of :last_name
 
 
   # Callbacks:  -------------------------------------------------------------------------------------------------------
   before_validation :sanitize_phone_numbers
+  before_validation :set_first_and_last_name
   after_validation :geocode
 
   before_save lambda { |contractor| contractor.license.try(:upcase!) }
@@ -92,11 +94,10 @@ class Contractor < User
   after_create :send_welcome_message
 
   # Scopes:  ----------------------------------------------------------------------------------------------------------
-  #default_scope order("created_at desc").where("disabled = ?", false)
+  default_scope order("created_at desc").where.not("disabled = ?", true)
   scope :recent_signups, lambda { limit(100) }
   # TOOD: Fix
   scope :close_to, lambda { |zipcode| Contractor.limit(3) }
-
 
 
   # Custom Methods:  --------------------------------------------------------------------------------------------------
@@ -160,7 +161,7 @@ class Contractor < User
   end
 
   def licensed?
-    true
+    license.present?
   end
 
   def bonded?
@@ -173,12 +174,19 @@ class Contractor < User
 
   private
 
+  def set_first_and_last_name
+    full_name = first_name.split(" ")
+    self.first_name = full_name[0]
+    self.last_name = full_name[1]
+  end
+
   def add_badges
     badge      = Badge.new
     badge.name = 'early_adopter'
     self.badges << badge
   end
 
+  # Todo: Add welcome message
   def send_welcome_message
   end
 end
