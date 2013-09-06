@@ -54,7 +54,6 @@ gem 'email_validator'
 # Views: -------------------------------------------------------------------------------------------------------------
 gem 'turbolinks'
 gem 'haml-rails'
-gem 'markdown-rails'
 
 # Assets
 gem 'coffee-rails'

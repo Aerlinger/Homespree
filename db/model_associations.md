@@ -23,4 +23,3 @@
     Contractor:
       has_many :homeowners, through: projects
       has_many :specialties, through: projects
-

@@ -23,7 +23,7 @@ class Address < ActiveRecord::Base
 
   # Validations:  -----------------------------------------------------------------------------------------------------
   validates :zipcode, format: RegexDefinitions::zipcode_regex, allow_blank: true
-  validates_format_of :state, with: /[A-Za-z][A-Za-z]/i, allow_blank: true
+  validates_format_of :state, with: /[A-Za-z][A-Za-xxxxxxxxxz]/i, allow_blank: true
 
   belongs_to :addressable, polymorphic: true, touch: true
   has_many :appointments
