@@ -27,3 +27,6 @@
 
 # Ignore local uploaded assets
 /public/uploads
+
+# Ignore bundle path for rbenv
+/vendor/bundle
