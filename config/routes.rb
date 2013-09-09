@@ -81,7 +81,8 @@ Homespree::Application.routes.draw do
   get "browse/inspire"
 
   # Static Pages: ----------------------------------------------------------------------------------------------------
-  %w(pitch home faqs about contact jobs how_it_works team for_professionals privacy_policy consumer_terms contractor_terms).each do |page|
+  %w(pitch home faqs about contact jobs how_it_works team for_professionals privacy_policy consumer_terms
+                                                                          contractor_terms google_form).each do |page|
     get page, controller: :static_pages, action: page
   end
 end

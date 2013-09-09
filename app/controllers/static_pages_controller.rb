@@ -45,4 +45,8 @@ class StaticPagesController < ApplicationController
 
   def contractor_terms
   end
+
+  def google_form
+
+  end
 end

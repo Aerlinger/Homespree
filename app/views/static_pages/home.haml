@@ -24,9 +24,10 @@
 
               -# Google Form Link
               -#===========================================================================
-              %from{action: "http://www.google.com", id: "new_project", class: "new_project"}
+              %from{id: "new_project", class: "new_project"}
                 %label#pitch_label Your home project is just a click away
-                %input{type: "submit", value: "Get started", class: "btn btn-large btn-success"}
+                %input{type: "submit", value: "Get started", class: "btn btn-large btn-success",
+                onClick: "http://myhomespree.com"}
 
 %section#section_three.shadow{style: "padding-top: 30px;"}
   .container
