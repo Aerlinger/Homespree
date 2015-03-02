@@ -27,4 +27,4 @@
 //= require_tree ../../../vendor/assets/javascripts
 //= require jquery.ui.datepicker
 //= require flexslider
-//= require jquery-fileupload/vendor/tmpl
+// require jquery-fileupload/vendor/tmpl

@@ -58,7 +58,7 @@ class Contractor < User
   acts_as_gmappable
 
 
-  friendly_id :company_title, use: :slugged
+  friendly_id :email, use: :slugged
 
   # Accessors:  -------------------------------------------------------------------------------------------------------
   attr_protected

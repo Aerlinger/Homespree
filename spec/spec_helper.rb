@@ -124,7 +124,6 @@ Spork.prefork do
       DatabaseCleaner.clean
     end
   end
-
 end
 
 Spork.each_run do
